@@ -7,7 +7,12 @@ const anthropicClient = process.env.ANTHROPIC_API_KEY
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
   : null;
 
-const MODEL = 'claude-3-5-haiku-20241022';
+const MODEL_CANDIDATES = Array.from(new Set([
+  process.env.ANTHROPIC_MODEL,
+  'claude-3-5-haiku-latest',
+  'claude-3-5-haiku-20241022',
+  'claude-3-5-sonnet-latest'
+].filter(Boolean)));
 const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
 
@@ -31,18 +36,51 @@ async function completeWithOllama(prompt, { maxTokens = 1024 } = {}) {
   return data.response || '';
 }
 
+function isModelUnavailableError(error) {
+  const message = error?.message || '';
+  return /model|not_found|404/i.test(message);
+}
+
+async function completeWithAnthropic(prompt, { maxTokens = 1024, system } = {}) {
+  let lastError;
+
+  for (const model of MODEL_CANDIDATES) {
+    try {
+      const msg = await anthropicClient.messages.create({
+        model,
+        max_tokens: maxTokens,
+        system,
+        messages: [{ role: 'user', content: prompt }]
+      });
+      return msg.content.map(b => (b.type === 'text' ? b.text : '')).join('');
+    } catch (error) {
+      lastError = error;
+      if (!isModelUnavailableError(error)) {
+        throw error;
+      }
+    }
+  }
+
+  throw lastError || new Error('Anthropic request failed');
+}
+
 export async function complete(prompt, { maxTokens = 1024, system } = {}) {
   if (!anthropicClient) {
     return completeWithOllama(prompt, { maxTokens });
   }
 
-  const msg = await anthropicClient.messages.create({
-    model: MODEL,
-    max_tokens: maxTokens,
-    system,
-    messages: [{ role: 'user', content: prompt }]
-  });
-  return msg.content.map(b => (b.type === 'text' ? b.text : '')).join('');
+  try {
+    return await completeWithAnthropic(prompt, { maxTokens, system });
+  } catch (error) {
+    if (process.env.OLLAMA_URL || process.env.OLLAMA_MODEL) {
+      try {
+        return await completeWithOllama(prompt, { maxTokens });
+      } catch (ollamaError) {
+        throw new Error(`Anthropic request failed: ${error.message}; Ollama fallback failed: ${ollamaError.message}`);
+      }
+    }
+    throw error;
+  }
 }
 
 // Asks the provider for JSON and parses it, tolerating stray markdown fences.
