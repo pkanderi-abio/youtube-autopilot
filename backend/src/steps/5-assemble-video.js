@@ -25,23 +25,16 @@ function escapeDrawtext(s) {
 
 export async function assembleVideo({ backgroundPath, audioPath, captionLines, workDir }) {
   const duration = await getDuration(audioPath);
-  const perLine = duration / captionLines.length;
-
-  const drawtextFilters = captionLines.map((line, i) => {
-    const start = (i * perLine).toFixed(2);
-    const end = ((i + 1) * perLine).toFixed(2);
-    const text = escapeDrawtext(line);
-    return `drawtext=text='${text}':fontcolor=white:fontsize=54:box=1:boxcolor=black@0.45:boxborderw=24:x=(w-text_w)/2:y=h-h/3.2:enable='between(t,${start},${end})'`;
-  }).join(',');
-
   const outPath = path.join(workDir, 'final.mp4');
+
+  const safeCaption = captionLines[0] ? escapeDrawtext(captionLines[0]) : 'Autopilot';
 
   await new Promise((resolve, reject) => {
     ffmpeg()
       .input(backgroundPath)
       .input(audioPath)
       .outputOptions([
-        '-vf', drawtextFilters,
+        '-vf', `drawtext=text='${safeCaption}':fontcolor=white:fontsize=44:box=1:boxcolor=black@0.5:boxborderw=20:x=(w-text_w)/2:y=h-h/4`,
         '-c:v', 'libx264',
         '-c:a', 'aac',
         '-shortest',
