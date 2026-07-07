@@ -1,12 +1,18 @@
 {
   "usedTopics": [
-    "a viral moment people are talking about today"
+    "a viral moment people are talking about today",
+    "a surprising everyday life hack"
   ],
   "videos": [
     {
       "title": "a viral moment people are talking about today in trending travel & lifestyle moments",
       "url": "https://youtu.be/tjIudflLKbU",
       "publishedAt": "2026-07-07T22:56:00.484Z"
+    },
+    {
+      "title": "a surprising everyday life hack in trending travel & lifestyle moments",
+      "url": "https://youtu.be/qcXLYtgQzOw",
+      "publishedAt": "2026-07-07T23:07:54.065Z"
     }
   ]
 }
