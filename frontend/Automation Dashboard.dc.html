@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automation Dashboard</title>
+  <style>
+    :root {
+      --bg: #08090d;
+      --bg-elevated: #10141b;
+      --panel: #151922;
+      --panel-2: #1a2029;
+      --border: rgba(255,255,255,0.08);
+      --text: #f4f2eb;
+      --muted: rgba(244,242,235,0.58);
+      --accent: #2ee6a6;
+      --accent-2: #6f8cff;
+      --warning: #ffb84d;
+      --danger: #ff5f7e;
+      --shadow: 0 12px 32px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, rgba(46,230,166,0.1), transparent 28%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    button { font: inherit; }
+
+    .app-shell {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 248px;
+      flex: 0 0 248px;
+      padding: 24px 18px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(16,20,27,0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 8px 12px;
+    }
+
+    .brand-mark {
+      width: 13px;
+      height: 13px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--accent), #63ffd3);
+      box-shadow: 0 0 14px rgba(46,230,166,0.35);
+    }
+
+    .brand strong { font-size: 1rem; letter-spacing: -0.02em; }
+
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .nav-item {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .nav-item.active {
+      background: rgba(46,230,166,0.12);
+      color: var(--text);
+    }
+
+    .nav-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .nav-item.active .nav-dot { background: var(--accent); }
+
+    .sidebar-card {
+      margin-top: auto;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(46,230,166,0.2);
+      background: rgba(46,230,166,0.08);
+    }
+
+    .sidebar-card .status-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .sidebar-card .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    .sidebar-card small { color: var(--muted); line-height: 1.45; }
+
+    .main {
+      flex: 1;
+      padding: 28px 32px 36px;
+      overflow: auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .title-group h1 { margin: 0 0 4px; font-size: 1.55rem; letter-spacing: -0.03em; }
+    .title-group p { margin: 0; color: var(--muted); }
+
+    .switch-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: rgba(46,230,166,0.12);
+      border-color: rgba(46,230,166,0.24);
+      color: #cfffec;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .kpi-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-bottom: 6px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-label { color: var(--muted); font-size: 0.8rem; margin-bottom: 8px; }
+    .stat-value { font-size: 1.65rem; font-weight: 600; letter-spacing: -0.03em; }
+    .stat-meta { margin-top: 8px; font-size: 0.8rem; color: var(--accent); }
+
+    .overview-grid {
+      grid-template-columns: 1.6fr 1fr;
+      align-items: start;
+    }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 { margin: 0; font-size: 1rem; }
+    .section-title span { color: var(--muted); font-size: 0.8rem; }
+
+    .pipeline-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pipeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .pipeline-item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .pipeline-left { display: flex; align-items: center; gap: 10px; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+    }
+
+    .status-pill.running { background: rgba(46,230,166,0.15); color: #cfffec; }
+    .status-pill.waiting { background: rgba(255,184,77,0.16); color: #ffd18d; }
+    .status-pill.done { background: rgba(111,140,255,0.16); color: #dfe4ff; }
+
+    .status-dot-small {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .queue-list,
+    .feed-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .queue-item,
+    .feed-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .queue-item strong,
+    .feed-item strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
+    .queue-item small,
+    .feed-item small { color: var(--muted); }
+
+    .channel-list { display: flex; flex-direction: column; gap: 10px; }
+    .channel-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .channel-line:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .channel-line b { display: block; margin-bottom: 2px; font-size: 0.95rem; }
+    .channel-line small { color: var(--muted); }
+
+    .pill-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .pill { padding: 6px 8px; border-radius: 999px; background: rgba(255,255,255,0.05); color: var(--muted); font-size: 0.74rem; }
+
+    .empty-state { color: var(--muted); font-size: 0.9rem; }
+
+    .content-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+
+    .settings-list { display: flex; flex-direction: column; gap: 10px; }
+    .settings-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .toggle {
+      width: 44px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      position: relative;
+      border: 0;
+      cursor: pointer;
+    }
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: white;
+      transition: transform 180ms ease;
+    }
+    .toggle.active { background: rgba(46,230,166,0.3); }
+    .toggle.active::after { transform: translateX(20px); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    @media (max-width: 1080px) {
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .overview-grid, .content-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .app-shell { flex-direction: column; }
+      .sidebar { width: 100%; flex-basis: auto; border-right: 0; border-bottom: 1px solid var(--border); }
+      .main { padding: 20px 16px 28px; }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <strong>Autopilot</strong>
+      </div>
+
+      <nav class="nav-list" id="navList"></nav>
+
+      <div class="sidebar-card">
+        <div class="status-row">
+          <div class="status-dot"></div>
+          <strong style="font-size:0.85rem; letter-spacing:0.02em;">FULLY AUTONOMOUS</strong>
+        </div>
+        <small>No approvals required. Every stage runs unattended, 24/7.</small>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="title-group">
+          <h1 id="pageTitle">Overview</h1>
+          <p id="pageSubtext">Tuesday, July 7 · both channels running · last cycle 4m ago</p>
+        </div>
+        <div class="switch-row" id="channelChips"></div>
+      </div>
+
+      <div id="content"></div>
+    </main>
+  </div>
+
+  <script>
+    const state = {
+      tab: 'overview',
+      channel: 'All channels'
+    };
+
+    const navItems = [
+      { id: 'overview', label: 'Overview', dotColor: '#2ee6a6' },
+      { id: 'pipeline', label: 'Pipeline', dotColor: '#6f8cff' },
+      { id: 'content', label: 'Content queue', dotColor: '#ffb84d' },
+      { id: 'settings', label: 'Settings', dotColor: '#ff5f7e' }
+    ];
+
+    const channels = [
+      { name: 'All channels', revenue: '$38k', delta: '+18%', color: '#2ee6a6', chipBg: 'rgba(46,230,166,0.12)', chipBorder: 'rgba(46,230,166,0.18)', chipColor: '#cfffec' },
+      { name: 'YouTube Main', revenue: '$24k', delta: '+12%', color: '#6f8cff', chipBg: 'rgba(111,140,255,0.12)', chipBorder: 'rgba(111,140,255,0.18)', chipColor: '#dfe4ff' },
+      { name: 'YouTube Shorts', revenue: '$14k', delta: '+24%', color: '#ffb84d', chipBg: 'rgba(255,184,77,0.12)', chipBorder: 'rgba(255,184,77,0.18)', chipColor: '#ffd18d' }
+    ];
+
+    const kpis = {
+      'All channels': [
+        { label: 'Est. revenue (30d)', value: '$38,400', meta: '↑ 18% vs last month' },
+        { label: 'Video output', value: '14 / wk', meta: '2 shorts + 1 long-form' },
+        { label: 'Avg. watch time', value: '24m 08s', meta: '+8.4% this week' },
+        { label: 'Automation health', value: '99.2%', meta: 'all stages online' }
+      ],
+      'YouTube Main': [
+        { label: 'Est. revenue (30d)', value: '$24,100', meta: '↑ 12% vs last month' },
+        { label: 'Video output', value: '8 / wk', meta: '4 uploads scheduled' },
+        { label: 'Avg. watch time', value: '18m 11s', meta: '+5.2% this week' },
+        { label: 'Automation health', value: '98.8%', meta: '1 workflow pending' }
+      ],
+      'YouTube Shorts': [
+        { label: 'Est. revenue (30d)', value: '$14,300', meta: '↑ 24% vs last month' },
+        { label: 'Video output', value: '6 / wk', meta: '3 shorts queued' },
+        { label: 'Avg. watch time', value: '11m 03s', meta: '+13.7% this week' },
+        { label: 'Automation health', value: '99.6%', meta: 'all stages online' }
+      ]
+    };
+
+    const pipelineSteps = [
+      { name: 'Discover topic', status: 'running', detail: 'Trending queries collected • 3 candidates' },
+      { name: 'Generate script', status: 'done', detail: 'Voice-ready draft approved' },
+      { name: 'Generate voice', status: 'running', detail: 'Narration rendered • 87% complete' },
+      { name: 'Generate background', status: 'waiting', detail: 'Awaiting render queue slot' },
+      { name: 'Assemble video', status: 'done', detail: 'Stable export produced' },
+      { name: 'Generate thumbnail', status: 'done', detail: '3 variations created' },
+      { name: 'Upload YouTube', status: 'running', detail: 'Publishing in 9 minutes' }
+    ];
+
+    const queue = [
+      { title: 'AI coding workflow for solo founders', meta: 'Long-form • 8:32', tag: 'Scheduled' },
+      { title: '3 tools that cut editing time in half', meta: 'Short • 0:38', tag: 'Queued' },
+      { title: 'How to automate market research', meta: 'Long-form • 10:12', tag: 'Draft ready' }
+    ];
+
+    const feed = [
+      { title: 'YouTube Main uploaded a new episode', meta: '2 mins ago' },
+      { title: 'Shorts draft generated from trending topics', meta: '11 mins ago' },
+      { title: 'Revenue projection updated', meta: '29 mins ago' }
+    ];
+
+    function renderNav() {
+      const el = document.getElementById('navList');
+      el.innerHTML = navItems.map(item => `
+        <button class="nav-item ${item.id === state.tab ? 'active' : ''}" data-tab="${item.id}">
+          <span class="nav-dot" style="background:${item.dotColor}"></span>
+          ${item.label}
+        </button>
+      `).join('');
+      el.querySelectorAll('[data-tab]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.tab = btn.getAttribute('data-tab');
+          render();
+        });
+      });
+    }
+
+    function renderChips() {
+      const el = document.getElementById('channelChips');
+      el.innerHTML = channels.map(ch => `
+        <button class="chip ${ch.name === state.channel ? 'active' : ''}" data-channel="${ch.name}" style="${ch.name === state.channel ? 'border-color:' + ch.chipBorder + '; background:' + ch.chipBg + '; color:' + ch.chipColor : ''}">
+          ${ch.name}
+        </button>
+      `).join('');
+      el.querySelectorAll('[data-channel]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          state.channel = btn.getAttribute('data-channel');
+          render();
+        });
+      });
+    }
+
+    function renderOverview() {
+      const activeKpis = kpis[state.channel] || kpis['All channels'];
+      return `
+        <div class="grid kpi-grid">
+          ${activeKpis.map(kpi => `
+            <div class="card">
+              <div class="stat-label">${kpi.label}</div>
+              <div class="stat-value">${kpi.value}</div>
+              <div class="stat-meta">${kpi.meta}</div>
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="grid overview-grid">
+          <div class="stack">
+            <div class="card">
+              <div class="section-title">
+                <h2>Pipeline status</h2>
+                <span>7 stages live</span>
+              </div>
+              <div class="pipeline-list">
+                ${pipelineSteps.map(step => `
+                  <div class="pipeline-item">
+                    <div class="pipeline-left">
+                      <div class="status-pill ${step.status}">
+                        <span class="status-dot-small"></span>
+                        ${step.name}
+                      </div>
+                    </div>
+                    <small style="color:var(--muted);">${step.detail}</small>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="card">
+              <div class="section-title">
+                <h2>Content queue</h2>
+                <span>3 items ready</span>
+              </div>
+              <div class="queue-list">
+                ${queue.map(item => `
+                  <div class="queue-item">
+                    <div>
+                      <strong>${item.title}</strong>
+                      <small>${item.meta}</small>
+                    </div>
+                    <span class="pill">${item.tag}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="section-title">
+                <h2>Live activity</h2>
+                <span>Updated just now</span>
+              </div>
+              <div class="feed-list">
+                ${feed.map(item => `
+                  <div class="feed-item">
+                    <div>
+                      <strong>${item.title}</strong>
+                      <small>${item.meta}</small>
+                    </div>
+                    <span class="pill">Live</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPipeline() {
+      return `
+        <div class="grid content-grid">
+          <div class="card">
+            <div class="section-title">
+              <h2>Workflow map</h2>
+              <span>Autonomous execution</span>
+            </div>
+            <div class="pipeline-list">
+              ${pipelineSteps.map(step => `
+                <div class="pipeline-item">
+                  <div class="pipeline-left">
+                    <div class="status-pill ${step.status}">
+                      <span class="status-dot-small"></span>
+                      ${step.name}
+                    </div>
+                  </div>
+                  <small style="color:var(--muted);">${step.detail}</small>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="section-title">
+              <h2>Channel health</h2>
+              <span>Current uptime</span>
+            </div>
+            <div class="channel-list">
+              ${channels.map(ch => `
+                <div class="channel-line">
+                  <div>
+                    <b>${ch.name}</b>
+                    <small>${ch.revenue} projected this month</small>
+                  </div>
+                  <span class="pill">${ch.delta}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderContent() {
+      return `
+        <div class="grid content-grid">
+          <div class="card">
+            <div class="section-title">
+              <h2>Next up</h2>
+              <span>Generated from trend signals</span>
+            </div>
+            <div class="queue-list">
+              ${queue.map(item => `
+                <div class="queue-item">
+                  <div>
+                    <strong>${item.title}</strong>
+                    <small>${item.meta}</small>
+                  </div>
+                  <span class="pill">${item.tag}</span>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="section-title">
+              <h2>Suggested formats</h2>
+              <span>Recommended for the next cycle</span>
+            </div>
+            <div class="pill-row">
+              <span class="pill">Long-form explainer</span>
+              <span class="pill">Short punchy recap</span>
+              <span class="pill">Community post</span>
+              <span class="pill">Thumbnail A/B test</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSettings() {
+      return `
+        <div class="card">
+          <div class="section-title">
+            <h2>Agent controls</h2>
+            <span>Adjust automation behavior</span>
+          </div>
+          <div class="settings-list">
+            <div class="settings-item">
+              <div>
+                <strong>Auto-publish to YouTube</strong>
+                <div style="color:var(--muted); font-size:0.9rem; margin-top:2px;">Post approved videos without manual confirmation.</div>
+              </div>
+              <button class="toggle active"></button>
+            </div>
+            <div class="settings-item">
+              <div>
+                <strong>Generate thumbnails</strong>
+                <div style="color:var(--muted); font-size:0.9rem; margin-top:2px;">Create multiple variations and pick the best performer.</div>
+              </div>
+              <button class="toggle active"></button>
+            </div>
+            <div class="settings-item">
+              <div>
+                <strong>Use trend alerts</strong>
+                <div style="color:var(--muted); font-size:0.9rem; margin-top:2px;">Prioritize emerging topics when confidence is high.</div>
+              </div>
+              <button class="toggle"></button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function render() {
+      document.getElementById('pageTitle').textContent = navItems.find(item => item.id === state.tab)?.label || 'Overview';
+      document.getElementById('pageSubtext').textContent = state.tab === 'overview'
+        ? 'Tuesday, July 7 · both channels running · last cycle 4m ago'
+        : 'Automation is currently in sync with the latest trend signals.';
+
+      renderNav();
+      renderChips();
+
+      const container = document.getElementById('content');
+      switch (state.tab) {
+        case 'pipeline':
+          container.innerHTML = renderPipeline();
+          break;
+        case 'content':
+          container.innerHTML = renderContent();
+          break;
+        case 'settings':
+          container.innerHTML = renderSettings();
+          break;
+        default:
+          container.innerHTML = renderOverview();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.env
+node_modules/
+work/
+*.mp4
+*.mp3
+*.png
+!config/**/*.png
+.DS_Store

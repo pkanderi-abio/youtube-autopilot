@@ -1,0 +1,26 @@
+{
+  "channels": [
+    {
+      "id": "channel1",
+      "name": "Wanderlust Clips",
+      "niche": "trending travel & lifestyle moments",
+      "format": "short",
+      "brandColorA": "#1b3a5c",
+      "brandColorB": "#4f7dff",
+      "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL1",
+      "categoryId": "19",
+      "tags": ["travel", "shorts", "trending"]
+    },
+    {
+      "id": "channel2",
+      "name": "Quick Facts Daily",
+      "niche": "whatever topic is spiking today, general interest",
+      "format": "short",
+      "brandColorA": "#1c1c1c",
+      "brandColorB": "#2ee6a6",
+      "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
+      "categoryId": "27",
+      "tags": ["facts", "shorts", "trending"]
+    }
+  ]
+}
