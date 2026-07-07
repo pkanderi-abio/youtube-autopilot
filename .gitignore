@@ -2,6 +2,9 @@
 .DS_Store
 **/.DS_Store
 
+# Local environment files
+.env
+
 # Node / package manager
 backend/node_modules/
 backend/.env
