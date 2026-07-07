@@ -19,6 +19,7 @@ Requirements:
 - ${durationHint}.
 - End with a short line that invites a comment or follow, no generic "like and subscribe".
 - Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.
+- Create 3-5 high-quality hashtags based on the topic and channel niche.
 
 Return JSON:
 {
@@ -26,7 +27,8 @@ Return JSON:
   "narration": "the full script as continuous prose, ready to feed to a TTS engine",
   "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],
   "description": "2-3 sentence YouTube description",
-  "tags": ["tag1", "tag2", "tag3"]
+  "tags": ["tag1", "tag2", "tag3"],
+  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"]
 }
 
 captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.

@@ -62,7 +62,10 @@ async function run(channelId) {
     console.log('[7/7] uploading to YouTube...');
     const upload = await uploadToYoutube(channel, {
       videoPath, thumbnailPath,
-      title: script.title, description: script.description, tags: script.tags
+      title: script.title,
+      description: script.description,
+      tags: script.tags,
+      hashtags: script.hashtags || []
     });
     console.log('   -> published:', upload.url);
 
