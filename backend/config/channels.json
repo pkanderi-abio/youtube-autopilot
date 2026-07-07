@@ -5,6 +5,8 @@
       "name": "Wanderlust Clips",
       "niche": "trending travel & lifestyle moments",
       "format": "short",
+      "visualStyle": "gradient",
+      "madeForKids": false,
       "brandColorA": "#1b3a5c",
       "brandColorB": "#4f7dff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL1",
@@ -13,14 +15,16 @@
     },
     {
       "id": "channel2",
-      "name": "Quick Facts Daily",
-      "niche": "whatever topic is spiking today, general interest",
-      "format": "short",
-      "brandColorA": "#1c1c1c",
-      "brandColorB": "#2ee6a6",
+      "name": "Rainbow Little Learners",
+      "niche": "toddler-friendly nursery rhymes, counting, colors, animal sounds and simple sing-along stories",
+      "format": "long",
+      "visualStyle": "illustrated",
+      "madeForKids": true,
+      "brandColorA": "#ff6fae",
+      "brandColorB": "#3ec6ff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
       "categoryId": "27",
-      "tags": ["facts", "shorts", "trending"]
+      "tags": ["kids", "nurseryrhymes", "toddlers", "kidssongs", "education"]
     }
   ]
 }

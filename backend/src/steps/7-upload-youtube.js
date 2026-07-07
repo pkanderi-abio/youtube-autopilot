@@ -20,7 +20,7 @@ export async function uploadToYoutube(channel, { videoPath, thumbnailPath, title
       },
       status: {
         privacyStatus: 'public',
-        selfDeclaredMadeForKids: false
+        selfDeclaredMadeForKids: Boolean(channel.madeForKids)
       }
     },
     media: {

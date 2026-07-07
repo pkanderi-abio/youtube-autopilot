@@ -49,7 +49,7 @@ async function run(channelId) {
     const duration = await ffprobeDuration(audioPath);
 
     console.log('[4/7] generating background video...');
-    const backgroundPath = await generateBackground(channel, duration, workDir);
+    const backgroundPath = await generateBackground(channel, duration, workDir, script.scenes || []);
 
     console.log('[5/7] assembling final video...');
     const videoPath = await assembleVideo({
