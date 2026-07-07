@@ -1,12 +1,18 @@
 {
   "usedTopics": [
-    "a viral moment people are talking about today"
+    "a viral moment people are talking about today",
+    "a surprising everyday life hack"
   ],
   "videos": [
     {
       "title": "a viral moment people are talking about today in whatever topic is spiking today, gener...",
       "url": "https://youtu.be/UjxA71nOrDU",
       "publishedAt": "2026-07-07T22:55:53.376Z"
+    },
+    {
+      "title": "a surprising everyday life hack in whatever topic is spiking today, general interest",
+      "url": "https://youtu.be/EtGkNai7dms",
+      "publishedAt": "2026-07-07T23:07:32.059Z"
     }
   ]
 }
