@@ -1,5 +1,8 @@
 name: Autopilot pipeline
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 14,2 * * *'
