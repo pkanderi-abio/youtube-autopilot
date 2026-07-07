@@ -19,22 +19,14 @@ function getDuration(file) {
   });
 }
 
-function escapeDrawtext(s) {
-  return s.replace(/\\/g, '\\\\').replace(/:/g, '\\:').replace(/'/g, "\u2019");
-}
-
 export async function assembleVideo({ backgroundPath, audioPath, captionLines, workDir }) {
-  const duration = await getDuration(audioPath);
   const outPath = path.join(workDir, 'final.mp4');
-
-  const safeCaption = captionLines[0] ? escapeDrawtext(captionLines[0]) : 'Autopilot';
 
   await new Promise((resolve, reject) => {
     ffmpeg()
       .input(backgroundPath)
       .input(audioPath)
       .outputOptions([
-        '-vf', `drawtext=text='${safeCaption}':fontcolor=white:fontsize=44:box=1:boxcolor=black@0.5:boxborderw=20:x=(w-text_w)/2:y=h-h/4`,
         '-c:v', 'libx264',
         '-c:a', 'aac',
         '-shortest',
