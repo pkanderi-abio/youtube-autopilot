@@ -12,7 +12,8 @@
     "pirates",
     "sabrina ionescu",
     "trace gallagher",
-    "Daycare"
+    "Daycare",
+    "padres game"
   ],
   "videos": [
     {
@@ -79,6 +80,11 @@
       "title": "Ball Pit Bliss",
       "url": "https://youtu.be/c7AF3Z7ElvU",
       "publishedAt": "2026-07-08T04:12:22.577Z"
+    },
+    {
+      "title": "Padres Game Highlights",
+      "url": "https://youtu.be/g3va1KJgKpI",
+      "publishedAt": "2026-07-08T04:26:56.621Z"
     }
   ]
 }
