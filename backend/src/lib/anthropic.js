@@ -9,9 +9,8 @@ const anthropicClient = process.env.ANTHROPIC_API_KEY
 
 const MODEL_CANDIDATES = Array.from(new Set([
   process.env.ANTHROPIC_MODEL,
-  'claude-3-5-haiku-latest',
-  'claude-3-5-haiku-20241022',
-  'claude-3-5-sonnet-latest'
+  'claude-haiku-4-5-20251001',
+  'claude-sonnet-5'
 ].filter(Boolean)));
 const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
@@ -116,6 +115,7 @@ export async function complete(prompt, { maxTokens = 1024, system } = {}) {
     try {
       return await completeWithOllama(prompt, { maxTokens });
     } catch (error) {
+      console.warn('[anthropic] no API key and Ollama unavailable, using template fallback:', error.message);
       return fallbackContent(prompt);
     }
   }
@@ -123,9 +123,11 @@ export async function complete(prompt, { maxTokens = 1024, system } = {}) {
   try {
     return await completeWithAnthropic(prompt, { maxTokens, system });
   } catch (error) {
+    console.warn('[anthropic] API call failed, trying Ollama:', error.message);
     try {
       return await completeWithOllama(prompt, { maxTokens });
     } catch (ollamaError) {
+      console.warn('[anthropic] Ollama also unavailable, using template fallback:', ollamaError.message);
       return fallbackContent(prompt);
     }
   }
