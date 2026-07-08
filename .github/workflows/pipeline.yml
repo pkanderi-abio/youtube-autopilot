@@ -73,6 +73,9 @@ jobs:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
         run: node src/run-pipeline.js channel1
+      - name: Dump Ollama server log on failure
+        if: failure()
+        run: cat /tmp/ollama.log || true
       - name: Commit updated history
         working-directory: backend
         run: |
@@ -135,6 +138,9 @@ jobs:
         id: prep
         working-directory: backend
         run: node src/run-pipeline-prepare.js channel2 prep-out
+      - name: Dump Ollama server log on failure
+        if: failure()
+        run: cat /tmp/ollama.log || true
       - uses: actions/upload-artifact@v4
         with:
           name: channel2-prep

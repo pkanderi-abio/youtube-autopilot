@@ -107,7 +107,10 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
   }
 
   if (wordCount(best.narration) < minWords) {
-    console.warn(`[script] all ${MAX_ATTEMPTS} attempts came in short - using the longest one (${wordCount(best.narration)} words)`);
+    // Publishing a too-short video is exactly the "static/broken" quality
+    // problem this floor exists to prevent - better to fail this run and
+    // skip publishing than upload something visibly broken.
+    throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
   }
   best.title = fixAllCapsTitle(best.title);
   return best;
