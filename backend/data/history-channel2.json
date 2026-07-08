@@ -7,7 +7,8 @@
     "Old MacDonald Had a Farm",
     "The Wheels on the Bus",
     "Five Little Ducks",
-    "Learning to count from 1 to 10"
+    "Learning to count from 1 to 10",
+    "Animal sounds for toddlers"
   ],
   "videos": [
     {
@@ -49,6 +50,11 @@
       "title": "Count to 10 with Colorful Animals | Rainbow Little Learners",
       "url": "https://youtu.be/1Ox2A81uOUE",
       "publishedAt": "2026-07-08T01:08:23.271Z"
+    },
+    {
+      "title": "Animal Sounds Song for Toddlers | Learn & Sing Along",
+      "url": "https://youtu.be/c2GN2lbSjGA",
+      "publishedAt": "2026-07-08T01:17:43.758Z"
     }
   ]
 }
