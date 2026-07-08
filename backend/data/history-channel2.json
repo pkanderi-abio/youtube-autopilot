@@ -5,7 +5,8 @@
     "a strange but true fact",
     "Twinkle Twinkle Little Star",
     "Old MacDonald Had a Farm",
-    "The Wheels on the Bus"
+    "The Wheels on the Bus",
+    "Five Little Ducks"
   ],
   "videos": [
     {
@@ -37,6 +38,11 @@
       "title": "The Wheels on the Bus | Sing Along with Animals",
       "url": "https://youtu.be/hg8qtL6JAHE",
       "publishedAt": "2026-07-08T00:26:00.900Z"
+    },
+    {
+      "title": "Five Little Ducks | Counting & Animal Sounds Song for Toddlers",
+      "url": "https://youtu.be/MYJoi7JlF9I",
+      "publishedAt": "2026-07-08T00:38:52.286Z"
     }
   ]
 }
