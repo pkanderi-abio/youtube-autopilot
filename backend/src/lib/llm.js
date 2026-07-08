@@ -53,7 +53,11 @@ function fallbackContent(prompt) {
   return `Fallback summary: ${prompt.slice(0, 220)}`;
 }
 
-async function completeWithOllama(prompt, { maxTokens = 1024, system, json } = {}) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function completeWithOllamaOnce(prompt, { maxTokens, system, json }) {
   const response = await fetch(`${OLLAMA_URL}/api/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -72,11 +76,40 @@ async function completeWithOllama(prompt, { maxTokens = 1024, system, json } = {
   });
 
   if (!response.ok) {
-    throw new Error(`Ollama request failed: ${response.status} ${response.statusText}`);
+    // Ollama's error body usually explains *why* (e.g. out of memory,
+    // context length exceeded) - .statusText alone is just "Internal
+    // Server Error" with no useful detail.
+    const body = await response.text().catch(() => '');
+    throw new Error(`Ollama request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
   }
 
   const data = await response.json();
   return data.response || '';
+}
+
+// Observed directly in production: Ollama's server can return a bare
+// "500 Internal Server Error" for a request, and keep returning the
+// identical error for every immediately-following request in the same
+// job - i.e. the server itself enters a bad state (likely resource
+// pressure on a shared CPU-only CI runner), not just a one-off blip on
+// that specific call. Retrying the exact same request back-to-back hits
+// the same wall every time, so this backs off between attempts to give
+// the server a real chance to recover before falling back to a template.
+async function completeWithOllama(prompt, opts = {}) {
+  const { maxTokens = 1024 } = opts;
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await completeWithOllamaOnce(prompt, { ...opts, maxTokens });
+    } catch (error) {
+      lastError = error;
+      if (attempt < 2) {
+        console.warn(`[llm] Ollama request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
+        await sleep(5000 * (attempt + 1));
+      }
+    }
+  }
+  throw lastError;
 }
 
 export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
