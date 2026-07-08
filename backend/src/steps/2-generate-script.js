@@ -4,6 +4,22 @@
 // visual-description prompts for step 4 to turn into per-scene images.
 import { completeJSON } from '../lib/llm.js';
 
+// llama3.2 (a small local model) is unreliable about hitting a
+// requested word count - sometimes by a little, sometimes drastically
+// (observed directly: a "short" video that should run ~45-55s spoken
+// came out at 11.89s of actual audio, meaning the model wrote something
+// like 25-30 words instead of 110-150). A too-short narration produces
+// a video so brief there's barely time for any background variety to
+// register, which reads as "static" regardless of how the background
+// itself is generated. So: retry a few times and keep the longest
+// narration seen rather than accepting whatever comes back first.
+const MIN_WORDS = { short: 90, long: 550 };
+const MAX_ATTEMPTS = 3;
+
+function wordCount(text) {
+  return text.trim().split(/\s+/).filter(Boolean).length;
+}
+
 export async function generateScript(channel, topicInfo) {
   const durationHint = channel.format === 'short'
     ? 'roughly 110-150 words (about 45-55 seconds spoken)'
@@ -26,7 +42,14 @@ export async function generateScript(channel, topicInfo) {
   narration text, just what should be drawn.`
     : '';
 
-  const script = await completeJSON(`
+  const minWords = MIN_WORDS[channel.format === 'short' ? 'short' : 'long'];
+
+  function buildPrompt(previousAttemptWordCount) {
+    const lengthEmphasis = previousAttemptWordCount
+      ? `\n\nIMPORTANT: a previous attempt only produced ${previousAttemptWordCount} words, which is far too short. The "narration" field MUST be a full ${durationHint.match(/[\d-]+ words/)[0]} - write it out completely, don't stop early.`
+      : '';
+
+    return `
 Write a spoken-word video script for the YouTube channel "${channel.name}" (${channel.niche}).
 
 Topic: ${topicInfo.topic}
@@ -50,8 +73,21 @@ Return JSON:
   "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],${scenesHint}
 }
 
-captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.
-`.trim(), { maxTokens: channel.format === 'short' ? 1024 : 4096 });
+captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.${lengthEmphasis}
+`.trim();
+  }
 
-  return script;
+  let best = null;
+  let lastWordCount = null;
+  for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+    const script = await completeJSON(buildPrompt(lastWordCount), { maxTokens: channel.format === 'short' ? 1024 : 4096 });
+    const words = wordCount(script.narration || '');
+    if (!best || words > wordCount(best.narration)) best = script;
+    if (words >= minWords) return script;
+    console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration too short (${words}/${minWords} min words), retrying`);
+    lastWordCount = words;
+  }
+
+  console.warn(`[script] all ${MAX_ATTEMPTS} attempts came in short - using the longest one (${wordCount(best.narration)} words)`);
+  return best;
 }
