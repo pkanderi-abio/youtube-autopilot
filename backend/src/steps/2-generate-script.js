@@ -51,7 +51,7 @@ Return JSON:
 }
 
 captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.
-`.trim());
+`.trim(), { maxTokens: channel.format === 'short' ? 1024 : 4096 });
 
   return script;
 }
