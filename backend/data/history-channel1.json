@@ -6,7 +6,8 @@
     "something oddly satisfying",
     "a common misconception, debunked",
     "Did You Know: The World's Most Unexpected Travel Destination",
-    "Did You Know: Travel Hacks"
+    "Did You Know: Travel Hacks",
+    "volcano fire"
   ],
   "videos": [
     {
@@ -43,6 +44,11 @@
       "title": "Travel Hacks Nobody Tells You About",
       "url": "https://youtu.be/3jM5ItPOel4",
       "publishedAt": "2026-07-08T00:20:37.480Z"
+    },
+    {
+      "title": "Volcano Chasers: Inside the Most Insane Eruption Destinations",
+      "url": "https://youtu.be/3PNX0vp8pmA",
+      "publishedAt": "2026-07-08T00:34:55.461Z"
     }
   ]
 }
