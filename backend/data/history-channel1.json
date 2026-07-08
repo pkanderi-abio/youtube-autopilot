@@ -3,7 +3,8 @@
     "a viral moment people are talking about today",
     "a surprising everyday life hack",
     "a strange but true fact",
-    "something oddly satisfying"
+    "something oddly satisfying",
+    "a common misconception, debunked"
   ],
   "videos": [
     {
@@ -25,6 +26,11 @@
       "title": "something oddly satisfying in trending travel & lifestyle moments",
       "url": "https://youtu.be/L17foz-IdIs",
       "publishedAt": "2026-07-08T00:02:12.463Z"
+    },
+    {
+      "title": "Stop Believing This Travel Myth | Hidden Gems Over Crowds",
+      "url": "https://youtu.be/9B-HU2JNnyQ",
+      "publishedAt": "2026-07-08T00:07:45.297Z"
     }
   ]
 }
