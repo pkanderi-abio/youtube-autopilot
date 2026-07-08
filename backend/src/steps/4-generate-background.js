@@ -40,6 +40,45 @@ function hexToRgb(hex) {
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
 }
 
+function rgbToHsl(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h = 0, s = 0;
+  const l = (max + min) / 2;
+  const d = max - min;
+  if (d !== 0) {
+    s = d / (1 - Math.abs(2 * l - 1));
+    switch (max) {
+      case r: h = 60 * (((g - b) / d) % 6); break;
+      case g: h = 60 * ((b - r) / d + 2); break;
+      default: h = 60 * ((r - g) / d + 4);
+    }
+  }
+  if (h < 0) h += 360;
+  return [h, s, l];
+}
+
+function hslToRgb(h, s, l) {
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+  const m = l - c / 2;
+  let [r, g, b] = h < 60 ? [c, x, 0] : h < 120 ? [x, c, 0] : h < 180 ? [0, c, x]
+    : h < 240 ? [0, x, c] : h < 300 ? [x, 0, c] : [c, 0, x];
+  return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
+}
+
+// A bold, clearly-different-hued accent color per shot index (golden-
+// angle hue rotation from the brand color, forced to a vivid saturation/
+// lightness) - so shots read as visually distinct even when the brand's
+// two colors are close together (e.g. navy-to-blue), where blending
+// only between colorA/colorB barely changes anything.
+function accentColor(baseHex, index) {
+  const [r, g, b] = hexToRgb(baseHex);
+  const [h] = rgbToHsl(r, g, b);
+  const hue = (h + index * 137.5) % 360;
+  return hslToRgb(hue, 0.75, 0.55);
+}
+
 // Deterministic pseudo-random in [0,1), seeded so the same shot index
 // always renders the same blob layout (stable if a frame is regenerated).
 function seededRandom(seed) {
@@ -67,19 +106,17 @@ function renderGradientFrame(w, h, colorA, colorB, variantIndex = 0) {
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, w, h);
 
-  // soft color blobs so the zoom/pan actually reveals texture instead of
-  // panning across an untextured flat gradient (which barely changes)
-  const [rA, gA, bA] = hexToRgb(colorA);
-  const [rB, gB, bB] = hexToRgb(colorB);
+  // bold, vividly-hued blobs (not just tints of the brand colors) so the
+  // zoom/pan reveals real visual change even when colorA/colorB are close
+  // in hue - a same-family blend was measured as nearly imperceptible.
   const rand = seededRandom(variantIndex * 97 + 13);
-  for (let i = 0; i < 4; i++) {
-    const t = rand();
-    const blobColor = `rgba(${Math.round(rA + (rB - rA) * t)},${Math.round(gA + (gB - gA) * t)},${Math.round(bA + (bB - bA) * t)},0.35)`;
+  for (let i = 0; i < 3; i++) {
+    const [ar, ag, ab] = accentColor(colorA, variantIndex + i);
     const bx = rand() * w;
     const by = rand() * h;
-    const radius = (0.18 + rand() * 0.22) * Math.max(w, h);
+    const radius = (0.28 + rand() * 0.25) * Math.max(w, h);
     const blob = ctx.createRadialGradient(bx, by, 0, bx, by, radius);
-    blob.addColorStop(0, blobColor);
+    blob.addColorStop(0, `rgba(${ar},${ag},${ab},0.6)`);
     blob.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = blob;
     ctx.fillRect(0, 0, w, h);
@@ -88,7 +125,7 @@ function renderGradientFrame(w, h, colorA, colorB, variantIndex = 0) {
   const [fx, fy] = FOCUS_POINTS[variantIndex % FOCUS_POINTS.length];
   const vignette = ctx.createRadialGradient(w * fx, h * fy, 0, w * fx, h * fy, Math.max(w, h) * 0.8);
   vignette.addColorStop(0, 'rgba(255,255,255,0.10)');
-  vignette.addColorStop(1, 'rgba(0,0,0,0.30)');
+  vignette.addColorStop(1, 'rgba(0,0,0,0.35)');
   ctx.fillStyle = vignette;
   ctx.fillRect(0, 0, w, h);
 
