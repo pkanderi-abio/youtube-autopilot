@@ -11,7 +11,8 @@
     "sofia vergara",
     "pirates",
     "sabrina ionescu",
-    "trace gallagher"
+    "trace gallagher",
+    "Daycare"
   ],
   "videos": [
     {
@@ -73,6 +74,11 @@
       "title": "Trace Gallagher's Trails of Freedom",
       "url": "https://youtu.be/9zcf5szXGyY",
       "publishedAt": "2026-07-08T04:04:00.995Z"
+    },
+    {
+      "title": "Ball Pit Bliss",
+      "url": "https://youtu.be/c7AF3Z7ElvU",
+      "publishedAt": "2026-07-08T04:12:22.577Z"
     }
   ]
 }

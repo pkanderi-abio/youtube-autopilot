@@ -79,9 +79,22 @@ jobs:
           git config user.name "autopilot-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "chore: update history for channel1 [skip ci]"
-          git pull --rebase --autostash
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update history for channel1 [skip ci]"
+          # Retries the rebase+push a few times: two runs updating the
+          # same channel's history file close together (e.g. manual
+          # re-triggers) can race and conflict on the first attempt, even
+          # though there's normally 12h+ between real scheduled runs.
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed, retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push updated history after retries"
+          exit 1
 
   # --- channel2: illustrated visuals, split into prepare -> parallel
   # image generation -> finish, so self-hosted Stable Diffusion (slow on
@@ -220,6 +233,15 @@ jobs:
           git config user.name "autopilot-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "chore: update history for channel2 [skip ci]"
-          git pull --rebase --autostash
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update history for channel2 [skip ci]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash && git push; then
+              exit 0
+            fi
+            echo "push attempt $attempt failed, retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push updated history after retries"
+          exit 1
