@@ -197,8 +197,19 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   const shotCount = illustrated ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
   const durations = computeShotDurations(durationSeconds, shotCount);
 
+  // Every gradient variant/color/blob choice below is keyed off
+  // "shotSeed", not the raw shot index - without this, shot 0 of every
+  // single video renders pixel-identical (same variant, same accent hue,
+  // same blob layout), since it's always "index 0". That made every
+  // video's thumbnail (always generated from shot 0) and opening seconds
+  // look the same across the whole channel, even though shots *within*
+  // one video legitimately varied. Confirmed by comparing actual
+  // YouTube Studio thumbnails, which were all near-identical.
+  const runSeed = Math.floor(Math.random() * 100000);
+
   const clipPaths = [];
   for (let i = 0; i < shotCount; i++) {
+    const shotSeed = runSeed + i;
     const framePath = path.join(workDir, `scene-${i}.png`);
     let isRealIllustration = false;
 
@@ -213,13 +224,13 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     }
 
     if (!isRealIllustration) {
-      await writeFile(framePath, renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, i));
+      await writeFile(framePath, renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, shotSeed));
     }
 
     // real illustrations get a centered zoom (no clue where the subject
     // is); gradient shots pan toward a varied off-center point for
     // visible, distinct motion per shot.
-    const focus = isRealIllustration ? [0.5, 0.5] : FOCUS_POINTS[i % FOCUS_POINTS.length];
+    const focus = isRealIllustration ? [0.5, 0.5] : FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
     const clipPath = path.join(workDir, `scene-${i}.mp4`);
     await zoomClip(framePath, clipPath, w, h, fps, durations[i], focus);
     clipPaths.push(clipPath);
