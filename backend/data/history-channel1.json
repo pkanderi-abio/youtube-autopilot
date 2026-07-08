@@ -2,7 +2,8 @@
   "usedTopics": [
     "a viral moment people are talking about today",
     "a surprising everyday life hack",
-    "a strange but true fact"
+    "a strange but true fact",
+    "something oddly satisfying"
   ],
   "videos": [
     {
@@ -19,6 +20,11 @@
       "title": "a strange but true fact in trending travel & lifestyle moments",
       "url": "https://youtu.be/enuQkYnyEXY",
       "publishedAt": "2026-07-07T23:35:08.573Z"
+    },
+    {
+      "title": "something oddly satisfying in trending travel & lifestyle moments",
+      "url": "https://youtu.be/L17foz-IdIs",
+      "publishedAt": "2026-07-08T00:02:12.463Z"
     }
   ]
 }
