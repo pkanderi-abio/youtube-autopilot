@@ -12,11 +12,20 @@ const SD_CPP_BIN = process.env.SD_CPP_BIN || 'sd-cli';
 const SD_CPP_MODEL = process.env.SD_CPP_MODEL;
 
 // Applied to every scene prompt so independently-generated images share
-// a consistent look, and so SD1.5 doesn't render stray text/watermark
-// artifacts (a known SD1.5 training-data quirk) into the scene.
-export const SCENE_STYLE_SUFFIX = ", flat 2D children's book illustration, bright cheerful colors, "
-  + 'simple rounded friendly shapes, thick clean outlines, no text or letters or watermark '
-  + 'in the image, single clear focal subject, simple plain background';
+// a consistent look. A real (not hypothetical) comparison of raw
+// generated scenes from one video showed a mix: some crisp flat-vector
+// results, others noticeably soft/painterly, plus two with garbled
+// pseudo-text baked into the image - a known SD1.5 weakness (it can't
+// render legible text and often hallucinates text-like shapes even
+// when told not to in the positive prompt). "Don't do X" is a weak
+// signal in a positive prompt; --negative-prompt is what diffusion
+// models actually respect for steering away from unwanted qualities.
+export const SCENE_STYLE_SUFFIX = ', flat 2D children\'s book illustration, bright cheerful colors, '
+  + 'simple rounded friendly shapes, thick clean bold outlines, crisp sharp vector art, '
+  + 'high contrast, single clear focal subject, simple plain background';
+export const SCENE_NEGATIVE_PROMPT = 'text, letters, words, writing, watermark, signature, '
+  + 'blurry, soft focus, out of focus, hazy, low contrast, washed out, painterly, '
+  + 'photorealistic, realistic, 3d render, noise, grain';
 
 export async function generateSceneImage(prompt, { width, height }) {
   if (!SD_CPP_MODEL) {
@@ -38,6 +47,7 @@ export async function generateSceneImage(prompt, { width, height }) {
   const args = [
     '-m', SD_CPP_MODEL,
     '-p', prompt + SCENE_STYLE_SUFFIX,
+    '-n', SCENE_NEGATIVE_PROMPT,
     '-o', outPath,
     '-W', String(sdWidth),
     '-H', String(sdHeight),

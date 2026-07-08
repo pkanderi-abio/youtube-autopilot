@@ -156,11 +156,14 @@ async function zoomClip(framePath, outPath, w, h, fps, durationSeconds, focus) {
   // byte frozen video here despite a "correct"-looking zoom expression).
   await runFfmpeg([
     '-y',
+    '-sws_flags', 'lanczos',
     '-loop', '1',
     '-i', framePath,
     '-t', String(durationSeconds),
     '-vf', `zoompan=z='min(zoom+${zoomPerFrame},${maxZoom})':x='(iw-iw/zoom)*${fx}':y='(ih-ih/zoom)*${fy}':d=${totalFrames}:s=${w}x${h}:fps=${fps},format=yuv420p`,
     '-c:v', 'libx264',
+    '-crf', '18',
+    '-preset', 'medium',
     outPath
   ]);
 }

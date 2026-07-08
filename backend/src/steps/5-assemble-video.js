@@ -40,7 +40,11 @@ export async function assembleVideo({ backgroundPath, audioPath, captionLines, w
   const outPath = path.join(workDir, 'final.mp4');
   const duration = await getDuration(audioPath);
 
-  const outputOptions = ['-c:v', 'libx264', '-c:a', 'aac', '-shortest', '-pix_fmt', 'yuv420p'];
+  // Explicit CRF/preset - the libx264 defaults (crf 23) were visibly
+  // softening the already-low-res-upscaled illustrated backgrounds
+  // (verified directly: comparing a raw generated scene image against
+  // the final encoded frame at the same crop).
+  const outputOptions = ['-c:v', 'libx264', '-crf', '18', '-preset', 'medium', '-c:a', 'aac', '-shortest', '-pix_fmt', 'yuv420p'];
 
   if (captionLines && captionLines.length) {
     const srtPath = path.join(workDir, 'captions.srt');
