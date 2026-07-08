@@ -12,12 +12,8 @@ import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
 import { createCanvas } from 'canvas';
-import { writeFile } from 'fs/promises';
+import { writeFile, copyFile } from 'fs/promises';
 import { generateSceneImage } from '../lib/images.js';
-
-const STYLE_SUFFIX = ", flat 2D children's book illustration, bright cheerful colors, "
-  + 'simple rounded friendly shapes, thick clean outlines, no text or letters '
-  + 'in the image, single clear focal subject, simple plain background';
 
 // A handful of on-brand gradient looks + off-center focus points to
 // cycle through, so consecutive fallback/plain-gradient shots don't
@@ -188,7 +184,15 @@ async function concatClips(clipPaths, workDir) {
   return outPath;
 }
 
-export async function generateBackground(channel, durationSeconds, workDir, scenes = []) {
+// pregeneratedImages: optional array (parallel to scenes) of file paths
+// for scene images already rendered elsewhere - e.g. by separate,
+// concurrent CI jobs (see generate-scene-cli.js). Self-hosted Stable
+// Diffusion is too slow per-image to generate 8-14 scenes serially
+// within one job's time budget, so the CI workflow fans image
+// generation out across parallel jobs and passes the results in here;
+// a missing/falsy entry for a given index falls back to generating it
+// inline (or to the gradient, same as any other failure).
+export async function generateBackground(channel, durationSeconds, workDir, scenes = [], pregeneratedImages = []) {
   const w = channel.format === 'short' ? 1080 : 1920;
   const h = channel.format === 'short' ? 1920 : 1080;
   const fps = 25;
@@ -213,9 +217,12 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     const framePath = path.join(workDir, `scene-${i}.png`);
     let isRealIllustration = false;
 
-    if (illustrated) {
+    if (illustrated && pregeneratedImages[i]) {
+      await copyFile(pregeneratedImages[i], framePath);
+      isRealIllustration = true;
+    } else if (illustrated) {
       try {
-        const buffer = await generateSceneImage(scenes[i] + STYLE_SUFFIX, { width: w, height: h });
+        const buffer = await generateSceneImage(scenes[i], { width: w, height: h });
         await writeFile(framePath, buffer);
         isRealIllustration = true;
       } catch (err) {

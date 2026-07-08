@@ -9,7 +9,6 @@
     "get-token": "node scripts/get-refresh-token.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.0",
     "canvas": "^2.11.2",
     "dotenv": "^16.4.5",
     "ffmpeg-static": "^5.2.0",

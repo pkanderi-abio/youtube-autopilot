@@ -2,10 +2,12 @@
 
 Two parts:
 
-- **`backend/`** — the real automation pipeline. Trend discovery → Claude
-  script generation → free TTS voiceover → generated background video →
-  ffmpeg assembly → thumbnail → YouTube upload, scheduled via GitHub
-  Actions cron with zero human review. Start here: `backend/README.md`.
+- **`backend/`** — the real automation pipeline. Trend discovery → local
+  Ollama script generation → free TTS voiceover → generated background
+  video (gradient, or self-hosted Stable Diffusion for illustrated
+  channels) → ffmpeg assembly → thumbnail → YouTube upload, scheduled via
+  GitHub Actions cron with zero human review and zero paid APIs. Start
+  here: `backend/README.md`.
 - **`frontend/`** — a control-panel dashboard UI (`frontend/index.html`)
   showing real pipeline/channel state pulled from the backend (publish
   history, last run's actual per-stage status, recent workflow runs).

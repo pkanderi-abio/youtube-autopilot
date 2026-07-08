@@ -4,7 +4,7 @@
 // rhymes and simple learning concepts instead. Either way, Claude picks
 // the single best fit for the channel's niche and predicts a rough CTR.
 import { fetchDailyTrends } from '../lib/trends.js';
-import { completeJSON } from '../lib/anthropic.js';
+import { completeJSON } from '../lib/llm.js';
 
 const KIDS_TOPIC_POOL = [
   'Twinkle Twinkle Little Star',

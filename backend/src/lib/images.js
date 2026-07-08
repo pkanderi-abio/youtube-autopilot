@@ -1,35 +1,59 @@
-// Thin fetch-based wrapper around OpenAI's image generation endpoint -
-// no SDK, matching this repo's existing pattern (see lib/anthropic.js's
-// Ollama call) of using plain fetch for external HTTP APIs. Used only by
-// channels with visualStyle "illustrated" (see 4-generate-background.js).
-const OPENAI_IMAGES_URL = 'https://api.openai.com/v1/images/generations';
+// Thin wrapper around a self-hosted stable-diffusion.cpp CLI binary -
+// no paid API, fully open-source, matching this repo's spawn-a-binary
+// pattern already used for ffmpeg in 4-generate-background.js.
+// SD_CPP_BIN / SD_CPP_MODEL point at the binary + GGUF model (see
+// .github/workflows/pipeline.yml for how CI downloads and caches them).
+import { spawn } from 'child_process';
+import { readFile, unlink } from 'fs/promises';
+import { tmpdir } from 'os';
+import path from 'path';
+
+const SD_CPP_BIN = process.env.SD_CPP_BIN || 'sd-cli';
+const SD_CPP_MODEL = process.env.SD_CPP_MODEL;
+
+// Applied to every scene prompt so independently-generated images share
+// a consistent look, and so SD1.5 doesn't render stray text/watermark
+// artifacts (a known SD1.5 training-data quirk) into the scene.
+export const SCENE_STYLE_SUFFIX = ", flat 2D children's book illustration, bright cheerful colors, "
+  + 'simple rounded friendly shapes, thick clean outlines, no text or letters or watermark '
+  + 'in the image, single clear focal subject, simple plain background';
 
 export async function generateSceneImage(prompt, { width, height }) {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error('Missing OPENAI_API_KEY');
+  if (!SD_CPP_MODEL) {
+    throw new Error('Missing SD_CPP_MODEL (path to a stable-diffusion.cpp GGUF model)');
   }
 
-  const size = width >= height ? '1536x1024' : '1024x1536';
+  // SD1.5 is only trained at ~512px-scale resolutions - generating
+  // directly at the video frame's full size (1920x1080+) would produce
+  // the distorted/duplicated-subject artifacts SD1.5 is known for well
+  // past its native resolution, and take dramatically longer. Generate
+  // at a safe native size matching the frame's orientation and let the
+  // existing Ken Burns zoompan step (4-generate-background.js) upscale
+  // to the real frame - it already crops/scales arbitrary source sizes.
+  const isPortrait = height > width;
+  const sdWidth = isPortrait ? 512 : 768;
+  const sdHeight = isPortrait ? 768 : 512;
 
-  const res = await fetch(OPENAI_IMAGES_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'gpt-image-1',
-      prompt,
-      size,
-      quality: 'low',
-      n: 1
-    })
+  const outPath = path.join(tmpdir(), `sd-${Date.now()}-${Math.random().toString(36).slice(2)}.png`);
+  const args = [
+    '-m', SD_CPP_MODEL,
+    '-p', prompt + SCENE_STYLE_SUFFIX,
+    '-o', outPath,
+    '-W', String(sdWidth),
+    '-H', String(sdHeight),
+    '--steps', '20',
+    '--cfg-scale', '7.0',
+    '--backend', 'cpu'
+  ];
+
+  await new Promise((resolve, reject) => {
+    const p = spawn(SD_CPP_BIN, args);
+    let stderr = '';
+    p.stderr.on('data', (d) => { stderr += d; });
+    p.on('close', (code) => code === 0 ? resolve() : reject(new Error('stable-diffusion.cpp failed: ' + stderr)));
   });
 
-  if (!res.ok) {
-    throw new Error(`OpenAI image generation failed: ${res.status} ${await res.text()}`);
-  }
-
-  const data = await res.json();
-  return Buffer.from(data.data[0].b64_json, 'base64');
+  const buffer = await readFile(outPath);
+  await unlink(outPath).catch(() => {});
+  return buffer;
 }

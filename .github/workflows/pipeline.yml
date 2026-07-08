@@ -5,47 +5,221 @@ permissions:
 
 on:
   schedule:
-    - cron: '0 14,2 * * *'
-  workflow_dispatch: {}
+    - cron: '0 14,2 * * *' # channel1: twice daily
+    - cron: '0 6 * * 3'    # channel2: once weekly (Wed 06:00 UTC) - illustrated
+                           # images are self-hosted Stable Diffusion on
+                           # GPU-less runners; see backend/README.md for why
+                           # this channel runs so much less often and why
+                           # image generation is split across parallel jobs
+                           # below instead of done serially in one job.
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Run only this channel (leave blank to run both, e.g. for manual testing)'
+        required: false
 
 jobs:
-  publish:
+  plan:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        channel: [channel1, channel2]
+    outputs:
+      channels: ${{ steps.set.outputs.channels }}
+    steps:
+      - id: set
+        run: |
+          if [ -n "${{ github.event.inputs.channel }}" ]; then
+            echo 'channels=["${{ github.event.inputs.channel }}"]' >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "0 6 * * 3" ]; then
+            echo 'channels=["channel2"]' >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            echo 'channels=["channel1"]' >> "$GITHUB_OUTPUT"
+          else
+            echo 'channels=["channel1","channel2"]' >> "$GITHUB_OUTPUT"
+          fi
+
+  # --- channel1: gradient visuals, fast, unchanged single-job flow ---
+  publish-channel1:
+    needs: plan
+    if: contains(fromJson(needs.plan.outputs.channels), 'channel1')
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-
       - uses: actions/setup-node@v5
         with:
           node-version: '20'
-
       - name: Install dependencies
         working-directory: backend
         run: npm ci
-
       - name: Install ffmpeg system libs (canvas native build)
         run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-
-      - name: Run pipeline for ${{ matrix.channel }}
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Cache Ollama models
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama
+          key: ollama-llama3.2-v1
+      - name: Start Ollama and pull model
+        run: |
+          ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:11434/api/version && break
+            sleep 1
+          done
+          ollama pull llama3.2
+      - name: Run pipeline for channel1
         working-directory: backend
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
-          YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
-        run: node src/run-pipeline.js ${{ matrix.channel }}
-
+        run: node src/run-pipeline.js channel1
       - name: Commit updated history
         working-directory: backend
         run: |
           git config user.name "autopilot-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "chore: update history for ${{ matrix.channel }} [skip ci]"
+          git diff --staged --quiet || git commit -m "chore: update history for channel1 [skip ci]"
+          git pull --rebase --autostash
+          git push
+
+  # --- channel2: illustrated visuals, split into prepare -> parallel
+  # image generation -> finish, so self-hosted Stable Diffusion (slow on
+  # a GPU-less runner) doesn't have to generate 8-14 scenes serially
+  # within one job's 6-hour hard limit. Wall-clock time for images ends
+  # up bounded by the slowest single image, not the sum of all of them. ---
+  prepare-channel2:
+    needs: plan
+    if: contains(fromJson(needs.plan.outputs.channels), 'channel2')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      scene-indices: ${{ steps.prep.outputs.scene_indices }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: backend
+        run: npm ci
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Cache Ollama models
+        uses: actions/cache@v4
+        with:
+          path: ~/.ollama
+          key: ollama-llama3.2-v1
+      - name: Start Ollama and pull model
+        run: |
+          ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:11434/api/version && break
+            sleep 1
+          done
+          ollama pull llama3.2
+      - name: Run prepare stage
+        id: prep
+        working-directory: backend
+        run: node src/run-pipeline-prepare.js channel2 prep-out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: channel2-prep
+          path: backend/prep-out
+          retention-days: 1
+
+  generate-images-channel2:
+    needs: prepare-channel2
+    if: needs.prepare-channel2.outputs.scene-indices != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        scene: ${{ fromJson(needs.prepare-channel2.outputs.scene-indices) }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: backend
+        run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: channel2-prep
+          path: backend/prep-out
+      - name: Download stable-diffusion.cpp
+        working-directory: backend
+        run: |
+          gh release download --repo leejet/stable-diffusion.cpp --pattern '*Linux-Ubuntu-24.04-x86_64.zip' --output sd.zip --clobber
+          mkdir -p sd-bin
+          unzip -o sd.zip -d sd-bin
+          chmod +x sd-bin/sd-cli
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Cache Stable Diffusion model
+        uses: actions/cache@v4
+        with:
+          path: backend/sd-model
+          key: sd15-q8-v1
+      - name: Download Stable Diffusion model
+        working-directory: backend
+        run: |
+          mkdir -p sd-model
+          [ -f sd-model/sd15-q8_0.gguf ] || curl -L -o sd-model/sd15-q8_0.gguf "https://huggingface.co/gpustack/stable-diffusion-v1-5-GGUF/resolve/main/stable-diffusion-v1-5-Q8_0.gguf"
+      - name: Generate scene ${{ matrix.scene }}
+        working-directory: backend
+        env:
+          SD_CPP_BIN: ${{ github.workspace }}/backend/sd-bin/sd-cli
+          SD_CPP_MODEL: ${{ github.workspace }}/backend/sd-model/sd15-q8_0.gguf
+          LD_LIBRARY_PATH: ${{ github.workspace }}/backend/sd-bin
+        run: node src/generate-scene-cli.js prep-out/script.json ${{ matrix.scene }} scene-${{ matrix.scene }}.png 1920 1080
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scene-image-${{ matrix.scene }}
+          path: backend/scene-${{ matrix.scene }}.png
+          retention-days: 1
+          if-no-files-found: ignore
+
+  finish-channel2:
+    needs: [prepare-channel2, generate-images-channel2]
+    if: always() && needs.prepare-channel2.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: backend
+        run: npm ci
+      - name: Install ffmpeg system libs (canvas native build)
+        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+      - uses: actions/download-artifact@v4
+        with:
+          name: channel2-prep
+          path: backend/prep-out
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: scene-image-*
+          path: backend/scene-images
+          merge-multiple: true
+        continue-on-error: true
+      - name: Run finish stage
+        working-directory: backend
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
+        run: node src/run-pipeline-finish.js channel2 prep-out scene-images
+      - name: Commit updated history
+        working-directory: backend
+        run: |
+          git config user.name "autopilot-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "chore: update history for channel2 [skip ci]"
           git pull --rebase --autostash
           git push

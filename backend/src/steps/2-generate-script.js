@@ -2,7 +2,7 @@
 // a description, and tags - everything downstream steps need. Channels
 // with an illustrated visual style also get a `scenes` array: short
 // visual-description prompts for step 4 to turn into per-scene images.
-import { completeJSON } from '../lib/anthropic.js';
+import { completeJSON } from '../lib/llm.js';
 
 export async function generateScript(channel, topicInfo) {
   const durationHint = channel.format === 'short'
