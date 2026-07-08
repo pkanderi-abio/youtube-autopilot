@@ -11,7 +11,8 @@
     "Animal sounds for toddlers",
     "Learning the colors of the rainbow",
     "Let's Count Together with Mary Had a Little Lamb",
-    "Rainbow Animals Counting Adventure"
+    "Rainbow Animals Counting Adventure",
+    "The Ant and the Grasshopper"
   ],
   "videos": [
     {
@@ -73,6 +74,11 @@
       "title": "Counting Rainbow Animals",
       "url": "https://youtu.be/SI-F6AlXYL8",
       "publishedAt": "2026-07-08T22:48:48.890Z"
+    },
+    {
+      "title": "The Ant And The Grasshopper: A Lesson In Preparation",
+      "url": "https://youtu.be/FhaDvf_xL30",
+      "publishedAt": "2026-07-08T23:55:57.741Z"
     }
   ]
 }
