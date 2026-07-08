@@ -5,7 +5,8 @@
     "a strange but true fact",
     "something oddly satisfying",
     "a common misconception, debunked",
-    "Did You Know: The World's Most Unexpected Travel Destination"
+    "Did You Know: The World's Most Unexpected Travel Destination",
+    "Did You Know: Travel Hacks"
   ],
   "videos": [
     {
@@ -37,6 +38,11 @@
       "title": "This Hidden Desert Town Is Blowing Up on Travel Apps Right Now",
       "url": "https://youtu.be/ysVOPLJqXiY",
       "publishedAt": "2026-07-08T00:12:23.195Z"
+    },
+    {
+      "title": "Travel Hacks Nobody Tells You About",
+      "url": "https://youtu.be/3jM5ItPOel4",
+      "publishedAt": "2026-07-08T00:20:37.480Z"
     }
   ]
 }
