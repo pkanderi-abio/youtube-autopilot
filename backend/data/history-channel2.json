@@ -2,7 +2,8 @@
   "usedTopics": [
     "a viral moment people are talking about today",
     "a surprising everyday life hack",
-    "a strange but true fact"
+    "a strange but true fact",
+    "Twinkle Twinkle Little Star"
   ],
   "videos": [
     {
@@ -19,6 +20,11 @@
       "title": "a strange but true fact in whatever topic is spiking today, general interest",
       "url": "https://youtu.be/eE0QidmpyxA",
       "publishedAt": "2026-07-07T23:35:20.503Z"
+    },
+    {
+      "title": "Twinkle Twinkle Little Star in toddler-friendly nursery rhymes, counting, colors, anima...",
+      "url": "https://youtu.be/eaF311Wn7Nc",
+      "publishedAt": "2026-07-08T00:02:09.165Z"
     }
   ]
 }
