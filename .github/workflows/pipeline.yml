@@ -60,7 +60,11 @@ jobs:
           key: ollama-llama3.2-v1
       - name: Start Ollama and pull model
         run: |
-          ollama serve > /tmp/ollama.log 2>&1 &
+          # install.sh already enables+starts Ollama as a systemd service
+          # bound to :11434 (confirmed via real CI logs: a manual
+          # `ollama serve &` here just fails instantly with "address
+          # already in use" and does nothing useful) - just wait for the
+          # systemd-managed instance to be ready, then pull the model.
           for i in $(seq 1 30); do
             curl -sf http://127.0.0.1:11434/api/version && break
             sleep 1
@@ -75,7 +79,11 @@ jobs:
         run: node src/run-pipeline.js channel1
       - name: Dump Ollama server log on failure
         if: failure()
-        run: cat /tmp/ollama.log || true
+        # Ollama runs as a systemd service (see "Start Ollama and pull
+        # model" above), not the foreground process a bare /tmp/ollama.log
+        # redirect would capture - its real stdout/stderr (including
+        # llama-server crash detail) is in the systemd journal.
+        run: sudo journalctl -u ollama --no-pager -n 300 || true
       - name: Commit updated history
         working-directory: backend
         run: |
@@ -128,7 +136,11 @@ jobs:
           key: ollama-llama3.2-v1
       - name: Start Ollama and pull model
         run: |
-          ollama serve > /tmp/ollama.log 2>&1 &
+          # install.sh already enables+starts Ollama as a systemd service
+          # bound to :11434 (confirmed via real CI logs: a manual
+          # `ollama serve &` here just fails instantly with "address
+          # already in use" and does nothing useful) - just wait for the
+          # systemd-managed instance to be ready, then pull the model.
           for i in $(seq 1 30); do
             curl -sf http://127.0.0.1:11434/api/version && break
             sleep 1
@@ -140,7 +152,11 @@ jobs:
         run: node src/run-pipeline-prepare.js channel2 prep-out
       - name: Dump Ollama server log on failure
         if: failure()
-        run: cat /tmp/ollama.log || true
+        # Ollama runs as a systemd service (see "Start Ollama and pull
+        # model" above), not the foreground process a bare /tmp/ollama.log
+        # redirect would capture - its real stdout/stderr (including
+        # llama-server crash detail) is in the systemd journal.
+        run: sudo journalctl -u ollama --no-pager -n 300 || true
       - uses: actions/upload-artifact@v4
         with:
           name: channel2-prep
