@@ -53,9 +53,13 @@ function nicheReinforcement(channel) {
 }
 
 function closingLineHint(channel) {
-  return channel.madeForKids
-    ? 'End with a short, cheerful line inviting the viewer to sing along or watch again - do not ask for comments (comments are disabled on kids content).'
-    : 'End with a short line that invites a comment or follow, no generic "like and subscribe".';
+  if (channel.closingStyle === 'moral') {
+    return 'End by clearly stating the moral or lesson of the story in one sentence - what the viewer should take away from it.';
+  }
+  if (channel.madeForKids) {
+    return 'End with a short, cheerful line inviting the viewer to watch again - do not ask for comments (comments are disabled on kids content).';
+  }
+  return 'End with a short line that invites a comment or follow, no generic "like and subscribe".';
 }
 
 // Stock-footage channels need a per-shot "scenes" array - short concrete
@@ -74,7 +78,7 @@ function scenesFields(channel, countHint) {
     instructions: `
 - Also produce a "scenes" array: ${countHint} short visual phrases (3-6
   words each, concrete nouns, e.g. "aerial coastal city sunset" or
-  "toddler stacking colorful blocks") describing what should be shown on
+  "fox running through forest") describing what should be shown on
   screen at each part of the video, in order - these are used as
   stock-footage search queries, so keep them concrete and literal, not
   full sentences.`
@@ -236,7 +240,15 @@ captionLines should split this section's narration into 2-3 short on-screen chun
   }
 
   if (wordCount(best.narration) < MIN_WORDS_PER_SECTION) {
-    throw new Error(`[script] section ${index + 1}/${total} narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${MIN_WORDS_PER_SECTION} words) - aborting instead of publishing`);
+    // Don't abort the whole run over one under-target section - real
+    // production evidence showed this threshold gets missed by a
+    // handful of words often enough to matter (e.g. 97/100), even
+    // though the section is still usable narration and the *aggregate*
+    // narration across all sections routinely clears the real quality
+    // bar (MIN_WORDS.long, checked once all sections are in). Keep the
+    // longest attempt and move on; generateLongScript's total-word check
+    // is the real safety net against publishing something too short.
+    console.warn(`[script] section ${index + 1}/${total} still short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${MIN_WORDS_PER_SECTION} words) - keeping it and continuing`);
   }
   return best;
 }

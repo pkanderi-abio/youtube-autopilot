@@ -16,15 +16,38 @@
     {
       "id": "channel2",
       "name": "Rainbow Little Learners",
-      "niche": "toddler-friendly nursery rhymes, counting, colors, animal sounds and simple sing-along stories",
+      "niche": "narrated animal fables and life-lesson stories for children, each with a clear, simple moral takeaway",
       "format": "long",
       "visualStyle": "stockFootage",
       "madeForKids": true,
+      "closingStyle": "moral",
       "brandColorA": "#ff6fae",
       "brandColorB": "#3ec6ff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
       "categoryId": "27",
-      "tags": ["kids", "nurseryrhymes", "toddlers", "kidssongs", "education"]
+      "tags": ["fables", "lifelessons", "moralstories", "kidsstories", "storytime"],
+      "topicPool": [
+        "The Tortoise and the Hare",
+        "The Boy Who Cried Wolf",
+        "The Ant and the Grasshopper",
+        "The Fox and the Grapes",
+        "The Lion and the Mouse",
+        "The Goose That Laid the Golden Eggs",
+        "The Wolf in Sheep's Clothing",
+        "The Crow and the Pitcher",
+        "The Town Mouse and the Country Mouse",
+        "The Dog and Its Reflection",
+        "The North Wind and the Sun",
+        "The Bundle of Sticks",
+        "The Farmer and the Snake",
+        "The Milkmaid and Her Pail",
+        "The Scorpion and the Frog",
+        "The Owl Who Learned to Listen",
+        "The Elephant Who Forgot His Strength",
+        "The River That Refused to Bend",
+        "The Old Oak and the Reeds",
+        "The Peacock and the Crane"
+      ]
     }
   ]
 }
