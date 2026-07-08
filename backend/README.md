@@ -8,37 +8,37 @@ no human review step, running on free GitHub Actions cron.
 ## What this actually is (read this first)
 
 This is real, runnable code, not a mockup, and it's built entirely on
-free/open-source tools — no paid API keys anywhere in the content
-pipeline:
+free/open-source tools and free-tier APIs — no paid API keys anywhere
+in the content pipeline:
 
 - **Script**: written by a local **Ollama** server (`llama3.2` by
   default) - no API key, no per-request cost. Quality is noticeably
   below a frontier hosted model (shorter/less precise instruction
   following) and generation is much slower (CPU inference), but it's
-  genuinely free and self-hosted.
+  genuinely free and self-hosted. Long-form scripts are generated
+  section-by-section (an outline call, then one call per narrative
+  beat) rather than in one shot - a small local model reliably
+  undershoots a single big word-count target, but hits a small
+  per-section target consistently.
 - **Voice**: Microsoft Edge's free TTS engine (no API key, no per-word cost).
 - **Visuals**: per-channel `visualStyle` in `config/channels.json`:
-  - `"gradient"` (e.g. Wanderlust Clips): a procedurally generated,
-    slowly-animated two-color gradient — **not** stock footage or
-    AI-generated video clips. $0 cost, effectively instant.
-  - `"illustrated"` (e.g. Rainbow Little Learners): the script step
-    breaks the video into scenes, and each scene gets a real
-    AI-generated illustration from a **self-hosted stable-diffusion.cpp**
-    (SD1.5, CPU-only) with a Ken Burns zoom, concatenated together. $0
-    API cost, but **real compute cost**: on a GPU-less GitHub Actions
-    runner, generating 8-14 full-quality images takes roughly **1-4+
-    hours per video** - measured directly, not estimated. This is why
-    this channel runs weekly, not daily (see the workflow schedule
-    below). A failed scene image falls back to the gradient rather than
-    failing the run.
-- **Thumbnail**: title text over the channel's brand gradient, or (for
-  illustrated channels) over the first generated scene image — clean and
-  legible, not CTR-optimized by a model.
+  - `"stockFootage"` (both current channels): the script step also
+    produces a `scenes` array of short search phrases, and each shot
+    downloads a real matching clip from **Pexels'** free stock-video API
+    (registered key, no paid tier), cover-cropped/looped/trimmed to the
+    shot's duration. A failed search/download for a given shot falls
+    back to the gradient rather than failing the run.
+  - `"gradient"`: a procedurally generated, slowly-animated two-color
+    gradient — not stock footage or AI-generated video. $0 cost,
+    effectively instant. This is also the fallback used whenever stock
+    footage fails for a shot.
+- **Thumbnail**: title text over the channel's brand gradient — clean
+  and legible, not CTR-optimized by a model.
 
-This produces the kind of "faceless" narrated Shorts you've likely seen
-on YouTube — it will NOT produce cinematic AI footage, and the script/
-image quality trade-off for being fully open-source/self-hosted is real,
-not marketing.
+This produces the kind of "faceless" narrated Shorts/long-form videos
+you've likely seen on YouTube using real b-roll footage — it will NOT
+produce cinematic bespoke AI video generation, and the script quality
+trade-off for self-hosting the LLM is real, not marketing.
 
 ## Before you turn on zero-review autonomy
 
@@ -68,23 +68,16 @@ this pipeline has no human checkpoint:
 Install Ollama locally (`brew install ollama` or see ollama.com) and
 run `ollama pull llama3.2`. No API key, no repo secret needed - CI
 installs and pulls the model itself (see the workflow file). If Ollama
-is unreachable for any reason, the pipeline falls back to a basic
-template generator rather than failing the run - real output quality
-requires Ollama actually running.
+fails (unreachable, or the model server crashes) the pipeline aborts
+that run rather than publishing broken/templated content - real output
+requires Ollama actually working.
 
-### 2. stable-diffusion.cpp (only for channels with `"visualStyle": "illustrated"`)
-For local testing: build or download `sd-cli` from
-[leejet/stable-diffusion.cpp](https://github.com/leejet/stable-diffusion.cpp)
-and download a GGUF model (this project uses
-`gpustack/stable-diffusion-v1-5-GGUF`, the `Q8_0` quantization). Point
-`SD_CPP_BIN` / `SD_CPP_MODEL` at them (see `.env.example`). CI downloads
-and caches both automatically - no local setup needed just to deploy.
-
-**Note on SD2.x/Turbo models**: this project deliberately uses SD1.5, not
-a "Turbo" variant. An SD2.1-based turbo GGUF model was tested first and
-produced blank/white output - SD2.x support in stable-diffusion.cpp is
-known to be unreliable. SD1.5 is the best-supported architecture in this
-tool and was verified end-to-end (real, correct images) before shipping.
+### 2. Pexels API key (stock footage)
+Get a free key at [pexels.com/api](https://www.pexels.com/api/) (instant,
+no approval wait) and add it as a repo secret named `PEXELS_API_KEY`
+(and optionally in your local `.env` for testing). No paid tier. If this
+key is missing or a search comes up empty, that shot falls back to the
+gradient rather than failing the run.
 
 ### 3. Google Cloud + YouTube API access (per channel)
 1. Create a Google Cloud project → enable **YouTube Data API v3**.
@@ -104,44 +97,45 @@ you'd need to request a quota increase.
 
 ### 4. Configure your channels
 Edit `config/channels.json` — names, niche, format (`short` or `long`),
-`visualStyle` (`gradient` or `illustrated`), `madeForKids`, brand colors,
+`visualStyle` (`gradient` or `stockFootage`), `madeForKids`, brand colors,
 YouTube category ID. Renaming a channel here only changes what's fed into
 script generation — it does **not** rename the actual YouTube channel or
 handle, which you set manually in YouTube Studio.
 
 ### 5. Deploying
-Push the **contents** of this `backend/` folder as the root of a new
-GitHub repo (so `package.json` and `.github/` sit at the repo root).
-Add the YouTube secrets above under Settings → Secrets and variables →
-Actions (no LLM/image API keys needed at all). The workflow
+Push this repo to GitHub (`package.json` and `.github/` at the repo
+root). Add the YouTube + Pexels secrets above under Settings → Secrets
+and variables → Actions. The workflow
 (`.github/workflows/pipeline.yml`) runs automatically on its cron
 schedule, or trigger it manually from the Actions tab.
 
 ## Running locally (for testing)
 ```
 npm install
-cp .env.example .env   # fill in YouTube values; Ollama/SD settings are optional locally
+cp .env.example .env   # fill in YouTube + Pexels values; Ollama settings are optional locally
 ollama pull llama3.2
 npm run run -- channel1
 ```
 
 ## Cost estimate
-- Ollama, Edge TTS, ffmpeg, node-canvas, stable-diffusion.cpp: all free,
-  self-hosted, $0 in API costs, period.
+- Ollama, Edge TTS, ffmpeg, node-canvas: all free, self-hosted, $0 in
+  API costs, period. Pexels' video search API is free within its
+  registered-key tier.
 - YouTube Data API: free within default quota.
-- **GitHub Actions compute minutes** are the one real resource here, and
-  it's not negligible: this private repo gets 2,000 free minutes/month.
-  Channel1 (gradient, twice daily) uses roughly 10-15 min/day. Channel2
-  (illustrated, self-hosted SD) runs only **once a week** specifically
-  because a single run can take **1-4+ hours** of that budget - check
-  your Actions usage under Settings → Billing after your first couple of
-  channel2 runs and adjust the cron schedule in
-  `.github/workflows/pipeline.yml` if it's eating too much of the
-  monthly allowance.
+- **GitHub Actions compute minutes** are the one real resource here:
+  this private repo gets 2,000 free minutes/month. Both channels are
+  now a single job each (topic → script → voice → stock-footage
+  download → assemble → upload) - channel2's weekly cadence predates
+  the switch to stock footage (it used to be throttled by slow
+  self-hosted Stable Diffusion generation) and could likely be
+  increased now; check Actions usage under Settings → Billing before
+  bumping the cron schedule in `.github/workflows/pipeline.yml`.
 
 ## Extending later
-- `src/steps/4-generate-background.js` → swap in real stock footage or
-  an AI video API (paid, but real motion instead of stills).
+- `src/lib/stockFootage.js` → swap in a paid AI video-generation API
+  (real bespoke motion clips instead of stock footage) if you decide
+  that trade-off is worth it, or add a second free stock source
+  (Pixabay, Archive.org) as a fallback before the gradient.
 - `src/lib/llm.js` → swap in a bigger local model (edit `OLLAMA_MODEL`)
   or a hosted API if you decide the quality trade-off isn't worth it.
 - `src/steps/6-generate-thumbnail.js` → add real CTR-prediction logic,
@@ -155,9 +149,9 @@ npm run run -- channel1
 ## Files
 - `src/steps/1-discover-topic.js` … `7-upload-youtube.js` — the pipeline stages
 - `src/run-pipeline.js` — orchestrator, run once per channel
-- `src/lib/` — LLM (Ollama), image generation (stable-diffusion.cpp),
-  YouTube auth, trends, and history-state helpers
+- `src/lib/` — LLM (Ollama), stock footage (Pexels), YouTube auth,
+  trends, and history-state helpers
 - `scripts/get-refresh-token.js` — one-time OAuth helper
 - `config/channels.json` — per-channel config
 - `data/history-<channel>.json` — auto-generated memory of used topics/videos
-- `.github/workflows/pipeline.yml` — cron schedule + Ollama/stable-diffusion.cpp setup
+- `.github/workflows/pipeline.yml` — cron schedule + Ollama setup, one job per channel

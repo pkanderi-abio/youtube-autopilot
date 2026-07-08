@@ -4,8 +4,8 @@ Two parts:
 
 - **`backend/`** — the real automation pipeline. Trend discovery → local
   Ollama script generation → free TTS voiceover → generated background
-  video (gradient, or self-hosted Stable Diffusion for illustrated
-  channels) → ffmpeg assembly → thumbnail → YouTube upload, scheduled via
+  video (real stock footage via Pexels' free API, or a gradient
+  fallback) → ffmpeg assembly → thumbnail → YouTube upload, scheduled via
   GitHub Actions cron with zero human review and zero paid APIs. Start
   here: `backend/README.md`.
 - **`frontend/`** — a control-panel dashboard UI (`frontend/index.html`)

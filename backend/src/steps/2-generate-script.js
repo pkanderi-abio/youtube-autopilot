@@ -1,7 +1,7 @@
 // Step 2 - turn the chosen topic+angle into a spoken script, a title,
-// a description, and tags - everything downstream steps need. Channels
-// with an illustrated visual style also get a `scenes` array: short
-// visual-description prompts for step 4 to turn into per-scene images.
+// a description, and tags - everything downstream steps need.
+// Stock-footage channels also get a `scenes` array: short visual
+// phrases for step 4 to use as per-shot footage search queries.
 import { completeJSON } from '../lib/llm.js';
 
 // llama3.2 (a small local model) is unreliable about hitting a
@@ -58,14 +58,11 @@ function closingLineHint(channel) {
     : 'End with a short line that invites a comment or follow, no generic "like and subscribe".';
 }
 
-// Both illustrated channels and stock-footage channels need a per-shot
-// "scenes" array - the field is reused for two different downstream
-// purposes (an illustration prompt vs. a stock-footage search query),
-// which is why the instructions below ask for short concrete phrases
-// rather than full descriptive sentences: that phrasing works well as
-// either an illustration prompt or a Pexels search term.
+// Stock-footage channels need a per-shot "scenes" array - short concrete
+// phrases that work well as Pexels search terms (not full descriptive
+// sentences, which return far fewer/worse stock-footage matches).
 function needsScenes(channel) {
-  return channel.visualStyle === 'illustrated' || channel.visualStyle === 'stockFootage';
+  return channel.visualStyle === 'stockFootage';
 }
 
 function scenesFields(channel, countHint) {
@@ -78,9 +75,9 @@ function scenesFields(channel, countHint) {
 - Also produce a "scenes" array: ${countHint} short visual phrases (3-6
   words each, concrete nouns, e.g. "aerial coastal city sunset" or
   "toddler stacking colorful blocks") describing what should be shown on
-  screen at each part of the video, in order. No on-screen text, no
-  narration text, no full sentences - just short, concrete, literal
-  descriptions of what the shot shows.`
+  screen at each part of the video, in order - these are used as
+  stock-footage search queries, so keep them concrete and literal, not
+  full sentences.`
   };
 }
 

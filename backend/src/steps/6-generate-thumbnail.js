@@ -1,7 +1,7 @@
 // Step 6 - a simple, on-brand thumbnail: the video title, bold and
 // large, over either the channel's brand gradient or - when step 4
-// generated illustrated scenes - the first scene's illustration (already
-// paid for, no extra cost). No CTR modeling here (that's a real ML
+// downloaded real stock footage - a frame from the first shot (already
+// fetched, no extra cost). No CTR modeling here (that's a real ML
 // problem) - this is a clean, readable default. Swap in YouTube's
 // built-in "Test & compare" thumbnails feature manually for real A/B data.
 import { createCanvas, loadImage } from 'canvas';

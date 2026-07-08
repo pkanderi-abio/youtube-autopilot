@@ -1,8 +1,8 @@
 // Step 1 - pick today's topic for a channel. Most channels pull trending
 // searches; evergreen kids' content doesn't fit "what's trending today",
-// so illustrated/kids channels pick from a curated pool of classic
-// rhymes and simple learning concepts instead. Either way, Claude picks
-// the single best fit for the channel's niche and predicts a rough CTR.
+// so kids channels pick from a curated pool of classic rhymes and simple
+// learning concepts instead. Either way, the model picks the single best
+// fit for the channel's niche and predicts a rough CTR.
 import { fetchDailyTrends } from '../lib/trends.js';
 import { completeJSON } from '../lib/llm.js';
 
@@ -30,7 +30,7 @@ const KIDS_TOPIC_POOL = [
 ];
 
 async function pickPool(channel, history) {
-  if (channel.visualStyle === 'illustrated') {
+  if (channel.madeForKids) {
     const candidates = KIDS_TOPIC_POOL.filter(t => !history.usedTopics.includes(t));
     return candidates.length ? candidates : KIDS_TOPIC_POOL;
   }

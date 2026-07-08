@@ -1,19 +1,18 @@
 // Step 4 - the video's visual track: a sequence of short shots (like a
 // real short-form edit), not one continuous background for the whole
-// runtime. Each shot is either an AI-generated illustration (illustrated
-// channels, one per script scene) or an on-brand gradient variant, and
-// each gets its own fast zoom+pan toward a different focus point so
-// consecutive shots read as visually distinct - not a single slowly-
-// creeping background, which upstream testing showed was imperceptible
-// over a 45s+ clip (measured video bitrate near-zero - i.e. frames were
-// almost identical start to end). A failed illustration falls back to a
-// gradient shot rather than failing the whole run.
+// runtime. Each shot is either real stock footage (one per script scene)
+// or an on-brand gradient variant, and each gets its own fast zoom+pan
+// toward a different focus point so consecutive shots read as visually
+// distinct - not a single slowly-creeping background, which upstream
+// testing showed was imperceptible over a 45s+ clip (measured video
+// bitrate near-zero - i.e. frames were almost identical start to end).
+// A failed footage fetch falls back to a gradient shot rather than
+// failing the whole run.
 import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
 import { createCanvas } from 'canvas';
 import { writeFile } from 'fs/promises';
-import { generateSceneImage } from '../lib/images.js';
 import { findStockFootageClip } from '../lib/stockFootage.js';
 
 // A handful of on-brand gradient looks + off-center focus points to
@@ -191,6 +190,14 @@ async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds) {
   ]);
 }
 
+// generateThumbnail (step 6) looks for workDir/scene-0.png to use a real
+// frame instead of a plain brand-gradient thumbnail - grab one from the
+// first stock-footage shot the same way it previously used the first
+// illustrated scene's image.
+async function extractFrame(videoPath, outPath) {
+  await runFfmpeg(['-y', '-ss', '0.5', '-i', videoPath, '-frames:v', '1', outPath]);
+}
+
 function computeShotDurations(totalDuration, count) {
   const base = totalDuration / count;
   const durations = new Array(count).fill(base);
@@ -215,9 +222,8 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   const h = channel.format === 'short' ? 1920 : 1080;
   const fps = 25;
 
-  const illustrated = channel.visualStyle === 'illustrated' && scenes.length > 0;
   const stockFootage = channel.visualStyle === 'stockFootage' && scenes.length > 0;
-  const shotCount = (illustrated || stockFootage) ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
+  const shotCount = stockFootage ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
   const durations = computeShotDurations(durationSeconds, shotCount);
 
   // Every gradient variant/color/blob choice below is keyed off
@@ -241,6 +247,9 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         const buffer = await findStockFootageClip(scenes[i], { width: w, height: h });
         await writeFile(sourcePath, buffer);
         await footageClip(sourcePath, clipPath, w, h, fps, durations[i]);
+        if (i === 0) {
+          await extractFrame(clipPath, path.join(workDir, 'scene-0.png'));
+        }
         clipPaths.push(clipPath);
         continue;
       } catch (err) {
@@ -249,26 +258,9 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     }
 
     const framePath = path.join(workDir, `scene-${i}.png`);
-    let isRealIllustration = false;
+    await writeFile(framePath, renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, shotSeed));
 
-    if (illustrated) {
-      try {
-        const buffer = await generateSceneImage(scenes[i], { width: w, height: h });
-        await writeFile(framePath, buffer);
-        isRealIllustration = true;
-      } catch (err) {
-        console.warn(`[background] scene ${i} image generation failed, using gradient fallback:`, err.message);
-      }
-    }
-
-    if (!isRealIllustration) {
-      await writeFile(framePath, renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, shotSeed));
-    }
-
-    // real illustrations get a centered zoom (no clue where the subject
-    // is); gradient shots pan toward a varied off-center point for
-    // visible, distinct motion per shot.
-    const focus = isRealIllustration ? [0.5, 0.5] : FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
+    const focus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
     await zoomClip(framePath, clipPath, w, h, fps, durations[i], focus);
     clipPaths.push(clipPath);
   }
