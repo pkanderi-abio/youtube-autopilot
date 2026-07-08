@@ -6,10 +6,10 @@ Two parts:
   script generation → free TTS voiceover → generated background video →
   ffmpeg assembly → thumbnail → YouTube upload, scheduled via GitHub
   Actions cron with zero human review. Start here: `backend/README.md`.
-- **`frontend/`** — a static control-panel dashboard UI (`frontend/index.html`)
-  visualizing the pipeline, queue, channels, revenue, and settings. Demo
-  data today; see `frontend/README.md` for what it'd take to wire to
-  real backend state.
+- **`frontend/`** — a control-panel dashboard UI (`frontend/index.html`)
+  showing real pipeline/channel state pulled from the backend (publish
+  history, last run's actual per-stage status, recent workflow runs).
+  See `frontend/README.md` to run it.
 
 ## Pushing this to GitHub
 
