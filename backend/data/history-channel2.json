@@ -3,7 +3,8 @@
     "a viral moment people are talking about today",
     "a surprising everyday life hack",
     "a strange but true fact",
-    "Twinkle Twinkle Little Star"
+    "Twinkle Twinkle Little Star",
+    "Old MacDonald Had a Farm"
   ],
   "videos": [
     {
@@ -25,6 +26,11 @@
       "title": "Twinkle Twinkle Little Star in toddler-friendly nursery rhymes, counting, colors, anima...",
       "url": "https://youtu.be/eaF311Wn7Nc",
       "publishedAt": "2026-07-08T00:02:09.165Z"
+    },
+    {
+      "title": "Old MacDonald Had a Farm - Animal Sounds Sing Along",
+      "url": "https://youtu.be/bh3R2RbQZHc",
+      "publishedAt": "2026-07-08T00:14:44.389Z"
     }
   ]
 }
