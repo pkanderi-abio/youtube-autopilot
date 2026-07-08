@@ -9,7 +9,8 @@
     "Five Little Ducks",
     "Learning to count from 1 to 10",
     "Animal sounds for toddlers",
-    "Learning the colors of the rainbow"
+    "Learning the colors of the rainbow",
+    "Let's Count Together with Mary Had a Little Lamb"
   ],
   "videos": [
     {
@@ -61,6 +62,11 @@
       "title": "Rainbow Colors Song with Animals | Learn Red, Orange, Yellow & More",
       "url": "https://youtu.be/zrv2WGsacFs",
       "publishedAt": "2026-07-08T01:33:24.729Z"
+    },
+    {
+      "title": "Let's Count Together with Mary Had a Little Lamb",
+      "url": "https://youtu.be/J0lGB1fLw2w",
+      "publishedAt": "2026-07-08T09:19:57.245Z"
     }
   ]
 }
