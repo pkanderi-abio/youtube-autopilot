@@ -10,7 +10,8 @@
     "Learning to count from 1 to 10",
     "Animal sounds for toddlers",
     "Learning the colors of the rainbow",
-    "Let's Count Together with Mary Had a Little Lamb"
+    "Let's Count Together with Mary Had a Little Lamb",
+    "Rainbow Animals Counting Adventure"
   ],
   "videos": [
     {
@@ -67,6 +68,11 @@
       "title": "Let's Count Together with Mary Had a Little Lamb",
       "url": "https://youtu.be/J0lGB1fLw2w",
       "publishedAt": "2026-07-08T09:19:57.245Z"
+    },
+    {
+      "title": "Counting Rainbow Animals",
+      "url": "https://youtu.be/SI-F6AlXYL8",
+      "publishedAt": "2026-07-08T22:48:48.890Z"
     }
   ]
 }
