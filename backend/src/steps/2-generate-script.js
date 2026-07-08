@@ -20,6 +20,19 @@ function wordCount(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+// Mechanical safety net for the "no clickbait ALL CAPS" instruction,
+// which a small local model doesn't reliably follow (observed directly:
+// "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM"). Cheaper and more
+// reliable than hoping the model self-corrects.
+function fixAllCapsTitle(title) {
+  const letters = title.replace(/[^a-zA-Z]/g, '');
+  const upperCount = (title.match(/[A-Z]/g) || []).length;
+  if (letters.length > 0 && upperCount / letters.length > 0.6) {
+    return title.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  return title;
+}
+
 export async function generateScript(channel, topicInfo) {
   const durationHint = channel.format === 'short'
     ? 'roughly 110-150 words (about 45-55 seconds spoken)'
@@ -58,6 +71,11 @@ Angle: ${topicInfo.angle}
 Requirements:
 - Hook in the first sentence, no throat-clearing intro.
 - Conversational, punchy, plain language - written to be read aloud by a narrator.
+- The script must be EXPLICITLY about ${channel.niche} - don't just
+  narrate the topic in isolation (e.g. a plain sports recap or news
+  summary with no connection to the niche). Every script should sound
+  like it clearly belongs to this channel, not a generic video that
+  happens to have the channel's name slapped on it.
 - ${durationHint}.
 - ${closingLineHint}
 - Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.
@@ -83,11 +101,14 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     const script = await completeJSON(buildPrompt(lastWordCount), { maxTokens: channel.format === 'short' ? 1024 : 4096 });
     const words = wordCount(script.narration || '');
     if (!best || words > wordCount(best.narration)) best = script;
-    if (words >= minWords) return script;
+    if (words >= minWords) break;
     console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration too short (${words}/${minWords} min words), retrying`);
     lastWordCount = words;
   }
 
-  console.warn(`[script] all ${MAX_ATTEMPTS} attempts came in short - using the longest one (${wordCount(best.narration)} words)`);
+  if (wordCount(best.narration) < minWords) {
+    console.warn(`[script] all ${MAX_ATTEMPTS} attempts came in short - using the longest one (${wordCount(best.narration)} words)`);
+  }
+  best.title = fixAllCapsTitle(best.title);
   return best;
 }
