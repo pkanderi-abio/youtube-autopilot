@@ -2,10 +2,10 @@
   "channels": [
     {
       "id": "channel1",
-      "name": "Wanderlust Clips",
+      "name": "TeslaTravel",
       "niche": "trending travel & lifestyle moments",
       "format": "short",
-      "visualStyle": "gradient",
+      "visualStyle": "stockFootage",
       "madeForKids": false,
       "brandColorA": "#1b3a5c",
       "brandColorB": "#4f7dff",
@@ -18,7 +18,7 @@
       "name": "Rainbow Little Learners",
       "niche": "toddler-friendly nursery rhymes, counting, colors, animal sounds and simple sing-along stories",
       "format": "long",
-      "visualStyle": "illustrated",
+      "visualStyle": "stockFootage",
       "madeForKids": true,
       "brandColorA": "#ff6fae",
       "brandColorB": "#3ec6ff",

@@ -12,8 +12,9 @@ import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
 import { createCanvas } from 'canvas';
-import { writeFile, copyFile } from 'fs/promises';
+import { writeFile } from 'fs/promises';
 import { generateSceneImage } from '../lib/images.js';
+import { findStockFootageClip } from '../lib/stockFootage.js';
 
 // A handful of on-brand gradient looks + off-center focus points to
 // cycle through, so consecutive fallback/plain-gradient shots don't
@@ -168,6 +169,28 @@ async function zoomClip(framePath, outPath, w, h, fps, durationSeconds, focus) {
   ]);
 }
 
+// Real stock footage clip: cover-scale+crop to the target frame (never
+// distort aspect ratio), loop if the source is shorter than the shot's
+// duration, trim to exactly durationSeconds, and drop its own audio -
+// the final mix only ever uses the narration track, muxed in later by
+// assembleVideo. Encoded with the same params as zoomClip() (fps,
+// yuv420p, libx264 crf 18) so concatClips' `-c copy` demuxer can stitch
+// real-footage and gradient/illustration shots together in one video.
+async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds) {
+  await runFfmpeg([
+    '-y',
+    '-stream_loop', '-1',
+    '-i', sourcePath,
+    '-t', String(durationSeconds),
+    '-vf', `scale=w=${w}:h=${h}:force_original_aspect_ratio=increase,crop=${w}:${h},fps=${fps},format=yuv420p`,
+    '-an',
+    '-c:v', 'libx264',
+    '-crf', '18',
+    '-preset', 'medium',
+    outPath
+  ]);
+}
+
 function computeShotDurations(totalDuration, count) {
   const base = totalDuration / count;
   const durations = new Array(count).fill(base);
@@ -187,21 +210,14 @@ async function concatClips(clipPaths, workDir) {
   return outPath;
 }
 
-// pregeneratedImages: optional array (parallel to scenes) of file paths
-// for scene images already rendered elsewhere - e.g. by separate,
-// concurrent CI jobs (see generate-scene-cli.js). Self-hosted Stable
-// Diffusion is too slow per-image to generate 8-14 scenes serially
-// within one job's time budget, so the CI workflow fans image
-// generation out across parallel jobs and passes the results in here;
-// a missing/falsy entry for a given index falls back to generating it
-// inline (or to the gradient, same as any other failure).
-export async function generateBackground(channel, durationSeconds, workDir, scenes = [], pregeneratedImages = []) {
+export async function generateBackground(channel, durationSeconds, workDir, scenes = []) {
   const w = channel.format === 'short' ? 1080 : 1920;
   const h = channel.format === 'short' ? 1920 : 1080;
   const fps = 25;
 
   const illustrated = channel.visualStyle === 'illustrated' && scenes.length > 0;
-  const shotCount = illustrated ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
+  const stockFootage = channel.visualStyle === 'stockFootage' && scenes.length > 0;
+  const shotCount = (illustrated || stockFootage) ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
   const durations = computeShotDurations(durationSeconds, shotCount);
 
   // Every gradient variant/color/blob choice below is keyed off
@@ -217,13 +233,25 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   const clipPaths = [];
   for (let i = 0; i < shotCount; i++) {
     const shotSeed = runSeed + i;
+    const clipPath = path.join(workDir, `scene-${i}.mp4`);
+
+    if (stockFootage) {
+      try {
+        const sourcePath = path.join(workDir, `stock-source-${i}.mp4`);
+        const buffer = await findStockFootageClip(scenes[i], { width: w, height: h });
+        await writeFile(sourcePath, buffer);
+        await footageClip(sourcePath, clipPath, w, h, fps, durations[i]);
+        clipPaths.push(clipPath);
+        continue;
+      } catch (err) {
+        console.warn(`[background] scene ${i} stock footage failed, using gradient fallback:`, err.message);
+      }
+    }
+
     const framePath = path.join(workDir, `scene-${i}.png`);
     let isRealIllustration = false;
 
-    if (illustrated && pregeneratedImages[i]) {
-      await copyFile(pregeneratedImages[i], framePath);
-      isRealIllustration = true;
-    } else if (illustrated) {
+    if (illustrated) {
       try {
         const buffer = await generateSceneImage(scenes[i], { width: w, height: h });
         await writeFile(framePath, buffer);
@@ -241,7 +269,6 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     // is); gradient shots pan toward a varied off-center point for
     // visible, distinct motion per shot.
     const focus = isRealIllustration ? [0.5, 0.5] : FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
-    const clipPath = path.join(workDir, `scene-${i}.mp4`);
     await zoomClip(framePath, clipPath, w, h, fps, durations[i], focus);
     clipPaths.push(clipPath);
   }

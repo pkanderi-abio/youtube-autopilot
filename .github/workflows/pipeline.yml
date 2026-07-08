@@ -6,12 +6,11 @@ permissions:
 on:
   schedule:
     - cron: '0 14,2 * * *' # channel1: twice daily
-    - cron: '0 6 * * 3'    # channel2: once weekly (Wed 06:00 UTC) - illustrated
-                           # images are self-hosted Stable Diffusion on
-                           # GPU-less runners; see backend/README.md for why
-                           # this channel runs so much less often and why
-                           # image generation is split across parallel jobs
-                           # below instead of done serially in one job.
+    - cron: '0 6 * * 3'    # channel2: once weekly (Wed 06:00 UTC) - left at
+                           # this cadence for now; the schedule predates the
+                           # switch to real stock footage (was previously
+                           # throttled by slow self-hosted Stable Diffusion
+                           # generation) and could likely run more often now.
   workflow_dispatch:
     inputs:
       channel:
@@ -76,6 +75,7 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node src/run-pipeline.js channel1
       - name: Dump Ollama server log on failure
         if: failure()
@@ -107,18 +107,16 @@ jobs:
           echo "::error::could not push updated history after retries"
           exit 1
 
-  # --- channel2: illustrated visuals, split into prepare -> parallel
-  # image generation -> finish, so self-hosted Stable Diffusion (slow on
-  # a GPU-less runner) doesn't have to generate 8-14 scenes serially
-  # within one job's 6-hour hard limit. Wall-clock time for images ends
-  # up bounded by the slowest single image, not the sum of all of them. ---
-  prepare-channel2:
+  # --- channel2: was split into prepare -> parallel image generation ->
+  # finish, needed only because self-hosted Stable Diffusion was too slow
+  # to generate 8-14 illustrated scenes serially on a GPU-less runner.
+  # Now that this channel sources real stock footage (network downloads,
+  # not CPU inference), that slowness is gone and a single job is enough -
+  # same shape as publish-channel1. ---
+  publish-channel2:
     needs: plan
     if: contains(fromJson(needs.plan.outputs.channels), 'channel2')
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    outputs:
-      scene-indices: ${{ steps.prep.outputs.scene_indices }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -127,6 +125,8 @@ jobs:
       - name: Install dependencies
         working-directory: backend
         run: npm ci
+      - name: Install ffmpeg system libs (canvas native build)
+        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install Ollama
         run: curl -fsSL https://ollama.com/install.sh | sh
       - name: Cache Ollama models
@@ -146,109 +146,17 @@ jobs:
             sleep 1
           done
           ollama pull llama3.2
-      - name: Run prepare stage
-        id: prep
-        working-directory: backend
-        run: node src/run-pipeline-prepare.js channel2 prep-out
-      - name: Dump Ollama server log on failure
-        if: failure()
-        # Ollama runs as a systemd service (see "Start Ollama and pull
-        # model" above), not the foreground process a bare /tmp/ollama.log
-        # redirect would capture - its real stdout/stderr (including
-        # llama-server crash detail) is in the systemd journal.
-        run: sudo journalctl -u ollama --no-pager -n 300 || true
-      - uses: actions/upload-artifact@v4
-        with:
-          name: channel2-prep
-          path: backend/prep-out
-          retention-days: 1
-
-  generate-images-channel2:
-    needs: prepare-channel2
-    if: needs.prepare-channel2.outputs.scene-indices != '[]'
-    runs-on: ubuntu-latest
-    timeout-minutes: 300
-    strategy:
-      fail-fast: false
-      matrix:
-        scene: ${{ fromJson(needs.prepare-channel2.outputs.scene-indices) }}
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        working-directory: backend
-        run: npm ci
-      - uses: actions/download-artifact@v4
-        with:
-          name: channel2-prep
-          path: backend/prep-out
-      - name: Download stable-diffusion.cpp
-        working-directory: backend
-        run: |
-          gh release download --repo leejet/stable-diffusion.cpp --pattern '*Linux-Ubuntu-24.04-x86_64.zip' --output sd.zip --clobber
-          mkdir -p sd-bin
-          unzip -o sd.zip -d sd-bin
-          chmod +x sd-bin/sd-cli
-        env:
-          GH_TOKEN: ${{ github.token }}
-      - name: Cache Stable Diffusion model
-        uses: actions/cache@v4
-        with:
-          path: backend/sd-model
-          key: sd15-q8-v1
-      - name: Download Stable Diffusion model
-        working-directory: backend
-        run: |
-          mkdir -p sd-model
-          [ -f sd-model/sd15-q8_0.gguf ] || curl -L -o sd-model/sd15-q8_0.gguf "https://huggingface.co/gpustack/stable-diffusion-v1-5-GGUF/resolve/main/stable-diffusion-v1-5-Q8_0.gguf"
-      - name: Generate scene ${{ matrix.scene }}
-        working-directory: backend
-        env:
-          SD_CPP_BIN: ${{ github.workspace }}/backend/sd-bin/sd-cli
-          SD_CPP_MODEL: ${{ github.workspace }}/backend/sd-model/sd15-q8_0.gguf
-          LD_LIBRARY_PATH: ${{ github.workspace }}/backend/sd-bin
-        run: node src/generate-scene-cli.js prep-out/script.json ${{ matrix.scene }} scene-${{ matrix.scene }}.png 1920 1080
-      - uses: actions/upload-artifact@v4
-        with:
-          name: scene-image-${{ matrix.scene }}
-          path: backend/scene-${{ matrix.scene }}.png
-          retention-days: 1
-          if-no-files-found: ignore
-
-  finish-channel2:
-    needs: [prepare-channel2, generate-images-channel2]
-    if: always() && needs.prepare-channel2.result == 'success'
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        working-directory: backend
-        run: npm ci
-      - name: Install ffmpeg system libs (canvas native build)
-        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-      - uses: actions/download-artifact@v4
-        with:
-          name: channel2-prep
-          path: backend/prep-out
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: scene-image-*
-          path: backend/scene-images
-          merge-multiple: true
-        continue-on-error: true
-      - name: Run finish stage
+      - name: Run pipeline for channel2
         working-directory: backend
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
-        run: node src/run-pipeline-finish.js channel2 prep-out scene-images
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node src/run-pipeline.js channel2
+      - name: Dump Ollama server log on failure
+        if: failure()
+        run: sudo journalctl -u ollama --no-pager -n 300 || true
       - name: Commit updated history
         working-directory: backend
         run: |

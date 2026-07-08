@@ -58,6 +58,32 @@ function closingLineHint(channel) {
     : 'End with a short line that invites a comment or follow, no generic "like and subscribe".';
 }
 
+// Both illustrated channels and stock-footage channels need a per-shot
+// "scenes" array - the field is reused for two different downstream
+// purposes (an illustration prompt vs. a stock-footage search query),
+// which is why the instructions below ask for short concrete phrases
+// rather than full descriptive sentences: that phrasing works well as
+// either an illustration prompt or a Pexels search term.
+function needsScenes(channel) {
+  return channel.visualStyle === 'illustrated' || channel.visualStyle === 'stockFootage';
+}
+
+function scenesFields(channel, countHint) {
+  if (!needsScenes(channel)) return { hint: '', instructions: '' };
+
+  return {
+    hint: `
+  "scenes": ["short visual phrase 1", "short visual phrase 2", "..."],`,
+    instructions: `
+- Also produce a "scenes" array: ${countHint} short visual phrases (3-6
+  words each, concrete nouns, e.g. "aerial coastal city sunset" or
+  "toddler stacking colorful blocks") describing what should be shown on
+  screen at each part of the video, in order. No on-screen text, no
+  narration text, no full sentences - just short, concrete, literal
+  descriptions of what the shot shows.`
+  };
+}
+
 // ---- short-form (channel1): single-shot generation - unchanged from
 // before, since real production evidence only ever showed this format
 // failing due to the Ollama server crashing, not the model undershooting
@@ -65,6 +91,7 @@ function closingLineHint(channel) {
 async function generateShortScript(channel, topicInfo) {
   const durationHint = 'roughly 110-150 words (about 45-55 seconds spoken)';
   const minWords = MIN_WORDS.short;
+  const { hint: scenesHint, instructions: scenesInstructions } = scenesFields(channel, '5-8');
 
   function buildPrompt(previousAttemptWordCount) {
     const lengthEmphasis = previousAttemptWordCount
@@ -84,7 +111,7 @@ Requirements:
 - ${durationHint}.
 - ${closingLineHint(channel)}
 - Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.
-- Create 3-5 high-quality hashtags based on the topic and channel niche.
+- Create 3-5 high-quality hashtags based on the topic and channel niche.${scenesInstructions}
 
 Return JSON:
 {
@@ -93,7 +120,7 @@ Return JSON:
   "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],
   "description": "2-3 sentence YouTube description",
   "tags": ["tag1", "tag2", "tag3"],
-  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"]
+  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],${scenesHint}
 }
 
 captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.${lengthEmphasis}
@@ -124,18 +151,7 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
 // ---- long-form (channel2): outline + metadata first, then narration
 // generated section-by-section and concatenated. ----
 async function generateScriptOutline(channel, topicInfo) {
-  const scenesHint = channel.visualStyle === 'illustrated'
-    ? `
-  "scenes": ["short visual description 1", "short visual description 2", "..."],`
-    : '';
-
-  const scenesInstructions = channel.visualStyle === 'illustrated'
-    ? `
-- Also produce a "scenes" array: 8-14 short visual descriptions (for an
-  illustrator), covering the video's progression in order. Each should
-  describe a single clear scene/character/action - no on-screen text, no
-  narration text, just what should be drawn.`
-    : '';
+  const { hint: scenesHint, instructions: scenesInstructions } = scenesFields(channel, '8-14');
 
   const prompt = `
 You are planning a spoken-word YouTube video for the channel "${channel.name}" (${channel.niche}).
