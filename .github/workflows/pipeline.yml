@@ -105,7 +105,11 @@ jobs:
           # `ollama serve &` here just fails instantly with "address
           # already in use" and does nothing useful) - just wait for the
           # systemd-managed instance to be ready, then pull the model.
-          for i in $(seq 1 30); do
+          # 60s (was 30s): observed one real run where the service just
+          # hadn't come up yet at the 30s mark, failing the whole job -
+          # a slow-starting systemd unit, not a real error, so more
+          # margin here is cheap insurance.
+          for i in $(seq 1 60); do
             curl -sf http://127.0.0.1:11434/api/version && break
             sleep 1
           done
@@ -131,19 +135,4 @@ jobs:
         run: |
           git config user.name "autopilot-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/
-          git diff --staged --quiet && exit 0
-          git commit -m "chore: update history for ${{ matrix.channel }} (${{ matrix.format }}) [skip ci]"
-          # Retries the rebase+push a few times: multiple matrix jobs (or
-          # a manual re-trigger overlapping a scheduled run) can finish
-          # around the same time and race on the same history file.
-          for attempt in 1 2 3 4 5; do
-            if git pull --rebase --autostash && git push; then
-              exit 0
-            fi
-            echo "push attempt $attempt failed, retrying..."
-            git rebase --abort 2>/dev/null || true
-            sleep $((attempt * 5))
-          done
-          echo "::error::could not push updated history after retries"
-          exit 1
+          node scripts/merge-and-push-history.js ${{ matrix.channel }}
