@@ -13,7 +13,8 @@
     "Let's Count Together with Mary Had a Little Lamb",
     "Rainbow Animals Counting Adventure",
     "The Ant and the Grasshopper",
-    "The Scorpion and the Frog"
+    "The Scorpion and the Frog",
+    "The Fox and the Grapes, an honest lesson in not judging others' success"
   ],
   "videos": [
     {
@@ -86,6 +87,12 @@
       "url": "https://youtu.be/cKNEKoZWpQU",
       "format": "short",
       "publishedAt": "2026-07-09T18:14:48.738Z"
+    },
+    {
+      "title": "Why Foxes Can'T Resist Comparing Themselves",
+      "url": "https://youtu.be/aV6PUaFD3u8",
+      "format": "long",
+      "publishedAt": "2026-07-09T18:21:29.000Z"
     }
   ]
 }
