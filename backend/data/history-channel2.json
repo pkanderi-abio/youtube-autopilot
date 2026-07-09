@@ -15,7 +15,8 @@
     "The Ant and the Grasshopper",
     "The Scorpion and the Frog",
     "The Fox and the Grapes, an honest lesson in not judging others' success",
-    "The Psychology Behind Red-Card Controversies in Sports"
+    "The Psychology Behind Red-Card Controversies in Sports",
+    "Red Sox Fans React to Yankees' Comeback Win at Fenway Park"
   ],
   "videos": [
     {
@@ -100,6 +101,12 @@
       "url": "https://youtu.be/LpkdsbivphE",
       "format": "short",
       "publishedAt": "2026-07-09T19:11:58.180Z"
+    },
+    {
+      "title": "Yankees' Epic Collapse at Fenway",
+      "url": "https://youtu.be/RgC4KKVXjRc",
+      "format": "long",
+      "publishedAt": "2026-07-09T19:24:56.331Z"
     }
   ]
 }
