@@ -22,7 +22,8 @@
     "Chase Burns' Favorite Hidden Gems in Los Angeles' Surprising Outdoor Spaces",
     "Exploring the Dark Side of Mexico's Ancient Ruins",
     "Exploring NYC's Best Weather-Resistant Cafes for a Perfect Winter Day Out",
-    "The Red Card Heard Around the World: A Look at Quansah's Controversial Moment and Its Impact on Social Media"
+    "The Red Card Heard Around the World: A Look at Quansah's Controversial Moment and Its Impact on Social Media",
+    "Red Sox Nation's Best Kept Secret: How Pittsburgh's Weather Inspired a Baseball Legend's Comeback"
   ],
   "videos": [
     {
@@ -141,6 +142,12 @@
       "url": "https://youtu.be/bDU51_GMJD4",
       "format": "short",
       "publishedAt": "2026-07-09T19:15:06.186Z"
+    },
+    {
+      "title": "Pirates Of The Pennsylvania",
+      "url": "https://youtu.be/1S29VqTPclY",
+      "format": "long",
+      "publishedAt": "2026-07-09T19:24:00.048Z"
     }
   ]
 }
