@@ -12,7 +12,8 @@
     "Learning the colors of the rainbow",
     "Let's Count Together with Mary Had a Little Lamb",
     "Rainbow Animals Counting Adventure",
-    "The Ant and the Grasshopper"
+    "The Ant and the Grasshopper",
+    "The Scorpion and the Frog"
   ],
   "videos": [
     {
@@ -79,6 +80,12 @@
       "title": "The Ant And The Grasshopper: A Lesson In Preparation",
       "url": "https://youtu.be/FhaDvf_xL30",
       "publishedAt": "2026-07-08T23:55:57.741Z"
+    },
+    {
+      "title": "The Scorpion and the Frog",
+      "url": "https://youtu.be/cKNEKoZWpQU",
+      "format": "short",
+      "publishedAt": "2026-07-09T18:14:48.738Z"
     }
   ]
 }
