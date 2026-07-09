@@ -14,7 +14,8 @@
     "Rainbow Animals Counting Adventure",
     "The Ant and the Grasshopper",
     "The Scorpion and the Frog",
-    "The Fox and the Grapes, an honest lesson in not judging others' success"
+    "The Fox and the Grapes, an honest lesson in not judging others' success",
+    "The Psychology Behind Red-Card Controversies in Sports"
   ],
   "videos": [
     {
@@ -93,6 +94,12 @@
       "url": "https://youtu.be/aV6PUaFD3u8",
       "format": "long",
       "publishedAt": "2026-07-09T18:21:29.000Z"
+    },
+    {
+      "title": "The Heat of the Moment",
+      "url": "https://youtu.be/LpkdsbivphE",
+      "format": "short",
+      "publishedAt": "2026-07-09T19:11:58.180Z"
     }
   ]
 }
