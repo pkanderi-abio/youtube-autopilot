@@ -1,7 +1,9 @@
-// Step 5 - mux the generated background with the voiceover, burning
-// captionLines in as timed on-screen text (evenly spaced across the
-// audio's actual duration - no word-level alignment, but reads fine
-// for short-form punchy lines).
+// Step 5 - mux the generated background with the voiceover. Can
+// optionally burn captionLines in as timed on-screen text (evenly
+// spaced across the audio's actual duration - no word-level alignment,
+// but reads fine for short-form punchy lines) if a caller passes them -
+// run-pipeline.js currently doesn't, so videos publish without
+// always-visible on-screen captions.
 import ffmpeg from 'fluent-ffmpeg';
 import ffmpegPath from 'ffmpeg-static';
 import ffprobePath from 'ffprobe-static';

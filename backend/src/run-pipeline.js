@@ -60,7 +60,7 @@ async function run(channelId, formatOverride) {
 
     console.log('[5/7] assembling final video...');
     const videoPath = await assembleVideo({
-      backgroundPath, audioPath, captionLines: script.captionLines, workDir
+      backgroundPath, audioPath, workDir
     });
 
     console.log('[6/7] generating thumbnail...');
