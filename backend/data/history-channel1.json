@@ -20,7 +20,8 @@
     "Discovering Fiji's Secret Beaches: A Diving Adventure with Lauren Sanchez and Her Family",
     "Designing a luxurious cabin for Conor McGregor's private jet",
     "Chase Burns' Favorite Hidden Gems in Los Angeles' Surprising Outdoor Spaces",
-    "Exploring the Dark Side of Mexico's Ancient Ruins"
+    "Exploring the Dark Side of Mexico's Ancient Ruins",
+    "Exploring NYC's Best Weather-Resistant Cafes for a Perfect Winter Day Out"
   ],
   "videos": [
     {
@@ -127,6 +128,12 @@
       "title": "Beyond the Ruins: Uncovering Mexico's Dark Past",
       "url": "https://youtu.be/OACy_7QxgkA",
       "publishedAt": "2026-07-09T06:12:27.406Z"
+    },
+    {
+      "title": "Cozy Winter In Nyc",
+      "url": "https://youtu.be/rNWImmW_7a4",
+      "format": "long",
+      "publishedAt": "2026-07-09T18:23:09.935Z"
     }
   ]
 }
