@@ -74,7 +74,21 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         working-directory: backend
-        run: npm ci
+        run: |
+          # npm ci itself is safe to retry (always a clean reinstall from
+          # the lockfile) - observed directly in production: ffmpeg-static's
+          # postinstall binary download hit a transient 504 from GitHub's
+          # release CDN and failed the whole job before the pipeline even
+          # started.
+          for attempt in 1 2 3; do
+            if npm ci; then
+              exit 0
+            fi
+            echo "npm ci attempt $attempt failed, retrying..."
+            sleep $((attempt * 10))
+          done
+          echo "::error::npm ci failed after retries"
+          exit 1
       - name: Install ffmpeg system libs (canvas native build)
         run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install Ollama
