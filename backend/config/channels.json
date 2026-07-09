@@ -3,51 +3,28 @@
     {
       "id": "channel1",
       "name": "TeslaTravel",
-      "niche": "trending travel & lifestyle moments",
+      "niche": "trending topics and viral moments across culture, entertainment, sports, and everyday life",
       "format": "short",
       "visualStyle": "stockFootage",
       "madeForKids": false,
       "brandColorA": "#1b3a5c",
       "brandColorB": "#4f7dff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL1",
-      "categoryId": "19",
-      "tags": ["travel", "shorts", "trending"]
+      "categoryId": "24",
+      "tags": ["trending", "shorts", "viral"]
     },
     {
       "id": "channel2",
       "name": "Storytime Fables",
-      "niche": "narrated animal fables and life-lesson stories for children, each with a clear, simple moral takeaway",
+      "niche": "trending topics and viral moments across culture, entertainment, sports, and everyday life",
       "format": "long",
       "visualStyle": "stockFootage",
       "madeForKids": true,
-      "closingStyle": "moral",
       "brandColorA": "#ff6fae",
       "brandColorB": "#3ec6ff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
-      "categoryId": "27",
-      "tags": ["fables", "lifelessons", "moralstories", "kidsstories", "storytime"],
-      "topicPool": [
-        "The Tortoise and the Hare",
-        "The Boy Who Cried Wolf",
-        "The Ant and the Grasshopper",
-        "The Fox and the Grapes",
-        "The Lion and the Mouse",
-        "The Goose That Laid the Golden Eggs",
-        "The Wolf in Sheep's Clothing",
-        "The Crow and the Pitcher",
-        "The Town Mouse and the Country Mouse",
-        "The Dog and Its Reflection",
-        "The North Wind and the Sun",
-        "The Bundle of Sticks",
-        "The Farmer and the Snake",
-        "The Milkmaid and Her Pail",
-        "The Scorpion and the Frog",
-        "The Owl Who Learned to Listen",
-        "The Elephant Who Forgot His Strength",
-        "The River That Refused to Bend",
-        "The Old Oak and the Reeds",
-        "The Peacock and the Crane"
-      ]
+      "categoryId": "24",
+      "tags": ["trending", "viral", "kids"]
     }
   ]
 }
