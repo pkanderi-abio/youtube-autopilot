@@ -19,7 +19,8 @@
     "jac caglianone",
     "Discovering Fiji's Secret Beaches: A Diving Adventure with Lauren Sanchez and Her Family",
     "Designing a luxurious cabin for Conor McGregor's private jet",
-    "Chase Burns' Favorite Hidden Gems in Los Angeles' Surprising Outdoor Spaces"
+    "Chase Burns' Favorite Hidden Gems in Los Angeles' Surprising Outdoor Spaces",
+    "Exploring the Dark Side of Mexico's Ancient Ruins"
   ],
   "videos": [
     {
@@ -121,6 +122,11 @@
       "title": "Chase Burns' Hidden LA Gems",
       "url": "https://youtu.be/rNDoVrOX7-U",
       "publishedAt": "2026-07-08T23:35:50.117Z"
+    },
+    {
+      "title": "Beyond the Ruins: Uncovering Mexico's Dark Past",
+      "url": "https://youtu.be/OACy_7QxgkA",
+      "publishedAt": "2026-07-09T06:12:27.406Z"
     }
   ]
 }
