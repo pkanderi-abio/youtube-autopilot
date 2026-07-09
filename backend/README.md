@@ -1,9 +1,10 @@
 # YouTube Autopilot — backend
 
-A fully autonomous pipeline that, on a schedule, picks a trending topic,
-writes a script, generates a voiceover, assembles a video, generates a
-thumbnail, and publishes it straight to YouTube — for 2 channels, with
-no human review step, running on free GitHub Actions cron.
+A fully autonomous pipeline that, on a schedule, picks a topic, writes a
+script, generates a voiceover, assembles a video, generates a thumbnail,
+and publishes it straight to YouTube — for 2 channels, each publishing
+both short-form and long-form videos on its own cadence, with no human
+review step, running on free GitHub Actions cron.
 
 ## What this actually is (read this first)
 
@@ -55,8 +56,8 @@ this pipeline has no human checkpoint:
   LLMs (especially a small self-hosted one) can still get things wrong,
   and more often than a larger hosted model would.
 - Keep an eye on YouTube Studio for any policy strikes.
-- **Kids content (`madeForKids: true` channels, e.g. Rainbow Little
-  Learners)**: this sets `selfDeclaredMadeForKids: true` on upload, which
+- **Kids content (`madeForKids: true` channels, e.g. Storytime Fables)**:
+  this sets `selfDeclaredMadeForKids: true` on upload, which
   YouTube enforces by disabling comments, personalized ads, notifications,
   and end screens/cards on those videos — expected, not a bug. Kids
   content is also one of YouTube's most heavily moderated categories;
@@ -96,25 +97,36 @@ upload costs 1,600 units, so roughly 6 uploads/day/project before
 you'd need to request a quota increase.
 
 ### 4. Configure your channels
-Edit `config/channels.json` — names, niche, format (`short` or `long`),
-`visualStyle` (`gradient` or `stockFootage`), `madeForKids`, brand colors,
-YouTube category ID. Renaming a channel here only changes what's fed into
-script generation — it does **not** rename the actual YouTube channel or
-handle, which you set manually in YouTube Studio.
+Edit `config/channels.json` — names, niche, default `format` (`short` or
+`long` - see below), `visualStyle` (`gradient` or `stockFootage`),
+`madeForKids`, brand colors, YouTube category ID. Two optional fields
+that only matter for evergreen (non-trending) content:
+- `topicPool` — a curated list of topics to draw from instead of daily
+  trending searches (e.g. classic fables, nursery rhymes). Omit this to
+  use `src/lib/trends.js` instead.
+- `closingStyle` — `"moral"` for a story-lesson ending, otherwise falls
+  back to a kids-safe "watch again" line (if `madeForKids`) or a
+  comment/follow CTA.
+
+Renaming a channel here only changes what's fed into script generation
+— it does **not** rename the actual YouTube channel or handle, which
+you set manually in YouTube Studio.
 
 ### 5. Deploying
 Push this repo to GitHub (`package.json` and `.github/` at the repo
 root). Add the YouTube + Pexels secrets above under Settings → Secrets
 and variables → Actions. The workflow
 (`.github/workflows/pipeline.yml`) runs automatically on its cron
-schedule, or trigger it manually from the Actions tab.
+schedule, or trigger it manually from the Actions tab (optionally
+scoped to one channel and/or one format via the workflow's inputs).
 
 ## Running locally (for testing)
 ```
 npm install
 cp .env.example .env   # fill in YouTube + Pexels values; Ollama settings are optional locally
 ollama pull llama3.2
-npm run run -- channel1
+npm run run -- channel1          # uses the channel's default format
+npm run run -- channel1 long     # override: publish a long-form video instead
 ```
 
 ## Cost estimate
@@ -122,14 +134,16 @@ npm run run -- channel1
   API costs, period. Pexels' video search API is free within its
   registered-key tier.
 - YouTube Data API: free within default quota.
-- **GitHub Actions compute minutes** are the one real resource here:
-  this private repo gets 2,000 free minutes/month. Both channels are
-  now a single job each (topic → script → voice → stock-footage
-  download → assemble → upload) - channel2's weekly cadence predates
-  the switch to stock footage (it used to be throttled by slow
-  self-hosted Stable Diffusion generation) and could likely be
-  increased now; check Actions usage under Settings → Billing before
-  bumping the cron schedule in `.github/workflows/pipeline.yml`.
+- **GitHub Actions compute minutes**: this repo is public, so Actions
+  minutes are unlimited and free regardless of schedule - there's no
+  billing risk here at all. The cron cadence in
+  `.github/workflows/pipeline.yml` (shorts run often since they're cheap,
+  ~8-12 min/run; long-form runs a few times/week since it's much more
+  expensive, ~28-30 min/run - chunked script generation plus longer
+  voice/footage work) is about content pacing and avoiding a
+  spammy-looking channel, not compute budget. If you ever make the repo
+  private again, re-check usage under Settings → Billing, since the
+  2,000 free minutes/month cap would apply again.
 
 ## Extending later
 - `src/lib/stockFootage.js` → swap in a paid AI video-generation API
@@ -148,10 +162,14 @@ npm run run -- channel1
 
 ## Files
 - `src/steps/1-discover-topic.js` … `7-upload-youtube.js` — the pipeline stages
-- `src/run-pipeline.js` — orchestrator, run once per channel
+- `src/run-pipeline.js` — orchestrator; `node src/run-pipeline.js <channelId> [format]`
 - `src/lib/` — LLM (Ollama), stock footage (Pexels), YouTube auth,
   trends, and history-state helpers
 - `scripts/get-refresh-token.js` — one-time OAuth helper
 - `config/channels.json` — per-channel config
-- `data/history-<channel>.json` — auto-generated memory of used topics/videos
-- `.github/workflows/pipeline.yml` — cron schedule + Ollama setup, one job per channel
+- `data/history-<channel>.json` — auto-generated memory of used topics/videos,
+  shared across both formats so topics never repeat between a channel's
+  short and long-form videos
+- `.github/workflows/pipeline.yml` — cron schedule (one entry per
+  channel+format combination) + Ollama setup; a single matrix `publish`
+  job fans out over whichever (channel, format) pairs that trigger maps to

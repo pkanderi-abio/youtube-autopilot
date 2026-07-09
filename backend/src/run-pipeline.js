@@ -1,5 +1,8 @@
 // Orchestrator - chains steps 1-7 for a single channel, end to end.
-// Usage: node src/run-pipeline.js <channelId>
+// Usage: node src/run-pipeline.js <channelId> [format]
+// format ("short" | "long") overrides the channel's default - each
+// channel can publish both a short and a long-form video, sharing one
+// history/usedTopics list so topics never repeat across formats.
 import 'dotenv/config';
 import { mkdtemp, rm } from 'fs/promises';
 import { tmpdir } from 'os';
@@ -24,12 +27,16 @@ async function ffprobeDuration(file) {
   });
 }
 
-async function run(channelId) {
+async function run(channelId, formatOverride) {
   const channels = JSON.parse(await readFile(path.resolve('config/channels.json'), 'utf8')).channels;
-  const channel = channels.find(c => c.id === channelId);
-  if (!channel) throw new Error(`Unknown channel id: ${channelId}`);
+  const baseChannel = channels.find(c => c.id === channelId);
+  if (!baseChannel) throw new Error(`Unknown channel id: ${channelId}`);
+  if (formatOverride && !['short', 'long'].includes(formatOverride)) {
+    throw new Error(`Invalid format: ${formatOverride} (expected "short" or "long")`);
+  }
+  const channel = formatOverride ? { ...baseChannel, format: formatOverride } : baseChannel;
 
-  console.log(`[pipeline] starting run for ${channel.name} (${channel.id})`);
+  console.log(`[pipeline] starting run for ${channel.name} (${channel.id}, ${channel.format})`);
   const history = await loadHistory(channel.id);
   const workDir = await mkdtemp(path.join(tmpdir(), `autopilot-${channel.id}-`));
 
@@ -71,7 +78,7 @@ async function run(channelId) {
 
     history.usedTopics.push(topicInfo.topic);
     history.videos.push({
-      title: script.title, url: upload.url, publishedAt: new Date().toISOString()
+      title: script.title, url: upload.url, format: channel.format, publishedAt: new Date().toISOString()
     });
     await saveHistory(channel.id, history);
 
@@ -81,12 +88,12 @@ async function run(channelId) {
   }
 }
 
-const channelId = process.argv[2];
+const [channelId, formatOverride] = process.argv.slice(2);
 if (!channelId) {
-  console.error('Usage: node src/run-pipeline.js <channelId>');
+  console.error('Usage: node src/run-pipeline.js <channelId> [format]');
   process.exit(1);
 }
-run(channelId).catch((err) => {
+run(channelId, formatOverride).catch((err) => {
   console.error('[pipeline] FAILED:', err);
   process.exit(1);
 });
