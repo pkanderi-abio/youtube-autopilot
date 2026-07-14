@@ -20,7 +20,8 @@
     "Why the recent NFL player's bold fashion choices are redefining style in sports culture",
     "The Cultural Significance of Bridge Celebrations in Modern Pop Culture",
     "The Psychology Behind Why We Can't Stop Talking About Jason Statham's New Amazon Show",
-    "The Viral Sensation Behind KFC's Popcorn Chicken Craze: A Cultural Phenomenon Explained"
+    "The Viral Sensation Behind KFC's Popcorn Chicken Craze: A Cultural Phenomenon Explained",
+    "The Rise of Robot Influencers and Their Impact on Social Media Culture"
   ],
   "videos": [
     {
@@ -135,6 +136,12 @@
       "url": "https://youtu.be/TfnfXVkIbk4",
       "format": "short",
       "publishedAt": "2026-07-13T21:09:45.716Z"
+    },
+    {
+      "title": "Robots Take Over Social Media",
+      "url": "https://youtu.be/oz8myQhMjCc",
+      "format": "long",
+      "publishedAt": "2026-07-14T11:54:09.221Z"
     }
   ]
 }
