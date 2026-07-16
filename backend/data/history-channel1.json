@@ -35,7 +35,8 @@
     "What's the real reason Matt Damon and Cameron Diaz's infamous rom-com chemistry never made it to a sequel?",
     "The Royal Treatment: Kate Middleton's Princess Charlotte Wins Wimbledon Fans Over",
     "What's Behind the Viral Reaction to Sylvester Stallone's Career Resurgence?",
-    "The Rise of Luxury SUVs in Hipster Culture: A Look at the 1973 Ford Bronco Revival"
+    "The Rise of Luxury SUVs in Hipster Culture: A Look at the 1973 Ford Bronco Revival",
+    "The Stock Market's Wild Ride: How Trump's Truth Social Promotions Affected Wall Street"
   ],
   "videos": [
     {
@@ -232,6 +233,12 @@
       "url": "https://youtu.be/pxFN0yGKQLI",
       "format": "short",
       "publishedAt": "2026-07-16T05:03:03.117Z"
+    },
+    {
+      "title": "The Truth Social Trade War",
+      "url": "https://youtu.be/2PRqiU7O7T0",
+      "format": "short",
+      "publishedAt": "2026-07-16T15:36:32.001Z"
     }
   ]
 }
