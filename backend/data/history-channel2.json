@@ -27,7 +27,8 @@
     "The Psychology Behind Bubba Wallace's NASCAR Controversy and Its Impact on Racing Culture",
     "The Psychology Behind Why Celebrities are Getting Suspended from White House Events for Having Tattoos",
     "Why Will Smith's Oscars Slap Was a Game-Changer in Hollywood",
-    "What social media is saying about the NYC weather tornado warning and how it's bringing people together in unexpected ways"
+    "What social media is saying about the NYC weather tornado warning and how it's bringing people together in unexpected ways",
+    "The Cultural Impact of Ezra Elliott's 'Wildfire', A Viral Music Video That Explores Climate Anxiety and Youth Anger"
   ],
   "videos": [
     {
@@ -184,6 +185,12 @@
       "url": "https://youtu.be/o64lE9Bfxfw",
       "format": "long",
       "publishedAt": "2026-07-18T11:24:53.596Z"
+    },
+    {
+      "title": "The Wildfire Effect",
+      "url": "https://youtu.be/Mwg1b9W9K8M",
+      "format": "short",
+      "publishedAt": "2026-07-18T21:01:46.571Z"
     }
   ]
 }
