@@ -46,7 +46,8 @@
     "The most unlikely places where Cyclospora is being found in produce",
     "The Dark History of Sports in Video Games: From Unsettling Realism to Glorious Representation",
     "The Rise of 'Stan' Culture in Professional Tennis",
-    "Rebel Wilson's Hilarious Reaction to Ben Affleck Getting Roasted by Jimmy Kimmel"
+    "Rebel Wilson's Hilarious Reaction to Ben Affleck Getting Roasted by Jimmy Kimmel",
+    "The Impact of Midterm Election Outages on America's Tech Industry"
   ],
   "videos": [
     {
@@ -309,6 +310,12 @@
       "url": "https://youtu.be/LAGm1QSpb8M",
       "format": "short",
       "publishedAt": "2026-07-22T05:22:07.773Z"
+    },
+    {
+      "title": "Midterm Mayhem: How One Power Outage Exposed America's Tech Weakness",
+      "url": "https://youtu.be/KqaxO2d_mN4",
+      "format": "short",
+      "publishedAt": "2026-07-22T15:36:15.674Z"
     }
   ]
 }
