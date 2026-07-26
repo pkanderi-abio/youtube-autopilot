@@ -137,6 +137,295 @@ function runFfmpeg(args) {
   });
 }
 
+// ---- procedural cartoon animation (visualStyle: "cartoonAnimation") ----
+// Draws bright, kid-friendly moving shapes per frame using node-canvas
+// and streams each PNG straight into ffmpeg over image2pipe - no temp
+// PNGs on disk. Each shot classifies its scene text (number / color /
+// letter / default) and picks a scene-appropriate renderer, so a
+// "counting from 1 to 3" script produces a big animated "3" surrounded
+// by 3 orbiting shapes, "red apple" produces a red-tinted background
+// with a red central shape, etc. Fully $0, no external assets, and
+// the encoder params match footageClip/zoomClip so the resulting mp4
+// concats cleanly with any other clip type in the same video.
+
+const KID_COLORS = {
+  red: '#e63946', blue: '#457b9d', green: '#2a9d8f', yellow: '#f1c40f',
+  orange: '#f39c12', purple: '#8e44ad', pink: '#ff6f91',
+  brown: '#7c4a1f'
+};
+
+const NUMBER_WORDS = {
+  one: 1, two: 2, three: 3, four: 4, five: 5,
+  six: 6, seven: 7, eight: 8, nine: 9, ten: 10
+};
+
+function classifyCartoonScene(text) {
+  const lower = (text || '').toLowerCase();
+  const digit = (text || '').match(/\b(\d+)\b/);
+  if (digit) {
+    const n = parseInt(digit[1], 10);
+    if (n >= 1 && n <= 20) return { kind: 'number', value: n };
+  }
+  for (const [word, val] of Object.entries(NUMBER_WORDS)) {
+    if (new RegExp('\\b' + word + '\\b').test(lower)) return { kind: 'number', value: val };
+  }
+  for (const [word, hex] of Object.entries(KID_COLORS)) {
+    if (new RegExp('\\b' + word + '\\b').test(lower)) return { kind: 'color', hex };
+  }
+  const letter = lower.match(/\bletter\s+([a-z])\b/);
+  if (letter) return { kind: 'letter', value: letter[1].toUpperCase() };
+  return { kind: 'default' };
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+function drawStar(ctx, cx, cy, r, color) {
+  ctx.fillStyle = color;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = Math.max(2, r * 0.08);
+  ctx.beginPath();
+  for (let i = 0; i < 10; i++) {
+    const rr = i % 2 === 0 ? r : r * 0.42;
+    const angle = -Math.PI / 2 + i * (Math.PI / 5);
+    const x = cx + Math.cos(angle) * rr;
+    const y = cy + Math.sin(angle) * rr;
+    if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+}
+
+function drawHeart(ctx, cx, cy, r, color) {
+  ctx.fillStyle = color;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = Math.max(2, r * 0.08);
+  ctx.beginPath();
+  ctx.moveTo(cx, cy + r * 0.3);
+  ctx.bezierCurveTo(cx + r, cy - r * 0.6, cx + r * 1.5, cy + r * 0.3, cx, cy + r);
+  ctx.bezierCurveTo(cx - r * 1.5, cy + r * 0.3, cx - r, cy - r * 0.6, cx, cy + r * 0.3);
+  ctx.closePath();
+  ctx.fill();
+  ctx.stroke();
+}
+
+function drawCircle(ctx, cx, cy, r, color) {
+  ctx.fillStyle = color;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = Math.max(2, r * 0.08);
+  ctx.beginPath();
+  ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.stroke();
+}
+
+function drawSquare(ctx, cx, cy, r, color, angle = 0) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(angle);
+  ctx.fillStyle = color;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = Math.max(2, r * 0.08);
+  ctx.fillRect(-r, -r, r * 2, r * 2);
+  ctx.strokeRect(-r, -r, r * 2, r * 2);
+  ctx.restore();
+}
+
+function drawShape(ctx, kind, cx, cy, r, color, angle = 0) {
+  if (kind === 0) drawCircle(ctx, cx, cy, r, color);
+  else if (kind === 1) drawStar(ctx, cx, cy, r, color);
+  else if (kind === 2) drawHeart(ctx, cx, cy, r, color);
+  else drawSquare(ctx, cx, cy, r, color, angle);
+}
+
+function drawSceneCaption(ctx, w, h, text) {
+  if (!text) return;
+  const isPortrait = h > w;
+  const fontSize = Math.round((isPortrait ? w : h) * 0.055);
+  ctx.font = `bold ${fontSize}px sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  const padding = fontSize * 0.6;
+  const measured = ctx.measureText(text);
+  const pillW = Math.min(w * 0.92, measured.width + padding * 2);
+  const pillH = fontSize * 1.6;
+  const pillX = (w - pillW) / 2;
+  const pillY = h - pillH - h * 0.05;
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.94)';
+  ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
+  ctx.lineWidth = 3;
+  roundRect(ctx, pillX, pillY, pillW, pillH, pillH / 2);
+  ctx.fill();
+  ctx.stroke();
+
+  ctx.fillStyle = '#2b2b2b';
+  ctx.fillText(text, w / 2, pillY + pillH / 2);
+}
+
+function drawNumberScene(ctx, w, h, n, t, seed) {
+  const bounce = Math.sin(t * Math.PI * 6) * (h * 0.03);
+  const size = Math.min(w, h) * 0.55;
+  const cx = w / 2;
+  const cy = h * 0.42;
+
+  ctx.font = `bold ${Math.round(size)}px sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = size * 0.06;
+  ctx.strokeText(String(n), cx, cy + bounce);
+  ctx.fillStyle = '#ff4d6d';
+  ctx.fillText(String(n), cx, cy + bounce);
+
+  const orbitR = size * 0.75;
+  const count = Math.min(n, 12);
+  for (let i = 0; i < count; i++) {
+    const angle = (i / count) * Math.PI * 2 + t * Math.PI * 2;
+    const x = cx + Math.cos(angle) * orbitR;
+    const y = cy + Math.sin(angle) * orbitR + bounce;
+    const hue = (i * 51 + seed * 20) % 360;
+    drawShape(ctx, i % 4, x, y, size * 0.09, `hsl(${hue}, 80%, 60%)`, angle);
+  }
+}
+
+function drawColorScene(ctx, w, h, colorHex, t, seed) {
+  const bounce = Math.sin(t * Math.PI * 4) * (h * 0.04);
+  const size = Math.min(w, h) * 0.32;
+  const cx = w / 2;
+  const cy = h * 0.42 + bounce;
+  const shapeKind = seed % 4;
+  drawShape(ctx, shapeKind, cx, cy, size, colorHex, t * Math.PI * 2);
+
+  const rand = seededRandom(seed * 41);
+  for (let i = 0; i < 8; i++) {
+    const sx = rand() * w;
+    const sy = rand() * (h * 0.82);
+    const ph = rand() * Math.PI * 2;
+    const dx = Math.cos(t * Math.PI * 2 + ph) * (w * 0.03);
+    const dy = Math.sin(t * Math.PI * 2 + ph) * (h * 0.02);
+    drawShape(ctx, i % 4, sx + dx, sy + dy, size * 0.17, colorHex, ph + t * 2);
+  }
+}
+
+function drawLetterScene(ctx, w, h, letter, t, seed) {
+  const bounce = Math.sin(t * Math.PI * 6) * (h * 0.03);
+  const size = Math.min(w, h) * 0.55;
+  const cx = w / 2;
+  const cy = h * 0.42;
+  ctx.font = `bold ${Math.round(size)}px sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = size * 0.06;
+  ctx.strokeText(letter, cx, cy + bounce);
+  ctx.fillStyle = '#457b9d';
+  ctx.fillText(letter, cx, cy + bounce);
+
+  for (let i = 0; i < 6; i++) {
+    const angle = (i / 6) * Math.PI * 2 + t * Math.PI;
+    const r = size * 0.72;
+    const x = cx + Math.cos(angle) * r;
+    const y = cy + Math.sin(angle) * r + bounce;
+    drawStar(ctx, x, y, size * 0.09, `hsl(${(i * 60 + seed * 30) % 360}, 85%, 60%)`);
+  }
+}
+
+function drawShapesParty(ctx, w, h, seed, t) {
+  const rand = seededRandom(seed);
+  const N = 7;
+  for (let i = 0; i < N; i++) {
+    const baseX = rand() * w;
+    const baseY = rand() * (h * 0.82);
+    const size = (0.08 + rand() * 0.1) * Math.min(w, h);
+    const phase = rand() * Math.PI * 2;
+    const dx = Math.sin(t * Math.PI * 4 + phase) * (w * 0.08);
+    const dy = Math.cos(t * Math.PI * 3 + phase) * (h * 0.05);
+    const hue = (i * 51 + seed * 30) % 360;
+    drawShape(ctx, i % 4, baseX + dx, baseY + dy, size, `hsl(${hue}, 82%, 58%)`, phase + t * 3);
+  }
+}
+
+function hueForHex(hex) {
+  const [r, g, b] = hexToRgb(hex);
+  return rgbToHsl(r, g, b)[0];
+}
+
+function renderCartoonFrame(w, h, scene, frameIndex, totalFrames, seed) {
+  const canvas = createCanvas(w, h);
+  const ctx = canvas.getContext('2d');
+  const t = totalFrames > 1 ? frameIndex / (totalFrames - 1) : 0;
+  const type = classifyCartoonScene(scene);
+
+  const bgHue = type.kind === 'color' ? hueForHex(type.hex) : (seed * 47) % 360;
+  const bg = ctx.createLinearGradient(0, 0, w, h);
+  bg.addColorStop(0, `hsl(${bgHue}, 65%, 84%)`);
+  bg.addColorStop(1, `hsl(${(bgHue + 40) % 360}, 65%, 92%)`);
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, w, h);
+
+  if (type.kind === 'number') drawNumberScene(ctx, w, h, type.value, t, seed);
+  else if (type.kind === 'color') drawColorScene(ctx, w, h, type.hex, t, seed);
+  else if (type.kind === 'letter') drawLetterScene(ctx, w, h, type.value, t, seed);
+  else drawShapesParty(ctx, w, h, seed, t);
+
+  drawSceneCaption(ctx, w, h, scene);
+  return canvas.toBuffer('image/png');
+}
+
+// Streams rendered PNG frames straight into ffmpeg over image2pipe -
+// avoids writing hundreds of temp PNGs to disk per video. Encoder
+// settings intentionally identical to footageClip/zoomClip so
+// concatClips' -c copy step can stitch cartoon shots together with
+// stock-footage or gradient shots in the same output.
+async function cartoonClip(scene, outPath, w, h, fps, durationSeconds, seed) {
+  const totalFrames = Math.max(1, Math.round(fps * durationSeconds));
+
+  const ff = spawn(ffmpegPath, [
+    '-y',
+    '-f', 'image2pipe',
+    '-framerate', String(fps),
+    '-i', '-',
+    '-t', String(durationSeconds),
+    '-vf', 'format=yuv420p',
+    '-c:v', 'libx264',
+    '-crf', '18',
+    '-preset', 'medium',
+    outPath
+  ]);
+
+  let stderr = '';
+  ff.stderr.on('data', (d) => { stderr += d; });
+  // If ffmpeg dies while we're mid-write, subsequent writes throw EPIPE;
+  // swallow it so we can surface the real reason via stderr in `closed`.
+  ff.stdin.on('error', () => {});
+
+  const closed = new Promise((resolve, reject) => {
+    ff.on('close', (code) => code === 0 ? resolve() : reject(new Error('ffmpeg cartoon failed: ' + stderr)));
+    ff.on('error', reject);
+  });
+
+  let firstFrameBuf = null;
+  for (let i = 0; i < totalFrames; i++) {
+    const buf = renderCartoonFrame(w, h, scene, i, totalFrames, seed);
+    if (i === 0) firstFrameBuf = buf;
+    const ok = ff.stdin.write(buf);
+    if (!ok) await new Promise((r) => ff.stdin.once('drain', r));
+  }
+  ff.stdin.end();
+  await closed;
+  return firstFrameBuf;
+}
+
 // Fast Ken Burns zoom+pan toward [fx, fy] (fractions of width/height).
 // maxZoom/duration are tuned per-shot (not per whole video) so the
 // motion is clearly visible within a single ~7s shot instead of being
@@ -222,8 +511,9 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   const h = channel.format === 'short' ? 1920 : 1080;
   const fps = 25;
 
+  const cartoon = channel.visualStyle === 'cartoonAnimation' && scenes.length > 0;
   const stockFootage = channel.visualStyle === 'stockFootage' && scenes.length > 0;
-  const shotCount = stockFootage ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
+  const shotCount = (cartoon || stockFootage) ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
   const durations = computeShotDurations(durationSeconds, shotCount);
 
   // Every gradient variant/color/blob choice below is keyed off
@@ -240,6 +530,19 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   for (let i = 0; i < shotCount; i++) {
     const shotSeed = runSeed + i;
     const clipPath = path.join(workDir, `scene-${i}.mp4`);
+
+    if (cartoon) {
+      try {
+        const firstFrame = await cartoonClip(scenes[i] || '', clipPath, w, h, fps, durations[i], shotSeed);
+        if (i === 0 && firstFrame) {
+          await writeFile(path.join(workDir, 'scene-0.png'), firstFrame);
+        }
+        clipPaths.push(clipPath);
+        continue;
+      } catch (err) {
+        console.warn(`[background] scene ${i} cartoon render failed, using gradient fallback:`, err.message);
+      }
+    }
 
     if (stockFootage) {
       try {
