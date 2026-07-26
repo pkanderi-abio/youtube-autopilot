@@ -40,7 +40,8 @@
     "The Ugly Duckling and Her Perfect Match",
     "Five Little Ducks Went Out One Day in Colorful Water Colors",
     "Five Little Ducks Went Out One Day, Counting Red, Yellow, and Green Leaves",
-    "Five Little Ducks Went Out One Day"
+    "Five Little Ducks Went Out One Day",
+    "Counting Cars from 1 to 5 with Colors of the Road"
   ],
   "videos": [
     {
@@ -275,6 +276,12 @@
       "url": "https://youtu.be/Fs1g7awVxnU",
       "format": "short",
       "publishedAt": "2026-07-26T22:25:16.657Z"
+    },
+    {
+      "title": "Counting Cars on a Colorful Road",
+      "url": "https://youtu.be/NzFwJ-ESmyg",
+      "format": "short",
+      "publishedAt": "2026-07-26T23:55:27.281Z"
     }
   ]
 }
