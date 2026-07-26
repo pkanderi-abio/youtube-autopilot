@@ -58,7 +58,8 @@
     "The Rise of Sustainable Fashion Influencers: How Celebrities Like Shea Langeliers Are Driving the Trend",
     "Discovering The Hidden Beaches of Grenada",
     "Exploring the scenic back roads of New England",
-    "Did you know that there is a type of jellyfish that is immortal?"
+    "Did you know that there is a type of jellyfish that is immortal?",
+    "The world's largest rainforest is not in South America but in Southeast Asia"
   ],
   "videos": [
     {
@@ -393,6 +394,12 @@
       "url": "https://youtu.be/n4OAmaAybl8",
       "format": "short",
       "publishedAt": "2026-07-26T17:02:05.251Z"
+    },
+    {
+      "title": "The World's Largest Rainforest Wasn't What We Think",
+      "url": "https://youtu.be/qTZQ4c5hUEM",
+      "format": "long",
+      "publishedAt": "2026-07-26T17:12:35.225Z"
     }
   ]
 }
