@@ -34,7 +34,8 @@
     "The Great Taco Bell Heist: Viral Memes and the Power of Playful Roasting on Social Media",
     "The Great Sports Rivalry that's Heating Up Off the Pitch",
     "The Rise of Golf's New Generation: A Look at Josh Kelly and Jackson Koivun",
-    "The Three Little Pigs Retold for Bedtime: A Tale of Planning and Preparation"
+    "The Three Little Pigs Retold for Bedtime: A Tale of Planning and Preparation",
+    "The Fox and the Grapes"
   ],
   "videos": [
     {
@@ -233,6 +234,12 @@
       "url": "https://youtu.be/xrzUKfwRr9g",
       "format": "short",
       "publishedAt": "2026-07-26T16:17:19.917Z"
+    },
+    {
+      "title": "Why the Fox Can't Reach the Grapes",
+      "url": "https://youtu.be/Jiaumm11jRU",
+      "format": "long",
+      "publishedAt": "2026-07-26T16:25:50.997Z"
     }
   ]
 }
