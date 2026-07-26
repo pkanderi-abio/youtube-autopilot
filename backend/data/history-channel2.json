@@ -36,7 +36,8 @@
     "The Rise of Golf's New Generation: A Look at Josh Kelly and Jackson Koivun",
     "The Three Little Pigs Retold for Bedtime: A Tale of Planning and Preparation",
     "The Fox and the Grapes",
-    "The Ugly Duckling: A Tale of Self-Acceptance"
+    "The Ugly Duckling: A Tale of Self-Acceptance",
+    "The Ugly Duckling and Her Perfect Match"
   ],
   "videos": [
     {
@@ -247,6 +248,12 @@
       "url": "https://youtu.be/jXfoMxfJntc",
       "format": "short",
       "publishedAt": "2026-07-26T17:00:27.600Z"
+    },
+    {
+      "title": "The Ugly Duckling Finds Her Perfect Match",
+      "url": "https://youtu.be/0ah7zacvF9U",
+      "format": "long",
+      "publishedAt": "2026-07-26T17:17:50.329Z"
     }
   ]
 }
