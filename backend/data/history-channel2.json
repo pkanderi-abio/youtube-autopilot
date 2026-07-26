@@ -35,7 +35,8 @@
     "The Great Sports Rivalry that's Heating Up Off the Pitch",
     "The Rise of Golf's New Generation: A Look at Josh Kelly and Jackson Koivun",
     "The Three Little Pigs Retold for Bedtime: A Tale of Planning and Preparation",
-    "The Fox and the Grapes"
+    "The Fox and the Grapes",
+    "The Ugly Duckling: A Tale of Self-Acceptance"
   ],
   "videos": [
     {
@@ -240,6 +241,12 @@
       "url": "https://youtu.be/Jiaumm11jRU",
       "format": "long",
       "publishedAt": "2026-07-26T16:25:50.997Z"
+    },
+    {
+      "title": "The Ugly Duckling's Journey to Self-Acceptance",
+      "url": "https://youtu.be/jXfoMxfJntc",
+      "format": "short",
+      "publishedAt": "2026-07-26T17:00:27.600Z"
     }
   ]
 }
