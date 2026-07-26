@@ -57,7 +57,8 @@
     "What's Behind the Shocking Exit of Son Heung-Min from Tottenham? Insider Scoop on His Shocking Move to a New Club",
     "The Rise of Sustainable Fashion Influencers: How Celebrities Like Shea Langeliers Are Driving the Trend",
     "Discovering The Hidden Beaches of Grenada",
-    "Exploring the scenic back roads of New England"
+    "Exploring the scenic back roads of New England",
+    "Did you know that there is a type of jellyfish that is immortal?"
   ],
   "videos": [
     {
@@ -386,6 +387,12 @@
       "url": "https://youtu.be/kyreCI05yq8",
       "format": "long",
       "publishedAt": "2026-07-26T16:27:27.325Z"
+    },
+    {
+      "title": "Turritopsis Dohrnii: The Jellyfish That's Immortal",
+      "url": "https://youtu.be/n4OAmaAybl8",
+      "format": "short",
+      "publishedAt": "2026-07-26T17:02:05.251Z"
     }
   ]
 }
