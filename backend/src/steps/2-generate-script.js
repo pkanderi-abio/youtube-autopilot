@@ -44,6 +44,106 @@ function fixAllCapsTitle(title) {
   return title;
 }
 
+// Detects vague-abstract titles that don't tell a viewer what the video
+// is actually about - the kind of thing that reads as filler and won't
+// earn a click. Observed directly in production output: "The Beauty of
+// Influence", "The Chemistry That Fizzled", "The Emotional Price of
+// Greatness", "Ball Pit Bliss". A good title names something specific:
+// a real person, place, event, or a concrete number/quantity.
+const TITLE_STOPWORDS = new Set([
+  'the','a','an','and','or','but','for','to','of','in','on','at','by',
+  'with','from','into','over','under','after','before','is','are','was',
+  'were','be','been','being','how','why','what','when','where','this',
+  'that','these','those','it','its','you','your','our','their'
+]);
+
+// Common abstract nouns we've seen the model reach for when it doesn't
+// have a specific hook - if the title is BUILT from these plus stopwords
+// it reads as pure filler.
+const ABSTRACT_TITLE_WORDS = new Set([
+  'beauty','chemistry','emotion','emotional','price','greatness','haunting',
+  'influence','bliss','revolution','effect','impact','power','magic',
+  'wonder','mystery','story','tale','journey','moment','world','life',
+  'love','heart','soul','truth','reality','experience','feeling','side',
+  'rise','fall','dark','hidden','secret','psychology','future','past',
+  'legacy','culture','phenomenon','thing','things','way','ways'
+]);
+
+function titleLooksVague(title) {
+  if (!title) return true;
+  const cleaned = title.replace(/[^a-zA-Z0-9\s'’]/g, ' ');
+  const words = cleaned.split(/\s+/).filter(Boolean);
+  if (words.length < 4) return true;
+  // A digit anywhere = concrete number/year/count. Passes.
+  if (/\d/.test(title)) return false;
+  // A possessive apostrophe (e.g. "Fiji's", "McGregor's") almost always
+  // names a specific person or place. Passes.
+  if (/['’]s\b/i.test(title)) return false;
+  // Otherwise: does it contain at least one substantive word that isn't
+  // in the stopword+abstract-noun blocklist? If every content word is
+  // either a stopword or a pure abstract noun ("The Beauty of Influence"),
+  // it's vague.
+  const contentWords = words.filter(w => !TITLE_STOPWORDS.has(w.toLowerCase()));
+  const concreteContent = contentWords.filter(w => !ABSTRACT_TITLE_WORDS.has(w.toLowerCase()));
+  return concreteContent.length < 2;
+}
+
+// Post-generation title polish - if the narration is fine but the title
+// came out vague, ask the model to rewrite JUST the title using the
+// script content as grounding. Cheaper than regenerating the whole
+// script, and it doesn't disturb narration length (which the retry
+// loops above are already carefully protecting).
+async function polishTitle(channel, topicInfo, script) {
+  if (!titleLooksVague(script.title)) return script.title;
+
+  const narrationExcerpt = (script.narration || '').split(/\s+/).slice(0, 60).join(' ');
+
+  console.warn(`[script] title "${script.title}" reads as vague/abstract - requesting concrete rewrite`);
+  const attempts = 2;
+  let best = script.title;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      const out = await completeJSON(`
+Rewrite the YouTube title for this ${channel.format}-form video to make it
+concrete and click-worthy.
+
+Channel: ${channel.name} (${channel.niche})
+Topic: ${topicInfo.topic}
+Angle: ${topicInfo.angle}
+Script opening: "${narrationExcerpt}..."
+
+Current title (too vague/abstract): "${script.title}"
+
+Rules for the new title:
+- Under 90 characters, no ALL-CAPS words.
+- MUST name something specific: a real person, place, event, number,
+  year, or concrete thing that appears in the script - not abstract
+  nouns like "Beauty", "Chemistry", "Influence", "Journey", "Story".
+- Bad examples (do NOT produce these):
+    "The Beauty of Influence"
+    "The Chemistry That Fizzled"
+    "The Emotional Price of Greatness"
+    "Ball Pit Bliss"
+- Good examples (this shape):
+    "Fiji's Best Hidden Beaches for 2026 Travelers"
+    "5 Underrated Cities to Visit This Winter"
+    "Why the Tortoise Beat the Hare (Full Story)"
+
+Return JSON: { "title": "..." }
+`.trim(), { maxTokens: 200 });
+
+      const rewritten = fixAllCapsTitle((out.title || '').trim());
+      if (rewritten && !titleLooksVague(rewritten)) return rewritten;
+      if (rewritten) best = rewritten;
+    } catch (err) {
+      console.warn(`[script] title polish attempt ${i + 1}/${attempts} failed:`, err.message);
+    }
+  }
+  // Fall back to whatever we ended with - the pipeline shouldn't die
+  // over an imperfect title.
+  return best;
+}
+
 function nicheReinforcement(channel) {
   return `The script must be EXPLICITLY about ${channel.niche} - don't just
   narrate the topic in isolation (e.g. a plain sports recap or news
@@ -116,7 +216,7 @@ Requirements:
 
 Return JSON:
 {
-  "title": "YouTube title, under 90 characters, no clickbait ALL CAPS",
+  "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the script. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Fiji's Best Hidden Beaches for 2026 Travelers' or '5 Cities to Visit This Winter'",
   "narration": "the full script as continuous prose, ready to feed to a TTS engine",
   "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],
   "description": "2-3 sentence YouTube description",
@@ -146,6 +246,7 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
   }
   best.title = fixAllCapsTitle(best.title);
+  best.title = await polishTitle(channel, topicInfo, best);
   return best;
 }
 
@@ -169,7 +270,7 @@ Requirements:
 
 Return JSON:
 {
-  "title": "YouTube title, under 90 characters, no clickbait ALL CAPS",
+  "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the topic. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Why the Tortoise Beat the Hare (Full Story)' or '5 Underrated Cities to Visit This Winter'",
   "description": "2-3 sentence YouTube description",
   "tags": ["tag1", "tag2", "tag3"],
   "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],
@@ -278,7 +379,7 @@ async function generateLongScript(channel, topicInfo) {
     throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words) - aborting instead of publishing`);
   }
 
-  return {
+  const result = {
     title: fixAllCapsTitle(outline.title),
     narration,
     captionLines,
@@ -287,6 +388,8 @@ async function generateLongScript(channel, topicInfo) {
     hashtags: outline.hashtags || [],
     scenes: outline.scenes
   };
+  result.title = await polishTitle(channel, topicInfo, result);
+  return result;
 }
 
 export async function generateScript(channel, topicInfo) {

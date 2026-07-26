@@ -105,15 +105,42 @@ jobs:
           # `ollama serve &` here just fails instantly with "address
           # already in use" and does nothing useful) - just wait for the
           # systemd-managed instance to be ready, then pull the model.
-          # 60s (was 30s): observed one real run where the service just
-          # hadn't come up yet at the 30s mark, failing the whole job -
-          # a slow-starting systemd unit, not a real error, so more
-          # margin here is cheap insurance.
-          for i in $(seq 1 60); do
-            curl -sf http://127.0.0.1:11434/api/version && break
+          # 180s (was 60s, was 30s): a cluster of real failures
+          # 2026-07-20..24 all timed out at exactly the previous 60s cap
+          # ("Start Ollama and pull model" completed at t+61s with the
+          # service still not answering /api/version). systemd unit
+          # start time on a shared CI runner is genuinely variable, so
+          # give it real headroom. Also: if the loop exhausts without
+          # ever seeing a 200 from /api/version, fail explicitly instead
+          # of silently proceeding to `ollama pull` against a dead server
+          # (which just fails cryptically a second later).
+          ollama_ready=false
+          for i in $(seq 1 180); do
+            if curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
+              echo "Ollama ready after ${i}s"
+              ollama_ready=true
+              break
+            fi
             sleep 1
           done
-          ollama pull llama3.2
+          if [ "$ollama_ready" != "true" ]; then
+            echo "::error::Ollama did not answer /api/version within 180s"
+            exit 1
+          fi
+          # `ollama pull` itself has been observed to fail transiently
+          # on the CI runner (network blip mid-download of the model
+          # blob); one-shot means the whole job dies on a retriable
+          # error. Retry a few times with growing backoff before giving
+          # up - same pattern as the npm ci step above.
+          for attempt in 1 2 3; do
+            if ollama pull llama3.2; then
+              exit 0
+            fi
+            echo "ollama pull attempt $attempt failed, retrying..."
+            sleep $((attempt * 15))
+          done
+          echo "::error::ollama pull failed after 3 attempts"
+          exit 1
       - name: Run pipeline for ${{ matrix.channel }} (${{ matrix.format }})
         working-directory: backend
         env:
