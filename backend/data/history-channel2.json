@@ -38,7 +38,8 @@
     "The Fox and the Grapes",
     "The Ugly Duckling: A Tale of Self-Acceptance",
     "The Ugly Duckling and Her Perfect Match",
-    "Five Little Ducks Went Out One Day in Colorful Water Colors"
+    "Five Little Ducks Went Out One Day in Colorful Water Colors",
+    "Five Little Ducks Went Out One Day, Counting Red, Yellow, and Green Leaves"
   ],
   "videos": [
     {
@@ -261,6 +262,12 @@
       "url": "https://youtu.be/ek8doTcMy-o",
       "format": "short",
       "publishedAt": "2026-07-26T20:57:15.748Z"
+    },
+    {
+      "title": "Five Little Ducks Went Out One Day",
+      "url": "https://youtu.be/7kUWywDB-Uk",
+      "format": "short",
+      "publishedAt": "2026-07-26T21:11:33.770Z"
     }
   ]
 }
