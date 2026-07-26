@@ -37,7 +37,8 @@
     "The Three Little Pigs Retold for Bedtime: A Tale of Planning and Preparation",
     "The Fox and the Grapes",
     "The Ugly Duckling: A Tale of Self-Acceptance",
-    "The Ugly Duckling and Her Perfect Match"
+    "The Ugly Duckling and Her Perfect Match",
+    "Five Little Ducks Went Out One Day in Colorful Water Colors"
   ],
   "videos": [
     {
@@ -254,6 +255,12 @@
       "url": "https://youtu.be/0ah7zacvF9U",
       "format": "long",
       "publishedAt": "2026-07-26T17:17:50.329Z"
+    },
+    {
+      "title": "Five Little Ducks Went Out One Day",
+      "url": "https://youtu.be/ek8doTcMy-o",
+      "format": "short",
+      "publishedAt": "2026-07-26T20:57:15.748Z"
     }
   ]
 }
