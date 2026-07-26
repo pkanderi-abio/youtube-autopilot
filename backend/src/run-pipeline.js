@@ -51,7 +51,7 @@ async function run(channelId, formatOverride) {
 
     console.log('[3/7] generating voiceover...');
     const audioPath = path.join(workDir, 'voice.mp3');
-    await generateVoice(script.narration, audioPath);
+    await generateVoice(script.narration, audioPath, channel.voice);
 
     const duration = await ffprobeDuration(audioPath);
 

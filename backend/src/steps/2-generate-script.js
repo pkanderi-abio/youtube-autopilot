@@ -206,7 +206,19 @@ Topic: ${topicInfo.topic}
 Angle: ${topicInfo.angle}
 
 Requirements:
-- Hook in the first sentence, no throat-clearing intro.
+- HOOK (the first 3 seconds decide everything on YouTube Shorts):
+  the FIRST SENTENCE must be a specific surprising fact, a number,
+  or a concrete promise that makes a scrolling viewer stop.
+  NEVER start with "In this video...", "Today we'll...", "Let's
+  explore...", "Did you know that maybe...", or any throat-clearing.
+  BAD:  "In this video we'll explore Fiji's beaches."
+  BAD:  "Today let's talk about the tortoise and the hare."
+  GOOD: "There's an island in Fiji with water so clear you can see
+        30 feet down - and almost nobody visits it."
+  GOOD: "This tiny animal outsmarted a champion racer just by
+        walking. Here's how."
+- Use "you" / "your" often - direct address holds attention.
+- Present tense, active verbs, short sentences.
 - Conversational, punchy, plain language - written to be read aloud by a narrator.
 - ${nicheReinforcement(channel)}
 - ${durationHint}.
@@ -289,7 +301,13 @@ async function generateNarrationSection(channel, topicInfo, sectionBrief, index,
   const isFirst = index === 0;
   const isLast = index === total - 1;
   const positionHint = isFirst
-    ? 'This is the OPENING section - hook the viewer in the first sentence, no throat-clearing intro.'
+    ? `This is the OPENING section. The FIRST SENTENCE must be a specific
+       surprising fact, number, or concrete promise that makes the viewer
+       stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
+       explore...", or any throat-clearing setup. Use "you"/"your" and
+       present tense.
+       BAD:  "In this video we'll tell the story of the tortoise and the hare."
+       GOOD: "A tortoise once beat the fastest animal in the forest - just by walking. Here's how."`
     : isLast
       ? `This is the CLOSING section. ${closingLineHint(channel)}`
       : 'This is a MIDDLE section - continue directly from where the narration left off, no new intro and no wrap-up yet.';

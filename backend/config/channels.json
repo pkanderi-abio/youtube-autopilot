@@ -3,15 +3,16 @@
     {
       "id": "channel1",
       "name": "TeslaTravel",
-      "niche": "travel destinations, hidden gems, and lifestyle experiences for modern explorers - real places, real trips, not celebrity recaps or sports news",
+      "niche": "quick surprising-fact videos in the Zack D Films / 'Did You Know' style: bite-sized science, history, nature, and 'what if' stories, top-N countdown lists, weird-true trivia, and destination/lifestyle deep-cuts. Format is a punchy fact or promise up front, one payoff per video. NOT celebrity gossip, NOT sports scores, NOT news recaps",
       "format": "short",
       "visualStyle": "stockFootage",
       "madeForKids": false,
       "brandColorA": "#1b3a5c",
       "brandColorB": "#4f7dff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL1",
-      "categoryId": "19",
-      "tags": ["travel", "destinations", "lifestyle", "explore"]
+      "categoryId": "27",
+      "tags": ["shorts", "did you know", "top 10", "facts", "amazing", "history", "science"],
+      "voice": "en-US-AndrewMultilingualNeural"
     },
     {
       "id": "channel2",
@@ -25,6 +26,7 @@
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
       "categoryId": "1",
       "tags": ["kids stories", "bedtime stories", "fables", "moral stories", "fairy tales"],
+      "voice": "en-US-AvaMultilingualNeural",
       "closingStyle": "moral",
       "topicPool": [
         "The Tortoise and the Hare",

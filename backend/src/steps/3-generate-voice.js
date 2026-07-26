@@ -5,13 +5,18 @@
 import { MsEdgeTTS, OUTPUT_FORMAT } from 'msedge-tts';
 import { writeFile } from 'fs/promises';
 
-// A calm, clear neutral narrator voice. Browse more with
-// `new MsEdgeTTS().getVoices()` - pick one that fits your channel's tone.
-const VOICE = 'en-US-AndrewNeural';
+// Default voice - a warm, conversational narrator. The "Multilingual"
+// variants are Microsoft's newer conversational-optimized models: same
+// speaker identity as the plain -Neural voice, but noticeably less
+// robotic delivery (less monotone, better prosody), which the plain
+// AndrewNeural voice was getting flagged for. Channels can override
+// per-channel via `voice` in channels.json (kids fables uses AvaMultilingual,
+// designed as "expressive, caring, pleasant, friendly").
+const DEFAULT_VOICE = 'en-US-AndrewMultilingualNeural';
 
-export async function generateVoice(narration, outPath) {
+export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
   const tts = new MsEdgeTTS();
-  await tts.setMetadata(VOICE, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
+  await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
   const { audioStream } = tts.toStream(narration);
 
   const chunks = [];
