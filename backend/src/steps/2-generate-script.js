@@ -153,6 +153,13 @@ function nicheReinforcement(channel) {
 }
 
 function closingLineHint(channel) {
+  if (channel.contentStyle === 'babyLearning') {
+    return `End with a warm cheer for the toddler and an invitation to
+    sing/count/watch again next time - short and sweet. Examples:
+    "Great job counting with me! Come back and count again soon!" or
+    "Yay! You learned all the colors! Let's sing again next time!"
+    Do not ask for comments (comments are disabled on kids content).`;
+  }
   if (channel.closingStyle === 'moral') {
     return 'End by clearly stating the moral or lesson of the story in one sentence - what the viewer should take away from it.';
   }
@@ -160,6 +167,84 @@ function closingLineHint(channel) {
     return 'End with a short, cheerful line inviting the viewer to watch again - do not ask for comments (comments are disabled on kids content).';
   }
   return 'End with a short line that invites a comment or follow, no generic "like and subscribe".';
+}
+
+// Returns the "hook + prose style" bullet block used in the short-form
+// single-shot prompt. For adult content, this enforces the aggressive
+// first-3-seconds hook YouTube Shorts needs. For baby/toddler content
+// (contentStyle: "babyLearning") that "grab-and-keep" framing is wrong -
+// the audience is a 1-4 year old whose parent is holding the phone;
+// the win condition is warmth, repetition, and clarity, not a
+// scroll-stopping surprise.
+function hookAndStyleInstructions(channel) {
+  if (channel.contentStyle === 'babyLearning') {
+    return `- OPENING: greet the baby/toddler directly and name what
+  today's video is teaching. Examples: "Hi little friends! Today we
+  count from one to ten!" or "Hello babies! Let's sing Twinkle
+  Twinkle Little Star!". NO adult-style hook, NO surprising facts,
+  NO shocking claims.
+- VOCABULARY: simple 1-2 syllable words wherever possible; very short
+  sentences (4-8 words each).
+- HIGHLY REPETITIVE - repeat key words and phrases 3-4 times each.
+  Repetition is HOW toddlers learn: "Red apple! Red apple! Can you
+  say red? Red!"
+- Direct interactive prompts throughout: "Can you count with me?",
+  "Point to the ___!", "What sound does the ___ make?", "Say it with me!"
+- Warm, patient, encouraging tone. Cheer throughout: "Great job!",
+  "Yay!", "You're so smart!", "Amazing!"
+- Rhyming or sing-song rhythm when it fits naturally - for a nursery
+  rhyme topic, include the well-known public-domain lyrics verbatim.
+- NO complex ideas, NO scary/sad content, NO abstract morals.`;
+  }
+  return `- HOOK (the first 3 seconds decide everything on YouTube Shorts):
+  the FIRST SENTENCE must be a specific surprising fact, a number,
+  or a concrete promise that makes a scrolling viewer stop.
+  NEVER start with "In this video...", "Today we'll...", "Let's
+  explore...", "Did you know that maybe...", or any throat-clearing.
+  BAD:  "In this video we'll explore Fiji's beaches."
+  BAD:  "Today let's talk about the tortoise and the hare."
+  GOOD: "There's an island in Fiji with water so clear you can see
+        30 feet down - and almost nobody visits it."
+  GOOD: "This tiny animal outsmarted a champion racer just by
+        walking. Here's how."
+- Use "you" / "your" often - direct address holds attention.
+- Present tense, active verbs, short sentences.
+- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
+}
+
+// Long-form equivalents of hookAndStyleInstructions - the opening
+// section's brief, and the prose-style bullet used inside every
+// section's prompt. Kept as separate helpers because the long-form
+// section prompt is much smaller than the single-shot short prompt
+// and shouldn't repeat the full style block on every section call.
+function openingSectionHint(channel) {
+  if (channel.contentStyle === 'babyLearning') {
+    return `This is the OPENING section. Greet the baby/toddler directly
+    and name what today's video is teaching. Example: "Hi little
+    friends! Today we're going to learn colors together! Are you
+    ready?". NO adult-style hook, NO surprising claims. Warmth and
+    clarity matter, not scroll-stopping. Set up the repetitive /
+    sing-along pattern the rest of the video will use.`;
+  }
+  return `This is the OPENING section. The FIRST SENTENCE must be a specific
+       surprising fact, number, or concrete promise that makes the viewer
+       stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
+       explore...", or any throat-clearing setup. Use "you"/"your" and
+       present tense.
+       BAD:  "In this video we'll tell the story of the tortoise and the hare."
+       GOOD: "A tortoise once beat the fastest animal in the forest - just by walking. Here's how."`;
+}
+
+function sectionProseStyle(channel) {
+  if (channel.contentStyle === 'babyLearning') {
+    return `- Simple 1-2 syllable vocabulary; very short sentences (4-8 words each).
+- HIGHLY REPETITIVE - repeat key words and phrases 3-4 times.
+- Direct interactive prompts: "Say it with me!", "Can you point to the ___?".
+- Warm, patient, cheering tone throughout ("Yay!", "Great job!").
+- Rhyming/sing-song where natural (include well-known nursery rhyme lyrics for those topics).
+- NO scary/sad content, NO complex ideas, NO abstract morals.`;
+  }
+  return `- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
 }
 
 // Stock-footage channels need a per-shot "scenes" array - short concrete
@@ -206,20 +291,7 @@ Topic: ${topicInfo.topic}
 Angle: ${topicInfo.angle}
 
 Requirements:
-- HOOK (the first 3 seconds decide everything on YouTube Shorts):
-  the FIRST SENTENCE must be a specific surprising fact, a number,
-  or a concrete promise that makes a scrolling viewer stop.
-  NEVER start with "In this video...", "Today we'll...", "Let's
-  explore...", "Did you know that maybe...", or any throat-clearing.
-  BAD:  "In this video we'll explore Fiji's beaches."
-  BAD:  "Today let's talk about the tortoise and the hare."
-  GOOD: "There's an island in Fiji with water so clear you can see
-        30 feet down - and almost nobody visits it."
-  GOOD: "This tiny animal outsmarted a champion racer just by
-        walking. Here's how."
-- Use "you" / "your" often - direct address holds attention.
-- Present tense, active verbs, short sentences.
-- Conversational, punchy, plain language - written to be read aloud by a narrator.
+${hookAndStyleInstructions(channel)}
 - ${nicheReinforcement(channel)}
 - ${durationHint}.
 - ${closingLineHint(channel)}
@@ -301,13 +373,7 @@ async function generateNarrationSection(channel, topicInfo, sectionBrief, index,
   const isFirst = index === 0;
   const isLast = index === total - 1;
   const positionHint = isFirst
-    ? `This is the OPENING section. The FIRST SENTENCE must be a specific
-       surprising fact, number, or concrete promise that makes the viewer
-       stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
-       explore...", or any throat-clearing setup. Use "you"/"your" and
-       present tense.
-       BAD:  "In this video we'll tell the story of the tortoise and the hare."
-       GOOD: "A tortoise once beat the fastest animal in the forest - just by walking. Here's how."`
+    ? openingSectionHint(channel)
     : isLast
       ? `This is the CLOSING section. ${closingLineHint(channel)}`
       : 'This is a MIDDLE section - continue directly from where the narration left off, no new intro and no wrap-up yet.';
@@ -332,7 +398,7 @@ This section's role: ${sectionBrief}
 ${positionHint}${continuityHint}
 
 Requirements:
-- Conversational, punchy, plain language - written to be read aloud by a narrator.
+${sectionProseStyle(channel)}
 - ${nicheReinforcement(channel)}
 - Roughly 130-170 words for this section only.
 - Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.
