@@ -12,7 +12,7 @@ import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
 import { createCanvas } from 'canvas';
-import { writeFile } from 'fs/promises';
+import { writeFile, mkdir } from 'fs/promises';
 import { findStockFootageClip } from '../lib/stockFootage.js';
 
 // A handful of on-brand gradient looks + off-center focus points to
@@ -382,47 +382,52 @@ function renderCartoonFrame(w, h, scene, frameIndex, totalFrames, seed) {
   return canvas.toBuffer('image/png');
 }
 
-// Streams rendered PNG frames straight into ffmpeg over image2pipe -
-// avoids writing hundreds of temp PNGs to disk per video. Encoder
-// settings intentionally identical to footageClip/zoomClip so
+// Writes rendered PNG frames to a per-shot dir and encodes them via
+// ffmpeg's standard image-sequence input (-i frame-%05d.png). This
+// replaced an earlier image2pipe approach that silently produced a
+// broken bg-video.mp4 on the first live baby-content run: the concat'd
+// PNG stream that node-canvas emits was rejected somewhere in the
+// image2pipe demux path and the whole cartoon path fell through to the
+// gradient fallback, so the uploaded short had brand-gradient shots
+// and a brand-gradient thumbnail even though the code "succeeded".
+// Disk-based sequences are the well-worn ffmpeg pattern - orders of
+// magnitude more reliable than stdin-streamed images. workDir is
+// mkdtemp'd and rm -rf'd by run-pipeline.js, so the temp PNGs are
+// cleaned automatically.
+// Encoder settings intentionally identical to footageClip/zoomClip so
 // concatClips' -c copy step can stitch cartoon shots together with
 // stock-footage or gradient shots in the same output.
-async function cartoonClip(scene, outPath, w, h, fps, durationSeconds, seed) {
+async function cartoonClip(scene, outPath, workDir, shotIndex, w, h, fps, durationSeconds, seed) {
   const totalFrames = Math.max(1, Math.round(fps * durationSeconds));
+  const frameDir = path.join(workDir, `cartoon-${shotIndex}`);
+  await mkdir(frameDir, { recursive: true });
 
-  const ff = spawn(ffmpegPath, [
-    '-y',
-    '-f', 'image2pipe',
-    '-framerate', String(fps),
-    '-i', '-',
-    '-t', String(durationSeconds),
-    '-vf', 'format=yuv420p',
-    '-c:v', 'libx264',
-    '-crf', '18',
-    '-preset', 'medium',
-    outPath
-  ]);
-
-  let stderr = '';
-  ff.stderr.on('data', (d) => { stderr += d; });
-  // If ffmpeg dies while we're mid-write, subsequent writes throw EPIPE;
-  // swallow it so we can surface the real reason via stderr in `closed`.
-  ff.stdin.on('error', () => {});
-
-  const closed = new Promise((resolve, reject) => {
-    ff.on('close', (code) => code === 0 ? resolve() : reject(new Error('ffmpeg cartoon failed: ' + stderr)));
-    ff.on('error', reject);
-  });
+  console.log(`[cartoon] shot ${shotIndex}: rendering ${totalFrames} frames at ${w}x${h} for "${scene}"`);
+  const startedAt = Date.now();
 
   let firstFrameBuf = null;
   for (let i = 0; i < totalFrames; i++) {
     const buf = renderCartoonFrame(w, h, scene, i, totalFrames, seed);
     if (i === 0) firstFrameBuf = buf;
-    const ok = ff.stdin.write(buf);
-    if (!ok) await new Promise((r) => ff.stdin.once('drain', r));
+    await writeFile(path.join(frameDir, `frame-${String(i).padStart(5, '0')}.png`), buf);
   }
-  ff.stdin.end();
-  await closed;
+  const renderMs = Date.now() - startedAt;
+  console.log(`[cartoon] shot ${shotIndex}: ${totalFrames} frames rendered in ${renderMs}ms, encoding...`);
+
+  await runFfmpeg([
+    '-y',
+    '-framerate', String(fps),
+    '-i', path.join(frameDir, 'frame-%05d.png'),
+    '-t', String(durationSeconds),
+    '-vf', 'format=yuv420p',
+    '-c:v', 'libx264',
+    '-crf', '18',
+    '-preset', 'medium',
+    '-r', String(fps),
+    outPath
+  ]);
+
+  console.log(`[cartoon] shot ${shotIndex}: encoded ${outPath}`);
   return firstFrameBuf;
 }
 
@@ -533,7 +538,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
 
     if (cartoon) {
       try {
-        const firstFrame = await cartoonClip(scenes[i] || '', clipPath, w, h, fps, durations[i], shotSeed);
+        const firstFrame = await cartoonClip(scenes[i] || '', clipPath, workDir, i, w, h, fps, durations[i], shotSeed);
         if (i === 0 && firstFrame) {
           await writeFile(path.join(workDir, 'scene-0.png'), firstFrame);
         }
