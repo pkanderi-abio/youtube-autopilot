@@ -360,13 +360,19 @@ function hueForHex(hex) {
   return rgbToHsl(r, g, b)[0];
 }
 
-function renderCartoonFrame(w, h, scene, frameIndex, totalFrames, seed) {
+function renderCartoonFrameToCanvas(w, h, scene, frameIndex, totalFrames, seed) {
   const canvas = createCanvas(w, h);
   const ctx = canvas.getContext('2d');
   const t = totalFrames > 1 ? frameIndex / (totalFrames - 1) : 0;
   const type = classifyCartoonScene(scene);
 
-  const bgHue = type.kind === 'color' ? hueForHex(type.hex) : (seed * 47) % 360;
+  // hueForHex CAN return NaN if the hex string is malformed - guard so a
+  // single unexpected value never NaNs the whole HSL gradient (which
+  // some canvas builds silently render as fully transparent, i.e. empty
+  // frame). Fall back to a seeded hue in that case.
+  let bgHue = type.kind === 'color' ? hueForHex(type.hex) : (seed * 47) % 360;
+  if (!Number.isFinite(bgHue)) bgHue = (seed * 47) % 360;
+  bgHue = Math.round(bgHue);
   const bg = ctx.createLinearGradient(0, 0, w, h);
   bg.addColorStop(0, `hsl(${bgHue}, 65%, 84%)`);
   bg.addColorStop(1, `hsl(${(bgHue + 40) % 360}, 65%, 92%)`);
@@ -379,7 +385,7 @@ function renderCartoonFrame(w, h, scene, frameIndex, totalFrames, seed) {
   else drawShapesParty(ctx, w, h, seed, t);
 
   drawSceneCaption(ctx, w, h, scene);
-  return canvas.toBuffer('image/png');
+  return canvas;
 }
 
 // Writes rendered PNG frames to a per-shot dir and encodes them via
@@ -405,11 +411,24 @@ async function cartoonClip(scene, outPath, workDir, shotIndex, w, h, fps, durati
   console.log(`[cartoon] shot ${shotIndex}: rendering ${totalFrames} frames at ${w}x${h} for "${scene}"`);
   const startedAt = Date.now();
 
-  let firstFrameBuf = null;
+  // Frames are encoded as JPEG rather than PNG. PNG output via
+  // canvas.toBuffer worked fine locally with canvas v3.x, but the
+  // production canvas^2.11 build against the Ubuntu CI runner's Cairo
+  // silently produced PNGs that ffmpeg's image demuxer rejected -
+  // whole cartoon path fell through to gradient, uploaded broken
+  // videos twice in a row before we caught it. JPEG uses libjpeg-
+  // turbo (a totally separate encode path from PNG/Cairo) and is the
+  // long-standing standard for frame sequences. Slight quality trade
+  // is invisible on baby-cartoon flat colors.
+  // scene-0 still needs to be a real PNG (step 6's thumbnail loader
+  // is content-detecting but the filename is hardcoded), so we
+  // extract that from the same canvas once, without re-rendering.
+  let firstFramePngBuf = null;
   for (let i = 0; i < totalFrames; i++) {
-    const buf = renderCartoonFrame(w, h, scene, i, totalFrames, seed);
-    if (i === 0) firstFrameBuf = buf;
-    await writeFile(path.join(frameDir, `frame-${String(i).padStart(5, '0')}.png`), buf);
+    const canvas = renderCartoonFrameToCanvas(w, h, scene, i, totalFrames, seed);
+    if (i === 0) firstFramePngBuf = canvas.toBuffer('image/png');
+    const jpegBuf = canvas.toBuffer('image/jpeg', { quality: 0.92 });
+    await writeFile(path.join(frameDir, `frame-${String(i).padStart(5, '0')}.jpg`), jpegBuf);
   }
   const renderMs = Date.now() - startedAt;
   console.log(`[cartoon] shot ${shotIndex}: ${totalFrames} frames rendered in ${renderMs}ms, encoding...`);
@@ -417,7 +436,7 @@ async function cartoonClip(scene, outPath, workDir, shotIndex, w, h, fps, durati
   await runFfmpeg([
     '-y',
     '-framerate', String(fps),
-    '-i', path.join(frameDir, 'frame-%05d.png'),
+    '-i', path.join(frameDir, 'frame-%05d.jpg'),
     '-t', String(durationSeconds),
     '-vf', 'format=yuv420p',
     '-c:v', 'libx264',
@@ -428,7 +447,7 @@ async function cartoonClip(scene, outPath, workDir, shotIndex, w, h, fps, durati
   ]);
 
   console.log(`[cartoon] shot ${shotIndex}: encoded ${outPath}`);
-  return firstFrameBuf;
+  return firstFramePngBuf;
 }
 
 // Fast Ken Burns zoom+pan toward [fx, fy] (fractions of width/height).
@@ -545,7 +564,13 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         clipPaths.push(clipPath);
         continue;
       } catch (err) {
-        console.warn(`[background] scene ${i} cartoon render failed, using gradient fallback:`, err.message);
+        // Full stack trace on stderr - previous versions logged only
+        // err.message, which turned out to be the empty string for the
+        // silent PNG/ffmpeg failure that caused two broken shorts to
+        // publish before we caught it. Any future silent failure now
+        // shows up in the CI step's output with a real error location.
+        console.error(`[background] scene ${i} cartoon render FAILED, falling back to gradient. Full error:`);
+        console.error(err && err.stack ? err.stack : err);
       }
     }
 
