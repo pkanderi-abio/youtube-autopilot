@@ -89,7 +89,8 @@ async function run(channelId, formatOverride) {
       title: script.title,
       description: script.description,
       tags: script.tags,
-      hashtags: script.hashtags || []
+      hashtags: script.hashtags || [],
+      commentCta: script.commentCta || ''
     });
     console.log('   -> published:', upload.url);
 

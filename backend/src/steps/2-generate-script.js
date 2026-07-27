@@ -315,9 +315,10 @@ Return JSON:
   "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the script. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Fiji's Best Hidden Beaches for 2026 Travelers' or '5 Cities to Visit This Winter'",
   "narration": "the full script as continuous prose, ready to feed to a TTS engine",
   "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],
-  "description": "2-3 sentence YouTube description",
+  "description": "YouTube description - 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic 'Welcome to my channel' openers.",
   "tags": ["tag1", "tag2", "tag3"],
-  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],${scenesHint}
+  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],
+  "commentCta": "one-sentence question or hook to post as the FIRST COMMENT on the video (from the channel owner). Should invite replies - e.g. 'Which one surprised you?' or 'What's your favorite hidden gem?'. Keep under 140 chars.",${scenesHint}
 }
 
 captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.${lengthEmphasis}
@@ -343,6 +344,7 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
   }
   best.title = fixAllCapsTitle(best.title);
   best.title = await polishTitle(channel, topicInfo, best);
+  best.commentCta = best.commentCta || '';
   return best;
 }
 
@@ -367,9 +369,10 @@ Requirements:
 Return JSON:
 {
   "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the topic. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Why the Tortoise Beat the Hare (Full Story)' or '5 Underrated Cities to Visit This Winter'",
-  "description": "2-3 sentence YouTube description",
+  "description": "YouTube description - 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic 'Welcome to my channel' openers.",
   "tags": ["tag1", "tag2", "tag3"],
   "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],
+  "commentCta": "one-sentence question or hook to post as the FIRST COMMENT on the video (from the channel owner). Should invite replies. Keep under 140 chars.",
   "sections": ["one sentence describing what the opening hook covers", "one sentence describing the next narrative beat", "..."],${scenesHint}
 }
 
@@ -482,6 +485,7 @@ async function generateLongScript(channel, topicInfo) {
     description: outline.description,
     tags: outline.tags,
     hashtags: outline.hashtags || [],
+    commentCta: outline.commentCta || '',
     scenes: outline.scenes
   };
   result.title = await polishTitle(channel, topicInfo, result);
@@ -506,6 +510,7 @@ async function generateMetadataOnly(channel, topicInfo) {
     description: outline.description,
     tags: outline.tags,
     hashtags: outline.hashtags || [],
+    commentCta: outline.commentCta || '',
     scenes: outline.scenes
   };
 }
