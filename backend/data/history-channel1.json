@@ -60,7 +60,8 @@
     "Exploring the scenic back roads of New England",
     "Did you know that there is a type of jellyfish that is immortal?",
     "The world's largest rainforest is not in South America but in Southeast Asia",
-    "Did You Know That The World's Largest Snowflake Was 15 Inches Wide?"
+    "Did You Know That The World's Largest Snowflake Was 15 Inches Wide?",
+    "The Forgotten Human Species That Lived in Europe During the Last Ice Age"
   ],
   "videos": [
     {
@@ -407,6 +408,12 @@
       "url": "https://youtu.be/Sz1jw6_iPG8",
       "format": "long",
       "publishedAt": "2026-07-27T18:44:22.714Z"
+    },
+    {
+      "title": "Europe's Forgotten Human Species",
+      "url": "https://youtu.be/C2m6PxBnoG8",
+      "format": "short",
+      "publishedAt": "2026-07-27T23:06:33.710Z"
     }
   ]
 }
