@@ -11,8 +11,9 @@
 import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
-import { createCanvas } from 'canvas';
+import { createCanvas, loadImage } from 'canvas';
 import { writeFile, mkdir } from 'fs/promises';
+import { existsSync } from 'fs';
 import { findStockFootageClip } from '../lib/stockFootage.js';
 
 // A handful of on-brand gradient looks + off-center focus points to
@@ -530,6 +531,75 @@ async function concatClips(clipPaths, workDir) {
   return outPath;
 }
 
+// Post-encode self-check: samples ~4 evenly-spaced frames from the
+// assembled background video and confirms they contain real cartoon
+// content, not the brand-gradient fallback pattern. Discriminator is
+// "fraction of near-white pixels" - measured directly on real output:
+//   cartoon frames:  3.4% - 5.8% near-white (caption pill + shape outlines)
+//   gradient frames: 0.000% near-white (pure brand-color gradient, no white)
+// Threshold of 0.5% is well below the cartoon floor and well above the
+// gradient ceiling. Runs only when cartoon was the configured path -
+// stockFootage and pure-gradient channels skip validation.
+// This exists specifically because three consecutive baby-content shorts
+// (ek8doTcMy-o, 7kUWywDB-Uk, Fs1g7awVxnU) uploaded as gradient without
+// the pipeline noticing - all logs said "success" while the mp4 was
+// silently produced by the wrong path.
+async function validateCartoonBackground(videoPath, workDir) {
+  const framePattern = path.join(workDir, 'validate-frame-%02d.png');
+  const SAMPLES = 4;
+  const MIN_NEAR_WHITE_FRACTION = 0.005;
+
+  try {
+    await runFfmpeg([
+      '-y',
+      '-i', videoPath,
+      '-vf', 'fps=1/6,scale=540:-1',
+      '-frames:v', String(SAMPLES),
+      framePattern
+    ]);
+  } catch (err) {
+    throw new Error(`[validate] failed to extract sample frames from ${videoPath}: ${err.message}`);
+  }
+
+  let goodFrames = 0;
+  let checkedFrames = 0;
+  const details = [];
+  for (let i = 1; i <= SAMPLES; i++) {
+    const p = path.join(workDir, `validate-frame-${String(i).padStart(2, '0')}.png`);
+    if (!existsSync(p)) continue;
+    const img = await loadImage(p);
+    const canvas = createCanvas(img.width, img.height);
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, img.width, img.height).data;
+    let nw = 0;
+    for (let px = 0; px < data.length; px += 4) {
+      if (data[px] > 240 && data[px + 1] > 240 && data[px + 2] > 240) nw++;
+    }
+    const totalPx = img.width * img.height;
+    const frac = nw / totalPx;
+    const passed = frac >= MIN_NEAR_WHITE_FRACTION;
+    details.push({ frame: i, nearWhite: nw, totalPx, fraction: frac, passed });
+    checkedFrames++;
+    if (passed) goodFrames++;
+  }
+
+  console.log(`[validate] cartoon output: ${goodFrames}/${checkedFrames} sample frames pass near-white threshold (>= ${(MIN_NEAR_WHITE_FRACTION * 100).toFixed(2)}%)`);
+  for (const d of details) {
+    console.log(`  frame ${d.frame}: ${(d.fraction * 100).toFixed(2)}% near-white (${d.nearWhite}/${d.totalPx}) ${d.passed ? 'PASS' : 'FAIL'}`);
+  }
+
+  if (checkedFrames === 0) {
+    throw new Error(`[validate] could not extract any sample frames from ${videoPath} - cannot verify cartoon output`);
+  }
+  if (goodFrames === 0) {
+    throw new Error(`[validate] cartoon output failed pixel check: ALL ${checkedFrames} sample frames had < ${(MIN_NEAR_WHITE_FRACTION * 100).toFixed(2)}% near-white pixels. This is the gradient-fallback signature - the cartoon path silently fell through. BLOCKING PUBLISH.`);
+  }
+  if (goodFrames < checkedFrames) {
+    console.warn(`[validate] WARNING: only ${goodFrames}/${checkedFrames} cartoon samples passed - some shots fell back to gradient, but majority is cartoon so publishing`);
+  }
+}
+
 export async function generateBackground(channel, durationSeconds, workDir, scenes = []) {
   const w = channel.format === 'short' ? 1080 : 1920;
   const h = channel.format === 'short' ? 1920 : 1080;
@@ -598,5 +668,9 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     clipPaths.push(clipPath);
   }
 
-  return concatClips(clipPaths, workDir);
+  const bgVideoPath = await concatClips(clipPaths, workDir);
+  if (cartoon) {
+    await validateCartoonBackground(bgVideoPath, workDir);
+  }
+  return bgVideoPath;
 }
