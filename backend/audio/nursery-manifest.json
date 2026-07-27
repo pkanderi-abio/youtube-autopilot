@@ -1,0 +1,39 @@
+{
+  "recordings": [
+    {
+      "topic": "Twinkle Twinkle Little Star",
+      "filename": "twinkle-twinkle-little-star.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Twinkle_Twinkle_Little_Star_-_sung_with_full_lyrics.ogg",
+      "license": "public-domain",
+      "durationSeconds": 125
+    },
+    {
+      "topic": "Old MacDonald Had a Farm",
+      "filename": "old-macdonald-had-a-farm.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_McDonald_Had_a_Farm.ogg",
+      "license": "public-domain",
+      "durationSeconds": 32
+    },
+    {
+      "topic": "Mary Had a Little Lamb",
+      "filename": "mary-had-a-little-lamb.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mary_Had_a_Little_Lamb.ogg",
+      "license": "public-domain",
+      "durationSeconds": 23
+    },
+    {
+      "topic": "The Alphabet Song with Animal Friends",
+      "filename": "the-alphabet-song.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alphabet_song.ogg",
+      "license": "public-domain",
+      "durationSeconds": 24
+    },
+    {
+      "topic": "Hot Cross Buns",
+      "filename": "hot-cross-buns.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hot_Cross_Buns.ogg",
+      "license": "public-domain",
+      "durationSeconds": 8
+    }
+  ]
+}

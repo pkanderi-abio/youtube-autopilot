@@ -488,7 +488,32 @@ async function generateLongScript(channel, topicInfo) {
   return result;
 }
 
-export async function generateScript(channel, topicInfo) {
+// When skipNarration is true, we generate only the metadata YouTube
+// upload needs (title/description/tags/hashtags/scenes) - no narration.
+// Used when the pipeline already has a pre-recorded audio file for
+// this topic (e.g. bundled sung nursery rhyme), so any narration the
+// LLM produces would be thrown away. Cuts a long-form run's script
+// step from ~5 minutes (section-by-section) to a single outline call.
+async function generateMetadataOnly(channel, topicInfo) {
+  const outline = await generateScriptOutline(channel, topicInfo);
+  return {
+    title: await polishTitle(channel, topicInfo, {
+      title: fixAllCapsTitle(outline.title),
+      narration: outline.description || ''
+    }),
+    narration: '',
+    captionLines: [],
+    description: outline.description,
+    tags: outline.tags,
+    hashtags: outline.hashtags || [],
+    scenes: outline.scenes
+  };
+}
+
+export async function generateScript(channel, topicInfo, opts = {}) {
+  if (opts.skipNarration) {
+    return generateMetadataOnly(channel, topicInfo);
+  }
   if (channel.format === 'short') {
     return generateShortScript(channel, topicInfo);
   }

@@ -10,6 +10,7 @@ import path from 'path';
 import { readFile } from 'fs/promises';
 
 import { loadHistory, saveHistory } from './lib/state.js';
+import { resolveNurseryAudio, prepareNurseryAudio, NURSERY_TARGET_DURATION } from './lib/nurseryAudio.js';
 import { discoverTopic } from './steps/1-discover-topic.js';
 import { generateScript } from './steps/2-generate-script.js';
 import { generateVoice } from './steps/3-generate-voice.js';
@@ -45,13 +46,29 @@ async function run(channelId, formatOverride) {
     const topicInfo = await discoverTopic(channel, history);
     console.log('   ->', topicInfo.topic);
 
+    // Nursery-audio check runs BEFORE the script step so we can skip
+    // narration generation entirely when we already have real singing
+    // audio for this topic - long-form baby videos otherwise burn
+    // ~5min of Ollama on section-by-section narration text we'd throw
+    // away.
+    const nursery = await resolveNurseryAudio(topicInfo.topic);
+
     console.log('[2/7] generating script...');
-    const script = await generateScript(channel, topicInfo);
+    const script = await generateScript(channel, topicInfo, { skipNarration: !!nursery });
     console.log('   ->', script.title);
 
     console.log('[3/7] generating voiceover...');
     const audioPath = path.join(workDir, 'voice.mp3');
-    await generateVoice(script.narration, audioPath, channel.voice);
+    if (nursery) {
+      // Real sung public-domain recording matched this topic. Use it
+      // instead of Edge TTS reading lyrics as spoken text (which is
+      // what babies/toddlers do NOT engage with).
+      const target = NURSERY_TARGET_DURATION[channel.format] || NURSERY_TARGET_DURATION.short;
+      console.log(`   -> using bundled recording: ${nursery.filename} (${nursery.license})`);
+      await prepareNurseryAudio(nursery, audioPath, target);
+    } else {
+      await generateVoice(script.narration, audioPath, channel.voice);
+    }
 
     const duration = await ffprobeDuration(audioPath);
 
