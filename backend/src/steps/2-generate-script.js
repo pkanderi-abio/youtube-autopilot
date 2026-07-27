@@ -257,16 +257,28 @@ function needsScenes(channel) {
 function scenesFields(channel, countHint) {
   if (!needsScenes(channel)) return { hint: '', instructions: '' };
 
+  const isBaby = channel.contentStyle === 'babyLearning';
+  const examples = isBaby
+    ? '"cute yellow ducks swimming", "red juicy apple on table", "colorful balloons floating", "puppy playing with ball", "baby playing with toys"'
+    : '"aerial coastal city sunset" or "fox running through forest"';
+  const extra = isBaby
+    ? `\n  For baby/toddler content specifically: prefer bright, cheerful,
+  concrete objects the video is teaching about (animals, food, toys,
+  colorful things). Search phrases like "cute puppy playing" work far
+  better on stock-footage sites than abstract phrases like "concept of
+  counting" - Pexels has thousands of matching real clips for concrete
+  kid-friendly nouns.`
+    : '';
+
   return {
     hint: `
   "scenes": ["short visual phrase 1", "short visual phrase 2", "..."],`,
     instructions: `
 - Also produce a "scenes" array: ${countHint} short visual phrases (3-6
-  words each, concrete nouns, e.g. "aerial coastal city sunset" or
-  "fox running through forest") describing what should be shown on
-  screen at each part of the video, in order - these are used as
-  stock-footage search queries, so keep them concrete and literal, not
-  full sentences.`
+  words each, concrete nouns, e.g. ${examples}) describing what should
+  be shown on screen at each part of the video, in order - these are
+  used as stock-footage search queries, so keep them concrete and
+  literal, not full sentences.${extra}`
   };
 }
 
