@@ -41,7 +41,8 @@
     "Five Little Ducks Went Out One Day in Colorful Water Colors",
     "Five Little Ducks Went Out One Day, Counting Red, Yellow, and Green Leaves",
     "Five Little Ducks Went Out One Day",
-    "Counting Cars from 1 to 5 with Colors of the Road"
+    "Counting Cars from 1 to 5 with Colors of the Road",
+    "Five Little Monkeys Jumping on the Bed, Counting Down from 5 to 1"
   ],
   "videos": [
     {
@@ -282,6 +283,12 @@
       "url": "https://youtu.be/NzFwJ-ESmyg",
       "format": "short",
       "publishedAt": "2026-07-26T23:55:27.281Z"
+    },
+    {
+      "title": "Five Little Monkeys Jumping on the Bed",
+      "url": "https://youtu.be/js1SwX2yhLE",
+      "format": "short",
+      "publishedAt": "2026-07-27T01:52:57.629Z"
     }
   ]
 }
