@@ -34,6 +34,48 @@
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hot_Cross_Buns.ogg",
       "license": "public-domain",
       "durationSeconds": 8
+    },
+    {
+      "topic": "London Bridge Is Falling Down",
+      "filename": "london-bridge-is-falling-down.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:London_Bridge_Is_Falling_Down.ogg",
+      "license": "public-domain",
+      "durationSeconds": 15
+    },
+    {
+      "topic": "Itsy Bitsy Spider",
+      "filename": "itsy-bitsy-spider.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Itsy_Bitsy_Spider.ogg",
+      "license": "public-domain",
+      "durationSeconds": 18
+    },
+    {
+      "topic": "Pop Goes the Weasel",
+      "filename": "pop-goes-the-weasel.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pop_Goes_the_Weasel.ogg",
+      "license": "public-domain",
+      "durationSeconds": 11
+    },
+    {
+      "topic": "Little Bo Peep",
+      "filename": "little-bo-peep.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Little_Bo_Peep.ogg",
+      "license": "public-domain",
+      "durationSeconds": 12
+    },
+    {
+      "topic": "Three Blind Mice",
+      "filename": "three-blind-mice.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_Blind_Mice.ogg",
+      "license": "public-domain",
+      "durationSeconds": 23
+    },
+    {
+      "topic": "Row Row Row Your Boat",
+      "filename": "row-row-row-your-boat.ogg",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Row,_Row,_Row_Your_Boat.ogg",
+      "license": "public-domain",
+      "durationSeconds": 7
     }
   ]
 }

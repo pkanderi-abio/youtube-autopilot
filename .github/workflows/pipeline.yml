@@ -5,17 +5,28 @@ permissions:
 
 on:
   schedule:
-    # Each channel now publishes both a short and a long-form video, on
-    # its own cadence - shorts are cheap (~8-12 min/run) so they run
-    # often; long-form is expensive (~28-30 min/run, chunked script
-    # generation + longer voice/footage) so it runs a few times a week
-    # instead of daily. The repo is public, so GitHub Actions minutes are
-    # unlimited/free regardless - this cadence is about content pacing
-    # and avoiding YouTube spam/quality risk, not a compute budget.
-    - cron: '0 2,14 * * *'   # channel1 (TeslaTravel) short: twice daily
-    - cron: '0 8 * * 1,3,5'  # channel1 (TeslaTravel) long: Mon/Wed/Fri
-    - cron: '0 20 * * *'     # channel2 (Storytime Fables) short: daily
-    - cron: '0 10 * * 2,4,6' # channel2 (Storytime Fables) long: Tue/Thu/Sat
+    # Times chosen for target-audience active hours (US-centric since
+    # that's where most YouTube ad revenue comes from). Previous times
+    # (2/8/10/20 UTC) put uploads in the middle of the US night or the
+    # dead 4-8am ET window, which meant the first-hour retention YouTube
+    # weights so heavily for algo boost was earned against near-zero
+    # traffic. New schedule targets when the actual viewer segments are
+    # on the app:
+    #   channel1 (adult trending facts, US-centric):
+    #     shorts 14 UTC (10am ET) + 22 UTC (6pm ET) - lunch break and
+    #       after-work scroll windows
+    #     long   17 UTC Mon/Wed/Fri (1pm ET) - midday US
+    #   channel2 (baby content, driven by parents/caregivers):
+    #     short  13 UTC daily (9am ET) - morning routine when parents
+    #       put on a video for the toddler
+    #     long   14 UTC Sat/Sun + Wed (10am ET) - weekend morning
+    #       + midweek downtime, mostly weekend
+    # GitHub Actions cron is 5-15 min drifty - factor that in when
+    # comparing against actual observed publish times.
+    - cron: '0 14,22 * * *'  # channel1 (TeslaTravel) short: 10am + 6pm ET
+    - cron: '0 17 * * 1,3,5' # channel1 (TeslaTravel) long: 1pm ET Mon/Wed/Fri
+    - cron: '0 13 * * *'     # channel2 (Storytime Fables) short: 9am ET
+    - cron: '0 14 * * 3,6,0' # channel2 (Storytime Fables) long: 10am ET Wed/Sat/Sun
   workflow_dispatch:
     inputs:
       channel:
@@ -46,10 +57,10 @@ jobs:
               '[range(0; $channels|length) as $i | range(0; $formats|length) as $j | {channel: $channels[$i], format: $formats[$j]}]')
           else
             case "${{ github.event.schedule }}" in
-              '0 2,14 * * *')   jobs='[{"channel":"channel1","format":"short"}]' ;;
-              '0 8 * * 1,3,5')  jobs='[{"channel":"channel1","format":"long"}]' ;;
-              '0 20 * * *')     jobs='[{"channel":"channel2","format":"short"}]' ;;
-              '0 10 * * 2,4,6') jobs='[{"channel":"channel2","format":"long"}]' ;;
+              '0 14,22 * * *')  jobs='[{"channel":"channel1","format":"short"}]' ;;
+              '0 17 * * 1,3,5') jobs='[{"channel":"channel1","format":"long"}]' ;;
+              '0 13 * * *')     jobs='[{"channel":"channel2","format":"short"}]' ;;
+              '0 14 * * 3,6,0') jobs='[{"channel":"channel2","format":"long"}]' ;;
               *) jobs='[]' ;;
             esac
           fi
