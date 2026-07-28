@@ -61,7 +61,8 @@
     "Did you know that there is a type of jellyfish that is immortal?",
     "The world's largest rainforest is not in South America but in Southeast Asia",
     "Did You Know That The World's Largest Snowflake Was 15 Inches Wide?",
-    "The Forgotten Human Species That Lived in Europe During the Last Ice Age"
+    "The Forgotten Human Species That Lived in Europe During the Last Ice Age",
+    "Did You Know There's a Place in the US Where the Air is So Clean It Can Cure Your Skin Cancer?"
   ],
   "videos": [
     {
@@ -414,6 +415,12 @@
       "url": "https://youtu.be/C2m6PxBnoG8",
       "format": "short",
       "publishedAt": "2026-07-27T23:06:33.710Z"
+    },
+    {
+      "title": "The Arizona town where air is so clean it can cure skin cancer",
+      "url": "https://youtu.be/4gQjImI5amQ",
+      "format": "short",
+      "publishedAt": "2026-07-28T16:12:43.815Z"
     }
   ]
 }
