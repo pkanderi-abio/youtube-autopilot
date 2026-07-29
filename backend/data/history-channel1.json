@@ -63,7 +63,8 @@
     "Did You Know That The World's Largest Snowflake Was 15 Inches Wide?",
     "The Forgotten Human Species That Lived in Europe During the Last Ice Age",
     "Did You Know There's a Place in the US Where the Air is So Clean It Can Cure Your Skin Cancer?",
-    "The world's largest living organisms are not trees or coral reefs but actually giant fungal networks that cover thousands of acres."
+    "The world's largest living organisms are not trees or coral reefs but actually giant fungal networks that cover thousands of acres.",
+    "You think you know the true story behind the world's most famous bridges?"
   ],
   "videos": [
     {
@@ -428,6 +429,12 @@
       "url": "https://youtu.be/KXPZKHNEJe8",
       "format": "short",
       "publishedAt": "2026-07-28T23:03:30.935Z"
+    },
+    {
+      "title": "The World's Most Famous Bridges Hold Surprising Secrets",
+      "url": "https://youtu.be/nhW3DyJPwG0",
+      "format": "short",
+      "publishedAt": "2026-07-29T15:54:34.516Z"
     }
   ]
 }
