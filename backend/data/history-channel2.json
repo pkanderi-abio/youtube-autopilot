@@ -43,7 +43,8 @@
     "Five Little Ducks Went Out One Day",
     "Counting Cars from 1 to 5 with Colors of the Road",
     "Five Little Monkeys Jumping on the Bed, Counting Down from 5 to 1",
-    "Counting the Colors of Little Bo Peep's Sheep"
+    "Counting the Colors of Little Bo Peep's Sheep",
+    "Three Blind Mice are Colorful Friends"
   ],
   "videos": [
     {
@@ -296,6 +297,12 @@
       "url": "https://youtu.be/7h-odZ9aZjg",
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z"
+    },
+    {
+      "title": "Three Blind Mice Learn Colors",
+      "url": "https://youtu.be/KJzQQOv_etc",
+      "format": "short",
+      "publishedAt": "2026-07-30T15:16:21.940Z"
     }
   ]
 }
