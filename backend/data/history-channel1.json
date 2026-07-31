@@ -69,7 +69,8 @@
     "The Most Commonly Traveled-to Places in Space",
     "The World's Most Abandoned Theme Parks",
     "Did You Know the Ancient Egyptians Could Make Glass?",
-    "The fastest passenger train in the world has a top speed of over 370 mph"
+    "The fastest passenger train in the world has a top speed of over 370 mph",
+    "The world's oldest known tree is over 4,900 years old and still alive today"
   ],
   "videos": [
     {
@@ -470,6 +471,12 @@
       "url": "https://youtu.be/p2W63dCXtTs",
       "format": "long",
       "publishedAt": "2026-07-31T18:37:01.258Z"
+    },
+    {
+      "title": "The World's Oldest Tree Still Standing",
+      "url": "https://youtu.be/p7miTowhjnc",
+      "format": "short",
+      "publishedAt": "2026-07-31T23:04:45.117Z"
     }
   ]
 }
