@@ -67,7 +67,8 @@
     "You think you know the true story behind the world's most famous bridges?",
     "The 5 Most Mysterious Unclaimed Bodies in the World",
     "The Most Commonly Traveled-to Places in Space",
-    "The World's Most Abandoned Theme Parks"
+    "The World's Most Abandoned Theme Parks",
+    "Did You Know the Ancient Egyptians Could Make Glass?"
   ],
   "videos": [
     {
@@ -456,6 +457,12 @@
       "url": "https://youtu.be/qj5gvgRZ4eA",
       "format": "short",
       "publishedAt": "2026-07-30T23:11:53.274Z"
+    },
+    {
+      "title": "Ancient Egyptians' Glassmaking Secrets",
+      "url": "https://youtu.be/U5GCFmbXPwk",
+      "format": "short",
+      "publishedAt": "2026-07-31T16:06:55.318Z"
     }
   ]
 }
