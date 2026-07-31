@@ -466,16 +466,32 @@ async function generateLongScript(channel, topicInfo) {
 
   let narration = '';
   let captionLines = [];
+  let skippedSections = 0;
   for (let i = 0; i < sections.length; i++) {
     const tail = narration ? narration.trim().split(/\s+/).slice(-40).join(' ') : '';
-    const section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
-    narration += (narration ? ' ' : '') + section.narration.trim();
-    captionLines = captionLines.concat(section.captionLines || []);
+    // Per-section resilience: a single section throwing (invalid JSON
+    // from llama3.2, Ollama transient 500, timeout) used to abort the
+    // entire long-form run - which was the majority of long-form CI
+    // failures. Now we log the failed section, note it, and continue.
+    // The aggregate MIN_WORDS.long check below is the real safety
+    // net: if we lose 1-2 sections but still clear the floor, ship;
+    // if we lose enough that we're under the floor, abort as before.
+    try {
+      const section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
+      narration += (narration ? ' ' : '') + section.narration.trim();
+      captionLines = captionLines.concat(section.captionLines || []);
+    } catch (err) {
+      skippedSections++;
+      console.warn(`[script] section ${i + 1}/${sections.length} threw after all retries - skipping and continuing. Error:`, err && err.stack ? err.stack : err.message || err);
+    }
   }
 
   const words = wordCount(narration);
+  if (skippedSections > 0) {
+    console.warn(`[script] long-form completed with ${skippedSections}/${sections.length} sections skipped (aggregate: ${words} words)`);
+  }
   if (words < MIN_WORDS.long) {
-    throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words) - aborting instead of publishing`);
+    throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words${skippedSections ? `, ${skippedSections} sections skipped due to errors` : ''}) - aborting instead of publishing`);
   }
 
   const result = {

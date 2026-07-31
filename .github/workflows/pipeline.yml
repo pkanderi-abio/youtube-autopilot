@@ -116,17 +116,16 @@ jobs:
           # `ollama serve &` here just fails instantly with "address
           # already in use" and does nothing useful) - just wait for the
           # systemd-managed instance to be ready, then pull the model.
-          # 180s (was 60s, was 30s): a cluster of real failures
-          # 2026-07-20..24 all timed out at exactly the previous 60s cap
-          # ("Start Ollama and pull model" completed at t+61s with the
-          # service still not answering /api/version). systemd unit
-          # start time on a shared CI runner is genuinely variable, so
-          # give it real headroom. Also: if the loop exhausts without
-          # ever seeing a 200 from /api/version, fail explicitly instead
-          # of silently proceeding to `ollama pull` against a dead server
-          # (which just fails cryptically a second later).
+          # 300s (was 180s, was 60s, was 30s): a channel2-short run on
+          # 2026-07-29 15:06 timed out at exactly the previous 180s cap
+          # despite the previous bump - the shared CI runner's systemd
+          # startup time is variable enough that even 3x headroom isn't
+          # always enough. Push to 5 minutes. If it exhausts, fail
+          # explicitly instead of silently proceeding to `ollama pull`
+          # against a dead server (which just fails cryptically a
+          # second later).
           ollama_ready=false
-          for i in $(seq 1 180); do
+          for i in $(seq 1 300); do
             if curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
               echo "Ollama ready after ${i}s"
               ollama_ready=true
@@ -135,7 +134,7 @@ jobs:
             sleep 1
           done
           if [ "$ollama_ready" != "true" ]; then
-            echo "::error::Ollama did not answer /api/version within 180s"
+            echo "::error::Ollama did not answer /api/version within 300s"
             exit 1
           fi
           # `ollama pull` itself has been observed to fail transiently
