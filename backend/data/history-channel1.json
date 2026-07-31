@@ -68,7 +68,8 @@
     "The 5 Most Mysterious Unclaimed Bodies in the World",
     "The Most Commonly Traveled-to Places in Space",
     "The World's Most Abandoned Theme Parks",
-    "Did You Know the Ancient Egyptians Could Make Glass?"
+    "Did You Know the Ancient Egyptians Could Make Glass?",
+    "The fastest passenger train in the world has a top speed of over 370 mph"
   ],
   "videos": [
     {
@@ -463,6 +464,12 @@
       "url": "https://youtu.be/U5GCFmbXPwk",
       "format": "short",
       "publishedAt": "2026-07-31T16:06:55.318Z"
+    },
+    {
+      "title": "The Shanghai Maglev: A New Era in High-Speed Rail",
+      "url": "https://youtu.be/p2W63dCXtTs",
+      "format": "long",
+      "publishedAt": "2026-07-31T18:37:01.258Z"
     }
   ]
 }
