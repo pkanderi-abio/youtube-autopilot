@@ -45,7 +45,8 @@
     "Five Little Monkeys Jumping on the Bed, Counting Down from 5 to 1",
     "Counting the Colors of Little Bo Peep's Sheep",
     "Three Blind Mice are Colorful Friends",
-    "Counting Little Sheep in Different Colors"
+    "Counting Little Sheep in Different Colors",
+    "Counting Colors with Little Lamb's Ball"
   ],
   "videos": [
     {
@@ -310,6 +311,12 @@
       "url": "https://youtu.be/P1EG_oL5U-k",
       "format": "short",
       "publishedAt": "2026-08-01T14:32:01.816Z"
+    },
+    {
+      "title": "Mary and Little Lamb Count Colors Together",
+      "url": "https://youtu.be/HZtu65FkoFM",
+      "format": "long",
+      "publishedAt": "2026-08-01T15:14:07.932Z"
     }
   ]
 }
