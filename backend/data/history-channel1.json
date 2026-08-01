@@ -70,7 +70,8 @@
     "The World's Most Abandoned Theme Parks",
     "Did You Know the Ancient Egyptians Could Make Glass?",
     "The fastest passenger train in the world has a top speed of over 370 mph",
-    "The world's oldest known tree is over 4,900 years old and still alive today"
+    "The world's oldest known tree is over 4,900 years old and still alive today",
+    "The World's Deepest Mine Shaft is Hidden Beneath a Supermarket Car Park"
   ],
   "videos": [
     {
@@ -477,6 +478,12 @@
       "url": "https://youtu.be/p7miTowhjnc",
       "format": "short",
       "publishedAt": "2026-07-31T23:04:45.117Z"
+    },
+    {
+      "title": "The World's Deepest Mine Shaft Under a Supermarket",
+      "url": "https://youtu.be/NoZQOyAwr40",
+      "format": "short",
+      "publishedAt": "2026-08-01T15:06:49.405Z"
     }
   ]
 }
