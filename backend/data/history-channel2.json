@@ -46,7 +46,8 @@
     "Counting the Colors of Little Bo Peep's Sheep",
     "Three Blind Mice are Colorful Friends",
     "Counting Little Sheep in Different Colors",
-    "Counting Colors with Little Lamb's Ball"
+    "Counting Colors with Little Lamb's Ball",
+    "Counting Flowers in a Garden of Colors"
   ],
   "videos": [
     {
@@ -317,6 +318,12 @@
       "url": "https://youtu.be/HZtu65FkoFM",
       "format": "long",
       "publishedAt": "2026-08-01T15:14:07.932Z"
+    },
+    {
+      "title": "Counting Flowers in Our Colorful Garden",
+      "url": "https://youtu.be/RA_nw5pKWVQ",
+      "format": "short",
+      "publishedAt": "2026-08-02T14:34:04.372Z"
     }
   ]
 }
