@@ -71,7 +71,8 @@
     "Did You Know the Ancient Egyptians Could Make Glass?",
     "The fastest passenger train in the world has a top speed of over 370 mph",
     "The world's oldest known tree is over 4,900 years old and still alive today",
-    "The World's Deepest Mine Shaft is Hidden Beneath a Supermarket Car Park"
+    "The World's Deepest Mine Shaft is Hidden Beneath a Supermarket Car Park",
+    "The Most Bizarre Food Combinations from Around the World"
   ],
   "videos": [
     {
@@ -484,6 +485,12 @@
       "url": "https://youtu.be/NoZQOyAwr40",
       "format": "short",
       "publishedAt": "2026-08-01T15:06:49.405Z"
+    },
+    {
+      "title": "Fiji's Best Hidden Beaches",
+      "url": "https://youtu.be/SbVOxpAKpm4",
+      "format": "short",
+      "publishedAt": "2026-08-02T23:00:02.606Z"
     }
   ]
 }
