@@ -73,7 +73,8 @@
     "The world's oldest known tree is over 4,900 years old and still alive today",
     "The World's Deepest Mine Shaft is Hidden Beneath a Supermarket Car Park",
     "The Most Bizarre Food Combinations from Around the World",
-    "The World's Largest Living Organism is a Fungus"
+    "The World's Largest Living Organism is a Fungus",
+    "What if you could hike to the highest point in the continental US that was once considered a 'ghost town'?"
   ],
   "videos": [
     {
@@ -498,6 +499,12 @@
       "url": "https://youtu.be/4N09zUQgBOg",
       "format": "short",
       "publishedAt": "2026-08-03T16:30:05.822Z"
+    },
+    {
+      "title": "Glenwood Springs: Uncovering the Ghost Town at the Continental Divide",
+      "url": "https://youtu.be/t28sYAQ0b9I",
+      "format": "long",
+      "publishedAt": "2026-08-03T18:58:49.920Z"
     }
   ]
 }
