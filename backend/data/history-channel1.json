@@ -76,7 +76,8 @@
     "The World's Largest Living Organism is a Fungus",
     "What if you could hike to the highest point in the continental US that was once considered a 'ghost town'?",
     "The Secret World of Bioluminescent Bays",
-    "The world's most epic natural wonders are often found in the most unlikely of places"
+    "The world's most epic natural wonders are often found in the most unlikely of places",
+    "The World's Most Isolated Countries"
   ],
   "videos": [
     {
@@ -519,6 +520,12 @@
       "url": "https://youtu.be/41G_czxI2nQ",
       "format": "short",
       "publishedAt": "2026-08-04T16:14:50.826Z"
+    },
+    {
+      "title": "World's Most Isolated Countries",
+      "url": "https://youtu.be/L2zD8BGQ0iY",
+      "format": "short",
+      "publishedAt": "2026-08-04T23:07:30.168Z"
     }
   ]
 }
