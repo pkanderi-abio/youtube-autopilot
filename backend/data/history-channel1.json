@@ -79,7 +79,8 @@
     "The world's most epic natural wonders are often found in the most unlikely of places",
     "The World's Most Isolated Countries",
     "The world's largest tree by volume is a fungus, not a tree",
-    "The shortest war in history was between Britain and Zanzibar on August 27, 1896, and lasted only 38 minutes."
+    "The shortest war in history was between Britain and Zanzibar on August 27, 1896, and lasted only 38 minutes.",
+    "The world's most haunted cities to visit"
   ],
   "videos": [
     {
@@ -540,6 +541,12 @@
       "url": "https://youtu.be/G3nOMK9dn0s",
       "format": "long",
       "publishedAt": "2026-08-05T18:37:00.135Z"
+    },
+    {
+      "title": "10 Cities to Visit for a Haunted History Lesson",
+      "url": "https://youtu.be/aPU3lqyw3ag",
+      "format": "short",
+      "publishedAt": "2026-08-05T23:06:27.691Z"
     }
   ]
 }
