@@ -78,7 +78,8 @@
     "The Secret World of Bioluminescent Bays",
     "The world's most epic natural wonders are often found in the most unlikely of places",
     "The World's Most Isolated Countries",
-    "The world's largest tree by volume is a fungus, not a tree"
+    "The world's largest tree by volume is a fungus, not a tree",
+    "The shortest war in history was between Britain and Zanzibar on August 27, 1896, and lasted only 38 minutes."
   ],
   "videos": [
     {
@@ -533,6 +534,12 @@
       "url": "https://youtu.be/ZfspHPgdCWk",
       "format": "short",
       "publishedAt": "2026-08-05T16:07:16.714Z"
+    },
+    {
+      "title": "The Shortest War in History: What If Britain Had Lost?",
+      "url": "https://youtu.be/G3nOMK9dn0s",
+      "format": "long",
+      "publishedAt": "2026-08-05T18:37:00.135Z"
     }
   ]
 }
