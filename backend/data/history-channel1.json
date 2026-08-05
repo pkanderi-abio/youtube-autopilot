@@ -77,7 +77,8 @@
     "What if you could hike to the highest point in the continental US that was once considered a 'ghost town'?",
     "The Secret World of Bioluminescent Bays",
     "The world's most epic natural wonders are often found in the most unlikely of places",
-    "The World's Most Isolated Countries"
+    "The World's Most Isolated Countries",
+    "The world's largest tree by volume is a fungus, not a tree"
   ],
   "videos": [
     {
@@ -526,6 +527,12 @@
       "url": "https://youtu.be/L2zD8BGQ0iY",
       "format": "short",
       "publishedAt": "2026-08-04T23:07:30.168Z"
+    },
+    {
+      "title": "The World's Largest Living Thing Is a Fungus",
+      "url": "https://youtu.be/ZfspHPgdCWk",
+      "format": "short",
+      "publishedAt": "2026-08-05T16:07:16.714Z"
     }
   ]
 }
