@@ -47,7 +47,8 @@
     "Three Blind Mice are Colorful Friends",
     "Counting Little Sheep in Different Colors",
     "Counting Colors with Little Lamb's Ball",
-    "Counting Flowers in a Garden of Colors"
+    "Counting Flowers in a Garden of Colors",
+    "The Itsy Bitsy Spider Climbs a Rainbow"
   ],
   "videos": [
     {
@@ -324,6 +325,12 @@
       "url": "https://youtu.be/RA_nw5pKWVQ",
       "format": "short",
       "publishedAt": "2026-08-02T14:34:04.372Z"
+    },
+    {
+      "title": "The Itsy Bitsy Spider Climbs a Rainbow",
+      "url": "https://youtu.be/fg4-SWLZImo",
+      "format": "short",
+      "publishedAt": "2026-08-05T15:16:34.492Z"
     }
   ]
 }
