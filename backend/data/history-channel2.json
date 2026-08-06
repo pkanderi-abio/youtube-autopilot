@@ -48,7 +48,8 @@
     "Counting Little Sheep in Different Colors",
     "Counting Colors with Little Lamb's Ball",
     "Counting Flowers in a Garden of Colors",
-    "The Itsy Bitsy Spider Climbs a Rainbow"
+    "The Itsy Bitsy Spider Climbs a Rainbow",
+    "Hot Cross Buns are Yellow and Counting Fun"
   ],
   "videos": [
     {
@@ -331,6 +332,12 @@
       "url": "https://youtu.be/fg4-SWLZImo",
       "format": "short",
       "publishedAt": "2026-08-05T15:16:34.492Z"
+    },
+    {
+      "title": "Counting Hot Cross Buns",
+      "url": "https://youtu.be/tdAjgOajnJY",
+      "format": "short",
+      "publishedAt": "2026-08-06T15:17:15.067Z"
     }
   ]
 }
