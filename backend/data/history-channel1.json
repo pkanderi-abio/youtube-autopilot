@@ -82,7 +82,8 @@
     "The shortest war in history was between Britain and Zanzibar on August 27, 1896, and lasted only 38 minutes.",
     "The world's most haunted cities to visit",
     "The World's Most Mysterious Underwater Lakes",
-    "The world's oldest known hotel is in Estonia"
+    "The world's oldest known hotel is in Estonia",
+    "You can hear your own heartbeat from space"
   ],
   "videos": [
     {
@@ -561,6 +562,12 @@
       "url": "https://youtu.be/gCQnvW-Jq8g",
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z"
+    },
+    {
+      "title": "You can hear your heartbeat from space",
+      "url": "https://youtu.be/1KCDAK3BSNQ",
+      "format": "short",
+      "publishedAt": "2026-08-07T22:38:20.751Z"
     }
   ]
 }
