@@ -49,7 +49,8 @@
     "Counting Colors with Little Lamb's Ball",
     "Counting Flowers in a Garden of Colors",
     "The Itsy Bitsy Spider Climbs a Rainbow",
-    "Hot Cross Buns are Yellow and Counting Fun"
+    "Hot Cross Buns are Yellow and Counting Fun",
+    "Three Blind Mice Counting Fun"
   ],
   "videos": [
     {
@@ -338,6 +339,12 @@
       "url": "https://youtu.be/tdAjgOajnJY",
       "format": "short",
       "publishedAt": "2026-08-06T15:17:15.067Z"
+    },
+    {
+      "title": "Counting Fun with Three Blind Mice",
+      "url": "https://youtu.be/eWerjcgHSkg",
+      "format": "short",
+      "publishedAt": "2026-08-07T14:14:55.804Z"
     }
   ]
 }
