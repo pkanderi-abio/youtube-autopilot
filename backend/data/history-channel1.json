@@ -84,7 +84,8 @@
     "The World's Most Mysterious Underwater Lakes",
     "The world's oldest known hotel is in Estonia",
     "You can hear your own heartbeat from space",
-    "The world's largest snowflake was almost twice the size of a small car"
+    "The world's largest snowflake was almost twice the size of a small car",
+    "The World's Most Mysterious Abandoned Theme Parks"
   ],
   "videos": [
     {
@@ -575,6 +576,12 @@
       "url": "https://youtu.be/_16JNh4i1m8",
       "format": "short",
       "publishedAt": "2026-08-08T14:36:00.009Z"
+    },
+    {
+      "title": "Fiji's Best Hidden Beaches",
+      "url": "https://youtu.be/VwfnEDJKQE8",
+      "format": "short",
+      "publishedAt": "2026-08-08T22:32:45.092Z"
     }
   ]
 }
