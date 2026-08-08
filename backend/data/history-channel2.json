@@ -51,7 +51,8 @@
     "The Itsy Bitsy Spider Climbs a Rainbow",
     "Hot Cross Buns are Yellow and Counting Fun",
     "Three Blind Mice Counting Fun",
-    "Mary Had a Little Lamb is Counting Fun!"
+    "Mary Had a Little Lamb is Counting Fun!",
+    "Mary Had a Little Lamb, Follow Me, Follow Me!"
   ],
   "videos": [
     {
@@ -352,6 +353,12 @@
       "url": "https://youtu.be/Nekt_HeC5Rc",
       "format": "short",
       "publishedAt": "2026-08-08T13:46:22.499Z"
+    },
+    {
+      "title": "Mary and Her Little Lamb's Colorful Counting Adventure",
+      "url": "https://youtu.be/pDIS1a8QXjQ",
+      "format": "long",
+      "publishedAt": "2026-08-08T14:46:28.079Z"
     }
   ]
 }
