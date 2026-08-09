@@ -53,7 +53,8 @@
     "Three Blind Mice Counting Fun",
     "Mary Had a Little Lamb is Counting Fun!",
     "Mary Had a Little Lamb, Follow Me, Follow Me!",
-    "Mary Had a Little Lamb Counts Around the Farm"
+    "Mary Had a Little Lamb Counts Around the Farm",
+    "Five Little Monkeys Singing ABCs"
   ],
   "videos": [
     {
@@ -366,6 +367,12 @@
       "url": "https://youtu.be/qgoFiLW24qs",
       "format": "short",
       "publishedAt": "2026-08-09T13:51:44.270Z"
+    },
+    {
+      "title": "Five Little Monkeys Singing ABCs",
+      "url": "https://youtu.be/J_FWWyA-5CE",
+      "format": "long",
+      "publishedAt": "2026-08-09T14:45:08.611Z"
     }
   ]
 }
