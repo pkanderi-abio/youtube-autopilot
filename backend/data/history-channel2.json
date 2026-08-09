@@ -52,7 +52,8 @@
     "Hot Cross Buns are Yellow and Counting Fun",
     "Three Blind Mice Counting Fun",
     "Mary Had a Little Lamb is Counting Fun!",
-    "Mary Had a Little Lamb, Follow Me, Follow Me!"
+    "Mary Had a Little Lamb, Follow Me, Follow Me!",
+    "Mary Had a Little Lamb Counts Around the Farm"
   ],
   "videos": [
     {
@@ -359,6 +360,12 @@
       "url": "https://youtu.be/pDIS1a8QXjQ",
       "format": "long",
       "publishedAt": "2026-08-08T14:46:28.079Z"
+    },
+    {
+      "title": "Mary's Farm Friends Count Around",
+      "url": "https://youtu.be/qgoFiLW24qs",
+      "format": "short",
+      "publishedAt": "2026-08-09T13:51:44.270Z"
     }
   ]
 }
