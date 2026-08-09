@@ -85,7 +85,8 @@
     "The world's oldest known hotel is in Estonia",
     "You can hear your own heartbeat from space",
     "The world's largest snowflake was almost twice the size of a small car",
-    "The World's Most Mysterious Abandoned Theme Parks"
+    "The World's Most Mysterious Abandoned Theme Parks",
+    "The most unlikely places where ancient myths were inspired by real-life natural phenomena"
   ],
   "videos": [
     {
@@ -582,6 +583,12 @@
       "url": "https://youtu.be/VwfnEDJKQE8",
       "format": "short",
       "publishedAt": "2026-08-08T22:32:45.092Z"
+    },
+    {
+      "title": "Ancient Myths Inspired by Real-Life Natural Phenomena",
+      "url": "https://youtu.be/ORDY7VA92DM",
+      "format": "short",
+      "publishedAt": "2026-08-09T22:34:21.575Z"
     }
   ]
 }
