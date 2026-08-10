@@ -54,7 +54,8 @@
     "Mary Had a Little Lamb is Counting Fun!",
     "Mary Had a Little Lamb, Follow Me, Follow Me!",
     "Mary Had a Little Lamb Counts Around the Farm",
-    "Five Little Monkeys Singing ABCs"
+    "Five Little Monkeys Singing ABCs",
+    "Three Blind Mice Learning Colors and Shapes"
   ],
   "videos": [
     {
@@ -373,6 +374,12 @@
       "url": "https://youtu.be/J_FWWyA-5CE",
       "format": "long",
       "publishedAt": "2026-08-09T14:45:08.611Z"
+    },
+    {
+      "title": "Three Blind Mice Learn Colors and Shapes on London Bridge",
+      "url": "https://youtu.be/59jy_9QPs2M",
+      "format": "short",
+      "publishedAt": "2026-08-10T14:25:59.132Z"
     }
   ]
 }
