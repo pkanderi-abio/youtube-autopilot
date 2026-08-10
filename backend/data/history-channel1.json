@@ -87,7 +87,8 @@
     "The world's largest snowflake was almost twice the size of a small car",
     "The World's Most Mysterious Abandoned Theme Parks",
     "The most unlikely places where ancient myths were inspired by real-life natural phenomena",
-    "The World's Most Polluted Places (and what you can do to avoid them)"
+    "The World's Most Polluted Places (and what you can do to avoid them)",
+    "The world's most remote airport"
   ],
   "videos": [
     {
@@ -596,6 +597,12 @@
       "url": "https://youtu.be/alt5uPFVrS0",
       "format": "short",
       "publishedAt": "2026-08-10T15:01:57.075Z"
+    },
+    {
+      "title": "The World's Most Remote Airport",
+      "url": "https://youtu.be/H5fJqnaCTAo",
+      "format": "short",
+      "publishedAt": "2026-08-10T22:42:27.551Z"
     }
   ]
 }
