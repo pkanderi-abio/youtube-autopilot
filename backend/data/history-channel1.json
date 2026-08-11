@@ -88,7 +88,8 @@
     "The World's Most Mysterious Abandoned Theme Parks",
     "The most unlikely places where ancient myths were inspired by real-life natural phenomena",
     "The World's Most Polluted Places (and what you can do to avoid them)",
-    "The world's most remote airport"
+    "The world's most remote airport",
+    "Did You Know There's a Type of Jellyfish That Can Outlast You?"
   ],
   "videos": [
     {
@@ -603,6 +604,12 @@
       "url": "https://youtu.be/H5fJqnaCTAo",
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z"
+    },
+    {
+      "title": "The Jellyfish That Can Outlast You",
+      "url": "https://youtu.be/8dSB1hHLXrs",
+      "format": "short",
+      "publishedAt": "2026-08-11T15:01:53.101Z"
     }
   ]
 }
