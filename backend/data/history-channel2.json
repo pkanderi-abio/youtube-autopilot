@@ -55,7 +55,8 @@
     "Mary Had a Little Lamb, Follow Me, Follow Me!",
     "Mary Had a Little Lamb Counts Around the Farm",
     "Five Little Monkeys Singing ABCs",
-    "Three Blind Mice Learning Colors and Shapes"
+    "Three Blind Mice Learning Colors and Shapes",
+    "Counting the Colors of Mary Had a Little Lamb's Wool"
   ],
   "videos": [
     {
@@ -380,6 +381,12 @@
       "url": "https://youtu.be/59jy_9QPs2M",
       "format": "short",
       "publishedAt": "2026-08-10T14:25:59.132Z"
+    },
+    {
+      "title": "Mary Had a Little Lamb's Wool Colors",
+      "url": "https://youtu.be/0xY7f0xrvNc",
+      "format": "short",
+      "publishedAt": "2026-08-11T14:24:05.274Z"
     }
   ]
 }
