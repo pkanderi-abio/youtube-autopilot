@@ -91,7 +91,8 @@
     "The world's most remote airport",
     "Did You Know There's a Type of Jellyfish That Can Outlast You?",
     "The world's longest flight route is almost as long as the distance from New York to Sydney",
-    "The world's oldest known amusement park is actually a ancient Minoan palace"
+    "The world's oldest known amusement park is actually a ancient Minoan palace",
+    "The most scenic drives in the world you never knew existed"
   ],
   "videos": [
     {
@@ -624,6 +625,12 @@
       "url": "https://youtu.be/tCoVHJUdo44",
       "format": "short",
       "publishedAt": "2026-08-12T15:03:26.765Z"
+    },
+    {
+      "title": "Fiji's Best Hidden Beaches for 2024 Travelers",
+      "url": "https://youtu.be/tqayghWs9Dg",
+      "format": "short",
+      "publishedAt": "2026-08-12T22:43:45.671Z"
     }
   ]
 }
