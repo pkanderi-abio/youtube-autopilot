@@ -90,7 +90,8 @@
     "The World's Most Polluted Places (and what you can do to avoid them)",
     "The world's most remote airport",
     "Did You Know There's a Type of Jellyfish That Can Outlast You?",
-    "The world's longest flight route is almost as long as the distance from New York to Sydney"
+    "The world's longest flight route is almost as long as the distance from New York to Sydney",
+    "The world's oldest known amusement park is actually a ancient Minoan palace"
   ],
   "videos": [
     {
@@ -617,6 +618,12 @@
       "url": "https://youtu.be/cKP905eiR6Y",
       "format": "short",
       "publishedAt": "2026-08-11T22:45:24.736Z"
+    },
+    {
+      "title": "The World's Oldest Amusement Park",
+      "url": "https://youtu.be/tCoVHJUdo44",
+      "format": "short",
+      "publishedAt": "2026-08-12T15:03:26.765Z"
     }
   ]
 }
