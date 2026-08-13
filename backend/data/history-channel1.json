@@ -93,7 +93,8 @@
     "The world's longest flight route is almost as long as the distance from New York to Sydney",
     "The world's oldest known amusement park is actually a ancient Minoan palace",
     "The most scenic drives in the world you never knew existed",
-    "The world's most expensive volleyball court is hidden in a casino resort"
+    "The world's most expensive volleyball court is hidden in a casino resort",
+    "What if electric cars had been invented first?"
   ],
   "videos": [
     {
@@ -638,6 +639,12 @@
       "url": "https://youtu.be/8FqqHIyxoqU",
       "format": "short",
       "publishedAt": "2026-08-13T15:02:08.339Z"
+    },
+    {
+      "title": "If Tesla Had Invented Gasoline-Powered Cars First",
+      "url": "https://youtu.be/pyuRcmVR-zc",
+      "format": "short",
+      "publishedAt": "2026-08-13T22:44:03.351Z"
     }
   ]
 }
