@@ -92,7 +92,8 @@
     "Did You Know There's a Type of Jellyfish That Can Outlast You?",
     "The world's longest flight route is almost as long as the distance from New York to Sydney",
     "The world's oldest known amusement park is actually a ancient Minoan palace",
-    "The most scenic drives in the world you never knew existed"
+    "The most scenic drives in the world you never knew existed",
+    "The world's most expensive volleyball court is hidden in a casino resort"
   ],
   "videos": [
     {
@@ -631,6 +632,12 @@
       "url": "https://youtu.be/tqayghWs9Dg",
       "format": "short",
       "publishedAt": "2026-08-12T22:43:45.671Z"
+    },
+    {
+      "title": "The World's Most Expensive Volleyball Court",
+      "url": "https://youtu.be/8FqqHIyxoqU",
+      "format": "short",
+      "publishedAt": "2026-08-13T15:02:08.339Z"
     }
   ]
 }
