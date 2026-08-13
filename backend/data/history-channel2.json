@@ -57,7 +57,8 @@
     "Five Little Monkeys Singing ABCs",
     "Three Blind Mice Learning Colors and Shapes",
     "Counting the Colors of Mary Had a Little Lamb's Wool",
-    "Counting Friends at London Bridge"
+    "Counting Friends at London Bridge",
+    "Counting Sheep in a Rainbow Meadow"
   ],
   "videos": [
     {
@@ -394,6 +395,12 @@
       "url": "https://youtu.be/gAQYruZCdsw",
       "format": "short",
       "publishedAt": "2026-08-12T14:25:48.255Z"
+    },
+    {
+      "title": "Let's Count Sheep in a Rainbow Meadow",
+      "url": "https://youtu.be/Xm6ZBdDqjmM",
+      "format": "short",
+      "publishedAt": "2026-08-13T14:27:49.027Z"
     }
   ]
 }
