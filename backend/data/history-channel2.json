@@ -60,7 +60,8 @@
     "Counting Friends at London Bridge",
     "Counting Sheep in a Rainbow Meadow",
     "Red Hot Cross Buns Counting Dance",
-    "Learning the Colors of the Farm Animals"
+    "Learning the Colors of the Farm Animals",
+    "Counting Farm Friends with Colors and Shapes"
   ],
   "videos": [
     {
@@ -416,6 +417,12 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Learning Colors on a Farm with 3 Happy Chickens",
+      "url": "https://youtu.be/WXkZnEdXBpg",
+      "format": "long",
+      "publishedAt": "2026-08-14T17:08:37.630Z"
     }
   ]
 }
