@@ -1,4 +1,4 @@
-// Step 6 - CTR-optimized thumbnail. Studies of high-performing faceless
+// Step 7 - CTR-optimized thumbnail. Studies of high-performing faceless
 // YouTube channels (Zack D Films, Bright Side, Infographics Show)
 // consistently use the same visual formula: a bold color-block behind
 // the title text (not just a dark scrim), 2-3 line title with an
@@ -127,16 +127,19 @@ function titleHash(title) {
   return Math.abs(h);
 }
 
-export async function generateThumbnail(channel, title, workDir) {
+// Renders one thumbnail composition to a PNG buffer. `flip` swaps the
+// standard "small text on top, huge emphasis word on bottom" layout for
+// "huge emphasis word on top, smaller text below" with the accent badge
+// moved to the opposite corner and a different accent color - a real
+// compositional difference, not just a recolor, so the two variants this
+// step produces are an actual A/B choice rather than noise.
+function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
   const w = 1280, h = 720;
   const canvas = createCanvas(w, h);
   const ctx = canvas.getContext('2d');
 
-  // Background: real scene frame if available (from stock footage or
-  // cartoon path), else the channel brand gradient.
-  const scenePath = path.join(workDir, 'scene-0.png');
-  if (existsSync(scenePath)) {
-    drawCoverImage(ctx, await loadImage(scenePath), w, h);
+  if (sceneImage) {
+    drawCoverImage(ctx, sceneImage, w, h);
   } else {
     const grad = ctx.createLinearGradient(0, 0, w, h);
     grad.addColorStop(0, channel.brandColorA);
@@ -152,44 +155,57 @@ export async function generateThumbnail(channel, title, workDir) {
   ctx.fillRect(0, 0, w, h);
 
   // Split the title into an EMPHASIS word (rendered huge in an accent
-  // color) and the REST (rendered smaller in white above it). This is
-  // the standard high-CTR "big word, small context" pattern.
+  // color) and the REST (rendered smaller in white). This is the
+  // standard high-CTR "big word, small context" pattern.
   const emphasis = pickEmphasisWord(title).toUpperCase();
   const restRaw = title.split(/\s+/)
     .filter((w) => w.toUpperCase() !== emphasis)
     .join(' ')
     .toUpperCase();
-  const accent = ACCENT_COLORS[titleHash(title) % ACCENT_COLORS.length];
+  const accent = ACCENT_COLORS[accentIndex % ACCENT_COLORS.length];
   const emoji = pickAccentEmoji(title);
 
-  // --- Top block: "REST" in white outlined text ---
-  const restSize = 68;
-  ctx.font = `900 ${restSize}px sans-serif`;
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
-  const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
-  const restLineHeight = restSize * 1.1;
-  const restBlockH = restLines.length * restLineHeight;
-  let restY = h * 0.28;
-  for (const line of restLines) {
-    drawOutlinedText(ctx, line, 60, restY, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
-    restY += restLineHeight;
-  }
 
-  // --- Bottom block: EMPHASIS word, huge, accent color ---
-  // Auto-fit the emphasis word to the width - big and bold is the point.
   let empSize = 220;
   ctx.font = `900 ${empSize}px sans-serif`;
   while (ctx.measureText(emphasis).width > w - 100 && empSize > 90) {
     empSize -= 8;
     ctx.font = `900 ${empSize}px sans-serif`;
   }
-  const empY = restY + 30;
-  drawOutlinedText(ctx, emphasis, 60, empY, { fill: accent, stroke: '#000000', strokeWidth: 14 });
 
-  // --- Corner accent: emoji in a colored badge, top-right ---
+  const restSize = 68;
+  const restLineHeight = restSize * 1.1;
+
+  if (flip) {
+    // EMPHASIS word first (top), REST below it.
+    const empY = h * 0.22;
+    drawOutlinedText(ctx, emphasis, 60, empY, { fill: accent, stroke: '#000000', strokeWidth: 14 });
+
+    ctx.font = `900 ${restSize}px sans-serif`;
+    const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
+    let restY = empY + empSize * 1.05 + 20;
+    for (const line of restLines) {
+      drawOutlinedText(ctx, line, 60, restY, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
+      restY += restLineHeight;
+    }
+  } else {
+    // REST first (top, smaller), EMPHASIS word below it (bigger) - the
+    // original/default composition.
+    const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
+    let restY = h * 0.28;
+    for (const line of restLines) {
+      drawOutlinedText(ctx, line, 60, restY, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
+      restY += restLineHeight;
+    }
+    const empY = restY + 30;
+    drawOutlinedText(ctx, emphasis, 60, empY, { fill: accent, stroke: '#000000', strokeWidth: 14 });
+  }
+
+  // --- Corner accent: emoji in a colored badge, opposite corner per variant ---
   const badgeSize = 130;
-  const badgeX = w - badgeSize - 30;
+  const badgeX = flip ? 30 : w - badgeSize - 30;
   const badgeY = 30;
   ctx.fillStyle = accent;
   ctx.strokeStyle = '#000000';
@@ -203,7 +219,30 @@ export async function generateThumbnail(channel, title, workDir) {
   ctx.fillStyle = '#ffffff';
   ctx.fillText(emoji, badgeX + badgeSize / 2, badgeY + badgeSize / 2 + 8);
 
-  const outPath = path.join(workDir, 'thumbnail.png');
-  await writeFile(outPath, canvas.toBuffer('image/png'));
-  return outPath;
+  return canvas.toBuffer('image/png');
+}
+
+// Produces two thumbnail candidates - `primary` (what actually gets
+// uploaded via youtube.thumbnails.set, since the Data API only accepts
+// one) and `variantB` (saved alongside it for manual review/swap in
+// YouTube Studio). This is a deliberately lightweight stand-in for real
+// A/B testing: the Data API doesn't expose Studio's "Test & compare"
+// feature for programmatic control, so there's no way to actually run a
+// live split test end-to-end here - but having a genuinely different
+// second composition on hand costs almost nothing to generate and gives
+// a real choice instead of just one guess.
+export async function generateThumbnail(channel, title, workDir) {
+  const scenePath = path.join(workDir, 'scene-0.png');
+  const sceneImage = existsSync(scenePath) ? await loadImage(scenePath) : null;
+  const baseAccent = titleHash(title) % ACCENT_COLORS.length;
+
+  const primaryBuf = renderVariant(channel, title, sceneImage, { flip: false, accentIndex: baseAccent });
+  const variantBuf = renderVariant(channel, title, sceneImage, { flip: true, accentIndex: baseAccent + 1 });
+
+  const primaryPath = path.join(workDir, 'thumbnail.png');
+  const variantBPath = path.join(workDir, 'thumbnail-b.png');
+  await writeFile(primaryPath, primaryBuf);
+  await writeFile(variantBPath, variantBuf);
+
+  return { primary: primaryPath, variantB: variantBPath };
 }

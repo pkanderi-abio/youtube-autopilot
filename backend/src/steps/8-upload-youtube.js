@@ -1,4 +1,4 @@
-// Step 7 - upload the finished video (+ thumbnail) to YouTube via the
+// Step 8 - upload the finished video (+ thumbnail) to YouTube via the
 // Data API v3, using the channel's stored OAuth refresh token.
 // Also handles two post-upload growth actions when configured:
 //   1. Add the video to a channel-scoped playlist (session watch time

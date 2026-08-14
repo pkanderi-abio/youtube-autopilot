@@ -1,0 +1,56 @@
+name: Analytics pull
+
+# Pulls real view/like/comment counts for every published video and
+# commits data/analytics-<channelId>.json - separate from pipeline.yml
+# since this is read-only/auxiliary (no Ollama, no upload) and runs on
+# its own cadence rather than per-publish. Scheduled well outside the
+# publish windows in pipeline.yml so it never competes for the same
+# runner minute.
+on:
+  schedule:
+    - cron: '0 6 * * *' # once daily, 6am UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        working-directory: backend
+        run: npm ci
+      - name: Fetch YouTube stats for all channels
+        working-directory: backend
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
+          YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
+        run: node scripts/fetch-analytics.js
+      - name: Commit updated analytics snapshots
+        working-directory: backend
+        run: |
+          git config user.name "autopilot-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/analytics-*.json
+          if git diff --cached --quiet; then
+            echo "no analytics changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: refresh analytics snapshot [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin main; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push attempt $attempt failed, retrying..."
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push analytics snapshot after retries"
+          exit 1

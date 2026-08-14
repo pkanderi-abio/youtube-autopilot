@@ -39,6 +39,20 @@ async function loadHistory(channelId) {
   }
 }
 
+// Written by scripts/fetch-analytics.js on its own daily schedule
+// (.github/workflows/analytics.yml) via the YouTube Data API. Absent
+// entirely until that workflow has run at least once, which is the
+// normal state right after this feature ships - handled as "no
+// analytics yet" rather than an error.
+async function loadAnalytics(channelId) {
+  try {
+    const raw = await readFile(path.join(BACKEND, `data/analytics-${channelId}.json`), 'utf8');
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
 function daysAgo(iso) {
   return (Date.now() - new Date(iso).getTime()) / 86400000;
 }
@@ -86,17 +100,17 @@ function loadJobsForRun(runId) {
 }
 
 const STAGE_NAMES = [
-  'Discover topic', 'Generate script', 'Generate voiceover',
+  'Discover topic', 'Generate script', 'Optimize SEO', 'Generate voiceover',
   'Generate background', 'Assemble video', 'Generate thumbnail', 'Upload YouTube'
 ];
 
-// Parses real "[N/7] ..." progress markers out of a job's raw log into
+// Parses real "[N/8] ..." progress markers out of a job's raw log into
 // per-stage status - this is the actual last run's progression, not a
 // simulation.
 function parseStages(log) {
   const stages = STAGE_NAMES.map((name, i) => ({ step: i + 1, name, status: 'pending', detail: '' }));
   for (const line of log.split('\n')) {
-    const stepMatch = line.match(/\[(\d)\/7]\s*(.+?)\.\.\.\s*$/);
+    const stepMatch = line.match(/\[(\d)\/8]\s*(.+?)\.\.\.\s*$/);
     if (stepMatch) {
       const idx = Number(stepMatch[1]) - 1;
       if (idx > 0 && stages[idx - 1].status === 'running') stages[idx - 1].status = 'done';
@@ -136,6 +150,14 @@ async function build() {
     const videosLast7Days = videos.filter(v => daysAgo(v.publishedAt) <= 7).length;
     const videosLast30Days = videos.filter(v => daysAgo(v.publishedAt) <= 30).length;
 
+    const analytics = await loadAnalytics(channel.id);
+    const statsByUrl = new Map((analytics?.videos || []).map(v => [v.url, v]));
+    const totalViews = analytics ? analytics.videos.reduce((sum, v) => sum + (v.viewCount || 0), 0) : null;
+    const totalLikes = analytics ? analytics.videos.reduce((sum, v) => sum + (v.likeCount || 0), 0) : null;
+    const topVideo = analytics?.videos?.length
+      ? [...analytics.videos].sort((a, b) => (b.viewCount || 0) - (a.viewCount || 0))[0]
+      : null;
+
     let stages = STAGE_NAMES.map((name, i) => ({ step: i + 1, name, status: 'pending', detail: '' }));
     let lastRunConclusion = null;
     let lastRunUrl = null;
@@ -161,16 +183,20 @@ async function build() {
       videosLast7Days,
       videosLast30Days,
       lastPublished: videos[0] || null,
-      recentVideos: videos.slice(0, 6),
+      recentVideos: videos.slice(0, 6).map(v => ({ ...v, stats: statsByUrl.get(v.url) || null })),
       lastRunConclusion,
       lastRunUrl,
-      stages
+      stages,
+      analyticsFetchedAt: analytics?.fetchedAt || null,
+      totalViews,
+      totalLikes,
+      topVideo
     });
   }
 
   const data = {
     generatedAt: new Date().toISOString(),
-    revenueNote: 'Revenue is not shown - this pipeline has no YouTube Analytics integration, so a dollar figure here would be fabricated.',
+    revenueNote: 'Revenue ($) is still not shown - no ad-payout integration exists. View/like counts below ARE real, pulled via the YouTube Data API by scripts/fetch-analytics.js.',
     channels: channelData,
     nextScheduledRuns: nextCronRuns(CRON_EXPR, 4),
     recentActivity: recentRuns.slice(0, 8).map(r => ({

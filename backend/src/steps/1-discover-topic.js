@@ -6,11 +6,37 @@
 // fit for the channel's niche and predicts a rough CTR.
 import { fetchDailyTrends } from '../lib/trends.js';
 import { completeJSON } from '../lib/llm.js';
+import { poolPerformanceHint } from '../lib/analytics.js';
+
+// A pool item can only be picked once per cooldown window - real
+// production evidence showed the opposite (a pure "already used this
+// exact string" filter) let the LLM reuse the same base rhyme/fact
+// under a superficially different invented topic string 3-5x within two
+// weeks ("Mary Had a Little Lamb" as "Mary and Little Lamb Count Colors
+// Together", "Counting with Mary and Her Little Lambs", etc - none of
+// which matched history.usedTopics literally, so the old filter never
+// caught it). Tracking the actual pool item a topic was drawn from
+// (persisted as sourcePoolItem on each history video entry) lets us
+// enforce real spacing regardless of how the topic gets reworded.
+const POOL_COOLDOWN_VIDEOS = 6;
+
+function recentlyUsedPoolItems(history, count) {
+  return history.videos.slice(-count).map(v => v.sourcePoolItem).filter(Boolean);
+}
 
 async function pickPool(channel, history) {
   if (channel.topicPool?.length) {
-    const candidates = channel.topicPool.filter(t => !history.usedTopics.includes(t));
-    return { pool: candidates.length ? candidates : channel.topicPool, isTrending: false };
+    const onCooldown = new Set(recentlyUsedPoolItems(history, POOL_COOLDOWN_VIDEOS));
+    let candidates = channel.topicPool.filter(t => !onCooldown.has(t));
+    if (!candidates.length) {
+      // Every item is on cooldown (pool smaller than the cooldown
+      // window, or a burst of runs) - degrade to "anything but the
+      // single most recent pick" rather than reusing back-to-back.
+      const mostRecent = history.videos[history.videos.length - 1]?.sourcePoolItem;
+      candidates = channel.topicPool.filter(t => t !== mostRecent);
+      if (!candidates.length) candidates = channel.topicPool;
+    }
+    return { pool: candidates, isTrending: false };
   }
 
   const trends = await fetchDailyTrends();
@@ -21,6 +47,7 @@ async function pickPool(channel, history) {
 export async function discoverTopic(channel, history) {
   const { pool, isTrending } = await pickPool(channel, history);
   const poolLabel = isTrending ? "today's trending searches" : 'candidate topics for this channel';
+  const performanceHint = await poolPerformanceHint(channel.id, history, isTrending);
 
   // Observed failure mode with a small local model: it picks a raw
   // trending term (a sports score, a news anchor's name) and writes a
@@ -36,6 +63,7 @@ whose niche is: ${channel.niche}.
 
 Here are ${poolLabel}:
 ${pool.map((t, i) => `${i + 1}. ${t}`).join('\n')}
+${performanceHint}
 
 Your job is to turn ONE of these into a video topic that is EXPLICITLY
 about ${channel.niche} - not a recap of the term in isolation. If a term
@@ -56,8 +84,14 @@ The "topic" field you return must already read as a ${channel.niche}
 topic, not a bare copy of the candidate. The "angle" field must state
 specifically why/how it connects to the niche.
 
-Return JSON: { "topic": "...", "angle": "one sentence on the specific angle/hook", "predictedCtr": 0.0 }
+Return JSON: {
+  "topic": "...",
+  "angle": "one sentence on the specific angle/hook",
+  "predictedCtr": 0.0,
+  "sourceItem": "the exact candidate text you based this on, copied verbatim from the numbered list above"
+}
 `.trim());
 
-  return picked;
+  const sourcePoolItem = !isTrending && pool.includes(picked.sourceItem) ? picked.sourceItem : null;
+  return { ...picked, sourcePoolItem };
 }

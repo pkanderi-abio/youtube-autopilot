@@ -1,4 +1,4 @@
-// Step 3 - text-to-speech using Microsoft Edge's free, keyless TTS
+// Step 4 - text-to-speech using Microsoft Edge's free, keyless TTS
 // engine (via msedge-tts). No API key, no per-character cost - the
 // tradeoff is it's an unofficial endpoint that could change; if it
 // ever breaks, swap this file for ElevenLabs/Google Cloud TTS.

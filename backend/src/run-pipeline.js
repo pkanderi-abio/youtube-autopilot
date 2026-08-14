@@ -1,10 +1,10 @@
-// Orchestrator - chains steps 1-7 for a single channel, end to end.
+// Orchestrator - chains steps 1-8 for a single channel, end to end.
 // Usage: node src/run-pipeline.js <channelId> [format]
 // format ("short" | "long") overrides the channel's default - each
 // channel can publish both a short and a long-form video, sharing one
 // history/usedTopics list so topics never repeat across formats.
 import 'dotenv/config';
-import { mkdtemp, rm } from 'fs/promises';
+import { mkdtemp, rm, mkdir, copyFile } from 'fs/promises';
 import { tmpdir } from 'os';
 import path from 'path';
 import { readFile } from 'fs/promises';
@@ -13,11 +13,14 @@ import { loadHistory, saveHistory } from './lib/state.js';
 import { resolveNurseryAudio, prepareNurseryAudio, NURSERY_TARGET_DURATION } from './lib/nurseryAudio.js';
 import { discoverTopic } from './steps/1-discover-topic.js';
 import { generateScript } from './steps/2-generate-script.js';
-import { generateVoice } from './steps/3-generate-voice.js';
-import { generateBackground } from './steps/4-generate-background.js';
-import { assembleVideo } from './steps/5-assemble-video.js';
-import { generateThumbnail } from './steps/6-generate-thumbnail.js';
-import { uploadToYoutube } from './steps/7-upload-youtube.js';
+import { optimizeSeo } from './steps/3-optimize-seo.js';
+import { generateVoice } from './steps/4-generate-voice.js';
+import { generateBackground } from './steps/5-generate-background.js';
+import { assembleVideo } from './steps/6-assemble-video.js';
+import { generateThumbnail } from './steps/7-generate-thumbnail.js';
+import { uploadToYoutube } from './steps/8-upload-youtube.js';
+
+const THUMBNAIL_VARIANTS_DIR = path.resolve('data', 'thumbnail-variants');
 
 async function ffprobeDuration(file) {
   const ffmpeg = (await import('fluent-ffmpeg')).default;
@@ -26,6 +29,21 @@ async function ffprobeDuration(file) {
   return new Promise((resolve, reject) => {
     ffmpeg.ffprobe(file, (err, data) => err ? reject(err) : resolve(data.format.duration));
   });
+}
+
+// Best-effort: the video is already live by the time this runs, so a
+// failure here should never fail the pipeline - same "warn and move on"
+// philosophy as the thumbnail-set/playlist/first-comment steps in step 8.
+async function saveThumbnailVariants(channelId, videoId, thumbnail) {
+  try {
+    const dir = path.join(THUMBNAIL_VARIANTS_DIR, channelId);
+    await mkdir(dir, { recursive: true });
+    await copyFile(thumbnail.primary, path.join(dir, `${videoId}-A.png`));
+    await copyFile(thumbnail.variantB, path.join(dir, `${videoId}-B.png`));
+    console.log(`   -> saved thumbnail variants to data/thumbnail-variants/${channelId}/${videoId}-{A,B}.png`);
+  } catch (err) {
+    console.warn('[pipeline] failed to save thumbnail variants (non-fatal):', err.message);
+  }
 }
 
 async function run(channelId, formatOverride) {
@@ -42,7 +60,7 @@ async function run(channelId, formatOverride) {
   const workDir = await mkdtemp(path.join(tmpdir(), `autopilot-${channel.id}-`));
 
   try {
-    console.log('[1/7] discovering topic...');
+    console.log('[1/8] discovering topic...');
     const topicInfo = await discoverTopic(channel, history);
     console.log('   ->', topicInfo.topic);
 
@@ -53,11 +71,14 @@ async function run(channelId, formatOverride) {
     // away.
     const nursery = await resolveNurseryAudio(topicInfo.topic);
 
-    console.log('[2/7] generating script...');
+    console.log('[2/8] generating script...');
     const script = await generateScript(channel, topicInfo, { skipNarration: !!nursery });
-    console.log('   ->', script.title);
 
-    console.log('[3/7] generating voiceover...');
+    console.log('[3/8] optimizing SEO metadata...');
+    const seo = await optimizeSeo(channel, topicInfo, script, history);
+    console.log('   ->', seo.title);
+
+    console.log('[4/8] generating voiceover...');
     const audioPath = path.join(workDir, 'voice.mp3');
     if (nursery) {
       // Real sung public-domain recording matched this topic. Use it
@@ -72,31 +93,34 @@ async function run(channelId, formatOverride) {
 
     const duration = await ffprobeDuration(audioPath);
 
-    console.log('[4/7] generating background video...');
+    console.log('[5/8] generating background video...');
     const backgroundPath = await generateBackground(channel, duration, workDir, script.scenes || []);
 
-    console.log('[5/7] assembling final video...');
+    console.log('[6/8] assembling final video...');
     const videoPath = await assembleVideo({
       backgroundPath, audioPath, workDir
     });
 
-    console.log('[6/7] generating thumbnail...');
-    const thumbnailPath = await generateThumbnail(channel, script.title, workDir);
+    console.log('[7/8] generating thumbnail...');
+    const thumbnail = await generateThumbnail(channel, seo.title, workDir);
 
-    console.log('[7/7] uploading to YouTube...');
+    console.log('[8/8] uploading to YouTube...');
     const upload = await uploadToYoutube(channel, {
-      videoPath, thumbnailPath,
-      title: script.title,
-      description: script.description,
-      tags: script.tags,
-      hashtags: script.hashtags || [],
-      commentCta: script.commentCta || ''
+      videoPath, thumbnailPath: thumbnail.primary,
+      title: seo.title,
+      description: seo.description,
+      tags: seo.tags,
+      hashtags: seo.hashtags || [],
+      commentCta: seo.commentCta || ''
     });
     console.log('   -> published:', upload.url);
 
+    await saveThumbnailVariants(channel.id, upload.videoId, thumbnail);
+
     history.usedTopics.push(topicInfo.topic);
     history.videos.push({
-      title: script.title, url: upload.url, format: channel.format, publishedAt: new Date().toISOString()
+      title: seo.title, url: upload.url, format: channel.format, publishedAt: new Date().toISOString(),
+      ...(topicInfo.sourcePoolItem ? { sourcePoolItem: topicInfo.sourcePoolItem } : {})
     });
     await saveHistory(channel.id, history);
 

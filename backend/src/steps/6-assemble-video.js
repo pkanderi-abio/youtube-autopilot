@@ -1,4 +1,4 @@
-// Step 5 - mux the generated background with the voiceover. Can
+// Step 6 - mux the generated background with the voiceover. Can
 // optionally burn captionLines in as timed on-screen text (evenly
 // spaced across the audio's actual duration - no word-level alignment,
 // but reads fine for short-form punchy lines) if a caller passes them -

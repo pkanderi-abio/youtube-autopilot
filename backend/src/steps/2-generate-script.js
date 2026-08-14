@@ -1,7 +1,13 @@
-// Step 2 - turn the chosen topic+angle into a spoken script, a title,
-// a description, and tags - everything downstream steps need.
-// Stock-footage channels also get a `scenes` array: short visual
-// phrases for step 4 to use as per-shot footage search queries.
+// Step 2 - turn the chosen topic+angle into a spoken script: narration,
+// on-screen caption chunks, and (for stock-footage channels) a `scenes`
+// array of short visual phrases step 5 uses as per-shot footage search
+// queries. Audience-facing metadata (title/description/tags/hashtags) is
+// NOT generated here - see step 3 (optimize-seo), which is intentionally
+// a separate stage so title/description get written by a call grounded
+// in the FINISHED narration rather than guessed at before the script
+// exists, and so SEO quality-control (duplicate-title checks, vagueness
+// checks) lives in one place instead of being duplicated across the
+// short-form and long-form code paths here.
 import { completeJSON } from '../lib/llm.js';
 
 // llama3.2 (a small local model) is unreliable about hitting a
@@ -29,119 +35,6 @@ const MIN_WORDS_PER_SECTION = 100;
 
 function wordCount(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
-}
-
-// Mechanical safety net for the "no clickbait ALL CAPS" instruction,
-// which a small local model doesn't reliably follow (observed directly:
-// "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM"). Cheaper and more
-// reliable than hoping the model self-corrects.
-function fixAllCapsTitle(title) {
-  const letters = title.replace(/[^a-zA-Z]/g, '');
-  const upperCount = (title.match(/[A-Z]/g) || []).length;
-  if (letters.length > 0 && upperCount / letters.length > 0.6) {
-    return title.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
-  }
-  return title;
-}
-
-// Detects vague-abstract titles that don't tell a viewer what the video
-// is actually about - the kind of thing that reads as filler and won't
-// earn a click. Observed directly in production output: "The Beauty of
-// Influence", "The Chemistry That Fizzled", "The Emotional Price of
-// Greatness", "Ball Pit Bliss". A good title names something specific:
-// a real person, place, event, or a concrete number/quantity.
-const TITLE_STOPWORDS = new Set([
-  'the','a','an','and','or','but','for','to','of','in','on','at','by',
-  'with','from','into','over','under','after','before','is','are','was',
-  'were','be','been','being','how','why','what','when','where','this',
-  'that','these','those','it','its','you','your','our','their'
-]);
-
-// Common abstract nouns we've seen the model reach for when it doesn't
-// have a specific hook - if the title is BUILT from these plus stopwords
-// it reads as pure filler.
-const ABSTRACT_TITLE_WORDS = new Set([
-  'beauty','chemistry','emotion','emotional','price','greatness','haunting',
-  'influence','bliss','revolution','effect','impact','power','magic',
-  'wonder','mystery','story','tale','journey','moment','world','life',
-  'love','heart','soul','truth','reality','experience','feeling','side',
-  'rise','fall','dark','hidden','secret','psychology','future','past',
-  'legacy','culture','phenomenon','thing','things','way','ways'
-]);
-
-function titleLooksVague(title) {
-  if (!title) return true;
-  const cleaned = title.replace(/[^a-zA-Z0-9\s'’]/g, ' ');
-  const words = cleaned.split(/\s+/).filter(Boolean);
-  if (words.length < 4) return true;
-  // A digit anywhere = concrete number/year/count. Passes.
-  if (/\d/.test(title)) return false;
-  // A possessive apostrophe (e.g. "Fiji's", "McGregor's") almost always
-  // names a specific person or place. Passes.
-  if (/['’]s\b/i.test(title)) return false;
-  // Otherwise: does it contain at least one substantive word that isn't
-  // in the stopword+abstract-noun blocklist? If every content word is
-  // either a stopword or a pure abstract noun ("The Beauty of Influence"),
-  // it's vague.
-  const contentWords = words.filter(w => !TITLE_STOPWORDS.has(w.toLowerCase()));
-  const concreteContent = contentWords.filter(w => !ABSTRACT_TITLE_WORDS.has(w.toLowerCase()));
-  return concreteContent.length < 2;
-}
-
-// Post-generation title polish - if the narration is fine but the title
-// came out vague, ask the model to rewrite JUST the title using the
-// script content as grounding. Cheaper than regenerating the whole
-// script, and it doesn't disturb narration length (which the retry
-// loops above are already carefully protecting).
-async function polishTitle(channel, topicInfo, script) {
-  if (!titleLooksVague(script.title)) return script.title;
-
-  const narrationExcerpt = (script.narration || '').split(/\s+/).slice(0, 60).join(' ');
-
-  console.warn(`[script] title "${script.title}" reads as vague/abstract - requesting concrete rewrite`);
-  const attempts = 2;
-  let best = script.title;
-  for (let i = 0; i < attempts; i++) {
-    try {
-      const out = await completeJSON(`
-Rewrite the YouTube title for this ${channel.format}-form video to make it
-concrete and click-worthy.
-
-Channel: ${channel.name} (${channel.niche})
-Topic: ${topicInfo.topic}
-Angle: ${topicInfo.angle}
-Script opening: "${narrationExcerpt}..."
-
-Current title (too vague/abstract): "${script.title}"
-
-Rules for the new title:
-- Under 90 characters, no ALL-CAPS words.
-- MUST name something specific: a real person, place, event, number,
-  year, or concrete thing that appears in the script - not abstract
-  nouns like "Beauty", "Chemistry", "Influence", "Journey", "Story".
-- Bad examples (do NOT produce these):
-    "The Beauty of Influence"
-    "The Chemistry That Fizzled"
-    "The Emotional Price of Greatness"
-    "Ball Pit Bliss"
-- Good examples (this shape):
-    "Fiji's Best Hidden Beaches for 2026 Travelers"
-    "5 Underrated Cities to Visit This Winter"
-    "Why the Tortoise Beat the Hare (Full Story)"
-
-Return JSON: { "title": "..." }
-`.trim(), { maxTokens: 200 });
-
-      const rewritten = fixAllCapsTitle((out.title || '').trim());
-      if (rewritten && !titleLooksVague(rewritten)) return rewritten;
-      if (rewritten) best = rewritten;
-    } catch (err) {
-      console.warn(`[script] title polish attempt ${i + 1}/${attempts} failed:`, err.message);
-    }
-  }
-  // Fall back to whatever we ended with - the pipeline shouldn't die
-  // over an imperfect title.
-  return best;
 }
 
 function nicheReinforcement(channel) {
@@ -307,18 +200,12 @@ ${hookAndStyleInstructions(channel)}
 - ${nicheReinforcement(channel)}
 - ${durationHint}.
 - ${closingLineHint(channel)}
-- Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.
-- Create 3-5 high-quality hashtags based on the topic and channel niche.${scenesInstructions}
+- Do not claim to be human, do not fabricate statistics or quotes as fact - keep claims general/opinion-based.${scenesInstructions}
 
 Return JSON:
 {
-  "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the script. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Fiji's Best Hidden Beaches for 2026 Travelers' or '5 Cities to Visit This Winter'",
   "narration": "the full script as continuous prose, ready to feed to a TTS engine",
-  "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],
-  "description": "YouTube description - 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic 'Welcome to my channel' openers.",
-  "tags": ["tag1", "tag2", "tag3"],
-  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],
-  "commentCta": "one-sentence question or hook to post as the FIRST COMMENT on the video (from the channel owner). Should invite replies - e.g. 'Which one surprised you?' or 'What's your favorite hidden gem?'. Keep under 140 chars.",${scenesHint}
+  "captionLines": ["short caption chunk 1", "short caption chunk 2", "..."],${scenesHint}
 }
 
 captionLines should split the narration into 6-12 short on-screen chunks (roughly one breath/phrase each) covering the whole narration in order.${lengthEmphasis}
@@ -342,14 +229,11 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     // skip publishing than upload something visibly broken.
     throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
   }
-  best.title = fixAllCapsTitle(best.title);
-  best.title = await polishTitle(channel, topicInfo, best);
-  best.commentCta = best.commentCta || '';
   return best;
 }
 
-// ---- long-form (channel2): outline + metadata first, then narration
-// generated section-by-section and concatenated. ----
+// ---- long-form (channel2): outline (structure + scenes only) first,
+// then narration generated section-by-section and concatenated. ----
 async function generateScriptOutline(channel, topicInfo) {
   const { hint: scenesHint, instructions: scenesInstructions } = scenesFields(channel, '8-14');
 
@@ -360,19 +244,13 @@ Topic: ${topicInfo.topic}
 Angle: ${topicInfo.angle}
 
 This is a long-form video (6-8 minutes spoken). Don't write the narration
-yet - just plan its structure and the video's metadata.
+yet - just plan its structure.
 
 Requirements:
-- ${nicheReinforcement(channel)}
-- Create 3-5 high-quality hashtags based on the topic and channel niche.${scenesInstructions}
+- ${nicheReinforcement(channel)}${scenesInstructions}
 
 Return JSON:
 {
-  "title": "YouTube title (under 90 chars, no ALL-CAPS words) - MUST name something specific: a real person, place, event, number, year, or concrete thing from the topic. NOT abstract nouns like 'Beauty', 'Chemistry', 'Influence', 'Journey', 'Story', 'Bliss'. Bad: 'The Beauty of Influence'. Good: 'Why the Tortoise Beat the Hare (Full Story)' or '5 Underrated Cities to Visit This Winter'",
-  "description": "YouTube description - 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic 'Welcome to my channel' openers.",
-  "tags": ["tag1", "tag2", "tag3"],
-  "hashtags": ["#hashtag1", "#hashtag2", "#hashtag3"],
-  "commentCta": "one-sentence question or hook to post as the FIRST COMMENT on the video (from the channel owner). Should invite replies. Keep under 140 chars.",
   "sections": ["one sentence describing what the opening hook covers", "one sentence describing the next narrative beat", "..."],${scenesHint}
 }
 
@@ -494,46 +372,22 @@ async function generateLongScript(channel, topicInfo) {
     throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words${skippedSections ? `, ${skippedSections} sections skipped due to errors` : ''}) - aborting instead of publishing`);
   }
 
-  const result = {
-    title: fixAllCapsTitle(outline.title),
-    narration,
-    captionLines,
-    description: outline.description,
-    tags: outline.tags,
-    hashtags: outline.hashtags || [],
-    commentCta: outline.commentCta || '',
-    scenes: outline.scenes
-  };
-  result.title = await polishTitle(channel, topicInfo, result);
-  return result;
+  return { narration, captionLines, scenes: outline.scenes };
 }
 
-// When skipNarration is true, we generate only the metadata YouTube
-// upload needs (title/description/tags/hashtags/scenes) - no narration.
-// Used when the pipeline already has a pre-recorded audio file for
-// this topic (e.g. bundled sung nursery rhyme), so any narration the
-// LLM produces would be thrown away. Cuts a long-form run's script
-// step from ~5 minutes (section-by-section) to a single outline call.
-async function generateMetadataOnly(channel, topicInfo) {
+// When skipNarration is true, there's already a pre-recorded audio file
+// for this topic (e.g. a bundled sung nursery rhyme), so any narration
+// the LLM produces would be thrown away. Still need the visual "scenes"
+// plan for step 5's background footage, so run the (now metadata-free)
+// outline call for that alone.
+async function generateScenesOnly(channel, topicInfo) {
   const outline = await generateScriptOutline(channel, topicInfo);
-  return {
-    title: await polishTitle(channel, topicInfo, {
-      title: fixAllCapsTitle(outline.title),
-      narration: outline.description || ''
-    }),
-    narration: '',
-    captionLines: [],
-    description: outline.description,
-    tags: outline.tags,
-    hashtags: outline.hashtags || [],
-    commentCta: outline.commentCta || '',
-    scenes: outline.scenes
-  };
+  return { narration: '', captionLines: [], scenes: outline.scenes };
 }
 
 export async function generateScript(channel, topicInfo, opts = {}) {
   if (opts.skipNarration) {
-    return generateMetadataOnly(channel, topicInfo);
+    return generateScenesOnly(channel, topicInfo);
   }
   if (channel.format === 'short') {
     return generateShortScript(channel, topicInfo);

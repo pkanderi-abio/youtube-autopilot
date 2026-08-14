@@ -160,6 +160,21 @@ jobs:
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
+      - name: Upload thumbnail variants
+        # The Data API has no way to run a real A/B test on a thumbnail
+        # (Studio's "Test & compare" isn't exposed programmatically), so
+        # step 7 generates two candidate compositions and only uploads
+        # one. This is the only way to actually see the other one: the
+        # runner's filesystem (including data/thumbnail-variants/, which
+        # is intentionally never committed - it's PNGs, not state) is
+        # gone the moment this job ends.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: thumbnail-variants-${{ matrix.channel }}-${{ matrix.format }}-${{ github.run_id }}
+          path: backend/data/thumbnail-variants/
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Dump Ollama server log on failure
         if: failure()
         # Ollama runs as a systemd service (see "Start Ollama and pull

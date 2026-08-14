@@ -1,4 +1,4 @@
-// Step 4 - the video's visual track: a sequence of short shots (like a
+// Step 5 - the video's visual track: a sequence of short shots (like a
 // real short-form edit), not one continuous background for the whole
 // runtime. Each shot is either real stock footage (one per script scene)
 // or an on-brand gradient variant, and each gets its own fast zoom+pan
@@ -504,7 +504,7 @@ async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds) {
   ]);
 }
 
-// generateThumbnail (step 6) looks for workDir/scene-0.png to use a real
+// generateThumbnail (step 7) looks for workDir/scene-0.png to use a real
 // frame instead of a plain brand-gradient thumbnail - grab one from the
 // first stock-footage shot the same way it previously used the first
 // illustrated scene's image.

@@ -6,13 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Two independent parts:
 
-- **`backend/`** — the real automation pipeline. Runs 7 stages per publish:
-  topic discovery → local Ollama script generation → free Edge TTS voice →
-  background video (Pexels stock footage or animated gradient fallback) →
-  ffmpeg assembly → thumbnail → YouTube upload. Deployed as scheduled
+- **`backend/`** — the real automation pipeline. Runs 8 stages per publish:
+  topic discovery → local Ollama script generation → dedicated SEO/metadata
+  pass → free Edge TTS voice → background video (Pexels stock footage or
+  animated gradient fallback) → ffmpeg assembly → thumbnail (+ an A/B
+  variant saved as a CI artifact) → YouTube upload. Deployed as scheduled
   GitHub Actions cron with **no human review checkpoint**. Two channels
   (`channel1` TeslaTravel, `channel2` Storytime Fables), each publishing
-  both a `short` and a `long` format on its own cadence.
+  both a `short` and a `long` format on its own cadence. A separate daily
+  workflow (`analytics.yml`) pulls real view/like counts back into
+  `data/analytics-<channelId>.json`, which both the dashboard and topic
+  discovery read.
 - **`frontend/`** — a static dashboard (`index.html` + `data.json`) that
   reflects real backend state. `data.json` is produced offline by
   `build-data.js`, which shells out to `gh api` for Actions run status
@@ -35,6 +39,7 @@ ollama pull llama3.2                 # required — pipeline aborts if Ollama un
 npm run run -- channel1              # runs channel's default format from channels.json
 npm run run -- channel1 long         # override format (short | long)
 npm run get-token                    # one-time OAuth flow, prints refresh token for one channel
+npm run fetch-analytics              # pulls real view/like/comment counts for all channels' published videos
 ```
 
 No test suite, no linter — this is a pipeline project driven end-to-end by
@@ -54,26 +59,76 @@ python3 -m http.server 8099          # index.html must be served over http:// (f
 `.github/workflows/pipeline.yml` — cron schedule (one entry per
 channel+format pair) triggers a matrix `publish` job. Manual runs via
 Actions tab support `channel` and `format` inputs to scope the fan-out.
+`.github/workflows/analytics.yml` runs once daily (independent schedule)
+to refresh real view/like/comment counts.
 
 ## Architecture
 
 ### Pipeline flow
 
-`src/run-pipeline.js` orchestrates stages 1–7 for one `(channel, format)` pair:
+`src/run-pipeline.js` orchestrates stages 1–8 for one `(channel, format)` pair:
 
 ```
-1-discover-topic   ── uses channel.topicPool if defined, else lib/trends.js daily trends
-2-generate-script  ── short: 1 call; long: outline + N section calls, concatenated
-3-generate-voice   ── Edge TTS → mp3
-4-generate-background ── Pexels clips (one per script.scenes entry) OR animated gradient
-5-assemble-video   ── ffmpeg mux background + voice; optional burned captions (currently off)
-6-generate-thumbnail ── title text over channel brand gradient (node-canvas)
-7-upload-youtube   ── googleapis videos.insert + thumbnails.set
+1-discover-topic   ── uses channel.topicPool if defined (with cooldown-based
+                       dedup, see below), else lib/trends.js daily trends
+2-generate-script  ── narration + captionLines + scenes ONLY (no metadata);
+                       short: 1 call; long: outline + N section calls, concatenated
+3-optimize-seo     ── dedicated pass: title/description/tags/hashtags/commentCta,
+                       grounded in the FINISHED narration, with a recent-title
+                       similarity guard (see below)
+4-generate-voice   ── Edge TTS → mp3
+5-generate-background ── Pexels clips (one per script.scenes entry) OR animated gradient
+6-assemble-video   ── ffmpeg mux background + voice; optional burned captions (currently off)
+7-generate-thumbnail ── two compositions (node-canvas): one uploaded, one saved as
+                       a CI artifact for manual comparison (no real A/B test exists
+                       via the Data API)
+8-upload-youtube   ── googleapis videos.insert + thumbnails.set
 ```
 
 After a successful upload, `run-pipeline.js` appends to
-`data/history-<channelId>.json` (`usedTopics`, `videos`). In CI, that file
-is committed and pushed by `scripts/merge-and-push-history.js`.
+`data/history-<channelId>.json` (`usedTopics`, `videos` — each video entry
+also carries `sourcePoolItem` when the topic came from a `topicPool`). In
+CI, that file is committed and pushed by `scripts/merge-and-push-history.js`.
+
+### SEO stage and duplicate-title/topic guards
+
+Splitting step 3 out of step 2 fixed a real production issue: title/
+description used to be requested in the SAME call as the narration
+(before the script existed), and near-duplicate topics slipped through
+undetected because each was invented fresh each run — e.g. three separate
+"Fiji's Best Hidden Beaches" videos on channel1 within a week, and five
+differently-worded "Mary Had a Little Lamb" videos on channel2 within two
+weeks (none matched `history.usedTopics` literally, so the old exact-
+string filter never caught them). Two independent guards now exist:
+
+- **`src/steps/1-discover-topic.js`** tracks which literal `topicPool`
+  item a topic was drawn from as `sourcePoolItem` on the history video
+  entry, and excludes any item used within the last `POOL_COOLDOWN_VIDEOS`
+  (6) videos from the candidate pool — catching reuse regardless of how
+  differently the LLM rewords the topic each time.
+- **`src/steps/3-optimize-seo.js`** additionally checks the generated
+  title against the channel's last 15 published titles for word-overlap
+  similarity (`titleTooSimilar`) and requests a rewrite (up to 2 attempts)
+  if it's too close to something recently published, on top of the
+  existing vague/abstract-title check (`titleLooksVague`).
+
+### Analytics feedback loop
+
+`scripts/fetch-analytics.js` (run by `analytics.yml`, or manually via
+`npm run fetch-analytics`) pulls real `viewCount`/`likeCount`/
+`commentCount` per video via `videos.list(part=statistics)`, using the
+SAME OAuth refresh tokens already used for uploads — `get-refresh-
+token.js` requests the full `youtube` scope (not just `.upload`), which
+already covers reading stats on the channel's own videos, so no new
+consent/credential is needed. Output: `data/analytics-<channelId>.json`.
+
+`src/lib/analytics.js`'s `poolPerformanceHint()` reads that file
+(best-effort — absent entirely until the first `analytics.yml` run) and
+folds a "best/worst performing recent topics" summary into step 1's
+topic-selection prompt once there's enough data (≥6 distinct pool items
+with stats). This is the piece that was previously completely missing —
+frontend's dashboard used to state outright that view counts didn't
+exist anywhere in the system.
 
 ### Per-channel configuration
 
@@ -102,21 +157,27 @@ so topics never repeat across a channel's short and long videos.
   N × `generateNarrationSection`, capped at `MAX_LONG_FORM_SECTIONS=8`)
   because a single 700–900-word ask reliably undershoots. Each section
   receives the previous section's tail for continuity. Aggregate must
-  clear `MIN_WORDS.long` (550) or the run aborts. `fixAllCapsTitle`
-  mechanically case-corrects clickbait-caps titles the prompt tells the
-  model not to produce.
+  clear `MIN_WORDS.long` (550) or the run aborts. This step only produces
+  narration/captions/scenes now — title-quality guards (`fixAllCapsTitle`,
+  `titleLooksVague`) live in step 3 (`optimize-seo.js`) alongside the rest
+  of the metadata generation.
 - **`src/steps/1-discover-topic.js`** — the prompt is heavily
   example-driven because the small model tends to lift a raw trending
   term (a sports score, an anchor's name) and produce content unrelated
   to the channel's niche. The returned `topic` field must already read
-  as a niche-fit topic.
+  as a niche-fit topic. Both channels now have a `topicPool` (channel1's
+  is evergreen "Did You Know"-style facts, added specifically so it isn't
+  fully dependent on the LLM correctly filtering trending celebrity/sports/
+  politics content every single run — which is exactly what happened for
+  roughly channel1's first three weeks and channel2's first three weeks
+  of publishing, before their pools existed).
 
 **General principle: fail loud, don't ship broken content.** Publishing
 a mangled video is worse than skipping a run.
 
 ### Visuals
 
-`src/steps/4-generate-background.js` produces a **sequence of short shots**
+`src/steps/5-generate-background.js` produces a **sequence of short shots**
 (not one continuous background), each with its own fast zoom/pan toward a
 different focus point — a single slowly-creeping background over 45s+ read
 as static (near-zero bitrate) in early testing. Each shot is either:
@@ -130,7 +191,7 @@ meets target resolution (4K masters would waste bandwidth for 1080p output).
 
 ### YouTube upload nuances
 
-`src/steps/7-upload-youtube.js`:
+`src/steps/8-upload-youtube.js`:
 - `selfDeclaredMadeForKids` is set from `channel.madeForKids`. YouTube
   then disables comments, personalized ads, notifications, and
   end-screens/cards on that video — expected, not a bug.

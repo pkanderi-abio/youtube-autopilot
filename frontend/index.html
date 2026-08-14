@@ -376,6 +376,21 @@
       return Math.round(hours / 24) + 'd ago';
     }
 
+    function formatCount(n) {
+      if (n === null || n === undefined) return null;
+      if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+      return String(n);
+    }
+
+    function statsLine(stats) {
+      if (!stats) return '';
+      const parts = [];
+      if (stats.viewCount !== undefined) parts.push(formatCount(stats.viewCount) + ' views');
+      if (stats.likeCount !== undefined) parts.push(formatCount(stats.likeCount) + ' likes');
+      return parts.join(' &middot; ');
+    }
+
     function timeUntil(iso) {
       const ms = new Date(iso).getTime() - Date.now();
       const mins = Math.round(ms / 60000);
@@ -435,10 +450,15 @@
         : channels.some(c => c.lastRunConclusion === 'in_progress') ? 'in_progress'
         : channels.every(c => c.lastRunConclusion === 'success') ? 'success' : null;
       const health = conclusionMeta(worstConclusion);
+      const hasAnalytics = channels.some(c => c.analyticsFetchedAt);
+      const totalViews = channels.reduce((sum, c) => sum + (c.totalViews || 0), 0);
+      const totalLikes = channels.reduce((sum, c) => sum + (c.totalLikes || 0), 0);
 
       const kpis = [
         { label: 'Total videos published', value: String(totalVideos), meta: 'across ' + channels.length + ' channel' + (channels.length === 1 ? '' : 's'), cls: '' },
         { label: 'Videos published (7d)', value: String(videos7d), meta: 'from data/history-*.json', cls: '' },
+        { label: 'Total views', value: hasAnalytics ? formatCount(totalViews) : 'no analytics yet', meta: hasAnalytics ? 'via YouTube Data API' : 'waiting on analytics.yml’s first run', cls: hasAnalytics ? '' : 'muted' },
+        { label: 'Total likes', value: hasAnalytics ? formatCount(totalLikes) : '—', meta: hasAnalytics ? 'via YouTube Data API' : '', cls: hasAnalytics ? '' : 'muted' },
         { label: 'Last published', value: mostRecent ? timeAgo(mostRecent.publishedAt) : 'never', meta: mostRecent ? mostRecent.title.slice(0, 40) : 'no videos yet', cls: '' },
         { label: 'Automation health', value: health.text, meta: state.data.revenueNote, cls: health.cls }
       ];
@@ -502,7 +522,7 @@
                       <strong>${item.title}</strong>
                       <small>${item.channelName} &middot; ${timeAgo(item.publishedAt)}</small>
                     </div>
-                    <span class="pill">Published</span>
+                    <span class="pill ${item.stats ? 'on' : ''}">${item.stats ? statsLine(item.stats) : 'Published'}</span>
                   </a>
                 `).join('') : '<p class="empty-state">No videos published yet.</p>'}
               </div>
@@ -614,7 +634,7 @@
                     <strong>${item.title}</strong>
                     <small>${item.channelName} &middot; ${timeAgo(item.publishedAt)}</small>
                   </div>
-                  <span class="pill">Published</span>
+                  <span class="pill ${item.stats ? 'on' : ''}">${item.stats ? statsLine(item.stats) : 'Published'}</span>
                 </a>
               `).join('') : '<p class="empty-state">No videos published yet.</p>'}
             </div>

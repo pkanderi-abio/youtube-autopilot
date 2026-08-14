@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "run": "node src/run-pipeline.js",
-    "get-token": "node scripts/get-refresh-token.js"
+    "get-token": "node scripts/get-refresh-token.js",
+    "fetch-analytics": "node scripts/fetch-analytics.js"
   },
   "dependencies": {
     "canvas": "^2.11.2",
