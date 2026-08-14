@@ -94,7 +94,8 @@
     "The world's oldest known amusement park is actually a ancient Minoan palace",
     "The most scenic drives in the world you never knew existed",
     "The world's most expensive volleyball court is hidden in a casino resort",
-    "What if electric cars had been invented first?"
+    "What if electric cars had been invented first?",
+    "You Can Almost Walk From Alaska to Russia"
   ],
   "videos": [
     {
@@ -651,6 +652,12 @@
       "url": "https://youtu.be/0JDTe2s2Usw",
       "format": "short",
       "publishedAt": "2026-08-14T14:55:11.965Z"
+    },
+    {
+      "title": "Uelene to Inupiat: The World's Narrowest International Border",
+      "url": "https://youtu.be/u6MaGUDTv00",
+      "format": "short",
+      "publishedAt": "2026-08-14T16:45:04.632Z"
     }
   ]
 }
