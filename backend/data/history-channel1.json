@@ -95,7 +95,8 @@
     "The most scenic drives in the world you never knew existed",
     "The world's most expensive volleyball court is hidden in a casino resort",
     "What if electric cars had been invented first?",
-    "You Can Almost Walk From Alaska to Russia"
+    "You Can Almost Walk From Alaska to Russia",
+    "The Island Where Rabbits Outnumber People 1 to 100"
   ],
   "videos": [
     {
@@ -658,6 +659,13 @@
       "url": "https://youtu.be/u6MaGUDTv00",
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z"
+    },
+    {
+      "title": "Rabbits Overrun Scottish Isle 1 to 100",
+      "url": "https://youtu.be/Jg1VpfebD8k",
+      "format": "long",
+      "publishedAt": "2026-08-14T16:56:46.019Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1"
     }
   ]
 }
