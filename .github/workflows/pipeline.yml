@@ -101,7 +101,16 @@ jobs:
           echo "::error::npm ci failed after retries"
           exit 1
       - name: Install ffmpeg system libs (canvas native build)
-        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+        # fonts-noto-emoji (the monochrome/outline variant, not
+        # fonts-noto-color-emoji) is required for step 7's thumbnail
+        # corner badge - ubuntu-latest ships no emoji glyphs at all by
+        # default, so Cairo/Pango fell back to garbled placeholder glyphs
+        # for every accent emoji (confirmed directly against a live
+        # thumbnail upload: a badge that should show a single emoji
+        # rendered as "1 2 3 4"). The monochrome variant also respects
+        # canvas's fillStyle tinting, which a color/bitmap emoji font
+        # would ignore.
+        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev fonts-noto-emoji
       - name: Install Ollama
         run: curl -fsSL https://ollama.com/install.sh | sh
       - name: Cache Ollama models

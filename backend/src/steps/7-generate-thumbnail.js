@@ -168,6 +168,15 @@ function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
 
+  // Measured once up front (font size depends on text width), but NOT
+  // relied on as leftover ctx.font state afterward - every draw call
+  // below sets ctx.font itself immediately before use. A previous
+  // version left ctx.font at this (huge, ~220px) size after the auto-fit
+  // loop and the non-flip branch drew the smaller "rest" text without
+  // resetting it first, rendering that text at emphasis size and
+  // producing badly overlapping lines on every uploaded thumbnail
+  // (confirmed directly against a live upload: "RABBITS"/"OVERRUN" text
+  // overlapping into an unreadable jumble).
   let empSize = 220;
   ctx.font = `900 ${empSize}px sans-serif`;
   while (ctx.measureText(emphasis).width > w - 100 && empSize > 90) {
@@ -178,29 +187,32 @@ function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
   const restSize = 68;
   const restLineHeight = restSize * 1.1;
 
+  function drawRestBlock(startY) {
+    ctx.font = `900 ${restSize}px sans-serif`;
+    const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
+    let y = startY;
+    for (const line of restLines) {
+      drawOutlinedText(ctx, line, 60, y, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
+      y += restLineHeight;
+    }
+    return y;
+  }
+
+  function drawEmphasisBlock(y) {
+    ctx.font = `900 ${empSize}px sans-serif`;
+    drawOutlinedText(ctx, emphasis, 60, y, { fill: accent, stroke: '#000000', strokeWidth: 14 });
+  }
+
   if (flip) {
     // EMPHASIS word first (top), REST below it.
     const empY = h * 0.22;
-    drawOutlinedText(ctx, emphasis, 60, empY, { fill: accent, stroke: '#000000', strokeWidth: 14 });
-
-    ctx.font = `900 ${restSize}px sans-serif`;
-    const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
-    let restY = empY + empSize * 1.05 + 20;
-    for (const line of restLines) {
-      drawOutlinedText(ctx, line, 60, restY, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
-      restY += restLineHeight;
-    }
+    drawEmphasisBlock(empY);
+    drawRestBlock(empY + empSize * 1.05 + 20);
   } else {
     // REST first (top, smaller), EMPHASIS word below it (bigger) - the
     // original/default composition.
-    const restLines = wrapText(ctx, restRaw, w - 100).slice(0, 2);
-    let restY = h * 0.28;
-    for (const line of restLines) {
-      drawOutlinedText(ctx, line, 60, restY, { fill: '#ffffff', stroke: '#000000', strokeWidth: 10 });
-      restY += restLineHeight;
-    }
-    const empY = restY + 30;
-    drawOutlinedText(ctx, emphasis, 60, empY, { fill: accent, stroke: '#000000', strokeWidth: 14 });
+    const afterRestY = drawRestBlock(h * 0.28);
+    drawEmphasisBlock(afterRestY + 30);
   }
 
   // --- Corner accent: emoji in a colored badge, opposite corner per variant ---

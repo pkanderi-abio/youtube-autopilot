@@ -6,6 +6,18 @@
 const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
 const PEXELS_SEARCH_URL = 'https://api.pexels.com/videos/search';
 
+// How many of Pexels' top-ranked results are treated as "equally good
+// enough" to pick from at random. Always taking result #1 meant any two
+// videos with the same (or a similarly generic) scene search phrase -
+// very common on channel2, where lots of topics generate a scene like
+// "baby playing with toys" - downloaded the literal same clip every
+// time, producing near-identical thumbnails/backgrounds across
+// unrelated videos (confirmed directly: 5 of 6 recent channel2 uploads
+// shared the same background frame). Randomizing across the top N
+// still-relevant results breaks that without picking something
+// off-topic.
+const RESULT_POOL_SIZE = 5;
+
 // Finds a stock clip matching `query` and downloads it, returning the
 // local file path. Picks the smallest available file that still meets
 // the target resolution - Pexels also offers 4K masters we don't need
@@ -24,7 +36,8 @@ export async function findStockFootageClip(query, { width, height }) {
   }
 
   const data = await response.json();
-  const video = data.videos?.[0];
+  const pool = (data.videos || []).slice(0, RESULT_POOL_SIZE);
+  const video = pool.length ? pool[Math.floor(Math.random() * pool.length)] : null;
   if (!video) {
     throw new Error(`no Pexels results for query: "${query}"`);
   }
