@@ -58,7 +58,8 @@
     "Three Blind Mice Learning Colors and Shapes",
     "Counting the Colors of Mary Had a Little Lamb's Wool",
     "Counting Friends at London Bridge",
-    "Counting Sheep in a Rainbow Meadow"
+    "Counting Sheep in a Rainbow Meadow",
+    "Red Hot Cross Buns Counting Dance"
   ],
   "videos": [
     {
@@ -401,6 +402,12 @@
       "url": "https://youtu.be/Xm6ZBdDqjmM",
       "format": "short",
       "publishedAt": "2026-08-13T14:27:49.027Z"
+    },
+    {
+      "title": "Counting Red Hot Cross Buns",
+      "url": "https://youtu.be/E8tQdq-81j0",
+      "format": "short",
+      "publishedAt": "2026-08-14T14:18:33.646Z"
     }
   ]
 }
