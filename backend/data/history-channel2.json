@@ -59,7 +59,8 @@
     "Counting the Colors of Mary Had a Little Lamb's Wool",
     "Counting Friends at London Bridge",
     "Counting Sheep in a Rainbow Meadow",
-    "Red Hot Cross Buns Counting Dance"
+    "Red Hot Cross Buns Counting Dance",
+    "Learning the Colors of the Farm Animals"
   ],
   "videos": [
     {
@@ -408,6 +409,13 @@
       "url": "https://youtu.be/E8tQdq-81j0",
       "format": "short",
       "publishedAt": "2026-08-14T14:18:33.646Z"
+    },
+    {
+      "title": "Mary Counts Colors at London Bridge Farm",
+      "url": "https://youtu.be/O_PqYRBRfJU",
+      "format": "short",
+      "publishedAt": "2026-08-14T16:47:57.818Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
