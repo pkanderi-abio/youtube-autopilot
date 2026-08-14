@@ -12,7 +12,7 @@ import path from 'path';
 import ffmpegPath from 'ffmpeg-static';
 import { spawn } from 'child_process';
 import { createCanvas, loadImage } from 'canvas';
-import { writeFile, mkdir } from 'fs/promises';
+import { writeFile, mkdir, readFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { findStockFootageClip } from '../lib/stockFootage.js';
 
@@ -605,6 +605,19 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   const h = channel.format === 'short' ? 1920 : 1080;
   const fps = 25;
 
+  // A missing/invalid Pexels key is a CONFIG problem, not a transient
+  // per-shot one - but findStockFootageClip's failure gets caught the
+  // same way as any other footage-fetch error below, silently
+  // downgrading every single shot of every video to the gradient
+  // fallback with no hard failure anywhere. That's exactly the failure
+  // mode this project's own principle exists to prevent ("fail loud,
+  // don't ship broken content" - see CLAUDE.md) - a run should abort
+  // and surface the real cause, not quietly ship weeks of same-looking,
+  // barely-animated gradient videos under the appearance of "working."
+  if (channel.visualStyle === 'stockFootage' && !process.env.PEXELS_API_KEY) {
+    throw new Error('[background] channel.visualStyle is "stockFootage" but PEXELS_API_KEY is not set - refusing to silently downgrade every shot to the gradient fallback. Set PEXELS_API_KEY (repo secret in CI, .env locally) or switch the channel to visualStyle: "gradient" if that\'s intentional.');
+  }
+
   const cartoon = channel.visualStyle === 'cartoonAnimation' && scenes.length > 0;
   const stockFootage = channel.visualStyle === 'stockFootage' && scenes.length > 0;
   const shotCount = (cartoon || stockFootage) ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
@@ -620,15 +633,30 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   // YouTube Studio thumbnails, which were all near-identical.
   const runSeed = Math.floor(Math.random() * 100000);
 
+  // WHICH shot supplies the thumbnail/opening frame is also randomized,
+  // not hardcoded to shot 0. Real production evidence: shot 0's search
+  // phrase is almost always the video's generic "opening hook" (e.g.
+  // "cute baby smiling") - on a babyLearning channel that phrase barely
+  // varies topic to topic, so even with a randomized pick *within* one
+  // Pexels query's results (see stockFootage.js), always sourcing the
+  // thumbnail from shot 0 meant dozens of videos drew from the same
+  // small, collision-prone result set. Pulling from a random shot index
+  // instead means the thumbnail is often sourced from a later,
+  // topic-specific query (e.g. "red apple on table") that has far less
+  // cross-video overlap.
+  const heroShotIndex = Math.floor(Math.random() * shotCount);
+  let usedRealFootageCount = 0;
+
   const clipPaths = [];
   for (let i = 0; i < shotCount; i++) {
     const shotSeed = runSeed + i;
     const clipPath = path.join(workDir, `scene-${i}.mp4`);
+    const isHeroShot = i === heroShotIndex;
 
     if (cartoon) {
       try {
         const firstFrame = await cartoonClip(scenes[i] || '', clipPath, workDir, i, w, h, fps, durations[i], shotSeed);
-        if (i === 0 && firstFrame) {
+        if (isHeroShot && firstFrame) {
           await writeFile(path.join(workDir, 'scene-0.png'), firstFrame);
         }
         clipPaths.push(clipPath);
@@ -650,7 +678,8 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         const buffer = await findStockFootageClip(scenes[i], { width: w, height: h });
         await writeFile(sourcePath, buffer);
         await footageClip(sourcePath, clipPath, w, h, fps, durations[i]);
-        if (i === 0) {
+        usedRealFootageCount++;
+        if (isHeroShot) {
           await extractFrame(clipPath, path.join(workDir, 'scene-0.png'));
         }
         clipPaths.push(clipPath);
@@ -665,7 +694,20 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
 
     const focus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
     await zoomClip(framePath, clipPath, w, h, fps, durations[i], focus);
+    // The hero shot might have been PICKED as one meant to use real
+    // footage/cartoon but fallen through to gradient here - still needs
+    // its frame captured for the thumbnail, just from the fallback path.
+    if (isHeroShot && (cartoon || stockFootage)) {
+      await writeFile(path.join(workDir, 'scene-0.png'), await readFile(framePath));
+    }
     clipPaths.push(clipPath);
+  }
+
+  // Loud, single-line summary so a "why do all the thumbnails/shots
+  // look the same" report can be diagnosed straight from the CI log
+  // instead of having to infer it from scattered per-shot warnings.
+  if (stockFootage) {
+    console.log(`[background] real stock footage used for ${usedRealFootageCount}/${shotCount} shots (rest: gradient fallback)`);
   }
 
   const bgVideoPath = await concatClips(clipPaths, workDir);

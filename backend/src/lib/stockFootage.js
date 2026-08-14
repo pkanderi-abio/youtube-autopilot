@@ -15,8 +15,13 @@ const PEXELS_SEARCH_URL = 'https://api.pexels.com/videos/search';
 // unrelated videos (confirmed directly: 5 of 6 recent channel2 uploads
 // shared the same background frame). Randomizing across the top N
 // still-relevant results breaks that without picking something
-// off-topic.
-const RESULT_POOL_SIZE = 5;
+// off-topic. Set to 15 (out of PAGE_SIZE=20 fetched) rather than a
+// smaller number - a channel publishing 40+ videos off a handful of
+// recurring generic queries needs real headroom, or the same small
+// pool just gets picked from repeatedly again (pigeonhole principle:
+// 40 draws from a pool of 5 guarantees heavy repeats).
+const PAGE_SIZE = 20;
+const RESULT_POOL_SIZE = 15;
 
 // Finds a stock clip matching `query` and downloads it, returning the
 // local file path. Picks the smallest available file that still meets
@@ -29,7 +34,7 @@ export async function findStockFootageClip(query, { width, height }) {
   }
 
   const orientation = height > width ? 'portrait' : 'landscape';
-  const url = `${PEXELS_SEARCH_URL}?query=${encodeURIComponent(query)}&per_page=10&orientation=${orientation}`;
+  const url = `${PEXELS_SEARCH_URL}?query=${encodeURIComponent(query)}&per_page=${PAGE_SIZE}&orientation=${orientation}`;
   const response = await fetch(url, { headers: { Authorization: PEXELS_API_KEY } });
   if (!response.ok) {
     throw new Error(`Pexels search failed: ${response.status} ${response.statusText}`);
