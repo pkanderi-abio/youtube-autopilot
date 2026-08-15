@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-14T16:36:40.030Z",
+  "fetchedAt": "2026-08-15T06:22:49.329Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -598,6 +598,26 @@
       "publishedAt": "2026-08-14T14:18:33.646Z",
       "sourcePoolItem": null,
       "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/O_PqYRBRfJU",
+      "title": "Mary Counts Colors at London Bridge Farm",
+      "format": "short",
+      "publishedAt": "2026-08-14T16:47:57.818Z",
+      "sourcePoolItem": "Counting Farm Animals",
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/WXkZnEdXBpg",
+      "title": "Learning Colors on a Farm with 3 Happy Chickens",
+      "format": "long",
+      "publishedAt": "2026-08-14T17:08:37.630Z",
+      "sourcePoolItem": null,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     }
