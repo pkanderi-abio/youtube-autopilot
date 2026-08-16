@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-15T06:22:49.087Z",
+  "fetchedAt": "2026-08-16T06:24:58.573Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -607,7 +607,7 @@
       "format": "long",
       "publishedAt": "2026-07-27T18:44:22.714Z",
       "sourcePoolItem": null,
-      "viewCount": 16,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -667,7 +667,7 @@
       "format": "short",
       "publishedAt": "2026-07-30T15:59:16.227Z",
       "sourcePoolItem": null,
-      "viewCount": 95,
+      "viewCount": 94,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -697,8 +697,8 @@
       "format": "long",
       "publishedAt": "2026-07-31T18:37:01.258Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
-      "likeCount": 0,
+      "viewCount": 16,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -747,8 +747,8 @@
       "format": "long",
       "publishedAt": "2026-08-03T18:58:49.920Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
-      "likeCount": 0,
+      "viewCount": 2,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -797,8 +797,8 @@
       "format": "long",
       "publishedAt": "2026-08-05T18:37:00.135Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
-      "likeCount": 0,
+      "viewCount": 10,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -827,8 +827,8 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
-      "likeCount": 0,
+      "viewCount": 4,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T22:43:45.671Z",
       "sourcePoolItem": null,
-      "viewCount": 322,
+      "viewCount": 321,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T15:02:08.339Z",
       "sourcePoolItem": null,
-      "viewCount": 87,
+      "viewCount": 107,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T22:44:03.351Z",
       "sourcePoolItem": null,
-      "viewCount": 557,
+      "viewCount": 556,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T14:55:11.965Z",
       "sourcePoolItem": null,
-      "viewCount": 511,
+      "viewCount": 513,
       "likeCount": 11,
       "commentCount": 0
     },
@@ -967,8 +967,8 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 66,
-      "likeCount": 1,
+      "viewCount": 121,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -977,8 +977,8 @@
       "format": "long",
       "publishedAt": "2026-08-14T16:56:46.019Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 4,
-      "likeCount": 0,
+      "viewCount": 11,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
