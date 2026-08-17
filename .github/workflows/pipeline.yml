@@ -2,6 +2,7 @@ name: Autopilot pipeline
 
 permissions:
   contents: write
+  issues: write
 
 on:
   schedule:
@@ -188,3 +189,72 @@ jobs:
           git config user.name "autopilot-bot"
           git config user.email "actions@users.noreply.github.com"
           node scripts/merge-and-push-history.js ${{ matrix.channel }}
+
+  # A real incident (2026-08-14 to 2026-08-17) motivated this: a bad
+  # apt-get package name broke every single scheduled run on both
+  # channels for 3 days straight, and nobody knew until someone happened
+  # to check the Actions tab - the pipeline was "failing loudly" in the
+  # sense of exiting non-zero, but that's worthless if nothing surfaces
+  # it. Runs after `publish` regardless of its outcome (`if: always()`
+  # at the job level - the default is to skip a job once a dependency
+  # fails) and opens/updates a single tracking issue on failure, closing
+  # it automatically once a run succeeds again - so a sustained outage
+  # gets ONE issue with a growing comment thread, not a new issue per
+  # failed run (which is what would happen with 9 consecutive failures
+  # otherwise).
+  notify-on-failure:
+    needs: publish
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const result = '${{ needs.publish.result }}';
+            // 'skipped' means this trigger's cron entry matched no known
+            // schedule (see the `plan` job) - not a failure, and not
+            // evidence of a fix either, so leave any open issue alone.
+            if (result === 'skipped') return;
+
+            const label = 'pipeline-failure';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: label
+            });
+
+            if (result === 'failure') {
+              if (openIssues.length > 0) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: openIssues[0].number,
+                  body: `Another scheduled run failed: ${runUrl}`
+                });
+              } else {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: 'Autopilot pipeline is failing',
+                  body: `A scheduled pipeline run failed: ${runUrl}\n\nThis issue closes itself automatically once a run succeeds again.`,
+                  labels: [label]
+                });
+              }
+            } else if (result === 'success' && openIssues.length > 0) {
+              for (const issue of openIssues) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: `Resolved - a pipeline run succeeded: ${runUrl}`
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  state: 'closed'
+                });
+              }
+            }
