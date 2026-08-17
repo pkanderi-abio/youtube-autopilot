@@ -96,7 +96,8 @@
     "The world's most expensive volleyball court is hidden in a casino resort",
     "What if electric cars had been invented first?",
     "You Can Almost Walk From Alaska to Russia",
-    "The Island Where Rabbits Outnumber People 1 to 100"
+    "The Island Where Rabbits Outnumber People 1 to 100",
+    "The Smallest Country You Could Walk Across in 20 Minutes"
   ],
   "videos": [
     {
@@ -666,6 +667,12 @@
       "format": "long",
       "publishedAt": "2026-08-14T16:56:46.019Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1"
+    },
+    {
+      "title": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "url": "https://youtu.be/vFBUXXI4468",
+      "format": "short",
+      "publishedAt": "2026-08-17T14:32:07.006Z"
     }
   ]
 }
