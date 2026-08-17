@@ -97,7 +97,8 @@
     "What if electric cars had been invented first?",
     "You Can Almost Walk From Alaska to Russia",
     "The Island Where Rabbits Outnumber People 1 to 100",
-    "The Smallest Country You Could Walk Across in 20 Minutes"
+    "The Smallest Country You Could Walk Across in 20 Minutes",
+    "The Forest Where Every Tree Grows Sideways"
   ],
   "videos": [
     {
@@ -673,6 +674,13 @@
       "url": "https://youtu.be/vFBUXXI4468",
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z"
+    },
+    {
+      "title": "Quinault Rainforest's Sideways Trees",
+      "url": "https://youtu.be/BrxjN-p36CA",
+      "format": "long",
+      "publishedAt": "2026-08-17T17:46:42.152Z",
+      "sourcePoolItem": "The Forest Where Every Tree Grows Sideways"
     }
   ]
 }
