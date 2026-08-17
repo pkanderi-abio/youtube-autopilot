@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-16T06:24:58.573Z",
+  "fetchedAt": "2026-08-17T06:36:08.039Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -697,7 +697,7 @@
       "format": "long",
       "publishedAt": "2026-07-31T18:37:01.258Z",
       "sourcePoolItem": null,
-      "viewCount": 16,
+      "viewCount": 19,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "long",
       "publishedAt": "2026-08-03T18:58:49.920Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 121,
+      "viewCount": 207,
       "likeCount": 2,
       "commentCount": 0
     },
