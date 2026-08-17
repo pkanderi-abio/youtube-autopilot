@@ -84,30 +84,72 @@ function pickEmphasisWord(title) {
   return meaningful.sort((a, b) => b.length - a.length)[0];
 }
 
-// Pick a topical emoji accent for the corner tag. Simple keyword
-// heuristic - the specific emoji matters less than "some visual accent
-// exists" so viewers' eyes have a bright point to lock onto.
-const EMOJI_MAP = [
-  [/\b(count|counting|number|\d)\b/i, '🔢'],
-  [/\b(sing|song|music|rhyme)\b/i, '🎵'],
-  [/\b(star|twinkle|space|planet|galaxy)\b/i, '⭐'],
-  [/\b(farm|animal|cow|pig|sheep|duck)\b/i, '🐄'],
-  [/\b(color|colors|rainbow|paint)\b/i, '🌈'],
-  [/\b(baby|toddler|kids|children)\b/i, '👶'],
-  [/\b(food|eat|apple|fruit|snack)\b/i, '🍎'],
-  [/\b(travel|beach|destination|island|city)\b/i, '✈️'],
-  [/\b(secret|hidden|revealed|truth|why)\b/i, '👀'],
-  [/\b(shock|shocking|wild|insane|crazy)\b/i, '🤯'],
-  [/\b(top|best|greatest|amazing)\b/i, '🏆'],
-  [/\b(history|ancient|old)\b/i, '📜'],
-  [/\b(science|nature|earth|world)\b/i, '🌍'],
-  [/\b(fire|hot|explosion)\b/i, '🔥']
+// Pick a topical accent ICON (not an emoji character) for the corner
+// tag. A previous version rendered an emoji glyph directly, which
+// depends on the CI runner having an emoji-capable font installed -
+// ubuntu-latest doesn't, and a fix attempt (installing fonts-noto-emoji)
+// turned out to name a package that doesn't exist, which broke apt-get
+// install and took down the entire pipeline for 3 days. Cairo/Pango on
+// this runner has independently proven fragile around bitmap/color
+// glyph formats before too (see 5-generate-background.js's PNG->JPEG
+// cartoon-frame history). Pure vector shapes drawn with canvas
+// primitives have zero font dependency and can't silently fail to
+// render - same "some bright accent exists" philosophy as the emoji
+// version, several categories intentionally share one shape since the
+// specific icon matters far less than a bright, distinct accent point.
+const ICON_MAP = [
+  [/\b(count|counting|number|\d|history|ancient|old|science|nature|earth|world)\b/i, 'circle'],
+  [/\b(sing|song|music|rhyme|star|twinkle|space|planet|galaxy|secret|hidden|revealed|truth|why|shock|shocking|wild|insane|crazy|top|best|greatest|amazing)\b/i, 'star'],
+  [/\b(farm|animal|cow|pig|sheep|duck|baby|toddler|kids|children)\b/i, 'heart'],
+  [/\b(color|colors|rainbow|paint|food|eat|apple|fruit|snack)\b/i, 'flower'],
+  [/\b(travel|beach|destination|island|city|fire|hot|explosion)\b/i, 'triangle']
 ];
-function pickAccentEmoji(title) {
-  for (const [re, emoji] of EMOJI_MAP) {
-    if (re.test(title)) return emoji;
+function pickAccentIcon(title) {
+  for (const [re, icon] of ICON_MAP) {
+    if (re.test(title)) return icon;
   }
-  return '🎬';
+  return 'circle';
+}
+
+// Draws one of a handful of simple vector badge icons, filled + outlined
+// to match the emoji badge's original look.
+function drawIcon(ctx, icon, cx, cy, r, fill) {
+  ctx.fillStyle = fill;
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = Math.max(3, r * 0.12);
+  ctx.beginPath();
+  if (icon === 'star') {
+    for (let i = 0; i < 10; i++) {
+      const rr = i % 2 === 0 ? r : r * 0.42;
+      const angle = -Math.PI / 2 + i * (Math.PI / 5);
+      const x = cx + Math.cos(angle) * rr;
+      const y = cy + Math.sin(angle) * rr;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+  } else if (icon === 'heart') {
+    ctx.moveTo(cx, cy + r * 0.3);
+    ctx.bezierCurveTo(cx + r, cy - r * 0.6, cx + r * 1.5, cy + r * 0.3, cx, cy + r);
+    ctx.bezierCurveTo(cx - r * 1.5, cy + r * 0.3, cx - r, cy - r * 0.6, cx, cy + r * 0.3);
+    ctx.closePath();
+  } else if (icon === 'flower') {
+    for (let i = 0; i < 5; i++) {
+      const angle = (i / 5) * Math.PI * 2;
+      const px = cx + Math.cos(angle) * r * 0.55;
+      const py = cy + Math.sin(angle) * r * 0.55;
+      ctx.moveTo(px + r * 0.4, py);
+      ctx.arc(px, py, r * 0.4, 0, Math.PI * 2);
+    }
+  } else if (icon === 'triangle') {
+    ctx.moveTo(cx, cy - r);
+    ctx.lineTo(cx + r * 0.87, cy + r * 0.5);
+    ctx.lineTo(cx - r * 0.87, cy + r * 0.5);
+    ctx.closePath();
+  } else {
+    ctx.arc(cx, cy, r, 0, Math.PI * 2);
+  }
+  ctx.fill();
+  ctx.stroke();
 }
 
 // Curated bright accent palette (avoid dull/dark colors that don't pop
@@ -163,7 +205,7 @@ function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
     .join(' ')
     .toUpperCase();
   const accent = ACCENT_COLORS[accentIndex % ACCENT_COLORS.length];
-  const emoji = pickAccentEmoji(title);
+  const icon = pickAccentIcon(title);
 
   ctx.textBaseline = 'top';
   ctx.textAlign = 'left';
@@ -215,7 +257,7 @@ function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
     drawEmphasisBlock(afterRestY + 30);
   }
 
-  // --- Corner accent: emoji in a colored badge, opposite corner per variant ---
+  // --- Corner accent: vector icon in a colored badge, opposite corner per variant ---
   const badgeSize = 130;
   const badgeX = flip ? 30 : w - badgeSize - 30;
   const badgeY = 30;
@@ -225,11 +267,7 @@ function renderVariant(channel, title, sceneImage, { flip, accentIndex }) {
   roundRect(ctx, badgeX, badgeY, badgeSize, badgeSize, 22);
   ctx.fill();
   ctx.stroke();
-  ctx.font = `${badgeSize * 0.65}px sans-serif`;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillStyle = '#ffffff';
-  ctx.fillText(emoji, badgeX + badgeSize / 2, badgeY + badgeSize / 2 + 8);
+  drawIcon(ctx, icon, badgeX + badgeSize / 2, badgeY + badgeSize / 2, badgeSize * 0.32, '#ffffff');
 
   return canvas.toBuffer('image/png');
 }
