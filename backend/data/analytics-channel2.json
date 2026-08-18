@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-17T06:36:08.446Z",
+  "fetchedAt": "2026-08-18T06:28:02.381Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -537,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T13:51:44.270Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -557,7 +557,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T14:25:59.132Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -567,7 +567,7 @@
       "format": "short",
       "publishedAt": "2026-08-11T14:24:05.274Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -577,7 +577,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T14:25:48.255Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -587,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T14:27:49.027Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -597,7 +597,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T14:18:33.646Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -607,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 2,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -618,6 +618,16 @@
       "publishedAt": "2026-08-14T17:08:37.630Z",
       "sourcePoolItem": null,
       "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/pa_D3LmTOec",
+      "title": "Counting Flowers with Little Bo Peep",
+      "format": "short",
+      "publishedAt": "2026-08-18T00:06:54.808Z",
+      "sourcePoolItem": null,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     }
