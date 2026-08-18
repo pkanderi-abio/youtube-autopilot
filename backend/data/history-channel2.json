@@ -61,7 +61,8 @@
     "Counting Sheep in a Rainbow Meadow",
     "Red Hot Cross Buns Counting Dance",
     "Learning the Colors of the Farm Animals",
-    "Counting Farm Friends with Colors and Shapes"
+    "Counting Farm Friends with Colors and Shapes",
+    "Counting Colors with Little Bo Peep"
   ],
   "videos": [
     {
@@ -423,6 +424,12 @@
       "url": "https://youtu.be/WXkZnEdXBpg",
       "format": "long",
       "publishedAt": "2026-08-14T17:08:37.630Z"
+    },
+    {
+      "title": "Counting Flowers with Little Bo Peep",
+      "url": "https://youtu.be/pa_D3LmTOec",
+      "format": "short",
+      "publishedAt": "2026-08-18T00:06:54.808Z"
     }
   ]
 }
