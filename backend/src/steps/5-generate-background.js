@@ -486,16 +486,34 @@ async function zoomClip(framePath, outPath, w, h, fps, durationSeconds, focus) {
 // distort aspect ratio), loop if the source is shorter than the shot's
 // duration, trim to exactly durationSeconds, and drop its own audio -
 // the final mix only ever uses the narration track, muxed in later by
-// assembleVideo. Encoded with the same params as zoomClip() (fps,
-// yuv420p, libx264 crf 18) so concatClips' `-c copy` demuxer can stitch
-// real-footage and gradient/illustration shots together in one video.
-async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds) {
+// assembleVideo. A subtle Ken Burns zoom/pan is layered on top of the
+// real footage: scale to an oversized intermediate canvas so zoompan has
+// room to crop+zoom toward a focus point without exposing empty edges.
+// Without this, low-motion B-roll (tripod-locked product/object shots -
+// very common for toy/counting close-ups) plays back reading as a static
+// photo rather than video, the same "static background" problem already
+// solved for the gradient fallback path (see zoomClip below) but never
+// applied to real footage. d=1 is correct here (NOT the d=totalFrames
+// workaround zoomClip needs) because stream_loop keeps genuinely distinct
+// video frames arriving continuously - zoompan advances its zoom/pan
+// state once per real input frame, unlike zoomClip's single looped still.
+// Encoded with the same params as zoomClip() (fps, yuv420p, libx264
+// crf 18) so concatClips' `-c copy` demuxer can stitch real-footage and
+// gradient/illustration shots together in one video.
+async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds, focus) {
+  const [fx, fy] = focus;
+  const maxZoom = 1.2;
+  const totalFrames = Math.max(1, Math.round(fps * durationSeconds));
+  const zoomPerFrame = (maxZoom - 1) / totalFrames;
+  const ow = Math.round(w * 1.3);
+  const oh = Math.round(h * 1.3);
+
   await runFfmpeg([
     '-y',
     '-stream_loop', '-1',
     '-i', sourcePath,
     '-t', String(durationSeconds),
-    '-vf', `scale=w=${w}:h=${h}:force_original_aspect_ratio=increase,crop=${w}:${h},fps=${fps},format=yuv420p`,
+    '-vf', `scale=w=${ow}:h=${oh}:force_original_aspect_ratio=increase,crop=${ow}:${oh},zoompan=z='min(zoom+${zoomPerFrame},${maxZoom})':x='(iw-iw/zoom)*${fx}':y='(ih-ih/zoom)*${fy}':d=1:s=${w}x${h}:fps=${fps},format=yuv420p`,
     '-an',
     '-c:v', 'libx264',
     '-crf', '18',
@@ -677,7 +695,8 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         const sourcePath = path.join(workDir, `stock-source-${i}.mp4`);
         const buffer = await findStockFootageClip(scenes[i], { width: w, height: h });
         await writeFile(sourcePath, buffer);
-        await footageClip(sourcePath, clipPath, w, h, fps, durations[i]);
+        const footageFocus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
+        await footageClip(sourcePath, clipPath, w, h, fps, durations[i], footageFocus);
         usedRealFootageCount++;
         if (isHeroShot) {
           await extractFrame(clipPath, path.join(workDir, 'scene-0.png'));
