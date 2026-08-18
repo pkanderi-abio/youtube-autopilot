@@ -88,10 +88,25 @@ Return JSON: {
   "topic": "...",
   "angle": "one sentence on the specific angle/hook",
   "predictedCtr": 0.0,
-  "sourceItem": "the exact candidate text you based this on, copied verbatim from the numbered list above"
+  "sourceIndex": <the NUMBER of the candidate you based this on, from the numbered list above - just the integer, e.g. 3>
 }
 `.trim());
 
-  const sourcePoolItem = !isTrending && pool.includes(picked.sourceItem) ? picked.sourceItem : null;
+  // Asking for the source item back as an INDEX rather than an exact
+  // text echo, and validating it's an in-range integer, rather than
+  // trusting a copied-verbatim string. Real production evidence: the
+  // exact-string-match version silently failed whenever the model
+  // reworded the pool item even slightly while writing "topic" (e.g.
+  // dropping "in the World" from "The Smallest Country in the World
+  // You Could Walk Across in 20 Minutes") - sourceItem then didn't
+  // match anything in `pool`, sourcePoolItem was recorded as null, and
+  // the cooldown in pickPool() never saw that pick, so the SAME pool
+  // item got selected again 8 hours and one video later. A small
+  // integer index is much harder for a small model to get wrong than
+  // reproducing a text span byte-for-byte.
+  const index = Number(picked.sourceIndex);
+  const sourcePoolItem = !isTrending && Number.isInteger(index) && index >= 1 && index <= pool.length
+    ? pool[index - 1]
+    : null;
   return { ...picked, sourcePoolItem };
 }
