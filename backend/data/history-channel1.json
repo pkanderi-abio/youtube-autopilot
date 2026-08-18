@@ -98,7 +98,8 @@
     "You Can Almost Walk From Alaska to Russia",
     "The Island Where Rabbits Outnumber People 1 to 100",
     "The Smallest Country You Could Walk Across in 20 Minutes",
-    "The Forest Where Every Tree Grows Sideways"
+    "The Forest Where Every Tree Grows Sideways",
+    "What If Sharks Had a Single Brain Instead of Three?"
   ],
   "videos": [
     {
@@ -688,6 +689,13 @@
       "format": "short",
       "publishedAt": "2026-08-17T22:29:05.958Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
+    },
+    {
+      "title": "What if shark brains had just 1 ventricle?",
+      "url": "https://youtu.be/M-Pk7C4P2Kc",
+      "format": "short",
+      "publishedAt": "2026-08-18T14:39:23.487Z",
+      "sourcePoolItem": "Sharks Existed Before Trees"
     }
   ]
 }
