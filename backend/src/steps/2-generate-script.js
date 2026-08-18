@@ -151,16 +151,32 @@ function scenesFields(channel, countHint) {
   if (!needsScenes(channel)) return { hint: '', instructions: '' };
 
   const isBaby = channel.contentStyle === 'babyLearning';
+  // These are illustrative of the SHAPE a good phrase takes (concrete,
+  // 3-6 words) - deliberately varied across unrelated topics/objects so
+  // there's no single generic phrase to anchor on and reuse. A previous
+  // version's example list included "baby playing with toys" - a small,
+  // literal-instruction-following model reproduced that exact phrase (or
+  // a close paraphrase) across many videos regardless of actual topic,
+  // since it read as a safe default rather than one example among many.
+  // Confirmed directly in production: a "Counting Flowers with Little Bo
+  // Peep" video's thumbnail showed an unrelated toy truck - nothing to
+  // do with sheep, a meadow, or flowers - because its scene list had
+  // converged on the same generic filler phrase as unrelated videos.
   const examples = isBaby
-    ? '"cute yellow ducks swimming", "red juicy apple on table", "colorful balloons floating", "puppy playing with ball", "baby playing with toys"'
+    ? '"fluffy white sheep in meadow", "colorful wooden alphabet blocks", "bright red apple on table", "yellow rubber duck in bath water"'
     : '"aerial coastal city sunset" or "fox running through forest"';
   const extra = isBaby
-    ? `\n  For baby/toddler content specifically: prefer bright, cheerful,
-  concrete objects the video is teaching about (animals, food, toys,
-  colorful things). Search phrases like "cute puppy playing" work far
-  better on stock-footage sites than abstract phrases like "concept of
-  counting" - Pexels has thousands of matching real clips for concrete
-  kid-friendly nouns.`
+    ? `\n  For baby/toddler content specifically: every phrase MUST name a
+  concrete object, animal, or character drawn from THIS VIDEO'S SPECIFIC
+  TOPIC above - never a generic placeholder that could apply to any
+  video (e.g. do NOT default to "baby playing with toys" unless the
+  topic is literally about toys). If the topic is a nursery rhyme about
+  sheep, use phrases like "fluffy sheep in green pasture" or "shepherd
+  girl with wooden staff" - not an unrelated toy or animal. If it's
+  about counting ducks, use "yellow ducklings swimming in a row". Bright
+  concrete nouns work far better on stock-footage sites than abstract
+  phrases, but they still have to be faithful to what this specific
+  topic is actually about, or the visuals won't match the video.`
     : '';
 
   return {
