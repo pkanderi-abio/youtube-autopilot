@@ -62,7 +62,8 @@
     "Red Hot Cross Buns Counting Dance",
     "Learning the Colors of the Farm Animals",
     "Counting Farm Friends with Colors and Shapes",
-    "Counting Colors with Little Bo Peep"
+    "Counting Colors with Little Bo Peep",
+    "Five Little Ducks Singing Rainbow Colors"
   ],
   "videos": [
     {
@@ -430,6 +431,13 @@
       "url": "https://youtu.be/pa_D3LmTOec",
       "format": "short",
       "publishedAt": "2026-08-18T00:06:54.808Z"
+    },
+    {
+      "title": "Fiji's Best Beaches for 5 Little Ducks to Count",
+      "url": "https://youtu.be/GerZLrDWmfc",
+      "format": "short",
+      "publishedAt": "2026-08-19T13:48:17.763Z",
+      "sourcePoolItem": "Hot Cross Buns"
     }
   ]
 }
