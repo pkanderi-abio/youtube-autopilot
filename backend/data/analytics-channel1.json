@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-18T06:28:01.943Z",
+  "fetchedAt": "2026-08-19T06:28:45.702Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -697,7 +697,7 @@
       "format": "long",
       "publishedAt": "2026-07-31T18:37:01.258Z",
       "sourcePoolItem": null,
-      "viewCount": 19,
+      "viewCount": 20,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "long",
       "publishedAt": "2026-08-14T16:56:46.019Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 11,
+      "viewCount": 12,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -987,9 +987,9 @@
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z",
       "sourcePoolItem": null,
-      "viewCount": 264,
-      "likeCount": 5,
-      "commentCount": 0
+      "viewCount": 399,
+      "likeCount": 7,
+      "commentCount": 1
     },
     {
       "url": "https://youtu.be/BrxjN-p36CA",
@@ -1007,8 +1007,18 @@
       "format": "short",
       "publishedAt": "2026-08-17T22:29:05.958Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 698,
+      "viewCount": 707,
       "likeCount": 11,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/M-Pk7C4P2Kc",
+      "title": "What if shark brains had just 1 ventricle?",
+      "format": "short",
+      "publishedAt": "2026-08-18T14:39:23.487Z",
+      "sourcePoolItem": "Sharks Existed Before Trees",
+      "viewCount": 619,
+      "likeCount": 7,
       "commentCount": 0
     }
   ]
