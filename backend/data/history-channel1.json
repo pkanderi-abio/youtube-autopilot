@@ -100,7 +100,8 @@
     "The Smallest Country You Could Walk Across in 20 Minutes",
     "The Forest Where Every Tree Grows Sideways",
     "What If Sharks Had a Single Brain Instead of Three?",
-    "A Tree That Can Live for Up to 2,000 Years"
+    "A Tree That Can Live for Up to 2,000 Years",
+    "The World's Shortest Commercial Flight Lasts Under 2 Minutes"
   ],
   "videos": [
     {
@@ -704,6 +705,13 @@
       "format": "short",
       "publishedAt": "2026-08-19T14:37:43.282Z",
       "sourcePoolItem": "5 Foods That Are Illegal in Certain Countries"
+    },
+    {
+      "title": "The World's Shortest Commercial Flight Lasts 1 Minute 40 Seconds",
+      "url": "https://youtu.be/6NLyE3i-2Qk",
+      "format": "long",
+      "publishedAt": "2026-08-19T17:43:31.319Z",
+      "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes"
     }
   ]
 }
