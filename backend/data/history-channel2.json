@@ -63,7 +63,8 @@
     "Learning the Colors of the Farm Animals",
     "Counting Farm Friends with Colors and Shapes",
     "Counting Colors with Little Bo Peep",
-    "Five Little Ducks Singing Rainbow Colors"
+    "Five Little Ducks Singing Rainbow Colors",
+    "Counting Colors with Five Little Ducks"
   ],
   "videos": [
     {
@@ -438,6 +439,13 @@
       "format": "short",
       "publishedAt": "2026-08-19T13:48:17.763Z",
       "sourcePoolItem": "Hot Cross Buns"
+    },
+    {
+      "title": "Five Little Ducks Count in Rainbow Pond",
+      "url": "https://youtu.be/1L-l5qDXV0c",
+      "format": "long",
+      "publishedAt": "2026-08-19T15:00:45.580Z",
+      "sourcePoolItem": "Five Little Ducks"
     }
   ]
 }
