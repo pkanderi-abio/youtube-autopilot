@@ -64,7 +64,8 @@
     "Counting Farm Friends with Colors and Shapes",
     "Counting Colors with Little Bo Peep",
     "Five Little Ducks Singing Rainbow Colors",
-    "Counting Colors with Five Little Ducks"
+    "Counting Colors with Five Little Ducks",
+    "Learning Colors with Red, Blue, and Yellow Friends"
   ],
   "videos": [
     {
@@ -446,6 +447,13 @@
       "format": "long",
       "publishedAt": "2026-08-19T15:00:45.580Z",
       "sourcePoolItem": "Five Little Ducks"
+    },
+    {
+      "title": "Counting Red Bananas on London Bridge",
+      "url": "https://youtu.be/bQYGVRf2XUs",
+      "format": "short",
+      "publishedAt": "2026-08-20T13:50:28.166Z",
+      "sourcePoolItem": "The Colors of the Rainbow"
     }
   ]
 }
