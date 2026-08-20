@@ -101,7 +101,8 @@
     "The Forest Where Every Tree Grows Sideways",
     "What If Sharks Had a Single Brain Instead of Three?",
     "A Tree That Can Live for Up to 2,000 Years",
-    "The World's Shortest Commercial Flight Lasts Under 2 Minutes"
+    "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
+    "The City That Sinks a Few Millimeters Every Year"
   ],
   "videos": [
     {
@@ -719,6 +720,13 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Delft Sinks a Few Millimeters Every Year",
+      "url": "https://youtu.be/9L9byS8--A4",
+      "format": "short",
+      "publishedAt": "2026-08-20T22:30:49.997Z",
+      "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
     }
   ]
 }
