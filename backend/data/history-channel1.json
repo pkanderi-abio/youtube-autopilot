@@ -103,7 +103,8 @@
     "A Tree That Can Live for Up to 2,000 Years",
     "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
     "The City That Sinks a Few Millimeters Every Year",
-    "The Great Wall of China Isn't Actually Visible From Space"
+    "The Great Wall of China Isn't Actually Visible From Space",
+    "The Country With More Islands Than Any Other Nation on Earth"
   ],
   "videos": [
     {
@@ -735,6 +736,13 @@
       "format": "short",
       "publishedAt": "2026-08-21T14:40:29.361Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space"
+    },
+    {
+      "title": "Indonesia's 7,000+ Islands",
+      "url": "https://youtu.be/B7lPma7RHYE",
+      "format": "long",
+      "publishedAt": "2026-08-21T17:48:08.410Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth"
     }
   ]
 }
