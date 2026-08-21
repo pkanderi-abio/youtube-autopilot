@@ -102,7 +102,8 @@
     "What If Sharks Had a Single Brain Instead of Three?",
     "A Tree That Can Live for Up to 2,000 Years",
     "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-    "The City That Sinks a Few Millimeters Every Year"
+    "The City That Sinks a Few Millimeters Every Year",
+    "The Great Wall of China Isn't Actually Visible From Space"
   ],
   "videos": [
     {
@@ -727,6 +728,13 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
+    },
+    {
+      "title": "The Great Wall of China's Secret",
+      "url": "https://youtu.be/jct55f6dWkY",
+      "format": "short",
+      "publishedAt": "2026-08-21T14:40:29.361Z",
+      "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space"
     }
   ]
 }
