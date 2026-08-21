@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-20T06:30:16.984Z",
+  "fetchedAt": "2026-08-21T06:31:39.426Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -537,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T13:51:44.270Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -647,6 +647,16 @@
       "format": "long",
       "publishedAt": "2026-08-19T15:00:45.580Z",
       "sourcePoolItem": "Five Little Ducks",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/bQYGVRf2XUs",
+      "title": "Counting Red Bananas on London Bridge",
+      "format": "short",
+      "publishedAt": "2026-08-20T13:50:28.166Z",
+      "sourcePoolItem": "The Colors of the Rainbow",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
