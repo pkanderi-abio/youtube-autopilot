@@ -29,12 +29,17 @@ in the content pipeline:
     (registered key, no paid tier), cover-cropped/looped/trimmed to the
     shot's duration. A failed search/download for a given shot falls
     back to the gradient rather than failing the run.
+  - `"cartoonAnimation"`: procedurally animated shapes/numbers/letters,
+    $0 and no external API - built for baby content but currently
+    unused (proved unreliable on the CI runner; see CLAUDE.md).
   - `"gradient"`: a procedurally generated, slowly-animated two-color
     gradient — not stock footage or AI-generated video. $0 cost,
     effectively instant. This is also the fallback used whenever stock
-    footage fails for a shot.
-- **Thumbnail**: title text over the channel's brand gradient — clean
-  and legible, not CTR-optimized by a model.
+    footage/cartoon rendering fails for a shot.
+- **Thumbnail**: a CTR-optimized formula (bold color-block emphasis
+  word + smaller context text + a vector-drawn accent icon), not just
+  plain title text - two compositions are generated per video, one
+  uploads and both are kept as a CI artifact for manual comparison.
 
 This produces the kind of "faceless" narrated Shorts/long-form videos
 you've likely seen on YouTube using real b-roll footage — it will NOT
@@ -98,9 +103,9 @@ you'd need to request a quota increase.
 
 ### 4. Configure your channels
 Edit `config/channels.json` — names, niche, default `format` (`short` or
-`long` - see below), `visualStyle` (`gradient` or `stockFootage`),
-`madeForKids`, brand colors, YouTube category ID. Two optional fields
-that only matter for evergreen (non-trending) content:
+`long` - see below), `visualStyle` (`gradient`, `stockFootage`, or
+`cartoonAnimation`), `madeForKids`, brand colors, YouTube category ID.
+Two optional fields that only matter for evergreen (non-trending) content:
 - `topicPool` — a curated list of topics to draw from instead of daily
   trending searches (e.g. classic fables, nursery rhymes). Omit this to
   use `src/lib/trends.js` instead.
@@ -119,6 +124,14 @@ and variables → Actions. The workflow
 (`.github/workflows/pipeline.yml`) runs automatically on its cron
 schedule, or trigger it manually from the Actions tab (optionally
 scoped to one channel and/or one format via the workflow's inputs).
+`.github/workflows/analytics.yml` also runs automatically once deployed
+(its own daily schedule) - it needs no extra secrets, since it reuses
+the same YouTube OAuth tokens already set up above.
+
+A failed scheduled run doesn't fail silently: `notify-on-failure`
+(in `pipeline.yml`) opens a `pipeline-failure`-labeled GitHub issue on
+first failure and auto-closes it once a run succeeds again, using only
+the repo's built-in token.
 
 ## Running locally (for testing)
 ```
@@ -152,24 +165,31 @@ npm run run -- channel1 long     # override: publish a long-form video instead
   (Pixabay, Archive.org) as a fallback before the gradient.
 - `src/lib/llm.js` → swap in a bigger local model (edit `OLLAMA_MODEL`)
   or a hosted API if you decide the quality trade-off isn't worth it.
-- `src/steps/6-generate-thumbnail.js` → add real CTR-prediction logic,
-  or generate multiple variants and use YouTube's Test & Compare.
 - Add an approval-gate mode (hold uploads as `privacyStatus: 'private'`
   and flip to public after a manual check) if you want a human back in
-  the loop later — one-line change in `src/steps/7-upload-youtube.js`.
-- Feed `youtube.reports` (YouTube Analytics API) data back into step 1
-  so topic selection learns from what actually performed well.
+  the loop later — one-line change in `src/steps/8-upload-youtube.js`.
+- `src/lib/analytics.js`'s `poolPerformanceHint()` only kicks in once a
+  pool item has real view data from ≥6 distinct items - once channels
+  have more history, consider a stronger signal than the current
+  best/worst-3 text hint (e.g. weighting topic selection directly).
 
 ## Files
-- `src/steps/1-discover-topic.js` … `7-upload-youtube.js` — the pipeline stages
+- `src/steps/1-discover-topic.js` … `8-upload-youtube.js` — the pipeline
+  stages (see CLAUDE.md for what each does and why)
 - `src/run-pipeline.js` — orchestrator; `node src/run-pipeline.js <channelId> [format]`
 - `src/lib/` — LLM (Ollama), stock footage (Pexels), YouTube auth,
-  trends, and history-state helpers
+  trends, analytics, nursery-audio, and history-state helpers
 - `scripts/get-refresh-token.js` — one-time OAuth helper
+- `scripts/fetch-analytics.js` — pulls real view/like/comment counts (run by `analytics.yml`)
+- `scripts/merge-and-push-history.js` — conflict-safe history commit, run by `pipeline.yml`
 - `config/channels.json` — per-channel config
 - `data/history-<channel>.json` — auto-generated memory of used topics/videos,
   shared across both formats so topics never repeat between a channel's
   short and long-form videos
+- `data/analytics-<channel>.json` — auto-generated real view/like/comment
+  snapshot, refreshed daily by `analytics.yml`
 - `.github/workflows/pipeline.yml` — cron schedule (one entry per
   channel+format combination) + Ollama setup; a single matrix `publish`
-  job fans out over whichever (channel, format) pairs that trigger maps to
+  job fans out over whichever (channel, format) pairs that trigger maps
+  to, plus a `notify-on-failure` job (see CLAUDE.md)
+- `.github/workflows/analytics.yml` — daily, independent schedule; refreshes `data/analytics-*.json`

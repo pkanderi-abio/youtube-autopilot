@@ -134,10 +134,18 @@ exist anywhere in the system.
 
 `backend/config/channels.json` is the single source of truth. Fields:
 `id`, `name`, `niche`, `format` (default), `visualStyle` (`stockFootage` |
-`gradient`), `madeForKids`, `brandColorA/B`, `refreshTokenEnv` (name of
-env var holding that channel's refresh token), `categoryId`, `tags`.
-Optional: `topicPool` (skip trends, draw from this list), `closingStyle`
-(`"moral"` for story-lesson endings).
+`gradient` | `cartoonAnimation` — see Visuals below), `madeForKids`,
+`brandColorA/B`, `refreshTokenEnv` (name of env var holding that
+channel's refresh token), `categoryId`, `tags`. Optional: `topicPool`
+(skip trends, draw from this list), `closingStyle` (`"moral"` for
+story-lesson endings), `contentStyle` (`"babyLearning"` reshapes the
+script prompt's hook/vocabulary/closing for toddlers — see
+`hookAndStyleInstructions`/`closingLineHint` in `2-generate-script.js`).
+
+Renaming a channel's `name` here only changes what's fed into script/SEO
+generation — it does **not** rename the actual YouTube channel or
+handle (set manually in YouTube Studio), so don't assume the `name` in
+config matches the channel's public YouTube branding.
 
 Both formats for a channel share the **same** `history-<channelId>.json`,
 so topics never repeat across a channel's short and long videos.
@@ -170,7 +178,30 @@ so topics never repeat across a channel's short and long videos.
   fully dependent on the LLM correctly filtering trending celebrity/sports/
   politics content every single run — which is exactly what happened for
   roughly channel1's first three weeks and channel2's first three weeks
-  of publishing, before their pools existed).
+  of publishing, before their pools existed). The pool-cooldown dedup
+  asks the model for a `sourceIndex` **number** into the numbered
+  candidate list, not the candidate text itself — an earlier version
+  asked it to echo the exact candidate string back, which silently
+  broke the cooldown whenever the model paraphrased even slightly while
+  writing `topic` (confirmed directly: the same pool item got reused 8
+  hours and one video later because its first use didn't string-match
+  and so never registered as "recently used"). A small integer is much
+  harder for a small model to get wrong than reproducing text
+  byte-for-byte — this same asymmetry is worth remembering anywhere else
+  a prompt needs the model to reference one of several options back.
+- **Prompt examples get reproduced, not generalized from.** The
+  baby-content scene-phrase prompt in `2-generate-script.js` used to
+  include `"baby playing with toys"` as one of several example search
+  phrases; the model kept outputting that exact phrase (or a close
+  paraphrase) across videos regardless of actual topic, because a
+  single generic example reads as a safe default rather than one
+  illustration among many. Confirmed directly: a "Little Bo Peep"
+  video's thumbnail showed an unrelated toy truck. Fix was to vary the
+  examples across unrelated topics/objects (nothing to anchor on) and
+  explicitly require every output to be drawn from the specific topic
+  at hand, with the bad phrase named as a negative example. Any prompt
+  built for this model should assume a single concrete example can
+  become the model's default output, not just an illustration.
 
 **General principle: fail loud, don't ship broken content.** Publishing
 a mangled video is worse than skipping a run.
@@ -180,14 +211,56 @@ a mangled video is worse than skipping a run.
 `src/steps/5-generate-background.js` produces a **sequence of short shots**
 (not one continuous background), each with its own fast zoom/pan toward a
 different focus point — a single slowly-creeping background over 45s+ read
-as static (near-zero bitrate) in early testing. Each shot is either:
-- one Pexels stock clip matching a `script.scenes[i]` search phrase
-  (cover-cropped/looped/trimmed to shot duration), or
-- an on-brand gradient variant (used as fallback if Pexels fails or if
-  `channel.visualStyle === "gradient"`).
+as static (near-zero bitrate) in early testing. Each shot is one of:
+- **`stockFootage`** (both current channels): one Pexels stock clip
+  matching a `script.scenes[i]` search phrase (cover-cropped/looped/
+  trimmed to shot duration). `findStockFootageClip` picks randomly among
+  the top `RESULT_POOL_SIZE` (15, out of `PAGE_SIZE`=20 fetched) results
+  rather than always the top hit — a channel publishing 40+ videos off
+  recurring generic scene phrases needs real headroom, or the same
+  small pool just gets reused (pigeonhole principle). Same idea applies
+  to *which* shot supplies the thumbnail/opening frame: `run()` in that
+  file picks a random `heroShotIndex` each run rather than hardcoding
+  shot 0, since shot 0's query is usually the generic "opening hook"
+  and barely varies topic to topic.
+- **`cartoonAnimation`**: procedurally animated shapes/numbers/letters
+  drawn with node-canvas (`cartoonClip`/`renderCartoonFrameToCanvas`),
+  classified per scene text (number/color/letter/default). Not
+  currently used by either channel — it was tried for channel2, proved
+  unreliable on the GitHub-hosted CI runner (a Cairo/canvas 2.11 bug
+  silently produced broken frames; JPEG-not-PNG frame encoding and
+  `validateCartoonBackground`'s post-encode pixel check were both added
+  to try to harden it, and it still wasn't reliable enough), and was
+  reverted to `stockFootage` — but the code is kept working and ready
+  in case a future canvas upgrade or a fresh diagnostic pass makes it
+  viable again. Don't re-enable it without re-verifying that reliability
+  bar on the actual CI runner first.
+- **`gradient`**: an on-brand two-color gradient with a zoom/pan. Used
+  directly if configured, and as the automatic fallback whenever
+  `stockFootage`/`cartoonAnimation` fails for a shot. A missing/invalid
+  `PEXELS_API_KEY` on a `stockFootage` channel throws immediately at the
+  start of `generateBackground` rather than silently degrading every
+  shot of every video to this fallback forever — that silent-degrade
+  behavior is exactly what a real incident looked like from the outside
+  (weeks of same-2-brand-colors, barely-animated video with no hard
+  failure anywhere to explain why).
 
 `src/lib/stockFootage.js` — picks the smallest Pexels file that still
 meets target resolution (4K masters would waste bandwidth for 1080p output).
+
+`src/steps/7-generate-thumbnail.js` renders two compositions per video
+(`renderVariant` with `flip: false`/`true` — swapped emphasis-word/rest-
+text layout, opposite-corner badge, different accent color) and uploads
+only the primary; both are attached to the CI run as a downloadable
+artifact since the Data API can't run a real Studio A/B test. The
+corner-badge accent is a **vector-drawn icon** (`drawIcon`: circle/star/
+heart/flower/triangle via canvas paths), not an emoji character —
+ubuntu-latest ships no emoji-capable font, and a fix attempt (adding
+`fonts-noto-emoji` to the CI apt-get step) turned out to name a package
+that doesn't exist, which broke `apt-get install` and silently failed
+**every** scheduled run on both channels for 3 days before anyone
+noticed. See "Editing `pipeline.yml` safely" below before touching that
+install step again.
 
 ### YouTube upload nuances
 
@@ -229,6 +302,33 @@ matrix-expands and runs one pipeline invocation per pair. When adding a
 channel or format, add both the cron line AND its case in the schedule
 lookup. `workflow_dispatch` inputs `channel` and `format` scope manual runs.
 
+A third job, `notify-on-failure` (`needs: publish`, `if: always()`),
+runs regardless of `publish`'s outcome and maintains a single
+`pipeline-failure`-labeled GitHub issue via `actions/github-script` and
+the built-in `GITHUB_TOKEN` (no extra secret): opens it on the first
+failure, comments on subsequent failures instead of opening duplicates,
+and auto-closes it with a resolution comment once a run succeeds again.
+This exists because a real outage (below) ran for 3 days with the
+pipeline "failing loudly" in the sense of exiting non-zero, but with
+nothing surfacing that to anyone — check for an open issue with that
+label before assuming a scheduled run actually happened recently.
+
+### Editing `pipeline.yml` safely
+
+There is no CI step that validates `pipeline.yml` itself before it
+reaches `main` — the only thing that runs it is the schedule, against
+whatever is on `main` at trigger time. A real incident: adding
+`fonts-noto-emoji` to the "Install ffmpeg system libs" `apt-get install`
+line (meant to fix an emoji-rendering issue) turned out to name a
+package that doesn't exist on Ubuntu; `apt-get install` fails atomically
+when any listed package is unresolvable, so that one bad name broke
+**every** scheduled run on **both** channels for 3 days before anyone
+noticed (no failure alerting existed yet either — see above). Before
+adding any new `apt-get`/system package to that step, verify the exact
+package name actually exists for the runner's Ubuntu release (e.g.
+via packages.ubuntu.com) rather than trusting a remembered name —
+there's no safety net between a bad line and a full publishing outage.
+
 ## Conventions
 
 - **ES modules everywhere** (`"type": "module"` in `package.json`). Use
@@ -246,3 +346,12 @@ lookup. `workflow_dispatch` inputs `channel` and `format` scope manual runs.
   not laziness.
 - **Ollama is required.** CI installs it as a systemd service and waits
   up to 60s for `:11434`. Locally, `ollama pull llama3.2` must have run.
+- **`canvas` needs a native build.** `npm install` compiles it against
+  system libs (`libcairo2-dev`, `libpango1.0-dev`, etc. — see the CI
+  install step) and a C/C++ toolchain (node-gyp). In an environment
+  without one (e.g. no Visual Studio Build Tools on Windows), install
+  still succeeds with `--ignore-scripts`, but anything importing
+  `canvas` (steps 5 and 7) fails at runtime with `Cannot find module
+  '../build/Release/canvas.node'` — that's an environment limitation,
+  not a code bug; steps 1-4, 6, and 8 have no canvas dependency and can
+  still be exercised in such an environment.
