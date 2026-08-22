@@ -65,7 +65,8 @@
     "Counting Colors with Little Bo Peep",
     "Five Little Ducks Singing Rainbow Colors",
     "Counting Colors with Five Little Ducks",
-    "Learning Colors with Red, Blue, and Yellow Friends"
+    "Learning Colors with Red, Blue, and Yellow Friends",
+    "Counting Colors with Little Bo Peep's Sheep"
   ],
   "videos": [
     {
@@ -454,6 +455,13 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Counting with Little Bo Peep's Rainbow Sheep",
+      "url": "https://youtu.be/nYl77XlSmv0",
+      "format": "short",
+      "publishedAt": "2026-08-22T13:32:52.589Z",
+      "sourcePoolItem": "Baa Baa Black Sheep"
     }
   ]
 }
