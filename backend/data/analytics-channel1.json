@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-21T06:31:39.077Z",
+  "fetchedAt": "2026-08-22T06:24:35.385Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 140,
+      "viewCount": 141,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z",
       "sourcePoolItem": null,
-      "viewCount": 413,
+      "viewCount": 414,
       "likeCount": 7,
       "commentCount": 1
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-08-17T22:29:05.958Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 724,
+      "viewCount": 723,
       "likeCount": 11,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 705,
+      "viewCount": 709,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1027,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-08-19T14:37:43.282Z",
       "sourcePoolItem": "5 Foods That Are Illegal in Certain Countries",
-      "viewCount": 122,
+      "viewCount": 128,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 60,
+      "viewCount": 87,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -1057,8 +1057,38 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 478,
-      "likeCount": 6,
+      "viewCount": 677,
+      "likeCount": 7,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/jct55f6dWkY",
+      "title": "The Great Wall of China's Secret",
+      "format": "short",
+      "publishedAt": "2026-08-21T14:40:29.361Z",
+      "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
+      "viewCount": 2,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/B7lPma7RHYE",
+      "title": "Indonesia's 7,000+ Islands",
+      "format": "long",
+      "publishedAt": "2026-08-21T17:48:08.410Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
+      "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/O7C5QUZMhLI",
+      "title": "San Marino's 2.5-Mile Border",
+      "format": "short",
+      "publishedAt": "2026-08-21T22:27:59.558Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 1056,
+      "likeCount": 22,
       "commentCount": 0
     }
   ]
