@@ -57,6 +57,42 @@ export async function discoverTopic(channel, history) {
   // returned "topic" must already read as a niche topic, not a bare
   // trending term, and a term with no plausible tie-in should be
   // reframed or replaced rather than used as-is.
+  //
+  // That "discard it and invent something else instead" permission is
+  // ONLY appropriate for trending mode, where a candidate genuinely can
+  // be pure garbage (a raw sports score with zero plausible niche tie-
+  // in). Applying the same permission to topicPool candidates - which
+  // are already hand-curated to fit the niche - backfired in
+  // production: given a perfectly good candidate like "The Loudest
+  // Sound Ever Recorded Was Heard 3,000 Miles Away", the model would
+  // still exercise its "invent something else" option and produce an
+  // unrelated topic ("Fiji's 40-Kilometer Shore"), or even borrow a
+  // DIFFERENT candidate's fact while claiming a mismatched sourceIndex
+  // ("The Town Built Entirely Underground..." attributed to a topic
+  // that was actually about a sinking city). The pool's curated
+  // diversity is wasted if the model just freelances anyway - so pool
+  // mode gets a stricter, fidelity-required instruction with no escape
+  // hatch, since there's never a legitimate reason to need one here.
+  const escapeHatchInstructions = isTrending
+    ? `If a term has no real connection to this niche (e.g. a raw sports
+score, a news anchor's name, an unrelated event), do not just write a
+generic video about that term - either find a genuine angle that ties
+it to the niche, or discard it and invent a different topic that
+clearly fits the niche instead.
+
+Example (niche: travel & lifestyle):
+- Candidate: "Super Bowl" -> good topic: "The most underrated cities to
+  visit for next year's Super Bowl" (ties the trend to travel).
+- Candidate: "Local team wins championship game" -> BAD: a sports recap
+  video has no travel/lifestyle angle. Either skip it or invent an
+  unrelated but niche-fitting topic instead.`
+    : `Every candidate above was already hand-picked to fit this niche -
+none of them need to be discarded or replaced, and there is no reason
+to invent an unrelated substitute. Your "topic" MUST be about the SAME
+specific fact/place/subject named in the candidate you choose - you may
+restate it more concretely or give it a sharper hook, but do not swap
+in a different fact, a different place, or another candidate's subject.`;
+
   const picked = await completeJSON(`
 You are the content strategist for a YouTube channel called "${channel.name}",
 whose niche is: ${channel.niche}.
@@ -66,19 +102,7 @@ ${pool.map((t, i) => `${i + 1}. ${t}`).join('\n')}
 ${performanceHint}
 
 Your job is to turn ONE of these into a video topic that is EXPLICITLY
-about ${channel.niche} - not a recap of the term in isolation. If a term
-has no real connection to this niche (e.g. a raw sports score, a news
-anchor's name, an unrelated event), do not just write a generic video
-about that term - either find a genuine angle that ties it to the
-niche, or discard it and invent a different topic that clearly fits the
-niche instead.
-
-Example (niche: travel & lifestyle):
-- Candidate: "Super Bowl" -> good topic: "The most underrated cities to
-  visit for next year's Super Bowl" (ties the trend to travel).
-- Candidate: "Local team wins championship game" -> BAD: a sports recap
-  video has no travel/lifestyle angle. Either skip it or invent an
-  unrelated but niche-fitting topic instead.
+about ${channel.niche} - not a recap of the term in isolation. ${escapeHatchInstructions}
 
 The "topic" field you return must already read as a ${channel.niche}
 topic, not a bare copy of the candidate. The "angle" field must state
