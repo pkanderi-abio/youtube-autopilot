@@ -104,7 +104,8 @@
     "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
     "The City That Sinks a Few Millimeters Every Year",
     "The Great Wall of China Isn't Actually Visible From Space",
-    "The Country With More Islands Than Any Other Nation on Earth"
+    "The Country With More Islands Than Any Other Nation on Earth",
+    "The Hotel Built Entirely From Salt in the Middle of a Desert"
   ],
   "videos": [
     {
@@ -757,6 +758,13 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1"
+    },
+    {
+      "title": "The Hotel Built Entirely From Salt",
+      "url": "https://youtu.be/jcptgY3lcxw",
+      "format": "short",
+      "publishedAt": "2026-08-22T22:25:09.131Z",
+      "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert"
     }
   ]
 }
