@@ -67,7 +67,8 @@
     "Counting Colors with Five Little Ducks",
     "Learning Colors with Red, Blue, and Yellow Friends",
     "Counting Colors with Little Bo Peep's Sheep",
-    "If You're Happy and You Know It with Animal Friends"
+    "If You're Happy and You Know It with Animal Friends",
+    "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds"
   ],
   "videos": [
     {
@@ -470,6 +471,13 @@
       "format": "short",
       "publishedAt": "2026-08-23T13:33:53.344Z",
       "sourcePoolItem": "If You're Happy and You Know It"
+    },
+    {
+      "title": "Counting Friends at Rainbow Farm",
+      "url": "https://youtu.be/-TGHjknMQTU",
+      "format": "long",
+      "publishedAt": "2026-08-23T14:50:18.779Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
