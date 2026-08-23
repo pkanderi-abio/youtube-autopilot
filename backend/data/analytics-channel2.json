@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-22T06:24:35.789Z",
+  "fetchedAt": "2026-08-23T06:26:05.233Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -607,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 3,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,6 +657,16 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/nYl77XlSmv0",
+      "title": "Counting with Little Bo Peep's Rainbow Sheep",
+      "format": "short",
+      "publishedAt": "2026-08-22T13:32:52.589Z",
+      "sourcePoolItem": "Baa Baa Black Sheep",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-22T06:24:35.385Z",
+  "fetchedAt": "2026-08-23T06:26:04.749Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -177,7 +177,7 @@
       "format": null,
       "publishedAt": "2026-07-08T22:28:16.000Z",
       "sourcePoolItem": null,
-      "viewCount": 39,
+      "viewCount": 40,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -187,7 +187,7 @@
       "format": null,
       "publishedAt": "2026-07-08T23:02:28.470Z",
       "sourcePoolItem": null,
-      "viewCount": 124,
+      "viewCount": 125,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -197,8 +197,8 @@
       "format": null,
       "publishedAt": "2026-07-08T23:35:50.117Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
-      "likeCount": 0,
+      "viewCount": 10,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -207,8 +207,8 @@
       "format": null,
       "publishedAt": "2026-07-09T06:12:27.406Z",
       "sourcePoolItem": null,
-      "viewCount": 757,
-      "likeCount": 8,
+      "viewCount": 758,
+      "likeCount": 9,
       "commentCount": 0
     },
     {
@@ -217,8 +217,8 @@
       "format": "long",
       "publishedAt": "2026-07-09T18:23:09.935Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
-      "likeCount": 0,
+      "viewCount": 5,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -227,7 +227,7 @@
       "format": "short",
       "publishedAt": "2026-07-09T19:15:06.186Z",
       "sourcePoolItem": null,
-      "viewCount": 35,
+      "viewCount": 36,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -237,8 +237,8 @@
       "format": "long",
       "publishedAt": "2026-07-09T19:24:00.048Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
+      "viewCount": 1,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -257,8 +257,8 @@
       "format": "short",
       "publishedAt": "2026-07-10T16:28:43.194Z",
       "sourcePoolItem": null,
-      "viewCount": 93,
-      "likeCount": 0,
+      "viewCount": 94,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -267,8 +267,8 @@
       "format": "short",
       "publishedAt": "2026-07-11T05:14:41.479Z",
       "sourcePoolItem": null,
-      "viewCount": 46,
-      "likeCount": 0,
+      "viewCount": 47,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -277,8 +277,8 @@
       "format": "short",
       "publishedAt": "2026-07-11T14:53:38.726Z",
       "sourcePoolItem": null,
-      "viewCount": 107,
-      "likeCount": 0,
+      "viewCount": 108,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -287,8 +287,8 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 141,
-      "likeCount": 2,
+      "viewCount": 142,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -297,8 +297,8 @@
       "format": "short",
       "publishedAt": "2026-07-12T14:56:24.392Z",
       "sourcePoolItem": null,
-      "viewCount": 31,
-      "likeCount": 0,
+      "viewCount": 33,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -317,8 +317,8 @@
       "format": "short",
       "publishedAt": "2026-07-13T16:35:44.687Z",
       "sourcePoolItem": null,
-      "viewCount": 8,
-      "likeCount": 1,
+      "viewCount": 9,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -328,7 +328,7 @@
       "publishedAt": "2026-07-15T04:52:43.388Z",
       "sourcePoolItem": null,
       "viewCount": 1,
-      "likeCount": 1,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -357,8 +357,8 @@
       "format": "short",
       "publishedAt": "2026-07-16T05:03:03.117Z",
       "sourcePoolItem": null,
-      "viewCount": 325,
-      "likeCount": 2,
+      "viewCount": 326,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -367,8 +367,8 @@
       "format": "short",
       "publishedAt": "2026-07-16T15:36:32.001Z",
       "sourcePoolItem": null,
-      "viewCount": 8,
-      "likeCount": 1,
+      "viewCount": 9,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -377,8 +377,8 @@
       "format": "short",
       "publishedAt": "2026-07-17T05:16:01.583Z",
       "sourcePoolItem": null,
-      "viewCount": 45,
-      "likeCount": 2,
+      "viewCount": 46,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -417,8 +417,8 @@
       "format": "short",
       "publishedAt": "2026-07-18T14:53:01.134Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
-      "likeCount": 1,
+      "viewCount": 11,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -427,8 +427,8 @@
       "format": "short",
       "publishedAt": "2026-07-19T05:25:33.606Z",
       "sourcePoolItem": null,
-      "viewCount": 59,
-      "likeCount": 1,
+      "viewCount": 60,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -447,8 +447,8 @@
       "format": "short",
       "publishedAt": "2026-07-20T15:53:50.695Z",
       "sourcePoolItem": null,
-      "viewCount": 103,
-      "likeCount": 1,
+      "viewCount": 104,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -457,8 +457,8 @@
       "format": "short",
       "publishedAt": "2026-07-21T15:45:57.991Z",
       "sourcePoolItem": null,
-      "viewCount": 126,
-      "likeCount": 1,
+      "viewCount": 127,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -467,7 +467,7 @@
       "format": "short",
       "publishedAt": "2026-07-22T05:22:07.773Z",
       "sourcePoolItem": null,
-      "viewCount": 544,
+      "viewCount": 545,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -498,7 +498,7 @@
       "publishedAt": "2026-07-24T05:23:56.091Z",
       "sourcePoolItem": null,
       "viewCount": 150,
-      "likeCount": 1,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -517,7 +517,7 @@
       "format": "short",
       "publishedAt": "2026-07-24T15:28:33.506Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -527,8 +527,8 @@
       "format": "short",
       "publishedAt": "2026-07-25T05:16:25.105Z",
       "sourcePoolItem": null,
-      "viewCount": 24,
-      "likeCount": 1,
+      "viewCount": 25,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -567,7 +567,7 @@
       "format": "short",
       "publishedAt": "2026-07-26T16:17:44.137Z",
       "sourcePoolItem": null,
-      "viewCount": 142,
+      "viewCount": 143,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -637,7 +637,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T23:03:30.935Z",
       "sourcePoolItem": null,
-      "viewCount": 163,
+      "viewCount": 164,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -667,8 +667,8 @@
       "format": "short",
       "publishedAt": "2026-07-30T15:59:16.227Z",
       "sourcePoolItem": null,
-      "viewCount": 94,
-      "likeCount": 1,
+      "viewCount": 95,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -688,7 +688,7 @@
       "publishedAt": "2026-07-31T16:06:55.318Z",
       "sourcePoolItem": null,
       "viewCount": 21,
-      "likeCount": 1,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -717,8 +717,8 @@
       "format": "short",
       "publishedAt": "2026-08-01T15:06:49.405Z",
       "sourcePoolItem": null,
-      "viewCount": 68,
-      "likeCount": 1,
+      "viewCount": 69,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -727,8 +727,8 @@
       "format": "short",
       "publishedAt": "2026-08-02T23:00:02.606Z",
       "sourcePoolItem": null,
-      "viewCount": 164,
-      "likeCount": 1,
+      "viewCount": 166,
+      "likeCount": 2,
       "commentCount": 1
     },
     {
@@ -737,8 +737,8 @@
       "format": "short",
       "publishedAt": "2026-08-03T16:30:05.822Z",
       "sourcePoolItem": null,
-      "viewCount": 49,
-      "likeCount": 2,
+      "viewCount": 51,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -757,8 +757,8 @@
       "format": "short",
       "publishedAt": "2026-08-03T23:05:22.529Z",
       "sourcePoolItem": null,
-      "viewCount": 109,
-      "likeCount": 1,
+      "viewCount": 110,
+      "likeCount": 2,
       "commentCount": 1
     },
     {
@@ -767,8 +767,8 @@
       "format": "short",
       "publishedAt": "2026-08-04T16:14:50.826Z",
       "sourcePoolItem": null,
-      "viewCount": 41,
-      "likeCount": 0,
+      "viewCount": 42,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -777,8 +777,8 @@
       "format": "short",
       "publishedAt": "2026-08-04T23:07:30.168Z",
       "sourcePoolItem": null,
-      "viewCount": 665,
-      "likeCount": 5,
+      "viewCount": 666,
+      "likeCount": 6,
       "commentCount": 0
     },
     {
@@ -787,8 +787,8 @@
       "format": "short",
       "publishedAt": "2026-08-05T16:07:16.714Z",
       "sourcePoolItem": null,
-      "viewCount": 581,
-      "likeCount": 8,
+      "viewCount": 582,
+      "likeCount": 9,
       "commentCount": 0
     },
     {
@@ -808,7 +808,7 @@
       "publishedAt": "2026-08-05T23:06:27.691Z",
       "sourcePoolItem": null,
       "viewCount": 249,
-      "likeCount": 3,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -817,8 +817,8 @@
       "format": "short",
       "publishedAt": "2026-08-07T01:36:11.657Z",
       "sourcePoolItem": null,
-      "viewCount": 638,
-      "likeCount": 8,
+      "viewCount": 639,
+      "likeCount": 9,
       "commentCount": 0
     },
     {
@@ -837,8 +837,8 @@
       "format": "short",
       "publishedAt": "2026-08-07T22:38:20.751Z",
       "sourcePoolItem": null,
-      "viewCount": 43,
-      "likeCount": 0,
+      "viewCount": 44,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -847,8 +847,8 @@
       "format": "short",
       "publishedAt": "2026-08-08T14:36:00.009Z",
       "sourcePoolItem": null,
-      "viewCount": 566,
-      "likeCount": 11,
+      "viewCount": 567,
+      "likeCount": 12,
       "commentCount": 0
     },
     {
@@ -857,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-08T22:32:45.092Z",
       "sourcePoolItem": null,
-      "viewCount": 461,
+      "viewCount": 463,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -867,7 +867,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T22:34:21.575Z",
       "sourcePoolItem": null,
-      "viewCount": 625,
+      "viewCount": 627,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -877,8 +877,8 @@
       "format": "short",
       "publishedAt": "2026-08-10T15:01:57.075Z",
       "sourcePoolItem": null,
-      "viewCount": 149,
-      "likeCount": 2,
+      "viewCount": 151,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -887,8 +887,8 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 59,
-      "likeCount": 0,
+      "viewCount": 60,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -897,8 +897,8 @@
       "format": "short",
       "publishedAt": "2026-08-11T15:01:53.101Z",
       "sourcePoolItem": null,
-      "viewCount": 142,
-      "likeCount": 4,
+      "viewCount": 145,
+      "likeCount": 5,
       "commentCount": 0
     },
     {
@@ -907,8 +907,8 @@
       "format": "short",
       "publishedAt": "2026-08-11T22:45:24.736Z",
       "sourcePoolItem": null,
-      "viewCount": 194,
-      "likeCount": 1,
+      "viewCount": 196,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -917,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T15:03:26.765Z",
       "sourcePoolItem": null,
-      "viewCount": 288,
+      "viewCount": 289,
       "likeCount": 7,
       "commentCount": 1
     },
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T22:43:45.671Z",
       "sourcePoolItem": null,
-      "viewCount": 321,
+      "viewCount": 322,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -937,8 +937,8 @@
       "format": "short",
       "publishedAt": "2026-08-13T15:02:08.339Z",
       "sourcePoolItem": null,
-      "viewCount": 107,
-      "likeCount": 1,
+      "viewCount": 108,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -947,8 +947,8 @@
       "format": "short",
       "publishedAt": "2026-08-13T22:44:03.351Z",
       "sourcePoolItem": null,
-      "viewCount": 554,
-      "likeCount": 6,
+      "viewCount": 555,
+      "likeCount": 7,
       "commentCount": 0
     },
     {
@@ -957,8 +957,8 @@
       "format": "short",
       "publishedAt": "2026-08-14T14:55:11.965Z",
       "sourcePoolItem": null,
-      "viewCount": 515,
-      "likeCount": 11,
+      "viewCount": 516,
+      "likeCount": 12,
       "commentCount": 0
     },
     {
@@ -967,8 +967,8 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 209,
-      "likeCount": 2,
+      "viewCount": 210,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -987,8 +987,8 @@
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z",
       "sourcePoolItem": null,
-      "viewCount": 414,
-      "likeCount": 7,
+      "viewCount": 416,
+      "likeCount": 8,
       "commentCount": 1
     },
     {
@@ -997,8 +997,8 @@
       "format": "long",
       "publishedAt": "2026-08-17T17:46:42.152Z",
       "sourcePoolItem": "The Forest Where Every Tree Grows Sideways",
-      "viewCount": 1,
-      "likeCount": 0,
+      "viewCount": 2,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1007,8 +1007,8 @@
       "format": "short",
       "publishedAt": "2026-08-17T22:29:05.958Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 723,
-      "likeCount": 11,
+      "viewCount": 724,
+      "likeCount": 12,
       "commentCount": 0
     },
     {
@@ -1017,8 +1017,8 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 709,
-      "likeCount": 9,
+      "viewCount": 713,
+      "likeCount": 10,
       "commentCount": 0
     },
     {
@@ -1027,8 +1027,8 @@
       "format": "short",
       "publishedAt": "2026-08-19T14:37:43.282Z",
       "sourcePoolItem": "5 Foods That Are Illegal in Certain Countries",
-      "viewCount": 128,
-      "likeCount": 7,
+      "viewCount": 130,
+      "likeCount": 8,
       "commentCount": 0
     },
     {
@@ -1037,8 +1037,8 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 24,
-      "likeCount": 0,
+      "viewCount": 33,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1047,8 +1047,8 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 87,
-      "likeCount": 0,
+      "viewCount": 92,
+      "likeCount": 1,
       "commentCount": 1
     },
     {
@@ -1057,8 +1057,8 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 677,
-      "likeCount": 7,
+      "viewCount": 726,
+      "likeCount": 8,
       "commentCount": 0
     },
     {
@@ -1067,8 +1067,8 @@
       "format": "short",
       "publishedAt": "2026-08-21T14:40:29.361Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
-      "viewCount": 2,
-      "likeCount": 1,
+      "viewCount": 4,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1077,8 +1077,8 @@
       "format": "long",
       "publishedAt": "2026-08-21T17:48:08.410Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 1,
-      "likeCount": 0,
+      "viewCount": 3,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1087,8 +1087,28 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1056,
-      "likeCount": 22,
+      "viewCount": 1102,
+      "likeCount": 23,
+      "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/coTduEAmQUI",
+      "title": "Fiji's Rabbit Island: A 40-Kilometer Shore Overrun with 100 to 1 Rabbits to People",
+      "format": "short",
+      "publishedAt": "2026-08-22T14:26:16.866Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
+      "viewCount": 154,
+      "likeCount": 4,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/jcptgY3lcxw",
+      "title": "The Hotel Built Entirely From Salt",
+      "format": "short",
+      "publishedAt": "2026-08-22T22:25:09.131Z",
+      "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
+      "viewCount": 429,
+      "likeCount": 3,
       "commentCount": 0
     }
   ]
