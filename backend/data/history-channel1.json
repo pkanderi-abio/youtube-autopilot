@@ -106,7 +106,8 @@
     "The Great Wall of China Isn't Actually Visible From Space",
     "The Country With More Islands Than Any Other Nation on Earth",
     "The Hotel Built Entirely From Salt in the Middle of a Desert",
-    "The Loudest Sound Ever Recorded Was a Saturn V Rocket Launch"
+    "The Loudest Sound Ever Recorded Was a Saturn V Rocket Launch",
+    "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
   ],
   "videos": [
     {
@@ -773,6 +774,13 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Mauritius' Hidden 650-Foot Underwater Waterfall",
+      "url": "https://youtu.be/_WtghY58HqQ",
+      "format": "short",
+      "publishedAt": "2026-08-23T22:26:17.454Z",
+      "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
     }
   ]
 }
