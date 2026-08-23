@@ -105,7 +105,8 @@
     "The City That Sinks a Few Millimeters Every Year",
     "The Great Wall of China Isn't Actually Visible From Space",
     "The Country With More Islands Than Any Other Nation on Earth",
-    "The Hotel Built Entirely From Salt in the Middle of a Desert"
+    "The Hotel Built Entirely From Salt in the Middle of a Desert",
+    "The Loudest Sound Ever Recorded Was a Saturn V Rocket Launch"
   ],
   "videos": [
     {
@@ -765,6 +766,13 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert"
+    },
+    {
+      "title": "209 Decibels: Saturn V Rocket Launch Captures Loudest Sound Ever Recorded",
+      "url": "https://youtu.be/XyYe_cKHBPA",
+      "format": "short",
+      "publishedAt": "2026-08-23T14:27:14.155Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
