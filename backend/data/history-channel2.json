@@ -68,7 +68,8 @@
     "Learning Colors with Red, Blue, and Yellow Friends",
     "Counting Colors with Little Bo Peep's Sheep",
     "If You're Happy and You Know It with Animal Friends",
-    "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds"
+    "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds",
+    "Counting Five Little Ducks Swimming in the Yellow Pond"
   ],
   "videos": [
     {
@@ -478,6 +479,13 @@
       "format": "long",
       "publishedAt": "2026-08-23T14:50:18.779Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Five Little Ducks Count in a Sunny Yellow Pond",
+      "url": "https://youtu.be/WHN20XrA_CQ",
+      "format": "short",
+      "publishedAt": "2026-08-24T13:53:21.901Z",
+      "sourcePoolItem": "London Bridge Is Falling Down"
     }
   ]
 }
