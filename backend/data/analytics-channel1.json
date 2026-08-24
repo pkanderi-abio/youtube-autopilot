@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-23T06:26:04.749Z",
+  "fetchedAt": "2026-08-24T06:39:13.595Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -517,7 +517,7 @@
       "format": "short",
       "publishedAt": "2026-07-24T15:28:33.506Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 3,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -587,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-07-26T17:02:05.251Z",
       "sourcePoolItem": null,
-      "viewCount": 71,
+      "viewCount": 72,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "long",
       "publishedAt": "2026-08-14T16:56:46.019Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 16,
+      "viewCount": 15,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 33,
+      "viewCount": 86,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 92,
+      "viewCount": 93,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1057,8 +1057,8 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 726,
-      "likeCount": 8,
+      "viewCount": 731,
+      "likeCount": 7,
       "commentCount": 0
     },
     {
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1102,
+      "viewCount": 1108,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1097,8 +1097,8 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 154,
-      "likeCount": 4,
+      "viewCount": 162,
+      "likeCount": 5,
       "commentCount": 0
     },
     {
@@ -1107,8 +1107,28 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 429,
+      "viewCount": 447,
       "likeCount": 3,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/XyYe_cKHBPA",
+      "title": "209 Decibels: Saturn V Rocket Launch Captures Loudest Sound Ever Recorded",
+      "format": "short",
+      "publishedAt": "2026-08-23T14:27:14.155Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 1318,
+      "likeCount": 25,
+      "commentCount": 2
+    },
+    {
+      "url": "https://youtu.be/_WtghY58HqQ",
+      "title": "Mauritius' Hidden 650-Foot Underwater Waterfall",
+      "format": "short",
+      "publishedAt": "2026-08-23T22:26:17.454Z",
+      "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
+      "viewCount": 2,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]

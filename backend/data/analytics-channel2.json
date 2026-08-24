@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-23T06:26:05.233Z",
+  "fetchedAt": "2026-08-24T06:39:13.921Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -377,7 +377,7 @@
       "format": "long",
       "publishedAt": "2026-07-26T17:17:50.329Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -537,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T13:51:44.270Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -607,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 6,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -667,6 +667,26 @@
       "format": "short",
       "publishedAt": "2026-08-22T13:32:52.589Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/QMXuVsvFb0w",
+      "title": "Count Happy Animals with Friends on London Bridge",
+      "format": "short",
+      "publishedAt": "2026-08-23T13:33:53.344Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/-TGHjknMQTU",
+      "title": "Counting Friends at Rainbow Farm",
+      "format": "long",
+      "publishedAt": "2026-08-23T14:50:18.779Z",
+      "sourcePoolItem": "Counting Farm Animals",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
