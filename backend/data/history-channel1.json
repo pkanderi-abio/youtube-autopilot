@@ -107,7 +107,8 @@
     "The Country With More Islands Than Any Other Nation on Earth",
     "The Hotel Built Entirely From Salt in the Middle of a Desert",
     "The Loudest Sound Ever Recorded Was a Saturn V Rocket Launch",
-    "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
+    "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
+    "The Town Built Entirely Underground to Escape the Desert Heat"
   ],
   "videos": [
     {
@@ -788,6 +789,13 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia"
+    },
+    {
+      "title": "Death Valley's Abandoned Underground Town",
+      "url": "https://youtu.be/4TS1-Xtw4cQ",
+      "format": "long",
+      "publishedAt": "2026-08-24T17:48:16.596Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year"
     }
   ]
 }
