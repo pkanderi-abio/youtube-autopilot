@@ -69,7 +69,8 @@
     "Counting Colors with Little Bo Peep's Sheep",
     "If You're Happy and You Know It with Animal Friends",
     "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds",
-    "Counting Five Little Ducks Swimming in the Yellow Pond"
+    "Counting Five Little Ducks Swimming in the Yellow Pond",
+    "Hot Cross Buns for Little Hands to Count"
   ],
   "videos": [
     {
@@ -486,6 +487,13 @@
       "format": "short",
       "publishedAt": "2026-08-24T13:53:21.901Z",
       "sourcePoolItem": "London Bridge Is Falling Down"
+    },
+    {
+      "title": "Counting Hot Cross Buns with Red Decorations",
+      "url": "https://youtu.be/UjrHijoHIjA",
+      "format": "short",
+      "publishedAt": "2026-08-25T13:50:38.024Z",
+      "sourcePoolItem": "Twinkle Twinkle Little Star"
     }
   ]
 }
