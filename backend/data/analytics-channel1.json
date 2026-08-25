@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-24T06:39:13.595Z",
+  "fetchedAt": "2026-08-25T06:31:52.745Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -1037,7 +1037,7 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 86,
+      "viewCount": 87,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 93,
+      "viewCount": 92,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 731,
+      "viewCount": 728,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1067,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T14:40:29.361Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1108,
+      "viewCount": 1125,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1097,8 +1097,8 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 162,
-      "likeCount": 5,
+      "viewCount": 167,
+      "likeCount": 6,
       "commentCount": 0
     },
     {
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 447,
+      "viewCount": 459,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1318,
+      "viewCount": 1344,
       "likeCount": 25,
       "commentCount": 2
     },
@@ -1127,8 +1127,38 @@
       "format": "short",
       "publishedAt": "2026-08-23T22:26:17.454Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 2,
+      "viewCount": 5,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/Up9XAnbAiYk",
+      "title": "Beringia's 2,500-Year-Old Land Bridge",
+      "format": "short",
+      "publishedAt": "2026-08-24T14:49:40.869Z",
+      "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
+      "viewCount": 130,
+      "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/4TS1-Xtw4cQ",
+      "title": "Death Valley's Abandoned Underground Town",
+      "format": "long",
+      "publishedAt": "2026-08-24T17:48:16.596Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/h0_nquMlFWQ",
+      "title": "Kerkennah's Secret: The World's First Eco-Friendly City",
+      "format": "short",
+      "publishedAt": "2026-08-24T22:31:23.376Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 77,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
