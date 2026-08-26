@@ -108,7 +108,8 @@
     "The Hotel Built Entirely From Salt in the Middle of a Desert",
     "The Loudest Sound Ever Recorded Was a Saturn V Rocket Launch",
     "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-    "The Town Built Entirely Underground to Escape the Desert Heat"
+    "The Town Built Entirely Underground to Escape the Desert Heat",
+    "Antarctica Is Technically Classified as a Desert"
   ],
   "videos": [
     {
@@ -824,6 +825,13 @@
       "format": "short",
       "publishedAt": "2026-08-26T14:49:03.703Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth"
+    },
+    {
+      "title": "Antarctica's 0.05-Inch Annual Rainfall",
+      "url": "https://youtu.be/-erCx_8wQYE",
+      "format": "long",
+      "publishedAt": "2026-08-26T19:19:38.488Z",
+      "sourcePoolItem": "Antarctica Is Technically Classified as a Desert"
     }
   ]
 }
