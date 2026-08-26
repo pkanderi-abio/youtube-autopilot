@@ -70,7 +70,8 @@
     "If You're Happy and You Know It with Animal Friends",
     "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds",
     "Counting Five Little Ducks Swimming in the Yellow Pond",
-    "Hot Cross Buns for Little Hands to Count"
+    "Hot Cross Buns for Little Hands to Count",
+    "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm"
   ],
   "videos": [
     {
@@ -494,6 +495,13 @@
       "format": "short",
       "publishedAt": "2026-08-25T13:50:38.024Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star"
+    },
+    {
+      "title": "Counting Red Cows on Old MacDonald's Farm",
+      "url": "https://youtu.be/d9qq4Brj6WA",
+      "format": "short",
+      "publishedAt": "2026-08-26T13:58:38.572Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
