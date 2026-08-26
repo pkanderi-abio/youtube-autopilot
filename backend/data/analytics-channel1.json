@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-25T06:31:52.745Z",
+  "fetchedAt": "2026-08-26T06:33:29.399Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 210,
+      "viewCount": 212,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 713,
+      "viewCount": 714,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1027,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-08-19T14:37:43.282Z",
       "sourcePoolItem": "5 Foods That Are Illegal in Certain Countries",
-      "viewCount": 130,
+      "viewCount": 131,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 87,
+      "viewCount": 86,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 92,
+      "viewCount": 94,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 728,
+      "viewCount": 731,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1067,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T14:40:29.361Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1125,
+      "viewCount": 1133,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 167,
+      "viewCount": 169,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1107,8 +1107,8 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 459,
-      "likeCount": 3,
+      "viewCount": 466,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -1117,8 +1117,8 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1344,
-      "likeCount": 25,
+      "viewCount": 1347,
+      "likeCount": 26,
       "commentCount": 2
     },
     {
@@ -1127,8 +1127,8 @@
       "format": "short",
       "publishedAt": "2026-08-23T22:26:17.454Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 5,
-      "likeCount": 0,
+      "viewCount": 7,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 130,
+      "viewCount": 131,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1157,8 +1157,28 @@
       "format": "short",
       "publishedAt": "2026-08-24T22:31:23.376Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 77,
+      "viewCount": 114,
+      "likeCount": 3,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/9PMh9bbq3p8",
+      "title": "Death Valley's Secret Abandoned Underground Town",
+      "format": "short",
+      "publishedAt": "2026-08-25T14:50:35.874Z",
+      "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
+      "viewCount": 7,
       "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/1KuNelZOMOE",
+      "title": "122 Degrees Above Ground: The Hidden Underground City",
+      "format": "short",
+      "publishedAt": "2026-08-25T22:31:43.358Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 1036,
+      "likeCount": 20,
       "commentCount": 0
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-25T06:31:53.243Z",
+  "fetchedAt": "2026-08-26T06:33:29.742Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -607,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 12,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -697,6 +697,16 @@
       "format": "short",
       "publishedAt": "2026-08-24T13:53:21.901Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/UjrHijoHIjA",
+      "title": "Counting Hot Cross Buns with Red Decorations",
+      "format": "short",
+      "publishedAt": "2026-08-25T13:50:38.024Z",
+      "sourcePoolItem": "Twinkle Twinkle Little Star",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
