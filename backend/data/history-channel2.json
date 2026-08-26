@@ -71,7 +71,8 @@
     "Counting Colorful Farm Animals from 1 to 10 with Animal Sounds",
     "Counting Five Little Ducks Swimming in the Yellow Pond",
     "Hot Cross Buns for Little Hands to Count",
-    "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm"
+    "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm",
+    "Counting and Colors with Little Lamb Friends"
   ],
   "videos": [
     {
@@ -502,6 +503,13 @@
       "format": "short",
       "publishedAt": "2026-08-26T13:58:38.572Z",
       "sourcePoolItem": "Old MacDonald Had a Farm"
+    },
+    {
+      "title": "Learning Colors with Little Lamb Friends in the Green Meadow",
+      "url": "https://youtu.be/9HtHchWY8pg",
+      "format": "long",
+      "publishedAt": "2026-08-26T15:11:07.259Z",
+      "sourcePoolItem": "Mary Had a Little Lamb"
     }
   ]
 }
