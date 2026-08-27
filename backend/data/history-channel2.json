@@ -72,7 +72,8 @@
     "Counting Five Little Ducks Swimming in the Yellow Pond",
     "Hot Cross Buns for Little Hands to Count",
     "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm",
-    "Counting and Colors with Little Lamb Friends"
+    "Counting and Colors with Little Lamb Friends",
+    "Hot Cross Buns with a Colorful Twist"
   ],
   "videos": [
     {
@@ -510,6 +511,13 @@
       "format": "long",
       "publishedAt": "2026-08-26T15:11:07.259Z",
       "sourcePoolItem": "Mary Had a Little Lamb"
+    },
+    {
+      "title": "Fiji's Beaches Counting Hot Cross Buns by 5 Little Ducks",
+      "url": "https://youtu.be/Oz-O2_YE_HI",
+      "format": "short",
+      "publishedAt": "2026-08-27T22:55:08.692Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends"
     }
   ]
 }
