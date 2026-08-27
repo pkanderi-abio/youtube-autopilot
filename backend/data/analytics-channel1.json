@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-26T06:33:29.399Z",
+  "fetchedAt": "2026-08-27T17:09:26.669Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -567,7 +567,7 @@
       "format": "short",
       "publishedAt": "2026-07-26T16:17:44.137Z",
       "sourcePoolItem": null,
-      "viewCount": 143,
+      "viewCount": 144,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -827,7 +827,7 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 212,
+      "viewCount": 213,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "long",
       "publishedAt": "2026-08-14T16:56:46.019Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 15,
+      "viewCount": 16,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 86,
+      "viewCount": 85,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1057,8 +1057,8 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 731,
-      "likeCount": 7,
+      "viewCount": 735,
+      "likeCount": 8,
       "commentCount": 0
     },
     {
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 466,
+      "viewCount": 464,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1117,8 +1117,8 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1347,
-      "likeCount": 26,
+      "viewCount": 1349,
+      "likeCount": 27,
       "commentCount": 2
     },
     {
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T22:26:17.454Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1157,8 +1157,8 @@
       "format": "short",
       "publishedAt": "2026-08-24T22:31:23.376Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 114,
-      "likeCount": 3,
+      "viewCount": 129,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -1167,8 +1167,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 7,
-      "likeCount": 1,
+      "viewCount": 17,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1177,8 +1177,28 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1036,
-      "likeCount": 20,
+      "viewCount": 1046,
+      "likeCount": 19,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/lJamhjgwxUQ",
+      "title": "Walk 40 Kilometers in 20 Minutes, Discover This Tiny Nation's 1000-Year-Old History",
+      "format": "short",
+      "publishedAt": "2026-08-26T14:49:03.703Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
+      "viewCount": 460,
+      "likeCount": 8,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/-erCx_8wQYE",
+      "title": "Antarctica's 0.05-Inch Annual Rainfall",
+      "format": "long",
+      "publishedAt": "2026-08-26T19:19:38.488Z",
+      "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]

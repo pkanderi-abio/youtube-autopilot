@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-26T06:33:29.742Z",
+  "fetchedAt": "2026-08-27T17:09:27.063Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -537,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T13:51:44.270Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -607,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:47:57.818Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 15,
+      "viewCount": 18,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -707,6 +707,26 @@
       "format": "short",
       "publishedAt": "2026-08-25T13:50:38.024Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/d9qq4Brj6WA",
+      "title": "Counting Red Cows on Old MacDonald's Farm",
+      "format": "short",
+      "publishedAt": "2026-08-26T13:58:38.572Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/9HtHchWY8pg",
+      "title": "Learning Colors with Little Lamb Friends in the Green Meadow",
+      "format": "long",
+      "publishedAt": "2026-08-26T15:11:07.259Z",
+      "sourcePoolItem": "Mary Had a Little Lamb",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
