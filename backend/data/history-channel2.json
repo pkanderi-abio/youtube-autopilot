@@ -73,7 +73,8 @@
     "Hot Cross Buns for Little Hands to Count",
     "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm",
     "Counting and Colors with Little Lamb Friends",
-    "Hot Cross Buns with a Colorful Twist"
+    "Hot Cross Buns with a Colorful Twist",
+    "Counting the Colors of the Rainbow with Little Duck and Friends"
   ],
   "videos": [
     {
@@ -518,6 +519,13 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends"
+    },
+    {
+      "title": "Counting with Little Duck at Rainbow Pond",
+      "url": "https://youtu.be/8Ul3gLnfw1g",
+      "format": "short",
+      "publishedAt": "2026-08-28T23:01:00.438Z",
+      "sourcePoolItem": "The Colors of the Rainbow"
     }
   ]
 }
