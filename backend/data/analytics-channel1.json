@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-27T17:09:26.669Z",
+  "fetchedAt": "2026-08-28T17:56:21.792Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 142,
+      "viewCount": 144,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -827,7 +827,7 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 6,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -857,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-08T22:32:45.092Z",
       "sourcePoolItem": null,
-      "viewCount": 463,
+      "viewCount": 464,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -867,7 +867,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T22:34:21.575Z",
       "sourcePoolItem": null,
-      "viewCount": 627,
+      "viewCount": 628,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -877,7 +877,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T15:01:57.075Z",
       "sourcePoolItem": null,
-      "viewCount": 151,
+      "viewCount": 152,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -897,7 +897,7 @@
       "format": "short",
       "publishedAt": "2026-08-11T15:01:53.101Z",
       "sourcePoolItem": null,
-      "viewCount": 145,
+      "viewCount": 146,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -907,7 +907,7 @@
       "format": "short",
       "publishedAt": "2026-08-11T22:45:24.736Z",
       "sourcePoolItem": null,
-      "viewCount": 196,
+      "viewCount": 201,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -917,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T15:03:26.765Z",
       "sourcePoolItem": null,
-      "viewCount": 289,
+      "viewCount": 293,
       "likeCount": 7,
       "commentCount": 1
     },
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T22:43:45.671Z",
       "sourcePoolItem": null,
-      "viewCount": 322,
+      "viewCount": 323,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T15:02:08.339Z",
       "sourcePoolItem": null,
-      "viewCount": 108,
+      "viewCount": 110,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T22:44:03.351Z",
       "sourcePoolItem": null,
-      "viewCount": 555,
+      "viewCount": 557,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T14:55:11.965Z",
       "sourcePoolItem": null,
-      "viewCount": 516,
+      "viewCount": 517,
       "likeCount": 12,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 213,
+      "viewCount": 215,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z",
       "sourcePoolItem": null,
-      "viewCount": 416,
+      "viewCount": 417,
       "likeCount": 8,
       "commentCount": 1
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-08-17T22:29:05.958Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 724,
+      "viewCount": 725,
       "likeCount": 12,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 714,
+      "viewCount": 715,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1027,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-08-19T14:37:43.282Z",
       "sourcePoolItem": "5 Foods That Are Illegal in Certain Countries",
-      "viewCount": 131,
+      "viewCount": 132,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 94,
+      "viewCount": 95,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 735,
+      "viewCount": 742,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -1067,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T14:40:29.361Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1133,
+      "viewCount": 1134,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 169,
+      "viewCount": 170,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T22:25:09.131Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 464,
+      "viewCount": 466,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1349,
+      "viewCount": 1352,
       "likeCount": 27,
       "commentCount": 2
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T22:26:17.454Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 8,
+      "viewCount": 11,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 131,
+      "viewCount": 134,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1167,7 +1167,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 17,
+      "viewCount": 18,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1177,7 +1177,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1046,
+      "viewCount": 1049,
       "likeCount": 19,
       "commentCount": 0
     },
@@ -1187,8 +1187,8 @@
       "format": "short",
       "publishedAt": "2026-08-26T14:49:03.703Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 460,
-      "likeCount": 8,
+      "viewCount": 1065,
+      "likeCount": 17,
       "commentCount": 0
     },
     {
@@ -1199,6 +1199,16 @@
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
       "viewCount": 0,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/O1RtiTbpPYk",
+      "title": "the marshall islands are the world's smallest country you can walk across",
+      "format": "short",
+      "publishedAt": "2026-08-27T23:43:15.547Z",
+      "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
+      "viewCount": 231,
+      "likeCount": 4,
       "commentCount": 0
     }
   ]
