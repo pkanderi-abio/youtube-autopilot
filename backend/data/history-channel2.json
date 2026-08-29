@@ -74,7 +74,8 @@
     "Let's Count the Colors of the Farm Animals on Old MacDonald Had a Farm",
     "Counting and Colors with Little Lamb Friends",
     "Hot Cross Buns with a Colorful Twist",
-    "Counting the Colors of the Rainbow with Little Duck and Friends"
+    "Counting the Colors of the Rainbow with Little Duck and Friends",
+    "Let's Count the Colors of the Rainbow with Farm Friends"
   ],
   "videos": [
     {
@@ -526,6 +527,13 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Counting the Colors of the Rainbow with Farm Friends at Rainbow Farm",
+      "url": "https://youtu.be/3D9xbjSRN60",
+      "format": "long",
+      "publishedAt": "2026-08-29T18:00:02.957Z",
+      "sourcePoolItem": "Learning Shapes All Around Us"
     }
   ]
 }
