@@ -110,7 +110,8 @@
     "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
     "The Town Built Entirely Underground to Escape the Desert Heat",
     "Antarctica Is Technically Classified as a Desert",
-    "5 Countries You Can Visit Without a Passport Stamp"
+    "5 Countries You Can Visit Without a Passport Stamp",
+    "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
   ],
   "videos": [
     {
@@ -847,6 +848,13 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:29:38.698Z",
       "sourcePoolItem": "5 Countries You Can Visit Without a Passport Stamp"
+    },
+    {
+      "title": "Loudest Sound Ever Recorded 3000 Miles Away",
+      "url": "https://youtu.be/RiXVFgHuWbQ",
+      "format": "short",
+      "publishedAt": "2026-08-29T17:37:56.833Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
