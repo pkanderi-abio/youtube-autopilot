@@ -76,7 +76,8 @@
     "Hot Cross Buns with a Colorful Twist",
     "Counting the Colors of the Rainbow with Little Duck and Friends",
     "Let's Count the Colors of the Rainbow with Farm Friends",
-    "This Little Piggy's Colors and Counting Fun"
+    "This Little Piggy's Colors and Counting Fun",
+    "Learning Colors with Five Little Ducks"
   ],
   "videos": [
     {
@@ -542,6 +543,13 @@
       "format": "short",
       "publishedAt": "2026-08-30T17:13:28.801Z",
       "sourcePoolItem": "This Little Piggy"
+    },
+    {
+      "title": "Five Little Ducks Learn Colors in a Sparkly Pond Adventure",
+      "url": "https://youtu.be/us3-RVki4NQ",
+      "format": "long",
+      "publishedAt": "2026-08-30T18:15:36.961Z",
+      "sourcePoolItem": "Five Little Ducks"
     }
   ]
 }
