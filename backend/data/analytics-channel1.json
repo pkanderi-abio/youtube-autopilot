@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-29T12:01:04.540Z",
+  "fetchedAt": "2026-08-30T10:57:23.467Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -317,7 +317,7 @@
       "format": "short",
       "publishedAt": "2026-07-13T16:35:44.687Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -327,7 +327,7 @@
       "format": "short",
       "publishedAt": "2026-07-15T04:52:43.388Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -357,8 +357,8 @@
       "format": "short",
       "publishedAt": "2026-07-16T05:03:03.117Z",
       "sourcePoolItem": null,
-      "viewCount": 326,
-      "likeCount": 3,
+      "viewCount": 327,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -417,7 +417,7 @@
       "format": "short",
       "publishedAt": "2026-07-18T14:53:01.134Z",
       "sourcePoolItem": null,
-      "viewCount": 11,
+      "viewCount": 12,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -827,7 +827,7 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 8,
+      "viewCount": 9,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 95,
+      "viewCount": 96,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 742,
+      "viewCount": 743,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -1077,7 +1077,7 @@
       "format": "long",
       "publishedAt": "2026-08-21T17:48:08.410Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1353,
+      "viewCount": 1354,
       "likeCount": 27,
       "commentCount": 2
     },
@@ -1177,7 +1177,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1049,
+      "viewCount": 1051,
       "likeCount": 19,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "short",
       "publishedAt": "2026-08-26T14:49:03.703Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 1066,
+      "viewCount": 1080,
       "likeCount": 17,
       "commentCount": 0
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 259,
+      "viewCount": 275,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1217,8 +1217,28 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:29:38.698Z",
       "sourcePoolItem": "5 Countries You Can Visit Without a Passport Stamp",
-      "viewCount": 27,
+      "viewCount": 63,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/RiXVFgHuWbQ",
+      "title": "Loudest Sound Ever Recorded 3000 Miles Away",
+      "format": "short",
+      "publishedAt": "2026-08-29T17:37:56.833Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 977,
+      "likeCount": 9,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/vfOlHOv6K1M",
+      "title": "A 400-Foot Underwater Wonder That Can Be Seen from Space",
+      "format": "short",
+      "publishedAt": "2026-08-30T00:02:31.984Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 1049,
+      "likeCount": 30,
       "commentCount": 0
     }
   ]

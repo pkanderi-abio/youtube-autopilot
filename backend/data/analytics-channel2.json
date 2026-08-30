@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-29T12:01:04.954Z",
+  "fetchedAt": "2026-08-30T10:57:23.832Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -507,7 +507,7 @@
       "format": "short",
       "publishedAt": "2026-08-07T14:14:55.804Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 2,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -717,7 +717,7 @@
       "format": "short",
       "publishedAt": "2026-08-26T13:58:38.572Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 1,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -747,6 +747,16 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/3D9xbjSRN60",
+      "title": "Counting the Colors of the Rainbow with Farm Friends at Rainbow Farm",
+      "format": "long",
+      "publishedAt": "2026-08-29T18:00:02.957Z",
+      "sourcePoolItem": "Learning Shapes All Around Us",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
