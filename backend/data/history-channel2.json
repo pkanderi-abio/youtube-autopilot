@@ -75,7 +75,8 @@
     "Counting and Colors with Little Lamb Friends",
     "Hot Cross Buns with a Colorful Twist",
     "Counting the Colors of the Rainbow with Little Duck and Friends",
-    "Let's Count the Colors of the Rainbow with Farm Friends"
+    "Let's Count the Colors of the Rainbow with Farm Friends",
+    "This Little Piggy's Colors and Counting Fun"
   ],
   "videos": [
     {
@@ -534,6 +535,13 @@
       "format": "long",
       "publishedAt": "2026-08-29T18:00:02.957Z",
       "sourcePoolItem": "Learning Shapes All Around Us"
+    },
+    {
+      "title": "This Little Piggy's Colors and Rainbow Counting Fun",
+      "url": "https://youtu.be/jXdpUWZsnS4",
+      "format": "short",
+      "publishedAt": "2026-08-30T17:13:28.801Z",
+      "sourcePoolItem": "This Little Piggy"
     }
   ]
 }
