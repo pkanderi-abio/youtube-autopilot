@@ -77,7 +77,8 @@
     "Counting the Colors of the Rainbow with Little Duck and Friends",
     "Let's Count the Colors of the Rainbow with Farm Friends",
     "This Little Piggy's Colors and Counting Fun",
-    "Learning Colors with Five Little Ducks"
+    "Learning Colors with Five Little Ducks",
+    "Counting Farm Animals, One Bright Yellow Sunflower at a Time"
   ],
   "videos": [
     {
@@ -550,6 +551,13 @@
       "format": "long",
       "publishedAt": "2026-08-30T18:15:36.961Z",
       "sourcePoolItem": "Five Little Ducks"
+    },
+    {
+      "title": "Counting with 5 Little Ducks by the Bright Yellow Sunflower",
+      "url": "https://youtu.be/din9ktuIDwA",
+      "format": "short",
+      "publishedAt": "2026-08-31T19:30:44.359Z",
+      "sourcePoolItem": "Learning the ABCs"
     }
   ]
 }
