@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-30T10:57:23.467Z",
+  "fetchedAt": "2026-08-31T12:15:31.313Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 105,
+      "viewCount": 106,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -327,7 +327,7 @@
       "format": "short",
       "publishedAt": "2026-07-15T04:52:43.388Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 1,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -817,7 +817,7 @@
       "format": "short",
       "publishedAt": "2026-08-07T01:36:11.657Z",
       "sourcePoolItem": null,
-      "viewCount": 639,
+      "viewCount": 640,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 60,
+      "viewCount": 61,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 215,
+      "viewCount": 216,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 96,
+      "viewCount": 97,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1077,7 +1077,7 @@
       "format": "long",
       "publishedAt": "2026-08-21T17:48:08.410Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "short",
       "publishedAt": "2026-08-26T14:49:03.703Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 1080,
+      "viewCount": 1081,
       "likeCount": 17,
       "commentCount": 0
     },
@@ -1217,7 +1217,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:29:38.698Z",
       "sourcePoolItem": "5 Countries You Can Visit Without a Passport Stamp",
-      "viewCount": 63,
+      "viewCount": 74,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 977,
+      "viewCount": 1039,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1237,8 +1237,28 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1049,
-      "likeCount": 30,
+      "viewCount": 1082,
+      "likeCount": 31,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/_g783tOKHEE",
+      "title": "90-Mile Border: The World's Shortest International Boundary",
+      "format": "short",
+      "publishedAt": "2026-08-30T18:03:03.666Z",
+      "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
+      "viewCount": 752,
+      "likeCount": 18,
+      "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/V2fmIigZe-4",
+      "title": "Sweden's 24,000 Islands",
+      "format": "short",
+      "publishedAt": "2026-08-31T00:17:49.581Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
+      "viewCount": 6,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-30T10:57:23.832Z",
+  "fetchedAt": "2026-08-31T12:15:31.741Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -627,7 +627,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T00:06:54.808Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -717,7 +717,7 @@
       "format": "short",
       "publishedAt": "2026-08-26T13:58:38.572Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 4,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 1,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -757,6 +757,26 @@
       "format": "long",
       "publishedAt": "2026-08-29T18:00:02.957Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/jXdpUWZsnS4",
+      "title": "This Little Piggy's Colors and Rainbow Counting Fun",
+      "format": "short",
+      "publishedAt": "2026-08-30T17:13:28.801Z",
+      "sourcePoolItem": "This Little Piggy",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/us3-RVki4NQ",
+      "title": "Five Little Ducks Learn Colors in a Sparkly Pond Adventure",
+      "format": "long",
+      "publishedAt": "2026-08-30T18:15:36.961Z",
+      "sourcePoolItem": "Five Little Ducks",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
