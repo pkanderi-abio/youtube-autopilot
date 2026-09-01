@@ -111,7 +111,8 @@
     "The Town Built Entirely Underground to Escape the Desert Heat",
     "Antarctica Is Technically Classified as a Desert",
     "5 Countries You Can Visit Without a Passport Stamp",
-    "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+    "The Volcano That Glows Blue at Night"
   ],
   "videos": [
     {
@@ -890,6 +891,13 @@
       "format": "long",
       "publishedAt": "2026-08-31T22:03:14.043Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year"
+    },
+    {
+      "title": "Fiji's Best Hidden Beaches",
+      "url": "https://youtu.be/BvEPz8egcyA",
+      "format": "short",
+      "publishedAt": "2026-09-01T01:08:36.459Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night"
     }
   ]
 }
