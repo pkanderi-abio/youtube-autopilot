@@ -78,7 +78,8 @@
     "Let's Count the Colors of the Rainbow with Farm Friends",
     "This Little Piggy's Colors and Counting Fun",
     "Learning Colors with Five Little Ducks",
-    "Counting Farm Animals, One Bright Yellow Sunflower at a Time"
+    "Counting Farm Animals, One Bright Yellow Sunflower at a Time",
+    "Counting Farm Animals at the Market"
   ],
   "videos": [
     {
@@ -558,6 +559,13 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:30:44.359Z",
       "sourcePoolItem": "Learning the ABCs"
+    },
+    {
+      "title": "Counting Cows on Old MacDonald's Farm at the Market",
+      "url": "https://youtu.be/u5VufXmE1bQ",
+      "format": "short",
+      "publishedAt": "2026-09-01T17:16:20.130Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
