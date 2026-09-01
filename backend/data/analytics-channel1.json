@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-31T12:15:31.313Z",
+  "fetchedAt": "2026-09-01T10:50:50.513Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 216,
+      "viewCount": 217,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "long",
       "publishedAt": "2026-08-19T17:43:31.319Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 85,
+      "viewCount": 86,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1077,7 +1077,7 @@
       "format": "long",
       "publishedAt": "2026-08-21T17:48:08.410Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 5,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1354,
+      "viewCount": 1357,
       "likeCount": 27,
       "commentCount": 2
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 134,
+      "viewCount": 135,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1157,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T22:31:23.376Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 129,
+      "viewCount": 130,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1167,7 +1167,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 275,
+      "viewCount": 277,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1039,
+      "viewCount": 1037,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1237,7 +1237,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1082,
+      "viewCount": 1107,
       "likeCount": 31,
       "commentCount": 0
     },
@@ -1247,8 +1247,8 @@
       "format": "short",
       "publishedAt": "2026-08-30T18:03:03.666Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 752,
-      "likeCount": 18,
+      "viewCount": 816,
+      "likeCount": 22,
       "commentCount": 1
     },
     {
@@ -1257,8 +1257,38 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 6,
-      "likeCount": 1,
+      "viewCount": 90,
+      "likeCount": 3,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/5JJOZHBQB8Q",
+      "title": "Salalah Salt Hotel: Oman's 1,000-Year-Old Desert Oasis",
+      "format": "short",
+      "publishedAt": "2026-08-31T19:58:19.804Z",
+      "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
+      "viewCount": 127,
+      "likeCount": 3,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/D3F7ynTAF7E",
+      "title": "80-Decibel Explosion Heard 3,000 Miles Away",
+      "format": "long",
+      "publishedAt": "2026-08-31T22:03:14.043Z",
+      "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
+      "viewCount": 3,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/BvEPz8egcyA",
+      "title": "Fiji's Best Hidden Beaches",
+      "format": "short",
+      "publishedAt": "2026-09-01T01:08:36.459Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night",
+      "viewCount": 88,
+      "likeCount": 4,
       "commentCount": 0
     }
   ]
