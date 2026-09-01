@@ -112,7 +112,8 @@
     "Antarctica Is Technically Classified as a Desert",
     "5 Countries You Can Visit Without a Passport Stamp",
     "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-    "The Volcano That Glows Blue at Night"
+    "The Volcano That Glows Blue at Night",
+    "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away From the Site of a Massive Meteor Explosion"
   ],
   "videos": [
     {
@@ -898,6 +899,13 @@
       "format": "short",
       "publishedAt": "2026-09-01T01:08:36.459Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night"
+    },
+    {
+      "title": "Fiji's 80-Decibel Explosion Heard 3000 Miles Away",
+      "url": "https://youtu.be/LHugW6QTniA",
+      "format": "short",
+      "publishedAt": "2026-09-01T17:44:15.358Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
