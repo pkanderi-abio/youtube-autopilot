@@ -80,7 +80,8 @@
     "Learning Colors with Five Little Ducks",
     "Counting Farm Animals, One Bright Yellow Sunflower at a Time",
     "Counting Farm Animals at the Market",
-    "Let's Count the Colors of the Farm Animals"
+    "Let's Count the Colors of the Farm Animals",
+    "Counting Colors of the Farm Animals"
   ],
   "videos": [
     {
@@ -574,6 +575,13 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:07:54.893Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star"
+    },
+    {
+      "title": "Old MacDonald Counts the Colors of the Farm Animals",
+      "url": "https://youtu.be/P8GP41HOxPc",
+      "format": "long",
+      "publishedAt": "2026-09-02T18:06:39.514Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
