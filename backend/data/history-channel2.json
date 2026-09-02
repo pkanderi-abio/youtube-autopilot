@@ -79,7 +79,8 @@
     "This Little Piggy's Colors and Counting Fun",
     "Learning Colors with Five Little Ducks",
     "Counting Farm Animals, One Bright Yellow Sunflower at a Time",
-    "Counting Farm Animals at the Market"
+    "Counting Farm Animals at the Market",
+    "Let's Count the Colors of the Farm Animals"
   ],
   "videos": [
     {
@@ -566,6 +567,13 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:16:20.130Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Counting Farm Animals by Number at Rainbow Farm",
+      "url": "https://youtu.be/DeAMSzphFlM",
+      "format": "short",
+      "publishedAt": "2026-09-02T17:07:54.893Z",
+      "sourcePoolItem": "Twinkle Twinkle Little Star"
     }
   ]
 }
