@@ -1,16 +1,28 @@
 // Tracks which topics/titles a channel has already used, so the trend
 // step doesn't repeat itself. Persisted to data/history-<channel>.json
 // and committed back to the repo by the GitHub Actions workflow.
+//
+// Added usedClipIds: the Pexels video ids already used by this channel.
+// stockFootage.js reads this to skip clips it has already shown, which is
+// how footage de-duplication works now - previously it randomized which
+// search result to take, which prevented repeats at the cost of picking
+// loosely-related footage.
 import { readFile, writeFile, mkdir } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 
 const DATA_DIR = path.resolve('data');
 
+// Roughly the last ~15 videos' worth of shots. Large enough that clips
+// don't visibly recur, small enough that a channel with a narrow topic
+// pool doesn't exhaust every decent result and start falling back.
+const MAX_CLIP_IDS = 120;
+
 export async function loadHistory(channelId) {
   const file = path.join(DATA_DIR, `history-${channelId}.json`);
-  if (!existsSync(file)) return { usedTopics: [], videos: [] };
-  return JSON.parse(await readFile(file, 'utf8'));
+  if (!existsSync(file)) return { usedTopics: [], videos: [], usedClipIds: [] };
+  const parsed = JSON.parse(await readFile(file, 'utf8'));
+  return { usedTopics: [], videos: [], usedClipIds: [], ...parsed };
 }
 
 export async function saveHistory(channelId, history) {
@@ -19,7 +31,8 @@ export async function saveHistory(channelId, history) {
   // keep the file small - last 200 topics/videos is plenty of memory
   const trimmed = {
     usedTopics: history.usedTopics.slice(-200),
-    videos: history.videos.slice(-200)
+    videos: history.videos.slice(-200),
+    usedClipIds: (history.usedClipIds || []).slice(-MAX_CLIP_IDS)
   };
   await writeFile(file, JSON.stringify(trimmed, null, 2));
 }
