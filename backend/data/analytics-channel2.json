@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-03T10:26:45.368Z",
+  "fetchedAt": "2026-09-04T02:28:00.874Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -517,7 +517,7 @@
       "format": "short",
       "publishedAt": "2026-08-08T13:46:22.499Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -677,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T13:33:53.344Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 4,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -818,6 +818,16 @@
       "publishedAt": "2026-09-02T18:06:39.514Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
       "viewCount": 17,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/muzEtkX40vA",
+      "title": "Count Fun Actions at Rainbow Farm with Friends",
+      "format": "short",
+      "publishedAt": "2026-09-03T16:58:36.429Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
