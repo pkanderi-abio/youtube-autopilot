@@ -82,7 +82,8 @@
     "Counting Farm Animals at the Market",
     "Let's Count the Colors of the Farm Animals",
     "Counting Colors of the Farm Animals",
-    "If You're Happy and You Know It, Count the Fun"
+    "If You're Happy and You Know It, Count the Fun",
+    "If You're Happy and You Know It, Count Your Happy Friends!"
   ],
   "videos": [
     {
@@ -590,6 +591,13 @@
       "format": "short",
       "publishedAt": "2026-09-03T16:58:36.429Z",
       "sourcePoolItem": "If You're Happy and You Know It"
+    },
+    {
+      "title": "Count Your Happy Friends in a Sunny Yellow Pond Today!",
+      "url": "https://youtu.be/9BCltU60PPQ",
+      "format": "short",
+      "publishedAt": "2026-09-04T16:52:35.377Z",
+      "sourcePoolItem": "Hot Cross Buns"
     }
   ]
 }
