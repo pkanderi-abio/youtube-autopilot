@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-04T10:17:33.676Z",
+  "fetchedAt": "2026-09-05T09:42:45.282Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 108,
+      "viewCount": 110,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1136,
+      "viewCount": 1137,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 279,
+      "viewCount": 281,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1247,7 +1247,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T18:03:03.666Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 848,
+      "viewCount": 847,
       "likeCount": 24,
       "commentCount": 1
     },
@@ -1277,7 +1277,7 @@
       "format": "long",
       "publishedAt": "2026-08-31T22:03:14.043Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 13,
+      "viewCount": 15,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1287,7 +1287,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T01:08:36.459Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 349,
+      "viewCount": 348,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1297,7 +1297,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 965,
+      "viewCount": 966,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1015,
+      "viewCount": 1019,
       "likeCount": 23,
       "commentCount": 2
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1056,
+      "viewCount": 1091,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1337,7 +1337,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T23:57:38.107Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1056,
+      "viewCount": 1060,
       "likeCount": 28,
       "commentCount": 1
     },
@@ -1347,7 +1347,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 926,
+      "viewCount": 966,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1357,9 +1357,39 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 905,
-      "likeCount": 11,
+      "viewCount": 1129,
+      "likeCount": 12,
       "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/JXDtcyN_2zc",
+      "title": "Bering Strait's 56-Mile Divide",
+      "format": "short",
+      "publishedAt": "2026-09-04T17:28:26.832Z",
+      "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
+      "viewCount": 127,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/t2Z6gVPf5Y0",
+      "title": "The Fiji Underwater Explosion That Shocked Scientists",
+      "format": "long",
+      "publishedAt": "2026-09-04T19:33:58.769Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 4,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/EYXMLoRcQSI",
+      "title": "The World's Most Bizarre Salt Hotel in Salar de Uyuni",
+      "format": "short",
+      "publishedAt": "2026-09-04T23:50:07.492Z",
+      "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
+      "viewCount": 36,
+      "likeCount": 0,
+      "commentCount": 0
     }
   ]
 }

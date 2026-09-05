@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-04T10:17:34.097Z",
+  "fetchedAt": "2026-09-05T09:42:45.639Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -677,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T13:33:53.344Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -827,6 +827,16 @@
       "format": "short",
       "publishedAt": "2026-09-03T16:58:36.429Z",
       "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/9BCltU60PPQ",
+      "title": "Count Your Happy Friends in a Sunny Yellow Pond Today!",
+      "format": "short",
+      "publishedAt": "2026-09-04T16:52:35.377Z",
+      "sourcePoolItem": "Hot Cross Buns",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
