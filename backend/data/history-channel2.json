@@ -84,7 +84,8 @@
     "Counting Colors of the Farm Animals",
     "If You're Happy and You Know It, Count the Fun",
     "If You're Happy and You Know It, Count Your Happy Friends!",
-    "Old MacDonald Had a Farm: A Fun Farm Counting Adventure with Animal Sounds"
+    "Old MacDonald Had a Farm: A Fun Farm Counting Adventure with Animal Sounds",
+    "Old MacDonald Had a Farm: Counting Animals and Colors on the Farm"
   ],
   "videos": [
     {
@@ -606,6 +607,13 @@
       "format": "short",
       "publishedAt": "2026-09-05T15:51:28.178Z",
       "sourcePoolItem": "Mary Had a Little Lamb"
+    },
+    {
+      "title": "Counting the Farm Animals at Rainbow Farm with Old MacDonald",
+      "url": "https://youtu.be/yc7svFJfEgw",
+      "format": "long",
+      "publishedAt": "2026-09-05T16:47:32.162Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends"
     }
   ]
 }
