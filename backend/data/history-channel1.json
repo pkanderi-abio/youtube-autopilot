@@ -114,7 +114,8 @@
     "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
     "The Volcano That Glows Blue at Night",
     "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away From the Site of a Massive Meteor Explosion",
-    "Octopuses Have Three Hearts and Blue Blood"
+    "Octopuses Have Three Hearts and Blue Blood",
+    "The Island Where Rabbits Outnumber People 100 to 1: Madagascar"
   ],
   "videos": [
     {
@@ -991,6 +992,13 @@
       "format": "short",
       "publishedAt": "2026-09-06T16:48:58.735Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth"
+    },
+    {
+      "title": "Madagascar's Rabbit Overrun: A Lonely Island's Bizarre Wildlife Balance",
+      "url": "https://youtu.be/_eACJxOjFrM",
+      "format": "short",
+      "publishedAt": "2026-09-06T23:35:09.454Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1"
     }
   ]
 }
