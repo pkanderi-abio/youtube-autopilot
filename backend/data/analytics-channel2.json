@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-05T09:42:45.639Z",
+  "fetchedAt": "2026-09-06T09:58:14.942Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -517,7 +517,7 @@
       "format": "short",
       "publishedAt": "2026-08-08T13:46:22.499Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -817,7 +817,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T18:06:39.514Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 17,
+      "viewCount": 18,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -838,6 +838,26 @@
       "publishedAt": "2026-09-04T16:52:35.377Z",
       "sourcePoolItem": "Hot Cross Buns",
       "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/BeOD-fOqfaI",
+      "title": "Fiji's Best Hidden Beaches for 2026 Travelers",
+      "format": "short",
+      "publishedAt": "2026-09-05T15:51:28.178Z",
+      "sourcePoolItem": "Mary Had a Little Lamb",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/yc7svFJfEgw",
+      "title": "Counting the Farm Animals at Rainbow Farm with Old MacDonald",
+      "format": "long",
+      "publishedAt": "2026-09-05T16:47:32.162Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends",
+      "viewCount": 16,
       "likeCount": 0,
       "commentCount": 0
     }
