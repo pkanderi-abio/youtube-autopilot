@@ -85,7 +85,8 @@
     "If You're Happy and You Know It, Count the Fun",
     "If You're Happy and You Know It, Count Your Happy Friends!",
     "Old MacDonald Had a Farm: A Fun Farm Counting Adventure with Animal Sounds",
-    "Old MacDonald Had a Farm: Counting Animals and Colors on the Farm"
+    "Old MacDonald Had a Farm: Counting Animals and Colors on the Farm",
+    "Old MacDonald Had a Farm, Let's Count the Animals!"
   ],
   "videos": [
     {
@@ -614,6 +615,13 @@
       "format": "long",
       "publishedAt": "2026-09-05T16:47:32.162Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends"
+    },
+    {
+      "title": "Counting 5 Farm Animals at Rainbow Farm with Old MacDonald's Duck",
+      "url": "https://youtu.be/wRiEk3dWl-c",
+      "format": "short",
+      "publishedAt": "2026-09-06T16:05:23.477Z",
+      "sourcePoolItem": "London Bridge Is Falling Down"
     }
   ]
 }
