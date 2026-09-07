@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-06T09:58:14.600Z",
+  "fetchedAt": "2026-09-07T11:08:24.542Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -237,7 +237,7 @@
       "format": "long",
       "publishedAt": "2026-07-09T19:24:00.048Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -667,7 +667,7 @@
       "format": "short",
       "publishedAt": "2026-07-30T15:59:16.227Z",
       "sourcePoolItem": null,
-      "viewCount": 95,
+      "viewCount": 96,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "long",
       "publishedAt": "2026-08-03T18:58:49.920Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1366,
+      "viewCount": 1367,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1257,7 +1257,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 260,
+      "viewCount": 261,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1297,7 +1297,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 968,
+      "viewCount": 969,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1020,
+      "viewCount": 1021,
       "likeCount": 23,
       "commentCount": 2
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1112,
+      "viewCount": 1115,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1337,7 +1337,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T23:57:38.107Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1076,
+      "viewCount": 1084,
       "likeCount": 28,
       "commentCount": 1
     },
@@ -1347,7 +1347,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 969,
+      "viewCount": 973,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1357,8 +1357,8 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1142,
-      "likeCount": 12,
+      "viewCount": 1157,
+      "likeCount": 13,
       "commentCount": 1
     },
     {
@@ -1367,7 +1367,7 @@
       "format": "short",
       "publishedAt": "2026-09-04T17:28:26.832Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 170,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1377,7 +1377,7 @@
       "format": "long",
       "publishedAt": "2026-09-04T19:33:58.769Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 9,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1387,7 +1387,7 @@
       "format": "short",
       "publishedAt": "2026-09-04T23:50:07.492Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert",
-      "viewCount": 70,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1397,8 +1397,8 @@
       "format": "short",
       "publishedAt": "2026-09-05T16:38:14.527Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 314,
-      "likeCount": 4,
+      "viewCount": 377,
+      "likeCount": 5,
       "commentCount": 1
     },
     {
@@ -1407,7 +1407,37 @@
       "format": "short",
       "publishedAt": "2026-09-05T23:38:49.841Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 14,
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/528bcqGz4vI",
+      "title": "Monaco's 2 km Border",
+      "format": "short",
+      "publishedAt": "2026-09-06T16:48:58.735Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/_eACJxOjFrM",
+      "title": "Madagascar's Rabbit Overrun: A Lonely Island's Bizarre Wildlife Balance",
+      "format": "short",
+      "publishedAt": "2026-09-06T23:35:09.454Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/GQvgMMpejnA",
+      "title": "You Can Walk Across Monaco in Under 20 Minutes, Meet the Royal Family Behind the Tiny Nation",
+      "format": "short",
+      "publishedAt": "2026-09-07T03:26:56.886Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
