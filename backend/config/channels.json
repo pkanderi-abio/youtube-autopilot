@@ -3,7 +3,7 @@
     {
       "id": "channel1",
       "name": "TeslaTravel",
-      "niche": "quick surprising-fact videos in the Zack D Films / 'Did You Know' style: bite-sized science, history, nature, and 'what if' stories, top-N countdown lists, weird-true trivia, and destination/lifestyle deep-cuts. Format is a punchy fact or promise up front, one payoff per video. NOT celebrity gossip, NOT sports scores, NOT news recaps",
+      "niche": "quick surprising-fact videos in the Zack D Films / 'Did You Know' style: the most interesting current trending subjects plus bite-sized science, history, nature, technology, culture, and 'what if' stories. Format is a punchy fact or promise up front, one payoff per video. Cover any current trend with a factual explainer angle; do not force travel, destinations, or lifestyle into unrelated trends.",
       "format": "short",
       "visualStyle": "stockFootage",
       "madeForKids": false,
@@ -13,6 +13,7 @@
       "categoryId": "27",
       "tags": ["shorts", "did you know", "top 10", "facts", "amazing", "history", "science"],
       "voice": "en-US-AndrewMultilingualNeural",
+      "useLiveTrends": true,
       "topicPool": [
         "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
         "The Country With More Islands Than Any Other Nation on Earth",

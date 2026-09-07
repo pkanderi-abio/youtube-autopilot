@@ -75,6 +75,8 @@ jobs:
     needs: plan
     if: needs.plan.outputs.jobs != '[]'
     runs-on: ubuntu-latest
+    env:
+      LLM_PROVIDER: gemini
     strategy:
       fail-fast: false
       matrix:
@@ -104,13 +106,16 @@ jobs:
       - name: Install ffmpeg system libs (canvas native build)
         run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install Ollama
+        if: env.LLM_PROVIDER != 'gemini'
         run: curl -fsSL https://ollama.com/install.sh | sh
       - name: Cache Ollama models
+        if: env.LLM_PROVIDER != 'gemini'
         uses: actions/cache@v4
         with:
           path: ~/.ollama
           key: ollama-llama3.2-v1
       - name: Start Ollama and pull model
+        if: env.LLM_PROVIDER != 'gemini'
         run: |
           # install.sh already enables+starts Ollama as a systemd service
           # bound to :11434 (confirmed via real CI logs: a manual
@@ -160,6 +165,7 @@ jobs:
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
       - name: Upload thumbnail variants
         # The Data API has no way to run a real A/B test on a thumbnail
@@ -177,7 +183,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
       - name: Dump Ollama server log on failure
-        if: failure()
+        if: failure() && env.LLM_PROVIDER != 'gemini'
         # Ollama runs as a systemd service (see "Start Ollama and pull
         # model" above), not the foreground process a bare /tmp/ollama.log
         # redirect would capture - its real stdout/stderr (including

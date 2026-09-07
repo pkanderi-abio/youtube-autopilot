@@ -513,7 +513,7 @@ async function footageClip(sourcePath, outPath, w, h, fps, durationSeconds, focu
     '-stream_loop', '-1',
     '-i', sourcePath,
     '-t', String(durationSeconds),
-    '-vf', `scale=w=${ow}:h=${oh}:force_original_aspect_ratio=increase,crop=${ow}:${oh},zoompan=z='min(zoom+${zoomPerFrame},${maxZoom})':x='(iw-iw/zoom)*${fx}':y='(ih-ih/zoom)*${fy}':d=1:s=${w}x${h}:fps=${fps},format=yuv420p`,
+    '-vf', `scale=w=${ow}:h=${oh}:force_original_aspect_ratio=increase,crop=${ow}:${oh},zoompan=z='min(zoom+${zoomPerFrame},${maxZoom})':x='(iw-iw/zoom)*${fx}':y='(ih-ih/zoom)*${fy}':d=1:s=${w}x${h}:fps=${fps},fade=t=in:st=0:d=0.2,fade=t=out:st=${Math.max(0, durationSeconds - 0.2)}:d=0.2,format=yuv420p`,
     '-an',
     '-c:v', 'libx264',
     '-crf', '18',
@@ -705,7 +705,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         const sourcePath = path.join(workDir, `stock-source-${i}.mp4`);
         const query = plannedShots[i]?.query;
         if (!query) throw new Error(`missing visual query for shot ${i + 1}`);
-        const buffer = await findStockFootageClip(query, { width: w, height: h });
+        const { buffer } = await findStockFootageClip(query, { width: w, height: h });
         await writeFile(sourcePath, buffer);
         const footageFocus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
         await footageClip(sourcePath, clipPath, w, h, fps, durations[i], footageFocus);

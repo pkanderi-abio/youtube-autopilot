@@ -1,6 +1,6 @@
-// Thin wrapper for script/topic generation - talks to a local Ollama
-// server only. No paid API, no API key: this pipeline is fully
-// self-hosted/open-source by design.
+// Thin wrapper for script/topic generation. Supports local Ollama and
+// Google's Gemini API; both return the same JSON-oriented interface to
+// the pipeline.
 //
 // Deliberately no template-based fallback content here. An earlier
 // version fell back to a generic templated title/narration whenever
@@ -14,8 +14,11 @@
 // propagate and fail the whole run (skipping that publish cycle
 // entirely - see run-pipeline.js's top-level catch) than to publish
 // obviously-fallback content.
+const LLM_PROVIDER = process.env.LLM_PROVIDER || 'ollama';
 const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -76,7 +79,60 @@ async function completeWithOllama(prompt, opts = {}) {
   throw lastError;
 }
 
+async function completeWithGeminiOnce(prompt, { maxTokens = 1024, system, json } = {}) {
+  if (!GEMINI_API_KEY) {
+    throw new Error('GEMINI_API_KEY is required when LLM_PROVIDER=gemini');
+  }
+
+  const contents = [];
+  if (system) contents.push({ role: 'user', parts: [{ text: `System instructions:\n${system}` }] });
+  contents.push({ role: 'user', parts: [{ text: prompt }] });
+  const generationConfig = {
+    // Gemini's reasoning tokens can consume part of the output budget before
+    // the JSON payload is emitted. Give structured responses headroom so a
+    // valid object is not cut off mid-string.
+    maxOutputTokens: Math.min(Math.max(maxTokens * 4, 2048), 8192),
+    ...(json ? { responseMimeType: 'application/json' } : {})
+  };
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(GEMINI_MODEL)}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ contents, generationConfig })
+    }
+  );
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => '');
+    throw new Error(`Gemini request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
+  }
+  const data = await response.json();
+  const text = data.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('') || '';
+  if (!text) throw new Error('Gemini returned no text candidate');
+  return text;
+}
+
+async function completeWithGemini(prompt, opts = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await completeWithGeminiOnce(prompt, opts);
+    } catch (error) {
+      lastError = error;
+      const retryable = /Gemini request failed: (429|5\d\d)\b/.test(error.message);
+      if (!retryable || attempt === 2) throw error;
+      console.warn(`[llm] Gemini request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
+      await sleep(2000 * (attempt + 1));
+    }
+  }
+  throw lastError;
+}
+
 export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
+  if (LLM_PROVIDER === 'gemini') {
+    return completeWithGemini(prompt, { maxTokens, system, json });
+  }
   return completeWithOllama(prompt, { maxTokens, system, json });
 }
 

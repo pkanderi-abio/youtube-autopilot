@@ -25,7 +25,7 @@ function recentlyUsedPoolItems(history, count) {
 }
 
 async function pickPool(channel, history) {
-  if (channel.topicPool?.length) {
+  if (channel.topicPool?.length && !channel.useLiveTrends) {
     const onCooldown = new Set(recentlyUsedPoolItems(history, POOL_COOLDOWN_VIDEOS));
     let candidates = channel.topicPool.filter(t => !onCooldown.has(t));
     if (!candidates.length) {
@@ -52,7 +52,7 @@ export async function discoverTopic(channel, history) {
   // Observed failure mode with a small local model: it picks a raw
   // trending term (a sports score, a news anchor's name) and writes a
   // generic recap with no real connection to the channel's niche - e.g.
-  // a travel/lifestyle channel publishing sports-highlight-reel videos.
+  // a fact channel publishing sports-highlight-reel videos.
   // The fix is a much more directive, example-driven prompt: the
   // returned "topic" must already read as a niche topic, not a bare
   // trending term, and a term with no plausible tie-in should be
@@ -80,12 +80,12 @@ generic video about that term - either find a genuine angle that ties
 it to the niche, or discard it and invent a different topic that
 clearly fits the niche instead.
 
-Example (niche: travel & lifestyle):
-- Candidate: "Super Bowl" -> good topic: "The most underrated cities to
-  visit for next year's Super Bowl" (ties the trend to travel).
-- Candidate: "Local team wins championship game" -> BAD: a sports recap
-  video has no travel/lifestyle angle. Either skip it or invent an
-  unrelated but niche-fitting topic instead.`
+Example:
+- Candidate: a sports final score -> explain the surprising rule, record,
+  player story, or cultural impact behind the trend rather than recapping
+  the score.
+- Candidate: a celebrity name -> explain the factual event or phenomenon
+  that made the name trend, without gossip or unsupported claims.`
     : `Every candidate above was already hand-picked to fit this niche -
 none of them need to be discarded or replaced, and there is no reason
 to invent an unrelated substitute. Your "topic" MUST be about the SAME

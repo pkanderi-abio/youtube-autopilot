@@ -37,6 +37,27 @@ function wordCount(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+function normalizedWords(text) {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
+}
+
+function narrationHasRepeatedContent(text) {
+  const words = normalizedWords(text);
+  const sentences = text
+    .split(/[.!?]+/)
+    .map((sentence) => normalizedWords(sentence).join(' '))
+    .filter((sentence) => sentence.split(' ').length >= 8);
+  if (new Set(sentences).size !== sentences.length) return true;
+
+  const seen = new Set();
+  for (let i = 0; i <= words.length - 10; i++) {
+    const phrase = words.slice(i, i + 10).join(' ');
+    if (seen.has(phrase)) return true;
+    seen.add(phrase);
+  }
+  return false;
+}
+
 function nicheReinforcement(channel) {
   return `The script must be EXPLICITLY about ${channel.niche} - don't just
   narrate the topic in isolation (e.g. a plain sports recap or news
@@ -92,17 +113,24 @@ function hookAndStyleInstructions(channel) {
   return `- HOOK (the first 3 seconds decide everything on YouTube Shorts):
   the FIRST SENTENCE must be a specific surprising fact, a number,
   or a concrete promise that makes a scrolling viewer stop.
+  It must name the exact subject of THIS video's topic. Do not reuse a
+  hook pattern, opening phrase, place, or subject from any example or
+  previous video.
   NEVER start with "In this video...", "Today we'll...", "Let's
   explore...", "Did you know that maybe...", or any throat-clearing.
-  BAD:  "In this video we'll explore Fiji's beaches."
-  BAD:  "Today let's talk about the tortoise and the hare."
-  GOOD: "There's an island in Fiji with water so clear you can see
-        30 feet down - and almost nobody visits it."
-  GOOD: "This tiny animal outsmarted a champion racer just by
-        walking. Here's how."
+  Do not default to "There's an island in..." or any other fixed
+  sentence template unless THIS topic is specifically about an island.
 - Use "you" / "your" often - direct address holds attention.
 - Present tense, active verbs, short sentences.
-- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
+- Conversational, punchy, plain language - written to be read aloud by a
+  real human narrator. Use natural contractions ("it's", "you'll", "that's")
+  where they fit, vary sentence length, and connect ideas with smooth
+  transitions.
+- Avoid robotic list-like phrasing, repeated sentence openings, hype words,
+  unnecessary adjectives, and unsupported precision. Sound curious and
+  conversational, not like an encyclopedia or an advertisement.
+- Write only the narration; do not include stage directions, labels, or
+  parenthetical performance notes.`;
 }
 
 // Long-form equivalents of hookAndStyleInstructions - the opening
@@ -122,10 +150,11 @@ function openingSectionHint(channel) {
   return `This is the OPENING section. The FIRST SENTENCE must be a specific
        surprising fact, number, or concrete promise that makes the viewer
        stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
-       explore...", or any throat-clearing setup. Use "you"/"your" and
-       present tense.
-       BAD:  "In this video we'll tell the story of the tortoise and the hare."
-       GOOD: "A tortoise once beat the fastest animal in the forest - just by walking. Here's how."`;
+       explore...", or any throat-clearing setup. Name the exact subject
+       of THIS video's topic, use "you"/"your", and present tense. Do not
+       reuse a fixed opening phrase or subject from another example/video.
+       The prose must sound like a natural person telling one interesting
+       story, with varied sentence lengths and smooth transitions.`;
 }
 
 function sectionProseStyle(channel) {
@@ -137,7 +166,9 @@ function sectionProseStyle(channel) {
 - Rhyming/sing-song where natural (include well-known nursery rhyme lyrics for those topics).
 - NO scary/sad content, NO complex ideas, NO abstract morals.`;
   }
-  return `- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
+  return `- Conversational, punchy, plain language - written to be read aloud by a real human narrator.
+- Use natural contractions, varied sentence lengths, and smooth transitions.
+- Avoid list-like repetition, canned transitions, and exaggerated claims.`;
 }
 
 // Stock-footage channels need a per-shot "scenes" array - short concrete
@@ -230,12 +261,21 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
 
   let best = null;
   let lastWordCount = null;
+  let repeatedContent = false;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
-    const script = await completeJSON(buildPrompt(lastWordCount), { maxTokens: 1024 });
+    const repetitionEmphasis = repeatedContent
+      ? '\n\nIMPORTANT: the previous attempt repeated part of the narration. Every sentence and meaningful phrase must advance the topic; do not repeat any paragraph, sentence, or 10-word phrase.'
+      : '';
+    const script = await completeJSON(buildPrompt(lastWordCount) + repetitionEmphasis, { maxTokens: 1024 });
     const words = wordCount(script.narration || '');
-    if (!best || words > wordCount(best.narration)) best = script;
-    if (words >= minWords) break;
-    console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration too short (${words}/${minWords} min words), retrying`);
+    repeatedContent = narrationHasRepeatedContent(script.narration || '');
+    const bestIsRepeated = best && narrationHasRepeatedContent(best.narration);
+    if (!best || (!repeatedContent && bestIsRepeated)
+      || (repeatedContent === bestIsRepeated && words > wordCount(best.narration))) {
+      best = script;
+    }
+    if (words >= minWords && !repeatedContent) break;
+    console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration rejected (${words}/${minWords} min words${repeatedContent ? ', repeated content' : ''}), retrying`);
     lastWordCount = words;
   }
 
@@ -244,6 +284,9 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     // problem this floor exists to prevent - better to fail this run and
     // skip publishing than upload something visibly broken.
     throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
+  }
+  if (narrationHasRepeatedContent(best.narration)) {
+    throw new Error(`[script] narration repeated a sentence or phrase after ${MAX_ATTEMPTS} attempts - aborting instead of publishing`);
   }
   return best;
 }
@@ -386,6 +429,9 @@ async function generateLongScript(channel, topicInfo) {
   }
   if (words < MIN_WORDS.long) {
     throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words${skippedSections ? `, ${skippedSections} sections skipped due to errors` : ''}) - aborting instead of publishing`);
+  }
+  if (narrationHasRepeatedContent(narration)) {
+    throw new Error('[script] combined long-form narration repeated a sentence or phrase - aborting instead of publishing');
   }
 
   return { narration, captionLines, scenes: outline.scenes };
