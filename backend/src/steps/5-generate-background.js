@@ -15,6 +15,7 @@ import { createCanvas, loadImage } from 'canvas';
 import { writeFile, mkdir, readFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import { findStockFootageClip } from '../lib/stockFootage.js';
+import { generateAiImage } from '../lib/aiImage.js';
 
 // A handful of on-brand gradient looks + off-center focus points to
 // cycle through, so consecutive fallback/plain-gradient shots don't
@@ -643,7 +644,8 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   ));
   const cartoon = channel.visualStyle === 'cartoonAnimation' && plannedShots.length > 0;
   const stockFootage = channel.visualStyle === 'stockFootage' && plannedShots.length > 0;
-  const shotCount = (cartoon || stockFootage) ? plannedShots.length : Math.max(3, Math.round(durationSeconds / 7));
+  const aiGenerated = channel.visualStyle === 'aiGenerated' && plannedShots.length > 0;
+  const shotCount = (cartoon || stockFootage || aiGenerated) ? plannedShots.length : Math.max(3, Math.round(durationSeconds / 7));
   const plannedDurations = plannedShots.map((shot) => shot.duration);
   const hasPlannedDurations = plannedDurations.length === shotCount
     && plannedDurations.every((duration) => Number.isFinite(duration) && duration > 0);
@@ -717,6 +719,26 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         continue;
       } catch (err) {
         console.warn(`[background] scene ${i} stock footage failed, using gradient fallback:`, err.message);
+      }
+    }
+
+    if (aiGenerated) {
+      try {
+        const query = plannedShots[i]?.query;
+        if (!query) throw new Error(`missing visual query for shot ${i + 1}`);
+        const imagePath = path.join(workDir, `ai-scene-${i}.png`);
+        const image = await generateAiImage(query, {
+          aspectRatio: channel.format === 'short' ? '9:16' : '16:9'
+        });
+        await writeFile(imagePath, image);
+        const aiFocus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
+        await zoomClip(imagePath, clipPath, w, h, fps, durations[i], aiFocus);
+        if (isHeroShot) await extractFrame(clipPath, path.join(workDir, 'scene-0.png'));
+        clipPaths.push(clipPath);
+        console.log(`[background] scene ${i}: generated AI visual for "${query}"`);
+        continue;
+      } catch (err) {
+        throw new Error(`[background] AI visual generation failed for scene ${i}: ${err.message}`, { cause: err });
       }
     }
 

@@ -166,6 +166,7 @@ jobs:
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'imagen-4.0-generate-001' }}
         run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
       - name: Upload thumbnail variants
         # The Data API has no way to run a real A/B test on a thumbnail
