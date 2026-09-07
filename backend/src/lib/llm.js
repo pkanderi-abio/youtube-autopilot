@@ -79,7 +79,7 @@ async function completeWithOllama(prompt, opts = {}) {
   throw lastError;
 }
 
-async function completeWithGemini(prompt, { maxTokens = 1024, system, json } = {}) {
+async function completeWithGeminiOnce(prompt, { maxTokens = 1024, system, json } = {}) {
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY is required when LLM_PROVIDER=gemini');
   }
@@ -111,6 +111,22 @@ async function completeWithGemini(prompt, { maxTokens = 1024, system, json } = {
   const text = data.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('') || '';
   if (!text) throw new Error('Gemini returned no text candidate');
   return text;
+}
+
+async function completeWithGemini(prompt, opts = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await completeWithGeminiOnce(prompt, opts);
+    } catch (error) {
+      lastError = error;
+      const retryable = /Gemini request failed: (429|5\d\d)\b/.test(error.message);
+      if (!retryable || attempt === 2) throw error;
+      console.warn(`[llm] Gemini request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
+      await sleep(2000 * (attempt + 1));
+    }
+  }
+  throw lastError;
 }
 
 export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
