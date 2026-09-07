@@ -115,7 +115,8 @@
     "The Volcano That Glows Blue at Night",
     "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away From the Site of a Massive Meteor Explosion",
     "Octopuses Have Three Hearts and Blue Blood",
-    "The Island Where Rabbits Outnumber People 100 to 1: Madagascar"
+    "The Island Where Rabbits Outnumber People 100 to 1: Madagascar",
+    "How Air Force One Can Survive a Nuclear Blast"
   ],
   "videos": [
     {
@@ -1006,6 +1007,12 @@
       "format": "short",
       "publishedAt": "2026-09-07T03:26:56.886Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
+    },
+    {
+      "title": "How Air Force One Survives a Nuclear EMP Blast",
+      "url": "https://youtu.be/GO6hR3wnX4A",
+      "format": "short",
+      "publishedAt": "2026-09-07T18:40:27.690Z"
     }
   ]
 }
