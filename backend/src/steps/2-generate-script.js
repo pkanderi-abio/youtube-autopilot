@@ -122,7 +122,15 @@ function hookAndStyleInstructions(channel) {
   sentence template unless THIS topic is specifically about an island.
 - Use "you" / "your" often - direct address holds attention.
 - Present tense, active verbs, short sentences.
-- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
+- Conversational, punchy, plain language - written to be read aloud by a
+  real human narrator. Use natural contractions ("it's", "you'll", "that's")
+  where they fit, vary sentence length, and connect ideas with smooth
+  transitions.
+- Avoid robotic list-like phrasing, repeated sentence openings, hype words,
+  unnecessary adjectives, and unsupported precision. Sound curious and
+  conversational, not like an encyclopedia or an advertisement.
+- Write only the narration; do not include stage directions, labels, or
+  parenthetical performance notes.`;
 }
 
 // Long-form equivalents of hookAndStyleInstructions - the opening
@@ -144,7 +152,9 @@ function openingSectionHint(channel) {
        stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
        explore...", or any throat-clearing setup. Name the exact subject
        of THIS video's topic, use "you"/"your", and present tense. Do not
-       reuse a fixed opening phrase or subject from another example/video.`;
+       reuse a fixed opening phrase or subject from another example/video.
+       The prose must sound like a natural person telling one interesting
+       story, with varied sentence lengths and smooth transitions.`;
 }
 
 function sectionProseStyle(channel) {
@@ -156,7 +166,9 @@ function sectionProseStyle(channel) {
 - Rhyming/sing-song where natural (include well-known nursery rhyme lyrics for those topics).
 - NO scary/sad content, NO complex ideas, NO abstract morals.`;
   }
-  return `- Conversational, punchy, plain language - written to be read aloud by a narrator.`;
+  return `- Conversational, punchy, plain language - written to be read aloud by a real human narrator.
+- Use natural contractions, varied sentence lengths, and smooth transitions.
+- Avoid list-like repetition, canned transitions, and exaggerated claims.`;
 }
 
 // Stock-footage channels need a per-shot "scenes" array - short concrete
