@@ -16,6 +16,7 @@ import { generateScript } from './steps/2-generate-script.js';
 import { optimizeSeo } from './steps/3-optimize-seo.js';
 import { generateVoice } from './steps/4-generate-voice.js';
 import { generateBackground } from './steps/5-generate-background.js';
+import { buildAlignedShots } from './lib/sceneAlignment.js';
 import { assembleVideo } from './steps/6-assemble-video.js';
 import { generateThumbnail } from './steps/7-generate-thumbnail.js';
 import { uploadToYoutube } from './steps/8-upload-youtube.js';
@@ -93,8 +94,15 @@ async function run(channelId, formatOverride) {
 
     const duration = await ffprobeDuration(audioPath);
 
+    // Build visual queries from the exact caption/narration chunks after the
+    // audio duration is known. Passing script.scenes directly here lets a
+    // free-floating outline drift away from what is actually being spoken.
+    const scenePlan = channel.visualStyle === 'stockFootage'
+      ? await buildAlignedShots(channel, script, seo.title, duration)
+      : { shots: script.scenes || [] };
+
     console.log('[5/8] generating background video...');
-    const backgroundPath = await generateBackground(channel, duration, workDir, script.scenes || []);
+    const backgroundPath = await generateBackground(channel, duration, workDir, scenePlan.shots);
 
     console.log('[6/8] assembling final video...');
     const videoPath = await assembleVideo({

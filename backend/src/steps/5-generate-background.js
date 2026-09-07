@@ -636,10 +636,20 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     throw new Error('[background] channel.visualStyle is "stockFootage" but PEXELS_API_KEY is not set - refusing to silently downgrade every shot to the gradient fallback. Set PEXELS_API_KEY (repo secret in CI, .env locally) or switch the channel to visualStyle: "gradient" if that\'s intentional.');
   }
 
-  const cartoon = channel.visualStyle === 'cartoonAnimation' && scenes.length > 0;
-  const stockFootage = channel.visualStyle === 'stockFootage' && scenes.length > 0;
-  const shotCount = (cartoon || stockFootage) ? scenes.length : Math.max(3, Math.round(durationSeconds / 7));
-  const durations = computeShotDurations(durationSeconds, shotCount);
+  const plannedShots = scenes.map((scene) => (
+    typeof scene === 'string'
+      ? { query: scene, duration: null }
+      : { query: scene?.query || '', duration: scene?.duration || null }
+  ));
+  const cartoon = channel.visualStyle === 'cartoonAnimation' && plannedShots.length > 0;
+  const stockFootage = channel.visualStyle === 'stockFootage' && plannedShots.length > 0;
+  const shotCount = (cartoon || stockFootage) ? plannedShots.length : Math.max(3, Math.round(durationSeconds / 7));
+  const plannedDurations = plannedShots.map((shot) => shot.duration);
+  const hasPlannedDurations = plannedDurations.length === shotCount
+    && plannedDurations.every((duration) => Number.isFinite(duration) && duration > 0);
+  const durations = hasPlannedDurations
+    ? plannedDurations
+    : computeShotDurations(durationSeconds, shotCount);
 
   // Every gradient variant/color/blob choice below is keyed off
   // "shotSeed", not the raw shot index - without this, shot 0 of every
@@ -673,7 +683,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
 
     if (cartoon) {
       try {
-        const firstFrame = await cartoonClip(scenes[i] || '', clipPath, workDir, i, w, h, fps, durations[i], shotSeed);
+        const firstFrame = await cartoonClip(plannedShots[i]?.query || '', clipPath, workDir, i, w, h, fps, durations[i], shotSeed);
         if (isHeroShot && firstFrame) {
           await writeFile(path.join(workDir, 'scene-0.png'), firstFrame);
         }
@@ -693,7 +703,9 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     if (stockFootage) {
       try {
         const sourcePath = path.join(workDir, `stock-source-${i}.mp4`);
-        const buffer = await findStockFootageClip(scenes[i], { width: w, height: h });
+        const query = plannedShots[i]?.query;
+        if (!query) throw new Error(`missing visual query for shot ${i + 1}`);
+        const buffer = await findStockFootageClip(query, { width: w, height: h });
         await writeFile(sourcePath, buffer);
         const footageFocus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
         await footageClip(sourcePath, clipPath, w, h, fps, durations[i], footageFocus);

@@ -25,6 +25,28 @@ function words(text) {
   return String(text || '').trim().split(/\s+/).filter(Boolean);
 }
 
+const NON_VISUAL_WORDS = new Set([
+  'about', 'after', 'again', 'also', 'because', 'before', 'being', 'could',
+  'every', 'first', 'from', 'have', 'into', 'just', 'like', 'more', 'most',
+  'never', 'only', 'over', 'really', 'some', 'than', 'that', 'their',
+  'them', 'then', 'there', 'these', 'they', 'this', 'very', 'what', 'when',
+  'where', 'which', 'while', 'with', 'your'
+]);
+
+function meaningfulTokens(text) {
+  return words(text)
+    .map((word) => word.toLowerCase().replace(/[^a-z0-9]/g, ''))
+    .filter((word) => word.length > 3 && !NON_VISUAL_WORDS.has(word));
+}
+
+function queryIsGrounded(query, shotText) {
+  const shotTokens = meaningfulTokens(shotText);
+  const queryTokens = meaningfulTokens(query);
+  return queryTokens.some((queryToken) =>
+    shotTokens.some((shotToken) => shotToken.startsWith(queryToken) || queryToken.startsWith(shotToken))
+  );
+}
+
 // Groups caption lines into shots sized so each lands near
 // TARGET_SHOT_SECONDS, using word count as the proxy for speech time.
 function groupCaptionLines(captionLines, totalDuration) {
@@ -110,12 +132,12 @@ There must be exactly ${shots.length} queries, in order.
   }
   return shots.map((s, i) => {
     const q = typeof queries[i] === 'string' ? queries[i].trim() : '';
-    // Fall back to the shot's own longest words rather than a generic
-    // phrase, so a bad model response still searches for something the
-    // narration actually said.
-    if (q) return q;
-    const fallback = words(s.text)
-      .filter(w => w.length > 4)
+    // Do not trust a fluent but unrelated query from the small model. A
+    // query must share a meaningful word with its shot or it is replaced by
+    // words taken directly from the narration.
+    if (q && queryIsGrounded(q, s.text)) return q;
+    if (q) console.warn(`[align] rejecting ungrounded query for shot ${i + 1}: "${q}"`);
+    const fallback = meaningfulTokens(s.text)
       .slice(0, 4)
       .join(' ');
     return fallback || title;
