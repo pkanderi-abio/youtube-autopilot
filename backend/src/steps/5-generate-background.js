@@ -705,7 +705,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         const sourcePath = path.join(workDir, `stock-source-${i}.mp4`);
         const query = plannedShots[i]?.query;
         if (!query) throw new Error(`missing visual query for shot ${i + 1}`);
-        const buffer = await findStockFootageClip(query, { width: w, height: h });
+        const { buffer } = await findStockFootageClip(query, { width: w, height: h });
         await writeFile(sourcePath, buffer);
         const footageFocus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
         await footageClip(sourcePath, clipPath, w, h, fps, durations[i], footageFocus);
