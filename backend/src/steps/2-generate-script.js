@@ -113,14 +113,13 @@ function hookAndStyleInstructions(channel) {
   return `- HOOK (the first 3 seconds decide everything on YouTube Shorts):
   the FIRST SENTENCE must be a specific surprising fact, a number,
   or a concrete promise that makes a scrolling viewer stop.
+  It must name the exact subject of THIS video's topic. Do not reuse a
+  hook pattern, opening phrase, place, or subject from any example or
+  previous video.
   NEVER start with "In this video...", "Today we'll...", "Let's
   explore...", "Did you know that maybe...", or any throat-clearing.
-  BAD:  "In this video we'll explore Fiji's beaches."
-  BAD:  "Today let's talk about the tortoise and the hare."
-  GOOD: "There's an island in Fiji with water so clear you can see
-        30 feet down - and almost nobody visits it."
-  GOOD: "This tiny animal outsmarted a champion racer just by
-        walking. Here's how."
+  Do not default to "There's an island in..." or any other fixed
+  sentence template unless THIS topic is specifically about an island.
 - Use "you" / "your" often - direct address holds attention.
 - Present tense, active verbs, short sentences.
 - Conversational, punchy, plain language - written to be read aloud by a narrator.`;
@@ -143,10 +142,9 @@ function openingSectionHint(channel) {
   return `This is the OPENING section. The FIRST SENTENCE must be a specific
        surprising fact, number, or concrete promise that makes the viewer
        stop scrolling - NEVER "In this video...", "Today we'll...", "Let's
-       explore...", or any throat-clearing setup. Use "you"/"your" and
-       present tense.
-       BAD:  "In this video we'll tell the story of the tortoise and the hare."
-       GOOD: "A tortoise once beat the fastest animal in the forest - just by walking. Here's how."`;
+       explore...", or any throat-clearing setup. Name the exact subject
+       of THIS video's topic, use "you"/"your", and present tense. Do not
+       reuse a fixed opening phrase or subject from another example/video.`;
 }
 
 function sectionProseStyle(channel) {
