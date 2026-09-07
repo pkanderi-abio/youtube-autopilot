@@ -125,8 +125,13 @@ Return JSON: { "queries": ["query for shot 1", "query for shot 2", "..."] }
 There must be exactly ${shots.length} queries, in order.
 `.trim();
 
-  const res = await completeJSON(prompt, { maxTokens: 800 });
-  const queries = Array.isArray(res.queries) ? res.queries : [];
+  let queries = [];
+  try {
+    const res = await completeJSON(prompt, { maxTokens: 800 });
+    queries = Array.isArray(res.queries) ? res.queries : [];
+  } catch (error) {
+    console.warn(`[align] visual-query generation failed; using narration terms directly: ${error.message}`);
+  }
   if (queries.length !== shots.length) {
     console.warn(`[align] model returned ${queries.length} queries for ${shots.length} shots - padding/trimming`);
   }
