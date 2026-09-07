@@ -88,7 +88,10 @@ async function completeWithGemini(prompt, { maxTokens = 1024, system, json } = {
   if (system) contents.push({ role: 'user', parts: [{ text: `System instructions:\n${system}` }] });
   contents.push({ role: 'user', parts: [{ text: prompt }] });
   const generationConfig = {
-    maxOutputTokens: maxTokens,
+    // Gemini's reasoning tokens can consume part of the output budget before
+    // the JSON payload is emitted. Give structured responses headroom so a
+    // valid object is not cut off mid-string.
+    maxOutputTokens: Math.min(Math.max(maxTokens * 4, 2048), 8192),
     ...(json ? { responseMimeType: 'application/json' } : {})
   };
   const response = await fetch(
