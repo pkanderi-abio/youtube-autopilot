@@ -37,6 +37,27 @@ function wordCount(text) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
+function normalizedWords(text) {
+  return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
+}
+
+function narrationHasRepeatedContent(text) {
+  const words = normalizedWords(text);
+  const sentences = text
+    .split(/[.!?]+/)
+    .map((sentence) => normalizedWords(sentence).join(' '))
+    .filter((sentence) => sentence.split(' ').length >= 8);
+  if (new Set(sentences).size !== sentences.length) return true;
+
+  const seen = new Set();
+  for (let i = 0; i <= words.length - 10; i++) {
+    const phrase = words.slice(i, i + 10).join(' ');
+    if (seen.has(phrase)) return true;
+    seen.add(phrase);
+  }
+  return false;
+}
+
 function nicheReinforcement(channel) {
   return `The script must be EXPLICITLY about ${channel.niche} - don't just
   narrate the topic in isolation (e.g. a plain sports recap or news
@@ -230,12 +251,21 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
 
   let best = null;
   let lastWordCount = null;
+  let repeatedContent = false;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
-    const script = await completeJSON(buildPrompt(lastWordCount), { maxTokens: 1024 });
+    const repetitionEmphasis = repeatedContent
+      ? '\n\nIMPORTANT: the previous attempt repeated part of the narration. Every sentence and meaningful phrase must advance the topic; do not repeat any paragraph, sentence, or 10-word phrase.'
+      : '';
+    const script = await completeJSON(buildPrompt(lastWordCount) + repetitionEmphasis, { maxTokens: 1024 });
     const words = wordCount(script.narration || '');
-    if (!best || words > wordCount(best.narration)) best = script;
-    if (words >= minWords) break;
-    console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration too short (${words}/${minWords} min words), retrying`);
+    repeatedContent = narrationHasRepeatedContent(script.narration || '');
+    const bestIsRepeated = best && narrationHasRepeatedContent(best.narration);
+    if (!best || (!repeatedContent && bestIsRepeated)
+      || (repeatedContent === bestIsRepeated && words > wordCount(best.narration))) {
+      best = script;
+    }
+    if (words >= minWords && !repeatedContent) break;
+    console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration rejected (${words}/${minWords} min words${repeatedContent ? ', repeated content' : ''}), retrying`);
     lastWordCount = words;
   }
 
@@ -244,6 +274,9 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     // problem this floor exists to prevent - better to fail this run and
     // skip publishing than upload something visibly broken.
     throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
+  }
+  if (narrationHasRepeatedContent(best.narration)) {
+    throw new Error(`[script] narration repeated a sentence or phrase after ${MAX_ATTEMPTS} attempts - aborting instead of publishing`);
   }
   return best;
 }
@@ -386,6 +419,9 @@ async function generateLongScript(channel, topicInfo) {
   }
   if (words < MIN_WORDS.long) {
     throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words${skippedSections ? `, ${skippedSections} sections skipped due to errors` : ''}) - aborting instead of publishing`);
+  }
+  if (narrationHasRepeatedContent(narration)) {
+    throw new Error('[script] combined long-form narration repeated a sentence or phrase - aborting instead of publishing');
   }
 
   return { narration, captionLines, scenes: outline.scenes };
