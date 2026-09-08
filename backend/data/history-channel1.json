@@ -116,7 +116,8 @@
     "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away From the Site of a Massive Meteor Explosion",
     "Octopuses Have Three Hearts and Blue Blood",
     "The Island Where Rabbits Outnumber People 100 to 1: Madagascar",
-    "How Air Force One Can Survive a Nuclear Blast"
+    "How Air Force One Can Survive a Nuclear Blast",
+    "What Happens If a Submarine Gets Trapped Underwater?"
   ],
   "videos": [
     {
@@ -1013,6 +1014,12 @@
       "url": "https://youtu.be/GO6hR3wnX4A",
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z"
+    },
+    {
+      "title": "How Submarine Crews Escape Trapped Vessels with 96 Hours of Air",
+      "url": "https://youtu.be/9d3XWgu5vJI",
+      "format": "short",
+      "publishedAt": "2026-09-08T23:54:36.968Z"
     }
   ]
 }
