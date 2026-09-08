@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-07T11:08:24.542Z",
+  "fetchedAt": "2026-09-08T10:20:11.558Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 147,
+      "viewCount": 148,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 63,
+      "viewCount": 64,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 223,
+      "viewCount": 224,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1237,7 +1237,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1119,
+      "viewCount": 1120,
       "likeCount": 32,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 178,
+      "viewCount": 180,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1307,8 +1307,8 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1021,
-      "likeCount": 23,
+      "viewCount": 1023,
+      "likeCount": 24,
       "commentCount": 2
     },
     {
@@ -1357,7 +1357,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1157,
+      "viewCount": 1170,
       "likeCount": 13,
       "commentCount": 1
     },
@@ -1397,7 +1397,7 @@
       "format": "short",
       "publishedAt": "2026-09-05T16:38:14.527Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 377,
+      "viewCount": 380,
       "likeCount": 5,
       "commentCount": 1
     },
@@ -1439,6 +1439,16 @@
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
       "viewCount": 0,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/GO6hR3wnX4A",
+      "title": "How Air Force One Survives a Nuclear EMP Blast",
+      "format": "short",
+      "publishedAt": "2026-09-07T18:40:27.690Z",
+      "sourcePoolItem": null,
+      "viewCount": 104,
+      "likeCount": 2,
       "commentCount": 0
     }
   ]
