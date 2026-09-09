@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-08T10:20:11.558Z",
+  "fetchedAt": "2026-09-09T10:28:39.133Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 224,
+      "viewCount": 225,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-08-17T14:32:07.006Z",
       "sourcePoolItem": null,
-      "viewCount": 418,
+      "viewCount": 419,
       "likeCount": 8,
       "commentCount": 1
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 98,
+      "viewCount": 100,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1367,
+      "viewCount": 1370,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1257,7 +1257,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 261,
+      "viewCount": 262,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1277,7 +1277,7 @@
       "format": "long",
       "publishedAt": "2026-08-31T22:03:14.043Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 15,
+      "viewCount": 16,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1397,7 +1397,7 @@
       "format": "short",
       "publishedAt": "2026-09-05T16:38:14.527Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 380,
+      "viewCount": 382,
       "likeCount": 5,
       "commentCount": 1
     },
@@ -1447,9 +1447,19 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 104,
-      "likeCount": 2,
+      "viewCount": 106,
+      "likeCount": 3,
       "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/9d3XWgu5vJI",
+      "title": "How Submarine Crews Escape Trapped Vessels with 96 Hours of Air",
+      "format": "short",
+      "publishedAt": "2026-09-08T23:54:36.968Z",
+      "sourcePoolItem": null,
+      "viewCount": 997,
+      "likeCount": 18,
+      "commentCount": 2
     }
   ]
 }
