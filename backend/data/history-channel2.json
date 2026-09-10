@@ -87,7 +87,8 @@
     "Old MacDonald Had a Farm: A Fun Farm Counting Adventure with Animal Sounds",
     "Old MacDonald Had a Farm: Counting Animals and Colors on the Farm",
     "Old MacDonald Had a Farm, Let's Count the Animals!",
-    "Five Little Ducks in Colors"
+    "Five Little Ducks in Colors",
+    "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers"
   ],
   "videos": [
     {
@@ -630,6 +631,13 @@
       "format": "long",
       "publishedAt": "2026-09-06T17:05:12.533Z",
       "sourcePoolItem": "The Wheels on the Bus"
+    },
+    {
+      "title": "Count 1 to 10 with Farm Animal Sounds! Sing-Along for Toddlers",
+      "url": "https://youtu.be/maP1hnsz1c8",
+      "format": "short",
+      "publishedAt": "2026-09-10T16:56:19.325Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
