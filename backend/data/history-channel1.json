@@ -117,7 +117,8 @@
     "Octopuses Have Three Hearts and Blue Blood",
     "The Island Where Rabbits Outnumber People 100 to 1: Madagascar",
     "How Air Force One Can Survive a Nuclear Blast",
-    "What Happens If a Submarine Gets Trapped Underwater?"
+    "What Happens If a Submarine Gets Trapped Underwater?",
+    "What Really Happens When a Cargo Plane Touches Down Too Fast?"
   ],
   "videos": [
     {
@@ -1020,6 +1021,12 @@
       "url": "https://youtu.be/9d3XWgu5vJI",
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z"
+    },
+    {
+      "title": "What Happens When an 800,000-Pound Cargo Plane Lands 15 MPH Too Fast?",
+      "url": "https://youtu.be/L8ERN8-ar54",
+      "format": "short",
+      "publishedAt": "2026-09-10T17:33:19.334Z"
     }
   ]
 }
