@@ -88,7 +88,8 @@
     "Old MacDonald Had a Farm: Counting Animals and Colors on the Farm",
     "Old MacDonald Had a Farm, Let's Count the Animals!",
     "Five Little Ducks in Colors",
-    "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers"
+    "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers",
+    "Five Little Ducks Went Swimming! Count 1 to 5 with Quack-Quack Animal Sounds"
   ],
   "videos": [
     {
@@ -638,6 +639,13 @@
       "format": "short",
       "publishedAt": "2026-09-10T16:56:19.325Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Five Little Ducks Swimming Song: Count 1 to 5 with Quack Quack Animal Sounds",
+      "url": "https://youtu.be/3lkowNWD1ys",
+      "format": "short",
+      "publishedAt": "2026-09-11T17:01:34.055Z",
+      "sourcePoolItem": "Five Little Ducks"
     }
   ]
 }
