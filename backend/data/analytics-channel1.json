@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-11T10:18:13.972Z",
+  "fetchedAt": "2026-09-12T09:50:53.787Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -717,7 +717,7 @@
       "format": "short",
       "publishedAt": "2026-08-01T15:06:49.405Z",
       "sourcePoolItem": null,
-      "viewCount": 69,
+      "viewCount": 70,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 100,
+      "viewCount": 101,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 281,
+      "viewCount": 282,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1237,7 +1237,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1120,
+      "viewCount": 1121,
       "likeCount": 32,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 180,
+      "viewCount": 181,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1025,
+      "viewCount": 1027,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1397,7 +1397,7 @@
       "format": "short",
       "publishedAt": "2026-09-05T16:38:14.527Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 382,
+      "viewCount": 381,
       "likeCount": 5,
       "commentCount": 1
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1032,
+      "viewCount": 1038,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1467,7 +1467,7 @@
       "format": "short",
       "publishedAt": "2026-09-10T17:33:19.334Z",
       "sourcePoolItem": null,
-      "viewCount": 1105,
+      "viewCount": 1108,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1479,6 +1479,16 @@
       "sourcePoolItem": null,
       "viewCount": 7,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/eB0IPcSFBGE",
+      "title": "How a Secret Windmill Saves Planes at 30,000 Feet",
+      "format": "short",
+      "publishedAt": "2026-09-11T17:43:27.556Z",
+      "sourcePoolItem": null,
+      "viewCount": 72,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
