@@ -89,7 +89,8 @@
     "Old MacDonald Had a Farm, Let's Count the Animals!",
     "Five Little Ducks in Colors",
     "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers",
-    "Five Little Ducks Went Swimming! Count 1 to 5 with Quack-Quack Animal Sounds"
+    "Five Little Ducks Went Swimming! Count 1 to 5 with Quack-Quack Animal Sounds",
+    "Old MacDonald Had a Colorful Farm! Animal Sounds, Colors & Counting Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -646,6 +647,13 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:01:34.055Z",
       "sourcePoolItem": "Five Little Ducks"
+    },
+    {
+      "title": "Old MacDonald's Red Cow, Pink Pig & 3 Yellow Ducks Sing-Along",
+      "url": "https://youtu.be/OftO-y7Nclg",
+      "format": "short",
+      "publishedAt": "2026-09-12T16:02:10.365Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
