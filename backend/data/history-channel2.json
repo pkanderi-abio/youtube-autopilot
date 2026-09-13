@@ -90,7 +90,8 @@
     "Five Little Ducks in Colors",
     "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers",
     "Five Little Ducks Went Swimming! Count 1 to 5 with Quack-Quack Animal Sounds",
-    "Old MacDonald Had a Colorful Farm! Animal Sounds, Colors & Counting Sing-Along for Toddlers"
+    "Old MacDonald Had a Colorful Farm! Animal Sounds, Colors & Counting Sing-Along for Toddlers",
+    "Baa Baa Black Sheep & Color Wool Counting Song for Toddlers"
   ],
   "videos": [
     {
@@ -654,6 +655,13 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:02:10.365Z",
       "sourcePoolItem": "Old MacDonald Had a Farm"
+    },
+    {
+      "title": "Baa Baa Black Sheep: Count 3 Bags of Red, Blue & Yellow Wool!",
+      "url": "https://youtu.be/EvI0DtS7DWY",
+      "format": "short",
+      "publishedAt": "2026-09-13T16:52:17.529Z",
+      "sourcePoolItem": "Baa Baa Black Sheep"
     }
   ]
 }
