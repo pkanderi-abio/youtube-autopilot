@@ -91,7 +91,8 @@
     "Counting Farm Animals 1 to 10: Sing-Along Fun with Friendly Farm Animal Sounds for Toddlers",
     "Five Little Ducks Went Swimming! Count 1 to 5 with Quack-Quack Animal Sounds",
     "Old MacDonald Had a Colorful Farm! Animal Sounds, Colors & Counting Sing-Along for Toddlers",
-    "Baa Baa Black Sheep & Color Wool Counting Song for Toddlers"
+    "Baa Baa Black Sheep & Color Wool Counting Song for Toddlers",
+    "Sing & Say Animal Sounds with Cute Farm Friends! Interactive Toddler Sing-Along & Sound Guessing Game"
   ],
   "videos": [
     {
@@ -662,6 +663,13 @@
       "format": "short",
       "publishedAt": "2026-09-13T16:52:17.529Z",
       "sourcePoolItem": "Baa Baa Black Sheep"
+    },
+    {
+      "title": "Learn Cow, Duck & Pig Sounds with Farm Animal Guessing Game",
+      "url": "https://youtu.be/aH8EQYNy73A",
+      "format": "short",
+      "publishedAt": "2026-09-14T18:28:29.737Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers"
     }
   ]
 }
