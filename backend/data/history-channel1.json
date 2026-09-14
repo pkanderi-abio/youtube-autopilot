@@ -124,7 +124,8 @@
     "What Actually Happens Inside a Ship When It Capsizes?",
     "Why It's Physically Impossible to Block Kevin Durant's Shot",
     "Did You Know Noise-Canceling Beats Create 'Anti-Sound' To Instantly Erase Audio Waves?",
-    "Tesla's latest Autopilot update has sparked a heated debate on the accuracy of semi-autonomous driving technology"
+    "Tesla's latest Autopilot update has sparked a heated debate on the accuracy of semi-autonomous driving technology",
+    "How Oxycodone Hacks Your Brain's Pain Receptors"
   ],
   "videos": [
     {
@@ -1069,6 +1070,12 @@
       "url": "https://youtu.be/hx1lv0OgqJQ",
       "format": "short",
       "publishedAt": "2026-09-14T13:32:44.035Z"
+    },
+    {
+      "title": "How 1 Oxycodone Pill Hijacks Your Brain's Pain Receptors",
+      "url": "https://youtu.be/yN-vJgr1uV0",
+      "format": "short",
+      "publishedAt": "2026-09-14T13:40:30.426Z"
     }
   ]
 }
