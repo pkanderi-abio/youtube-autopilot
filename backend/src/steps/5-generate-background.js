@@ -130,6 +130,68 @@ function renderGradientFrame(w, h, colorA, colorB, variantIndex = 0) {
   return canvas.toBuffer('image/png');
 }
 
+function renderIllustratedFallbackFrame(w, h, colorA, colorB, query, variantIndex = 0) {
+  const canvas = createCanvas(w, h);
+  const ctx = canvas.getContext('2d');
+  const background = renderGradientFrame(w, h, colorA, colorB, variantIndex);
+  return loadImage(background).then((image) => {
+    ctx.drawImage(image, 0, 0, w, h);
+    const rand = seededRandom(variantIndex * 71 + 9);
+    const accent = accentColor(colorA, variantIndex);
+    const [ar, ag, ab] = accent;
+    const cx = w * (0.35 + rand() * 0.3);
+    const cy = h * (0.3 + rand() * 0.25);
+    const radius = Math.min(w, h) * 0.18;
+
+    ctx.fillStyle = `rgba(${ar},${ag},${ab},0.9)`;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+    ctx.lineWidth = Math.max(6, Math.round(Math.min(w, h) * 0.012));
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.25, 0, Math.PI * 2);
+    ctx.stroke();
+
+    for (let i = 0; i < 5; i++) {
+      const angle = (Math.PI * 2 * i) / 5 + variantIndex * 0.2;
+      const x = cx + Math.cos(angle) * radius * 1.8;
+      const y = cy + Math.sin(angle) * radius * 1.8;
+      ctx.fillStyle = `rgba(255,255,255,${0.45 + rand() * 0.35})`;
+      ctx.beginPath();
+      ctx.arc(x, y, radius * (0.12 + rand() * 0.08), 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    const label = String(query || 'Current topic').replace(/\s+/g, ' ').trim().slice(0, 72);
+    ctx.fillStyle = 'rgba(0,0,0,0.55)';
+    ctx.roundRect(w * 0.08, h * 0.66, w * 0.84, h * 0.2, 24);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = `bold ${Math.round(w * 0.055)}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const words = label.split(' ');
+    const lines = [];
+    let line = '';
+    for (const word of words) {
+      const next = line ? `${line} ${word}` : word;
+      if (ctx.measureText(next).width > w * 0.72 && line) {
+        lines.push(line);
+        line = word;
+      } else {
+        line = next;
+      }
+    }
+    if (line) lines.push(line);
+    const visibleLines = lines.slice(0, 3);
+    visibleLines.forEach((text, i) => {
+      ctx.fillText(text, w / 2, h * 0.71 + i * w * 0.065);
+    });
+    return canvas.toBuffer('image/png');
+  });
+}
+
 function runFfmpeg(args) {
   return new Promise((resolve, reject) => {
     const p = spawn(ffmpegPath, args);
@@ -743,7 +805,12 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     }
 
     const framePath = path.join(workDir, `scene-${i}.png`);
-    await writeFile(framePath, renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, shotSeed));
+    const fallbackFrame = aiGenerated
+      ? await renderIllustratedFallbackFrame(
+        w, h, channel.brandColorA, channel.brandColorB, plannedShots[i]?.query, shotSeed
+      )
+      : renderGradientFrame(w, h, channel.brandColorA, channel.brandColorB, shotSeed);
+    await writeFile(framePath, fallbackFrame);
 
     const focus = FOCUS_POINTS[shotSeed % FOCUS_POINTS.length];
     await zoomClip(framePath, clipPath, w, h, fps, durations[i], focus);
