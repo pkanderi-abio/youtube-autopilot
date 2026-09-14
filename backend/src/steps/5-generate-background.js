@@ -738,7 +738,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         console.log(`[background] scene ${i}: generated AI visual for "${query}"`);
         continue;
       } catch (err) {
-        throw new Error(`[background] AI visual generation failed for scene ${i}: ${err.message}`, { cause: err });
+        console.warn(`[background] AI visual generation failed for scene ${i}; using free local illustration fallback: ${err.message}`);
       }
     }
 
@@ -750,7 +750,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
     // The hero shot might have been PICKED as one meant to use real
     // footage/cartoon but fallen through to gradient here - still needs
     // its frame captured for the thumbnail, just from the fallback path.
-    if (isHeroShot && (cartoon || stockFootage)) {
+    if (isHeroShot && (cartoon || stockFootage || aiGenerated)) {
       await writeFile(path.join(workDir, 'scene-0.png'), await readFile(framePath));
     }
     clipPaths.push(clipPath);
