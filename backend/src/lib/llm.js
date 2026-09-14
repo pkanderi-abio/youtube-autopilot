@@ -19,6 +19,7 @@ const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+const LLM_FALLBACK = process.env.LLM_FALLBACK || 'ollama';
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -131,7 +132,13 @@ async function completeWithGemini(prompt, opts = {}) {
 
 export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
   if (LLM_PROVIDER === 'gemini') {
-    return completeWithGemini(prompt, { maxTokens, system, json });
+    try {
+      return await completeWithGemini(prompt, { maxTokens, system, json });
+    } catch (error) {
+      if (LLM_FALLBACK !== 'ollama') throw error;
+      console.warn(`[llm] Gemini unavailable; using free Ollama fallback: ${error.message}`);
+      return completeWithOllama(prompt, { maxTokens, system, json });
+    }
   }
   return completeWithOllama(prompt, { maxTokens, system, json });
 }

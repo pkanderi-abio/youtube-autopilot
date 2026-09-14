@@ -23,6 +23,10 @@ in the content pipeline:
   per-section target consistently.
 - **Voice**: Microsoft Edge's free TTS engine (no API key, no per-word cost).
 - **Visuals**: per-channel `visualStyle` in `config/channels.json`:
+  - `"aiGenerated"`: one original Google Imagen illustration per
+    narration-aligned shot, animated with a cinematic pan/zoom. Requires
+    image-generation access on the configured Google AI API key and may
+    incur provider charges.
   - `"stockFootage"` (both current channels): the script step also
     produces a `scenes` array of short search phrases, and each shot
     downloads a real matching clip from **Pexels'** free stock-video API
@@ -85,6 +89,11 @@ no approval wait) and add it as a repo secret named `PEXELS_API_KEY`
 key is missing or a search comes up empty, that shot falls back to the
 gradient rather than failing the run.
 
+For AI-generated visuals, set `visualStyle` to `"aiGenerated"` and provide
+`GEMINI_API_KEY`. The default image model is `imagen-4.0-generate-001`;
+override it with the `GEMINI_IMAGE_MODEL` Actions variable if another Imagen
+model is enabled for the Google project.
+
 ### 3. Google Cloud + YouTube API access (per channel)
 1. Create a Google Cloud project → enable **YouTube Data API v3**.
 2. Create OAuth 2.0 credentials → Application type **Desktop app**.
@@ -103,8 +112,9 @@ you'd need to request a quota increase.
 
 ### 4. Configure your channels
 Edit `config/channels.json` — names, niche, default `format` (`short` or
-`long` - see below), `visualStyle` (`gradient`, `stockFootage`, or
-`cartoonAnimation`), `madeForKids`, brand colors, YouTube category ID.
+`long` - see below), `visualStyle` (`gradient`, `stockFootage`,
+`aiGenerated`, or `cartoonAnimation`), `madeForKids`, brand colors, YouTube
+category ID.
 Two optional fields that only matter for evergreen (non-trending) content:
 - `topicPool` — a curated list of topics to draw from instead of daily
   trending searches (e.g. classic fables, nursery rhymes). Omit this to
