@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-13T10:51:05.664Z",
+  "fetchedAt": "2026-09-14T11:19:34.692Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T22:44:03.351Z",
       "sourcePoolItem": null,
-      "viewCount": 557,
+      "viewCount": 558,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -997,7 +997,7 @@
       "format": "long",
       "publishedAt": "2026-08-17T17:46:42.152Z",
       "sourcePoolItem": "The Forest Where Every Tree Grows Sideways",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1137,
+      "viewCount": 1138,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 182,
+      "viewCount": 184,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1287,7 +1287,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T01:08:36.459Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 349,
+      "viewCount": 350,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1028,
+      "viewCount": 1029,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1116,
+      "viewCount": 1117,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1467,7 +1467,7 @@
       "format": "short",
       "publishedAt": "2026-09-10T17:33:19.334Z",
       "sourcePoolItem": null,
-      "viewCount": 1144,
+      "viewCount": 1156,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1487,7 +1487,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 935,
+      "viewCount": 972,
       "likeCount": 15,
       "commentCount": 0
     },
@@ -1497,7 +1497,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1507,7 +1507,17 @@
       "format": "short",
       "publishedAt": "2026-09-12T23:47:34.354Z",
       "sourcePoolItem": null,
-      "viewCount": 75,
+      "viewCount": 94,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/2Uz45U4ERYM",
+      "title": "How Noise-Canceling Headphones Create Anti-Sound to Erase Audio",
+      "format": "short",
+      "publishedAt": "2026-09-13T17:19:16.782Z",
+      "sourcePoolItem": null,
+      "viewCount": 41,
       "likeCount": 0,
       "commentCount": 0
     }

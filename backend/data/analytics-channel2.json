@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-13T10:51:06.121Z",
+  "fetchedAt": "2026-09-14T11:19:35.007Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z",
       "sourcePoolItem": null,
-      "viewCount": 8,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 15,
+      "viewCount": 18,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 2,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 48,
+      "viewCount": 49,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -807,7 +807,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:07:54.893Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star",
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -907,6 +907,16 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:02:10.365Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/EvI0DtS7DWY",
+      "title": "Baa Baa Black Sheep: Count 3 Bags of Red, Blue & Yellow Wool!",
+      "format": "short",
+      "publishedAt": "2026-09-13T16:52:17.529Z",
+      "sourcePoolItem": "Baa Baa Black Sheep",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
