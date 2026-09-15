@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T11:19:34.692Z",
+  "fetchedAt": "2026-09-15T10:44:16.803Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -207,7 +207,7 @@
       "format": null,
       "publishedAt": "2026-07-09T06:12:27.406Z",
       "sourcePoolItem": null,
-      "viewCount": 758,
+      "viewCount": 759,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1157,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T22:31:23.376Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 133,
+      "viewCount": 134,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1297,7 +1297,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 970,
+      "viewCount": 971,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1042,
+      "viewCount": 1038,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1467,7 +1467,7 @@
       "format": "short",
       "publishedAt": "2026-09-10T17:33:19.334Z",
       "sourcePoolItem": null,
-      "viewCount": 1156,
+      "viewCount": 1154,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1487,8 +1487,8 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 972,
-      "likeCount": 15,
+      "viewCount": 995,
+      "likeCount": 16,
       "commentCount": 0
     },
     {
@@ -1497,8 +1497,8 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
-      "likeCount": 0,
+      "viewCount": 50,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1507,7 +1507,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T23:47:34.354Z",
       "sourcePoolItem": null,
-      "viewCount": 94,
+      "viewCount": 95,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1518,6 +1518,46 @@
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
       "viewCount": 41,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/hx1lv0OgqJQ",
+      "title": "Fiji's Best Hidden Beaches for 2026 Travelers",
+      "format": "short",
+      "publishedAt": "2026-09-14T13:32:44.035Z",
+      "sourcePoolItem": null,
+      "viewCount": 12,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/yN-vJgr1uV0",
+      "title": "How 1 Oxycodone Pill Hijacks Your Brain's Pain Receptors",
+      "format": "short",
+      "publishedAt": "2026-09-14T13:40:30.426Z",
+      "sourcePoolItem": null,
+      "viewCount": 7,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/u2FiSvg3oG8",
+      "title": "Why NBA Courts Use Special Rubber Cushions to Absorb Impact",
+      "format": "short",
+      "publishedAt": "2026-09-14T19:06:10.026Z",
+      "sourcePoolItem": null,
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/At4nruhjX28",
+      "title": "Why Baseballs Fly 10% Farther at Denver's Coors Field",
+      "format": "short",
+      "publishedAt": "2026-09-15T00:21:34.654Z",
+      "sourcePoolItem": null,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     }

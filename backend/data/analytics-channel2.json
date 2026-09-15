@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-14T11:19:35.007Z",
+  "fetchedAt": "2026-09-15T10:44:17.210Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -507,7 +507,7 @@
       "format": "short",
       "publishedAt": "2026-08-07T14:14:55.804Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -517,7 +517,7 @@
       "format": "short",
       "publishedAt": "2026-08-08T13:46:22.499Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -677,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T13:33:53.344Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 15,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 49,
+      "viewCount": 47,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -807,7 +807,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:07:54.893Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star",
-      "viewCount": 10,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -827,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T16:58:36.429Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 5,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -917,6 +917,16 @@
       "format": "short",
       "publishedAt": "2026-09-13T16:52:17.529Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/aH8EQYNy73A",
+      "title": "Learn Cow, Duck & Pig Sounds with Farm Animal Guessing Game",
+      "format": "short",
+      "publishedAt": "2026-09-14T18:28:29.737Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
