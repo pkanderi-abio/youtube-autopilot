@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-15T10:44:16.803Z",
+  "fetchedAt": "2026-09-16T10:32:48.025Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -697,7 +697,7 @@
       "format": "long",
       "publishedAt": "2026-07-31T18:37:01.258Z",
       "sourcePoolItem": null,
-      "viewCount": 23,
+      "viewCount": 24,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T15:02:08.339Z",
       "sourcePoolItem": null,
-      "viewCount": 110,
+      "viewCount": 111,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 225,
+      "viewCount": 227,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 101,
+      "viewCount": 103,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 283,
+      "viewCount": 284,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1287,7 +1287,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T01:08:36.459Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 350,
+      "viewCount": 351,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1327,7 +1327,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T19:58:46.799Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1447,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 108,
+      "viewCount": 109,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1487,7 +1487,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 995,
+      "viewCount": 984,
       "likeCount": 16,
       "commentCount": 0
     },
@@ -1497,7 +1497,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 50,
+      "viewCount": 51,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1507,7 +1507,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T23:47:34.354Z",
       "sourcePoolItem": null,
-      "viewCount": 95,
+      "viewCount": 96,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1517,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 41,
+      "viewCount": 42,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1527,7 +1527,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:32:44.035Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1537,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:40:30.426Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1547,7 +1547,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T19:06:10.026Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1557,7 +1557,17 @@
       "format": "short",
       "publishedAt": "2026-09-15T00:21:34.654Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
+      "viewCount": 11,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/bb11_3cs-HY",
+      "title": "Why Pasadena's 1922 Rose Bowl Was Dug 40 Feet Underground",
+      "format": "short",
+      "publishedAt": "2026-09-16T00:01:44.104Z",
+      "sourcePoolItem": null,
+      "viewCount": 24,
       "likeCount": 0,
       "commentCount": 0
     }
