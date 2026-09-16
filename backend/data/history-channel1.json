@@ -128,7 +128,8 @@
     "How Oxycodone Hacks Your Brain's Pain Receptors",
     "Why NBA Courts Are Built Above Empty Space",
     "Why Baseballs Fly 10% Farther in Denver: The Physics of Coors Field",
-    "Why The Rose Bowl Was Built Below Ground Level"
+    "Why The Rose Bowl Was Built Below Ground Level",
+    "How Helicopters Land Safely After Total Engine Failure"
   ],
   "videos": [
     {
@@ -1097,6 +1098,12 @@
       "url": "https://youtu.be/bb11_3cs-HY",
       "format": "short",
       "publishedAt": "2026-09-16T00:01:44.104Z"
+    },
+    {
+      "title": "Why a Helicopter Doesn't Crash When Its Engine Dies at 3,000 Feet",
+      "url": "https://youtu.be/QuZuv4J0-F4",
+      "format": "short",
+      "publishedAt": "2026-09-16T18:03:18.442Z"
     }
   ]
 }
