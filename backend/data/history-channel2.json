@@ -93,7 +93,8 @@
     "Old MacDonald Had a Colorful Farm! Animal Sounds, Colors & Counting Sing-Along for Toddlers",
     "Baa Baa Black Sheep & Color Wool Counting Song for Toddlers",
     "Sing & Say Animal Sounds with Cute Farm Friends! Interactive Toddler Sing-Along & Sound Guessing Game",
-    "Five Little Monkeys Jumping on the Bed! Count 5 to 1 with Cute Animal Friends | Nursery Rhymes for Toddlers"
+    "Five Little Monkeys Jumping on the Bed! Count 5 to 1 with Cute Animal Friends | Nursery Rhymes for Toddlers",
+    "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me"
   ],
   "videos": [
     {
@@ -678,6 +679,13 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed"
+    },
+    {
+      "title": "Sing the ABC Song with Wooden Alphabet Blocks and Animal Sounds",
+      "url": "https://youtu.be/zZ1hbQ28GhA",
+      "format": "short",
+      "publishedAt": "2026-09-16T17:35:34.348Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends"
     }
   ]
 }
