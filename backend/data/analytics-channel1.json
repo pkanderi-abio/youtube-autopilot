@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-16T10:32:48.025Z",
+  "fetchedAt": "2026-09-17T10:43:20.600Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 147,
+      "viewCount": 152,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 284,
+      "viewCount": 283,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1217,7 +1217,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:29:38.698Z",
       "sourcePoolItem": "5 Countries You Can Visit Without a Passport Stamp",
-      "viewCount": 77,
+      "viewCount": 78,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1247,7 +1247,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T18:03:03.666Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 849,
+      "viewCount": 850,
       "likeCount": 24,
       "commentCount": 1
     },
@@ -1277,7 +1277,7 @@
       "format": "long",
       "publishedAt": "2026-08-31T22:03:14.043Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 17,
+      "viewCount": 19,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1038,
+      "viewCount": 1039,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1527,7 +1527,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:32:44.035Z",
       "sourcePoolItem": null,
-      "viewCount": 15,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1557,7 +1557,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T00:21:34.654Z",
       "sourcePoolItem": null,
-      "viewCount": 11,
+      "viewCount": 13,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1567,7 +1567,27 @@
       "format": "short",
       "publishedAt": "2026-09-16T00:01:44.104Z",
       "sourcePoolItem": null,
-      "viewCount": 24,
+      "viewCount": 40,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/QuZuv4J0-F4",
+      "title": "Why a Helicopter Doesn't Crash When Its Engine Dies at 3,000 Feet",
+      "format": "short",
+      "publishedAt": "2026-09-16T18:03:18.442Z",
+      "sourcePoolItem": null,
+      "viewCount": 843,
+      "likeCount": 29,
+      "commentCount": 2
+    },
+    {
+      "url": "https://youtu.be/BdRxgS-QBeI",
+      "title": "How 1 Chemical Salt Keeps Cheeseburger Cheese From Turning Into Grease",
+      "format": "short",
+      "publishedAt": "2026-09-17T00:09:14.449Z",
+      "sourcePoolItem": null,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     }
