@@ -129,7 +129,8 @@
     "Why NBA Courts Are Built Above Empty Space",
     "Why Baseballs Fly 10% Farther in Denver: The Physics of Coors Field",
     "Why The Rose Bowl Was Built Below Ground Level",
-    "How Helicopters Land Safely After Total Engine Failure"
+    "How Helicopters Land Safely After Total Engine Failure",
+    "The Hidden Chemistry That Keeps Cheeseburger Cheese From Turning Into Grease"
   ],
   "videos": [
     {
@@ -1104,6 +1105,12 @@
       "url": "https://youtu.be/QuZuv4J0-F4",
       "format": "short",
       "publishedAt": "2026-09-16T18:03:18.442Z"
+    },
+    {
+      "title": "How 1 Chemical Salt Keeps Cheeseburger Cheese From Turning Into Grease",
+      "url": "https://youtu.be/BdRxgS-QBeI",
+      "format": "short",
+      "publishedAt": "2026-09-17T00:09:14.449Z"
     }
   ]
 }
