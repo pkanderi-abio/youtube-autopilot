@@ -130,7 +130,8 @@
     "Why Baseballs Fly 10% Farther in Denver: The Physics of Coors Field",
     "Why The Rose Bowl Was Built Below Ground Level",
     "How Helicopters Land Safely After Total Engine Failure",
-    "The Hidden Chemistry That Keeps Cheeseburger Cheese From Turning Into Grease"
+    "The Hidden Chemistry That Keeps Cheeseburger Cheese From Turning Into Grease",
+    "How Brain-Eating Amoebas Pass Through Your Nose Directly Into Your Skull"
   ],
   "videos": [
     {
@@ -1111,6 +1112,12 @@
       "url": "https://youtu.be/BdRxgS-QBeI",
       "format": "short",
       "publishedAt": "2026-09-17T00:09:14.449Z"
+    },
+    {
+      "title": "How 1 Drop of Lake Water Sends Brain-Eating Amoebas Into Your Skull",
+      "url": "https://youtu.be/t3lM9t_Pw70",
+      "format": "short",
+      "publishedAt": "2026-09-17T18:00:11.261Z"
     }
   ]
 }
