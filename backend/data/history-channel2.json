@@ -94,7 +94,8 @@
     "Baa Baa Black Sheep & Color Wool Counting Song for Toddlers",
     "Sing & Say Animal Sounds with Cute Farm Friends! Interactive Toddler Sing-Along & Sound Guessing Game",
     "Five Little Monkeys Jumping on the Bed! Count 5 to 1 with Cute Animal Friends | Nursery Rhymes for Toddlers",
-    "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me"
+    "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me",
+    "Baa Baa Black Sheep, Let's Count the Colors of the Wool"
   ],
   "videos": [
     {
@@ -686,6 +687,13 @@
       "format": "short",
       "publishedAt": "2026-09-16T17:35:34.348Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends"
+    },
+    {
+      "title": "Baa Baa Black Sheep: Count 4 Soft Sweaters for the Little Boy",
+      "url": "https://youtu.be/L9-CI6Yj-Ko",
+      "format": "short",
+      "publishedAt": "2026-09-17T17:30:57.827Z",
+      "sourcePoolItem": "Learning Shapes All Around Us"
     }
   ]
 }
