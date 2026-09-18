@@ -95,7 +95,8 @@
     "Sing & Say Animal Sounds with Cute Farm Friends! Interactive Toddler Sing-Along & Sound Guessing Game",
     "Five Little Monkeys Jumping on the Bed! Count 5 to 1 with Cute Animal Friends | Nursery Rhymes for Toddlers",
     "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me",
-    "Baa Baa Black Sheep, Let's Count the Colors of the Wool"
+    "Baa Baa Black Sheep, Let's Count the Colors of the Wool",
+    "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers"
   ],
   "videos": [
     {
@@ -694,6 +695,13 @@
       "format": "short",
       "publishedAt": "2026-09-17T17:30:57.827Z",
       "sourcePoolItem": "Learning Shapes All Around Us"
+    },
+    {
+      "title": "Sing Rainbow Colors with Me & Count 5 Bright Shades!",
+      "url": "https://youtu.be/XFIW080F14k",
+      "format": "short",
+      "publishedAt": "2026-09-18T17:02:40.527Z",
+      "sourcePoolItem": "The Colors of the Rainbow"
     }
   ]
 }
