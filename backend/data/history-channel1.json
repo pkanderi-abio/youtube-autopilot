@@ -132,7 +132,8 @@
     "How Helicopters Land Safely After Total Engine Failure",
     "The Hidden Chemistry That Keeps Cheeseburger Cheese From Turning Into Grease",
     "How Brain-Eating Amoebas Pass Through Your Nose Directly Into Your Skull",
-    "The Surprising Reason Why Some Smartphones Can Shoot 8K Video"
+    "The Surprising Reason Why Some Smartphones Can Shoot 8K Video",
+    "Why Lottery Balls Are Weighed to the Microgram Before Every Draw"
   ],
   "videos": [
     {
@@ -1125,6 +1126,12 @@
       "url": "https://youtu.be/8WYfBsmqyQg",
       "format": "short",
       "publishedAt": "2026-09-18T17:35:51.824Z"
+    },
+    {
+      "title": "The Science Behind Lottery Ball Weighing to the Microgram",
+      "url": "https://youtu.be/32YzzP5zbCA",
+      "format": "long",
+      "publishedAt": "2026-09-18T19:40:11.954Z"
     }
   ]
 }
