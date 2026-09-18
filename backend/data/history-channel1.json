@@ -131,7 +131,8 @@
     "Why The Rose Bowl Was Built Below Ground Level",
     "How Helicopters Land Safely After Total Engine Failure",
     "The Hidden Chemistry That Keeps Cheeseburger Cheese From Turning Into Grease",
-    "How Brain-Eating Amoebas Pass Through Your Nose Directly Into Your Skull"
+    "How Brain-Eating Amoebas Pass Through Your Nose Directly Into Your Skull",
+    "The Surprising Reason Why Some Smartphones Can Shoot 8K Video"
   ],
   "videos": [
     {
@@ -1118,6 +1119,12 @@
       "url": "https://youtu.be/t3lM9t_Pw70",
       "format": "short",
       "publishedAt": "2026-09-17T18:00:11.261Z"
+    },
+    {
+      "title": "8K Smartphone Cameras: Fiji's Multi-Camera Arrays Technology",
+      "url": "https://youtu.be/8WYfBsmqyQg",
+      "format": "short",
+      "publishedAt": "2026-09-18T17:35:51.824Z"
     }
   ]
 }
