@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-17T10:43:20.600Z",
+  "fetchedAt": "2026-09-18T10:18:09.881Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 110,
+      "viewCount": 112,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 64,
+      "viewCount": 65,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 152,
+      "viewCount": 153,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1197,7 +1197,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 184,
+      "viewCount": 186,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1497,7 +1497,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 51,
+      "viewCount": 52,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1537,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:40:30.426Z",
       "sourcePoolItem": null,
-      "viewCount": 8,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1567,8 +1567,8 @@
       "format": "short",
       "publishedAt": "2026-09-16T00:01:44.104Z",
       "sourcePoolItem": null,
-      "viewCount": 40,
-      "likeCount": 0,
+      "viewCount": 67,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1577,7 +1577,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T18:03:18.442Z",
       "sourcePoolItem": null,
-      "viewCount": 843,
+      "viewCount": 1028,
       "likeCount": 29,
       "commentCount": 2
     },
@@ -1587,7 +1587,17 @@
       "format": "short",
       "publishedAt": "2026-09-17T00:09:14.449Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
+      "viewCount": 87,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/t3lM9t_Pw70",
+      "title": "How 1 Drop of Lake Water Sends Brain-Eating Amoebas Into Your Skull",
+      "format": "short",
+      "publishedAt": "2026-09-17T18:00:11.261Z",
+      "sourcePoolItem": null,
+      "viewCount": 37,
       "likeCount": 0,
       "commentCount": 0
     }
