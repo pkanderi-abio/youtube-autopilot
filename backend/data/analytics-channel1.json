@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-20T10:20:35.919Z",
+  "fetchedAt": "2026-09-21T11:32:58.844Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 115,
+      "viewCount": 114,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -778,7 +778,7 @@
       "publishedAt": "2026-08-04T23:07:30.168Z",
       "sourcePoolItem": null,
       "viewCount": 666,
-      "likeCount": 6,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -818,7 +818,7 @@
       "publishedAt": "2026-08-07T01:36:11.657Z",
       "sourcePoolItem": null,
       "viewCount": 641,
-      "likeCount": 9,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 65,
+      "viewCount": 64,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -968,7 +968,7 @@
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
       "viewCount": 227,
-      "likeCount": 3,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 153,
+      "viewCount": 154,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1147,7 +1147,7 @@
       "format": "long",
       "publishedAt": "2026-08-24T17:48:16.596Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 2,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1237,7 +1237,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1123,
+      "viewCount": 1125,
       "likeCount": 32,
       "commentCount": 0
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1118,
+      "viewCount": 1119,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1567,7 +1567,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T00:01:44.104Z",
       "sourcePoolItem": null,
-      "viewCount": 57,
+      "viewCount": 56,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1577,7 +1577,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T18:03:18.442Z",
       "sourcePoolItem": null,
-      "viewCount": 980,
+      "viewCount": 982,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1587,7 +1587,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T00:09:14.449Z",
       "sourcePoolItem": null,
-      "viewCount": 161,
+      "viewCount": 152,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1597,7 +1597,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T18:00:11.261Z",
       "sourcePoolItem": null,
-      "viewCount": 120,
+      "viewCount": 113,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1607,7 +1607,7 @@
       "format": "short",
       "publishedAt": "2026-09-18T17:35:51.824Z",
       "sourcePoolItem": null,
-      "viewCount": 29,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1627,7 +1627,7 @@
       "format": "short",
       "publishedAt": "2026-09-19T17:05:54.949Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1637,7 +1637,27 @@
       "format": "short",
       "publishedAt": "2026-09-19T23:59:12.029Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
+      "viewCount": 28,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/TXSE3qG3CQk",
+      "title": "1307: The Year Ravens Were Used to Signal Victory",
+      "format": "short",
+      "publishedAt": "2026-09-20T17:23:37.276Z",
+      "sourcePoolItem": null,
+      "viewCount": 13,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/YDrq-yuSnM8",
+      "title": "Seattle's Stadium Seismic Trigger",
+      "format": "short",
+      "publishedAt": "2026-09-20T23:54:41.318Z",
+      "sourcePoolItem": null,
+      "viewCount": 21,
       "likeCount": 0,
       "commentCount": 0
     }
