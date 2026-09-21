@@ -96,7 +96,8 @@
     "Five Little Monkeys Jumping on the Bed! Count 5 to 1 with Cute Animal Friends | Nursery Rhymes for Toddlers",
     "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me",
     "Baa Baa Black Sheep, Let's Count the Colors of the Wool",
-    "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers"
+    "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers",
+    "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -702,6 +703,13 @@
       "format": "short",
       "publishedAt": "2026-09-18T17:02:40.527Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Sing Old MacDonald & Hear 4 Oinking Pigs at the Big Red Barn!",
+      "url": "https://youtu.be/_bVwFODomkA",
+      "format": "short",
+      "publishedAt": "2026-09-21T18:38:07.060Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
