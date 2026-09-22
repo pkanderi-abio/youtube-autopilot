@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-21T11:32:58.844Z",
+  "fetchedAt": "2026-09-22T10:39:15.130Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 114,
+      "viewCount": 115,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-08-22T14:26:16.866Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 179,
+      "viewCount": 181,
       "likeCount": 7,
       "commentCount": 1
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 154,
+      "viewCount": 156,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1147,7 +1147,7 @@
       "format": "long",
       "publishedAt": "2026-08-24T17:48:16.596Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 5,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1207,7 +1207,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 284,
+      "viewCount": 285,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 186,
+      "viewCount": 187,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1517,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 42,
+      "viewCount": 61,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1577,7 +1577,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T18:03:18.442Z",
       "sourcePoolItem": null,
-      "viewCount": 982,
+      "viewCount": 984,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1617,7 +1617,7 @@
       "format": "long",
       "publishedAt": "2026-09-18T19:40:11.954Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1627,7 +1627,7 @@
       "format": "short",
       "publishedAt": "2026-09-19T17:05:54.949Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
+      "viewCount": 11,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1637,7 +1637,7 @@
       "format": "short",
       "publishedAt": "2026-09-19T23:59:12.029Z",
       "sourcePoolItem": null,
-      "viewCount": 28,
+      "viewCount": 31,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1647,7 +1647,7 @@
       "format": "short",
       "publishedAt": "2026-09-20T17:23:37.276Z",
       "sourcePoolItem": null,
-      "viewCount": 13,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1657,7 +1657,27 @@
       "format": "short",
       "publishedAt": "2026-09-20T23:54:41.318Z",
       "sourcePoolItem": null,
-      "viewCount": 21,
+      "viewCount": 35,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/u7LG5J4fZGs",
+      "title": "El Niño's Slow Dance with Earth's Rotation",
+      "format": "short",
+      "publishedAt": "2026-09-21T19:11:06.146Z",
+      "sourcePoolItem": null,
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/QZ_QhJ0EyY0",
+      "title": "How Rotational Torque Tears Syndesmotic Ligaments in Myles Garrett's Ankle",
+      "format": "short",
+      "publishedAt": "2026-09-22T00:39:50.954Z",
+      "sourcePoolItem": null,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     }
