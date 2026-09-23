@@ -97,7 +97,8 @@
     "The Alphabet Song with Cute Animal Friends! Sing ABCs & Learn Animal Sounds with Me",
     "Baa Baa Black Sheep, Let's Count the Colors of the Wool",
     "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers",
-    "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers"
+    "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers",
+    "If You're Happy and You Know It, Let's Count with Colors"
   ],
   "videos": [
     {
@@ -710,6 +711,13 @@
       "format": "short",
       "publishedAt": "2026-09-21T18:38:07.060Z",
       "sourcePoolItem": "Old MacDonald Had a Farm"
+    },
+    {
+      "title": "Count 10 Rainbow Farm Animals with Colors Together!",
+      "url": "https://youtu.be/RkfjwFVSAKU",
+      "format": "short",
+      "publishedAt": "2026-09-23T17:49:37.693Z",
+      "sourcePoolItem": "If You're Happy and You Know It"
     }
   ]
 }
