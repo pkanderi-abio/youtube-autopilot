@@ -140,7 +140,8 @@
     "The Hidden Engineering That Makes Seattle's Stadium Cause Real Earthquakes",
     "How El Niño Is Actually Slowing Down Earth's Rotation",
     "What Actually Happens Inside Your Body During a High Ankle Sprain",
-    "The Science Behind the Lottery Ticket Scramble"
+    "The Science Behind the Lottery Ticket Scramble",
+    "The History of Postal Workers' Deadly Jobs"
   ],
   "videos": [
     {
@@ -1181,6 +1182,12 @@
       "url": "https://youtu.be/kYFlSp4Dvh8",
       "format": "short",
       "publishedAt": "2026-09-22T18:03:19.437Z"
+    },
+    {
+      "title": "Postal Bombers: 1 killed, 9 injured, in 2022 US package bombing spree",
+      "url": "https://youtu.be/opuMN4cmkF8",
+      "format": "short",
+      "publishedAt": "2026-09-23T00:07:05.284Z"
     }
   ]
 }
