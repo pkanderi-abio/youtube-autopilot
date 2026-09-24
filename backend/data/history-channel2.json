@@ -98,7 +98,8 @@
     "Baa Baa Black Sheep, Let's Count the Colors of the Wool",
     "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers",
     "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers",
-    "If You're Happy and You Know It, Let's Count with Colors"
+    "If You're Happy and You Know It, Let's Count with Colors",
+    "Let's Sing and Count the Colors of the Rainbow with Friends!"
   ],
   "videos": [
     {
@@ -718,6 +719,13 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It"
+    },
+    {
+      "title": "Counting the Colors of the Rainbow with Old MacDonald's Duck!",
+      "url": "https://youtu.be/1LS7wj4Q4Cc",
+      "format": "short",
+      "publishedAt": "2026-09-24T17:53:09.951Z",
+      "sourcePoolItem": "Ring Around the Rosie"
     }
   ]
 }
