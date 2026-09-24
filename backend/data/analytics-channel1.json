@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-23T10:31:23.808Z",
+  "fetchedAt": "2026-09-24T10:49:07.706Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 117,
+      "viewCount": 120,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 717,
+      "viewCount": 718,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1372,
+      "viewCount": 1373,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1197,7 +1197,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1043,
+      "viewCount": 1044,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1119,
+      "viewCount": 1121,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1039,
+      "viewCount": 1040,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1517,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 61,
+      "viewCount": 62,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1677,7 +1677,7 @@
       "format": "short",
       "publishedAt": "2026-09-22T00:39:50.954Z",
       "sourcePoolItem": null,
-      "viewCount": 43,
+      "viewCount": 45,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1698,6 +1698,26 @@
       "publishedAt": "2026-09-23T00:07:05.284Z",
       "sourcePoolItem": null,
       "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/bf8GDlrDo2w",
+      "title": "1973: The Year Baseball Changed Forever",
+      "format": "short",
+      "publishedAt": "2026-09-23T18:21:24.430Z",
+      "sourcePoolItem": null,
+      "viewCount": 446,
+      "likeCount": 6,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/IfparZmiF54",
+      "title": "Meta's 120-Degree Smart Glasses Project Light into Your Eye",
+      "format": "short",
+      "publishedAt": "2026-09-24T00:18:46.303Z",
+      "sourcePoolItem": null,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     }
