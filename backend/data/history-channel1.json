@@ -142,7 +142,8 @@
     "What Actually Happens Inside Your Body During a High Ankle Sprain",
     "The Science Behind the Lottery Ticket Scramble",
     "The History of Postal Workers' Deadly Jobs",
-    "The 'Did You Know' Effect: How a Single Sports Injury Changed Baseball"
+    "The 'Did You Know' Effect: How a Single Sports Injury Changed Baseball",
+    "How Meta's Smart Glasses Project Light Directly Into Your Eye"
   ],
   "videos": [
     {
@@ -1195,6 +1196,12 @@
       "url": "https://youtu.be/bf8GDlrDo2w",
       "format": "short",
       "publishedAt": "2026-09-23T18:21:24.430Z"
+    },
+    {
+      "title": "Meta's 120-Degree Smart Glasses Project Light into Your Eye",
+      "url": "https://youtu.be/IfparZmiF54",
+      "format": "short",
+      "publishedAt": "2026-09-24T00:18:46.303Z"
     }
   ]
 }
