@@ -99,7 +99,8 @@
     "Sing-Along Colors of the Rainbow! Bright Color Song & Interactive Movement for Toddlers",
     "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers",
     "If You're Happy and You Know It, Let's Count with Colors",
-    "Let's Sing and Count the Colors of the Rainbow with Friends!"
+    "Let's Sing and Count the Colors of the Rainbow with Friends!",
+    "Counting Farm Animals in a Rainbow of Colors"
   ],
   "videos": [
     {
@@ -726,6 +727,13 @@
       "format": "short",
       "publishedAt": "2026-09-24T17:53:09.951Z",
       "sourcePoolItem": "Ring Around the Rosie"
+    },
+    {
+      "title": "Old MacDonald's Rainbow Farm Counting Fun with 5 Colorful Ducks",
+      "url": "https://youtu.be/wvt-TLWh4dw",
+      "format": "short",
+      "publishedAt": "2026-09-25T17:53:42.572Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
