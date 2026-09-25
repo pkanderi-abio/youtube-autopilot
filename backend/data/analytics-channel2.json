@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-24T10:49:08.182Z",
+  "fetchedAt": "2026-09-25T10:52:50.375Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T15:22:22.583Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
+      "viewCount": 12,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 75,
+      "viewCount": 85,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -677,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T13:33:53.344Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 19,
+      "viewCount": 20,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -727,7 +727,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T15:11:07.259Z",
       "sourcePoolItem": "Mary Had a Little Lamb",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 29,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -747,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:01:00.438Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 80,
+      "viewCount": 81,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -757,7 +757,7 @@
       "format": "long",
       "publishedAt": "2026-08-29T18:00:02.957Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -807,7 +807,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:07:54.893Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star",
-      "viewCount": 39,
+      "viewCount": 45,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -817,7 +817,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T18:06:39.514Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 25,
+      "viewCount": 26,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -827,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T16:58:36.429Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 78,
+      "viewCount": 81,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -857,7 +857,7 @@
       "format": "long",
       "publishedAt": "2026-09-05T16:47:32.162Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -877,7 +877,7 @@
       "format": "long",
       "publishedAt": "2026-09-06T17:05:12.533Z",
       "sourcePoolItem": "The Wheels on the Bus",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-09-10T16:56:19.325Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 44,
+      "viewCount": 50,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -897,7 +897,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:01:34.055Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 40,
+      "viewCount": 45,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -917,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T16:52:17.529Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 30,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T18:28:29.737Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 5,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T17:35:34.348Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 36,
+      "viewCount": 45,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T17:30:57.827Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 9,
+      "viewCount": 11,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-09-18T17:02:40.527Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 3,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "short",
       "publishedAt": "2026-09-21T18:38:07.060Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 2,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -987,6 +987,16 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 355,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/1LS7wj4Q4Cc",
+      "title": "Counting the Colors of the Rainbow with Old MacDonald's Duck!",
+      "format": "short",
+      "publishedAt": "2026-09-24T17:53:09.951Z",
+      "sourcePoolItem": "Ring Around the Rosie",
       "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
