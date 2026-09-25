@@ -145,7 +145,8 @@
     "The 'Did You Know' Effect: How a Single Sports Injury Changed Baseball",
     "How Meta's Smart Glasses Project Light Directly Into Your Eye",
     "The Rise of Online Courses: How MOOCs Are Revolutionizing Education",
-    "Why It's Physically Almost Impossible to Strike Out Luis Arraez"
+    "Why It's Physically Almost Impossible to Strike Out Luis Arraez",
+    "The Secret Reason Behind the Rise of Gaming"
   ],
   "videos": [
     {
@@ -1216,6 +1217,12 @@
       "url": "https://youtu.be/2cjg258AshY",
       "format": "short",
       "publishedAt": "2026-09-25T00:25:27.038Z"
+    },
+    {
+      "title": "How Virtual Reality Built a $190 Billion Gaming Industry",
+      "url": "https://youtu.be/gRkHMbUwZwM",
+      "format": "short",
+      "publishedAt": "2026-09-25T18:24:14.661Z"
     }
   ]
 }
