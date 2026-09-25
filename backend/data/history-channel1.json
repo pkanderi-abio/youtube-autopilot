@@ -144,7 +144,8 @@
     "The History of Postal Workers' Deadly Jobs",
     "The 'Did You Know' Effect: How a Single Sports Injury Changed Baseball",
     "How Meta's Smart Glasses Project Light Directly Into Your Eye",
-    "The Rise of Online Courses: How MOOCs Are Revolutionizing Education"
+    "The Rise of Online Courses: How MOOCs Are Revolutionizing Education",
+    "Why It's Physically Almost Impossible to Strike Out Luis Arraez"
   ],
   "videos": [
     {
@@ -1209,6 +1210,12 @@
       "url": "https://youtu.be/ywcYu9Ap6M4",
       "format": "short",
       "publishedAt": "2026-09-24T18:20:43.619Z"
+    },
+    {
+      "title": "Luis Arraez's Secret to Hitting 100 mph Fastballs",
+      "url": "https://youtu.be/2cjg258AshY",
+      "format": "short",
+      "publishedAt": "2026-09-25T00:25:27.038Z"
     }
   ]
 }
