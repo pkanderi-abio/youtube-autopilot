@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-25T10:52:50.054Z",
+  "fetchedAt": "2026-09-26T10:34:06.414Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -307,7 +307,7 @@
       "format": "long",
       "publishedAt": "2026-07-13T11:08:47.503Z",
       "sourcePoolItem": null,
-      "viewCount": 122,
+      "viewCount": 123,
       "likeCount": 0,
       "commentCount": 1
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 107,
+      "viewCount": 108,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -1537,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:40:30.426Z",
       "sourcePoolItem": null,
-      "viewCount": 10,
+      "viewCount": 11,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1667,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-09-21T19:11:06.146Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1707,7 +1707,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T18:21:24.430Z",
       "sourcePoolItem": null,
-      "viewCount": 948,
+      "viewCount": 979,
       "likeCount": 10,
       "commentCount": 1
     },
@@ -1727,7 +1727,7 @@
       "format": "short",
       "publishedAt": "2026-09-24T18:20:43.619Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1737,7 +1737,27 @@
       "format": "short",
       "publishedAt": "2026-09-25T00:25:27.038Z",
       "sourcePoolItem": null,
-      "viewCount": 46,
+      "viewCount": 165,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/gRkHMbUwZwM",
+      "title": "How Virtual Reality Built a $190 Billion Gaming Industry",
+      "format": "short",
+      "publishedAt": "2026-09-25T18:24:14.661Z",
+      "sourcePoolItem": null,
+      "viewCount": 50,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/gw7g8_Jf-H4",
+      "title": "How Hackers Breached 1.4 Million Pentagon Records via Defense Contractors",
+      "format": "short",
+      "publishedAt": "2026-09-26T00:29:12.611Z",
+      "sourcePoolItem": null,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
