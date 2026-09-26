@@ -146,7 +146,8 @@
     "How Meta's Smart Glasses Project Light Directly Into Your Eye",
     "The Rise of Online Courses: How MOOCs Are Revolutionizing Education",
     "Why It's Physically Almost Impossible to Strike Out Luis Arraez",
-    "The Secret Reason Behind the Rise of Gaming"
+    "The Secret Reason Behind the Rise of Gaming",
+    "How Hackers Infiltrate Pentagon Military Data"
   ],
   "videos": [
     {
@@ -1223,6 +1224,12 @@
       "url": "https://youtu.be/gRkHMbUwZwM",
       "format": "short",
       "publishedAt": "2026-09-25T18:24:14.661Z"
+    },
+    {
+      "title": "How Hackers Breached 1.4 Million Pentagon Records via Defense Contractors",
+      "url": "https://youtu.be/gw7g8_Jf-H4",
+      "format": "short",
+      "publishedAt": "2026-09-26T00:29:12.611Z"
     }
   ]
 }
