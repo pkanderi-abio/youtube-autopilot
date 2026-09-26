@@ -100,7 +100,8 @@
     "Old MacDonald Had a Farm: Interactive Animal Sounds and Counting Sing-Along for Toddlers",
     "If You're Happy and You Know It, Let's Count with Colors",
     "Let's Sing and Count the Colors of the Rainbow with Friends!",
-    "Counting Farm Animals in a Rainbow of Colors"
+    "Counting Farm Animals in a Rainbow of Colors",
+    "Sing Along with Friendly Farm Animals! Interactive Animal Sounds & Bright Colors for Toddlers"
   ],
   "videos": [
     {
@@ -734,6 +735,13 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Sing Along with Old MacDonald at the Big Red Farm, Counting 5 Friendly Farm Friends!",
+      "url": "https://youtu.be/YMRogyJfj4k",
+      "format": "short",
+      "publishedAt": "2026-09-26T17:01:11.876Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers"
     }
   ]
 }
