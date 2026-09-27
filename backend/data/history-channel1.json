@@ -147,7 +147,8 @@
     "The Rise of Online Courses: How MOOCs Are Revolutionizing Education",
     "Why It's Physically Almost Impossible to Strike Out Luis Arraez",
     "The Secret Reason Behind the Rise of Gaming",
-    "How Hackers Infiltrate Pentagon Military Data"
+    "How Hackers Infiltrate Pentagon Military Data",
+    "Why the Moon Looks Gigantic Near the Horizon Tonight"
   ],
   "videos": [
     {
@@ -1230,6 +1231,12 @@
       "url": "https://youtu.be/gw7g8_Jf-H4",
       "format": "short",
       "publishedAt": "2026-09-26T00:29:12.611Z"
+    },
+    {
+      "title": "Moon Illusion Explained: Why the Moon Looks Gigantic Near the Horizon Tonight",
+      "url": "https://youtu.be/DqSnH-K8FRI",
+      "format": "short",
+      "publishedAt": "2026-09-27T00:19:25.807Z"
     }
   ]
 }
