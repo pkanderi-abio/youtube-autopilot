@@ -101,7 +101,8 @@
     "If You're Happy and You Know It, Let's Count with Colors",
     "Let's Sing and Count the Colors of the Rainbow with Friends!",
     "Counting Farm Animals in a Rainbow of Colors",
-    "Sing Along with Friendly Farm Animals! Interactive Animal Sounds & Bright Colors for Toddlers"
+    "Sing Along with Friendly Farm Animals! Interactive Animal Sounds & Bright Colors for Toddlers",
+    "Five Little Ducks Sing-Along: Learn Counting 1 to 5 with Bright Colors and Animal Sounds!"
   ],
   "videos": [
     {
@@ -742,6 +743,13 @@
       "format": "short",
       "publishedAt": "2026-09-26T17:01:11.876Z",
       "sourcePoolItem": "Animal Sounds for Toddlers"
+    },
+    {
+      "title": "Fiji's Best Beaches for 1 Little Duck",
+      "url": "https://youtu.be/JyQIr5bA6-w",
+      "format": "short",
+      "publishedAt": "2026-09-28T20:07:00.317Z",
+      "sourcePoolItem": "Five Little Ducks"
     }
   ]
 }
