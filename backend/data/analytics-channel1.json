@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-27T11:05:32.498Z",
+  "fetchedAt": "2026-09-28T12:27:40.707Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 151,
+      "viewCount": 153,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -467,7 +467,7 @@
       "format": "short",
       "publishedAt": "2026-07-22T05:22:07.773Z",
       "sourcePoolItem": null,
-      "viewCount": 546,
+      "viewCount": 547,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 229,
+      "viewCount": 230,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1237,7 +1237,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1126,
+      "viewCount": 1127,
       "likeCount": 32,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 187,
+      "viewCount": 189,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1030,
+      "viewCount": 1031,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1121,
+      "viewCount": 1122,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1447,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 109,
+      "viewCount": 111,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1647,7 +1647,7 @@
       "format": "short",
       "publishedAt": "2026-09-20T17:23:37.276Z",
       "sourcePoolItem": null,
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1707,7 +1707,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T18:21:24.430Z",
       "sourcePoolItem": null,
-      "viewCount": 984,
+      "viewCount": 986,
       "likeCount": 10,
       "commentCount": 1
     },
@@ -1737,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T00:25:27.038Z",
       "sourcePoolItem": null,
-      "viewCount": 314,
+      "viewCount": 315,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1747,7 +1747,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T18:24:14.661Z",
       "sourcePoolItem": null,
-      "viewCount": 58,
+      "viewCount": 60,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1757,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T00:29:12.611Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1767,8 +1767,28 @@
       "format": "short",
       "publishedAt": "2026-09-27T00:19:25.807Z",
       "sourcePoolItem": null,
-      "viewCount": 77,
-      "likeCount": 1,
+      "viewCount": 234,
+      "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/czvvPHrumgc",
+      "title": "Ancient Greece's Phalanx Tactics Were the Early Days of Team-Based Esports",
+      "format": "short",
+      "publishedAt": "2026-09-27T18:06:58.742Z",
+      "sourcePoolItem": null,
+      "viewCount": 11,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/puwqulMJ5ss",
+      "title": "Bats Tied to Aztec God of War Pollinate Tequila",
+      "format": "short",
+      "publishedAt": "2026-09-28T00:20:53.525Z",
+      "sourcePoolItem": null,
+      "viewCount": 37,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
