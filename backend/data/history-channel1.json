@@ -151,7 +151,8 @@
     "Why the Moon Looks Gigantic Near the Horizon Tonight",
     "The Rise of Esports and the Surprising Connection to Ancient Greece",
     "The Dark History of Tequila's Spirit Animal",
-    "The Curious Case of Rockstar Games' GTA VI Delay"
+    "The Curious Case of Rockstar Games' GTA VI Delay",
+    "The Science Behind Infant Developmental Milestones"
   ],
   "videos": [
     {
@@ -1258,6 +1259,12 @@
       "url": "https://youtu.be/r2EGI8PuQdI",
       "format": "short",
       "publishedAt": "2026-09-29T01:33:03.728Z"
+    },
+    {
+      "title": "one million new neural connections per second",
+      "url": "https://youtu.be/aUESBdCgOm0",
+      "format": "short",
+      "publishedAt": "2026-09-29T19:12:54.516Z"
     }
   ]
 }
