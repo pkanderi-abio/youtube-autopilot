@@ -150,7 +150,8 @@
     "How Hackers Infiltrate Pentagon Military Data",
     "Why the Moon Looks Gigantic Near the Horizon Tonight",
     "The Rise of Esports and the Surprising Connection to Ancient Greece",
-    "The Dark History of Tequila's Spirit Animal"
+    "The Dark History of Tequila's Spirit Animal",
+    "The Curious Case of Rockstar Games' GTA VI Delay"
   ],
   "videos": [
     {
@@ -1251,6 +1252,12 @@
       "url": "https://youtu.be/puwqulMJ5ss",
       "format": "short",
       "publishedAt": "2026-09-28T00:20:53.525Z"
+    },
+    {
+      "title": "Why GTA 6 Cost $2 Billion and Took 12 Years to Make",
+      "url": "https://youtu.be/r2EGI8PuQdI",
+      "format": "short",
+      "publishedAt": "2026-09-29T01:33:03.728Z"
     }
   ]
 }
