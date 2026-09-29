@@ -102,7 +102,8 @@
     "Let's Sing and Count the Colors of the Rainbow with Friends!",
     "Counting Farm Animals in a Rainbow of Colors",
     "Sing Along with Friendly Farm Animals! Interactive Animal Sounds & Bright Colors for Toddlers",
-    "Five Little Ducks Sing-Along: Learn Counting 1 to 5 with Bright Colors and Animal Sounds!"
+    "Five Little Ducks Sing-Along: Learn Counting 1 to 5 with Bright Colors and Animal Sounds!",
+    "Rain Rain Go Away, We Don't Want to Wash Today, We're Counting Colors All Around Our Face"
   ],
   "videos": [
     {
@@ -750,6 +751,13 @@
       "format": "short",
       "publishedAt": "2026-09-28T20:07:00.317Z",
       "sourcePoolItem": "Five Little Ducks"
+    },
+    {
+      "title": "Counting Colors with Fiji's Rainy Day Rainbow",
+      "url": "https://youtu.be/Gm2ch8KgrEE",
+      "format": "short",
+      "publishedAt": "2026-09-29T18:44:50.823Z",
+      "sourcePoolItem": "Rain Rain Go Away"
     }
   ]
 }
