@@ -103,7 +103,8 @@
     "Counting Farm Animals in a Rainbow of Colors",
     "Sing Along with Friendly Farm Animals! Interactive Animal Sounds & Bright Colors for Toddlers",
     "Five Little Ducks Sing-Along: Learn Counting 1 to 5 with Bright Colors and Animal Sounds!",
-    "Rain Rain Go Away, We Don't Want to Wash Today, We're Counting Colors All Around Our Face"
+    "Rain Rain Go Away, We Don't Want to Wash Today, We're Counting Colors All Around Our Face",
+    "Old MacDonald Had a Farm: Sing-Along Animal Sounds & Counting Fun for Toddlers!"
   ],
   "videos": [
     {
@@ -758,6 +759,13 @@
       "format": "short",
       "publishedAt": "2026-09-29T18:44:50.823Z",
       "sourcePoolItem": "Rain Rain Go Away"
+    },
+    {
+      "title": "Sing Old MacDonald & Count 3 Neighing Horses at the Red Barn!",
+      "url": "https://youtu.be/fRS5RFADoSo",
+      "format": "short",
+      "publishedAt": "2026-09-30T18:24:19.720Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
