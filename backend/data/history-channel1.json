@@ -152,7 +152,8 @@
     "The Rise of Esports and the Surprising Connection to Ancient Greece",
     "The Dark History of Tequila's Spirit Animal",
     "The Curious Case of Rockstar Games' GTA VI Delay",
-    "The Science Behind Infant Developmental Milestones"
+    "The Science Behind Infant Developmental Milestones",
+    "Why Mountain Lions Can Purr Like Housecats (But Can't Roar)"
   ],
   "videos": [
     {
@@ -1265,6 +1266,12 @@
       "url": "https://youtu.be/aUESBdCgOm0",
       "format": "short",
       "publishedAt": "2026-09-29T19:12:54.516Z"
+    },
+    {
+      "title": "Why a 200-Pound Mountain Lion Purrs Like a Housecat",
+      "url": "https://youtu.be/GJgjjYm6hKU",
+      "format": "short",
+      "publishedAt": "2026-09-30T01:08:40.778Z"
     }
   ]
 }
