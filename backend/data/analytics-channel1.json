@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-09-29T11:51:59.517Z",
+  "fetchedAt": "2026-09-30T11:38:47.022Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 231,
+      "viewCount": 232,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1197,7 +1197,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1044,
+      "viewCount": 1045,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1317,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1122,
+      "viewCount": 1123,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1327,7 +1327,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T19:58:46.799Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1347,7 +1347,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 975,
+      "viewCount": 976,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1447,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 111,
+      "viewCount": 112,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1040,
+      "viewCount": 1041,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1517,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 63,
+      "viewCount": 66,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1537,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:40:30.426Z",
       "sourcePoolItem": null,
-      "viewCount": 11,
+      "viewCount": 12,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1737,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T00:25:27.038Z",
       "sourcePoolItem": null,
-      "viewCount": 316,
+      "viewCount": 315,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1757,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T00:29:12.611Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1797,8 +1797,28 @@
       "format": "short",
       "publishedAt": "2026-09-29T01:33:03.728Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
+      "viewCount": 9,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/aUESBdCgOm0",
+      "title": "one million new neural connections per second",
+      "format": "short",
+      "publishedAt": "2026-09-29T19:12:54.516Z",
+      "sourcePoolItem": null,
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/GJgjjYm6hKU",
+      "title": "Why a 200-Pound Mountain Lion Purrs Like a Housecat",
+      "format": "short",
+      "publishedAt": "2026-09-30T01:08:40.778Z",
+      "sourcePoolItem": null,
+      "viewCount": 194,
+      "likeCount": 7,
       "commentCount": 0
     }
   ]
