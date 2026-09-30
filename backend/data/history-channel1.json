@@ -153,7 +153,8 @@
     "The Dark History of Tequila's Spirit Animal",
     "The Curious Case of Rockstar Games' GTA VI Delay",
     "The Science Behind Infant Developmental Milestones",
-    "Why Mountain Lions Can Purr Like Housecats (But Can't Roar)"
+    "Why Mountain Lions Can Purr Like Housecats (But Can't Roar)",
+    "The Unexplained Disappearance of Riverbend Maximum Security Institution's First Female Warden"
   ],
   "videos": [
     {
@@ -1272,6 +1273,12 @@
       "url": "https://youtu.be/GJgjjYm6hKU",
       "format": "short",
       "publishedAt": "2026-09-30T01:08:40.778Z"
+    },
+    {
+      "title": "Riverbend's First Female Warden Disappearance",
+      "url": "https://youtu.be/mH_00ekgioI",
+      "format": "short",
+      "publishedAt": "2026-09-30T18:54:59.883Z"
     }
   ]
 }
