@@ -154,7 +154,8 @@
     "The Curious Case of Rockstar Games' GTA VI Delay",
     "The Science Behind Infant Developmental Milestones",
     "Why Mountain Lions Can Purr Like Housecats (But Can't Roar)",
-    "The Unexplained Disappearance of Riverbend Maximum Security Institution's First Female Warden"
+    "The Unexplained Disappearance of Riverbend Maximum Security Institution's First Female Warden",
+    "The Evolution of Social Security Benefits"
   ],
   "videos": [
     {
@@ -1279,6 +1280,12 @@
       "url": "https://youtu.be/mH_00ekgioI",
       "format": "short",
       "publishedAt": "2026-09-30T18:54:59.883Z"
+    },
+    {
+      "title": "The Annual Cost of 85 Years of Social Security",
+      "url": "https://youtu.be/L_-O6cx3n5M",
+      "format": "short",
+      "publishedAt": "2026-10-01T19:22:40.881Z"
     }
   ]
 }
