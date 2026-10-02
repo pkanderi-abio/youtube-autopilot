@@ -155,7 +155,8 @@
     "The Science Behind Infant Developmental Milestones",
     "Why Mountain Lions Can Purr Like Housecats (But Can't Roar)",
     "The Unexplained Disappearance of Riverbend Maximum Security Institution's First Female Warden",
-    "The Evolution of Social Security Benefits"
+    "The Evolution of Social Security Benefits",
+    "Did You Know: The Surprising Physics Behind Trea Turner's Smooth Pop-Up Slide"
   ],
   "videos": [
     {
@@ -1286,6 +1287,12 @@
       "url": "https://youtu.be/L_-O6cx3n5M",
       "format": "short",
       "publishedAt": "2026-10-01T19:22:40.881Z"
+    },
+    {
+      "title": "90 Feet in One Stride: The Physics of Trea Turner's Pop-Up Slide",
+      "url": "https://youtu.be/GYCKc9e-7a8",
+      "format": "short",
+      "publishedAt": "2026-10-02T01:25:51.075Z"
     }
   ]
 }
