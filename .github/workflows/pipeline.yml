@@ -114,22 +114,20 @@ jobs:
           key: ollama-llama3.2-v1
       - name: Start Ollama and pull model
         run: |
-          # install.sh already enables+starts Ollama as a systemd service
-          # bound to :11434 (confirmed via real CI logs: a manual
-          # `ollama serve &` here just fails instantly with "address
-          # already in use" and does nothing useful) - just wait for the
-          # systemd-managed instance to be ready, then pull the model.
-          # 300s (was 180s, was 60s, was 30s): a channel2-short run on
-          # 2026-07-29 15:06 timed out at exactly the previous 180s cap
-          # despite the previous bump - the shared CI runner's systemd
-          # startup time is variable enough that even 3x headroom isn't
-          # always enough. Push to 5 minutes.
+          # install.sh's systemd unit has been observed to never start on
+          # the runner (journalctl shows no entries at all), so run our own
+          # server process instead and log it to a file we can read on failure.
+          # A wedged unit that already holds :11434 is stopped first.
+          sudo systemctl disable --now ollama >/dev/null 2>&1 || true
+          if ! curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
+            setsid nohup ollama serve > "$RUNNER_TEMP/ollama.log" 2>&1 < /dev/null &
+          fi
           # Ollama is only the fallback here (job sets LLM_PROVIDER=gemini),
           # so a dead Ollama server warns and continues rather than killing
           # the whole publish. If Gemini then also fails, the LLM call
           # itself aborts the run.
           ollama_ready=false
-          for i in $(seq 1 300); do
+          for i in $(seq 1 180); do
             if curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
               echo "Ollama ready after ${i}s"
               ollama_ready=true
@@ -138,7 +136,7 @@ jobs:
             sleep 1
           done
           if [ "$ollama_ready" != "true" ]; then
-            echo "::warning::Ollama did not answer /api/version within 300s - continuing with Gemini as primary"
+            echo "::warning::Ollama did not answer /api/version within 180s - continuing with Gemini as primary"
             exit 0
           fi
           # `ollama pull` itself has been observed to fail transiently
@@ -184,11 +182,9 @@ jobs:
           retention-days: 14
       - name: Dump Ollama server log on failure
         if: failure()
-        # Ollama runs as a systemd service (see "Start Ollama and pull
-        # model" above), not the foreground process a bare /tmp/ollama.log
-        # redirect would capture - its real stdout/stderr (including
-        # llama-server crash detail) is in the systemd journal.
-        run: sudo journalctl -u ollama --no-pager -n 300 || true
+        run: |
+          cat "$RUNNER_TEMP/ollama.log" 2>/dev/null || echo "no ollama.log"
+          sudo journalctl -u ollama --no-pager -n 300 || true
       - name: Commit updated history
         working-directory: backend
         run: |
