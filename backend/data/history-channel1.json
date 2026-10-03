@@ -157,7 +157,8 @@
     "The Unexplained Disappearance of Riverbend Maximum Security Institution's First Female Warden",
     "The Evolution of Social Security Benefits",
     "Did You Know: The Surprising Physics Behind Trea Turner's Smooth Pop-Up Slide",
-    "The 50mph speed limit on highways was abolished in the UK in 1974, and was replaced with a lower speed limit of 70mph to improve safety"
+    "The 50mph speed limit on highways was abolished in the UK in 1974, and was replaced with a lower speed limit of 70mph to improve safety",
+    "What Scientists Discovered Inside Freddie Mercury's Vocal Cords"
   ],
   "videos": [
     {
@@ -1300,6 +1301,12 @@
       "url": "https://youtu.be/VzjVU6ttidc",
       "format": "short",
       "publishedAt": "2026-10-02T19:04:58.226Z"
+    },
+    {
+      "title": "What Scientists Found in Freddie Mercury's Vocal Cords",
+      "url": "https://youtu.be/e7uURZD6lSU",
+      "format": "short",
+      "publishedAt": "2026-10-03T01:01:29.344Z"
     }
   ]
 }
