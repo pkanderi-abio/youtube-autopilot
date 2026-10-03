@@ -123,10 +123,11 @@ jobs:
           # 2026-07-29 15:06 timed out at exactly the previous 180s cap
           # despite the previous bump - the shared CI runner's systemd
           # startup time is variable enough that even 3x headroom isn't
-          # always enough. Push to 5 minutes. If it exhausts, fail
-          # explicitly instead of silently proceeding to `ollama pull`
-          # against a dead server (which just fails cryptically a
-          # second later).
+          # always enough. Push to 5 minutes.
+          # Ollama is only the fallback here (job sets LLM_PROVIDER=gemini),
+          # so a dead Ollama server warns and continues rather than killing
+          # the whole publish. If Gemini then also fails, the LLM call
+          # itself aborts the run.
           ollama_ready=false
           for i in $(seq 1 300); do
             if curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
@@ -137,8 +138,8 @@ jobs:
             sleep 1
           done
           if [ "$ollama_ready" != "true" ]; then
-            echo "::error::Ollama did not answer /api/version within 300s"
-            exit 1
+            echo "::warning::Ollama did not answer /api/version within 300s - continuing with Gemini as primary"
+            exit 0
           fi
           # `ollama pull` itself has been observed to fail transiently
           # on the CI runner (network blip mid-download of the model
@@ -152,8 +153,8 @@ jobs:
             echo "ollama pull attempt $attempt failed, retrying..."
             sleep $((attempt * 15))
           done
-          echo "::error::ollama pull failed after 3 attempts"
-          exit 1
+          echo "::warning::ollama pull failed after 3 attempts - Gemini remains primary"
+          exit 0
       - name: Run pipeline for ${{ matrix.channel }} (${{ matrix.format }})
         working-directory: backend
         env:
