@@ -159,7 +159,8 @@
     "Did You Know: The Surprising Physics Behind Trea Turner's Smooth Pop-Up Slide",
     "The 50mph speed limit on highways was abolished in the UK in 1974, and was replaced with a lower speed limit of 70mph to improve safety",
     "What Scientists Discovered Inside Freddie Mercury's Vocal Cords",
-    "Why the Human Elbow Snaps at 100 MPH (The Science Behind Hagen Smith's Fastball)"
+    "Why the Human Elbow Snaps at 100 MPH (The Science Behind Hagen Smith's Fastball)",
+    "Did You Know the Average American Spends 4.5 Months of Their Life on Hold Phone Calls?"
   ],
   "videos": [
     {
@@ -1314,6 +1315,12 @@
       "url": "https://youtu.be/I4mPRPyVbO0",
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z"
+    },
+    {
+      "title": "2,000 Hours Spent on Hold Every Year",
+      "url": "https://youtu.be/RsmvI-z3eTA",
+      "format": "short",
+      "publishedAt": "2026-10-03T18:00:55.321Z"
     }
   ]
 }
