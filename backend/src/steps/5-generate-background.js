@@ -698,6 +698,18 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   if (channel.visualStyle === 'stockFootage' && !process.env.PEXELS_API_KEY) {
     throw new Error('[background] channel.visualStyle is "stockFootage" but PEXELS_API_KEY is not set - refusing to silently downgrade every shot to the gradient fallback. Set PEXELS_API_KEY (repo secret in CI, .env locally) or switch the channel to visualStyle: "gradient" if that\'s intentional.');
   }
+  // Same class of bug, different channel: channel1 was switched to
+  // "aiGenerated" on 2026-09-06 and this path had NO equivalent guard -
+  // every shot of every video silently fell through to the illustrated/
+  // gradient fallback for about a month (Imagen access needs a billed
+  // Google Cloud project; a free-tier GEMINI_API_KEY authenticates fine
+  // for text but gets rejected here) with nothing in the logs louder
+  // than a per-shot warning. Fail fast on a missing key, and see the
+  // post-loop check below for the "key present but every call failed"
+  // case.
+  if (channel.visualStyle === 'aiGenerated' && !process.env.GEMINI_API_KEY) {
+    throw new Error('[background] channel.visualStyle is "aiGenerated" but GEMINI_API_KEY is not set - refusing to silently downgrade every shot to the illustrated fallback. Set GEMINI_API_KEY (repo secret in CI, .env locally) or switch the channel to visualStyle: "stockFootage"/"gradient" if that\'s intentional.');
+  }
 
   const plannedShots = scenes.map((scene) => (
     typeof scene === 'string'
@@ -797,6 +809,7 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
         await zoomClip(imagePath, clipPath, w, h, fps, durations[i], aiFocus);
         if (isHeroShot) await extractFrame(clipPath, path.join(workDir, 'scene-0.png'));
         clipPaths.push(clipPath);
+        usedRealFootageCount++;
         console.log(`[background] scene ${i}: generated AI visual for "${query}"`);
         continue;
       } catch (err) {
@@ -828,6 +841,17 @@ export async function generateBackground(channel, durationSeconds, workDir, scen
   // instead of having to infer it from scattered per-shot warnings.
   if (stockFootage) {
     console.log(`[background] real stock footage used for ${usedRealFootageCount}/${shotCount} shots (rest: gradient fallback)`);
+  }
+  if (aiGenerated) {
+    console.log(`[background] AI-generated visuals used for ${usedRealFootageCount}/${shotCount} shots (rest: illustrated fallback)`);
+    // Key present but Imagen rejected/failed on literally every shot
+    // (observed cause: a free-tier GEMINI_API_KEY can authenticate but
+    // lacks billing-gated access to Imagen) - this is the exact silent-
+    // degrade signature from the channel1 incident above, just with a
+    // valid key. Abort instead of publishing an all-fallback video.
+    if (usedRealFootageCount === 0) {
+      throw new Error(`[background] AI visual generation failed for ALL ${shotCount} shots - channel.visualStyle is "aiGenerated" but Imagen never returned a usable image this run. Check GEMINI_API_KEY/GEMINI_IMAGE_MODEL access (Imagen typically requires a billed Google Cloud project, not just a free-tier API key) before retrying. BLOCKING PUBLISH.`);
+    }
   }
 
   const bgVideoPath = await concatClips(clipPaths, workDir);
