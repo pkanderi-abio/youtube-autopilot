@@ -106,7 +106,8 @@
     "Rain Rain Go Away, We Don't Want to Wash Today, We're Counting Colors All Around Our Face",
     "Old MacDonald Had a Farm: Sing-Along Animal Sounds & Counting Fun for Toddlers!",
     "Baa Baa Rainbow Sheep Sing-Along! Learn 5 Bright Colors with Friendly Barnyard Sheep",
-    "Five Little Monkeys Jumping on the Bed! Sing-Along Counting 1 to 5 with Cute Animal Sounds for Toddlers"
+    "Five Little Monkeys Jumping on the Bed! Sing-Along Counting 1 to 5 with Cute Animal Sounds for Toddlers",
+    "Counting 1 to 10 with Colorful Farm Animals and Fun Animal Sounds!"
   ],
   "videos": [
     {
@@ -782,6 +783,13 @@
       "format": "short",
       "publishedAt": "2026-10-02T18:19:00.206Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed"
+    },
+    {
+      "title": "Count 5 Little Chickens Laying Eggs in the Coop",
+      "url": "https://youtu.be/jxid93-e6Vk",
+      "format": "short",
+      "publishedAt": "2026-10-03T17:03:31.426Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
