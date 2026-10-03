@@ -117,8 +117,10 @@ Recently published titles on this channel - DO NOT reuse the same subject/angle 
 ${recentTitles.length ? recentTitles.map(t => `- ${t}`).join('\n') : '(no prior videos yet)'}
 
 Requirements:
-- "title": under 90 characters, no ALL-CAPS words. MUST name something specific: a real place, number, year, or concrete thing from the script/topic - not abstract nouns like "Beauty", "Chemistry", "Influence", "Journey", "Story", "Bliss".
-  Bad: "The Beauty of Influence". Good: "Fiji's Best Hidden Beaches for 2026 Travelers" or "5 Cities to Visit This Winter".
+- "title": under 90 characters, no ALL-CAPS words. MUST name something specific FROM THIS VIDEO'S OWN TOPIC/SCRIPT ABOVE: a real place, number, year, or concrete thing - not abstract nouns like "Beauty", "Chemistry", "Influence", "Journey", "Story", "Bliss".
+  These examples show the FORMAT ONLY (specific > abstract) - they are unrelated to this video's topic and must never be copied, reworded, or reused as the actual title regardless of what the topic is:
+  Bad: "The Beauty of Influence" (abstract). Good shape: "5 Cities to Visit This Winter" (place+number) or "The 1987 Storm That Grounded Every Flight in Texas" (year+event) or "Why Octopuses Have Three Hearts" (concrete fact).
+  Do NOT write about Fiji, beaches, or travel unless this video's actual topic above is about one of those things.
   Must be a clearly DIFFERENT subject/angle from every title listed above - don't just add a year or reword one of them.
 - "description": 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic "Welcome to my channel" openers.
 - "tags": 3-6 specific search-relevant tags (not generic single words like "video" or "fun").
