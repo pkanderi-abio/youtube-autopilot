@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-03T10:51:53.420Z",
+  "fetchedAt": "2026-10-04T11:34:16.769Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 154,
+      "viewCount": 156,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -637,7 +637,7 @@
       "format": "short",
       "publishedAt": "2026-07-28T23:03:30.935Z",
       "sourcePoolItem": null,
-      "viewCount": 164,
+      "viewCount": 165,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -757,7 +757,7 @@
       "format": "short",
       "publishedAt": "2026-08-03T23:05:22.529Z",
       "sourcePoolItem": null,
-      "viewCount": 110,
+      "viewCount": 112,
       "likeCount": 2,
       "commentCount": 1
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 232,
+      "viewCount": 234,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1378,
+      "viewCount": 1381,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1157,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T22:31:23.376Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 134,
+      "viewCount": 135,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1197,7 +1197,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1307,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1031,
+      "viewCount": 1032,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1377,7 +1377,7 @@
       "format": "long",
       "publishedAt": "2026-09-04T19:33:58.769Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 15,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1457,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1041,
+      "viewCount": 1042,
       "likeCount": 18,
       "commentCount": 2
     },
@@ -1517,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 66,
+      "viewCount": 67,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1527,7 +1527,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:32:44.035Z",
       "sourcePoolItem": null,
-      "viewCount": 18,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1537,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T13:40:30.426Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1547,7 +1547,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T19:06:10.026Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1557,7 +1557,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T00:21:34.654Z",
       "sourcePoolItem": null,
-      "viewCount": 20,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1567,8 +1567,8 @@
       "format": "short",
       "publishedAt": "2026-09-16T00:01:44.104Z",
       "sourcePoolItem": null,
-      "viewCount": 56,
-      "likeCount": 2,
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -1577,9 +1577,9 @@
       "format": "short",
       "publishedAt": "2026-09-16T18:03:18.442Z",
       "sourcePoolItem": null,
-      "viewCount": 984,
-      "likeCount": 28,
-      "commentCount": 2
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
       "url": "https://youtu.be/BdRxgS-QBeI",
@@ -1587,8 +1587,8 @@
       "format": "short",
       "publishedAt": "2026-09-17T00:09:14.449Z",
       "sourcePoolItem": null,
-      "viewCount": 152,
-      "likeCount": 1,
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -1597,7 +1597,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T18:00:11.261Z",
       "sourcePoolItem": null,
-      "viewCount": 114,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1607,7 +1607,7 @@
       "format": "short",
       "publishedAt": "2026-09-18T17:35:51.824Z",
       "sourcePoolItem": null,
-      "viewCount": 33,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1617,7 +1617,7 @@
       "format": "long",
       "publishedAt": "2026-09-18T19:40:11.954Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1627,7 +1627,7 @@
       "format": "short",
       "publishedAt": "2026-09-19T17:05:54.949Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1637,7 +1637,7 @@
       "format": "short",
       "publishedAt": "2026-09-19T23:59:12.029Z",
       "sourcePoolItem": null,
-      "viewCount": 32,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1647,7 +1647,7 @@
       "format": "short",
       "publishedAt": "2026-09-20T17:23:37.276Z",
       "sourcePoolItem": null,
-      "viewCount": 17,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1657,7 +1657,7 @@
       "format": "short",
       "publishedAt": "2026-09-20T23:54:41.318Z",
       "sourcePoolItem": null,
-      "viewCount": 35,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1667,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-09-21T19:11:06.146Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1677,8 +1677,8 @@
       "format": "short",
       "publishedAt": "2026-09-22T00:39:50.954Z",
       "sourcePoolItem": null,
-      "viewCount": 47,
-      "likeCount": 1,
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -1697,7 +1697,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T00:07:05.284Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1707,9 +1707,9 @@
       "format": "short",
       "publishedAt": "2026-09-23T18:21:24.430Z",
       "sourcePoolItem": null,
-      "viewCount": 986,
-      "likeCount": 10,
-      "commentCount": 1
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
       "url": "https://youtu.be/IfparZmiF54",
@@ -1717,7 +1717,7 @@
       "format": "short",
       "publishedAt": "2026-09-24T00:18:46.303Z",
       "sourcePoolItem": null,
-      "viewCount": 28,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1727,7 +1727,7 @@
       "format": "short",
       "publishedAt": "2026-09-24T18:20:43.619Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1737,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T00:25:27.038Z",
       "sourcePoolItem": null,
-      "viewCount": 315,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1747,7 +1747,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T18:24:14.661Z",
       "sourcePoolItem": null,
-      "viewCount": 63,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1757,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T00:29:12.611Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1767,8 +1767,8 @@
       "format": "short",
       "publishedAt": "2026-09-27T00:19:25.807Z",
       "sourcePoolItem": null,
-      "viewCount": 242,
-      "likeCount": 2,
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -1777,7 +1777,7 @@
       "format": "short",
       "publishedAt": "2026-09-27T18:06:58.742Z",
       "sourcePoolItem": null,
-      "viewCount": 17,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1787,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-09-28T00:20:53.525Z",
       "sourcePoolItem": null,
-      "viewCount": 40,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1797,7 +1797,7 @@
       "format": "short",
       "publishedAt": "2026-09-29T01:33:03.728Z",
       "sourcePoolItem": null,
-      "viewCount": 9,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1817,8 +1817,8 @@
       "format": "short",
       "publishedAt": "2026-09-30T01:08:40.778Z",
       "sourcePoolItem": null,
-      "viewCount": 345,
-      "likeCount": 10,
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -1827,7 +1827,7 @@
       "format": "short",
       "publishedAt": "2026-09-30T18:54:59.883Z",
       "sourcePoolItem": null,
-      "viewCount": 88,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1847,7 +1847,7 @@
       "format": "short",
       "publishedAt": "2026-10-02T01:25:51.075Z",
       "sourcePoolItem": null,
-      "viewCount": 38,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1857,7 +1857,7 @@
       "format": "short",
       "publishedAt": "2026-10-02T19:04:58.226Z",
       "sourcePoolItem": null,
-      "viewCount": 73,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1867,8 +1867,38 @@
       "format": "short",
       "publishedAt": "2026-10-03T01:01:29.344Z",
       "sourcePoolItem": null,
-      "viewCount": 220,
-      "likeCount": 1,
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/I4mPRPyVbO0",
+      "title": "100 mph is the speed limit of the human elbow",
+      "format": "short",
+      "publishedAt": "2026-10-03T17:51:04.922Z",
+      "sourcePoolItem": null,
+      "viewCount": 1162,
+      "likeCount": 9,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/RsmvI-z3eTA",
+      "title": "2,000 Hours Spent on Hold Every Year",
+      "format": "short",
+      "publishedAt": "2026-10-03T18:00:55.321Z",
+      "sourcePoolItem": null,
+      "viewCount": 19,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/34z9OkP3aNY",
+      "title": "8 Cameras Steer Your Tesla",
+      "format": "short",
+      "publishedAt": "2026-10-04T00:28:02.311Z",
+      "sourcePoolItem": null,
+      "viewCount": 435,
+      "likeCount": 3,
       "commentCount": 0
     }
   ]
