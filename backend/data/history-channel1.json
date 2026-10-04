@@ -160,7 +160,8 @@
     "The 50mph speed limit on highways was abolished in the UK in 1974, and was replaced with a lower speed limit of 70mph to improve safety",
     "What Scientists Discovered Inside Freddie Mercury's Vocal Cords",
     "Why the Human Elbow Snaps at 100 MPH (The Science Behind Hagen Smith's Fastball)",
-    "Did You Know the Average American Spends 4.5 Months of Their Life on Hold Phone Calls?"
+    "Did You Know the Average American Spends 4.5 Months of Their Life on Hold Phone Calls?",
+    "The Curious Case of Tesla's Autopilot System"
   ],
   "videos": [
     {
@@ -1321,6 +1322,12 @@
       "url": "https://youtu.be/RsmvI-z3eTA",
       "format": "short",
       "publishedAt": "2026-10-03T18:00:55.321Z"
+    },
+    {
+      "title": "8 Cameras Steer Your Tesla",
+      "url": "https://youtu.be/34z9OkP3aNY",
+      "format": "short",
+      "publishedAt": "2026-10-04T00:28:02.311Z"
     }
   ]
 }
