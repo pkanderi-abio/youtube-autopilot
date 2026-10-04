@@ -107,7 +107,8 @@
     "Old MacDonald Had a Farm: Sing-Along Animal Sounds & Counting Fun for Toddlers!",
     "Baa Baa Rainbow Sheep Sing-Along! Learn 5 Bright Colors with Friendly Barnyard Sheep",
     "Five Little Monkeys Jumping on the Bed! Sing-Along Counting 1 to 5 with Cute Animal Sounds for Toddlers",
-    "Counting 1 to 10 with Colorful Farm Animals and Fun Animal Sounds!"
+    "Counting 1 to 10 with Colorful Farm Animals and Fun Animal Sounds!",
+    "What Sound Does the Farm Animal Make? Cheerful Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -790,6 +791,13 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:03:31.426Z",
       "sourcePoolItem": "Counting Farm Animals"
+    },
+    {
+      "title": "Count 4 Farm Friends Making Animal Sounds Together!",
+      "url": "https://youtu.be/BwNYZZhAbiw",
+      "format": "short",
+      "publishedAt": "2026-10-04T17:21:17.394Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers"
     }
   ]
 }
