@@ -161,7 +161,8 @@
     "What Scientists Discovered Inside Freddie Mercury's Vocal Cords",
     "Why the Human Elbow Snaps at 100 MPH (The Science Behind Hagen Smith's Fastball)",
     "Did You Know the Average American Spends 4.5 Months of Their Life on Hold Phone Calls?",
-    "The Curious Case of Tesla's Autopilot System"
+    "The Curious Case of Tesla's Autopilot System",
+    "The Unexpected History Behind Doug Flutie's Comeback"
   ],
   "videos": [
     {
@@ -1328,6 +1329,12 @@
       "url": "https://youtu.be/34z9OkP3aNY",
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z"
+    },
+    {
+      "title": "38 Was a Number That Changed the NFL Forever",
+      "url": "https://youtu.be/JKmRePqLZHY",
+      "format": "short",
+      "publishedAt": "2026-10-04T18:05:25.576Z"
     }
   ]
 }
