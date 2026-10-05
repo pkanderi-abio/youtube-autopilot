@@ -162,7 +162,8 @@
     "Why the Human Elbow Snaps at 100 MPH (The Science Behind Hagen Smith's Fastball)",
     "Did You Know the Average American Spends 4.5 Months of Their Life on Hold Phone Calls?",
     "The Curious Case of Tesla's Autopilot System",
-    "The Unexpected History Behind Doug Flutie's Comeback"
+    "The Unexpected History Behind Doug Flutie's Comeback",
+    "The Dark Side of AI: How DeepMind's AlphaGo AI Overtook Humans in Go"
   ],
   "videos": [
     {
@@ -1335,6 +1336,12 @@
       "url": "https://youtu.be/JKmRePqLZHY",
       "format": "short",
       "publishedAt": "2026-10-04T18:05:25.576Z"
+    },
+    {
+      "title": "37 Moves and a 5-Game Match: How AlphaGo Revolutionized AI",
+      "url": "https://youtu.be/hvXKgFjOzk8",
+      "format": "short",
+      "publishedAt": "2026-10-05T00:32:58.678Z"
     }
   ]
 }
