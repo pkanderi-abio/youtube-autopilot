@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-04T11:34:16.769Z",
+  "fetchedAt": "2026-10-05T13:07:50.412Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 234,
+      "viewCount": 238,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 159,
+      "viewCount": 160,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 189,
+      "viewCount": 190,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1877,7 +1877,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1162,
+      "viewCount": 1165,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1887,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T18:00:55.321Z",
       "sourcePoolItem": null,
-      "viewCount": 19,
+      "viewCount": 23,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1897,8 +1897,28 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 435,
-      "likeCount": 3,
+      "viewCount": 903,
+      "likeCount": 5,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/JKmRePqLZHY",
+      "title": "38 Was a Number That Changed the NFL Forever",
+      "format": "short",
+      "publishedAt": "2026-10-04T18:05:25.576Z",
+      "sourcePoolItem": null,
+      "viewCount": 883,
+      "likeCount": 8,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/hvXKgFjOzk8",
+      "title": "37 Moves and a 5-Game Match: How AlphaGo Revolutionized AI",
+      "format": "short",
+      "publishedAt": "2026-10-05T00:32:58.678Z",
+      "sourcePoolItem": null,
+      "viewCount": 121,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
