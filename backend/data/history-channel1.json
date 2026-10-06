@@ -164,7 +164,8 @@
     "The Curious Case of Tesla's Autopilot System",
     "The Unexpected History Behind Doug Flutie's Comeback",
     "The Dark Side of AI: How DeepMind's AlphaGo AI Overtook Humans in Go",
-    "Why You Can Taste Eye Drops in the Back of Your Throat"
+    "Why You Can Taste Eye Drops in the Back of Your Throat",
+    "Why Is Some Diesel Fuel Dyed Bright Red?"
   ],
   "videos": [
     {
@@ -1349,6 +1350,12 @@
       "url": "https://youtu.be/vhIuhF5W-J8",
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z"
+    },
+    {
+      "title": "1980s Technology Used to Catch Highway Tax Evaders in Seconds",
+      "url": "https://youtu.be/RNOU5XYkSuQ",
+      "format": "short",
+      "publishedAt": "2026-10-06T02:12:50.828Z"
     }
   ]
 }
