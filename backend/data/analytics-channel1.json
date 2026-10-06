@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-05T13:07:50.412Z",
+  "fetchedAt": "2026-10-06T12:29:21.465Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 156,
+      "viewCount": 157,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -817,7 +817,7 @@
       "format": "short",
       "publishedAt": "2026-08-07T01:36:11.657Z",
       "sourcePoolItem": null,
-      "viewCount": 641,
+      "viewCount": 642,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1381,
+      "viewCount": 1383,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1447,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 112,
+      "viewCount": 113,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1877,7 +1877,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1165,
+      "viewCount": 1166,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1887,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T18:00:55.321Z",
       "sourcePoolItem": null,
-      "viewCount": 23,
+      "viewCount": 27,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1897,8 +1897,8 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 903,
-      "likeCount": 5,
+      "viewCount": 1054,
+      "likeCount": 6,
       "commentCount": 0
     },
     {
@@ -1907,8 +1907,8 @@
       "format": "short",
       "publishedAt": "2026-10-04T18:05:25.576Z",
       "sourcePoolItem": null,
-      "viewCount": 883,
-      "likeCount": 8,
+      "viewCount": 1084,
+      "likeCount": 10,
       "commentCount": 0
     },
     {
@@ -1917,8 +1917,28 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 121,
+      "viewCount": 138,
       "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/vhIuhF5W-J8",
+      "title": "The 0.7mm Duct That Lets You Taste Eye Drops",
+      "format": "short",
+      "publishedAt": "2026-10-05T21:34:46.643Z",
+      "sourcePoolItem": null,
+      "viewCount": 84,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/RNOU5XYkSuQ",
+      "title": "1980s Technology Used to Catch Highway Tax Evaders in Seconds",
+      "format": "short",
+      "publishedAt": "2026-10-06T02:12:50.828Z",
+      "sourcePoolItem": null,
+      "viewCount": 1,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
