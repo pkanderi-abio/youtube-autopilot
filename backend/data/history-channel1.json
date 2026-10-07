@@ -166,7 +166,8 @@
     "The Dark Side of AI: How DeepMind's AlphaGo AI Overtook Humans in Go",
     "Why You Can Taste Eye Drops in the Back of Your Throat",
     "Why Is Some Diesel Fuel Dyed Bright Red?",
-    "The Rise of Trillionaire Status: What's Behind the New Rich"
+    "The Rise of Trillionaire Status: What's Behind the New Rich",
+    "The World's Most Advanced Underwater Archaeological Drones"
   ],
   "videos": [
     {
@@ -1363,6 +1364,12 @@
       "url": "https://youtu.be/4-HCqGueTjQ",
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z"
+    },
+    {
+      "title": "Drones Map Ancient Shipwrecks with 3D Scanning",
+      "url": "https://youtu.be/VNj43m7F6oI",
+      "format": "short",
+      "publishedAt": "2026-10-07T01:22:37.054Z"
     }
   ]
 }
