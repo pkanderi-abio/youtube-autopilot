@@ -167,7 +167,8 @@
     "Why You Can Taste Eye Drops in the Back of Your Throat",
     "Why Is Some Diesel Fuel Dyed Bright Red?",
     "The Rise of Trillionaire Status: What's Behind the New Rich",
-    "The World's Most Advanced Underwater Archaeological Drones"
+    "The World's Most Advanced Underwater Archaeological Drones",
+    "Why Hurricanes Can Never Cross the Equator"
   ],
   "videos": [
     {
@@ -1370,6 +1371,12 @@
       "url": "https://youtu.be/VNj43m7F6oI",
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z"
+    },
+    {
+      "title": "77 Degrees North: The Physics Limit of Hurricane Storms",
+      "url": "https://youtu.be/lCzBUfQFOc8",
+      "format": "short",
+      "publishedAt": "2026-10-07T19:53:24.239Z"
     }
   ]
 }
