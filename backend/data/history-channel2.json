@@ -109,7 +109,8 @@
     "Five Little Monkeys Jumping on the Bed! Sing-Along Counting 1 to 5 with Cute Animal Sounds for Toddlers",
     "Counting 1 to 10 with Colorful Farm Animals and Fun Animal Sounds!",
     "What Sound Does the Farm Animal Make? Cheerful Sing-Along for Toddlers",
-    "Five Little Ducks Playing with Colors"
+    "Five Little Ducks Playing with Colors",
+    "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers"
   ],
   "videos": [
     {
@@ -806,6 +807,13 @@
       "format": "short",
       "publishedAt": "2026-10-06T18:55:37.795Z",
       "sourcePoolItem": "London Bridge Is Falling Down"
+    },
+    {
+      "title": "5 Little Ducks Went Swimming Today!",
+      "url": "https://youtu.be/CDEroWKsXus",
+      "format": "short",
+      "publishedAt": "2026-10-07T19:22:17.949Z",
+      "sourcePoolItem": "Five Little Ducks"
     }
   ]
 }
