@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-06T12:29:21.465Z",
+  "fetchedAt": "2026-10-07T12:22:27.077Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 157,
+      "viewCount": 160,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -887,7 +887,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 64,
+      "viewCount": 65,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 238,
+      "viewCount": 239,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1447,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 113,
+      "viewCount": 114,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1497,7 +1497,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 55,
+      "viewCount": 56,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1897,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1054,
+      "viewCount": 1056,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1907,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T18:05:25.576Z",
       "sourcePoolItem": null,
-      "viewCount": 1084,
+      "viewCount": 1101,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1917,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 138,
+      "viewCount": 144,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 84,
+      "viewCount": 97,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1938,6 +1938,26 @@
       "publishedAt": "2026-10-06T02:12:50.828Z",
       "sourcePoolItem": null,
       "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/4-HCqGueTjQ",
+      "title": "5,000 Billionaires by 2030: The Rise of Trillionaire Status",
+      "format": "short",
+      "publishedAt": "2026-10-06T19:24:06.675Z",
+      "sourcePoolItem": null,
+      "viewCount": 26,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/VNj43m7F6oI",
+      "title": "Drones Map Ancient Shipwrecks with 3D Scanning",
+      "format": "short",
+      "publishedAt": "2026-10-07T01:22:37.054Z",
+      "sourcePoolItem": null,
+      "viewCount": 98,
       "likeCount": 0,
       "commentCount": 0
     }
