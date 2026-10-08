@@ -168,7 +168,8 @@
     "Why Is Some Diesel Fuel Dyed Bright Red?",
     "The Rise of Trillionaire Status: What's Behind the New Rich",
     "The World's Most Advanced Underwater Archaeological Drones",
-    "Why Hurricanes Can Never Cross the Equator"
+    "Why Hurricanes Can Never Cross the Equator",
+    "The Science Behind Flash Flood Warnings"
   ],
   "videos": [
     {
@@ -1377,6 +1378,12 @@
       "url": "https://youtu.be/lCzBUfQFOc8",
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z"
+    },
+    {
+      "title": "1.5-Inch Rain Threshold",
+      "url": "https://youtu.be/CW95xAbsiGo",
+      "format": "short",
+      "publishedAt": "2026-10-08T01:41:01.415Z"
     }
   ]
 }
