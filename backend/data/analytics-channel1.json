@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-07T12:22:27.077Z",
+  "fetchedAt": "2026-10-08T12:32:04.942Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -757,7 +757,7 @@
       "format": "short",
       "publishedAt": "2026-08-03T23:05:22.529Z",
       "sourcePoolItem": null,
-      "viewCount": 112,
+      "viewCount": 115,
       "likeCount": 2,
       "commentCount": 1
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 239,
+      "viewCount": 240,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1497,7 +1497,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 56,
+      "viewCount": 58,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1877,7 +1877,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1166,
+      "viewCount": 1165,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1897,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1056,
+      "viewCount": 1057,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1927,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 97,
+      "viewCount": 104,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1937,7 +1937,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T02:12:50.828Z",
       "sourcePoolItem": null,
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1947,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 26,
+      "viewCount": 29,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1957,27 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 98,
+      "viewCount": 114,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/lCzBUfQFOc8",
+      "title": "77 Degrees North: The Physics Limit of Hurricane Storms",
+      "format": "short",
+      "publishedAt": "2026-10-07T19:53:24.239Z",
+      "sourcePoolItem": null,
+      "viewCount": 112,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/CW95xAbsiGo",
+      "title": "1.5-Inch Rain Threshold",
+      "format": "short",
+      "publishedAt": "2026-10-08T01:41:01.415Z",
+      "sourcePoolItem": null,
+      "viewCount": 25,
       "likeCount": 0,
       "commentCount": 0
     }
