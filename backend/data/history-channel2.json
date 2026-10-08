@@ -110,7 +110,8 @@
     "Counting 1 to 10 with Colorful Farm Animals and Fun Animal Sounds!",
     "What Sound Does the Farm Animal Make? Cheerful Sing-Along for Toddlers",
     "Five Little Ducks Playing with Colors",
-    "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers"
+    "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers",
+    "We'll Count the Colors of the Rainbow with You!"
   ],
   "videos": [
     {
@@ -814,6 +815,13 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks"
+    },
+    {
+      "title": "Count 7 Rainbow Colors with 1 Bright Paintbrush!",
+      "url": "https://youtu.be/CBUa3Ue4Bgc",
+      "format": "short",
+      "publishedAt": "2026-10-08T19:19:04.650Z",
+      "sourcePoolItem": "The Colors of the Rainbow"
     }
   ]
 }
