@@ -169,7 +169,8 @@
     "The Rise of Trillionaire Status: What's Behind the New Rich",
     "The World's Most Advanced Underwater Archaeological Drones",
     "Why Hurricanes Can Never Cross the Equator",
-    "The Science Behind Flash Flood Warnings"
+    "The Science Behind Flash Flood Warnings",
+    "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling"
   ],
   "videos": [
     {
@@ -1384,6 +1385,12 @@
       "url": "https://youtu.be/CW95xAbsiGo",
       "format": "short",
       "publishedAt": "2026-10-08T01:41:01.415Z"
+    },
+    {
+      "title": "30 Grams of Fuel Power This 200 MW Ship",
+      "url": "https://youtu.be/t_ECjh6qric",
+      "format": "short",
+      "publishedAt": "2026-10-08T19:47:07.883Z"
     }
   ]
 }
