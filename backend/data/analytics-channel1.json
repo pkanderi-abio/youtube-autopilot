@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-08T12:32:04.942Z",
+  "fetchedAt": "2026-10-09T12:20:24.795Z",
   "videos": [
     {
       "url": "https://youtu.be/tjIudflLKbU",
@@ -287,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 160,
+      "viewCount": 162,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -707,7 +707,7 @@
       "format": "short",
       "publishedAt": "2026-07-31T23:04:45.117Z",
       "sourcePoolItem": null,
-      "viewCount": 679,
+      "viewCount": 680,
       "likeCount": 20,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-03T16:30:05.822Z",
       "sourcePoolItem": null,
-      "viewCount": 51,
+      "viewCount": 52,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 240,
+      "viewCount": 242,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1383,
+      "viewCount": 1384,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1937,7 +1937,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T02:12:50.828Z",
       "sourcePoolItem": null,
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1947,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 29,
+      "viewCount": 34,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 114,
+      "viewCount": 137,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1967,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 112,
+      "viewCount": 134,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1978,6 +1978,26 @@
       "publishedAt": "2026-10-08T01:41:01.415Z",
       "sourcePoolItem": null,
       "viewCount": 25,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/t_ECjh6qric",
+      "title": "30 Grams of Fuel Power This 200 MW Ship",
+      "format": "short",
+      "publishedAt": "2026-10-08T19:47:07.883Z",
+      "sourcePoolItem": null,
+      "viewCount": 129,
+      "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/YrqewA6w6IY",
+      "title": "The 5 People You're Most Likely to Get Phished Every Year",
+      "format": "short",
+      "publishedAt": "2026-10-09T01:52:59.414Z",
+      "sourcePoolItem": null,
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
