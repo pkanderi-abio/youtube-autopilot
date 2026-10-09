@@ -171,14 +171,10 @@
     "Why Hurricanes Can Never Cross the Equator",
     "The Science Behind Flash Flood Warnings",
     "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling",
-    "The Rise of Cybersecurity Awareness Month"
+    "The Rise of Cybersecurity Awareness Month",
+    "Did You Know that Reimbursement Systems are Being Revolutionized by AI-Powered Chatbots?"
   ],
   "videos": [
-    {
-      "title": "a viral moment people are talking about today in trending travel & lifestyle moments",
-      "url": "https://youtu.be/tjIudflLKbU",
-      "publishedAt": "2026-07-07T22:56:00.484Z"
-    },
     {
       "title": "a surprising everyday life hack in trending travel & lifestyle moments",
       "url": "https://youtu.be/qcXLYtgQzOw",
@@ -1398,6 +1394,12 @@
       "url": "https://youtu.be/YrqewA6w6IY",
       "format": "short",
       "publishedAt": "2026-10-09T01:52:59.414Z"
+    },
+    {
+      "title": "30 Seconds to Approval: How AI Chatbots Are Revolutionizing Employee Reimbursement",
+      "url": "https://youtu.be/0Qcx8q6i5J8",
+      "format": "short",
+      "publishedAt": "2026-10-09T19:21:13.896Z"
     }
   ]
 }
