@@ -111,7 +111,8 @@
     "What Sound Does the Farm Animal Make? Cheerful Sing-Along for Toddlers",
     "Five Little Ducks Playing with Colors",
     "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers",
-    "We'll Count the Colors of the Rainbow with You!"
+    "We'll Count the Colors of the Rainbow with You!",
+    "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -822,6 +823,13 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:19:04.650Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Count 10 Rainbow Sheep in Our Colorful Meadow",
+      "url": "https://youtu.be/Wz31KnFZHPU",
+      "format": "short",
+      "publishedAt": "2026-10-09T18:48:16.113Z",
+      "sourcePoolItem": "Baa Baa Black Sheep"
     }
   ]
 }
