@@ -170,7 +170,8 @@
     "The World's Most Advanced Underwater Archaeological Drones",
     "Why Hurricanes Can Never Cross the Equator",
     "The Science Behind Flash Flood Warnings",
-    "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling"
+    "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling",
+    "The Rise of Cybersecurity Awareness Month"
   ],
   "videos": [
     {
@@ -1391,6 +1392,12 @@
       "url": "https://youtu.be/t_ECjh6qric",
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z"
+    },
+    {
+      "title": "The 5 People You're Most Likely to Get Phished Every Year",
+      "url": "https://youtu.be/YrqewA6w6IY",
+      "format": "short",
+      "publishedAt": "2026-10-09T01:52:59.414Z"
     }
   ]
 }
