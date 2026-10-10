@@ -112,7 +112,8 @@
     "Five Little Ducks Playing with Colors",
     "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers",
     "We'll Count the Colors of the Rainbow with You!",
-    "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers"
+    "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers",
+    "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers"
   ],
   "videos": [
     {
@@ -830,6 +831,13 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep"
+    },
+    {
+      "title": "Learn Animal Sounds with Old MacDonald: Cow, 2 Pink Pigs, and a Yellow Duck",
+      "url": "https://youtu.be/rhf-JtB42h4",
+      "format": "short",
+      "publishedAt": "2026-10-10T17:40:05.928Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm"
     }
   ]
 }
