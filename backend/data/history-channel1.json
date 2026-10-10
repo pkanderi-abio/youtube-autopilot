@@ -173,14 +173,10 @@
     "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling",
     "The Rise of Cybersecurity Awareness Month",
     "Did You Know that Reimbursement Systems are Being Revolutionized by AI-Powered Chatbots?",
-    "Why Soccer Balls Fly Faster in Mexico City"
+    "Why Soccer Balls Fly Faster in Mexico City",
+    "How Disney's Flying Spider-Man Robot Actually Works"
   ],
   "videos": [
-    {
-      "title": "a strange but true fact in trending travel & lifestyle moments",
-      "url": "https://youtu.be/enuQkYnyEXY",
-      "publishedAt": "2026-07-07T23:35:08.573Z"
-    },
     {
       "title": "something oddly satisfying in trending travel & lifestyle moments",
       "url": "https://youtu.be/L17foz-IdIs",
@@ -1402,6 +1398,12 @@
       "url": "https://youtu.be/5B32l0Nrn-8",
       "format": "short",
       "publishedAt": "2026-10-10T01:37:39.899Z"
+    },
+    {
+      "title": "85ft in the Air: The Secret Sensor Tech Behind Disney's Flying Stuntronic",
+      "url": "https://youtu.be/0hDpnFNhbC8",
+      "format": "short",
+      "publishedAt": "2026-10-10T18:20:12.956Z"
     }
   ]
 }
