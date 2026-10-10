@@ -172,14 +172,10 @@
     "The Science Behind Flash Flood Warnings",
     "How Nuclear Aircraft Carriers Like the USS Lincoln Run 25 Years Without Refueling",
     "The Rise of Cybersecurity Awareness Month",
-    "Did You Know that Reimbursement Systems are Being Revolutionized by AI-Powered Chatbots?"
+    "Did You Know that Reimbursement Systems are Being Revolutionized by AI-Powered Chatbots?",
+    "Why Soccer Balls Fly Faster in Mexico City"
   ],
   "videos": [
-    {
-      "title": "a surprising everyday life hack in trending travel & lifestyle moments",
-      "url": "https://youtu.be/qcXLYtgQzOw",
-      "publishedAt": "2026-07-07T23:07:54.065Z"
-    },
     {
       "title": "a strange but true fact in trending travel & lifestyle moments",
       "url": "https://youtu.be/enuQkYnyEXY",
@@ -1400,6 +1396,12 @@
       "url": "https://youtu.be/0Qcx8q6i5J8",
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z"
+    },
+    {
+      "title": "Mexico City's 7,300ft Advantage",
+      "url": "https://youtu.be/5B32l0Nrn-8",
+      "format": "short",
+      "publishedAt": "2026-10-10T01:37:39.899Z"
     }
   ]
 }
