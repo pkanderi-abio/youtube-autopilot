@@ -174,14 +174,10 @@
     "The Rise of Cybersecurity Awareness Month",
     "Did You Know that Reimbursement Systems are Being Revolutionized by AI-Powered Chatbots?",
     "Why Soccer Balls Fly Faster in Mexico City",
-    "How Disney's Flying Spider-Man Robot Actually Works"
+    "How Disney's Flying Spider-Man Robot Actually Works",
+    "Why the Northern Lights Are Suddenly Appearing Farther South Than Ever"
   ],
   "videos": [
-    {
-      "title": "something oddly satisfying in trending travel & lifestyle moments",
-      "url": "https://youtu.be/L17foz-IdIs",
-      "publishedAt": "2026-07-08T00:02:12.463Z"
-    },
     {
       "title": "Stop Believing This Travel Myth | Hidden Gems Over Crowds",
       "url": "https://youtu.be/9B-HU2JNnyQ",
@@ -1404,6 +1400,12 @@
       "url": "https://youtu.be/0hDpnFNhbC8",
       "format": "short",
       "publishedAt": "2026-10-10T18:20:12.956Z"
+    },
+    {
+      "title": "60 Miles Up: How Solar Storms Trigger Rare Auroras",
+      "url": "https://youtu.be/UDflTUMOxGM",
+      "format": "short",
+      "publishedAt": "2026-10-11T00:46:36.179Z"
     }
   ]
 }
