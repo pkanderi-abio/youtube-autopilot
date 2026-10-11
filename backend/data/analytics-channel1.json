@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-10T11:38:47.498Z",
+  "fetchedAt": "2026-10-11T11:52:00.625Z",
   "videos": [
-    {
-      "url": "https://youtu.be/enuQkYnyEXY",
-      "title": "a strange but true fact in trending travel & lifestyle moments",
-      "format": null,
-      "publishedAt": "2026-07-07T23:35:08.573Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/L17foz-IdIs",
-      "title": "something oddly satisfying in trending travel & lifestyle moments",
-      "format": null,
-      "publishedAt": "2026-07-08T00:02:12.463Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/9B-HU2JNnyQ",
       "title": "Stop Believing This Travel Myth | Hidden Gems Over Crowds",
@@ -267,7 +247,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 164,
+      "viewCount": 165,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -947,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 245,
+      "viewCount": 247,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1117,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 160,
+      "viewCount": 162,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1147,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 23,
+      "viewCount": 24,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1157,8 +1137,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1055,
-      "likeCount": 20,
+      "viewCount": 1071,
+      "likeCount": 23,
       "commentCount": 0
     },
     {
@@ -1237,7 +1217,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 264,
+      "viewCount": 265,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1247,7 +1227,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T19:58:19.804Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 190,
+      "viewCount": 191,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1278,7 +1258,7 @@
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
       "viewCount": 973,
-      "likeCount": 0,
+      "likeCount": 22,
       "commentCount": 0
     },
     {
@@ -1427,7 +1407,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 114,
+      "viewCount": 115,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1477,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 60,
+      "viewCount": 61,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1877,7 +1857,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1063,
+      "viewCount": 1067,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1907,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 104,
+      "viewCount": 105,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1937,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 137,
+      "viewCount": 138,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1947,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 137,
+      "viewCount": 138,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1967,8 +1947,8 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 168,
-      "likeCount": 2,
+      "viewCount": 179,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 14,
+      "viewCount": 18,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-10-10T01:37:39.899Z",
       "sourcePoolItem": null,
-      "viewCount": 23,
+      "viewCount": 33,
       "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/0hDpnFNhbC8",
+      "title": "85ft in the Air: The Secret Sensor Tech Behind Disney's Flying Stuntronic",
+      "format": "short",
+      "publishedAt": "2026-10-10T18:20:12.956Z",
+      "sourcePoolItem": null,
+      "viewCount": 83,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/UDflTUMOxGM",
+      "title": "60 Miles Up: How Solar Storms Trigger Rare Auroras",
+      "format": "short",
+      "publishedAt": "2026-10-11T00:46:36.179Z",
+      "sourcePoolItem": null,
+      "viewCount": 25,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
