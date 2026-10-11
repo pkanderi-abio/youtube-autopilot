@@ -113,7 +113,8 @@
     "Five Little Ducks Went Swimming Today! | Sing-Along Counting & Animal Sounds for Toddlers",
     "We'll Count the Colors of the Rainbow with You!",
     "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers",
-    "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers"
+    "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers",
+    "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -838,6 +839,13 @@
       "format": "short",
       "publishedAt": "2026-10-10T17:40:05.928Z",
       "sourcePoolItem": "Old MacDonald Had a Farm"
+    },
+    {
+      "title": "Sing the Alphabet Song with A for Alligator and B for Bear!",
+      "url": "https://youtu.be/euUIwFzLuew",
+      "format": "short",
+      "publishedAt": "2026-10-11T17:57:33.538Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends"
     }
   ]
 }
