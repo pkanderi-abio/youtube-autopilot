@@ -176,14 +176,10 @@
     "Why Soccer Balls Fly Faster in Mexico City",
     "How Disney's Flying Spider-Man Robot Actually Works",
     "Why the Northern Lights Are Suddenly Appearing Farther South Than Ever",
-    "The Rise of Esports in Mexico: How 'Fútbol Santander' Became a Cultural Phenomenon"
+    "The Rise of Esports in Mexico: How 'Fútbol Santander' Became a Cultural Phenomenon",
+    "What Actually Happens To Your Elbow When You Pitch 100 MPH Like Shohei Ohtani"
   ],
   "videos": [
-    {
-      "title": "This Hidden Desert Town Is Blowing Up on Travel Apps Right Now",
-      "url": "https://youtu.be/ysVOPLJqXiY",
-      "publishedAt": "2026-07-08T00:12:23.195Z"
-    },
     {
       "title": "Travel Hacks Nobody Tells You About",
       "url": "https://youtu.be/3jM5ItPOel4",
@@ -1408,6 +1404,12 @@
       "url": "https://youtu.be/VEBKDU5D-NA",
       "format": "short",
       "publishedAt": "2026-10-11T18:43:39.807Z"
+    },
+    {
+      "title": "40 lb Elbow Ligament",
+      "url": "https://youtu.be/DeM0IetBDis",
+      "format": "short",
+      "publishedAt": "2026-10-12T01:05:44.850Z"
     }
   ]
 }
