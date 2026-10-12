@@ -57,9 +57,23 @@ jobs:
             jobs=$(jq -cn --argjson channels "$channels" --argjson formats "$formats" \
               '[range(0; $channels|length) as $i | range(0; $formats|length) as $j | {channel: $channels[$i], format: $formats[$j]}]')
           else
+            # channel1's two schedules are paused as of 2026-10-12: Microsoft
+            # changed the Edge TTS endpoint's auth token scheme, every
+            # channel1 run needs TTS (unlike channel2, which uses bundled
+            # pre-recorded nursery audio and is unaffected), and every call
+            # gets a hard 403 - see https://github.com/rany2/edge-tts/issues/490.
+            # Retrying or swapping library versions doesn't help; this is an
+            # upstream, currently-unresolved protocol break, not our bug.
+            # `jobs='[]'` here resolves to a 'skipped' publish job, which
+            # notify-on-failure already treats as a no-op (see that job's
+            # first check) - so these runs cause no failure notifications
+            # while paused. Manual workflow_dispatch runs for channel1 still
+            # work, for testing once the upstream issue is fixed.
+            # TO RE-ENABLE: restore the two commented lines below and delete
+            # this comment block once Edge TTS is confirmed working again.
             case "${{ github.event.schedule }}" in
-              '0 14,22 * * *')  jobs='[{"channel":"channel1","format":"short"}]' ;;
-              '0 17 * * 1,3,5') jobs='[{"channel":"channel1","format":"long"}]' ;;
+              '0 14,22 * * *')  jobs='[]' ;; # was: '[{"channel":"channel1","format":"short"}]'
+              '0 17 * * 1,3,5') jobs='[]' ;; # was: '[{"channel":"channel1","format":"long"}]'
               '0 13 * * *')     jobs='[{"channel":"channel2","format":"short"}]' ;;
               '0 14 * * 3,6,0') jobs='[{"channel":"channel2","format":"long"}]' ;;
               *) jobs='[]' ;;
