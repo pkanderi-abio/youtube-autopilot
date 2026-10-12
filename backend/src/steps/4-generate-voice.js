@@ -14,7 +14,11 @@ import { writeFile } from 'fs/promises';
 // designed as "expressive, caring, pleasant, friendly").
 const DEFAULT_VOICE = 'en-US-AndrewMultilingualNeural';
 
-export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function generateVoiceOnce(narration, voice) {
   const tts = new MsEdgeTTS();
   await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
   const { audioStream } = tts.toStream(narration);
@@ -25,7 +29,26 @@ export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
     audioStream.on('end', resolve);
     audioStream.on('error', reject);
   });
+  return Buffer.concat(chunks);
+}
 
-  await writeFile(outPath, Buffer.concat(chunks));
-  return outPath;
+export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
+  // Unlike every other external call in this pipeline (Gemini, Ollama
+  // pull, Pexels footage), this had no retry at all - a single transient
+  // WebSocket error against Microsoft's unofficial, undocumented TTS
+  // endpoint killed the whole run. Same retry-with-backoff pattern as
+  // the rest of the pipeline.
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const buffer = await generateVoiceOnce(narration, voice);
+      await writeFile(outPath, buffer);
+      return outPath;
+    } catch (error) {
+      lastError = error;
+      console.warn(`[voice] generation failed (attempt ${attempt + 1}/3), retrying: ${error.message}`);
+      await sleep(2000 * (attempt + 1));
+    }
+  }
+  throw lastError;
 }
