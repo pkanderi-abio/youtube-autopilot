@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-11T11:52:00.625Z",
+  "fetchedAt": "2026-10-12T13:59:20.467Z",
   "videos": [
-    {
-      "url": "https://youtu.be/9B-HU2JNnyQ",
-      "title": "Stop Believing This Travel Myth | Hidden Gems Over Crowds",
-      "format": null,
-      "publishedAt": "2026-07-08T00:07:45.297Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/ysVOPLJqXiY",
-      "title": "This Hidden Desert Town Is Blowing Up on Travel Apps Right Now",
-      "format": null,
-      "publishedAt": "2026-07-08T00:12:23.195Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/3jM5ItPOel4",
       "title": "Travel Hacks Nobody Tells You About",
@@ -247,7 +227,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 165,
+      "viewCount": 166,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -927,7 +907,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 247,
+      "viewCount": 250,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1077,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1386,
+      "viewCount": 1387,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1097,7 +1077,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 162,
+      "viewCount": 163,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1137,8 +1117,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1071,
-      "likeCount": 23,
+      "viewCount": 1089,
+      "likeCount": 24,
       "commentCount": 0
     },
     {
@@ -1847,7 +1827,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T18:00:55.321Z",
       "sourcePoolItem": null,
-      "viewCount": 27,
+      "viewCount": 29,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1887,7 +1867,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 105,
+      "viewCount": 106,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1927,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 138,
+      "viewCount": 132,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1947,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 179,
+      "viewCount": 180,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1967,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 18,
+      "viewCount": 21,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T01:37:39.899Z",
       "sourcePoolItem": null,
-      "viewCount": 33,
+      "viewCount": 37,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T18:20:12.956Z",
       "sourcePoolItem": null,
-      "viewCount": 83,
+      "viewCount": 101,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-10-11T00:46:36.179Z",
       "sourcePoolItem": null,
-      "viewCount": 25,
+      "viewCount": 32,
       "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/VEBKDU5D-NA",
+      "title": "The 2.5 Billion-Dollar Esports Phenomenon That Started in a Mexican Soccer Team",
+      "format": "short",
+      "publishedAt": "2026-10-11T18:43:39.807Z",
+      "sourcePoolItem": null,
+      "viewCount": 27,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/DeM0IetBDis",
+      "title": "40 lb Elbow Ligament",
+      "format": "short",
+      "publishedAt": "2026-10-12T01:05:44.850Z",
+      "sourcePoolItem": null,
+      "viewCount": 688,
+      "likeCount": 5,
       "commentCount": 0
     }
   ]
