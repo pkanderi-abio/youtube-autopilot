@@ -414,8 +414,31 @@ async function generateLongScript(channel, topicInfo) {
     // net: if we lose 1-2 sections but still clear the floor, ship;
     // if we lose enough that we're under the floor, abort as before.
     try {
-      const section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
-      narration += (narration ? ' ' : '') + section.narration.trim();
+      let section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
+      let candidate = (narration ? narration + ' ' : '') + section.narration.trim();
+      // generateNarrationSection's prompt already tells the model "do not
+      // repeat it, do not restart the video" - but that instruction gets
+      // ignored often enough (especially by the Ollama fallback, which a
+      // rate-limited Gemini key forces onto most long-form runs) that this
+      // was the single biggest source of long-form CI failures: the ONLY
+      // repeat check used to run once, on the fully-combined narration,
+      // AFTER all 5 section calls had already been paid for - so a repeat
+      // introduced by section 2 wasted sections 3-5 too and then hard-
+      // aborted the whole run. Retry just the offending section instead,
+      // same retry-before-abort pattern as the word-count check above.
+      let repeatAttempts = 0;
+      while (narrationHasRepeatedContent(candidate) && repeatAttempts < 2) {
+        repeatAttempts++;
+        console.warn(`[script] section ${i + 1}/${sections.length} repeated earlier narration, retrying (${repeatAttempts}/2)`);
+        section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
+        candidate = (narration ? narration + ' ' : '') + section.narration.trim();
+      }
+      if (narrationHasRepeatedContent(candidate)) {
+        skippedSections++;
+        console.warn(`[script] section ${i + 1}/${sections.length} still repeated earlier narration after retries - skipping and continuing`);
+        continue;
+      }
+      narration = candidate;
       captionLines = captionLines.concat(section.captionLines || []);
     } catch (err) {
       skippedSections++;
