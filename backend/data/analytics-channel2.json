@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-13T13:14:51.953Z",
+  "fetchedAt": "2026-10-14T10:54:44.707Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -627,7 +627,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T00:06:54.808Z",
       "sourcePoolItem": null,
-      "viewCount": 36,
+      "viewCount": 63,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -657,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T13:50:28.166Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 261,
+      "viewCount": 280,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -917,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T16:52:17.529Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 516,
+      "viewCount": 521,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T17:30:57.827Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 31,
+      "viewCount": 32,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -967,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-09-18T17:02:40.527Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "short",
       "publishedAt": "2026-09-21T18:38:07.060Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 55,
+      "viewCount": 56,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 2194,
+      "viewCount": 2196,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T17:01:11.876Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-09-29T18:44:50.823Z",
       "sourcePoolItem": "Rain Rain Go Away",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-09-30T18:24:19.720Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 17,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-10-01T18:50:25.921Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 12,
+      "viewCount": 13,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1077,7 +1077,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:03:31.426Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 63,
+      "viewCount": 65,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T18:55:37.795Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
-      "viewCount": 12,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 47,
+      "viewCount": 69,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:19:04.650Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 0,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 5,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T17:40:05.928Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1147,7 +1147,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T17:57:33.538Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 1,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     }
