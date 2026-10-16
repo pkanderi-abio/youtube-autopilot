@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-15T10:36:39.516Z",
+  "fetchedAt": "2026-10-16T10:23:32.539Z",
   "videos": [
     {
       "url": "https://youtu.be/3jM5ItPOel4",
@@ -227,7 +227,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 168,
+      "viewCount": 169,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -907,7 +907,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 254,
+      "viewCount": 255,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1388,
+      "viewCount": 1389,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1117,8 +1117,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1135,
-      "likeCount": 25,
+      "viewCount": 1140,
+      "likeCount": 24,
       "commentCount": 1
     },
     {
@@ -1167,7 +1167,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1046,
+      "viewCount": 1047,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1297,7 +1297,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1178,
+      "viewCount": 1179,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -1387,7 +1387,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 115,
+      "viewCount": 119,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1437,7 +1437,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 62,
+      "viewCount": 63,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T00:46:36.179Z",
       "sourcePoolItem": null,
-      "viewCount": 32,
+      "viewCount": 33,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1987,7 +1987,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T18:43:39.807Z",
       "sourcePoolItem": null,
-      "viewCount": 27,
+      "viewCount": 28,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,8 +1997,8 @@
       "format": "short",
       "publishedAt": "2026-10-12T01:05:44.850Z",
       "sourcePoolItem": null,
-      "viewCount": 917,
-      "likeCount": 8,
+      "viewCount": 920,
+      "likeCount": 9,
       "commentCount": 0
     }
   ]
