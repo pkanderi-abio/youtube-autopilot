@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-16T10:23:32.539Z",
+  "fetchedAt": "2026-10-17T09:56:03.455Z",
   "videos": [
     {
       "url": "https://youtu.be/3jM5ItPOel4",
@@ -227,7 +227,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 169,
+      "viewCount": 171,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -517,7 +517,7 @@
       "format": "long",
       "publishedAt": "2026-07-26T16:27:27.325Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1140,
+      "viewCount": 1147,
       "likeCount": 24,
       "commentCount": 1
     },
@@ -1167,7 +1167,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1047,
+      "viewCount": 1048,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1387,7 +1387,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 119,
+      "viewCount": 120,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1427,7 +1427,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 984,
+      "viewCount": 985,
       "likeCount": 16,
       "commentCount": 0
     },
@@ -1977,8 +1977,8 @@
       "format": "short",
       "publishedAt": "2026-10-11T00:46:36.179Z",
       "sourcePoolItem": null,
-      "viewCount": 33,
-      "likeCount": 1,
+      "viewCount": 34,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
