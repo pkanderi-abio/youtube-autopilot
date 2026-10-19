@@ -262,11 +262,25 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
   let best = null;
   let lastWordCount = null;
   let repeatedContent = false;
+  let lastError = null;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     const repetitionEmphasis = repeatedContent
       ? '\n\nIMPORTANT: the previous attempt repeated part of the narration. Every sentence and meaningful phrase must advance the topic; do not repeat any paragraph, sentence, or 10-word phrase.'
       : '';
-    const script = await completeJSON(buildPrompt(lastWordCount) + repetitionEmphasis, { maxTokens: 1024 });
+    let script;
+    try {
+      script = await completeJSON(buildPrompt(lastWordCount) + repetitionEmphasis, { maxTokens: 1024 });
+    } catch (err) {
+      // Same gap as generateNarrationSection's long-form loop below, more
+      // severe here: a thrown error (malformed JSON, network blip) used
+      // to escape this loop on attempt 1 and abort the ENTIRE short-form
+      // video - there's no per-section fallback for short-form the way
+      // long-form can skip one section and still clear the aggregate
+      // floor. Retry within the same budget instead.
+      lastError = err;
+      console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} failed (${err.message}), retrying`);
+      continue;
+    }
     const words = wordCount(script.narration || '');
     repeatedContent = narrationHasRepeatedContent(script.narration || '');
     const bestIsRepeated = best && narrationHasRepeatedContent(best.narration);
@@ -277,6 +291,10 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     if (words >= minWords && !repeatedContent) break;
     console.warn(`[script] attempt ${attempt + 1}/${MAX_ATTEMPTS} narration rejected (${words}/${minWords} min words${repeatedContent ? ', repeated content' : ''}), retrying`);
     lastWordCount = words;
+  }
+
+  if (!best) {
+    throw lastError || new Error(`[script] no usable narration after ${MAX_ATTEMPTS} attempts`);
   }
 
   if (wordCount(best.narration) < minWords) {
@@ -367,13 +385,32 @@ captionLines should split this section's narration into 2-3 short on-screen chun
 
   let best = null;
   let lastWordCount = null;
+  let lastError = null;
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
-    const section = await completeJSON(buildPrompt(lastWordCount), { maxTokens: 1024 });
+    let section;
+    try {
+      section = await completeJSON(buildPrompt(lastWordCount), { maxTokens: 1024 });
+    } catch (err) {
+      // A malformed-JSON response (observed with qwen3.8-max via xKiro: an
+      // unescaped literal quote inside the narration string) used to
+      // propagate straight out of this function on attempt 1, burning the
+      // whole MAX_ATTEMPTS budget for a single formatting hiccup - the
+      // retry loop's visible structure implied 3 tries, but a parse error
+      // never actually got more than 1. Treat it the same as "too short":
+      // retry within the same budget instead of giving up immediately.
+      lastError = err;
+      console.warn(`[script] section ${index + 1}/${total} attempt ${attempt + 1}/${MAX_ATTEMPTS} failed (${err.message}), retrying`);
+      continue;
+    }
     const words = wordCount(section.narration || '');
     if (!best || words > wordCount(best.narration)) best = section;
     if (words >= MIN_WORDS_PER_SECTION) break;
     console.warn(`[script] section ${index + 1}/${total} attempt ${attempt + 1}/${MAX_ATTEMPTS} too short (${words}/${MIN_WORDS_PER_SECTION} min words), retrying`);
     lastWordCount = words;
+  }
+
+  if (!best) {
+    throw lastError || new Error(`[script] section ${index + 1}/${total} produced no usable output after ${MAX_ATTEMPTS} attempts`);
   }
 
   if (wordCount(best.narration) < MIN_WORDS_PER_SECTION) {

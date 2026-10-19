@@ -172,6 +172,14 @@ async function completeWithOpenAICompatOnce(label, baseUrl, apiKey, model, promp
     body: JSON.stringify({
       model,
       messages,
+      // Confirmed directly against xKiro: identical requests return
+      // byte-identical completions with no temperature set (effectively
+      // 0). Explicit temperature alone did NOT fix the one deterministic
+      // malformed-JSON case observed (see stripStrayJsonObjectRestart
+      // below, which is the actual fix for that) - this is kept as a
+      // reasonable default for narration variety, not as a reliability
+      // fix.
+      temperature: 0.8,
       // Not sending response_format: {type:'json_object'} here - it's a
       // de facto OpenAI-compatible convention but wasn't confirmed against
       // either of these specific endpoints, and completeJSON already
@@ -263,12 +271,25 @@ function sanitizeJsonControlChars(text) {
   return result;
 }
 
+// Confirmed directly against xKiro's qwen3.8-max (deterministic - not
+// fixed by temperature, reproduced byte-identically across repeated
+// calls): the first field's value sometimes opens with a stray `{"`
+// (occasionally a full duplicated `"<key>":"` ) immediately after the
+// real opening quote, as if the model restarted the object mid-stream -
+// e.g. `{"narration":"{"narration":"One! One little chicken!...` or
+// `{"narration":"{" chicken lays an egg...`. Strip the stray restart
+// rather than losing the whole call to a model formatting quirk no
+// retry can escape.
+function stripStrayJsonObjectRestart(text) {
+  return text.replace(/^(\{\s*"(\w+)"\s*:\s*")\{"(?:\2"\s*:\s*")?/, '$1');
+}
+
 // Asks the model for JSON and parses it, tolerating stray markdown fences.
 export async function completeJSON(prompt, opts) {
   const raw = await complete(prompt + '\n\nRespond with ONLY valid JSON, no commentary, no markdown fences.', { ...opts, json: true });
   const cleaned = raw.trim().replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
   try {
-    return JSON.parse(sanitizeJsonControlChars(cleaned));
+    return JSON.parse(sanitizeJsonControlChars(stripStrayJsonObjectRestart(cleaned)));
   } catch (error) {
     throw new Error(`[llm] model response was not valid JSON: ${error.message} - raw: ${cleaned.slice(0, 300)}`);
   }
