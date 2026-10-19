@@ -179,14 +179,10 @@
     "The Rise of Esports in Mexico: How 'Fútbol Santander' Became a Cultural Phenomenon",
     "What Actually Happens To Your Elbow When You Pitch 100 MPH Like Shohei Ohtani",
     "Why a Russian Cosmos 2612 Satellite and an ICEYE X36 Radar Craft Are Trending Together: The Hidden Tech of Space Surveillance",
-    "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today"
+    "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today",
+    "Bananas"
   ],
   "videos": [
-    {
-      "title": "Sofia Vergara's Most Glamorous Travel Moments | Luxury Lifestyle",
-      "url": "https://youtu.be/YeY1rYoQkWE",
-      "publishedAt": "2026-07-08T01:01:37.320Z"
-    },
     {
       "title": "5 Iconic Pirate Destinations for Your Travel Bucket List",
       "url": "https://youtu.be/5Q_ydZp1iJQ",
@@ -1414,6 +1410,13 @@
       "url": "https://youtu.be/NZHkp2abE5M",
       "format": "short",
       "publishedAt": "2026-10-19T13:34:42.405Z"
+    },
+    {
+      "title": "The Hidden Stem of Bananas",
+      "url": "https://youtu.be/jQ67UakM2XM",
+      "format": "short",
+      "publishedAt": "2026-10-19T18:25:45.972Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
