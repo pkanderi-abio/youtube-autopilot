@@ -180,7 +180,7 @@ jobs:
           MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
           MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3' }}
           XKIRO_API_KEY: ${{ secrets.XKIRO_API_KEY }}
-          XKIRO_MODEL: ${{ vars.XKIRO_MODEL || 'mistralai/mistral-large-4-0' }}
+          XKIRO_MODEL: ${{ vars.XKIRO_MODEL || 'qwen/qwen3.8-max:free' }}
           LLM_FALLBACK: ollama
         run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
       - name: Upload thumbnail variants

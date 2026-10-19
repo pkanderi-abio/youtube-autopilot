@@ -28,11 +28,16 @@ const MUSE_API_KEY = process.env.MUSE_API_KEY;
 const MUSE_MODEL = process.env.MUSE_MODEL || 'muse-spark-1.3';
 const MUSE_BASE_URL = process.env.MUSE_BASE_URL || 'https://api.meta.ai/v1';
 // xKiro - OpenAI/Anthropic-compatible gateway reselling 100+ models behind
-// one key, several genuinely free (no credit card). Default model is a
-// free, large-context Mistral (confirmed free via https://xkiro.com/models)
-// rather than anything from a paid provider also listed in their catalog.
+// one key, several genuinely free (no credit card). Default model picked
+// empirically, not just by spec: mistralai/mistral-large-4-0 (the model
+// the user originally pointed at) consistently undershot the 130-170 word
+// per-section target used throughout 2-generate-script.js (observed
+// ~98 words), reproducing the exact "too short, retrying" failure this
+// provider swap was meant to fix. qwen/qwen3.8-max:free hit 170/170/170
+// across three direct trials with the same prompt shape - free, 1M
+// context, and reliably honors length instructions.
 const XKIRO_API_KEY = process.env.XKIRO_API_KEY;
-const XKIRO_MODEL = process.env.XKIRO_MODEL || 'mistralai/mistral-large-4-0';
+const XKIRO_MODEL = process.env.XKIRO_MODEL || 'qwen/qwen3.8-max:free';
 const XKIRO_BASE_URL = process.env.XKIRO_BASE_URL || 'https://api.xkiro.com/v1';
 const LLM_FALLBACK = process.env.LLM_FALLBACK || 'ollama';
 
