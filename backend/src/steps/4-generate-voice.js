@@ -14,14 +14,24 @@ import { writeFile } from 'fs/promises';
 // designed as "expressive, caring, pleasant, friendly").
 const DEFAULT_VOICE = 'en-US-AndrewMultilingualNeural';
 
+// Edge TTS's default rate is tuned for brisk, efficient information
+// delivery, which reads as rushed/flat for narration meant to sound like
+// a person talking rather than a screen reader. A modest slowdown gives
+// the neural model's own prosody more room to land naturally between
+// phrases - this is a starting point, not a measured optimum (unlike the
+// retry/JSON-repair fixes elsewhere in this codebase, "sounds human" is
+// a subjective call; listen to a sample and adjust if it's not right for
+// a given channel's voice).
+const DEFAULT_RATE = '-10%';
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function generateVoiceOnce(narration, voice) {
+async function generateVoiceOnce(narration, voice, rate) {
   const tts = new MsEdgeTTS();
   await tts.setMetadata(voice, OUTPUT_FORMAT.AUDIO_24KHZ_48KBITRATE_MONO_MP3);
-  const { audioStream } = tts.toStream(narration);
+  const { audioStream } = tts.toStream(narration, { rate });
 
   const chunks = [];
   await new Promise((resolve, reject) => {
@@ -32,7 +42,7 @@ async function generateVoiceOnce(narration, voice) {
   return Buffer.concat(chunks);
 }
 
-export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
+export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE, rate = DEFAULT_RATE) {
   // Unlike every other external call in this pipeline (Gemini, Ollama
   // pull, Pexels footage), this had no retry at all - a single transient
   // WebSocket error against Microsoft's unofficial, undocumented TTS
@@ -41,7 +51,7 @@ export async function generateVoice(narration, outPath, voice = DEFAULT_VOICE) {
   let lastError;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const buffer = await generateVoiceOnce(narration, voice);
+      const buffer = await generateVoiceOnce(narration, voice, rate);
       await writeFile(outPath, buffer);
       return outPath;
     } catch (error) {

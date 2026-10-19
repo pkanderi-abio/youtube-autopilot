@@ -119,8 +119,10 @@ async function run(channelId, formatOverride) {
     const backgroundPath = await generateBackground(channel, duration, workDir, scenePlan.shots);
 
     console.log('[6/8] assembling final video...');
+    // Burned-in captions are deliberately off - assembleVideo only burns
+    // text when captionLines is passed non-empty.
     const videoPath = await assembleVideo({
-      backgroundPath, audioPath, captionLines: script.captionLines, workDir
+      backgroundPath, audioPath, workDir
     });
 
     console.log('[7/8] generating thumbnail...');
