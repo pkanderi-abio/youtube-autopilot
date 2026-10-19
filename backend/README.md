@@ -1,205 +1,147 @@
 # YouTube Autopilot — backend
 
-A fully autonomous pipeline that, on a schedule, picks a topic, writes a
-script, generates a voiceover, assembles a video, generates a thumbnail,
-and publishes it straight to YouTube — for 2 channels, each publishing
-both short-form and long-form videos on its own cadence, with no human
-review step, running on free GitHub Actions cron.
+A zero-cost pipeline that produces **fully AI-generated videos** — script,
+voice, visuals, thumbnail, metadata — and publishes them to YouTube on a
+GitHub Actions schedule.
 
-## What this actually is (read this first)
+```
+1 topic      curated topicPool (+ optional Google Trends) → LLM picks + sharpens
+2 script     LLM writes a STORYBOARD: [{ narration, visual prompt }] per scene
+3 seo        title / description / tags / hashtags / thumbnail text / first comment
+4 voice      AI voice per scene (Edge neural TTS → Cloudflare MeloTTS backup)
+5 visuals    AI image per scene (Cloudflare FLUX → Pollinations backup)
+             + optional AI motion clip for the hook scene(s)
+6 render     ffmpeg: camera-move animation per still, clips, captions, audio
+7 thumbnail  AI hero image + bold text (sharp), A/B variants kept as CI artifact
+8 upload     YouTube Data API, AI-content disclosure flag set, playlist, first comment
+```
 
-This is real, runnable code, not a mockup, and it's built entirely on
-free/open-source tools and free-tier APIs — no paid API keys anywhere
-in the content pipeline:
+Because voice is synthesized **per scene**, each image is on screen exactly
+while its own words are spoken — no alignment heuristics.
 
-- **Script**: written by a local **Ollama** server (`llama3.2` by
-  default) - no API key, no per-request cost. Quality is noticeably
-  below a frontier hosted model (shorter/less precise instruction
-  following) and generation is much slower (CPU inference), but it's
-  genuinely free and self-hosted. Long-form scripts are generated
-  section-by-section (an outline call, then one call per narrative
-  beat) rather than in one shot - a small local model reliably
-  undershoots a single big word-count target, but hits a small
-  per-section target consistently.
-- **Voice**: Microsoft Edge's free TTS engine (no API key, no per-word cost).
-- **Visuals**: per-channel `visualStyle` in `config/channels.json`:
-  - `"aiGenerated"`: one original Google Imagen illustration per
-    narration-aligned shot, animated with a cinematic pan/zoom. Requires
-    image-generation access on the configured Google AI API key and may
-    incur provider charges.
-  - `"stockFootage"` (both current channels): the script step also
-    produces a `scenes` array of short search phrases, and each shot
-    downloads a real matching clip from **Pexels'** free stock-video API
-    (registered key, no paid tier), cover-cropped/looped/trimmed to the
-    shot's duration. A failed search/download for a given shot falls
-    back to the gradient rather than failing the run.
-  - `"cartoonAnimation"`: procedurally animated shapes/numbers/letters,
-    $0 and no external API - built for baby content but currently
-    unused (proved unreliable on the CI runner; see CLAUDE.md).
-  - `"gradient"`: a procedurally generated, slowly-animated two-color
-    gradient — not stock footage or AI-generated video. $0 cost,
-    effectively instant. This is also the fallback used whenever stock
-    footage/cartoon rendering fails for a shot.
-- **Thumbnail**: a CTR-optimized formula (bold color-block emphasis
-  word + smaller context text + a vector-drawn accent icon), not just
-  plain title text - two compositions are generated per video, one
-  uploads and both are kept as a CI artifact for manual comparison.
+## What's free, and the limits
 
-This produces the kind of "faceless" narrated Shorts/long-form videos
-you've likely seen on YouTube using real b-roll footage — it will NOT
-produce cinematic bespoke AI video generation, and the script quality
-trade-off for self-hosting the LLM is real, not marketing.
+| Piece | Provider | Free allowance |
+|---|---|---|
+| Script + SEO LLM | Cloudflare Workers AI (`llama-4-scout` → `llama-3.3-70b`) | 10,000 neurons/day shared |
+| Scene images | Cloudflare `flux-1-schnell` (~58 neurons/image) | ≈ shared budget |
+| Image fallback | Pollinations.ai FLUX | free tier, key optional |
+| AI motion clips | Pollinations.ai video (optional) | uses the account's free/earned pollen |
+| Voice | Microsoft Edge neural TTS (keyless) | unlimited, unofficial |
+| Voice backup | Cloudflare MeloTTS (~20 neurons/min) | shared budget |
+| Render | ffmpeg on GitHub Actions | free on a public repo |
+
+**Daily budget.** A short (~9 scenes) costs ≈ 750 neurons, a ~7-minute long
+video (~36 scenes + thumbnail) ≈ 3,000. The current schedule's busiest day
+(3 shorts + 2 longs) is ≈ 8,300 — inside the 10,000/day free allocation, but
+without much slack: switching `CF_TEXT_MODEL` to Llama 3.3 70B (better prose,
+~3× the text cost) or images to FLUX-2 Klein pushes it over, and the
+overflow then lands on Pollinations.
+If Cloudflare reports the daily allowance is used up, images switch to
+Pollinations for the rest of that run automatically. Each run logs its
+estimated spend on the last line.
+
+**True text-to-video** is the one piece with no dependable free supply.
+It's used only for the opening hook (where motion matters most for
+retention) and silently falls back to the still + camera-move treatment.
 
 ## Before you turn on zero-review autonomy
 
-YouTube's monetization policies require content to be original/
-transformative, not just reused or repetitive filler — channels seen as
-mass-producing near-identical, low-effort content risk **demonetization
-or suspension**, which directly undermines the income goal here. Since
-this pipeline has no human checkpoint:
-
-- Start with a lower volume and watch the first 1-2 weeks of output
-  closely before scaling up.
-- Periodically skim published videos/scripts for quality and factual
-  accuracy — the script step is instructed not to fabricate stats, but
-  LLMs (especially a small self-hosted one) can still get things wrong,
-  and more often than a larger hosted model would.
-- Keep an eye on YouTube Studio for any policy strikes.
-- **Kids content (`madeForKids: true` channels, e.g. Storytime Fables)**:
-  this sets `selfDeclaredMadeForKids: true` on upload, which
-  YouTube enforces by disabling comments, personalized ads, notifications,
-  and end screens/cards on those videos — expected, not a bug. Kids
-  content is also one of YouTube's most heavily moderated categories;
-  give this channel's early output extra scrutiny, not less.
+- YouTube's monetization policy targets **mass-produced, repetitive or
+  "inauthentic" content**. Keep topics varied, check output for the first
+  1–2 weeks, and keep volume modest. Every upload sets
+  `containsSyntheticMedia: true` (YouTube's required AI disclosure).
+- Spot-check facts — the script is told not to invent statistics, but LLMs
+  still make mistakes.
+- **Kids content** (`madeForKids: true`): YouTube disables comments,
+  personalized ads, notifications and end screens on those videos — expected.
+  It's also the most heavily moderated category; review it more, not less.
 
 ## One-time setup
 
-### 1. Ollama (script/topic generation)
-Install Ollama locally (`brew install ollama` or see ollama.com) and
-run `ollama pull llama3.2`. No API key, no repo secret needed - CI
-installs and pulls the model itself (see the workflow file). If Ollama
-fails (unreachable, or the model server crashes) the pipeline aborts
-that run rather than publishing broken/templated content - real output
-requires Ollama actually working.
+### 1. Cloudflare Workers AI (free)
+1. Create a free account at dash.cloudflare.com (no card needed).
+2. Copy your **Account ID** (right sidebar of the dashboard).
+3. My Profile → API Tokens → Create Token → template **"Workers AI"**
+   (Workers AI Read + Edit). Copy the token.
+4. Add repo secrets `CF_ACCOUNT_ID` and `CF_API_TOKEN`.
 
-### 2. Pexels API key (stock footage)
-Get a free key at [pexels.com/api](https://www.pexels.com/api/) (instant,
-no approval wait) and add it as a repo secret named `PEXELS_API_KEY`
-(and optionally in your local `.env` for testing). No paid tier. If this
-key is missing or a search comes up empty, that shot falls back to the
-gradient rather than failing the run.
+### 2. Pollinations (optional, recommended)
+Sign up at enter.pollinations.ai and create a **secret (`sk_`) key** →
+repo secret `POLLINATIONS_API_KEY`. Enables the image fallback with higher
+limits and the AI motion clips. Without it, clips are skipped and the image
+fallback runs anonymously.
 
-For AI-generated visuals, set `visualStyle` to `"aiGenerated"` and provide
-`GEMINI_API_KEY`. The default image model is `imagen-4.0-generate-001`;
-override it with the `GEMINI_IMAGE_MODEL` Actions variable if another Imagen
-model is enabled for the Google project.
+### 3. Google Cloud + YouTube API (per channel)
+1. Google Cloud project → enable **YouTube Data API v3**.
+2. OAuth client, type **Desktop app**; note Client ID/Secret.
+3. `cp .env.example .env`, fill `YT_CLIENT_ID` / `YT_CLIENT_SECRET`.
+4. `npm install && npm run get-token`, sign in with channel 1's account →
+   repo secret `YT_REFRESH_TOKEN_CHANNEL1`. Repeat for channel 2.
+5. Add `YT_CLIENT_ID` / `YT_CLIENT_SECRET` as repo secrets.
 
-### 3. Google Cloud + YouTube API access (per channel)
-1. Create a Google Cloud project → enable **YouTube Data API v3**.
-2. Create OAuth 2.0 credentials → Application type **Desktop app**.
-   Note the Client ID/Secret.
-3. Copy `.env.example` to `.env` and fill in `YT_CLIENT_ID` / `YT_CLIENT_SECRET`.
-4. Run `npm install && npm run get-token`, sign in with the **first**
-   channel's Google account when the browser opens, and copy the
-   printed refresh token into a repo secret `YT_REFRESH_TOKEN_CHANNEL1`.
-5. Repeat step 4 signing in with the **second** channel's account →
-   `YT_REFRESH_TOKEN_CHANNEL2`.
-6. Add `YT_CLIENT_ID` / `YT_CLIENT_SECRET` as repo secrets too.
+Default quota (10,000 units/day) covers ~5 uploads/day (an upload ≈ 1,600
+units plus thumbnail/comment/playlist calls).
 
-Default API quota (10,000 units/day) covers this volume easily — an
-upload costs 1,600 units, so roughly 6 uploads/day/project before
-you'd need to request a quota increase.
+### 4. Configure channels — `config/channels.json`
 
-### 4. Configure your channels
-Edit `config/channels.json` — names, niche, default `format` (`short` or
-`long` - see below), `visualStyle` (`gradient`, `stockFootage`,
-`aiGenerated`, or `cartoonAnimation`), `madeForKids`, brand colors, YouTube
-category ID.
-Two optional fields that only matter for evergreen (non-trending) content:
-- `topicPool` — a curated list of topics to draw from instead of daily
-  trending searches (e.g. classic fables, nursery rhymes). Omit this to
-  use `src/lib/trends.js` instead.
-- `closingStyle` — `"moral"` for a story-lesson ending, otherwise falls
-  back to a kids-safe "watch again" line (if `madeForKids`) or a
-  comment/follow CTA.
+| Field | Meaning |
+|---|---|
+| `id`, `name`, `niche` | identity + what the LLM writes about (`name` doesn't rename the real channel) |
+| `format` | default `short` (vertical, ≤ 3 min) or `long` (16:9, ~7 min) |
+| `artStyle` | appended to every image prompt — the channel's visual identity |
+| `captions` | burn word-chunk captions into the video |
+| `aiClips` | `{ "enabled": true, "scenes": [0] }` — which scenes try a real AI motion clip |
+| `formats` | per-format overrides, e.g. `{ "long": { "captions": false } }` |
+| `voice`, `voiceRate` | Edge TTS voice name and rate (e.g. `"-5%"`) |
+| `imageModel` | override `CF_IMAGE_MODEL` for this channel (e.g. `@cf/black-forest-labs/flux-2-klein-4b` for native 9:16, ~2× the neurons) |
+| `madeForKids`, `contentStyle: "babyLearning"` | toddler content rules + kids flag |
+| `closingStyle: "moral"` | story-lesson endings |
+| `topicPool`, `useLiveTrends` | curated topics (6-video cooldown) and/or daily trends |
+| `brandColorA/B` | thumbnail accent colours |
+| `refreshTokenEnv`, `categoryId`, `tags`, `playlistId` | YouTube upload settings |
 
-Renaming a channel here only changes what's fed into script generation
-— it does **not** rename the actual YouTube channel or handle, which
-you set manually in YouTube Studio.
+Toddler channels play a **real sung public-domain recording** when the
+topic matches one in `audio/nursery-manifest.json`, with AI illustrations
+following the rhyme instead of narration.
 
-### 5. Deploying
-Push this repo to GitHub (`package.json` and `.github/` at the repo
-root). Add the YouTube + Pexels secrets above under Settings → Secrets
-and variables → Actions. The workflow
-(`.github/workflows/pipeline.yml`) runs automatically on its cron
-schedule, or trigger it manually from the Actions tab (optionally
-scoped to one channel and/or one format via the workflow's inputs).
-`.github/workflows/analytics.yml` also runs automatically once deployed
-(its own daily schedule) - it needs no extra secrets, since it reuses
-the same YouTube OAuth tokens already set up above.
+### 5. Deploy
+Push to GitHub (public repo = free Actions minutes). Scheduling lives in
+`.github/workflows/pipeline.yml` — one cron line per (channel, format) plus
+its case in the `plan` job. Run manually from the Actions tab with optional
+`channel` / `format` inputs. A failing run opens a `pipeline-failure` issue
+that closes itself after the next success.
 
-A failed scheduled run doesn't fail silently: `notify-on-failure`
-(in `pipeline.yml`) opens a `pipeline-failure`-labeled GitHub issue on
-first failure and auto-closes it once a run succeeds again, using only
-the repo's built-in token.
+## Running locally
 
-## Running locally (for testing)
-```
+```bash
+cd backend
 npm install
-cp .env.example .env   # fill in YouTube + Pexels values; Ollama settings are optional locally
-ollama pull llama3.2
-npm run run -- channel1          # uses the channel's default format
-npm run run -- channel1 long     # override: publish a long-form video instead
+npm run mock -- channel1 short                 # fully offline: placeholder AI, no upload
+npm run dry-run -- channel1 short              # real AI, writes out/channel1/*.mp4, no upload
+npm run dry-run -- channel2 long "--topic=Baa Baa Black Sheep"
+npm run run -- channel1 long                   # real AI + publish
 ```
 
-## Cost estimate
-- Ollama, Edge TTS, ffmpeg, node-canvas: all free, self-hosted, $0 in
-  API costs, period. Pexels' video search API is free within its
-  registered-key tier.
-- YouTube Data API: free within default quota.
-- **GitHub Actions compute minutes**: this repo is public, so Actions
-  minutes are unlimited and free regardless of schedule - there's no
-  billing risk here at all. The cron cadence in
-  `.github/workflows/pipeline.yml` (shorts run often since they're cheap,
-  ~8-12 min/run; long-form runs a few times/week since it's much more
-  expensive, ~28-30 min/run - chunked script generation plus longer
-  voice/footage work) is about content pacing and avoiding a
-  spammy-looking channel, not compute budget. If you ever make the repo
-  private again, re-check usage under Settings → Billing, since the
-  2,000 free minutes/month cap would apply again.
-
-## Extending later
-- `src/lib/stockFootage.js` → swap in a paid AI video-generation API
-  (real bespoke motion clips instead of stock footage) if you decide
-  that trade-off is worth it, or add a second free stock source
-  (Pixabay, Archive.org) as a fallback before the gradient.
-- `src/lib/llm.js` → swap in a bigger local model (edit `OLLAMA_MODEL`)
-  or a hosted API if you decide the quality trade-off isn't worth it.
-- Add an approval-gate mode (hold uploads as `privacyStatus: 'private'`
-  and flip to public after a manual check) if you want a human back in
-  the loop later — one-line change in `src/steps/8-upload-youtube.js`.
-- `src/lib/analytics.js`'s `poolPerformanceHint()` only kicks in once a
-  pool item has real view data from ≥6 distinct items - once channels
-  have more history, consider a stronger signal than the current
-  best/worst-3 text hint (e.g. weighting topic selection directly).
+`KEEP_WORKDIR=1` keeps the temp folder with every scene image/voice clip.
+`AI_CLIPS=0` disables motion clips for a run.
 
 ## Files
-- `src/steps/1-discover-topic.js` … `8-upload-youtube.js` — the pipeline
-  stages (see CLAUDE.md for what each does and why)
-- `src/run-pipeline.js` — orchestrator; `node src/run-pipeline.js <channelId> [format]`
-- `src/lib/` — LLM (Ollama), stock footage (Pexels), YouTube auth,
-  trends, analytics, nursery-audio, and history-state helpers
-- `scripts/get-refresh-token.js` — one-time OAuth helper
-- `scripts/fetch-analytics.js` — pulls real view/like/comment counts (run by `analytics.yml`)
-- `scripts/merge-and-push-history.js` — conflict-safe history commit, run by `pipeline.yml`
-- `config/channels.json` — per-channel config
-- `data/history-<channel>.json` — auto-generated memory of used topics/videos,
-  shared across both formats so topics never repeat between a channel's
-  short and long-form videos
-- `data/analytics-<channel>.json` — auto-generated real view/like/comment
-  snapshot, refreshed daily by `analytics.yml`
-- `.github/workflows/pipeline.yml` — cron schedule (one entry per
-  channel+format combination) + Ollama setup; a single matrix `publish`
-  job fans out over whichever (channel, format) pairs that trigger maps
-  to, plus a `notify-on-failure` job (see CLAUDE.md)
-- `.github/workflows/analytics.yml` — daily, independent schedule; refreshes `data/analytics-*.json`
+
+```
+src/run-pipeline.js      orchestrator (8 stages, log markers parsed by the dashboard)
+src/steps/1-topic.js     topic selection + pool cooldown
+src/steps/2-script.js    storyboard script (short: 1 call, long: outline + sections)
+src/steps/3-seo.js       metadata + vague/duplicate title guards
+src/steps/4-voice.js     per-scene TTS, exact scene durations
+src/steps/5-visuals.js   AI images (+ AI clips)
+src/steps/6-render.js    ffmpeg camera moves, captions, mux
+src/steps/7-thumbnail.js sharp/SVG thumbnail, A/B variants
+src/steps/8-upload.js    YouTube upload + growth actions
+src/lib/cloudflare.js    Workers AI client (chat, FLUX, MeloTTS, neuron tally)
+src/lib/llm.js           JSON completion, repair, model fallback, mock mode
+src/lib/images.js        image provider chain + blank-frame check
+src/lib/aiClips.js       optional Pollinations text-to-video
+src/lib/tts.js           Edge TTS → MeloTTS
+scripts/                 OAuth token helper, analytics pull, history merge/push
+```

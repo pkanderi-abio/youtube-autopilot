@@ -1,4 +1,4 @@
-name: Autopilot pipeline
+name: Autopilot pipeline (AI-generated videos)
 
 permissions:
   contents: write
@@ -73,16 +73,12 @@ jobs:
           fi
           echo "jobs=$jobs" >> "$GITHUB_OUTPUT"
 
-  # Single parameterized job fanned out over (channel, format) pairs -
-  # both channels now share the exact same pipeline shape (real stock
-  # footage, no per-channel special-casing needed), so one matrix job
-  # replaces what used to be two near-duplicate job definitions.
+  # One parameterized job fanned out over (channel, format) pairs.
   publish:
     needs: plan
     if: needs.plan.outputs.jobs != '[]'
     runs-on: ubuntu-latest
-    env:
-      LLM_PROVIDER: xkiro
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
@@ -95,11 +91,10 @@ jobs:
       - name: Install dependencies
         working-directory: backend
         run: |
-          # npm ci itself is safe to retry (always a clean reinstall from
-          # the lockfile) - observed directly in production: ffmpeg-static's
-          # postinstall binary download hit a transient 504 from GitHub's
-          # release CDN and failed the whole job before the pipeline even
-          # started.
+          # npm ci is safe to retry - ffmpeg-static's postinstall binary
+          # download has hit transient 504s from GitHub's release CDN.
+          # No apt-get step any more: sharp and ffmpeg-static ship prebuilt
+          # binaries (node-canvas and its native build are gone).
           for attempt in 1 2 3; do
             if npm ci; then
               exit 0
@@ -109,92 +104,37 @@ jobs:
           done
           echo "::error::npm ci failed after retries"
           exit 1
-      - name: Install ffmpeg system libs (canvas native build)
-        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
-      - name: Install Ollama
-        run: curl -fsSL https://ollama.com/install.sh | sh
-      - name: Cache Ollama models
-        uses: actions/cache@v4
-        with:
-          path: ~/.ollama
-          key: ollama-llama3.2-v1
-      - name: Start Ollama and pull model
-        run: |
-          # install.sh's systemd unit has been observed to never start on
-          # the runner (journalctl shows no entries at all), so run our own
-          # server process instead and log it to a file we can read on failure.
-          # A wedged unit that already holds :11434 is stopped first.
-          sudo systemctl disable --now ollama >/dev/null 2>&1 || true
-          if ! curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
-            setsid nohup ollama serve > "$RUNNER_TEMP/ollama.log" 2>&1 < /dev/null &
-          fi
-          # Ollama is only the fallback here (job sets LLM_PROVIDER=xkiro),
-          # so a dead Ollama server warns and continues rather than killing
-          # the whole publish. If Gemini then also fails, the LLM call
-          # itself aborts the run.
-          ollama_ready=false
-          for i in $(seq 1 180); do
-            if curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
-              echo "Ollama ready after ${i}s"
-              ollama_ready=true
-              break
-            fi
-            sleep 1
-          done
-          if [ "$ollama_ready" != "true" ]; then
-            echo "::warning::Ollama did not answer /api/version within 180s - continuing with Gemini as primary"
-            exit 0
-          fi
-          # `ollama pull` itself has been observed to fail transiently
-          # on the CI runner (network blip mid-download of the model
-          # blob); one-shot means the whole job dies on a retriable
-          # error. Retry a few times with growing backoff before giving
-          # up - same pattern as the npm ci step above.
-          for attempt in 1 2 3; do
-            if ollama pull llama3.2; then
-              exit 0
-            fi
-            echo "ollama pull attempt $attempt failed, retrying..."
-            sleep $((attempt * 15))
-          done
-          echo "::warning::ollama pull failed after 3 attempts - Gemini remains primary"
-          exit 0
-      - name: Run pipeline for ${{ matrix.channel }} (${{ matrix.format }})
+      - name: Generate and publish ${{ matrix.channel }} (${{ matrix.format }})
         working-directory: backend
         env:
+          # Free Cloudflare Workers AI account: script LLM + FLUX images + backup TTS
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_TEXT_MODEL: ${{ vars.CF_TEXT_MODEL }}
+          CF_IMAGE_MODEL: ${{ vars.CF_IMAGE_MODEL }}
+          # Optional: Pollinations fallback images + AI motion clips
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          POLLINATIONS_VIDEO_MODEL: ${{ vars.POLLINATIONS_VIDEO_MODEL }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'imagen-4.0-generate-001' }}
-          MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
-          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3' }}
-          XKIRO_API_KEY: ${{ secrets.XKIRO_API_KEY }}
-          XKIRO_MODEL: ${{ vars.XKIRO_MODEL || 'qwen/qwen3.8-max:free' }}
-          LLM_FALLBACK: ollama
-        run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
+        run: |
+          # empty vars.* come through as "" - drop them so code defaults apply
+          for v in CF_TEXT_MODEL CF_IMAGE_MODEL POLLINATIONS_VIDEO_MODEL; do
+            [ -z "${!v}" ] && unset $v
+          done
+          node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
       - name: Upload thumbnail variants
-        # The Data API has no way to run a real A/B test on a thumbnail
-        # (Studio's "Test & compare" isn't exposed programmatically), so
-        # step 7 generates two candidate compositions and only uploads
-        # one. This is the only way to actually see the other one: the
-        # runner's filesystem (including data/thumbnail-variants/, which
-        # is intentionally never committed - it's PNGs, not state) is
-        # gone the moment this job ends.
+        # The Data API can't run Studio's thumbnail A/B test, so both
+        # candidates are kept here (out/ is never committed).
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: thumbnail-variants-${{ matrix.channel }}-${{ matrix.format }}-${{ github.run_id }}
-          path: backend/data/thumbnail-variants/
+          name: thumbnails-${{ matrix.channel }}-${{ matrix.format }}-${{ github.run_id }}
+          path: backend/out/
           if-no-files-found: ignore
           retention-days: 14
-      - name: Dump Ollama server log on failure
-        if: failure()
-        run: |
-          cat "$RUNNER_TEMP/ollama.log" 2>/dev/null || echo "no ollama.log"
-          sudo journalctl -u ollama --no-pager -n 300 || true
       - name: Commit updated history
         working-directory: backend
         run: |

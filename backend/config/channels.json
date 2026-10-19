@@ -5,14 +5,43 @@
       "name": "TeslaTravel",
       "niche": "quick surprising-fact videos in the Zack D Films / 'Did You Know' style: the most interesting current trending subjects plus bite-sized science, history, nature, technology, culture, and occasional defense/current-affairs explainers. Format is a punchy fact or promise up front, one payoff per video. Cover any current trend with a factual explainer angle; do not force travel, destinations, lifestyle, or defense into unrelated trends. Defense topics must stay factual, non-graphic, and focused on technology, history, or publicly reported capabilities.",
       "format": "short",
-      "visualStyle": "stockFootage",
+      "artStyle": "cinematic photorealistic documentary still, dramatic natural lighting, shallow depth of field, rich color grading, 35mm film look, ultra detailed",
+      "captions": true,
+      "aiClips": {
+        "enabled": true,
+        "scenes": [
+          0
+        ]
+      },
+      "formats": {
+        "long": {
+          "captions": false,
+          "aiClips": {
+            "enabled": true,
+            "scenes": [
+              0,
+              1
+            ]
+          }
+        }
+      },
+      "voice": "en-US-AndrewMultilingualNeural",
       "madeForKids": false,
       "brandColorA": "#1b3a5c",
       "brandColorB": "#4f7dff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL1",
       "categoryId": "27",
-      "tags": ["shorts", "did you know", "top 10", "facts", "amazing", "history", "science", "technology", "defense news"],
-      "voice": "en-US-AndrewMultilingualNeural",
+      "tags": [
+        "shorts",
+        "did you know",
+        "top 10",
+        "facts",
+        "amazing",
+        "history",
+        "science",
+        "technology",
+        "defense news"
+      ],
       "useLiveTrends": true,
       "topicPool": [
         "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
@@ -57,15 +86,31 @@
       "name": "Storytime Fables",
       "niche": "counting, colors, shapes, ABCs, animal sounds, and simple sing-along nursery rhymes for babies and toddlers (ages 1-4). Style is CoComelon / Little Baby Bum / ChuChu TV: warm, highly repetitive, direct address to the child, heavy use of familiar public-domain nursery rhymes, and calm cheerful encouragement throughout",
       "format": "long",
-      "visualStyle": "cartoonAnimation",
+      "artStyle": "bright cheerful 3D animated cartoon for toddlers, soft rounded shapes, big friendly eyes, saturated pastel colors, simple clean background, soft studio lighting",
+      "captions": false,
+      "aiClips": {
+        "enabled": true,
+        "scenes": [
+          0
+        ]
+      },
+      "voice": "en-US-AvaMultilingualNeural",
       "madeForKids": true,
+      "contentStyle": "babyLearning",
       "brandColorA": "#ff6fae",
       "brandColorB": "#3ec6ff",
       "refreshTokenEnv": "YT_REFRESH_TOKEN_CHANNEL2",
       "categoryId": "1",
-      "tags": ["baby songs", "nursery rhymes", "kids learning", "counting for kids", "colors for kids", "abc song", "toddler songs", "sing along"],
-      "voice": "en-US-AvaMultilingualNeural",
-      "contentStyle": "babyLearning",
+      "tags": [
+        "baby songs",
+        "nursery rhymes",
+        "kids learning",
+        "counting for kids",
+        "colors for kids",
+        "abc song",
+        "toddler songs",
+        "sing along"
+      ],
       "topicPool": [
         "Twinkle Twinkle Little Star",
         "Old MacDonald Had a Farm",

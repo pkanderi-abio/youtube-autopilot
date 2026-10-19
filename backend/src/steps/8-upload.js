@@ -102,7 +102,10 @@ export async function uploadToYoutube(channel, { videoPath, thumbnailPath, title
       },
       status: {
         privacyStatus: 'public',
-        selfDeclaredMadeForKids: Boolean(channel.madeForKids)
+        selfDeclaredMadeForKids: Boolean(channel.madeForKids),
+        // YouTube requires disclosing realistic AI-generated/altered media.
+        // Every frame and the voice here are AI-generated, so always declare it.
+        containsSyntheticMedia: true
       }
     },
     media: {

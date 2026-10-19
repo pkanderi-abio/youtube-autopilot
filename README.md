@@ -2,14 +2,15 @@
 
 Two parts:
 
-- **`backend/`** — the real automation pipeline. Topic discovery (daily
-  trends, or a curated evergreen topic pool for channels that define
-  one) → local Ollama script generation → free TTS voiceover →
-  generated background video (real stock footage via Pexels' free API,
-  or a gradient fallback) → ffmpeg assembly → thumbnail → YouTube
-  upload, scheduled via GitHub Actions cron with zero human review and
-  zero paid APIs. Each channel publishes both short-form and long-form
-  videos, each on its own cadence. Start here: `backend/README.md`.
+- **`backend/`** — the automation pipeline. Every video is **fully
+  AI-generated for free**: topic pick → AI storyboard script (Cloudflare
+  Workers AI free tier) → AI voice per scene (Edge neural TTS, MeloTTS
+  backup) → AI image per scene (FLUX on Cloudflare, Pollinations backup)
+  plus optional AI motion clips for the hook → ffmpeg render with camera
+  moves and captions → AI thumbnail → YouTube upload with AI disclosure.
+  Runs on GitHub Actions cron with zero paid APIs. Each channel publishes
+  short-form and long-form videos on their own cadence. Start here:
+  `backend/README.md`.
 - **`frontend/`** — a control-panel dashboard UI (`frontend/index.html`)
   showing real pipeline/channel state pulled from the backend (publish
   history, last run's actual per-stage status, recent workflow runs).
@@ -32,17 +33,17 @@ subgraph group_pipeline["Production Pipeline"]
   node_history[("Channel history<br/>Committed JSON state")]
   node_discovery["Discover topic<br/>Pipeline stage"]
   node_script["Generate script<br/>Pipeline stage"]
-  node_seo["Optimize SEO<br/>Pipeline stage<br/>[3-optimize-seo.js]"]
+  node_seo["Optimize SEO<br/>Pipeline stage<br/>[3-seo.js]"]
   node_trends_api(("Trend sources<br/>External trends<br/>[trends.js]"))
-  node_ollama(("Local Ollama<br/>Local LLM runtime<br/>[llm.js]"))
+  node_ollama(("Cloudflare Workers AI<br/>LLM + FLUX images<br/>[cloudflare.js]"))
 end
 
 subgraph group_media["Media Runtime"]
   node_voice["Generate voice<br/>Pipeline stage"]
-  node_background["Generate background<br/>Pipeline stage"]
-  node_assembly["Assemble video<br/>Pipeline stage"]
-  node_stock_api(("Pexels API<br/>Stock footage API<br/>[stockFootage.js]"))
-  node_media_tools(("TTS and ffmpeg<br/>Local media tools"))
+  node_background["Generate AI visuals<br/>Pipeline stage"]
+  node_assembly["Render video<br/>Pipeline stage"]
+  node_stock_api(("AI images / clips<br/>FLUX + Pollinations<br/>[images.js]"))
+  node_media_tools(("Edge TTS + ffmpeg<br/>Voice and render"))
 end
 
 subgraph group_publishing["Publishing &amp; Analytics"]
@@ -65,12 +66,12 @@ node_state -->|"updates"| node_history
 node_orchestrator -->|"starts"| node_discovery
 node_discovery -->|"gets trends"| node_trends_api
 node_discovery -->|"topic"| node_script
-node_script -->|"generates via"| node_ollama
+node_script -->|"writes via"| node_ollama
 node_script -->|"script"| node_seo
 node_seo -->|"content"| node_voice
 node_voice -->|"TTS"| node_media_tools
 node_voice -->|"audio"| node_background
-node_background -->|"fetches footage"| node_stock_api
+node_background -->|"generates"| node_stock_api
 node_background -->|"visuals"| node_assembly
 node_assembly -->|"ffmpeg"| node_media_tools
 node_assembly -->|"video"| node_thumbnail
@@ -89,17 +90,17 @@ click node_channel_config "https://github.com/pkanderi-abio/youtube-autopilot/bl
 click node_orchestrator "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/run-pipeline.js"
 click node_state "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/state.js"
 click node_history "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/data/history-channel1.json"
-click node_discovery "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/1-discover-topic.js"
-click node_script "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/2-generate-script.js"
-click node_seo "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/3-optimize-seo.js"
-click node_voice "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/4-generate-voice.js"
-click node_background "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/5-generate-background.js"
-click node_assembly "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/6-assemble-video.js"
-click node_thumbnail "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/7-generate-thumbnail.js"
-click node_upload "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/8-upload-youtube.js"
+click node_discovery "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/1-topic.js"
+click node_script "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/2-script.js"
+click node_seo "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/3-seo.js"
+click node_voice "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/4-voice.js"
+click node_background "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/5-visuals.js"
+click node_assembly "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/6-render.js"
+click node_thumbnail "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/7-thumbnail.js"
+click node_upload "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/steps/8-upload.js"
 click node_trends_api "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/trends.js"
-click node_ollama "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/llm.js"
-click node_stock_api "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/stockFootage.js"
+click node_ollama "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/cloudflare.js"
+click node_stock_api "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/images.js"
 click node_youtube_api "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/src/lib/youtube.js"
 click node_analytics_fetch "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/scripts/fetch-analytics.js"
 click node_analytics_data "https://github.com/pkanderi-abio/youtube-autopilot/blob/main/backend/data/analytics-channel1.json"
