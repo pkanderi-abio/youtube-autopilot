@@ -25,7 +25,7 @@ while its own words are spoken — no alignment heuristics.
 |---|---|---|
 | Script + SEO LLM | Cloudflare Workers AI (`llama-4-scout` → `llama-3.3-70b`) | 10,000 neurons/day shared |
 | Scene images | Cloudflare `flux-1-schnell` (~58 neurons/image) | ≈ shared budget |
-| Image fallback | Pollinations.ai FLUX | free tier, key optional |
+| Image fallback | Pollinations.ai FLUX | free tier, needs `POLLINATIONS_API_KEY` |
 | AI motion clips | Pollinations.ai video (optional) | uses the account's free/earned pollen |
 | Voice | Microsoft Edge neural TTS (keyless) | unlimited, unofficial |
 | Voice backup | Cloudflare MeloTTS (~20 neurons/min) | shared budget |
@@ -69,8 +69,8 @@ retention) and silently falls back to the still + camera-move treatment.
 ### 2. Pollinations (optional, recommended)
 Sign up at enter.pollinations.ai and create a **secret (`sk_`) key** →
 repo secret `POLLINATIONS_API_KEY`. Enables the image fallback with higher
-limits and the AI motion clips. Without it, clips are skipped and the image
-fallback runs anonymously.
+limits and the AI motion clips. Without it, clips are skipped and there is no
+image fallback (keyless Pollinations requests are now rejected).
 
 ### 3. Google Cloud + YouTube API (per channel)
 1. Google Cloud project → enable **YouTube Data API v3**.

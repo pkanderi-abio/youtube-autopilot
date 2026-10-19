@@ -114,7 +114,8 @@ export async function generateImage(model, prompt, { width = 1024, height = 1024
     res = await request(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, steps: Math.min(8, steps), ...(seed != null ? { seed } : {}) })
+      // flux-1-schnell's schema accepts only prompt + steps (seed -> 400 code 5006)
+      body: JSON.stringify({ prompt, steps: Math.min(8, steps) })
     }, `image ${model}`);
     usage.neurons += 4 * 4.8 + Math.min(8, steps) * 9.6;
   }

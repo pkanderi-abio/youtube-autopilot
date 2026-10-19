@@ -1,6 +1,6 @@
 // AI still images for every scene. Provider chain, all free:
 //   1. Cloudflare Workers AI FLUX (default flux-1-schnell, ~58 neurons/image)
-//   2. Pollinations.ai FLUX (optional POLLINATIONS_API_KEY raises limits)
+//   2. Pollinations.ai FLUX (needs POLLINATIONS_API_KEY - keyless calls get 401)
 // If every provider fails the run aborts - we never ship a video of
 // blank/placeholder frames (the old "silent gradient fallback" incident).
 import sharp from 'sharp';
@@ -66,7 +66,9 @@ export async function generateSceneImage(prompt, { width = 1024, height = 1024, 
   if (cloudflareConfigured() && !cloudflareExhausted) {
     attempts.push(['cloudflare', () => cfImage(model || CF_MODEL, prompt, { width, height, seed })]);
   }
-  attempts.push(['pollinations', () => pollinationsImage(prompt, { width, height, seed })]);
+  // Pollinations now rejects keyless requests (401), so only try it with a key.
+  if (POLLINATIONS_KEY) attempts.push(['pollinations', () => pollinationsImage(prompt, { width, height, seed })]);
+  if (!attempts.length) throw new Error('[images] no image provider configured (set CF_ACCOUNT_ID/CF_API_TOKEN)');
 
   const errors = [];
   for (const [name, fn] of attempts) {
