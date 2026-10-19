@@ -27,6 +27,13 @@ const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
 const MUSE_API_KEY = process.env.MUSE_API_KEY;
 const MUSE_MODEL = process.env.MUSE_MODEL || 'muse-spark-1.3';
 const MUSE_BASE_URL = process.env.MUSE_BASE_URL || 'https://api.meta.ai/v1';
+// xKiro - OpenAI/Anthropic-compatible gateway reselling 100+ models behind
+// one key, several genuinely free (no credit card). Default model is a
+// free, large-context Mistral (confirmed free via https://xkiro.com/models)
+// rather than anything from a paid provider also listed in their catalog.
+const XKIRO_API_KEY = process.env.XKIRO_API_KEY;
+const XKIRO_MODEL = process.env.XKIRO_MODEL || 'mistralai/mistral-large-4-0';
+const XKIRO_BASE_URL = process.env.XKIRO_BASE_URL || 'https://api.xkiro.com/v1';
 const LLM_FALLBACK = process.env.LLM_FALLBACK || 'ollama';
 
 function sleep(ms) {
@@ -138,62 +145,76 @@ async function completeWithGemini(prompt, opts = {}) {
   throw lastError;
 }
 
-async function completeWithMuseOnce(prompt, { maxTokens = 1024, system, json } = {}) {
-  if (!MUSE_API_KEY) {
-    throw new Error('MUSE_API_KEY is required when LLM_PROVIDER=muse');
+// Shared by Muse and xKiro - both are plain OpenAI-compatible chat
+// completions gateways (same request/response shape, just different base
+// URL / key / model string), so the actual HTTP + retry logic is one
+// implementation rather than copy-pasted per provider.
+async function completeWithOpenAICompatOnce(label, baseUrl, apiKey, model, prompt, { maxTokens = 1024, system } = {}) {
+  if (!apiKey) {
+    throw new Error(`${label}_API_KEY is required when LLM_PROVIDER=${label.toLowerCase()}`);
   }
 
   const messages = [];
   if (system) messages.push({ role: 'system', content: system });
   messages.push({ role: 'user', content: prompt });
 
-  const response = await fetch(`${MUSE_BASE_URL}/chat/completions`, {
+  const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${MUSE_API_KEY}`
+      Authorization: `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      model: MUSE_MODEL,
+      model,
       messages,
       // Not sending response_format: {type:'json_object'} here - it's a
       // de facto OpenAI-compatible convention but wasn't confirmed against
-      // this specific endpoint, and completeJSON already appends an
-      // explicit "respond with ONLY valid JSON" instruction plus does its
-      // own fence-stripping/parsing, so correctness doesn't depend on it.
+      // either of these specific endpoints, and completeJSON already
+      // appends an explicit "respond with ONLY valid JSON" instruction
+      // plus does its own fence-stripping/parsing, so correctness doesn't
+      // depend on it.
       max_tokens: Math.min(Math.max(maxTokens * 2, 1024), 8192)
     })
   });
 
   if (!response.ok) {
     const body = await response.text().catch(() => '');
-    throw new Error(`Muse request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
+    throw new Error(`${label} request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
   }
   const data = await response.json();
   const text = data.choices?.[0]?.message?.content || '';
-  if (!text) throw new Error('Muse returned no completion');
+  if (!text) throw new Error(`${label} returned no completion`);
   return text;
 }
 
-async function completeWithMuse(prompt, opts = {}) {
+async function completeWithOpenAICompat(label, baseUrl, apiKey, model, prompt, opts = {}) {
   let lastError;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      return await completeWithMuseOnce(prompt, opts);
+      return await completeWithOpenAICompatOnce(label, baseUrl, apiKey, model, prompt, opts);
     } catch (error) {
       lastError = error;
-      const retryable = /Muse request failed: (429|5\d\d)\b/.test(error.message);
+      const retryable = new RegExp(`${label} request failed: (429|5\\d\\d)\\b`).test(error.message);
       if (!retryable || attempt === 2) throw error;
-      console.warn(`[llm] Muse request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
+      console.warn(`[llm] ${label} request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
       await sleep(2000 * (attempt + 1));
     }
   }
   throw lastError;
 }
 
+const completeWithMuse = (prompt, opts) => completeWithOpenAICompat('Muse', MUSE_BASE_URL, MUSE_API_KEY, MUSE_MODEL, prompt, opts);
+const completeWithXkiro = (prompt, opts) => completeWithOpenAICompat('Xkiro', XKIRO_BASE_URL, XKIRO_API_KEY, XKIRO_MODEL, prompt, opts);
+
+const PRIMARY_PROVIDERS = {
+  gemini: completeWithGemini,
+  muse: completeWithMuse,
+  xkiro: completeWithXkiro
+};
+
 export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
-  if (LLM_PROVIDER === 'gemini' || LLM_PROVIDER === 'muse') {
-    const primary = LLM_PROVIDER === 'gemini' ? completeWithGemini : completeWithMuse;
+  const primary = PRIMARY_PROVIDERS[LLM_PROVIDER];
+  if (primary) {
     try {
       return await primary(prompt, { maxTokens, system, json });
     } catch (error) {
