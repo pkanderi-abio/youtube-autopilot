@@ -1,296 +1,69 @@
-// Thin wrapper for script/topic generation. Supports local Ollama and
-// Google's Gemini API; both return the same JSON-oriented interface to
-// the pipeline.
+// JSON-in, JSON-out text generation on Cloudflare Workers AI (free tier).
 //
-// Deliberately no template-based fallback content here. An earlier
-// version fell back to a generic templated title/narration whenever
-// Ollama failed, so the pipeline always "produced something" - but real
-// production evidence showed this made things worse, not better: when
-// Ollama entered a sustained bad state (confirmed via CI logs - 9/9
-// requests across all retries returning 500 for over 2 minutes
-// straight), every attempt fell back to the template, producing a
-// visibly broken video (41-word narration, title literally "{topic} in
-// {niche}") that still got published. Better to let the failure
-// propagate and fail the whole run (skipping that publish cycle
-// entirely - see run-pipeline.js's top-level catch) than to publish
-// obviously-fallback content.
-const LLM_PROVIDER = process.env.LLM_PROVIDER || 'ollama';
-const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
-const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
-// Meta's Model API - OpenAI-compatible chat completions endpoint. Added as
-// an alternative primary provider to Gemini, which has been hitting
-// sustained 429 (quota) and 503 (overloaded) errors that force long-form
-// generation onto the much weaker Ollama fallback often enough to
-// routinely miss the aggregate word-count floor.
-const MUSE_API_KEY = process.env.MUSE_API_KEY;
-const MUSE_MODEL = process.env.MUSE_MODEL || 'muse-spark-1.3';
-const MUSE_BASE_URL = process.env.MUSE_BASE_URL || 'https://api.meta.ai/v1';
-// xKiro - OpenAI/Anthropic-compatible gateway reselling 100+ models behind
-// one key, several genuinely free (no credit card). Default model picked
-// empirically, not just by spec: mistralai/mistral-large-4-0 (the model
-// the user originally pointed at) consistently undershot the 130-170 word
-// per-section target used throughout 2-generate-script.js (observed
-// ~98 words), reproducing the exact "too short, retrying" failure this
-// provider swap was meant to fix. qwen/qwen3.8-max:free hit 170/170/170
-// across three direct trials with the same prompt shape - free, 1M
-// context, and reliably honors length instructions.
-const XKIRO_API_KEY = process.env.XKIRO_API_KEY;
-const XKIRO_MODEL = process.env.XKIRO_MODEL || 'qwen/qwen3.8-max:free';
-const XKIRO_BASE_URL = process.env.XKIRO_BASE_URL || 'https://api.xkiro.com/v1';
-const LLM_FALLBACK = process.env.LLM_FALLBACK || 'ollama';
+// Load-bearing decision kept from the old pipeline: NO template fallback.
+// A templated "{topic} in {niche}" video once got published when the LLM
+// was down; failing the run (and skipping that publish slot) is better.
+//
+// MOCK_AI=1 short-circuits to the caller-supplied `mock()` so the whole
+// pipeline can be exercised offline (see `npm run mock`).
+import { chat } from './cloudflare.js';
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+export const MOCK = process.env.MOCK_AI === '1';
 
-async function completeWithOllamaOnce(prompt, { maxTokens, system, json }) {
-  const response = await fetch(`${OLLAMA_URL}/api/generate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: OLLAMA_MODEL,
-      prompt,
-      system,
-      stream: false,
-      // constrains decoding to syntactically valid JSON - without this,
-      // llama3.2 sometimes ignores a "respond with JSON" instruction
-      // entirely and returns free-form prose instead (observed directly:
-      // "Here is a script for a spoken-word video..." instead of JSON).
-      format: json ? 'json' : undefined,
-      options: { num_predict: maxTokens }
-    })
-  });
+// Llama 4 Scout: strong JSON adherence at ~1/3 the neuron cost of Llama 3.3
+// 70B, which keeps a full day of publishing inside the free allocation.
+const PRIMARY = process.env.CF_TEXT_MODEL || '@cf/meta/llama-4-scout-17b-16e-instruct';
+const FALLBACK = process.env.CF_TEXT_FALLBACK_MODEL || '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
 
-  if (!response.ok) {
-    // Ollama's error body usually explains *why* (e.g. out of memory,
-    // context length exceeded) - .statusText alone is just "Internal
-    // Server Error" with no useful detail.
-    const body = await response.text().catch(() => '');
-    throw new Error(`Ollama request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
-  }
+const DEFAULT_SYSTEM = 'You are a careful YouTube writer. Always reply with a single valid JSON object and nothing else.';
 
-  const data = await response.json();
-  return data.response || '';
-}
-
-// Observed directly in production: Ollama's server can return a bare
-// "500 Internal Server Error" for a request, and keep returning the
-// identical error for every immediately-following request in the same
-// job - i.e. the server itself enters a bad state (likely resource
-// pressure on a shared CPU-only CI runner), not just a one-off blip on
-// that specific call. Retrying the exact same request back-to-back hits
-// the same wall every time, so this backs off between attempts to give
-// the server a real chance to recover before falling back to a template.
-async function completeWithOllama(prompt, opts = {}) {
-  const { maxTokens = 1024 } = opts;
-  let lastError;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      return await completeWithOllamaOnce(prompt, { ...opts, maxTokens });
-    } catch (error) {
-      lastError = error;
-      if (attempt < 2) {
-        console.warn(`[llm] Ollama request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
-        await sleep(5000 * (attempt + 1));
+// Models occasionally wrap JSON in ``` fences, add prose around it, or put
+// raw newlines/tabs inside string values. Repair the common cases.
+export function parseJsonLoose(text) {
+  let t = String(text).trim().replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
+  const start = t.indexOf('{');
+  const end = t.lastIndexOf('}');
+  if (start >= 0 && end > start) t = t.slice(start, end + 1);
+  try {
+    return JSON.parse(t);
+  } catch {
+    // escape raw control chars that appear inside string literals
+    let out = '';
+    let inString = false;
+    let escaped = false;
+    for (const ch of t) {
+      if (inString) {
+        if (escaped) { escaped = false; out += ch; continue; }
+        if (ch === '\\') { escaped = true; out += ch; continue; }
+        if (ch === '"') { inString = false; out += ch; continue; }
+        if (ch === '\n') { out += '\\n'; continue; }
+        if (ch === '\r') continue;
+        if (ch === '\t') { out += '\\t'; continue; }
+        out += ch;
+      } else {
+        if (ch === '"') inString = true;
+        out += ch;
       }
     }
+    return JSON.parse(out.replace(/,\s*([}\]])/g, '$1'));
   }
-  throw lastError;
 }
 
-async function completeWithGeminiOnce(prompt, { maxTokens = 1024, system, json } = {}) {
-  if (!GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY is required when LLM_PROVIDER=gemini');
+export async function completeJSON(prompt, { system = DEFAULT_SYSTEM, maxTokens = 1500, temperature = 0.8, mock } = {}) {
+  if (MOCK) {
+    if (!mock) throw new Error('MOCK_AI=1 but this call has no mock');
+    return mock();
   }
-
-  const contents = [];
-  if (system) contents.push({ role: 'user', parts: [{ text: `System instructions:\n${system}` }] });
-  contents.push({ role: 'user', parts: [{ text: prompt }] });
-  const generationConfig = {
-    // Gemini's reasoning tokens can consume part of the output budget before
-    // the JSON payload is emitted. Give structured responses headroom so a
-    // valid object is not cut off mid-string.
-    maxOutputTokens: Math.min(Math.max(maxTokens * 4, 2048), 8192),
-    ...(json ? { responseMimeType: 'application/json' } : {})
-  };
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(GEMINI_MODEL)}:generateContent?key=${encodeURIComponent(GEMINI_API_KEY)}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents, generationConfig })
-    }
-  );
-
-  if (!response.ok) {
-    const body = await response.text().catch(() => '');
-    throw new Error(`Gemini request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
-  }
-  const data = await response.json();
-  const text = data.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('') || '';
-  if (!text) throw new Error('Gemini returned no text candidate');
-  return text;
-}
-
-async function completeWithGemini(prompt, opts = {}) {
-  let lastError;
-  for (let attempt = 0; attempt < 3; attempt++) {
+  const messages = [{ role: 'system', content: system }, { role: 'user', content: prompt }];
+  const errors = [];
+  for (const model of [PRIMARY, PRIMARY, FALLBACK]) {
     try {
-      return await completeWithGeminiOnce(prompt, opts);
+      return parseJsonLoose(await chat(model, messages, { maxTokens, temperature }));
     } catch (error) {
-      lastError = error;
-      const retryable = /Gemini request failed: (429|5\d\d)\b/.test(error.message);
-      if (!retryable || attempt === 2) throw error;
-      console.warn(`[llm] Gemini request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
-      await sleep(2000 * (attempt + 1));
+      if (error.constructor?.name === 'QuotaExceededError') throw error;
+      errors.push(`${model}: ${error.message}`);
+      console.warn(`[llm] ${model} failed: ${error.message.slice(0, 200)}`);
     }
   }
-  throw lastError;
-}
-
-// Shared by Muse and xKiro - both are plain OpenAI-compatible chat
-// completions gateways (same request/response shape, just different base
-// URL / key / model string), so the actual HTTP + retry logic is one
-// implementation rather than copy-pasted per provider.
-async function completeWithOpenAICompatOnce(label, baseUrl, apiKey, model, prompt, { maxTokens = 1024, system } = {}) {
-  if (!apiKey) {
-    throw new Error(`${label}_API_KEY is required when LLM_PROVIDER=${label.toLowerCase()}`);
-  }
-
-  const messages = [];
-  if (system) messages.push({ role: 'system', content: system });
-  messages.push({ role: 'user', content: prompt });
-
-  const response = await fetch(`${baseUrl}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`
-    },
-    body: JSON.stringify({
-      model,
-      messages,
-      // Confirmed directly against xKiro: identical requests return
-      // byte-identical completions with no temperature set (effectively
-      // 0). Explicit temperature alone did NOT fix the one deterministic
-      // malformed-JSON case observed (see stripStrayJsonObjectRestart
-      // below, which is the actual fix for that) - this is kept as a
-      // reasonable default for narration variety, not as a reliability
-      // fix.
-      temperature: 0.8,
-      // Not sending response_format: {type:'json_object'} here - it's a
-      // de facto OpenAI-compatible convention but wasn't confirmed against
-      // either of these specific endpoints, and completeJSON already
-      // appends an explicit "respond with ONLY valid JSON" instruction
-      // plus does its own fence-stripping/parsing, so correctness doesn't
-      // depend on it.
-      max_tokens: Math.min(Math.max(maxTokens * 2, 1024), 8192)
-    })
-  });
-
-  if (!response.ok) {
-    const body = await response.text().catch(() => '');
-    throw new Error(`${label} request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
-  }
-  const data = await response.json();
-  const text = data.choices?.[0]?.message?.content || '';
-  if (!text) throw new Error(`${label} returned no completion`);
-  return text;
-}
-
-async function completeWithOpenAICompat(label, baseUrl, apiKey, model, prompt, opts = {}) {
-  let lastError;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      return await completeWithOpenAICompatOnce(label, baseUrl, apiKey, model, prompt, opts);
-    } catch (error) {
-      lastError = error;
-      const retryable = new RegExp(`${label} request failed: (429|5\\d\\d)\\b`).test(error.message);
-      if (!retryable || attempt === 2) throw error;
-      console.warn(`[llm] ${label} request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
-      await sleep(2000 * (attempt + 1));
-    }
-  }
-  throw lastError;
-}
-
-const completeWithMuse = (prompt, opts) => completeWithOpenAICompat('Muse', MUSE_BASE_URL, MUSE_API_KEY, MUSE_MODEL, prompt, opts);
-const completeWithXkiro = (prompt, opts) => completeWithOpenAICompat('Xkiro', XKIRO_BASE_URL, XKIRO_API_KEY, XKIRO_MODEL, prompt, opts);
-
-const PRIMARY_PROVIDERS = {
-  gemini: completeWithGemini,
-  muse: completeWithMuse,
-  xkiro: completeWithXkiro
-};
-
-export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
-  const primary = PRIMARY_PROVIDERS[LLM_PROVIDER];
-  if (primary) {
-    try {
-      return await primary(prompt, { maxTokens, system, json });
-    } catch (error) {
-      if (LLM_FALLBACK !== 'ollama') throw error;
-      console.warn(`[llm] ${LLM_PROVIDER} unavailable; using free Ollama fallback: ${error.message}`);
-      return completeWithOllama(prompt, { maxTokens, system, json });
-    }
-  }
-  return completeWithOllama(prompt, { maxTokens, system, json });
-}
-
-// Strips/escapes raw control characters (charCodes 0-31) that a smaller
-// local model sometimes emits unescaped inside JSON string values (e.g.
-// a literal newline in the middle of "narration" instead of an escaped
-// \n) - a frontier hosted model rarely does this, but it's common enough
-// here to reliably break JSON.parse with "Bad control character in
-// string literal" and fail the whole run if left unhandled.
-function sanitizeJsonControlChars(text) {
-  const escapes = { 9: '\\t', 10: '\\n', 13: '\\r' };
-  let result = '';
-  let insideString = false;
-  let escaped = false;
-  for (let i = 0; i < text.length; i++) {
-    const ch = text[i];
-    const code = text.charCodeAt(i);
-
-    // Only escape control chars *inside* a string literal - raw
-    // whitespace between structural tokens (e.g. the newline in
-    // `{\n  "title"`) is already valid JSON as-is; escaping it there
-    // injects a literal backslash where none belongs and breaks parsing.
-    if (insideString && code <= 31) {
-      result += escapes[code] || '';
-      escaped = false;
-      continue;
-    }
-
-    if (ch === '"' && !escaped) insideString = !insideString;
-    escaped = insideString && !escaped && ch === '\\';
-    result += ch;
-  }
-  return result;
-}
-
-// Confirmed directly against xKiro's qwen3.8-max (deterministic - not
-// fixed by temperature, reproduced byte-identically across repeated
-// calls): the first field's value sometimes opens with a stray `{"`
-// (occasionally a full duplicated `"<key>":"` ) immediately after the
-// real opening quote, as if the model restarted the object mid-stream -
-// e.g. `{"narration":"{"narration":"One! One little chicken!...` or
-// `{"narration":"{" chicken lays an egg...`. Strip the stray restart
-// rather than losing the whole call to a model formatting quirk no
-// retry can escape.
-function stripStrayJsonObjectRestart(text) {
-  return text.replace(/^(\{\s*"(\w+)"\s*:\s*")\{"(?:\2"\s*:\s*")?/, '$1');
-}
-
-// Asks the model for JSON and parses it, tolerating stray markdown fences.
-export async function completeJSON(prompt, opts) {
-  const raw = await complete(prompt + '\n\nRespond with ONLY valid JSON, no commentary, no markdown fences.', { ...opts, json: true });
-  const cleaned = raw.trim().replace(/^```json/i, '').replace(/^```/, '').replace(/```$/, '').trim();
-  try {
-    return JSON.parse(sanitizeJsonControlChars(stripStrayJsonObjectRestart(cleaned)));
-  } catch (error) {
-    throw new Error(`[llm] model response was not valid JSON: ${error.message} - raw: ${cleaned.slice(0, 300)}`);
-  }
+  throw new Error(`[llm] all attempts failed:\n${errors.join('\n')}`);
 }

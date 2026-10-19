@@ -112,6 +112,7 @@ Angle: ${topicInfo.angle}
 ${narrationExcerpt
     ? `Script excerpt (ground your metadata in what the video actually says):\n"${narrationExcerpt}..."`
     : 'This video has no spoken narration (it uses a pre-recorded sing-along track) - base metadata on the topic/angle above.'}
+${channel.format === 'short' ? 'This is a YouTube Short - include #shorts in hashtags.' : ''}
 
 Recently published titles on this channel - DO NOT reuse the same subject/angle as any of these. Viewers and YouTube's recommendation system treat near-duplicate titles as repeat content, which hurts reach:
 ${recentTitles.length ? recentTitles.map(t => `- ${t}`).join('\n') : '(no prior videos yet)'}
@@ -125,12 +126,20 @@ Requirements:
 - "description": 4-6 sentences. FIRST SENTENCE is the SEO hook (appears in search snippets) and MUST include the main keywords a viewer would type to find this video. Middle sentences give more context and mention 1-2 related things by name. LAST sentence is a subscribe/comment CTA. NO generic "Welcome to my channel" openers.
 - "tags": 3-6 specific search-relevant tags (not generic single words like "video" or "fun").
 - "hashtags": 3-5 hashtags based on the topic and channel niche.
+- "thumbnailText": 2-4 punchy words for the thumbnail overlay (not the full title; no emojis).
 - "commentCta": one-sentence question or hook to post as the FIRST COMMENT on the video (from the channel owner). Should invite replies. Keep under 140 chars.
 
-Return JSON: { "title": "...", "description": "...", "tags": ["..."], "hashtags": ["#..."], "commentCta": "..." }
+Return JSON: { "title": "...", "description": "...", "tags": ["..."], "hashtags": ["#..."], "thumbnailText": "...", "commentCta": "..." }
 `.trim();
 
-  const result = await completeJSON(prompt, { maxTokens: 500 });
+  const result = await completeJSON(prompt, {
+    maxTokens: 700,
+    mock: () => ({
+      title: `${topicInfo.topic} (mock ${Date.now() % 1000})`,
+      description: `${topicInfo.topic}. ${topicInfo.angle} Subscribe for more.`,
+      tags: ['mock', 'test'], hashtags: ['#shorts'], thumbnailText: 'Wait For It', commentCta: 'Did this surprise you?'
+    })
+  });
   result.title = fixAllCapsTitle((result.title || '').trim());
 
   // Up to two corrective rewrite passes for a vague/abstract title or one
@@ -162,7 +171,7 @@ Rules: under 90 characters, no ALL-CAPS words, must name something
 specific (a real person, place, event, number, year, or concrete thing).
 
 Return JSON: { "title": "..." }
-`.trim(), { maxTokens: 200 });
+`.trim(), { maxTokens: 200, mock: () => ({ title: `${topicInfo.topic} explained in ${channel.format === 'short' ? '50 seconds' : '7 minutes'}` }) });
       const candidate = fixAllCapsTitle((rewritten.title || '').trim());
       if (candidate) result.title = candidate;
     } catch (err) {
@@ -174,5 +183,6 @@ Return JSON: { "title": "..." }
   result.tags = result.tags || [];
   result.hashtags = result.hashtags || [];
   result.commentCta = result.commentCta || '';
+  result.thumbnailText = String(result.thumbnailText || '').replace(/[^\p{L}\p{N}\s'!?&-]/gu, '').trim().slice(0, 40);
   return result;
 }

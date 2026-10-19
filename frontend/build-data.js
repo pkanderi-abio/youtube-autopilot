@@ -101,7 +101,7 @@ function loadJobsForRun(runId) {
 
 const STAGE_NAMES = [
   'Discover topic', 'Generate script', 'Optimize SEO', 'Generate voiceover',
-  'Generate background', 'Assemble video', 'Generate thumbnail', 'Upload YouTube'
+  'Generate AI visuals', 'Render video', 'Generate thumbnail', 'Upload YouTube'
 ];
 
 // Parses real "[N/8] ..." progress markers out of a job's raw log into
@@ -177,7 +177,7 @@ async function build() {
       name: channel.name,
       niche: channel.niche,
       format: channel.format,
-      visualStyle: channel.visualStyle || 'gradient',
+      visualStyle: channel.aiClips?.enabled ? 'AI images + clips' : 'AI images',
       madeForKids: Boolean(channel.madeForKids),
       totalVideos: videos.length,
       videosLast7Days,
