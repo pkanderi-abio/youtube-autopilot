@@ -41,7 +41,24 @@ function normalizedWords(text) {
   return text.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean);
 }
 
-function narrationHasRepeatedContent(text) {
+// `tolerateFamiliarRefrains` exists for babyLearning channels, whose
+// whole niche is "heavy use of familiar public-domain nursery rhymes" -
+// this detector was flagging videos as broken for doing exactly that.
+// Confirmed directly (DEBUG_REPEAT instrumentation): a channel2 video
+// about counting ducks got a section discarded because it quoted
+// "twinkle twinkle little star how i wonder what you are" verbatim as a
+// reprise - which is correct, since that's a fixed, famous lyric with
+// only one correct wording, not the model getting stuck. A genuinely
+// degenerate case ("circle circle circle circle") was caught in the same
+// run, but is a far milder defect than this check was originally built
+// for (see git history: a channel falling through to a static gradient
+// background) and reads as plausible toddler-media emphasis rather than
+// obvious breakage - not worth the ~50% aggregate-floor failure rate
+// this detector was otherwise causing for the one channel whose format
+// requires repetition by design.
+function narrationHasRepeatedContent(text, { tolerateFamiliarRefrains = false } = {}) {
+  if (tolerateFamiliarRefrains) return false;
+
   const words = normalizedWords(text);
   const sentences = text
     .split(/[.!?]+/)
@@ -229,6 +246,7 @@ function scenesFields(channel, countHint) {
 async function generateShortScript(channel, topicInfo) {
   const durationHint = 'roughly 110-150 words (about 45-55 seconds spoken)';
   const minWords = MIN_WORDS.short;
+  const tolerateFamiliarRefrains = channel.contentStyle === 'babyLearning';
   const { hint: scenesHint, instructions: scenesInstructions } = scenesFields(channel, '5-8');
 
   function buildPrompt(previousAttemptWordCount) {
@@ -282,8 +300,8 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
       continue;
     }
     const words = wordCount(script.narration || '');
-    repeatedContent = narrationHasRepeatedContent(script.narration || '');
-    const bestIsRepeated = best && narrationHasRepeatedContent(best.narration);
+    repeatedContent = narrationHasRepeatedContent(script.narration || '', { tolerateFamiliarRefrains });
+    const bestIsRepeated = best && narrationHasRepeatedContent(best.narration, { tolerateFamiliarRefrains });
     if (!best || (!repeatedContent && bestIsRepeated)
       || (repeatedContent === bestIsRepeated && words > wordCount(best.narration))) {
       best = script;
@@ -303,7 +321,7 @@ captionLines should split the narration into 6-12 short on-screen chunks (roughl
     // skip publishing than upload something visibly broken.
     throw new Error(`[script] narration too short after ${MAX_ATTEMPTS} attempts (best: ${wordCount(best.narration)}/${minWords} words) - aborting instead of publishing`);
   }
-  if (narrationHasRepeatedContent(best.narration)) {
+  if (narrationHasRepeatedContent(best.narration, { tolerateFamiliarRefrains })) {
     throw new Error(`[script] narration repeated a sentence or phrase after ${MAX_ATTEMPTS} attempts - aborting instead of publishing`);
   }
   return best;
@@ -428,6 +446,7 @@ captionLines should split this section's narration into 2-3 short on-screen chun
 }
 
 async function generateLongScript(channel, topicInfo) {
+  const tolerateFamiliarRefrains = channel.contentStyle === 'babyLearning';
   const outline = await generateScriptOutline(channel, topicInfo);
   // "exactly N entries" in the outline prompt is a request, not a
   // guarantee - llama3.2 doesn't reliably comply (observed directly:
@@ -464,13 +483,13 @@ async function generateLongScript(channel, topicInfo) {
       // aborted the whole run. Retry just the offending section instead,
       // same retry-before-abort pattern as the word-count check above.
       let repeatAttempts = 0;
-      while (narrationHasRepeatedContent(candidate) && repeatAttempts < 2) {
+      while (narrationHasRepeatedContent(candidate, { tolerateFamiliarRefrains }) && repeatAttempts < 2) {
         repeatAttempts++;
         console.warn(`[script] section ${i + 1}/${sections.length} repeated earlier narration, retrying (${repeatAttempts}/2)`);
         section = await generateNarrationSection(channel, topicInfo, sections[i], i, sections.length, tail);
         candidate = (narration ? narration + ' ' : '') + section.narration.trim();
       }
-      if (narrationHasRepeatedContent(candidate)) {
+      if (narrationHasRepeatedContent(candidate, { tolerateFamiliarRefrains })) {
         skippedSections++;
         console.warn(`[script] section ${i + 1}/${sections.length} still repeated earlier narration after retries - skipping and continuing`);
         continue;
@@ -490,7 +509,7 @@ async function generateLongScript(channel, topicInfo) {
   if (words < MIN_WORDS.long) {
     throw new Error(`[script] combined long-form narration too short (${words}/${MIN_WORDS.long} words${skippedSections ? `, ${skippedSections} sections skipped due to errors` : ''}) - aborting instead of publishing`);
   }
-  if (narrationHasRepeatedContent(narration)) {
+  if (narrationHasRepeatedContent(narration, { tolerateFamiliarRefrains })) {
     throw new Error('[script] combined long-form narration repeated a sentence or phrase - aborting instead of publishing');
   }
 
