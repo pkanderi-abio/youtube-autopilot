@@ -114,7 +114,8 @@
     "We'll Count the Colors of the Rainbow with You!",
     "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers",
     "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers",
-    "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers"
+    "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers",
+    "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!"
   ],
   "videos": [
     {
@@ -846,6 +847,13 @@
       "format": "short",
       "publishedAt": "2026-10-11T17:57:33.538Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends"
+    },
+    {
+      "title": "Count 1 to 10 with 5 Little Monkeys: Red Circles, Shapes and Animal Sounds!",
+      "url": "https://youtu.be/KmPZAbN1ha4",
+      "format": "short",
+      "publishedAt": "2026-10-19T14:53:36.576Z",
+      "sourcePoolItem": "Five Little Monkeys Jumping on the Bed"
     }
   ]
 }
