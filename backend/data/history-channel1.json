@@ -180,14 +180,10 @@
     "What Actually Happens To Your Elbow When You Pitch 100 MPH Like Shohei Ohtani",
     "Why a Russian Cosmos 2612 Satellite and an ICEYE X36 Radar Craft Are Trending Together: The Hidden Tech of Space Surveillance",
     "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today",
-    "Bananas"
+    "Bananas",
+    "The Loudest Sound Ever Recorded"
   ],
   "videos": [
-    {
-      "title": "5 Iconic Pirate Destinations for Your Travel Bucket List",
-      "url": "https://youtu.be/5Q_ydZp1iJQ",
-      "publishedAt": "2026-07-08T01:13:38.338Z"
-    },
     {
       "title": "Sabrina Ionescu's Luxury Travel Lifestyle Off the Court",
       "url": "https://youtu.be/9eGEFXFYZkQ",
@@ -1417,6 +1413,13 @@
       "format": "short",
       "publishedAt": "2026-10-19T18:25:45.972Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
+    },
+    {
+      "title": "Krakatoa's 1883 Volcanic Eruption",
+      "url": "https://youtu.be/H94K0b_JvAk",
+      "format": "long",
+      "publishedAt": "2026-10-19T18:29:38.508Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
