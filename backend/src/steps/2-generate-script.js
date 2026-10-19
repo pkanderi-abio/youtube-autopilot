@@ -188,11 +188,23 @@ function sectionProseStyle(channel) {
 - Avoid list-like repetition, canned transitions, and exaggerated claims.`;
 }
 
-// Stock-footage channels need a per-shot "scenes" array - short concrete
-// phrases that work well as Pexels search terms (not full descriptive
-// sentences, which return far fewer/worse stock-footage matches).
+// Any visualStyle that renders a per-shot sequence needs a "scenes"
+// array: stockFootage uses each entry as a Pexels search phrase,
+// cartoonAnimation and aiGenerated classify/prompt each shot from its
+// entry. Without this, 5-generate-background.js's plannedShots ends up
+// empty (scenePlan.shots falls back to script.scenes || [] for every
+// non-stockFootage style), its cartoon/aiGenerated branches short-
+// circuit on `plannedShots.length > 0`, and the whole video silently
+// renders as a plain gradient with no shot variety and no error anywhere
+// - confirmed directly: this bug (only checking 'stockFootage' here,
+// added 2026-07-08) was still in place through channel1's entire
+// "aiGenerated" visualStyle era and is why re-enabling cartoonAnimation
+// for channel2 initially produced a gradient-only video with zero
+// [cartoon]/[validate] log lines, not a canvas/Cairo failure.
 function needsScenes(channel) {
-  return channel.visualStyle === 'stockFootage';
+  return channel.visualStyle === 'stockFootage'
+    || channel.visualStyle === 'cartoonAnimation'
+    || channel.visualStyle === 'aiGenerated';
 }
 
 function scenesFields(channel, countHint) {
