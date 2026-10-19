@@ -39,7 +39,7 @@ channels and both formats (4 runs) and look at frames from `out/`.
 |---|---|---|
 | LLM | Cloudflare Workers AI `llama-4-scout` | `llama-3.3-70b` |
 | Images | Cloudflare `flux-1-schnell` | Pollinations FLUX |
-| Motion clips (hook only) | Pollinations video (needs key) | still + camera move |
+| Motion clips | LTX-Video on free Kaggle GPU (`kaggleClips.js` + `kaggle/ltx_clips.py`) | Pollinations (paid) → still + camera move |
 | Voice | Edge TTS (msedge-tts) | Cloudflare MeloTTS |
 
 Cloudflare free tier = **10,000 neurons/day shared by every job**.
@@ -56,8 +56,10 @@ pricier models without redoing the budget in `backend/README.md`.
              long: outline + 6 section calls with previous tail
 3-seo        title/description/tags/hashtags/thumbnailText/commentCta + guards
 4-voice      TTS per scene + 0.3s pause → scene.duration is exact
-5-visuals    image per scene (artStyle + visualBible in every prompt); clips
-6-render     zoompan camera move per still (6 moves, rotating), hard cuts,
+5-visuals    image per scene (artStyle + visualBible in every prompt), then one
+             Kaggle GPU job animates them into LTX-Video clips (best-effort)
+6-render     clips slowed ≤1.6x to fit the scene, else zoompan camera move per
+             still (6 moves, rotating), hard cuts,
              optional ASS captions (libass in ffmpeg-static), mux audio
 7-thumbnail  sharp + SVG text on AI hero image; A/B variants → CI artifact
 8-upload     videos.insert (containsSyntheticMedia: true) + thumbnail/playlist/comment
@@ -94,6 +96,12 @@ publishedAt,sourcePoolItem?}]`), shared by both formats of a channel.
   (`fonts-noto-emoji`) once broke every run for 3 days. No emoji in rendered
   text. If you must add a system package, verify the exact name for the
   runner's Ubuntu release first.
+- **AI clips are best-effort, never blocking.** Any Kaggle problem (quota,
+  queue, model error) returns fewer/no clips and those scenes keep the still +
+  motion. The kernel checks a per-run `RUN_ID` against the dataset manifest so
+  a not-yet-processed dataset version can never produce clips for the wrong
+  video. Test the orchestration offline with a fake CLI via `KAGGLE_BIN` +
+  `KAGGLE_TEST=1`.
 - **Failures surface as a `pipeline-failure` issue** (auto-closed on the next
   success) — check it before assuming scheduled runs are healthy.
 
@@ -108,7 +116,7 @@ matching case in the `plan` job; `workflow_dispatch` takes `channel` /
 
 - ES modules; paths resolved relative to `backend/` (`path.resolve('config/...')`).
 - `.env` is local only; CI uses repo secrets `CF_ACCOUNT_ID`, `CF_API_TOKEN`,
-  `POLLINATIONS_API_KEY` (optional), `YT_CLIENT_ID`, `YT_CLIENT_SECRET`,
+  `POLLINATIONS_API_KEY` (optional), `KAGGLE_USERNAME` + `KAGGLE_API_TOKEN` (optional), `YT_CLIENT_ID`, `YT_CLIENT_SECRET`,
   `YT_REFRESH_TOKEN_CHANNEL1/2`.
 - Every LLM call passes a `mock` so `MOCK_AI=1` keeps the whole pipeline
   runnable offline — add one to any new call.

@@ -9,19 +9,18 @@
       "captions": true,
       "aiClips": {
         "enabled": true,
-        "scenes": [
-          0
-        ]
+        "provider": "auto",
+        "scenes": "all",
+        "maxClips": 10
       },
       "formats": {
         "long": {
           "captions": false,
           "aiClips": {
             "enabled": true,
-            "scenes": [
-              0,
-              1
-            ]
+            "provider": "auto",
+            "scenes": "all",
+            "maxClips": 16
           }
         }
       },
@@ -90,9 +89,9 @@
       "captions": false,
       "aiClips": {
         "enabled": true,
-        "scenes": [
-          0
-        ]
+        "provider": "auto",
+        "scenes": "all",
+        "maxClips": 10
       },
       "voice": "en-US-AvaMultilingualNeural",
       "madeForKids": true,
@@ -145,7 +144,17 @@
         "Learning the ABCs",
         "Days of the Week Song",
         "Star Light Star Bright"
-      ]
+      ],
+      "formats": {
+        "long": {
+          "aiClips": {
+            "enabled": true,
+            "provider": "auto",
+            "scenes": "all",
+            "maxClips": 16
+          }
+        }
+      }
     }
   ]
 }

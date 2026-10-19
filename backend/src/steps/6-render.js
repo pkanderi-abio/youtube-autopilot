@@ -42,11 +42,22 @@ async function stillSegment(image, seconds, index, { width, height }, out) {
   ]);
 }
 
+// Plays an AI motion clip for the scene. A clip shorter than the narration
+// is slowed down (up to MAX_STRETCH, still natural-looking) so motion fills
+// the whole scene; anything left after that is topped up with the still.
+const MAX_STRETCH = 1.6;
+function clipPlan(clip, seconds) {
+  const stretch = Math.min(MAX_STRETCH, Math.max(1, seconds / clip.duration));
+  const covered = Math.min(seconds, clip.duration * stretch);
+  return { stretch, covered, rest: seconds - covered };
+}
+
 async function clipSegment(clip, seconds, { width, height }, out) {
+  const { stretch, covered } = clipPlan(clip, seconds);
   await ffmpeg([
-    '-i', clip.path, '-t', String(Math.min(seconds, clip.duration)),
-    '-vf', `${coverScale(width, height)},fps=${FPS},format=yuv420p`,
-    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-an', out
+    '-i', clip.path,
+    '-vf', `setpts=${stretch.toFixed(4)}*PTS,${coverScale(width, height)},fps=${FPS},format=yuv420p`,
+    '-t', covered.toFixed(3), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-an', out
   ]);
 }
 
@@ -105,7 +116,7 @@ export async function renderVideo(channel, script, audioPath, workDir) {
     if (scene.clip) {
       await clipSegment(scene.clip, scene.duration, size, `${base}-a.mp4`);
       segments.push(`${base}-a.mp4`);
-      const rest = scene.duration - Math.min(scene.duration, scene.clip.duration);
+      const { rest } = clipPlan(scene.clip, scene.duration);
       if (rest > 0.4) {
         await stillSegment(scene.image, rest, i + 1, size, `${base}-b.mp4`);
         segments.push(`${base}-b.mp4`);

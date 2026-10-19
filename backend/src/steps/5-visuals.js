@@ -6,6 +6,7 @@ import path from 'path';
 import { writeFile } from 'fs/promises';
 import { generateSceneImage } from '../lib/images.js';
 import { generateAiClip, aiClipsAvailable } from '../lib/aiClips.js';
+import { generateKaggleClips, kaggleAvailable } from '../lib/kaggleClips.js';
 
 const CONCURRENCY = Number(process.env.IMAGE_CONCURRENCY || 3);
 
@@ -50,17 +51,47 @@ export async function generateVisuals(channel, script, workDir) {
     providers[provider] = (providers[provider] || 0) + 1;
   });
 
-  let clips = 0;
-  const clipScenes = channel.aiClips?.scenes ?? [0];
-  if (channel.aiClips?.enabled && aiClipsAvailable()) {
-    for (const i of clipScenes) {
-      const scene = script.scenes[i];
-      if (!scene) continue;
-      const clip = await generateAiClip(`${scene.prompt}. Smooth cinematic camera motion, subtle natural movement.`,
-        path.join(workDir, `clip-${i}.mp4`), { aspectRatio: vertical ? '9:16' : '16:9', duration: Math.min(8, Math.ceil(scene.duration || 5)) });
-      if (clip) { scene.clip = clip; clips++; }
-    }
+  const clips = await addAiClips(channel, script, workDir, vertical);
+  return { providers, clips };
+}
+
+// Which scenes get real AI motion: "all" (capped at maxClips, spread evenly
+// and always including the hook) or an explicit list of scene indexes.
+function pickClipScenes(aiClips, count) {
+  if (Array.isArray(aiClips.scenes)) return aiClips.scenes.filter((i) => i < count);
+  const max = Math.min(count, aiClips.maxClips ?? count);
+  if (max >= count) return [...Array(count).keys()];
+  return [...new Set(Array.from({ length: max }, (_, k) => Math.round((k * (count - 1)) / Math.max(1, max - 1))))];
+}
+
+const MOTION_HINT = 'Natural, smooth motion of the subject with a slow cinematic camera move. Realistic physics, no morphing.';
+
+async function addAiClips(channel, script, workDir, vertical) {
+  const cfg = channel.aiClips;
+  if (!cfg?.enabled) return 0;
+  const indexes = pickClipScenes(cfg, script.scenes.length);
+  const provider = cfg.provider && cfg.provider !== 'auto'
+    ? cfg.provider
+    : kaggleAvailable() ? 'kaggle' : aiClipsAvailable() ? 'pollinations' : null;
+  if (!provider || !indexes.length) return 0;
+
+  if (provider === 'kaggle') {
+    // 8n+1 frames at 24fps on a 32-px grid; LTX-Video's sweet spot on a T4
+    const size = vertical ? { width: 512, height: 768 } : { width: 768, height: 512 };
+    const clips = await generateKaggleClips(
+      indexes.map((index) => ({ index, image: script.scenes[index].image, prompt: `${script.scenes[index].prompt} ${MOTION_HINT}` })),
+      workDir, { name: `${channel.id}-${channel.format}`, ...size });
+    for (const [index, clip] of clips) script.scenes[index].clip = clip;
+    return clips.size;
   }
 
-  return { providers, clips };
+  let n = 0;
+  for (const i of indexes) {
+    if (!aiClipsAvailable()) break;
+    const scene = script.scenes[i];
+    const clip = await generateAiClip(`${scene.prompt}. ${MOTION_HINT}`,
+      path.join(workDir, `clip-${i}.mp4`), { aspectRatio: vertical ? '9:16' : '16:9', duration: Math.min(8, Math.ceil(scene.duration || 5)) });
+    if (clip) { scene.clip = clip; n++; }
+  }
+  return n;
 }

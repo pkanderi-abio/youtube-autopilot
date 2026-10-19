@@ -78,7 +78,8 @@ jobs:
     needs: plan
     if: needs.plan.outputs.jobs != '[]'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # AI motion clips render on a Kaggle GPU (up to ~75 min for a long video)
+    timeout-minutes: 120
     strategy:
       fail-fast: false
       matrix:
@@ -104,6 +105,11 @@ jobs:
           done
           echo "::error::npm ci failed after retries"
           exit 1
+      - name: Install Kaggle CLI (free GPU for AI motion clips)
+        # Best-effort: without it (or without the secrets) videos still
+        # publish using AI stills + camera motion. pipx is preinstalled on
+        # GitHub's Ubuntu runners - no apt-get involved.
+        run: pipx install kaggle || echo "::warning::kaggle CLI install failed - AI clips disabled for this run"
       - name: Generate and publish ${{ matrix.channel }} (${{ matrix.format }})
         working-directory: backend
         env:
@@ -115,13 +121,17 @@ jobs:
           # Optional: Pollinations fallback images + AI motion clips
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
           POLLINATIONS_VIDEO_MODEL: ${{ vars.POLLINATIONS_VIDEO_MODEL }}
+          # Optional: free Kaggle GPU renders real AI motion clips (LTX-Video)
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+          LTX_STEPS: ${{ vars.LTX_STEPS }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN_CHANNEL1: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL1 }}
           YT_REFRESH_TOKEN_CHANNEL2: ${{ secrets.YT_REFRESH_TOKEN_CHANNEL2 }}
         run: |
           # empty vars.* come through as "" - drop them so code defaults apply
-          for v in CF_TEXT_MODEL CF_IMAGE_MODEL POLLINATIONS_VIDEO_MODEL; do
+          for v in CF_TEXT_MODEL CF_IMAGE_MODEL POLLINATIONS_VIDEO_MODEL LTX_STEPS; do
             [ -z "${!v}" ] && unset $v
           done
           node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}

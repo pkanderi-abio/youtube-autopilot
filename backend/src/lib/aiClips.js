@@ -14,8 +14,10 @@ import { MOCK } from './llm.js';
 const KEY = process.env.POLLINATIONS_API_KEY;
 const MODEL = process.env.POLLINATIONS_VIDEO_MODEL; // unset = provider default
 
+let outOfBalance = false; // a 402 means every further clip this run will fail too
+
 export function aiClipsAvailable() {
-  return Boolean(KEY) && !MOCK && process.env.AI_CLIPS !== '0';
+  return Boolean(KEY) && !MOCK && !outOfBalance && process.env.AI_CLIPS !== '0';
 }
 
 export async function generateAiClip(prompt, outPath, { aspectRatio = '9:16', duration = 5 } = {}) {
@@ -29,6 +31,7 @@ export async function generateAiClip(prompt, outPath, { aspectRatio = '9:16', du
       signal: AbortSignal.timeout(300_000)
     });
     const type = res.headers.get('content-type') || '';
+    if (res.status === 402) outOfBalance = true;
     if (!res.ok || !type.startsWith('video/')) {
       throw new Error(`${res.status} ${type} ${(await res.text().catch(() => '')).slice(0, 200)}`);
     }
