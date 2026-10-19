@@ -10,9 +10,18 @@
 import { completeJSON, MOCK } from '../lib/llm.js';
 
 const LIMITS = {
-  short: { minWords: 90, targetWords: '120-150', scenes: '7-9' },
-  long: { minWords: 650, sectionWords: '150-190', sectionScenes: '5-7', sections: 6 }
+  short: { minWords: 90, targetWords: '120-150', scenes: '7-9', sceneSentences: '1-2' },
+  long: { minWords: 650, sectionWords: '150-190', sectionMin: 110, sectionScenes: '5-7', sections: 6 }
 };
+// Toddler content uses 4-8 word sentences, so the same 50 seconds holds far
+// fewer words (run #463: 53-64 words per short and ~55 per long section, vs 90/110 floors).
+const BABY_LIMITS = {
+  // floors set from what the model actually writes in this style (~50-65
+  // words per short / per long section); ~330 toddler-pace words ≈ 3 minutes
+  short: { minWords: 50, targetWords: '80-110', scenes: '8-10', sceneSentences: '2-3 very short' },
+  long: { minWords: 300, sectionWords: '90-130', sectionMin: 45, sectionScenes: '6-8', sections: 6 }
+};
+const limitsFor = (channel, format) => (channel.contentStyle === 'babyLearning' ? BABY_LIMITS : LIMITS)[format];
 
 const words = (t) => String(t || '').split(/\s+/).filter(Boolean).length;
 const totalWords = (scenes) => scenes.reduce((n, s) => n + words(s.narration), 0);
@@ -77,7 +86,7 @@ function mockScenes(topic, n, prefix = '') {
 }
 
 async function shortScript(channel, topicInfo) {
-  const L = LIMITS.short;
+  const L = limitsFor(channel, 'short');
   let best = null;
   for (let attempt = 0; attempt < 3; attempt++) {
     const out = await completeJSON(`
@@ -88,7 +97,7 @@ Angle: ${topicInfo.angle}
 Narration rules (total ${L.targetWords} words, about 50 seconds spoken):
 ${voiceRules(channel)}
 
-Split it into ${L.scenes} scenes of 1-2 sentences each.
+Split it into ${L.scenes} scenes of ${L.sceneSentences} sentences each.
 ${visualRules(channel)}
 ${best ? `\nYour previous attempt was only ${totalWords(best.scenes)} words - write the full ${L.targetWords}.` : ''}
 
@@ -116,7 +125,7 @@ Return JSON: {
 }
 
 async function longScript(channel, topicInfo) {
-  const L = LIMITS.long;
+  const L = limitsFor(channel, 'long');
   const outline = await completeJSON(`
 Plan a ${L.sections}-section long-form YouTube video (about 7 minutes) for "${channel.name}" (${channel.niche}).
 Topic: ${topicInfo.topic}
@@ -162,7 +171,7 @@ Return JSON: {"scenes": [{"narration": "...", "visual": "..."}]}`.trim(), {
         continue;
       }
       if (totalWords(candidate) > totalWords(sectionScenes)) sectionScenes = candidate;
-      if (totalWords(candidate) >= 110) break;
+      if (totalWords(candidate) >= L.sectionMin) break;
       console.warn(`[script] section ${i + 1} attempt ${attempt + 1} short (${totalWords(candidate)} words), retrying`);
     }
     scenes.push(...sectionScenes);
