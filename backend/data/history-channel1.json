@@ -178,14 +178,10 @@
     "Why the Northern Lights Are Suddenly Appearing Farther South Than Ever",
     "The Rise of Esports in Mexico: How 'Fútbol Santander' Became a Cultural Phenomenon",
     "What Actually Happens To Your Elbow When You Pitch 100 MPH Like Shohei Ohtani",
-    "Why a Russian Cosmos 2612 Satellite and an ICEYE X36 Radar Craft Are Trending Together: The Hidden Tech of Space Surveillance"
+    "Why a Russian Cosmos 2612 Satellite and an ICEYE X36 Radar Craft Are Trending Together: The Hidden Tech of Space Surveillance",
+    "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today"
   ],
   "videos": [
-    {
-      "title": "Volcano Chasers: Inside the Most Insane Eruption Destinations",
-      "url": "https://youtu.be/3PNX0vp8pmA",
-      "publishedAt": "2026-07-08T00:34:55.461Z"
-    },
     {
       "title": "Sofia Vergara's Most Glamorous Travel Moments | Luxury Lifestyle",
       "url": "https://youtu.be/YeY1rYoQkWE",
@@ -1412,6 +1408,12 @@
       "url": "https://youtu.be/Kf4xjT5X4ZA",
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z"
+    },
+    {
+      "title": "How ICEYE X36 Uses Microwaves to See Through Hurricanes in Total Darkness",
+      "url": "https://youtu.be/NZHkp2abE5M",
+      "format": "short",
+      "publishedAt": "2026-10-19T13:34:42.405Z"
     }
   ]
 }
