@@ -90,7 +90,7 @@ jobs:
     if: needs.plan.outputs.jobs != '[]'
     runs-on: ubuntu-latest
     env:
-      LLM_PROVIDER: gemini
+      LLM_PROVIDER: muse
     strategy:
       fail-fast: false
       matrix:
@@ -136,7 +136,7 @@ jobs:
           if ! curl -sf http://127.0.0.1:11434/api/version >/dev/null; then
             setsid nohup ollama serve > "$RUNNER_TEMP/ollama.log" 2>&1 < /dev/null &
           fi
-          # Ollama is only the fallback here (job sets LLM_PROVIDER=gemini),
+          # Ollama is only the fallback here (job sets LLM_PROVIDER=muse),
           # so a dead Ollama server warns and continues rather than killing
           # the whole publish. If Gemini then also fails, the LLM call
           # itself aborts the run.
@@ -177,6 +177,8 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_IMAGE_MODEL: ${{ vars.GEMINI_IMAGE_MODEL || 'imagen-4.0-generate-001' }}
+          MUSE_API_KEY: ${{ secrets.MUSE_API_KEY }}
+          MUSE_MODEL: ${{ vars.MUSE_MODEL || 'muse-spark-1.3' }}
           LLM_FALLBACK: ollama
         run: node src/run-pipeline.js ${{ matrix.channel }} ${{ matrix.format }}
       - name: Upload thumbnail variants

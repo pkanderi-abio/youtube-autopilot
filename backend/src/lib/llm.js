@@ -19,6 +19,14 @@ const OLLAMA_URL = process.env.OLLAMA_URL || 'http://127.0.0.1:11434';
 const OLLAMA_MODEL = process.env.OLLAMA_MODEL || 'llama3.2';
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
+// Meta's Model API - OpenAI-compatible chat completions endpoint. Added as
+// an alternative primary provider to Gemini, which has been hitting
+// sustained 429 (quota) and 503 (overloaded) errors that force long-form
+// generation onto the much weaker Ollama fallback often enough to
+// routinely miss the aggregate word-count floor.
+const MUSE_API_KEY = process.env.MUSE_API_KEY;
+const MUSE_MODEL = process.env.MUSE_MODEL || 'muse-spark-1.3';
+const MUSE_BASE_URL = process.env.MUSE_BASE_URL || 'https://api.meta.ai/v1';
 const LLM_FALLBACK = process.env.LLM_FALLBACK || 'ollama';
 
 function sleep(ms) {
@@ -130,13 +138,67 @@ async function completeWithGemini(prompt, opts = {}) {
   throw lastError;
 }
 
-export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
-  if (LLM_PROVIDER === 'gemini') {
+async function completeWithMuseOnce(prompt, { maxTokens = 1024, system, json } = {}) {
+  if (!MUSE_API_KEY) {
+    throw new Error('MUSE_API_KEY is required when LLM_PROVIDER=muse');
+  }
+
+  const messages = [];
+  if (system) messages.push({ role: 'system', content: system });
+  messages.push({ role: 'user', content: prompt });
+
+  const response = await fetch(`${MUSE_BASE_URL}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${MUSE_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: MUSE_MODEL,
+      messages,
+      // Not sending response_format: {type:'json_object'} here - it's a
+      // de facto OpenAI-compatible convention but wasn't confirmed against
+      // this specific endpoint, and completeJSON already appends an
+      // explicit "respond with ONLY valid JSON" instruction plus does its
+      // own fence-stripping/parsing, so correctness doesn't depend on it.
+      max_tokens: Math.min(Math.max(maxTokens * 2, 1024), 8192)
+    })
+  });
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => '');
+    throw new Error(`Muse request failed: ${response.status} ${response.statusText} - ${body.slice(0, 300)}`);
+  }
+  const data = await response.json();
+  const text = data.choices?.[0]?.message?.content || '';
+  if (!text) throw new Error('Muse returned no completion');
+  return text;
+}
+
+async function completeWithMuse(prompt, opts = {}) {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      return await completeWithGemini(prompt, { maxTokens, system, json });
+      return await completeWithMuseOnce(prompt, opts);
+    } catch (error) {
+      lastError = error;
+      const retryable = /Muse request failed: (429|5\d\d)\b/.test(error.message);
+      if (!retryable || attempt === 2) throw error;
+      console.warn(`[llm] Muse request failed (attempt ${attempt + 1}/3), retrying after backoff:`, error.message);
+      await sleep(2000 * (attempt + 1));
+    }
+  }
+  throw lastError;
+}
+
+export async function complete(prompt, { maxTokens = 1024, system, json } = {}) {
+  if (LLM_PROVIDER === 'gemini' || LLM_PROVIDER === 'muse') {
+    const primary = LLM_PROVIDER === 'gemini' ? completeWithGemini : completeWithMuse;
+    try {
+      return await primary(prompt, { maxTokens, system, json });
     } catch (error) {
       if (LLM_FALLBACK !== 'ollama') throw error;
-      console.warn(`[llm] Gemini unavailable; using free Ollama fallback: ${error.message}`);
+      console.warn(`[llm] ${LLM_PROVIDER} unavailable; using free Ollama fallback: ${error.message}`);
       return completeWithOllama(prompt, { maxTokens, system, json });
     }
   }
