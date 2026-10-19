@@ -115,7 +115,8 @@
     "Baa Baa Rainbow Sheep: Learn Colors and Counting Nursery Rhyme Sing-Along for Toddlers",
     "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers",
     "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers",
-    "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!"
+    "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!",
+    "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers"
   ],
   "videos": [
     {
@@ -854,6 +855,13 @@
       "format": "short",
       "publishedAt": "2026-10-19T14:53:36.576Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed"
+    },
+    {
+      "title": "Count 1 to 10 Farm Animals and Sing Hickory Dickory Dock with Animal Sounds",
+      "url": "https://youtu.be/xdVdSQKcTUY",
+      "format": "short",
+      "publishedAt": "2026-10-19T15:04:56.369Z",
+      "sourcePoolItem": "Hickory Dickory Dock"
     }
   ]
 }
