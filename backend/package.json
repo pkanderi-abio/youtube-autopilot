@@ -10,7 +10,7 @@
     "fetch-analytics": "node scripts/fetch-analytics.js"
   },
   "dependencies": {
-    "canvas": "^2.11.2",
+    "canvas": "^3.2.3",
     "dotenv": "^16.4.5",
     "ffmpeg-static": "^5.2.0",
     "ffprobe-static": "^3.1.0",
