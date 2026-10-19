@@ -70,7 +70,21 @@ async function run(channelId, formatOverride) {
     // audio for this topic - long-form baby videos otherwise burn
     // ~5min of Ollama on section-by-section narration text we'd throw
     // away.
-    const nursery = await resolveNurseryAudio(topicInfo.topic);
+    //
+    // Matched against sourcePoolItem (the literal topicPool entry,
+    // tracked via discoverTopic's sourceIndex), NOT topicInfo.topic -
+    // the manifest's `topic` field is the literal pool item text (e.g.
+    // "Twinkle Twinkle Little Star"), but discoverTopic's own prompt
+    // explicitly permits reworking that into a sharper display topic
+    // ("restate it more concretely or give it a sharper hook"). Matching
+    // against the reworded topic meant this essentially never hit -
+    // confirmed directly: a run picked from the pool still fell through
+    // to Edge TTS because the exact-string match against the reworded
+    // topic failed. Same class of bug CLAUDE.md already documents being
+    // fixed once for the cooldown tracker (echo-the-exact-text-back is
+    // fragile; a stable index/field isn't) - this lookup just never got
+    // the same fix.
+    const nursery = await resolveNurseryAudio(topicInfo.sourcePoolItem || topicInfo.topic);
 
     console.log('[2/8] generating script...');
     const script = await generateScript(channel, topicInfo, { skipNarration: !!nursery });
