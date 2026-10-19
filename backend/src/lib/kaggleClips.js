@@ -1,5 +1,5 @@
 // Free real-motion AI video: animates the scene images into clips with
-// LTX-Video on Kaggle's free GPUs (2x T4, ~30 GPU-hours/week per account).
+// LTX-Video 0.9.8 2B distilled on Kaggle's free GPUs (2x T4, ~30 GPU-hours/week per account).
 //
 // Flow, one Kaggle round-trip per video:
 //   1. scene images + prompts -> private Kaggle dataset (new version)
@@ -24,7 +24,9 @@ const USER = process.env.KAGGLE_USERNAME;
 const TOKEN = process.env.KAGGLE_API_TOKEN || process.env.KAGGLE_KEY;
 const BIN = process.env.KAGGLE_BIN || 'kaggle';
 const TIMEOUT_MIN = Number(process.env.KAGGLE_TIMEOUT_MIN || 75);
-const MODEL = process.env.LTX_MODEL || 'Lightricks/LTX-Video';
+// Optional overrides; defaults live in kaggle/ltx_clips.py (0.9.8 2B distilled)
+const CHECKPOINT = process.env.LTX_CHECKPOINT;
+const BASE_REPO = process.env.LTX_BASE_REPO;
 const STEPS = Number(process.env.LTX_STEPS || 30);
 const SCRIPT = path.resolve('kaggle/ltx_clips.py');
 
@@ -111,7 +113,8 @@ export async function generateKaggleClips(scenes, workDir, { name, width, height
       items.push({ index: s.index, file, prompt: s.prompt.slice(0, 900) });
     }
     await writeFile(path.join(dsDir, 'manifest.json'), JSON.stringify({
-      run_id: runId, width, height, num_frames: 97, steps: STEPS, model: MODEL, dtype: 'fp16',
+      run_id: runId, width, height, num_frames: 97, steps: STEPS, dtype: 'fp16',
+      ...(CHECKPOINT ? { checkpoint: CHECKPOINT } : {}), ...(BASE_REPO ? { base_repo: BASE_REPO } : {}),
       max_seconds: (TIMEOUT_MIN - 12) * 60, items
     }, null, 1));
     await writeFile(path.join(dsDir, 'dataset-metadata.json'), JSON.stringify({

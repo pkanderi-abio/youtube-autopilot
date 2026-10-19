@@ -1,6 +1,6 @@
 # Runs on a free Kaggle GPU (2x T4) - pushed by src/lib/kaggleClips.js.
 # Animates each AI scene image into a short real-motion clip with
-# LTX-Video (Apache-2.0) image-to-video, then writes clip-NNN.mp4 files
+# LTX-Video 0.9.8 2B distilled (Lightricks, open weights) image-to-video, then writes clip-NNN.mp4 files
 # plus result.json to /kaggle/working for the pipeline to download.
 #
 # Everything here is best-effort per clip: a failed clip is reported in
@@ -48,26 +48,42 @@ subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-U",
 import numpy as np
 import torch
 from PIL import Image, ImageOps
-from diffusers import LTXImageToVideoPipeline
+from diffusers import AutoencoderKLLTXVideo, LTXConditionPipeline, LTXVideoTransformer3DModel
 from diffusers.utils import export_to_video
+from transformers import T5EncoderModel
 
 W, H = int(manifest["width"]), int(manifest["height"])
 FRAMES = int(manifest.get("num_frames", 97))  # must be 8n+1
 STEPS = int(manifest.get("steps", 30))
 MAX_SECONDS = float(manifest.get("max_seconds", 3600))
-MODEL = manifest.get("model", "Lightricks/LTX-Video")
+# Default: LTX-Video 0.9.8 2B distilled - guidance- and timestep-distilled,
+# 8 fixed steps with no CFG pass, the fast low-VRAM choice for a free T4.
+# Fallback if that single-file checkpoint won't load: the 0.9.5 2B base model.
+CHECKPOINT = manifest.get("checkpoint", "https://huggingface.co/Lightricks/LTX-Video/blob/main/ltxv-2b-0.9.8-distilled.safetensors")
+BASE_REPO = manifest.get("base_repo", "Lightricks/LTX-Video-0.9.5")
+DISTILLED_TIMESTEPS = [1000, 993, 987, 981, 975, 909, 725, 0.03]
 NEG = "worst quality, inconsistent motion, blurry, jittery, distorted, deformed, morphing, text, watermark"
 dtype = torch.float16 if manifest.get("dtype", "fp16") == "fp16" else torch.bfloat16
 items = manifest["items"]
 RESULT["gpus"] = torch.cuda.device_count()
-log(f"{len(items)} clips at {W}x{H}, {FRAMES} frames, {STEPS} steps, {RESULT['gpus']} GPU(s), {MODEL}")
-
-from transformers import T5EncoderModel
+log(f"{len(items)} clips at {W}x{H}, {FRAMES} frames, {RESULT['gpus']} GPU(s)")
 
 # T5-XXL overflows in fp16 (NaN embeddings), so the text encoder is loaded in
 # bf16 separately; transformer + VAE use `dtype`.
-text_encoder = T5EncoderModel.from_pretrained(MODEL, subfolder="text_encoder", torch_dtype=torch.bfloat16)
-pipe = LTXImageToVideoPipeline.from_pretrained(MODEL, text_encoder=text_encoder, torch_dtype=dtype)
+text_encoder = T5EncoderModel.from_pretrained(BASE_REPO, subfolder="text_encoder", torch_dtype=torch.bfloat16)
+try:
+    transformer = LTXVideoTransformer3DModel.from_single_file(CHECKPOINT, torch_dtype=dtype)
+    vae = AutoencoderKLLTXVideo.from_single_file(CHECKPOINT, torch_dtype=dtype)
+    pipe = LTXConditionPipeline.from_pretrained(BASE_REPO, transformer=transformer, vae=vae,
+                                                text_encoder=text_encoder, torch_dtype=dtype)
+    MODE = "distilled"
+except Exception as e:
+    log("distilled checkpoint failed to load, falling back to the base model:", e)
+    RESULT["errors"].append(f"distilled load failed: {e}")
+    pipe = LTXConditionPipeline.from_pretrained(BASE_REPO, text_encoder=text_encoder, torch_dtype=dtype)
+    MODE = "base"
+RESULT["mode"] = MODE
+log(f"model mode: {MODE}")
 
 # Encode every prompt once with the (large) T5 text encoder, then drop it so
 # only the transformer + VAE need to live on each GPU.
@@ -79,7 +95,7 @@ def encode_all(device):
     with torch.no_grad():
         for it in items:
             pe, pm, ne, nm = pipe.encode_prompt(prompt=it["prompt"], negative_prompt=NEG,
-                                                do_classifier_free_guidance=True, max_sequence_length=128,
+                                                do_classifier_free_guidance=True, max_sequence_length=256,
                                                 device=device, dtype=torch.bfloat16)
             if not (torch.isfinite(pe).all() and torch.isfinite(ne).all()):
                 raise RuntimeError("non-finite prompt embeddings")
@@ -101,7 +117,7 @@ torch.cuda.empty_cache()
 workers = [pipe]
 if RESULT["gpus"] > 1:
     try:
-        second = LTXImageToVideoPipeline(scheduler=copy.deepcopy(pipe.scheduler), vae=copy.deepcopy(pipe.vae),
+        second = LTXConditionPipeline(scheduler=copy.deepcopy(pipe.scheduler), vae=copy.deepcopy(pipe.vae),
                                          text_encoder=None, tokenizer=pipe.tokenizer,
                                          transformer=copy.deepcopy(pipe.transformer))
         workers.append(second)
@@ -147,12 +163,14 @@ def run_worker(wi):
             try:
                 pe, pm, ne, nm = (t.to(dev) for t in embeds[idx])
                 pe, ne = pe.to(cur_dtype), ne.to(cur_dtype)
-                frames = p(image=cover(Image.open(os.path.join(in_dir, it["file"]))),
+                sampling = (dict(timesteps=DISTILLED_TIMESTEPS, guidance_scale=1.0, image_cond_noise_scale=0.0)
+                            if MODE == "distilled" else
+                            dict(num_inference_steps=STEPS, guidance_scale=3.0, image_cond_noise_scale=0.025))
+                frames = p(image=cover(Image.open(os.path.join(in_dir, it["file"]))), frame_index=0,
                            prompt_embeds=pe, prompt_attention_mask=pm,
                            negative_prompt_embeds=ne, negative_prompt_attention_mask=nm,
                            width=W, height=H, num_frames=FRAMES, frame_rate=24,
-                           num_inference_steps=STEPS, guidance_scale=3.0,
-                           decode_timestep=0.03, decode_noise_scale=0.025,
+                           decode_timestep=0.05, decode_noise_scale=0.025, **sampling,
                            generator=torch.Generator(device=dev).manual_seed(1000 + idx)).frames[0]
                 problem = frames_ok(frames)
                 if problem and "blank" in problem and cur_dtype == torch.float16:

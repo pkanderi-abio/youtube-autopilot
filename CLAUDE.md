@@ -39,7 +39,7 @@ channels and both formats (4 runs) and look at frames from `out/`.
 |---|---|---|
 | LLM | Cloudflare Workers AI `llama-4-scout` | `llama-3.3-70b` |
 | Images | Cloudflare `flux-1-schnell` | Pollinations FLUX |
-| Motion clips | LTX-Video on free Kaggle GPU (`kaggleClips.js` + `kaggle/ltx_clips.py`) | Pollinations (paid) → still + camera move |
+| Motion clips | LTX-Video 0.9.8 2B distilled on free Kaggle GPU (`kaggleClips.js` + `kaggle/ltx_clips.py`) | Pollinations (paid) → still + camera move |
 | Voice | Edge TTS (msedge-tts) | Cloudflare MeloTTS |
 
 Cloudflare free tier = **10,000 neurons/day shared by every job**.

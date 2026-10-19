@@ -43,15 +43,17 @@ Pollinations for the rest of that run automatically. Each run logs its
 estimated spend on the last line.
 
 **Real AI motion.** Every scene image is animated into a ~4-second clip by
-LTX-Video (open source, Apache-2.0) running on Kaggle's free GPUs: the run
+LTX-Video 0.9.8 2B distilled (Lightricks' open-weights model, 8-step
+distilled for speed) running on Kaggle's free GPUs: the run
 uploads the images to a private Kaggle dataset, runs `kaggle/ltx_clips.py`
 as a GPU job, and downloads the clips (slowed up to 1.6× to fill each
-scene). This adds roughly 15–25 minutes to a Short and 30–60 to a long
-video, and uses about 2.5 of Kaggle's ~30 weekly GPU hours on the busiest
-day of the schedule. If Kaggle is busy, out of quota or fails, those scenes
+scene). This adds roughly 10–15 minutes to a Short and 15–30 to a long
+video (mostly model download/startup), well inside Kaggle's ~30 weekly
+GPU hours. If Kaggle is busy, out of quota or fails, those scenes
 fall back to the AI still + camera move, so publishing never stops.
-`aiClips.maxClips` caps how many scenes get motion (default 10 short / 16
-long); `LTX_STEPS` (default 30) trades quality for speed.
+`aiClips.maxClips` caps how many scenes get motion (default 10 short / 40
+long, i.e. every scene); `LTX_STEPS` only applies to the base-model fallback. Check Lightricks'
+model license for your commercial use before monetizing.
 
 ## Before you turn on zero-review autonomy
 
