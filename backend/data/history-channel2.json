@@ -116,7 +116,8 @@
     "Old MacDonald Had a Farm | Sing Along to Animal Sounds, Colors, and Counting for Toddlers",
     "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers",
     "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!",
-    "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers"
+    "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers",
+    "If You're Happy and You Know It"
   ],
   "videos": [
     {
@@ -862,6 +863,13 @@
       "format": "short",
       "publishedAt": "2026-10-19T15:04:56.369Z",
       "sourcePoolItem": "Hickory Dickory Dock"
+    },
+    {
+      "title": "Happy Farm Friends Sing",
+      "url": "https://youtu.be/5epOo8E_p6c",
+      "format": "short",
+      "publishedAt": "2026-10-20T17:45:04.469Z",
+      "sourcePoolItem": "If You're Happy and You Know It"
     }
   ]
 }
