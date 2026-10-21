@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-20T10:42:44.442Z",
+  "fetchedAt": "2026-10-21T10:53:36.730Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 28,
+      "viewCount": 30,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T17:35:34.348Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 104,
+      "viewCount": 105,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-09-30T18:24:19.720Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 25,
+      "viewCount": 30,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1077,7 +1077,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:03:31.426Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 163,
+      "viewCount": 200,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 192,
+      "viewCount": 198,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:19:04.650Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 25,
+      "viewCount": 28,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 27,
+      "viewCount": 29,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T17:40:05.928Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1147,7 +1147,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T17:57:33.538Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 8,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1168,6 +1168,16 @@
       "publishedAt": "2026-10-19T15:04:56.369Z",
       "sourcePoolItem": "Hickory Dickory Dock",
       "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/5epOo8E_p6c",
+      "title": "Happy Farm Friends Sing",
+      "format": "short",
+      "publishedAt": "2026-10-20T17:45:04.469Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }

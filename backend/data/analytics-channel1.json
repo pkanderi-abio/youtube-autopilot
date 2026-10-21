@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-10-20T10:42:43.778Z",
+  "fetchedAt": "2026-10-21T10:53:36.048Z",
   "videos": [
-    {
-      "url": "https://youtu.be/9eGEFXFYZkQ",
-      "title": "Sabrina Ionescu's Luxury Travel Lifestyle Off the Court",
-      "format": null,
-      "publishedAt": "2026-07-08T01:24:04.737Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/9zcf5szXGyY",
       "title": "Trace Gallagher's Trails of Freedom",
@@ -187,7 +177,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 180,
+      "viewCount": 184,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 255,
+      "viewCount": 257,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1017,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1398,
+      "viewCount": 1401,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1037,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 164,
+      "viewCount": 165,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1067,8 +1057,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 24,
-      "likeCount": 3,
+      "viewCount": 29,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -1077,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1154,
+      "viewCount": 1160,
       "likeCount": 25,
       "commentCount": 1
     },
@@ -1857,7 +1847,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 139,
+      "viewCount": 140,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1907,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 23,
+      "viewCount": 24,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1967,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 73,
+      "viewCount": 99,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T13:34:42.405Z",
       "sourcePoolItem": null,
-      "viewCount": 26,
+      "viewCount": 29,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T18:25:45.972Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 11,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1998,6 +1988,16 @@
       "publishedAt": "2026-10-19T18:29:38.508Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
       "viewCount": 4,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/j48tiEhbPzs",
+      "title": "Sweden's 24,000 Islands",
+      "format": "short",
+      "publishedAt": "2026-10-21T01:00:51.091Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
