@@ -185,11 +185,6 @@
   ],
   "videos": [
     {
-      "title": "Trace Gallagher's Trails of Freedom",
-      "url": "https://youtu.be/9zcf5szXGyY",
-      "publishedAt": "2026-07-08T04:04:00.995Z"
-    },
-    {
       "title": "Ball Pit Bliss",
       "url": "https://youtu.be/c7AF3Z7ElvU",
       "publishedAt": "2026-07-08T04:12:22.577Z"
@@ -1422,6 +1417,13 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth"
+    },
+    {
+      "title": "Coober Pedy Underground Town",
+      "url": "https://youtu.be/pF2bdoMYL2k",
+      "format": "short",
+      "publishedAt": "2026-10-21T18:59:00.216Z",
+      "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
     }
   ]
 }
