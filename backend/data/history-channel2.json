@@ -117,7 +117,8 @@
     "The Alphabet Song with Animal Friends! Learn ABCs and Animal Sounds Sing-Along for Toddlers",
     "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!",
     "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers",
-    "If You're Happy and You Know It"
+    "If You're Happy and You Know It",
+    "Counting from 1 to 10"
   ],
   "videos": [
     {
@@ -870,6 +871,13 @@
       "format": "short",
       "publishedAt": "2026-10-20T17:45:04.469Z",
       "sourcePoolItem": "If You're Happy and You Know It"
+    },
+    {
+      "title": "Counting 10 Happy Farm Animals with Shapes",
+      "url": "https://youtu.be/iB33ZfDg3J0",
+      "format": "long",
+      "publishedAt": "2026-10-21T18:25:09.359Z",
+      "sourcePoolItem": "Counting from 1 to 10"
     }
   ]
 }
