@@ -185,11 +185,6 @@
   ],
   "videos": [
     {
-      "title": "Sabrina Ionescu's Luxury Travel Lifestyle Off the Court",
-      "url": "https://youtu.be/9eGEFXFYZkQ",
-      "publishedAt": "2026-07-08T01:24:04.737Z"
-    },
-    {
       "title": "Trace Gallagher's Trails of Freedom",
       "url": "https://youtu.be/9zcf5szXGyY",
       "publishedAt": "2026-07-08T04:04:00.995Z"
@@ -1420,6 +1415,13 @@
       "format": "long",
       "publishedAt": "2026-10-19T18:29:38.508Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Sweden's 24,000 Islands",
+      "url": "https://youtu.be/j48tiEhbPzs",
+      "format": "short",
+      "publishedAt": "2026-10-21T01:00:51.091Z",
+      "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth"
     }
   ]
 }
