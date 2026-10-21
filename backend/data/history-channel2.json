@@ -118,7 +118,8 @@
     "Counting 1 to 10 with Five Little Monkeys: Colors, Shapes & Animal Sounds Sing-Along!",
     "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers",
     "If You're Happy and You Know It",
-    "Counting from 1 to 10"
+    "Counting from 1 to 10",
+    "The Colors of the Rainbow"
   ],
   "videos": [
     {
@@ -878,6 +879,13 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10"
+    },
+    {
+      "title": "Meet Fiji's 7 Rainbow Friends",
+      "url": "https://youtu.be/2mbE9f0PhSM",
+      "format": "short",
+      "publishedAt": "2026-10-21T18:26:35.734Z",
+      "sourcePoolItem": "The Colors of the Rainbow"
     }
   ]
 }
