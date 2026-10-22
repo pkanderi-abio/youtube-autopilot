@@ -181,14 +181,10 @@
     "Why a Russian Cosmos 2612 Satellite and an ICEYE X36 Radar Craft Are Trending Together: The Hidden Tech of Space Surveillance",
     "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today",
     "Bananas",
-    "The Loudest Sound Ever Recorded"
+    "The Loudest Sound Ever Recorded",
+    "The World's Shortest Commercial Flight"
   ],
   "videos": [
-    {
-      "title": "Ball Pit Bliss",
-      "url": "https://youtu.be/c7AF3Z7ElvU",
-      "publishedAt": "2026-07-08T04:12:22.577Z"
-    },
     {
       "title": "Padres Game Highlights",
       "url": "https://youtu.be/g3va1KJgKpI",
@@ -1424,6 +1420,13 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
+    },
+    {
+      "title": "Westray to Papa Westray Flight",
+      "url": "https://youtu.be/Q3phYgHdnfw",
+      "format": "short",
+      "publishedAt": "2026-10-22T18:53:33.514Z",
+      "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes"
     }
   ]
 }
