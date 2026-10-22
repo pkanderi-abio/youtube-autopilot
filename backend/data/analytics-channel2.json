@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-21T10:53:36.730Z",
+  "fetchedAt": "2026-10-22T10:54:16.713Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T18:28:29.737Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 59,
+      "viewCount": 61,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -947,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-09-16T17:35:34.348Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 105,
+      "viewCount": 108,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -977,7 +977,7 @@
       "format": "short",
       "publishedAt": "2026-09-21T18:38:07.060Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 72,
+      "viewCount": 73,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 48,
+      "viewCount": 49,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1087,8 +1087,8 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 200,
-      "likeCount": 1,
+      "viewCount": 233,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 198,
+      "viewCount": 204,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 29,
+      "viewCount": 37,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1177,6 +1177,26 @@
       "format": "short",
       "publishedAt": "2026-10-20T17:45:04.469Z",
       "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/iB33ZfDg3J0",
+      "title": "Counting 10 Happy Farm Animals with Shapes",
+      "format": "long",
+      "publishedAt": "2026-10-21T18:25:09.359Z",
+      "sourcePoolItem": "Counting from 1 to 10",
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/2mbE9f0PhSM",
+      "title": "Meet Fiji's 7 Rainbow Friends",
+      "format": "short",
+      "publishedAt": "2026-10-21T18:26:35.734Z",
+      "sourcePoolItem": "The Colors of the Rainbow",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

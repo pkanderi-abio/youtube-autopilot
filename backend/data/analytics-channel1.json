@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-10-21T10:53:36.048Z",
+  "fetchedAt": "2026-10-22T10:54:16.180Z",
   "videos": [
-    {
-      "url": "https://youtu.be/9zcf5szXGyY",
-      "title": "Trace Gallagher's Trails of Freedom",
-      "format": null,
-      "publishedAt": "2026-07-08T04:04:00.995Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/c7AF3Z7ElvU",
       "title": "Ball Pit Bliss",
@@ -177,7 +167,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 184,
+      "viewCount": 187,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -297,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-18T04:51:02.902Z",
       "sourcePoolItem": null,
-      "viewCount": 121,
+      "viewCount": 123,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -337,7 +327,7 @@
       "format": "short",
       "publishedAt": "2026-07-20T15:53:50.695Z",
       "sourcePoolItem": null,
-      "viewCount": 104,
+      "viewCount": 106,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -407,7 +397,7 @@
       "format": "short",
       "publishedAt": "2026-07-24T15:28:33.506Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -547,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-07-29T23:05:30.336Z",
       "sourcePoolItem": null,
-      "viewCount": 533,
+      "viewCount": 534,
       "likeCount": 13,
       "commentCount": 0
     },
@@ -1007,7 +997,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1401,
+      "viewCount": 1402,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1837,7 +1827,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 42,
+      "viewCount": 43,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 99,
+      "viewCount": 105,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T18:25:45.972Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 14,
+      "viewCount": 16,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,9 +1987,19 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 0,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/pF2bdoMYL2k",
+      "title": "Coober Pedy Underground Town",
+      "format": "short",
+      "publishedAt": "2026-10-21T18:59:00.216Z",
+      "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
+      "viewCount": 5,
+      "likeCount": 1,
+      "commentCount": 1
     }
   ]
 }
