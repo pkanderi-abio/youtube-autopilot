@@ -186,11 +186,6 @@
   ],
   "videos": [
     {
-      "title": "Padres Game Highlights",
-      "url": "https://youtu.be/g3va1KJgKpI",
-      "publishedAt": "2026-07-08T04:26:56.621Z"
-    },
-    {
       "title": "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM",
       "url": "https://youtu.be/H0OEAQ0RxfY",
       "publishedAt": "2026-07-08T04:54:11.360Z"
@@ -1427,6 +1422,13 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes"
+    },
+    {
+      "title": "Octopuses' 3 Hearts and Blue Blood Explained",
+      "url": "https://youtu.be/YVi-V12CBPE",
+      "format": "short",
+      "publishedAt": "2026-10-23T01:00:15.904Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
     }
   ]
 }
