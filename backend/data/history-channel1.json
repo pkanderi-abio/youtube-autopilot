@@ -182,14 +182,10 @@
     "Why a tiny satellite called ICEYE can see through hurricanes like the one trending today",
     "Bananas",
     "The Loudest Sound Ever Recorded",
-    "The World's Shortest Commercial Flight"
+    "The World's Shortest Commercial Flight",
+    "Sharks Existed Before Trees"
   ],
   "videos": [
-    {
-      "title": "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM",
-      "url": "https://youtu.be/H0OEAQ0RxfY",
-      "publishedAt": "2026-07-08T04:54:11.360Z"
-    },
     {
       "title": "Discovering Kuwait's Secret Coastlines",
       "url": "https://youtu.be/ZaB2rSqyRNo",
@@ -1429,6 +1425,13 @@
       "format": "short",
       "publishedAt": "2026-10-23T01:00:15.904Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
+    },
+    {
+      "title": "440 Million Years of Sharks",
+      "url": "https://youtu.be/rvHxEP7Uzdo",
+      "format": "short",
+      "publishedAt": "2026-10-23T19:23:01.533Z",
+      "sourcePoolItem": "Sharks Existed Before Trees"
     }
   ]
 }
