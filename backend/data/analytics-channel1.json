@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-22T10:54:16.180Z",
+  "fetchedAt": "2026-10-23T10:45:25.624Z",
   "videos": [
-    {
-      "url": "https://youtu.be/c7AF3Z7ElvU",
-      "title": "Ball Pit Bliss",
-      "format": null,
-      "publishedAt": "2026-07-08T04:12:22.577Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/g3va1KJgKpI",
-      "title": "Padres Game Highlights",
-      "format": null,
-      "publishedAt": "2026-07-08T04:26:56.621Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/H0OEAQ0RxfY",
       "title": "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM",
@@ -167,7 +147,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 187,
+      "viewCount": 191,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -377,7 +357,7 @@
       "format": "short",
       "publishedAt": "2026-07-24T05:23:56.091Z",
       "sourcePoolItem": null,
-      "viewCount": 151,
+      "viewCount": 152,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -587,7 +567,7 @@
       "format": "short",
       "publishedAt": "2026-07-31T23:04:45.117Z",
       "sourcePoolItem": null,
-      "viewCount": 682,
+      "viewCount": 683,
       "likeCount": 20,
       "commentCount": 0
     },
@@ -847,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 257,
+      "viewCount": 258,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -897,7 +877,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 722,
+      "viewCount": 723,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -937,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 746,
+      "viewCount": 747,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -997,7 +977,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1402,
+      "viewCount": 1403,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1047,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 29,
+      "viewCount": 31,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1057,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1160,
+      "viewCount": 1162,
       "likeCount": 25,
       "commentCount": 1
     },
@@ -1757,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1166,
+      "viewCount": 1167,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1787,7 +1767,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T18:05:25.576Z",
       "sourcePoolItem": null,
-      "viewCount": 1102,
+      "viewCount": 1104,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1797,7 +1777,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 152,
+      "viewCount": 153,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1807,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 111,
+      "viewCount": 112,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1817,7 +1797,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T02:12:50.828Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1827,7 +1807,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 43,
+      "viewCount": 45,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1837,7 +1817,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 140,
+      "viewCount": 142,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1947,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 105,
+      "viewCount": 106,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,9 +1977,29 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 5,
+      "viewCount": 18,
       "likeCount": 1,
       "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/Q3phYgHdnfw",
+      "title": "Westray to Papa Westray Flight",
+      "format": "short",
+      "publishedAt": "2026-10-22T18:53:33.514Z",
+      "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
+      "viewCount": 4,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/YVi-V12CBPE",
+      "title": "Octopuses' 3 Hearts and Blue Blood Explained",
+      "format": "short",
+      "publishedAt": "2026-10-23T01:00:15.904Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 140,
+      "likeCount": 4,
+      "commentCount": 0
     }
   ]
 }
