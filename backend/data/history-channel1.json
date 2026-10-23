@@ -183,14 +183,10 @@
     "Bananas",
     "The Loudest Sound Ever Recorded",
     "The World's Shortest Commercial Flight",
-    "Sharks Existed Before Trees"
+    "Sharks Existed Before Trees",
+    "Honey Never Spoils, Even After 3,000 Years"
   ],
   "videos": [
-    {
-      "title": "Discovering Kuwait's Secret Coastlines",
-      "url": "https://youtu.be/ZaB2rSqyRNo",
-      "publishedAt": "2026-07-08T05:22:13.348Z"
-    },
     {
       "title": "jac caglianone in trending travel & lifestyle moments",
       "url": "https://youtu.be/c_BBrznbCWs",
@@ -1432,6 +1428,13 @@
       "format": "short",
       "publishedAt": "2026-10-23T19:23:01.533Z",
       "sourcePoolItem": "Sharks Existed Before Trees"
+    },
+    {
+      "title": "3,000 Year Old Honey",
+      "url": "https://youtu.be/o6q4yOuaZMI",
+      "format": "long",
+      "publishedAt": "2026-10-23T20:18:34.230Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
     }
   ]
 }
