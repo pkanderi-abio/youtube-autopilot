@@ -119,7 +119,8 @@
     "Counting 1 to 10 Farm Animals and Their Sounds with Hickory Dickory Dock Sing-Along for Toddlers",
     "If You're Happy and You Know It",
     "Counting from 1 to 10",
-    "The Colors of the Rainbow"
+    "The Colors of the Rainbow",
+    "Animal Sounds for Toddlers"
   ],
   "videos": [
     {
@@ -886,6 +887,13 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:26:35.734Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Quackers and 5 Farm Friends Make Animal Sounds",
+      "url": "https://youtu.be/Rqm5rQGqskY",
+      "format": "short",
+      "publishedAt": "2026-10-23T18:15:09.057Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers"
     }
   ]
 }
