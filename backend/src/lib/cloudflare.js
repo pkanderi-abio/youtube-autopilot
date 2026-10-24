@@ -111,10 +111,15 @@ export async function generateImage(model, prompt, { width = 1024, height = 1024
     res = await request(url, { method: 'POST', body: form }, `image ${model}`);
     usage.neurons += tiles(width, height) * 26;
   } else {
+    // flux-1-schnell's current API schema rejects an unexpected 'seed'
+    // property (confirmed directly: 400, code 5006, "Additional or
+    // unevaluated properties '/seed' at '/' not allowed") - Cloudflare
+    // tightened or changed this since this file was written. Only the
+    // flux-2 multipart path above still forwards seed.
     res = await request(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt, steps: Math.min(8, steps), ...(seed != null ? { seed } : {}) })
+      body: JSON.stringify({ prompt, steps: Math.min(8, steps) })
     }, `image ${model}`);
     usage.neurons += 4 * 4.8 + Math.min(8, steps) * 9.6;
   }

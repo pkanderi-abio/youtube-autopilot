@@ -78,6 +78,15 @@ function mockScenes(topic, n, prefix = '') {
 
 async function shortScript(channel, topicInfo) {
   const L = LIMITS.short;
+  // babyLearning's voiceRules mandates very short sentences (4-8 words),
+  // which structurally conflicts with a flat 7-9 scene count: 8 scenes x
+  // ~1.5 sentences x ~6 words averages ~72 words, under the 90-word floor
+  // no matter how many times the model retries the same prompt - confirmed
+  // directly, two different real Cloudflare runs both landed at 69-79
+  // words. More scenes (not longer sentences, which would fight the
+  // toddler-appropriate short-sentence style) lets the format's own
+  // repetition naturally reach the target.
+  const sceneCount = channel.contentStyle === 'babyLearning' ? '10-13' : L.scenes;
   let best = null;
   for (let attempt = 0; attempt < 3; attempt++) {
     const out = await completeJSON(`
@@ -88,7 +97,7 @@ Angle: ${topicInfo.angle}
 Narration rules (total ${L.targetWords} words, about 50 seconds spoken):
 ${voiceRules(channel)}
 
-Split it into ${L.scenes} scenes of 1-2 sentences each.
+Split it into ${sceneCount} scenes of 1-2 sentences each.
 ${visualRules(channel)}
 ${best ? `\nYour previous attempt was only ${totalWords(best.scenes)} words - write the full ${L.targetWords}.` : ''}
 
@@ -96,7 +105,11 @@ Return JSON: {
   "visualBible": "1-2 sentences fixing the look of recurring characters/places/objects",
   "scenes": [{"narration": "...", "visual": "..."}]
 }`.trim(), {
-      maxTokens: 1600,
+      // Bumped from 1600 for headroom - this one call produces both
+      // narration AND a visual prompt per scene (now up to 13 scenes for
+      // babyLearning), so there's more to fit than the original budget
+      // assumed.
+      maxTokens: 2200,
       mock: () => ({ visualBible: `${topicInfo.topic}, consistent look`, scenes: mockScenes(topicInfo.topic, 8) })
     });
     const scenes = cleanScenes(out.scenes);
