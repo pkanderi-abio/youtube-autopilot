@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-23T10:45:26.061Z",
+  "fetchedAt": "2026-10-24T10:01:54.726Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 2249,
+      "viewCount": 2250,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 49,
+      "viewCount": 52,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1027,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-09-28T20:07:00.317Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-10-01T18:50:25.921Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 14,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1077,7 +1077,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:03:31.426Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 10,
+      "viewCount": 11,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 250,
+      "viewCount": 251,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 214,
+      "viewCount": 219,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 51,
+      "viewCount": 50,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T17:40:05.928Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1147,7 +1147,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T17:57:33.538Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 10,
+      "viewCount": 11,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 2,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1197,6 +1197,16 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:26:35.734Z",
       "sourcePoolItem": "The Colors of the Rainbow",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/Rqm5rQGqskY",
+      "title": "Quackers and 5 Farm Friends Make Animal Sounds",
+      "format": "short",
+      "publishedAt": "2026-10-23T18:15:09.057Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

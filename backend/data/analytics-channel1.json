@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-23T10:45:25.624Z",
+  "fetchedAt": "2026-10-24T10:01:54.213Z",
   "videos": [
-    {
-      "url": "https://youtu.be/H0OEAQ0RxfY",
-      "title": "GIANTS MAKE WILD COMEBACK WIN AT METLIFE STADIUM",
-      "format": null,
-      "publishedAt": "2026-07-08T04:54:11.360Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/ZaB2rSqyRNo",
-      "title": "Discovering Kuwait's Secret Coastlines",
-      "format": null,
-      "publishedAt": "2026-07-08T05:22:13.348Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/c_BBrznbCWs",
       "title": "jac caglianone in trending travel & lifestyle moments",
@@ -857,7 +837,7 @@
       "format": "long",
       "publishedAt": "2026-08-17T17:46:42.152Z",
       "sourcePoolItem": "The Forest Where Every Tree Grows Sideways",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -977,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1403,
+      "viewCount": 1404,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -1037,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1162,
+      "viewCount": 1163,
       "likeCount": 25,
       "commentCount": 1
     },
@@ -1067,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 285,
+      "viewCount": 286,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1217,7 +1197,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1179,
+      "viewCount": 1180,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -1887,7 +1867,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T18:20:12.956Z",
       "sourcePoolItem": null,
-      "viewCount": 109,
+      "viewCount": 110,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1917,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-12T01:05:44.850Z",
       "sourcePoolItem": null,
-      "viewCount": 924,
+      "viewCount": 926,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1927,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 106,
+      "viewCount": 109,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1937,7 @@
       "format": "long",
       "publishedAt": "2026-10-19T18:29:38.508Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1967,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 6,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,8 +1957,8 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 18,
-      "likeCount": 1,
+      "viewCount": 24,
+      "likeCount": 3,
       "commentCount": 1
     },
     {
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 4,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-10-23T01:00:15.904Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 140,
-      "likeCount": 4,
+      "viewCount": 210,
+      "likeCount": 6,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/rvHxEP7Uzdo",
+      "title": "440 Million Years of Sharks",
+      "format": "short",
+      "publishedAt": "2026-10-23T19:23:01.533Z",
+      "sourcePoolItem": "Sharks Existed Before Trees",
+      "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/o6q4yOuaZMI",
+      "title": "3,000 Year Old Honey",
+      "format": "long",
+      "publishedAt": "2026-10-23T20:18:34.230Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
+      "viewCount": 7,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
