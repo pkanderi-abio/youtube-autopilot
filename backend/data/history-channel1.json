@@ -184,14 +184,10 @@
     "The Loudest Sound Ever Recorded",
     "The World's Shortest Commercial Flight",
     "Sharks Existed Before Trees",
-    "Honey Never Spoils, Even After 3,000 Years"
+    "Honey Never Spoils, Even After 3,000 Years",
+    "A Day on Venus Is Longer Than Its Year"
   ],
   "videos": [
-    {
-      "title": "jac caglianone in trending travel & lifestyle moments",
-      "url": "https://youtu.be/c_BBrznbCWs",
-      "publishedAt": "2026-07-08T16:13:55.316Z"
-    },
     {
       "title": "Discovering Fiji's Hidden Gems",
       "url": "https://youtu.be/-Vnet5kzEh4",
@@ -1435,6 +1431,13 @@
       "format": "long",
       "publishedAt": "2026-10-23T20:18:34.230Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
+    },
+    {
+      "title": "Venus's 243-Day Day",
+      "url": "https://youtu.be/baprckTSyTw",
+      "format": "short",
+      "publishedAt": "2026-10-25T00:06:46.215Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
