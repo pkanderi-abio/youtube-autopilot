@@ -189,11 +189,6 @@
   ],
   "videos": [
     {
-      "title": "Discovering Fiji's Hidden Gems",
-      "url": "https://youtu.be/-Vnet5kzEh4",
-      "publishedAt": "2026-07-08T22:28:16.000Z"
-    },
-    {
       "title": "Designing a Luxury Cabin for Conor McGregor's Private Jet",
       "url": "https://youtu.be/Nsd7uS33Wfc",
       "publishedAt": "2026-07-08T23:02:28.470Z"
@@ -1438,6 +1433,13 @@
       "format": "short",
       "publishedAt": "2026-10-25T00:06:46.215Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
+    },
+    {
+      "title": "The Sound Heard 3,000 Miles Away",
+      "url": "https://youtu.be/JAPU_kLhwTk",
+      "format": "short",
+      "publishedAt": "2026-10-25T17:27:45.862Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
