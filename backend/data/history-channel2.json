@@ -120,7 +120,8 @@
     "If You're Happy and You Know It",
     "Counting from 1 to 10",
     "The Colors of the Rainbow",
-    "Animal Sounds for Toddlers"
+    "Animal Sounds for Toddlers",
+    "Mary Had a Little Lamb"
   ],
   "videos": [
     {
@@ -894,6 +895,13 @@
       "format": "short",
       "publishedAt": "2026-10-23T18:15:09.057Z",
       "sourcePoolItem": "Animal Sounds for Toddlers"
+    },
+    {
+      "title": "Mary's Little Lamb Farm",
+      "url": "https://youtu.be/RV0dYN02Bi8",
+      "format": "short",
+      "publishedAt": "2026-10-25T16:58:13.239Z",
+      "sourcePoolItem": "Mary Had a Little Lamb"
     }
   ]
 }
