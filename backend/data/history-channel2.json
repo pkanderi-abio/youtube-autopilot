@@ -121,7 +121,8 @@
     "Counting from 1 to 10",
     "The Colors of the Rainbow",
     "Animal Sounds for Toddlers",
-    "Mary Had a Little Lamb"
+    "Mary Had a Little Lamb",
+    "Learning Shapes All Around Us"
   ],
   "videos": [
     {
@@ -902,6 +903,13 @@
       "format": "short",
       "publishedAt": "2026-10-25T16:58:13.239Z",
       "sourcePoolItem": "Mary Had a Little Lamb"
+    },
+    {
+      "title": "Counting Circles in Our Garden",
+      "url": "https://youtu.be/wRMJW-tNyRQ",
+      "format": "long",
+      "publishedAt": "2026-10-25T17:25:48.870Z",
+      "sourcePoolItem": "Learning Shapes All Around Us"
     }
   ]
 }
