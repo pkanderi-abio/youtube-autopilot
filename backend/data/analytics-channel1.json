@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-10-24T10:01:54.213Z",
+  "fetchedAt": "2026-10-25T10:27:27.785Z",
   "videos": [
-    {
-      "url": "https://youtu.be/c_BBrznbCWs",
-      "title": "jac caglianone in trending travel & lifestyle moments",
-      "format": null,
-      "publishedAt": "2026-07-08T16:13:55.316Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/-Vnet5kzEh4",
       "title": "Discovering Fiji's Hidden Gems",
@@ -787,7 +777,7 @@
       "format": "short",
       "publishedAt": "2026-08-13T22:44:03.351Z",
       "sourcePoolItem": null,
-      "viewCount": 559,
+      "viewCount": 561,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1007,7 +997,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 31,
+      "viewCount": 32,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1327,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 985,
+      "viewCount": 986,
       "likeCount": 16,
       "commentCount": 0
     },
@@ -1757,7 +1747,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 153,
+      "viewCount": 156,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1787,7 +1777,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 45,
+      "viewCount": 47,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1797,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 142,
+      "viewCount": 143,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1807,7 +1797,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 135,
+      "viewCount": 136,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1907,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 109,
+      "viewCount": 116,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 24,
+      "viewCount": 25,
       "likeCount": 3,
       "commentCount": 1
     },
@@ -1967,8 +1957,8 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 7,
-      "likeCount": 1,
+      "viewCount": 12,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1977,8 +1967,8 @@
       "format": "short",
       "publishedAt": "2026-10-23T01:00:15.904Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 210,
-      "likeCount": 6,
+      "viewCount": 234,
+      "likeCount": 7,
       "commentCount": 0
     },
     {
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-10-23T19:23:01.533Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1998,6 +1988,16 @@
       "publishedAt": "2026-10-23T20:18:34.230Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
       "viewCount": 7,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/baprckTSyTw",
+      "title": "Venus's 243-Day Day",
+      "format": "short",
+      "publishedAt": "2026-10-25T00:06:46.215Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     }
