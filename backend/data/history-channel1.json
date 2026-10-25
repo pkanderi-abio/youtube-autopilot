@@ -189,11 +189,6 @@
   ],
   "videos": [
     {
-      "title": "Designing a Luxury Cabin for Conor McGregor's Private Jet",
-      "url": "https://youtu.be/Nsd7uS33Wfc",
-      "publishedAt": "2026-07-08T23:02:28.470Z"
-    },
-    {
       "title": "Chase Burns' Hidden LA Gems",
       "url": "https://youtu.be/rNDoVrOX7-U",
       "publishedAt": "2026-07-08T23:35:50.117Z"
@@ -1440,6 +1435,13 @@
       "format": "short",
       "publishedAt": "2026-10-25T17:27:45.862Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Jakarta Sinks 25cm Yearly",
+      "url": "https://youtu.be/X1FmYfdN13M",
+      "format": "short",
+      "publishedAt": "2026-10-25T23:50:24.093Z",
+      "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years"
     }
   ]
 }
