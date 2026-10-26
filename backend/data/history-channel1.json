@@ -186,14 +186,10 @@
     "Sharks Existed Before Trees",
     "Honey Never Spoils, Even After 3,000 Years",
     "A Day on Venus Is Longer Than Its Year",
-    "The Abandoned Amusement Park Reclaimed by Nature"
+    "The Abandoned Amusement Park Reclaimed by Nature",
+    "The Island Where Rabbits Outnumber People 100 to 1"
   ],
   "videos": [
-    {
-      "title": "Beyond the Ruins: Uncovering Mexico's Dark Past",
-      "url": "https://youtu.be/OACy_7QxgkA",
-      "publishedAt": "2026-07-09T06:12:27.406Z"
-    },
     {
       "title": "Cozy Winter In Nyc",
       "url": "https://youtu.be/rNWImmW_7a4",
@@ -1445,6 +1441,13 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
+    },
+    {
+      "title": "Lampedusa's 100 to 1 Rabbit Ratio",
+      "url": "https://youtu.be/B0Oy4qam_4Y",
+      "format": "long",
+      "publishedAt": "2026-10-26T21:24:52.834Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1"
     }
   ]
 }
