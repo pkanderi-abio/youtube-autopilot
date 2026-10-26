@@ -122,7 +122,8 @@
     "The Colors of the Rainbow",
     "Animal Sounds for Toddlers",
     "Mary Had a Little Lamb",
-    "Learning Shapes All Around Us"
+    "Learning Shapes All Around Us",
+    "The Itsy Bitsy Spider"
   ],
   "videos": [
     {
@@ -910,6 +911,13 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us"
+    },
+    {
+      "title": "Counting 8 Legs on a Rainbow Spout",
+      "url": "https://youtu.be/kVNIBBaekwY",
+      "format": "short",
+      "publishedAt": "2026-10-26T19:00:12.436Z",
+      "sourcePoolItem": "Itsy Bitsy Spider"
     }
   ]
 }
