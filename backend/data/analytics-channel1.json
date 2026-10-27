@@ -1,36 +1,6 @@
 {
-  "fetchedAt": "2026-10-26T11:57:00.070Z",
+  "fetchedAt": "2026-10-27T11:19:07.643Z",
   "videos": [
-    {
-      "url": "https://youtu.be/rNDoVrOX7-U",
-      "title": "Chase Burns' Hidden LA Gems",
-      "format": null,
-      "publishedAt": "2026-07-08T23:35:50.117Z",
-      "sourcePoolItem": null,
-      "viewCount": 10,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/OACy_7QxgkA",
-      "title": "Beyond the Ruins: Uncovering Mexico's Dark Past",
-      "format": null,
-      "publishedAt": "2026-07-09T06:12:27.406Z",
-      "sourcePoolItem": null,
-      "viewCount": 759,
-      "likeCount": 9,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/rNWImmW_7a4",
-      "title": "Cozy Winter In Nyc",
-      "format": "long",
-      "publishedAt": "2026-07-09T18:23:09.935Z",
-      "sourcePoolItem": null,
-      "viewCount": 5,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/bDU51_GMJD4",
       "title": "The Red Card Heard Around the World",
@@ -567,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-03T23:05:22.529Z",
       "sourcePoolItem": null,
-      "viewCount": 117,
+      "viewCount": 118,
       "likeCount": 2,
       "commentCount": 1
     },
@@ -677,7 +647,7 @@
       "format": "short",
       "publishedAt": "2026-08-09T22:34:21.575Z",
       "sourcePoolItem": null,
-      "viewCount": 640,
+      "viewCount": 642,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -737,7 +707,7 @@
       "format": "short",
       "publishedAt": "2026-08-12T22:43:45.671Z",
       "sourcePoolItem": null,
-      "viewCount": 323,
+      "viewCount": 324,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -807,7 +777,7 @@
       "format": "long",
       "publishedAt": "2026-08-17T17:46:42.152Z",
       "sourcePoolItem": "The Forest Where Every Tree Grows Sideways",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -927,7 +897,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1407,
+      "viewCount": 1408,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -987,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1163,
+      "viewCount": 1165,
       "likeCount": 25,
       "commentCount": 1
     },
@@ -1017,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 286,
+      "viewCount": 288,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1767,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 145,
+      "viewCount": 146,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1787,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T01:41:01.415Z",
       "sourcePoolItem": null,
-      "viewCount": 31,
+      "viewCount": 32,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1817,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 24,
+      "viewCount": 25,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 25,
+      "viewCount": 26,
       "likeCount": 3,
       "commentCount": 1
     },
@@ -1937,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 13,
+      "viewCount": 14,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1987,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-10-25T17:27:45.862Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 2,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1999,6 +1969,36 @@
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
       "viewCount": 1,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/AT2qLxcgyiM",
+      "title": "Nara Dreamland: Japan's Abandoned Amusement Park",
+      "format": "short",
+      "publishedAt": "2026-10-26T19:46:19.477Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 18,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/B0Oy4qam_4Y",
+      "title": "Lampedusa's 100 to 1 Rabbit Ratio",
+      "format": "long",
+      "publishedAt": "2026-10-26T21:24:52.834Z",
+      "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
+      "viewCount": 5,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/1rWEYjo_5hQ",
+      "title": "The 2-Minute Flight That's a Pilot's Nightmare",
+      "format": "short",
+      "publishedAt": "2026-10-27T01:09:42.175Z",
+      "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
+      "viewCount": 17,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
