@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-10-27T11:19:07.643Z",
+  "fetchedAt": "2026-10-28T11:53:02.210Z",
   "videos": [
-    {
-      "url": "https://youtu.be/bDU51_GMJD4",
-      "title": "The Red Card Heard Around the World",
-      "format": "short",
-      "publishedAt": "2026-07-09T19:15:06.186Z",
-      "sourcePoolItem": null,
-      "viewCount": 36,
-      "likeCount": 2,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/1S29VqTPclY",
       "title": "Pirates Of The Pennsylvania",
@@ -67,7 +57,7 @@
       "format": "short",
       "publishedAt": "2026-07-12T05:29:05.521Z",
       "sourcePoolItem": null,
-      "viewCount": 193,
+      "viewCount": 195,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -737,7 +727,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T14:55:11.965Z",
       "sourcePoolItem": null,
-      "viewCount": 517,
+      "viewCount": 518,
       "likeCount": 12,
       "commentCount": 0
     },
@@ -837,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 747,
+      "viewCount": 749,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1139,
+      "viewCount": 1141,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -947,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 32,
+      "viewCount": 33,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1767,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 180,
+      "viewCount": 181,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1847,7 +1837,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 118,
+      "viewCount": 119,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1897,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 26,
+      "viewCount": 27,
       "likeCount": 3,
       "commentCount": 1
     },
@@ -1907,7 +1897,7 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 14,
+      "viewCount": 15,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 18,
+      "viewCount": 25,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 5,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "short",
       "publishedAt": "2026-10-27T01:09:42.175Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 17,
+      "viewCount": 21,
       "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/UKLqmZcbtpY",
+      "title": "The Secret of Octopus Blood",
+      "format": "short",
+      "publishedAt": "2026-10-28T00:59:54.572Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 1,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
