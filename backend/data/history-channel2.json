@@ -123,7 +123,8 @@
     "Animal Sounds for Toddlers",
     "Mary Had a Little Lamb",
     "Learning Shapes All Around Us",
-    "The Itsy Bitsy Spider"
+    "The Itsy Bitsy Spider",
+    "The Alphabet Song with Animal Friends"
   ],
   "videos": [
     {
@@ -925,6 +926,13 @@
       "format": "short",
       "publishedAt": "2026-10-28T18:37:48.907Z",
       "sourcePoolItem": "If You're Happy and You Know It"
+    },
+    {
+      "title": "Meet 26 Animal Friends in Alphabet Order",
+      "url": "https://youtu.be/UQcL4uhNigw",
+      "format": "long",
+      "publishedAt": "2026-10-28T19:18:46.583Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends"
     }
   ]
 }
