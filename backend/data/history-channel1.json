@@ -192,12 +192,6 @@
   ],
   "videos": [
     {
-      "title": "Pirates Of The Pennsylvania",
-      "url": "https://youtu.be/1S29VqTPclY",
-      "format": "long",
-      "publishedAt": "2026-07-09T19:24:00.048Z"
-    },
-    {
       "title": "GTA Online's Kortz Center Heist Sparks Gaming Community's Thrill-Seeking Debate",
       "url": "https://youtu.be/nwX8S-araDw",
       "format": "long",
@@ -1451,6 +1445,13 @@
       "format": "short",
       "publishedAt": "2026-10-28T00:59:54.572Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
+    },
+    {
+      "title": "Why Jakarta is Sinking Fast",
+      "url": "https://youtu.be/hMPvewDVdR8",
+      "format": "short",
+      "publishedAt": "2026-10-28T19:21:19.770Z",
+      "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year"
     }
   ]
 }
