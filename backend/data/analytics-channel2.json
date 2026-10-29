@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-28T11:53:02.776Z",
+  "fetchedAt": "2026-10-29T12:00:20.935Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -847,7 +847,7 @@
       "format": "short",
       "publishedAt": "2026-09-05T15:51:28.178Z",
       "sourcePoolItem": "Mary Had a Little Lamb",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -867,7 +867,7 @@
       "format": "short",
       "publishedAt": "2026-09-06T16:05:23.477Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -917,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-09-13T16:52:17.529Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 529,
+      "viewCount": 530,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -997,7 +997,7 @@
       "format": "short",
       "publishedAt": "2026-09-24T17:53:09.951Z",
       "sourcePoolItem": "Ring Around the Rosie",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 51,
+      "viewCount": 52,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T17:01:11.876Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 7,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1027,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-09-28T20:07:00.317Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-09-29T18:44:50.823Z",
       "sourcePoolItem": "Rain Rain Go Away",
-      "viewCount": 20,
+      "viewCount": 21,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-09-30T18:24:19.720Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 31,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-10-01T18:50:25.921Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 17,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1067,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-10-02T18:19:00.206Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 2,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 258,
+      "viewCount": 256,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T18:55:37.795Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
-      "viewCount": 24,
+      "viewCount": 25,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 236,
+      "viewCount": 238,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:19:04.650Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 39,
+      "viewCount": 43,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 73,
+      "viewCount": 78,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 12,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1238,6 +1238,26 @@
       "publishedAt": "2026-10-26T19:00:12.436Z",
       "sourcePoolItem": "Itsy Bitsy Spider",
       "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/0HppO_H1Km8",
+      "title": "5 Farm Friends Dance and Quack",
+      "format": "short",
+      "publishedAt": "2026-10-28T18:37:48.907Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/UQcL4uhNigw",
+      "title": "Meet 26 Animal Friends in Alphabet Order",
+      "format": "long",
+      "publishedAt": "2026-10-28T19:18:46.583Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends",
+      "viewCount": 8,
       "likeCount": 0,
       "commentCount": 0
     }

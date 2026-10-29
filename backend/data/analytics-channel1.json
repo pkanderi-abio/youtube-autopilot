@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-28T11:53:02.210Z",
+  "fetchedAt": "2026-10-29T12:00:19.848Z",
   "videos": [
-    {
-      "url": "https://youtu.be/1S29VqTPclY",
-      "title": "Pirates Of The Pennsylvania",
-      "format": "long",
-      "publishedAt": "2026-07-09T19:24:00.048Z",
-      "sourcePoolItem": null,
-      "viewCount": 2,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/nwX8S-araDw",
-      "title": "GTA Online's Kortz Center Heist Sparks Gaming Community's Thrill-Seeking Debate",
-      "format": "long",
-      "publishedAt": "2026-07-10T11:00:53.033Z",
-      "sourcePoolItem": null,
-      "viewCount": 3,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/BRCFYnPlyN0",
       "title": "NFL's Top 100 List: The Evolution of Quarterback Culture",
@@ -207,7 +187,7 @@
       "format": "long",
       "publishedAt": "2026-07-20T10:58:14.714Z",
       "sourcePoolItem": null,
-      "viewCount": 3,
+      "viewCount": 4,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +717,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 261,
+      "viewCount": 262,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -767,7 +747,7 @@
       "format": "long",
       "publishedAt": "2026-08-17T17:46:42.152Z",
       "sourcePoolItem": "The Forest Where Every Tree Grows Sideways",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -817,7 +797,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 111,
+      "viewCount": 112,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -887,7 +867,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1408,
+      "viewCount": 1409,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -937,8 +917,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 33,
-      "likeCount": 4,
+      "viewCount": 43,
+      "likeCount": 5,
       "commentCount": 0
     },
     {
@@ -947,8 +927,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1165,
-      "likeCount": 25,
+      "viewCount": 1167,
+      "likeCount": 26,
       "commentCount": 1
     },
     {
@@ -1687,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 156,
+      "viewCount": 157,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1697,7 +1677,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 113,
+      "viewCount": 115,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1727,7 +1707,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 146,
+      "viewCount": 147,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1737,7 +1717,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 136,
+      "viewCount": 137,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1757,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 181,
+      "viewCount": 182,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1837,7 +1817,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 119,
+      "viewCount": 120,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1967,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 25,
+      "viewCount": 28,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,8 +1957,8 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 7,
-      "likeCount": 0,
+      "viewCount": 12,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1998,6 +1978,26 @@
       "publishedAt": "2026-10-28T00:59:54.572Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
       "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/hMPvewDVdR8",
+      "title": "Why Jakarta is Sinking Fast",
+      "format": "short",
+      "publishedAt": "2026-10-28T19:21:19.770Z",
+      "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
+      "viewCount": 3,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/KmIUtXo1VxM",
+      "title": "The Mauritius Underwater Waterfall Phenomenon",
+      "format": "short",
+      "publishedAt": "2026-10-29T01:34:19.015Z",
+      "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     }
