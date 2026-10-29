@@ -188,15 +188,10 @@
     "A Day on Venus Is Longer Than Its Year",
     "The Abandoned Amusement Park Reclaimed by Nature",
     "The Island Where Rabbits Outnumber People 100 to 1",
-    "Octopuses' Unique Physiology"
+    "Octopuses' Unique Physiology",
+    "Underwater Waterfall"
   ],
   "videos": [
-    {
-      "title": "GTA Online's Kortz Center Heist Sparks Gaming Community's Thrill-Seeking Debate",
-      "url": "https://youtu.be/nwX8S-araDw",
-      "format": "long",
-      "publishedAt": "2026-07-10T11:00:53.033Z"
-    },
     {
       "title": "NFL's Top 100 List: The Evolution of Quarterback Culture",
       "url": "https://youtu.be/BRCFYnPlyN0",
@@ -1452,6 +1447,13 @@
       "format": "short",
       "publishedAt": "2026-10-28T19:21:19.770Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year"
+    },
+    {
+      "title": "The Mauritius Underwater Waterfall Phenomenon",
+      "url": "https://youtu.be/KmIUtXo1VxM",
+      "format": "short",
+      "publishedAt": "2026-10-29T01:34:19.015Z",
+      "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
     }
   ]
 }
