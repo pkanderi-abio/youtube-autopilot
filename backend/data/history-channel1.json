@@ -193,12 +193,6 @@
   ],
   "videos": [
     {
-      "title": "NFL's Top 100 List: The Evolution of Quarterback Culture",
-      "url": "https://youtu.be/BRCFYnPlyN0",
-      "format": "short",
-      "publishedAt": "2026-07-10T16:28:43.194Z"
-    },
-    {
       "title": "Influencers Cash In on Summer League Hype",
       "url": "https://youtu.be/Tw3ncUuCKS0",
       "format": "short",
@@ -1454,6 +1448,13 @@
       "format": "short",
       "publishedAt": "2026-10-29T01:34:19.015Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
+    },
+    {
+      "title": "Sharks Beat Trees to the Scene",
+      "url": "https://youtu.be/8OlzBVglmsE",
+      "format": "short",
+      "publishedAt": "2026-10-29T19:26:12.342Z",
+      "sourcePoolItem": "Sharks Existed Before Trees"
     }
   ]
 }
