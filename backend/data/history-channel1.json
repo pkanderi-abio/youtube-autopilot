@@ -189,15 +189,10 @@
     "The Abandoned Amusement Park Reclaimed by Nature",
     "The Island Where Rabbits Outnumber People 100 to 1",
     "Octopuses' Unique Physiology",
-    "Underwater Waterfall"
+    "Underwater Waterfall",
+    "Venice Disappearing into the Sea"
   ],
   "videos": [
-    {
-      "title": "Wild Encounters",
-      "url": "https://youtu.be/FUvEJfJ-rw8",
-      "format": "short",
-      "publishedAt": "2026-07-11T14:53:38.726Z"
-    },
     {
       "title": "Life-Changing Wins: Ca Lottery Winners' Hilarious Reactions",
       "url": "https://youtu.be/eoRndq0J3mw",
@@ -1456,6 +1451,13 @@
       "format": "short",
       "publishedAt": "2026-10-30T01:34:06.600Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Venice Sinks 1mm Yearly",
+      "url": "https://youtu.be/7h2ueoDe1EM",
+      "format": "short",
+      "publishedAt": "2026-10-30T19:01:02.640Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
     }
   ]
 }
