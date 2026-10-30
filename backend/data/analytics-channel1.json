@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-29T12:00:19.848Z",
+  "fetchedAt": "2026-10-30T11:54:53.745Z",
   "videos": [
-    {
-      "url": "https://youtu.be/BRCFYnPlyN0",
-      "title": "NFL's Top 100 List: The Evolution of Quarterback Culture",
-      "format": "short",
-      "publishedAt": "2026-07-10T16:28:43.194Z",
-      "sourcePoolItem": null,
-      "viewCount": 94,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/Tw3ncUuCKS0",
-      "title": "Influencers Cash In on Summer League Hype",
-      "format": "short",
-      "publishedAt": "2026-07-11T05:14:41.479Z",
-      "sourcePoolItem": null,
-      "viewCount": 47,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/FUvEJfJ-rw8",
       "title": "Wild Encounters",
@@ -217,7 +197,7 @@
       "format": "short",
       "publishedAt": "2026-07-22T05:22:07.773Z",
       "sourcePoolItem": null,
-      "viewCount": 548,
+      "viewCount": 549,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -507,7 +487,7 @@
       "format": "short",
       "publishedAt": "2026-08-03T23:05:22.529Z",
       "sourcePoolItem": null,
-      "viewCount": 118,
+      "viewCount": 117,
       "likeCount": 2,
       "commentCount": 1
     },
@@ -657,7 +637,7 @@
       "format": "short",
       "publishedAt": "2026-08-11T22:45:24.736Z",
       "sourcePoolItem": null,
-      "viewCount": 201,
+      "viewCount": 202,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -917,7 +897,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 43,
+      "viewCount": 48,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -927,7 +907,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1167,
+      "viewCount": 1169,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1037,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T01:08:36.459Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 351,
+      "viewCount": 352,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1047,7 +1027,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 974,
+      "viewCount": 975,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1057,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1033,
+      "viewCount": 1034,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1067,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1125,
+      "viewCount": 1126,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1077,7 +1057,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T19:58:46.799Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1087,7 +1067,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T23:57:38.107Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1087,
+      "viewCount": 1088,
       "likeCount": 28,
       "commentCount": 1
     },
@@ -1097,7 +1077,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 976,
+      "viewCount": 977,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1107,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1180,
+      "viewCount": 1181,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -1147,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-09-05T16:38:14.527Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 382,
+      "viewCount": 383,
       "likeCount": 5,
       "commentCount": 1
     },
@@ -1197,7 +1177,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 156,
+      "viewCount": 157,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1207,8 +1187,8 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1044,
-      "likeCount": 18,
+      "viewCount": 1047,
+      "likeCount": 19,
       "commentCount": 2
     },
     {
@@ -1217,8 +1197,8 @@
       "format": "short",
       "publishedAt": "2026-09-10T17:33:19.334Z",
       "sourcePoolItem": null,
-      "viewCount": 1155,
-      "likeCount": 26,
+      "viewCount": 1156,
+      "likeCount": 27,
       "commentCount": 1
     },
     {
@@ -1227,8 +1207,8 @@
       "format": "short",
       "publishedAt": "2026-09-10T23:48:23.958Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
-      "likeCount": 0,
+      "viewCount": 8,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1237,8 +1217,8 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 986,
-      "likeCount": 16,
+      "viewCount": 987,
+      "likeCount": 17,
       "commentCount": 0
     },
     {
@@ -1248,7 +1228,7 @@
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
       "viewCount": 64,
-      "likeCount": 1,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1257,8 +1237,8 @@
       "format": "short",
       "publishedAt": "2026-09-12T23:47:34.354Z",
       "sourcePoolItem": null,
-      "viewCount": 100,
-      "likeCount": 0,
+      "viewCount": 101,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1267,8 +1247,8 @@
       "format": "short",
       "publishedAt": "2026-09-13T17:19:16.782Z",
       "sourcePoolItem": null,
-      "viewCount": 67,
-      "likeCount": 0,
+      "viewCount": 68,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1627,8 +1607,8 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1167,
-      "likeCount": 9,
+      "viewCount": 1168,
+      "likeCount": 10,
       "commentCount": 0
     },
     {
@@ -1637,8 +1617,8 @@
       "format": "short",
       "publishedAt": "2026-10-03T18:00:55.321Z",
       "sourcePoolItem": null,
-      "viewCount": 29,
-      "likeCount": 0,
+      "viewCount": 30,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1647,8 +1627,8 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1074,
-      "likeCount": 6,
+      "viewCount": 1075,
+      "likeCount": 7,
       "commentCount": 0
     },
     {
@@ -1657,8 +1637,8 @@
       "format": "short",
       "publishedAt": "2026-10-04T18:05:25.576Z",
       "sourcePoolItem": null,
-      "viewCount": 1104,
-      "likeCount": 10,
+      "viewCount": 1106,
+      "likeCount": 11,
       "commentCount": 0
     },
     {
@@ -1667,8 +1647,8 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 157,
-      "likeCount": 1,
+      "viewCount": 158,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1677,8 +1657,8 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 115,
-      "likeCount": 0,
+      "viewCount": 116,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1687,8 +1667,8 @@
       "format": "short",
       "publishedAt": "2026-10-06T02:12:50.828Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
-      "likeCount": 0,
+      "viewCount": 8,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1697,8 +1677,8 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 45,
-      "likeCount": 0,
+      "viewCount": 46,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1707,8 +1687,8 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 147,
-      "likeCount": 1,
+      "viewCount": 148,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1717,8 +1697,8 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:53:24.239Z",
       "sourcePoolItem": null,
-      "viewCount": 137,
-      "likeCount": 0,
+      "viewCount": 138,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1727,7 +1707,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T01:41:01.415Z",
       "sourcePoolItem": null,
-      "viewCount": 32,
+      "viewCount": 33,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1737,8 +1717,8 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 182,
-      "likeCount": 3,
+      "viewCount": 183,
+      "likeCount": 4,
       "commentCount": 0
     },
     {
@@ -1747,8 +1727,8 @@
       "format": "short",
       "publishedAt": "2026-10-09T01:52:59.414Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
+      "viewCount": 2,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1757,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 25,
+      "viewCount": 27,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1767,8 +1747,8 @@
       "format": "short",
       "publishedAt": "2026-10-10T01:37:39.899Z",
       "sourcePoolItem": null,
-      "viewCount": 38,
-      "likeCount": 2,
+      "viewCount": 39,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -1777,8 +1757,8 @@
       "format": "short",
       "publishedAt": "2026-10-10T18:20:12.956Z",
       "sourcePoolItem": null,
-      "viewCount": 110,
-      "likeCount": 0,
+      "viewCount": 111,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1787,7 +1767,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T00:46:36.179Z",
       "sourcePoolItem": null,
-      "viewCount": 34,
+      "viewCount": 35,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1797,8 +1777,8 @@
       "format": "short",
       "publishedAt": "2026-10-11T18:43:39.807Z",
       "sourcePoolItem": null,
-      "viewCount": 29,
-      "likeCount": 1,
+      "viewCount": 31,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1807,8 +1787,8 @@
       "format": "short",
       "publishedAt": "2026-10-12T01:05:44.850Z",
       "sourcePoolItem": null,
-      "viewCount": 926,
-      "likeCount": 9,
+      "viewCount": 928,
+      "likeCount": 10,
       "commentCount": 0
     },
     {
@@ -1817,8 +1797,8 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 120,
-      "likeCount": 0,
+      "viewCount": 123,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1827,8 +1807,8 @@
       "format": "short",
       "publishedAt": "2026-10-19T13:34:42.405Z",
       "sourcePoolItem": null,
-      "viewCount": 29,
-      "likeCount": 2,
+      "viewCount": 30,
+      "likeCount": 3,
       "commentCount": 0
     },
     {
@@ -1837,8 +1817,8 @@
       "format": "short",
       "publishedAt": "2026-10-19T18:25:45.972Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 16,
-      "likeCount": 0,
+      "viewCount": 17,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1847,8 +1827,8 @@
       "format": "long",
       "publishedAt": "2026-10-19T18:29:38.508Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 5,
-      "likeCount": 0,
+      "viewCount": 6,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1857,8 +1837,8 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 8,
-      "likeCount": 0,
+      "viewCount": 9,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1867,8 +1847,8 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 27,
-      "likeCount": 3,
+      "viewCount": 28,
+      "likeCount": 4,
       "commentCount": 1
     },
     {
@@ -1877,7 +1857,7 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 15,
+      "viewCount": 16,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1887,8 +1867,8 @@
       "format": "short",
       "publishedAt": "2026-10-23T01:00:15.904Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 235,
-      "likeCount": 7,
+      "viewCount": 236,
+      "likeCount": 8,
       "commentCount": 0
     },
     {
@@ -1897,8 +1877,8 @@
       "format": "short",
       "publishedAt": "2026-10-23T19:23:01.533Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 2,
-      "likeCount": 0,
+      "viewCount": 3,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1907,8 +1887,8 @@
       "format": "long",
       "publishedAt": "2026-10-23T20:18:34.230Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 9,
-      "likeCount": 0,
+      "viewCount": 10,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1917,8 +1897,8 @@
       "format": "short",
       "publishedAt": "2026-10-25T00:06:46.215Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 6,
-      "likeCount": 0,
+      "viewCount": 7,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1927,8 +1907,8 @@
       "format": "short",
       "publishedAt": "2026-10-25T17:27:45.862Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 6,
-      "likeCount": 0,
+      "viewCount": 7,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1937,8 +1917,8 @@
       "format": "short",
       "publishedAt": "2026-10-25T23:50:24.093Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 1,
-      "likeCount": 0,
+      "viewCount": 2,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1947,8 +1927,8 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 28,
-      "likeCount": 0,
+      "viewCount": 29,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1957,8 +1937,8 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 12,
-      "likeCount": 1,
+      "viewCount": 24,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1967,8 +1947,8 @@
       "format": "short",
       "publishedAt": "2026-10-27T01:09:42.175Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 21,
-      "likeCount": 1,
+      "viewCount": 23,
+      "likeCount": 2,
       "commentCount": 0
     },
     {
@@ -1977,8 +1957,8 @@
       "format": "short",
       "publishedAt": "2026-10-28T00:59:54.572Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1,
-      "likeCount": 0,
+      "viewCount": 5,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1987,8 +1967,8 @@
       "format": "short",
       "publishedAt": "2026-10-28T19:21:19.770Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 3,
-      "likeCount": 0,
+      "viewCount": 7,
+      "likeCount": 1,
       "commentCount": 0
     },
     {
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-10-29T01:34:19.015Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 5,
-      "likeCount": 0,
+      "viewCount": 11,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/8OlzBVglmsE",
+      "title": "Sharks Beat Trees to the Scene",
+      "format": "short",
+      "publishedAt": "2026-10-29T19:26:12.342Z",
+      "sourcePoolItem": "Sharks Existed Before Trees",
+      "viewCount": 3,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/BpQhMEH97oU",
+      "title": "Krakatoa's Record-Breaking 1883 Blast",
+      "format": "short",
+      "publishedAt": "2026-10-30T01:34:06.600Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 57,
+      "likeCount": 4,
       "commentCount": 0
     }
   ]
