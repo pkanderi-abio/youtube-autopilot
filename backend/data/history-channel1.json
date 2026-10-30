@@ -190,15 +190,10 @@
     "The Island Where Rabbits Outnumber People 100 to 1",
     "Octopuses' Unique Physiology",
     "Underwater Waterfall",
-    "Venice Disappearing into the Sea"
+    "Venice Disappearing into the Sea",
+    "Some Lakes Change Color With the Seasons"
   ],
   "videos": [
-    {
-      "title": "Life-Changing Wins: Ca Lottery Winners' Hilarious Reactions",
-      "url": "https://youtu.be/eoRndq0J3mw",
-      "format": "short",
-      "publishedAt": "2026-07-12T05:29:05.521Z"
-    },
     {
       "title": "Athletes Speaking Out: The New Normal for Brands",
       "url": "https://youtu.be/h8noVb4izz0",
@@ -1458,6 +1453,13 @@
       "format": "short",
       "publishedAt": "2026-10-30T19:01:02.640Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
+    },
+    {
+      "title": "Lakes That Turn Pink",
+      "url": "https://youtu.be/O5AUVdAh_dI",
+      "format": "long",
+      "publishedAt": "2026-10-30T21:33:06.729Z",
+      "sourcePoolItem": "Some Lakes Change Color With the Seasons"
     }
   ]
 }
