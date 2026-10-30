@@ -124,7 +124,8 @@
     "Mary Had a Little Lamb",
     "Learning Shapes All Around Us",
     "The Itsy Bitsy Spider",
-    "The Alphabet Song with Animal Friends"
+    "The Alphabet Song with Animal Friends",
+    "Baa Baa Black Sheep"
   ],
   "videos": [
     {
@@ -933,6 +934,13 @@
       "format": "long",
       "publishedAt": "2026-10-28T19:18:46.583Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends"
+    },
+    {
+      "title": "Counting Baa Baa Black Sheep's 3 Bags",
+      "url": "https://youtu.be/meVD8N6UhAk",
+      "format": "short",
+      "publishedAt": "2026-10-30T18:23:11.170Z",
+      "sourcePoolItem": "Baa Baa Black Sheep"
     }
   ]
 }
