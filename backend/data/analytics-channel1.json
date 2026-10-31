@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-10-30T11:54:53.745Z",
+  "fetchedAt": "2026-10-31T11:28:22.125Z",
   "videos": [
-    {
-      "url": "https://youtu.be/FUvEJfJ-rw8",
-      "title": "Wild Encounters",
-      "format": "short",
-      "publishedAt": "2026-07-11T14:53:38.726Z",
-      "sourcePoolItem": null,
-      "viewCount": 108,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/eoRndq0J3mw",
-      "title": "Life-Changing Wins: Ca Lottery Winners' Hilarious Reactions",
-      "format": "short",
-      "publishedAt": "2026-07-12T05:29:05.521Z",
-      "sourcePoolItem": null,
-      "viewCount": 195,
-      "likeCount": 3,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/h8noVb4izz0",
       "title": "Athletes Speaking Out: The New Normal for Brands",
@@ -697,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 262,
+      "viewCount": 264,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -787,7 +767,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 749,
+      "viewCount": 750,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -847,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1409,
+      "viewCount": 1411,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -867,7 +847,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 168,
+      "viewCount": 169,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -897,7 +877,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 48,
+      "viewCount": 49,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1037,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1034,
+      "viewCount": 1035,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1177,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 157,
+      "viewCount": 159,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1657,7 +1637,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 116,
+      "viewCount": 117,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1677,7 +1657,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 46,
+      "viewCount": 47,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1797,7 +1777,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 123,
+      "viewCount": 124,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 29,
+      "viewCount": 32,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1937,7 +1917,7 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 24,
+      "viewCount": 26,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1967,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-10-28T19:21:19.770Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-10-29T01:34:19.015Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 11,
+      "viewCount": 13,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-10-30T01:34:06.600Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 57,
+      "viewCount": 62,
       "likeCount": 4,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/7h2ueoDe1EM",
+      "title": "Venice Sinks 1mm Yearly",
+      "format": "short",
+      "publishedAt": "2026-10-30T19:01:02.640Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
+      "viewCount": 34,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/O5AUVdAh_dI",
+      "title": "Lakes That Turn Pink",
+      "format": "long",
+      "publishedAt": "2026-10-30T21:33:06.729Z",
+      "sourcePoolItem": "Some Lakes Change Color With the Seasons",
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
