@@ -191,15 +191,10 @@
     "Octopuses' Unique Physiology",
     "Underwater Waterfall",
     "Venice Disappearing into the Sea",
-    "Some Lakes Change Color With the Seasons"
+    "Some Lakes Change Color With the Seasons",
+    "Bananas and Berries"
   ],
   "videos": [
-    {
-      "title": "Athletes Speaking Out: The New Normal for Brands",
-      "url": "https://youtu.be/h8noVb4izz0",
-      "format": "short",
-      "publishedAt": "2026-07-12T14:56:24.392Z"
-    },
     {
       "title": "Bubba Wallace's Echopark Speedway Penalty Sparks NASCAR Debate",
       "url": "https://youtu.be/qi1HN5619Ms",
@@ -1460,6 +1455,13 @@
       "format": "long",
       "publishedAt": "2026-10-30T21:33:06.729Z",
       "sourcePoolItem": "Some Lakes Change Color With the Seasons"
+    },
+    {
+      "title": "The Surprising Truth About Berries",
+      "url": "https://youtu.be/L0N1sLeHOHg",
+      "format": "short",
+      "publishedAt": "2026-11-01T00:42:23.872Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
