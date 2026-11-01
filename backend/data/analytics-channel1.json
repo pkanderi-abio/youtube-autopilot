@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-10-31T11:28:22.125Z",
+  "fetchedAt": "2026-11-01T12:23:37.853Z",
   "videos": [
-    {
-      "url": "https://youtu.be/h8noVb4izz0",
-      "title": "Athletes Speaking Out: The New Normal for Brands",
-      "format": "short",
-      "publishedAt": "2026-07-12T14:56:24.392Z",
-      "sourcePoolItem": null,
-      "viewCount": 33,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/qi1HN5619Ms",
       "title": "Bubba Wallace's Echopark Speedway Penalty Sparks NASCAR Debate",
@@ -207,7 +197,7 @@
       "format": "short",
       "publishedAt": "2026-07-24T05:23:56.091Z",
       "sourcePoolItem": null,
-      "viewCount": 152,
+      "viewCount": 153,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -757,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T14:42:44.293Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 112,
+      "viewCount": 113,
       "likeCount": 1,
       "commentCount": 1
     },
@@ -827,7 +817,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1411,
+      "viewCount": 1412,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -847,7 +837,7 @@
       "format": "short",
       "publishedAt": "2026-08-24T14:49:40.869Z",
       "sourcePoolItem": "You Can Almost Walk From Alaska to Russia",
-      "viewCount": 169,
+      "viewCount": 170,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -877,7 +867,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 49,
+      "viewCount": 50,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -887,7 +877,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1169,
+      "viewCount": 1170,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -937,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-08-29T17:37:56.833Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1049,
+      "viewCount": 1050,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1167,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1047,
+      "viewCount": 1048,
       "likeCount": 19,
       "commentCount": 2
     },
@@ -1657,7 +1647,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 47,
+      "viewCount": 50,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1667,7 +1657,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T01:22:37.054Z",
       "sourcePoolItem": null,
-      "viewCount": 148,
+      "viewCount": 149,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1917,7 +1907,7 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 26,
+      "viewCount": 28,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T19:01:02.640Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 34,
+      "viewCount": 38,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1999,6 +1989,16 @@
       "sourcePoolItem": "Some Lakes Change Color With the Seasons",
       "viewCount": 0,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/L0N1sLeHOHg",
+      "title": "The Surprising Truth About Berries",
+      "format": "short",
+      "publishedAt": "2026-11-01T00:42:23.872Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 216,
+      "likeCount": 9,
       "commentCount": 0
     }
   ]

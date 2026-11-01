@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-31T11:28:22.512Z",
+  "fetchedAt": "2026-11-01T12:23:38.352Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -497,7 +497,7 @@
       "format": "short",
       "publishedAt": "2026-08-06T15:17:15.067Z",
       "sourcePoolItem": null,
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -737,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T22:55:08.692Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 47,
+      "viewCount": 48,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T18:28:29.737Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 62,
+      "viewCount": 64,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 56,
+      "viewCount": 57,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1047,7 +1047,7 @@
       "format": "short",
       "publishedAt": "2026-09-30T18:24:19.720Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 35,
+      "viewCount": 36,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-10-01T18:50:25.921Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 21,
+      "viewCount": 22,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 258,
+      "viewCount": 265,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 243,
+      "viewCount": 264,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 85,
+      "viewCount": 88,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1137,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T17:40:05.928Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 26,
+      "viewCount": 47,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 21,
+      "viewCount": 22,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 15,
+      "viewCount": 16,
       "likeCount": 0,
       "commentCount": 0
     },
