@@ -196,12 +196,6 @@
   ],
   "videos": [
     {
-      "title": "The Haunting of Our Selves",
-      "url": "https://youtu.be/bFbl8my42kU",
-      "format": "short",
-      "publishedAt": "2026-07-13T16:35:44.687Z"
-    },
-    {
       "title": "The Chemistry That Fizzled",
       "url": "https://youtu.be/zbDuHRCxkGs",
       "format": "short",
@@ -1463,6 +1457,13 @@
       "format": "short",
       "publishedAt": "2026-11-01T18:46:28.924Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
+    },
+    {
+      "title": "Kawah Ijen's Blue Glow",
+      "url": "https://youtu.be/vGKsSY1-6f8",
+      "format": "short",
+      "publishedAt": "2026-11-02T22:37:06.163Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night"
     }
   ]
 }
