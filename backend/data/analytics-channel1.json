@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-01T12:23:37.853Z",
+  "fetchedAt": "2026-11-02T14:19:54.620Z",
   "videos": [
-    {
-      "url": "https://youtu.be/qi1HN5619Ms",
-      "title": "Bubba Wallace's Echopark Speedway Penalty Sparks NASCAR Debate",
-      "format": "long",
-      "publishedAt": "2026-07-13T11:08:47.503Z",
-      "sourcePoolItem": null,
-      "viewCount": 126,
-      "likeCount": 0,
-      "commentCount": 1
-    },
     {
       "url": "https://youtu.be/bFbl8my42kU",
       "title": "The Haunting of Our Selves",
@@ -137,7 +127,7 @@
       "format": "long",
       "publishedAt": "2026-07-20T10:58:14.714Z",
       "sourcePoolItem": null,
-      "viewCount": 4,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -717,7 +707,7 @@
       "format": "short",
       "publishedAt": "2026-08-18T14:39:23.487Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 723,
+      "viewCount": 725,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 50,
+      "viewCount": 52,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -1047,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 977,
+      "viewCount": 978,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1147,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 159,
+      "viewCount": 161,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1617,7 +1607,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 158,
+      "viewCount": 159,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1647,7 +1637,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 50,
+      "viewCount": 51,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1767,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 124,
+      "viewCount": 126,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1897,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 32,
+      "viewCount": 34,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1907,7 +1897,7 @@
       "format": "long",
       "publishedAt": "2026-10-26T21:24:52.834Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 28,
+      "viewCount": 29,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T19:01:02.640Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 38,
+      "viewCount": 40,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "long",
       "publishedAt": "2026-10-30T21:33:06.729Z",
       "sourcePoolItem": "Some Lakes Change Color With the Seasons",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "short",
       "publishedAt": "2026-11-01T00:42:23.872Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 216,
+      "viewCount": 221,
       "likeCount": 9,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/pah30bYSb_g",
+      "title": "Why Octopuses Have Three Hearts",
+      "format": "short",
+      "publishedAt": "2026-11-01T18:46:28.924Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 124,
+      "likeCount": 11,
       "commentCount": 0
     }
   ]

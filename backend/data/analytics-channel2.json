@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-01T12:23:38.352Z",
+  "fetchedAt": "2026-11-02T14:19:55.473Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T18:28:29.737Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 64,
+      "viewCount": 63,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 30,
+      "viewCount": 31,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 57,
+      "viewCount": 58,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1057,7 +1057,7 @@
       "format": "short",
       "publishedAt": "2026-10-01T18:50:25.921Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 22,
+      "viewCount": 23,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 265,
+      "viewCount": 268,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T18:55:37.795Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
-      "viewCount": 25,
+      "viewCount": 71,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 264,
+      "viewCount": 320,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 88,
+      "viewCount": 92,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 22,
+      "viewCount": 25,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 16,
+      "viewCount": 18,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1267,6 +1267,26 @@
       "format": "short",
       "publishedAt": "2026-10-30T18:23:11.170Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/rHZllahVT50",
+      "title": "Counting Farm Friends with Triangles",
+      "format": "short",
+      "publishedAt": "2026-11-01T18:15:04.540Z",
+      "sourcePoolItem": "Counting from 1 to 10",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/1XjW3gV1ysg",
+      "title": "Counting 6 Colors with Emma's Rainbow",
+      "format": "long",
+      "publishedAt": "2026-11-01T18:48:01.388Z",
+      "sourcePoolItem": "The Colors of the Rainbow",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
