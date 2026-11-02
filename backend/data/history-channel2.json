@@ -125,7 +125,8 @@
     "Learning Shapes All Around Us",
     "The Itsy Bitsy Spider",
     "The Alphabet Song with Animal Friends",
-    "Baa Baa Black Sheep"
+    "Baa Baa Black Sheep",
+    "Five Little Monkeys Jumping on the Bed"
   ],
   "videos": [
     {
@@ -955,6 +956,13 @@
       "format": "long",
       "publishedAt": "2026-11-01T18:48:01.388Z",
       "sourcePoolItem": "The Colors of the Rainbow"
+    },
+    {
+      "title": "Five Little Monkeys Bedtime",
+      "url": "https://youtu.be/q4rU5oDGT4c",
+      "format": "short",
+      "publishedAt": "2026-11-02T22:05:17.842Z",
+      "sourcePoolItem": "Five Little Monkeys Jumping on the Bed"
     }
   ]
 }
