@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-02T14:19:55.473Z",
+  "fetchedAt": "2026-11-03T13:20:20.910Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -687,7 +687,7 @@
       "format": "long",
       "publishedAt": "2026-08-23T14:50:18.779Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -817,7 +817,7 @@
       "format": "long",
       "publishedAt": "2026-09-02T18:06:39.514Z",
       "sourcePoolItem": "Old MacDonald Had a Farm",
-      "viewCount": 32,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T17:30:57.827Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 32,
+      "viewCount": 35,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1007,7 +1007,7 @@
       "format": "short",
       "publishedAt": "2026-09-25T17:53:42.572Z",
       "sourcePoolItem": "Counting Farm Animals",
-      "viewCount": 58,
+      "viewCount": 59,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1037,7 +1037,7 @@
       "format": "short",
       "publishedAt": "2026-09-29T18:44:50.823Z",
       "sourcePoolItem": "Rain Rain Go Away",
-      "viewCount": 21,
+      "viewCount": 22,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 268,
+      "viewCount": 270,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 320,
+      "viewCount": 331,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1117,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:19:04.650Z",
       "sourcePoolItem": "The Colors of the Rainbow",
-      "viewCount": 44,
+      "viewCount": 45,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 92,
+      "viewCount": 125,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 25,
+      "viewCount": 28,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1257,7 +1257,7 @@
       "format": "long",
       "publishedAt": "2026-10-28T19:18:46.583Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 8,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1267,7 +1267,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T18:23:11.170Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1287,6 +1287,16 @@
       "format": "long",
       "publishedAt": "2026-11-01T18:48:01.388Z",
       "sourcePoolItem": "The Colors of the Rainbow",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/q4rU5oDGT4c",
+      "title": "Five Little Monkeys Bedtime",
+      "format": "short",
+      "publishedAt": "2026-11-02T22:05:17.842Z",
+      "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

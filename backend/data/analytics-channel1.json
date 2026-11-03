@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-02T14:19:54.620Z",
+  "fetchedAt": "2026-11-03T13:20:20.446Z",
   "videos": [
-    {
-      "url": "https://youtu.be/bFbl8my42kU",
-      "title": "The Haunting of Our Selves",
-      "format": "short",
-      "publishedAt": "2026-07-13T16:35:44.687Z",
-      "sourcePoolItem": null,
-      "viewCount": 10,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/zbDuHRCxkGs",
-      "title": "The Chemistry That Fizzled",
-      "format": "short",
-      "publishedAt": "2026-07-15T04:52:43.388Z",
-      "sourcePoolItem": null,
-      "viewCount": 2,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/AwhtnDwQdis",
       "title": "ROYAL WINNER: Kate Middleton's Princess Charlotte Steals Wimbledon Fans' Hearts",
@@ -807,7 +787,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1412,
+      "viewCount": 1417,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -857,8 +837,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 52,
-      "likeCount": 5,
+      "viewCount": 55,
+      "likeCount": 6,
       "commentCount": 0
     },
     {
@@ -987,7 +967,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 975,
+      "viewCount": 976,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1137,7 +1117,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 161,
+      "viewCount": 164,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1617,7 +1597,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 117,
+      "viewCount": 118,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1637,7 +1617,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 51,
+      "viewCount": 53,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1697,7 +1677,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T19:21:13.896Z",
       "sourcePoolItem": null,
-      "viewCount": 27,
+      "viewCount": 28,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1717,7 +1697,7 @@
       "format": "short",
       "publishedAt": "2026-10-10T18:20:12.956Z",
       "sourcePoolItem": null,
-      "viewCount": 111,
+      "viewCount": 113,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1787,7 +1767,7 @@
       "format": "long",
       "publishedAt": "2026-10-19T18:29:38.508Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1907,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-27T01:09:42.175Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 23,
+      "viewCount": 24,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1957,7 +1937,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T01:34:06.600Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 62,
+      "viewCount": 64,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-01T00:42:23.872Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 221,
+      "viewCount": 222,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-11-01T18:46:28.924Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 124,
+      "viewCount": 127,
       "likeCount": 11,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/vGKsSY1-6f8",
+      "title": "Kawah Ijen's Blue Glow",
+      "format": "short",
+      "publishedAt": "2026-11-02T22:37:06.163Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night",
+      "viewCount": 595,
+      "likeCount": 20,
+      "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/AIgMb6kuenc",
+      "title": "3,000 Year Old Honey",
+      "format": "long",
+      "publishedAt": "2026-11-02T23:51:21.162Z",
+      "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
+      "viewCount": 2,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
