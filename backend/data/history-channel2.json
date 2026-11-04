@@ -126,7 +126,8 @@
     "The Itsy Bitsy Spider",
     "The Alphabet Song with Animal Friends",
     "Baa Baa Black Sheep",
-    "Five Little Monkeys Jumping on the Bed"
+    "Five Little Monkeys Jumping on the Bed",
+    "Learning the ABCs"
   ],
   "videos": [
     {
@@ -970,6 +971,13 @@
       "format": "short",
       "publishedAt": "2026-11-03T19:56:40.245Z",
       "sourcePoolItem": "Old MacDonald Had a Farm"
+    },
+    {
+      "title": "Meet Alligator Annie ABCs",
+      "url": "https://youtu.be/znrxMBDe5Co",
+      "format": "short",
+      "publishedAt": "2026-11-04T20:14:11.399Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
