@@ -192,15 +192,10 @@
     "Underwater Waterfall",
     "Venice Disappearing into the Sea",
     "Some Lakes Change Color With the Seasons",
-    "Bananas and Berries"
+    "Bananas and Berries",
+    "What If Earth Had Two Moons Instead of One"
   ],
   "videos": [
-    {
-      "title": "Sylvester Stallone's Retro Revival",
-      "url": "https://youtu.be/_H3vsM4B0Os",
-      "format": "short",
-      "publishedAt": "2026-07-15T15:29:46.509Z"
-    },
     {
       "title": "The New Luxury Off-Roaders: Hipsters Get Wild with Ford Bronco Revival",
       "url": "https://youtu.be/pxFN0yGKQLI",
@@ -1466,6 +1461,13 @@
       "format": "short",
       "publishedAt": "2026-11-04T01:54:55.222Z",
       "sourcePoolItem": "Sharks Existed Before Trees"
+    },
+    {
+      "title": "Earth with Two Moons",
+      "url": "https://youtu.be/TG1keCSeqOw",
+      "format": "short",
+      "publishedAt": "2026-11-04T20:41:34.200Z",
+      "sourcePoolItem": "What If Earth Had Two Moons Instead of One"
     }
   ]
 }
