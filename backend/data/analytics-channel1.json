@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-04T13:31:30.128Z",
+  "fetchedAt": "2026-11-05T13:45:40.805Z",
   "videos": [
-    {
-      "url": "https://youtu.be/_H3vsM4B0Os",
-      "title": "Sylvester Stallone's Retro Revival",
-      "format": "short",
-      "publishedAt": "2026-07-15T15:29:46.509Z",
-      "sourcePoolItem": null,
-      "viewCount": 80,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/pxFN0yGKQLI",
       "title": "The New Luxury Off-Roaders: Hipsters Get Wild with Ford Bronco Revival",
@@ -747,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1141,
+      "viewCount": 1142,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -777,7 +767,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1418,
+      "viewCount": 1419,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -827,7 +817,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 59,
+      "viewCount": 61,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -837,7 +827,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1171,
+      "viewCount": 1177,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1147,7 +1137,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 987,
+      "viewCount": 988,
       "likeCount": 17,
       "commentCount": 0
     },
@@ -1167,7 +1157,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T23:47:34.354Z",
       "sourcePoolItem": null,
-      "viewCount": 101,
+      "viewCount": 102,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1777,7 +1767,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 28,
+      "viewCount": 29,
       "likeCount": 4,
       "commentCount": 1
     },
@@ -1857,7 +1847,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 37,
+      "viewCount": 39,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T01:34:06.600Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 64,
+      "viewCount": 65,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-02T22:37:06.163Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 609,
+      "viewCount": 608,
       "likeCount": 21,
       "commentCount": 1
     },
@@ -1987,7 +1977,7 @@
       "format": "long",
       "publishedAt": "2026-11-02T23:51:21.162Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 10,
+      "viewCount": 11,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "short",
       "publishedAt": "2026-11-04T01:54:55.222Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 29,
+      "viewCount": 33,
       "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/TG1keCSeqOw",
+      "title": "Earth with Two Moons",
+      "format": "short",
+      "publishedAt": "2026-11-04T20:41:34.200Z",
+      "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
+      "viewCount": 70,
+      "likeCount": 5,
       "commentCount": 0
     }
   ]
