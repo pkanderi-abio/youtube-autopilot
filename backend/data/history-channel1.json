@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The New Luxury Off-Roaders: Hipsters Get Wild with Ford Bronco Revival",
-      "url": "https://youtu.be/pxFN0yGKQLI",
-      "format": "short",
-      "publishedAt": "2026-07-16T05:03:03.117Z"
-    },
-    {
       "title": "The Truth Social Trade War",
       "url": "https://youtu.be/2PRqiU7O7T0",
       "format": "short",
@@ -1468,6 +1462,13 @@
       "format": "short",
       "publishedAt": "2026-11-04T20:41:34.200Z",
       "sourcePoolItem": "What If Earth Had Two Moons Instead of One"
+    },
+    {
+      "title": "The Sound Heard 3,000 Miles Away",
+      "url": "https://youtu.be/fDhkzCu3-VI",
+      "format": "short",
+      "publishedAt": "2026-11-05T20:57:38.761Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
