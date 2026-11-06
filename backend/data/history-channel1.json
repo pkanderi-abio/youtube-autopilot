@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Truth Social Trade War",
-      "url": "https://youtu.be/2PRqiU7O7T0",
-      "format": "short",
-      "publishedAt": "2026-07-16T15:36:32.001Z"
-    },
-    {
       "title": "The Dark Side of Nostalgia: How Retro TV Shows Are Influencing Modern Entertainment",
       "url": "https://youtu.be/8-dev-cZfJ8",
       "format": "short",
@@ -1469,6 +1463,13 @@
       "format": "short",
       "publishedAt": "2026-11-05T20:57:38.761Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Venus' 243-Day Day",
+      "url": "https://youtu.be/jFTg51Shxo8",
+      "format": "short",
+      "publishedAt": "2026-11-06T02:01:10.353Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year"
     }
   ]
 }
