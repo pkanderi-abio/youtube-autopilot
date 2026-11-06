@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-05T13:45:40.805Z",
+  "fetchedAt": "2026-11-06T13:29:45.677Z",
   "videos": [
-    {
-      "url": "https://youtu.be/pxFN0yGKQLI",
-      "title": "The New Luxury Off-Roaders: Hipsters Get Wild with Ford Bronco Revival",
-      "format": "short",
-      "publishedAt": "2026-07-16T05:03:03.117Z",
-      "sourcePoolItem": null,
-      "viewCount": 328,
-      "likeCount": 3,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/2PRqiU7O7T0",
-      "title": "The Truth Social Trade War",
-      "format": "short",
-      "publishedAt": "2026-07-16T15:36:32.001Z",
-      "sourcePoolItem": null,
-      "viewCount": 9,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/8-dev-cZfJ8",
       "title": "The Dark Side of Nostalgia: How Retro TV Shows Are Influencing Modern Entertainment",
@@ -87,7 +67,7 @@
       "format": "long",
       "publishedAt": "2026-07-20T10:58:14.714Z",
       "sourcePoolItem": null,
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -307,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-07-29T23:05:30.336Z",
       "sourcePoolItem": null,
-      "viewCount": 534,
+      "viewCount": 537,
       "likeCount": 13,
       "commentCount": 0
     },
@@ -707,7 +687,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 750,
+      "viewCount": 752,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -767,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1419,
+      "viewCount": 1426,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -817,7 +797,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 61,
+      "viewCount": 66,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -827,7 +807,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1177,
+      "viewCount": 1178,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -947,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 976,
+      "viewCount": 980,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -1007,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1181,
+      "viewCount": 1182,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -1527,7 +1507,7 @@
       "format": "short",
       "publishedAt": "2026-10-03T17:51:04.922Z",
       "sourcePoolItem": null,
-      "viewCount": 1168,
+      "viewCount": 1169,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1707,7 +1687,7 @@
       "format": "short",
       "publishedAt": "2026-10-12T01:05:44.850Z",
       "sourcePoolItem": null,
-      "viewCount": 928,
+      "viewCount": 929,
       "likeCount": 10,
       "commentCount": 0
     },
@@ -1777,7 +1757,7 @@
       "format": "short",
       "publishedAt": "2026-10-22T18:53:33.514Z",
       "sourcePoolItem": "The World's Shortest Commercial Flight Lasts Under 2 Minutes",
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1847,7 +1827,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 39,
+      "viewCount": 40,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1967,8 +1947,8 @@
       "format": "short",
       "publishedAt": "2026-11-02T22:37:06.163Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 608,
-      "likeCount": 21,
+      "viewCount": 609,
+      "likeCount": 22,
       "commentCount": 1
     },
     {
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-11-04T20:41:34.200Z",
       "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
-      "viewCount": 70,
-      "likeCount": 5,
+      "viewCount": 73,
+      "likeCount": 6,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/fDhkzCu3-VI",
+      "title": "The Sound Heard 3,000 Miles Away",
+      "format": "short",
+      "publishedAt": "2026-11-05T20:57:38.761Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 86,
+      "likeCount": 7,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/jFTg51Shxo8",
+      "title": "Venus' 243-Day Day",
+      "format": "short",
+      "publishedAt": "2026-11-06T02:01:10.353Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
+      "viewCount": 224,
+      "likeCount": 3,
       "commentCount": 0
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-05T13:45:41.436Z",
+  "fetchedAt": "2026-11-06T13:29:46.400Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 32,
+      "viewCount": 34,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1017,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-26T17:01:11.876Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 10,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1107,7 +1107,7 @@
       "format": "short",
       "publishedAt": "2026-10-07T19:22:17.949Z",
       "sourcePoolItem": "Five Little Ducks",
-      "viewCount": 292,
+      "viewCount": 293,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 128,
+      "viewCount": 134,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 32,
+      "viewCount": 34,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 20,
+      "viewCount": 21,
       "likeCount": 0,
       "commentCount": 0
     },
