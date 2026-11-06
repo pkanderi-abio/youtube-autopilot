@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Dark Side of Nostalgia: How Retro TV Shows Are Influencing Modern Entertainment",
-      "url": "https://youtu.be/8-dev-cZfJ8",
-      "format": "short",
-      "publishedAt": "2026-07-17T05:16:01.583Z"
-    },
-    {
       "title": "THE VIRAL LOOP: How TikTok Challenges Shape Our Behavior",
       "url": "https://youtu.be/M-3AFM6CAQg",
       "format": "long",
@@ -1470,6 +1464,13 @@
       "format": "short",
       "publishedAt": "2026-11-06T02:01:10.353Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year"
+    },
+    {
+      "title": "Walking the Vatican City",
+      "url": "https://youtu.be/KjLmOh-inEA",
+      "format": "short",
+      "publishedAt": "2026-11-06T20:15:54.184Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
     }
   ]
 }
