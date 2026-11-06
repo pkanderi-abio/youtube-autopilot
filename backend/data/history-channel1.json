@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "THE VIRAL LOOP: How TikTok Challenges Shape Our Behavior",
-      "url": "https://youtu.be/M-3AFM6CAQg",
-      "format": "long",
-      "publishedAt": "2026-07-17T10:05:14.663Z"
-    },
-    {
       "title": "Tomorrowland x Gaming: Where Music and Esports Collide",
       "url": "https://youtu.be/KHx2M9DdpX4",
       "format": "short",
@@ -1471,6 +1465,13 @@
       "format": "short",
       "publishedAt": "2026-11-06T20:15:54.184Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
+    },
+    {
+      "title": "Sweden's 24,000 Islands",
+      "url": "https://youtu.be/md4oEa2jWJ0",
+      "format": "long",
+      "publishedAt": "2026-11-06T22:01:49.842Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
     }
   ]
 }
