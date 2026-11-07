@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-06T13:29:45.677Z",
+  "fetchedAt": "2026-11-07T12:10:21.827Z",
   "videos": [
-    {
-      "url": "https://youtu.be/8-dev-cZfJ8",
-      "title": "The Dark Side of Nostalgia: How Retro TV Shows Are Influencing Modern Entertainment",
-      "format": "short",
-      "publishedAt": "2026-07-17T05:16:01.583Z",
-      "sourcePoolItem": null,
-      "viewCount": 46,
-      "likeCount": 2,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/M-3AFM6CAQg",
-      "title": "THE VIRAL LOOP: How TikTok Challenges Shape Our Behavior",
-      "format": "long",
-      "publishedAt": "2026-07-17T10:05:14.663Z",
-      "sourcePoolItem": null,
-      "viewCount": 2,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/KHx2M9DdpX4",
       "title": "Tomorrowland x Gaming: Where Music and Esports Collide",
@@ -797,7 +777,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 66,
+      "viewCount": 71,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -807,7 +787,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1178,
+      "viewCount": 1179,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -867,7 +847,7 @@
       "format": "short",
       "publishedAt": "2026-08-30T00:02:31.984Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 1127,
+      "viewCount": 1128,
       "likeCount": 32,
       "commentCount": 0
     },
@@ -1907,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-10-30T19:01:02.640Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 40,
+      "viewCount": 41,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1927,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-11-01T00:42:23.872Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 222,
+      "viewCount": 223,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-05T20:57:38.761Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 86,
+      "viewCount": 93,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-11-06T02:01:10.353Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 224,
+      "viewCount": 237,
       "likeCount": 3,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/KjLmOh-inEA",
+      "title": "Walking the Vatican City",
+      "format": "short",
+      "publishedAt": "2026-11-06T20:15:54.184Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 8,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/md4oEa2jWJ0",
+      "title": "Sweden's 24,000 Islands",
+      "format": "long",
+      "publishedAt": "2026-11-06T22:01:49.842Z",
+      "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
+      "viewCount": 0,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
