@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-07T12:10:21.827Z",
+  "fetchedAt": "2026-11-08T12:30:22.231Z",
   "videos": [
-    {
-      "url": "https://youtu.be/KHx2M9DdpX4",
-      "title": "Tomorrowland x Gaming: Where Music and Esports Collide",
-      "format": "short",
-      "publishedAt": "2026-07-17T15:16:42.695Z",
-      "sourcePoolItem": null,
-      "viewCount": 11,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/AFqvTu9kLrw",
       "title": "Celebrities and Viral Challenges: What's Behind the Hype?",
@@ -327,7 +317,7 @@
       "format": "short",
       "publishedAt": "2026-08-01T15:06:49.405Z",
       "sourcePoolItem": null,
-      "viewCount": 70,
+      "viewCount": 71,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -577,7 +567,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 265,
+      "viewCount": 267,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -727,7 +717,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1426,
+      "viewCount": 1431,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -787,7 +777,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1179,
+      "viewCount": 1180,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 265,
+      "viewCount": 266,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1097,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-09-11T17:43:27.556Z",
       "sourcePoolItem": null,
-      "viewCount": 988,
+      "viewCount": 990,
       "likeCount": 17,
       "commentCount": 0
     },
@@ -1677,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 126,
+      "viewCount": 127,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1807,7 +1797,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 40,
+      "viewCount": 41,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-11-02T22:37:06.163Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 609,
+      "viewCount": 610,
       "likeCount": 22,
       "commentCount": 1
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-06T20:15:54.184Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 8,
+      "viewCount": 12,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "long",
       "publishedAt": "2026-11-06T22:01:49.842Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 0,
+      "viewCount": 1,
       "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/RGNUaw0T6lw",
+      "title": "The Secret of Seedless Bananas",
+      "format": "short",
+      "publishedAt": "2026-11-08T01:07:07.726Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 23,
+      "likeCount": 2,
       "commentCount": 0
     }
   ]
