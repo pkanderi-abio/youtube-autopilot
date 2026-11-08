@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "Tomorrowland x Gaming: Where Music and Esports Collide",
-      "url": "https://youtu.be/KHx2M9DdpX4",
-      "format": "short",
-      "publishedAt": "2026-07-17T15:16:42.695Z"
-    },
-    {
       "title": "Celebrities and Viral Challenges: What's Behind the Hype?",
       "url": "https://youtu.be/AFqvTu9kLrw",
       "format": "short",
@@ -1472,6 +1466,13 @@
       "format": "long",
       "publishedAt": "2026-11-06T22:01:49.842Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea"
+    },
+    {
+      "title": "The Secret of Seedless Bananas",
+      "url": "https://youtu.be/RGNUaw0T6lw",
+      "format": "short",
+      "publishedAt": "2026-11-08T01:07:07.726Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
