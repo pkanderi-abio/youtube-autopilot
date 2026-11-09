@@ -127,7 +127,8 @@
     "The Alphabet Song with Animal Friends",
     "Baa Baa Black Sheep",
     "Five Little Monkeys Jumping on the Bed",
-    "Learning the ABCs"
+    "Learning the ABCs",
+    "One Two Buckle My Shoe"
   ],
   "videos": [
     {
@@ -1006,6 +1007,13 @@
       "format": "long",
       "publishedAt": "2026-11-08T18:42:10.062Z",
       "sourcePoolItem": "Counting from 1 to 10"
+    },
+    {
+      "title": "Counting with Buckle My Shoe",
+      "url": "https://youtu.be/c0UJRP32f64",
+      "format": "short",
+      "publishedAt": "2026-11-09T22:51:03.380Z",
+      "sourcePoolItem": "One Two Buckle My Shoe"
     }
   ]
 }
