@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Dark Side of Viral Memes",
-      "url": "https://youtu.be/Z77P5lMkCPI",
-      "format": "short",
-      "publishedAt": "2026-07-18T14:53:01.134Z"
-    },
-    {
       "title": "The Emotional Price of Greatness",
       "url": "https://youtu.be/UM48nadDjEY",
       "format": "short",
@@ -1474,6 +1468,13 @@
       "format": "short",
       "publishedAt": "2026-11-08T18:41:45.644Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night"
+    },
+    {
+      "title": "The Bering Strait Ice Bridge",
+      "url": "https://youtu.be/g6RJCCkM7zw",
+      "format": "short",
+      "publishedAt": "2026-11-09T23:17:46.084Z",
+      "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years"
     }
   ]
 }
