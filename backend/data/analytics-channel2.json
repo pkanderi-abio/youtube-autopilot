@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-09T14:46:49.810Z",
+  "fetchedAt": "2026-11-10T13:59:56.448Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -937,7 +937,7 @@
       "format": "short",
       "publishedAt": "2026-09-15T17:36:41.439Z",
       "sourcePoolItem": "Five Little Monkeys Jumping on the Bed",
-      "viewCount": 35,
+      "viewCount": 37,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 270,
+      "viewCount": 271,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 145,
+      "viewCount": 147,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 37,
+      "viewCount": 38,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 21,
+      "viewCount": 22,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1327,7 +1327,7 @@
       "format": "long",
       "publishedAt": "2026-11-04T20:41:21.508Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 29,
+      "viewCount": 31,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1357,6 +1357,16 @@
       "format": "long",
       "publishedAt": "2026-11-08T18:42:10.062Z",
       "sourcePoolItem": "Counting from 1 to 10",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/c0UJRP32f64",
+      "title": "Counting with Buckle My Shoe",
+      "format": "short",
+      "publishedAt": "2026-11-09T22:51:03.380Z",
+      "sourcePoolItem": "One Two Buckle My Shoe",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

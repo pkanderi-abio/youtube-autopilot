@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-09T14:46:49.118Z",
+  "fetchedAt": "2026-11-10T13:59:55.853Z",
   "videos": [
-    {
-      "url": "https://youtu.be/Z77P5lMkCPI",
-      "title": "The Dark Side of Viral Memes",
-      "format": "short",
-      "publishedAt": "2026-07-18T14:53:01.134Z",
-      "sourcePoolItem": null,
-      "viewCount": 12,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/UM48nadDjEY",
-      "title": "The Emotional Price of Greatness",
-      "format": "short",
-      "publishedAt": "2026-07-19T05:25:33.606Z",
-      "sourcePoolItem": null,
-      "viewCount": 60,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/IeE8kXy6opE",
       "title": "UNLIKELY SPOTS OF POISON: The Dark Side of Farm-to-Table",
@@ -557,7 +537,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 270,
+      "viewCount": 271,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -867,7 +847,7 @@
       "format": "long",
       "publishedAt": "2026-08-31T22:03:14.043Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 18,
+      "viewCount": 19,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1657,7 +1637,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 127,
+      "viewCount": 128,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1947,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-11-05T20:57:38.761Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 92,
+      "viewCount": 93,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1997,8 +1977,28 @@
       "format": "short",
       "publishedAt": "2026-11-08T18:41:45.644Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 73,
+      "viewCount": 79,
       "likeCount": 4,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/g6RJCCkM7zw",
+      "title": "The Bering Strait Ice Bridge",
+      "format": "short",
+      "publishedAt": "2026-11-09T23:17:46.084Z",
+      "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
+      "viewCount": 15,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/N0X1WEoVIQM",
+      "title": "Krakatoa's 1883 Boom Heard 3000 Miles Away",
+      "format": "long",
+      "publishedAt": "2026-11-10T00:38:54.911Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 3,
+      "likeCount": 0,
       "commentCount": 0
     }
   ]
