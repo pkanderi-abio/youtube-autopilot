@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-10T13:59:55.853Z",
+  "fetchedAt": "2026-11-11T13:16:51.599Z",
   "videos": [
-    {
-      "url": "https://youtu.be/IeE8kXy6opE",
-      "title": "UNLIKELY SPOTS OF POISON: The Dark Side of Farm-to-Table",
-      "format": "long",
-      "publishedAt": "2026-07-20T10:58:14.714Z",
-      "sourcePoolItem": null,
-      "viewCount": 6,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/1Mufptbi9b4",
       "title": "The Real Side of Sports in Video Games",
@@ -657,7 +647,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1142,
+      "viewCount": 1143,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -687,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1432,
+      "viewCount": 1433,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -737,7 +727,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 72,
+      "viewCount": 73,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -747,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1180,
+      "viewCount": 1182,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -1027,7 +1017,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1048,
+      "viewCount": 1050,
       "likeCount": 19,
       "commentCount": 2
     },
@@ -1497,7 +1487,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T21:34:46.643Z",
       "sourcePoolItem": null,
-      "viewCount": 118,
+      "viewCount": 119,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1547,7 +1537,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T01:41:01.415Z",
       "sourcePoolItem": null,
-      "viewCount": 33,
+      "viewCount": 34,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1677,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T01:00:51.091Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1747,7 +1737,7 @@
       "format": "short",
       "publishedAt": "2026-10-25T17:27:45.862Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1857,7 +1847,7 @@
       "format": "long",
       "publishedAt": "2026-10-30T21:33:06.729Z",
       "sourcePoolItem": "Some Lakes Change Color With the Seasons",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-08T18:41:45.644Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 79,
+      "viewCount": 81,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 15,
+      "viewCount": 23,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,9 +1987,19 @@
       "format": "long",
       "publishedAt": "2026-11-10T00:38:54.911Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 3,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/gDrcwCFVUcM",
+      "title": "Octopuses' 3 Hearts & Blue Blood",
+      "format": "short",
+      "publishedAt": "2026-11-11T01:44:18.016Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 77,
+      "likeCount": 7,
+      "commentCount": 1
     }
   ]
 }
