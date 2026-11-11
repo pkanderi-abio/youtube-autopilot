@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Real Side of Sports in Video Games",
-      "url": "https://youtu.be/1Mufptbi9b4",
-      "format": "short",
-      "publishedAt": "2026-07-20T15:53:50.695Z"
-    },
-    {
       "title": "The Rise of the 'Stan' Culture in Tennis",
       "url": "https://youtu.be/H6kKjwoKTYM",
       "format": "short",
@@ -1477,6 +1471,13 @@
       "format": "short",
       "publishedAt": "2026-11-11T01:44:18.016Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
+    },
+    {
+      "title": "Coober Pedy Underground Town",
+      "url": "https://youtu.be/_mL-O3_CRYY",
+      "format": "short",
+      "publishedAt": "2026-11-11T21:05:17.307Z",
+      "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
     }
   ]
 }
