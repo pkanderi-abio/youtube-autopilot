@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "UNLIKELY SPOTS OF POISON: The Dark Side of Farm-to-Table",
-      "url": "https://youtu.be/IeE8kXy6opE",
-      "format": "long",
-      "publishedAt": "2026-07-20T10:58:14.714Z"
-    },
-    {
       "title": "The Real Side of Sports in Video Games",
       "url": "https://youtu.be/1Mufptbi9b4",
       "format": "short",
@@ -1476,6 +1470,13 @@
       "format": "long",
       "publishedAt": "2026-11-10T00:38:54.911Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "Octopuses' 3 Hearts & Blue Blood",
+      "url": "https://youtu.be/gDrcwCFVUcM",
+      "format": "short",
+      "publishedAt": "2026-11-11T01:44:18.016Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
     }
   ]
 }
