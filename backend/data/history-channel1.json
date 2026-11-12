@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Rise of the 'Stan' Culture in Tennis",
-      "url": "https://youtu.be/H6kKjwoKTYM",
-      "format": "short",
-      "publishedAt": "2026-07-21T15:45:57.991Z"
-    },
-    {
       "title": "Rebel Wilson Roasts Ben Affleck with Jimmy Kimmel",
       "url": "https://youtu.be/LAGm1QSpb8M",
       "format": "short",
@@ -1478,6 +1472,13 @@
       "format": "short",
       "publishedAt": "2026-11-11T21:05:17.307Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat"
+    },
+    {
+      "title": "Walk Across Nauru in 20 Minutes",
+      "url": "https://youtu.be/uuXsinP2FXw",
+      "format": "short",
+      "publishedAt": "2026-11-12T02:43:06.465Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
     }
   ]
 }
