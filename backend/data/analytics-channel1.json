@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-11T13:16:51.599Z",
+  "fetchedAt": "2026-11-12T14:21:16.696Z",
   "videos": [
-    {
-      "url": "https://youtu.be/1Mufptbi9b4",
-      "title": "The Real Side of Sports in Video Games",
-      "format": "short",
-      "publishedAt": "2026-07-20T15:53:50.695Z",
-      "sourcePoolItem": null,
-      "viewCount": 106,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/H6kKjwoKTYM",
-      "title": "The Rise of the 'Stan' Culture in Tennis",
-      "format": "short",
-      "publishedAt": "2026-07-21T15:45:57.991Z",
-      "sourcePoolItem": null,
-      "viewCount": 128,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/LAGm1QSpb8M",
       "title": "Rebel Wilson Roasts Ben Affleck with Jimmy Kimmel",
@@ -418,7 +398,7 @@
       "publishedAt": "2026-08-08T22:32:45.092Z",
       "sourcePoolItem": null,
       "viewCount": 466,
-      "likeCount": 7,
+      "likeCount": 0,
       "commentCount": 0
     },
     {
@@ -527,7 +507,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 271,
+      "viewCount": 272,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -677,7 +657,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1433,
+      "viewCount": 1435,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -877,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-09-02T17:50:16.678Z",
       "sourcePoolItem": "The Island Where Rabbits Outnumber People 100 to 1",
-      "viewCount": 1126,
+      "viewCount": 1127,
       "likeCount": 51,
       "commentCount": 1
     },
@@ -1677,7 +1657,7 @@
       "format": "short",
       "publishedAt": "2026-10-21T18:59:00.216Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 29,
+      "viewCount": 30,
       "likeCount": 4,
       "commentCount": 1
     },
@@ -1977,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 23,
+      "viewCount": 31,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,9 +1977,29 @@
       "format": "short",
       "publishedAt": "2026-11-11T01:44:18.016Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 77,
+      "viewCount": 79,
       "likeCount": 7,
       "commentCount": 1
+    },
+    {
+      "url": "https://youtu.be/_mL-O3_CRYY",
+      "title": "Coober Pedy Underground Town",
+      "format": "short",
+      "publishedAt": "2026-11-11T21:05:17.307Z",
+      "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
+      "viewCount": 38,
+      "likeCount": 4,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/uuXsinP2FXw",
+      "title": "Walk Across Nauru in 20 Minutes",
+      "format": "short",
+      "publishedAt": "2026-11-12T02:43:06.465Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 91,
+      "likeCount": 2,
+      "commentCount": 0
     }
   ]
 }
