@@ -1,23 +1,13 @@
 {
-  "fetchedAt": "2026-11-12T14:21:16.696Z",
+  "fetchedAt": "2026-11-13T13:41:16.198Z",
   "videos": [
-    {
-      "url": "https://youtu.be/LAGm1QSpb8M",
-      "title": "Rebel Wilson Roasts Ben Affleck with Jimmy Kimmel",
-      "format": "short",
-      "publishedAt": "2026-07-22T05:22:07.773Z",
-      "sourcePoolItem": null,
-      "viewCount": 549,
-      "likeCount": 3,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/KqaxO2d_mN4",
       "title": "Midterm Mayhem: How One Power Outage Exposed America's Tech Weakness",
       "format": "short",
       "publishedAt": "2026-07-22T15:36:15.674Z",
       "sourcePoolItem": null,
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -398,7 +388,7 @@
       "publishedAt": "2026-08-08T22:32:45.092Z",
       "sourcePoolItem": null,
       "viewCount": 466,
-      "likeCount": 0,
+      "likeCount": 7,
       "commentCount": 0
     },
     {
@@ -717,7 +707,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1182,
+      "viewCount": 1183,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -737,7 +727,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1827,7 +1817,7 @@
       "format": "long",
       "publishedAt": "2026-10-30T21:33:06.729Z",
       "sourcePoolItem": "Some Lakes Change Color With the Seasons",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1927,7 +1917,7 @@
       "format": "long",
       "publishedAt": "2026-11-06T22:01:49.842Z",
       "sourcePoolItem": "Why Venice Is Slowly Disappearing Into the Sea",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 31,
+      "viewCount": 33,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-11T21:05:17.307Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 38,
+      "viewCount": 39,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "short",
       "publishedAt": "2026-11-12T02:43:06.465Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 91,
+      "viewCount": 97,
       "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/NQwucrIjmF4",
+      "title": "Earth's Dual Moons Impact Rotation",
+      "format": "short",
+      "publishedAt": "2026-11-13T02:24:47.437Z",
+      "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
+      "viewCount": 12,
+      "likeCount": 1,
       "commentCount": 0
     }
   ]
