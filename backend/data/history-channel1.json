@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "The Beauty of Influence",
-      "url": "https://youtu.be/n7esG4SBtBc",
-      "format": "short",
-      "publishedAt": "2026-07-23T15:57:21.124Z"
-    },
-    {
       "title": "Charli XCX's Red Carpet Revolution",
       "url": "https://youtu.be/9u__2M5qFpI",
       "format": "short",
@@ -1481,6 +1475,13 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:47:23.196Z",
       "sourcePoolItem": "Sharks Existed Before Trees"
+    },
+    {
+      "title": "Mauritius' Ocean Floor Waterfall",
+      "url": "https://youtu.be/7JzFSlH3dxc",
+      "format": "long",
+      "publishedAt": "2026-11-13T22:30:21.648Z",
+      "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
     }
   ]
 }
