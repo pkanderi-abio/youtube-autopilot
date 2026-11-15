@@ -128,7 +128,8 @@
     "Baa Baa Black Sheep",
     "Five Little Monkeys Jumping on the Bed",
     "Learning the ABCs",
-    "One Two Buckle My Shoe"
+    "One Two Buckle My Shoe",
+    "Counting Farm Animals"
   ],
   "videos": [
     {
@@ -1049,6 +1050,13 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:14:44.495Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star"
+    },
+    {
+      "title": "Counting 5 Farm Animals with Emma",
+      "url": "https://youtu.be/z7o4ULo_P4M",
+      "format": "short",
+      "publishedAt": "2026-11-15T19:14:58.662Z",
+      "sourcePoolItem": "Counting Farm Animals"
     }
   ]
 }
