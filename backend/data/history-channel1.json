@@ -197,12 +197,6 @@
   ],
   "videos": [
     {
-      "title": "Charli XCX's Red Carpet Revolution",
-      "url": "https://youtu.be/9u__2M5qFpI",
-      "format": "short",
-      "publishedAt": "2026-07-24T05:23:56.091Z"
-    },
-    {
       "title": "FAIRNESS IN FASHION: Twitter Reacts to Daria Snigur's Miss Universe Disqualification",
       "url": "https://youtu.be/auPeQ4QYTUM",
       "format": "long",
@@ -1482,6 +1476,13 @@
       "format": "long",
       "publishedAt": "2026-11-13T22:30:21.648Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius"
+    },
+    {
+      "title": "Venus' 243-Day Day Paradox",
+      "url": "https://youtu.be/UcKIoBEoHo0",
+      "format": "short",
+      "publishedAt": "2026-11-15T01:33:05.429Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year"
     }
   ]
 }
