@@ -193,15 +193,10 @@
     "Venice Disappearing into the Sea",
     "Some Lakes Change Color With the Seasons",
     "Bananas and Berries",
-    "What If Earth Had Two Moons Instead of One"
+    "What If Earth Had Two Moons Instead of One",
+    "The Island of Rabbits"
   ],
   "videos": [
-    {
-      "title": "FAIRNESS IN FASHION: Twitter Reacts to Daria Snigur's Miss Universe Disqualification",
-      "url": "https://youtu.be/auPeQ4QYTUM",
-      "format": "long",
-      "publishedAt": "2026-07-24T10:24:32.426Z"
-    },
     {
       "title": "Why Ice Detention Still Haunts Us on Social Media",
       "url": "https://youtu.be/rvfobFRgF4Q",
@@ -1483,6 +1478,13 @@
       "format": "short",
       "publishedAt": "2026-11-15T01:33:05.429Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year"
+    },
+    {
+      "title": "Rabbit Island: Where Bunnies Outnumber Humans 100:1",
+      "url": "https://youtu.be/CiX422_pluU",
+      "format": "short",
+      "publishedAt": "2026-11-15T19:34:19.414Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night"
     }
   ]
 }
