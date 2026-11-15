@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-14T12:45:28.340Z",
+  "fetchedAt": "2026-11-15T13:13:08.069Z",
   "videos": [
-    {
-      "url": "https://youtu.be/9u__2M5qFpI",
-      "title": "Charli XCX's Red Carpet Revolution",
-      "format": "short",
-      "publishedAt": "2026-07-24T05:23:56.091Z",
-      "sourcePoolItem": null,
-      "viewCount": 153,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/auPeQ4QYTUM",
       "title": "FAIRNESS IN FASHION: Twitter Reacts to Daria Snigur's Miss Universe Disqualification",
@@ -477,7 +467,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 275,
+      "viewCount": 277,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -597,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-08-21T22:27:59.558Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1143,
+      "viewCount": 1144,
       "likeCount": 23,
       "commentCount": 1
     },
@@ -687,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1185,
+      "viewCount": 1187,
       "likeCount": 26,
       "commentCount": 1
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1184,
+      "viewCount": 1187,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -957,7 +947,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 165,
+      "viewCount": 166,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -1927,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 33,
+      "viewCount": 37,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1947,7 +1937,7 @@
       "format": "short",
       "publishedAt": "2026-11-11T01:44:18.016Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 78,
+      "viewCount": 81,
       "likeCount": 7,
       "commentCount": 1
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-11-11T21:05:17.307Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 41,
+      "viewCount": 42,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1967,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-11-12T02:43:06.465Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 98,
+      "viewCount": 100,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-13T02:24:47.437Z",
       "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
-      "viewCount": 15,
+      "viewCount": 17,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:47:23.196Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 12,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,7 +1987,17 @@
       "format": "long",
       "publishedAt": "2026-11-13T22:30:21.648Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 3,
+      "viewCount": 7,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/UcKIoBEoHo0",
+      "title": "Venus' 243-Day Day Paradox",
+      "format": "short",
+      "publishedAt": "2026-11-15T01:33:05.429Z",
+      "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
+      "viewCount": 22,
       "likeCount": 0,
       "commentCount": 0
     }
