@@ -198,12 +198,6 @@
   ],
   "videos": [
     {
-      "title": "Why Ice Detention Still Haunts Us on Social Media",
-      "url": "https://youtu.be/rvfobFRgF4Q",
-      "format": "short",
-      "publishedAt": "2026-07-24T15:28:33.506Z"
-    },
-    {
       "title": "The Atlante Effect: Shaping Sustainable Cities",
       "url": "https://youtu.be/5KlDelwwNro",
       "format": "short",
@@ -1485,6 +1479,13 @@
       "format": "short",
       "publishedAt": "2026-11-15T19:34:19.414Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night"
+    },
+    {
+      "title": "Why Bananas Are Berries",
+      "url": "https://youtu.be/PCzhK7txxY4",
+      "format": "short",
+      "publishedAt": "2026-11-16T23:13:51.478Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
