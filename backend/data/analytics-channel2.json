@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-15T13:13:08.696Z",
+  "fetchedAt": "2026-11-16T14:22:34.555Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 2253,
+      "viewCount": 2254,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 40,
+      "viewCount": 42,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 22,
+      "viewCount": 23,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1327,7 +1327,7 @@
       "format": "long",
       "publishedAt": "2026-11-04T20:41:21.508Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 39,
+      "viewCount": 42,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1417,6 +1417,26 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:14:44.495Z",
       "sourcePoolItem": "Twinkle Twinkle Little Star",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/z7o4ULo_P4M",
+      "title": "Counting 5 Farm Animals with Emma",
+      "format": "short",
+      "publishedAt": "2026-11-15T19:14:58.662Z",
+      "sourcePoolItem": "Counting Farm Animals",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/vgYrDsBFSA8",
+      "title": "Learning ABCs with Animal Friends",
+      "format": "long",
+      "publishedAt": "2026-11-15T19:34:22.701Z",
+      "sourcePoolItem": "The Alphabet Song with Animal Friends",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
