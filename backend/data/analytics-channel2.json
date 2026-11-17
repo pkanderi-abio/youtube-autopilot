@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-16T14:22:34.555Z",
+  "fetchedAt": "2026-11-17T15:14:38.806Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -1147,7 +1147,7 @@
       "format": "short",
       "publishedAt": "2026-10-11T17:57:33.538Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
-      "viewCount": 17,
+      "viewCount": 18,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1187,7 +1187,7 @@
       "format": "long",
       "publishedAt": "2026-10-21T18:25:09.359Z",
       "sourcePoolItem": "Counting from 1 to 10",
-      "viewCount": 42,
+      "viewCount": 44,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 23,
+      "viewCount": 25,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1327,7 +1327,7 @@
       "format": "long",
       "publishedAt": "2026-11-04T20:41:21.508Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 42,
+      "viewCount": 43,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1437,6 +1437,16 @@
       "format": "long",
       "publishedAt": "2026-11-15T19:34:22.701Z",
       "sourcePoolItem": "The Alphabet Song with Animal Friends",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/BRiqRPS1G6g",
+      "title": "Benny Bunny's Happy Hop",
+      "format": "short",
+      "publishedAt": "2026-11-16T22:43:27.102Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

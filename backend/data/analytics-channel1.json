@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-16T14:22:33.706Z",
+  "fetchedAt": "2026-11-17T15:14:38.012Z",
   "videos": [
-    {
-      "url": "https://youtu.be/rvfobFRgF4Q",
-      "title": "Why Ice Detention Still Haunts Us on Social Media",
-      "format": "short",
-      "publishedAt": "2026-07-24T15:28:33.506Z",
-      "sourcePoolItem": null,
-      "viewCount": 5,
-      "likeCount": 1,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/5KlDelwwNro",
-      "title": "The Atlante Effect: Shaping Sustainable Cities",
-      "format": "short",
-      "publishedAt": "2026-07-25T05:16:25.105Z",
-      "sourcePoolItem": null,
-      "viewCount": 25,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/kersQDUNs6A",
       "title": "Rural America's Far Right Shift",
@@ -697,7 +677,7 @@
       "format": "short",
       "publishedAt": "2026-08-27T23:43:15.547Z",
       "sourcePoolItem": "The City That Sinks a Few Millimeters Every Year",
-      "viewCount": 288,
+      "viewCount": 289,
       "likeCount": 5,
       "commentCount": 0
     },
@@ -937,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-09-07T18:40:27.690Z",
       "sourcePoolItem": null,
-      "viewCount": 166,
+      "viewCount": 167,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -947,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1050,
+      "viewCount": 1051,
       "likeCount": 19,
       "commentCount": 2
     },
@@ -1477,7 +1457,7 @@
       "format": "short",
       "publishedAt": "2026-10-08T19:47:07.883Z",
       "sourcePoolItem": null,
-      "viewCount": 183,
+      "viewCount": 184,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1867,7 +1847,7 @@
       "format": "short",
       "publishedAt": "2026-11-06T20:15:54.184Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 14,
+      "viewCount": 15,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1907,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 37,
+      "viewCount": 39,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1947,7 +1927,7 @@
       "format": "short",
       "publishedAt": "2026-11-12T02:43:06.465Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 100,
+      "viewCount": 101,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1977,7 +1957,7 @@
       "format": "long",
       "publishedAt": "2026-11-13T22:30:21.648Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 15,
+      "viewCount": 16,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-15T01:33:05.429Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 26,
+      "viewCount": 27,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,7 +1977,27 @@
       "format": "short",
       "publishedAt": "2026-11-15T19:34:19.414Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 3,
+      "viewCount": 6,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/PCzhK7txxY4",
+      "title": "Why Bananas Are Berries",
+      "format": "short",
+      "publishedAt": "2026-11-16T23:13:51.478Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
+      "viewCount": 315,
+      "likeCount": 13,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/y3y6vdxdWTY",
+      "title": "The Sound That Traveled 3000 Miles",
+      "format": "long",
+      "publishedAt": "2026-11-17T00:44:10.331Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
