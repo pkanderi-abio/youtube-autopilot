@@ -198,12 +198,6 @@
   ],
   "videos": [
     {
-      "title": "The Atlante Effect: Shaping Sustainable Cities",
-      "url": "https://youtu.be/5KlDelwwNro",
-      "format": "short",
-      "publishedAt": "2026-07-25T05:16:25.105Z"
-    },
-    {
       "title": "Rural America's Far Right Shift",
       "url": "https://youtu.be/kersQDUNs6A",
       "format": "short",
@@ -1486,6 +1480,13 @@
       "format": "short",
       "publishedAt": "2026-11-16T23:13:51.478Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
+    },
+    {
+      "title": "The Sound That Traveled 3000 Miles",
+      "url": "https://youtu.be/y3y6vdxdWTY",
+      "format": "long",
+      "publishedAt": "2026-11-17T00:44:10.331Z",
+      "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
     }
   ]
 }
