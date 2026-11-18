@@ -129,7 +129,8 @@
     "Five Little Monkeys Jumping on the Bed",
     "Learning the ABCs",
     "One Two Buckle My Shoe",
-    "Counting Farm Animals"
+    "Counting Farm Animals",
+    "Days of the Week Song"
   ],
   "videos": [
     {
@@ -1078,6 +1079,13 @@
       "format": "short",
       "publishedAt": "2026-11-18T21:06:11.784Z",
       "sourcePoolItem": "Baa Baa Black Sheep"
+    },
+    {
+      "title": "Farmer Emma's Weekly Farm Fun",
+      "url": "https://youtu.be/bp1M52kQOq0",
+      "format": "long",
+      "publishedAt": "2026-11-18T21:48:24.784Z",
+      "sourcePoolItem": "Days of the Week Song"
     }
   ]
 }
