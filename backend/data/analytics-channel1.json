@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-17T15:14:38.012Z",
+  "fetchedAt": "2026-11-18T14:51:20.795Z",
   "videos": [
     {
       "url": "https://youtu.be/kersQDUNs6A",
@@ -437,7 +437,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 277,
+      "viewCount": 278,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -587,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1437,
+      "viewCount": 1443,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -637,7 +637,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 76,
+      "viewCount": 77,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -647,7 +647,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1188,
+      "viewCount": 1189,
       "likeCount": 27,
       "commentCount": 1
     },
@@ -817,7 +817,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 979,
+      "viewCount": 980,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1667,7 +1667,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 41,
+      "viewCount": 42,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1787,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-11-02T22:37:06.163Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 611,
+      "viewCount": 612,
       "likeCount": 22,
       "commentCount": 1
     },
@@ -1947,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:47:23.196Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 14,
+      "viewCount": 13,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1957,7 @@
       "format": "long",
       "publishedAt": "2026-11-13T22:30:21.648Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 16,
+      "viewCount": 17,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1977,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-15T19:34:19.414Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 6,
+      "viewCount": 9,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,8 +1987,8 @@
       "format": "short",
       "publishedAt": "2026-11-16T23:13:51.478Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 315,
-      "likeCount": 13,
+      "viewCount": 517,
+      "likeCount": 14,
       "commentCount": 0
     },
     {
@@ -1997,7 +1997,7 @@
       "format": "long",
       "publishedAt": "2026-11-17T00:44:10.331Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 0,
+      "viewCount": 5,
       "likeCount": 0,
       "commentCount": 0
     }
