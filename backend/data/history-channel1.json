@@ -194,15 +194,10 @@
     "Some Lakes Change Color With the Seasons",
     "Bananas and Berries",
     "What If Earth Had Two Moons Instead of One",
-    "The Island of Rabbits"
+    "The Island of Rabbits",
+    "south florida floods"
   ],
   "videos": [
-    {
-      "title": "Rural America's Far Right Shift",
-      "url": "https://youtu.be/kersQDUNs6A",
-      "format": "short",
-      "publishedAt": "2026-07-25T15:03:59.507Z"
-    },
     {
       "title": "Son Heung-Min's Shocking Tottenham Exit: What Really Happened?",
       "url": "https://youtu.be/A3xo2E6v6ZQ",
@@ -1487,6 +1482,12 @@
       "format": "long",
       "publishedAt": "2026-11-17T00:44:10.331Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away"
+    },
+    {
+      "title": "South Florida's Hidden Flood Factor",
+      "url": "https://youtu.be/chWSKWNQUjs",
+      "format": "short",
+      "publishedAt": "2026-11-18T21:44:40.433Z"
     }
   ]
 }
