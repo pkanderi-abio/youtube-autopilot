@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-18T14:51:21.547Z",
+  "fetchedAt": "2026-11-19T14:57:37.975Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -927,7 +927,7 @@
       "format": "short",
       "publishedAt": "2026-09-14T18:28:29.737Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 69,
+      "viewCount": 70,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -957,7 +957,7 @@
       "format": "short",
       "publishedAt": "2026-09-17T17:30:57.827Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 36,
+      "viewCount": 37,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -987,7 +987,7 @@
       "format": "short",
       "publishedAt": "2026-09-23T17:49:37.693Z",
       "sourcePoolItem": "If You're Happy and You Know It",
-      "viewCount": 2254,
+      "viewCount": 2255,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 272,
+      "viewCount": 273,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1097,7 +1097,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T18:55:37.795Z",
       "sourcePoolItem": "London Bridge Is Falling Down",
-      "viewCount": 26,
+      "viewCount": 27,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1127,7 +1127,7 @@
       "format": "short",
       "publishedAt": "2026-10-09T18:48:16.113Z",
       "sourcePoolItem": "Baa Baa Black Sheep",
-      "viewCount": 149,
+      "viewCount": 151,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1447,6 +1447,26 @@
       "format": "short",
       "publishedAt": "2026-11-16T22:43:27.102Z",
       "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/SNC_c3rUrn0",
+      "title": "Counting Sheep on the Sunny Farm",
+      "format": "short",
+      "publishedAt": "2026-11-18T21:06:11.784Z",
+      "sourcePoolItem": "Baa Baa Black Sheep",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/bp1M52kQOq0",
+      "title": "Farmer Emma's Weekly Farm Fun",
+      "format": "long",
+      "publishedAt": "2026-11-18T21:48:24.784Z",
+      "sourcePoolItem": "Days of the Week Song",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0

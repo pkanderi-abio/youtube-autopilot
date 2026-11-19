@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-18T14:51:20.795Z",
+  "fetchedAt": "2026-11-19T14:57:37.210Z",
   "videos": [
-    {
-      "url": "https://youtu.be/kersQDUNs6A",
-      "title": "Rural America's Far Right Shift",
-      "format": "short",
-      "publishedAt": "2026-07-25T15:03:59.507Z",
-      "sourcePoolItem": null,
-      "viewCount": 67,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/A3xo2E6v6ZQ",
       "title": "Son Heung-Min's Shocking Tottenham Exit: What Really Happened?",
@@ -297,7 +287,7 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 11,
+      "viewCount": 12,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -437,7 +427,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 278,
+      "viewCount": 281,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -647,7 +637,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1189,
+      "viewCount": 1191,
       "likeCount": 27,
       "commentCount": 1
     },
@@ -767,7 +757,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T17:44:15.358Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 980,
+      "viewCount": 981,
       "likeCount": 22,
       "commentCount": 0
     },
@@ -777,7 +767,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1036,
+      "viewCount": 1037,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-15T19:34:19.414Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "short",
       "publishedAt": "2026-11-16T23:13:51.478Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 517,
+      "viewCount": 618,
       "likeCount": 14,
       "commentCount": 0
     },
@@ -1997,7 +1987,17 @@
       "format": "long",
       "publishedAt": "2026-11-17T00:44:10.331Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 5,
+      "viewCount": 6,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/chWSKWNQUjs",
+      "title": "South Florida's Hidden Flood Factor",
+      "format": "short",
+      "publishedAt": "2026-11-18T21:44:40.433Z",
+      "sourcePoolItem": null,
+      "viewCount": 28,
       "likeCount": 0,
       "commentCount": 0
     }
