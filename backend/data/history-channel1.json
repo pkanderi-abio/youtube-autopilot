@@ -195,15 +195,10 @@
     "Bananas and Berries",
     "What If Earth Had Two Moons Instead of One",
     "The Island of Rabbits",
-    "south florida floods"
+    "south florida floods",
+    "The Tree That Produces 40 Different Fruits"
   ],
   "videos": [
-    {
-      "title": "Son Heung-Min's Shocking Tottenham Exit: What Really Happened?",
-      "url": "https://youtu.be/A3xo2E6v6ZQ",
-      "format": "short",
-      "publishedAt": "2026-07-26T05:33:41.558Z"
-    },
     {
       "title": "Sustainable Style: How Celebrities Are Driving Eco-Friendly Fashion",
       "url": "https://youtu.be/bqDcUU4SloE",
@@ -1488,6 +1483,13 @@
       "url": "https://youtu.be/chWSKWNQUjs",
       "format": "short",
       "publishedAt": "2026-11-18T21:44:40.433Z"
+    },
+    {
+      "title": "The Tree of 40 Fruits",
+      "url": "https://youtu.be/JJAJq0EE19k",
+      "format": "short",
+      "publishedAt": "2026-11-19T22:03:26.041Z",
+      "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits"
     }
   ]
 }
