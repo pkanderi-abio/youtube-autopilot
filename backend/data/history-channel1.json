@@ -196,15 +196,10 @@
     "What If Earth Had Two Moons Instead of One",
     "The Island of Rabbits",
     "south florida floods",
-    "The Tree That Produces 40 Different Fruits"
+    "The Tree That Produces 40 Different Fruits",
+    "Octopuses"
   ],
   "videos": [
-    {
-      "title": "Grenada's 5 French Colonial Favored Beaches Revisited",
-      "url": "https://youtu.be/kYd0fxw1l7c",
-      "format": "short",
-      "publishedAt": "2026-07-26T16:17:44.137Z"
-    },
     {
       "title": "Exploring the Hidden Gems of New England's Fall Foliage",
       "url": "https://youtu.be/kyreCI05yq8",
@@ -1491,6 +1486,13 @@
       "format": "short",
       "publishedAt": "2026-11-20T02:58:24.043Z",
       "sourcePoolItem": "Sharks Existed Before Trees"
+    },
+    {
+      "title": "The Octopus's Blue Blood Advantage",
+      "url": "https://youtu.be/PkzPi-a2BYE",
+      "format": "short",
+      "publishedAt": "2026-11-20T21:44:09.682Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
     }
   ]
 }
