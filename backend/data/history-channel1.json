@@ -197,15 +197,10 @@
     "The Island of Rabbits",
     "south florida floods",
     "The Tree That Produces 40 Different Fruits",
-    "Octopuses"
+    "Octopuses",
+    "The Great Wall of China"
   ],
   "videos": [
-    {
-      "title": "Exploring the Hidden Gems of New England's Fall Foliage",
-      "url": "https://youtu.be/kyreCI05yq8",
-      "format": "long",
-      "publishedAt": "2026-07-26T16:27:27.325Z"
-    },
     {
       "title": "Turritopsis Dohrnii: The Jellyfish That's Immortal",
       "url": "https://youtu.be/n4OAmaAybl8",
@@ -1493,6 +1488,13 @@
       "format": "short",
       "publishedAt": "2026-11-20T21:44:09.682Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood"
+    },
+    {
+      "title": "The Great Wall's Visibility Myth",
+      "url": "https://youtu.be/om763n3WEpo",
+      "format": "long",
+      "publishedAt": "2026-11-20T23:08:39.644Z",
+      "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space"
     }
   ]
 }
