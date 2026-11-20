@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-19T14:57:37.210Z",
+  "fetchedAt": "2026-11-20T14:39:58.514Z",
   "videos": [
-    {
-      "url": "https://youtu.be/A3xo2E6v6ZQ",
-      "title": "Son Heung-Min's Shocking Tottenham Exit: What Really Happened?",
-      "format": "short",
-      "publishedAt": "2026-07-26T05:33:41.558Z",
-      "sourcePoolItem": null,
-      "viewCount": 515,
-      "likeCount": 2,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/bqDcUU4SloE",
-      "title": "Sustainable Style: How Celebrities Are Driving Eco-Friendly Fashion",
-      "format": "short",
-      "publishedAt": "2026-07-26T15:07:33.238Z",
-      "sourcePoolItem": null,
-      "viewCount": 42,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/kYd0fxw1l7c",
       "title": "Grenada's 5 French Colonial Favored Beaches Revisited",
@@ -517,7 +497,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 752,
+      "viewCount": 753,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -627,7 +607,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 77,
+      "viewCount": 78,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -637,8 +617,8 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1191,
-      "likeCount": 27,
+      "viewCount": 1193,
+      "likeCount": 28,
       "commentCount": 1
     },
     {
@@ -717,7 +697,7 @@
       "format": "short",
       "publishedAt": "2026-08-31T00:17:49.581Z",
       "sourcePoolItem": "The Country With More Islands Than Any Other Nation on Earth",
-      "viewCount": 266,
+      "viewCount": 270,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -767,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-09-01T23:56:20.318Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1037,
+      "viewCount": 1038,
       "likeCount": 24,
       "commentCount": 2
     },
@@ -917,7 +897,7 @@
       "format": "short",
       "publishedAt": "2026-09-08T23:54:36.968Z",
       "sourcePoolItem": null,
-      "viewCount": 1051,
+      "viewCount": 1052,
       "likeCount": 19,
       "commentCount": 2
     },
@@ -1407,7 +1387,7 @@
       "format": "short",
       "publishedAt": "2026-10-06T19:24:06.675Z",
       "sourcePoolItem": null,
-      "viewCount": 53,
+      "viewCount": 54,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-11-16T23:13:51.478Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 618,
+      "viewCount": 619,
       "likeCount": 14,
       "commentCount": 0
     },
@@ -1997,7 +1977,27 @@
       "format": "short",
       "publishedAt": "2026-11-18T21:44:40.433Z",
       "sourcePoolItem": null,
-      "viewCount": 28,
+      "viewCount": 31,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/JJAJq0EE19k",
+      "title": "The Tree of 40 Fruits",
+      "format": "short",
+      "publishedAt": "2026-11-19T22:03:26.041Z",
+      "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits",
+      "viewCount": 18,
+      "likeCount": 1,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/1wRl4UeR86c",
+      "title": "400 Million Years of Sharks",
+      "format": "short",
+      "publishedAt": "2026-11-20T02:58:24.043Z",
+      "sourcePoolItem": "Sharks Existed Before Trees",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
