@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-20T14:39:58.514Z",
+  "fetchedAt": "2026-11-21T13:56:36.458Z",
   "videos": [
-    {
-      "url": "https://youtu.be/kYd0fxw1l7c",
-      "title": "Grenada's 5 French Colonial Favored Beaches Revisited",
-      "format": "short",
-      "publishedAt": "2026-07-26T16:17:44.137Z",
-      "sourcePoolItem": null,
-      "viewCount": 144,
-      "likeCount": 3,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/kyreCI05yq8",
-      "title": "Exploring the Hidden Gems of New England's Fall Foliage",
-      "format": "long",
-      "publishedAt": "2026-07-26T16:27:27.325Z",
-      "sourcePoolItem": null,
-      "viewCount": 5,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/n4OAmaAybl8",
       "title": "Turritopsis Dohrnii: The Jellyfish That's Immortal",
@@ -407,7 +387,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 281,
+      "viewCount": 282,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -607,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T14:50:35.874Z",
       "sourcePoolItem": "The Ghost Village Preserved Exactly as It Was Evacuated Decades Ago",
-      "viewCount": 78,
+      "viewCount": 79,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -637,7 +617,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -937,7 +917,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 64,
+      "viewCount": 67,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1337,7 +1317,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1075,
+      "viewCount": 1076,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1507,7 +1487,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 128,
+      "viewCount": 129,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1857,7 +1837,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 39,
+      "viewCount": 40,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1937,7 @@
       "format": "short",
       "publishedAt": "2026-11-16T23:13:51.478Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 619,
+      "viewCount": 618,
       "likeCount": 14,
       "commentCount": 0
     },
@@ -1967,7 +1947,7 @@
       "format": "long",
       "publishedAt": "2026-11-17T00:44:10.331Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 6,
+      "viewCount": 7,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-19T22:03:26.041Z",
       "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits",
-      "viewCount": 18,
+      "viewCount": 32,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1997,7 +1977,27 @@
       "format": "short",
       "publishedAt": "2026-11-20T02:58:24.043Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 0,
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/PkzPi-a2BYE",
+      "title": "The Octopus's Blue Blood Advantage",
+      "format": "short",
+      "publishedAt": "2026-11-20T21:44:09.682Z",
+      "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
+      "viewCount": 78,
+      "likeCount": 5,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/om763n3WEpo",
+      "title": "The Great Wall's Visibility Myth",
+      "format": "long",
+      "publishedAt": "2026-11-20T23:08:39.644Z",
+      "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
+      "viewCount": 1,
       "likeCount": 0,
       "commentCount": 0
     }
