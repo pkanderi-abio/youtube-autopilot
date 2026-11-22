@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-21T13:56:36.458Z",
+  "fetchedAt": "2026-11-22T13:49:50.992Z",
   "videos": [
-    {
-      "url": "https://youtu.be/n4OAmaAybl8",
-      "title": "Turritopsis Dohrnii: The Jellyfish That's Immortal",
-      "format": "short",
-      "publishedAt": "2026-07-26T17:02:05.251Z",
-      "sourcePoolItem": null,
-      "viewCount": 72,
-      "likeCount": 5,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/qTZQ4c5hUEM",
       "title": "The World's Largest Rainforest Wasn't What We Think",
@@ -247,7 +237,7 @@
       "format": "long",
       "publishedAt": "2026-08-07T18:05:55.237Z",
       "sourcePoolItem": null,
-      "viewCount": 12,
+      "viewCount": 13,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -387,7 +377,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 282,
+      "viewCount": 283,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -477,7 +467,7 @@
       "format": "short",
       "publishedAt": "2026-08-20T22:30:49.997Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 753,
+      "viewCount": 754,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -597,7 +587,7 @@
       "format": "short",
       "publishedAt": "2026-08-25T22:31:43.358Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 1193,
+      "viewCount": 1195,
       "likeCount": 28,
       "commentCount": 1
     },
@@ -617,7 +607,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 7,
+      "viewCount": 8,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -637,7 +627,7 @@
       "format": "short",
       "publishedAt": "2026-08-28T23:29:38.698Z",
       "sourcePoolItem": "5 Countries You Can Visit Without a Passport Stamp",
-      "viewCount": 77,
+      "viewCount": 78,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1317,7 +1307,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1076,
+      "viewCount": 1077,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1827,7 +1817,7 @@
       "format": "short",
       "publishedAt": "2026-11-08T18:41:45.644Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 81,
+      "viewCount": 82,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1837,7 +1827,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 40,
+      "viewCount": 42,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1867,7 +1857,7 @@
       "format": "short",
       "publishedAt": "2026-11-11T21:05:17.307Z",
       "sourcePoolItem": "The Town Built Entirely Underground to Escape the Desert Heat",
-      "viewCount": 42,
+      "viewCount": 43,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1877,7 +1867,7 @@
       "format": "short",
       "publishedAt": "2026-11-12T02:43:06.465Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 101,
+      "viewCount": 102,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1887,7 +1877,7 @@
       "format": "short",
       "publishedAt": "2026-11-13T02:24:47.437Z",
       "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
-      "viewCount": 17,
+      "viewCount": 18,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1897,7 +1887,7 @@
       "format": "short",
       "publishedAt": "2026-11-13T20:47:23.196Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 13,
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1917,7 +1907,7 @@
       "format": "short",
       "publishedAt": "2026-11-15T01:33:05.429Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 27,
+      "viewCount": 28,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1927,7 +1917,7 @@
       "format": "short",
       "publishedAt": "2026-11-15T19:34:19.414Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 10,
+      "viewCount": 12,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-11-18T21:44:40.433Z",
       "sourcePoolItem": null,
-      "viewCount": 31,
+      "viewCount": 32,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1967,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-11-19T22:03:26.041Z",
       "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits",
-      "viewCount": 32,
+      "viewCount": 45,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-20T02:58:24.043Z",
       "sourcePoolItem": "Sharks Existed Before Trees",
-      "viewCount": 2,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1987,8 +1977,8 @@
       "format": "short",
       "publishedAt": "2026-11-20T21:44:09.682Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 78,
-      "likeCount": 5,
+      "viewCount": 85,
+      "likeCount": 6,
       "commentCount": 0
     },
     {
@@ -1998,6 +1988,16 @@
       "publishedAt": "2026-11-20T23:08:39.644Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
       "viewCount": 1,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/PGs3Koyye4U",
+      "title": "Tides with a Second Moon",
+      "format": "short",
+      "publishedAt": "2026-11-22T01:57:47.602Z",
+      "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
+      "viewCount": 14,
       "likeCount": 0,
       "commentCount": 0
     }
