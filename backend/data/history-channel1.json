@@ -202,12 +202,6 @@
   ],
   "videos": [
     {
-      "title": "Turritopsis Dohrnii: The Jellyfish That's Immortal",
-      "url": "https://youtu.be/n4OAmaAybl8",
-      "format": "short",
-      "publishedAt": "2026-07-26T17:02:05.251Z"
-    },
-    {
       "title": "The World's Largest Rainforest Wasn't What We Think",
       "url": "https://youtu.be/qTZQ4c5hUEM",
       "format": "long",
@@ -1495,6 +1489,13 @@
       "format": "long",
       "publishedAt": "2026-11-20T23:08:39.644Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space"
+    },
+    {
+      "title": "Tides with a Second Moon",
+      "url": "https://youtu.be/PGs3Koyye4U",
+      "format": "short",
+      "publishedAt": "2026-11-22T01:57:47.602Z",
+      "sourcePoolItem": "What If Earth Had Two Moons Instead of One"
     }
   ]
 }
