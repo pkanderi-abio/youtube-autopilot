@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-22T13:49:50.992Z",
+  "fetchedAt": "2026-11-23T16:56:17.043Z",
   "videos": [
-    {
-      "url": "https://youtu.be/qTZQ4c5hUEM",
-      "title": "The World's Largest Rainforest Wasn't What We Think",
-      "format": "long",
-      "publishedAt": "2026-07-26T17:12:35.225Z",
-      "sourcePoolItem": null,
-      "viewCount": 5,
-      "likeCount": 1,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/Sz1jw6_iPG8",
       "title": "The Largest Snowflake Ever Recorded",
@@ -377,7 +367,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 283,
+      "viewCount": 285,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -557,7 +547,7 @@
       "format": "long",
       "publishedAt": "2026-08-24T17:48:16.596Z",
       "sourcePoolItem": "A Day on Venus Is Longer Than Its Year",
-      "viewCount": 8,
+      "viewCount": 9,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -607,7 +597,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 8,
+      "viewCount": 9,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -757,7 +747,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T17:37:59.374Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 980,
+      "viewCount": 981,
       "likeCount": 16,
       "commentCount": 1
     },
@@ -1307,7 +1297,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T00:28:02.311Z",
       "sourcePoolItem": null,
-      "viewCount": 1077,
+      "viewCount": 1078,
       "likeCount": 7,
       "commentCount": 0
     },
@@ -1827,7 +1817,7 @@
       "format": "short",
       "publishedAt": "2026-11-09T23:17:46.084Z",
       "sourcePoolItem": "Honey Never Spoils, Even After 3,000 Years",
-      "viewCount": 42,
+      "viewCount": 43,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1897,7 +1887,7 @@
       "format": "long",
       "publishedAt": "2026-11-13T22:30:21.648Z",
       "sourcePoolItem": "The Underwater Waterfall Hidden Beneath the Ocean Near Mauritius",
-      "viewCount": 17,
+      "viewCount": 18,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1957,7 +1947,7 @@
       "format": "short",
       "publishedAt": "2026-11-19T22:03:26.041Z",
       "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits",
-      "viewCount": 45,
+      "viewCount": 48,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1977,7 +1967,7 @@
       "format": "short",
       "publishedAt": "2026-11-20T21:44:09.682Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 85,
+      "viewCount": 87,
       "likeCount": 6,
       "commentCount": 0
     },
@@ -1987,7 +1977,7 @@
       "format": "long",
       "publishedAt": "2026-11-20T23:08:39.644Z",
       "sourcePoolItem": "The Great Wall of China Isn't Actually Visible From Space",
-      "viewCount": 1,
+      "viewCount": 2,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1998,6 +1988,16 @@
       "publishedAt": "2026-11-22T01:57:47.602Z",
       "sourcePoolItem": "What If Earth Had Two Moons Instead of One",
       "viewCount": 14,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/zK7NaJiUgD0",
+      "title": "Vatican City in 20 Minutes",
+      "format": "short",
+      "publishedAt": "2026-11-22T20:38:16.363Z",
+      "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     }

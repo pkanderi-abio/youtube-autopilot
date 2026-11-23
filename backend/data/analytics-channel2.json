@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-22T13:49:51.571Z",
+  "fetchedAt": "2026-11-23T16:56:17.616Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 275,
+      "viewCount": 277,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 29,
+      "viewCount": 30,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1477,6 +1477,26 @@
       "format": "short",
       "publishedAt": "2026-11-20T20:55:05.776Z",
       "sourcePoolItem": "Counting from 1 to 10",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/H2gWpPLvCm0",
+      "title": "Old MacDonald's Farm Friends",
+      "format": "short",
+      "publishedAt": "2026-11-22T20:08:03.538Z",
+      "sourcePoolItem": "Old MacDonald Had a Farm",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/b9BmW4Xzf74",
+      "title": "Meet the Cow on the Farm",
+      "format": "long",
+      "publishedAt": "2026-11-22T20:40:38.109Z",
+      "sourcePoolItem": "Animal Sounds for Toddlers",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
