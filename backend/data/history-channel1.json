@@ -198,15 +198,10 @@
     "south florida floods",
     "The Tree That Produces 40 Different Fruits",
     "Octopuses",
-    "The Great Wall of China"
+    "The Great Wall of China",
+    "Why Some Beaches Have Black or Pink Sand Instead of White"
   ],
   "videos": [
-    {
-      "title": "Europe's Forgotten Human Species",
-      "url": "https://youtu.be/C2m6PxBnoG8",
-      "format": "short",
-      "publishedAt": "2026-07-27T23:06:33.710Z"
-    },
     {
       "title": "The Arizona town where air is so clean it can cure skin cancer",
       "url": "https://youtu.be/4gQjImI5amQ",
@@ -1498,6 +1493,13 @@
       "format": "short",
       "publishedAt": "2026-11-24T01:30:27.030Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night"
+    },
+    {
+      "title": "Basalt's Role in Black Sand",
+      "url": "https://youtu.be/CGbwkUn1lro",
+      "format": "long",
+      "publishedAt": "2026-11-24T03:14:57.406Z",
+      "sourcePoolItem": "Why Some Beaches Have Black or Pink Sand Instead of White"
     }
   ]
 }
