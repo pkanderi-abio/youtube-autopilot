@@ -202,12 +202,6 @@
   ],
   "videos": [
     {
-      "title": "The Largest Snowflake Ever Recorded",
-      "url": "https://youtu.be/Sz1jw6_iPG8",
-      "format": "long",
-      "publishedAt": "2026-07-27T18:44:22.714Z"
-    },
-    {
       "title": "Europe's Forgotten Human Species",
       "url": "https://youtu.be/C2m6PxBnoG8",
       "format": "short",
@@ -1497,6 +1491,13 @@
       "format": "short",
       "publishedAt": "2026-11-22T20:38:16.363Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes"
+    },
+    {
+      "title": "Kawah Ijen's Blue Fire",
+      "url": "https://youtu.be/M5KbI7Ehrao",
+      "format": "short",
+      "publishedAt": "2026-11-24T01:30:27.030Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night"
     }
   ]
 }
