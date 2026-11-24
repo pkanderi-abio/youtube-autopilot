@@ -1,26 +1,6 @@
 {
-  "fetchedAt": "2026-11-23T16:56:17.043Z",
+  "fetchedAt": "2026-11-24T16:45:42.037Z",
   "videos": [
-    {
-      "url": "https://youtu.be/Sz1jw6_iPG8",
-      "title": "The Largest Snowflake Ever Recorded",
-      "format": "long",
-      "publishedAt": "2026-07-27T18:44:22.714Z",
-      "sourcePoolItem": null,
-      "viewCount": 15,
-      "likeCount": 0,
-      "commentCount": 0
-    },
-    {
-      "url": "https://youtu.be/C2m6PxBnoG8",
-      "title": "Europe's Forgotten Human Species",
-      "format": "short",
-      "publishedAt": "2026-07-27T23:06:33.710Z",
-      "sourcePoolItem": null,
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/4gQjImI5amQ",
       "title": "The Arizona town where air is so clean it can cure skin cancer",
@@ -307,7 +287,7 @@
       "format": "short",
       "publishedAt": "2026-08-11T22:45:24.736Z",
       "sourcePoolItem": null,
-      "viewCount": 202,
+      "viewCount": 204,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -367,7 +347,7 @@
       "format": "short",
       "publishedAt": "2026-08-14T16:45:04.632Z",
       "sourcePoolItem": null,
-      "viewCount": 285,
+      "viewCount": 288,
       "likeCount": 3,
       "commentCount": 0
     },
@@ -517,7 +497,7 @@
       "format": "short",
       "publishedAt": "2026-08-23T14:27:14.155Z",
       "sourcePoolItem": "The Loudest Sound Ever Recorded Was Heard 3,000 Miles Away",
-      "viewCount": 1443,
+      "viewCount": 1459,
       "likeCount": 28,
       "commentCount": 2
     },
@@ -597,7 +577,7 @@
       "format": "long",
       "publishedAt": "2026-08-26T19:19:38.488Z",
       "sourcePoolItem": "Antarctica Is Technically Classified as a Desert",
-      "viewCount": 9,
+      "viewCount": 10,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -757,7 +737,7 @@
       "format": "short",
       "publishedAt": "2026-09-03T23:54:50.142Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 1188,
+      "viewCount": 1189,
       "likeCount": 14,
       "commentCount": 1
     },
@@ -1467,7 +1447,7 @@
       "format": "short",
       "publishedAt": "2026-10-19T12:39:15.078Z",
       "sourcePoolItem": null,
-      "viewCount": 129,
+      "viewCount": 130,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1537,7 +1517,7 @@
       "format": "short",
       "publishedAt": "2026-10-23T01:00:15.904Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 236,
+      "viewCount": 237,
       "likeCount": 8,
       "commentCount": 0
     },
@@ -1627,7 +1607,7 @@
       "format": "short",
       "publishedAt": "2026-10-28T00:59:54.572Z",
       "sourcePoolItem": "Octopuses Have Three Hearts and Blue Blood",
-      "viewCount": 5,
+      "viewCount": 6,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1807,7 +1787,7 @@
       "format": "short",
       "publishedAt": "2026-11-08T18:41:45.644Z",
       "sourcePoolItem": "The Volcano That Glows Blue at Night",
-      "viewCount": 82,
+      "viewCount": 83,
       "likeCount": 4,
       "commentCount": 0
     },
@@ -1997,7 +1977,27 @@
       "format": "short",
       "publishedAt": "2026-11-22T20:38:16.363Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 3,
+      "viewCount": 4,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/M5KbI7Ehrao",
+      "title": "Kawah Ijen's Blue Fire",
+      "format": "short",
+      "publishedAt": "2026-11-24T01:30:27.030Z",
+      "sourcePoolItem": "The Volcano That Glows Blue at Night",
+      "viewCount": 20,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/CGbwkUn1lro",
+      "title": "Basalt's Role in Black Sand",
+      "format": "long",
+      "publishedAt": "2026-11-24T03:14:57.406Z",
+      "sourcePoolItem": "Why Some Beaches Have Black or Pink Sand Instead of White",
+      "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
     }
