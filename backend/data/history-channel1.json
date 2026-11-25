@@ -203,12 +203,6 @@
   ],
   "videos": [
     {
-      "title": "The Arizona town where air is so clean it can cure skin cancer",
-      "url": "https://youtu.be/4gQjImI5amQ",
-      "format": "short",
-      "publishedAt": "2026-07-28T16:12:43.815Z"
-    },
-    {
       "title": "Fungal Giants: Uncovering the World's Largest Living Organisms",
       "url": "https://youtu.be/KXPZKHNEJe8",
       "format": "short",
@@ -1500,6 +1494,13 @@
       "format": "long",
       "publishedAt": "2026-11-24T03:14:57.406Z",
       "sourcePoolItem": "Why Some Beaches Have Black or Pink Sand Instead of White"
+    },
+    {
+      "title": "The Tree with 40 Fruit Varieties",
+      "url": "https://youtu.be/KWIkgf5GUmA",
+      "format": "short",
+      "publishedAt": "2026-11-25T22:57:57.139Z",
+      "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits"
     }
   ]
 }
