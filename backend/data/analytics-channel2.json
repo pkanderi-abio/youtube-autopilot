@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-25T16:32:20.248Z",
+  "fetchedAt": "2026-11-26T16:05:20.935Z",
   "videos": [
     {
       "url": "https://youtu.be/UjxA71nOrDU",
@@ -1087,7 +1087,7 @@
       "format": "short",
       "publishedAt": "2026-10-04T17:21:17.394Z",
       "sourcePoolItem": "Animal Sounds for Toddlers",
-      "viewCount": 279,
+      "viewCount": 280,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1227,7 +1227,7 @@
       "format": "long",
       "publishedAt": "2026-10-25T17:25:48.870Z",
       "sourcePoolItem": "Learning Shapes All Around Us",
-      "viewCount": 31,
+      "viewCount": 35,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1507,6 +1507,26 @@
       "format": "short",
       "publishedAt": "2026-11-24T00:33:34.551Z",
       "sourcePoolItem": "The Colors of the Rainbow",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/xasLeExTX_0",
+      "title": "Happy Farm Friends Dance",
+      "format": "short",
+      "publishedAt": "2026-11-25T22:06:47.640Z",
+      "sourcePoolItem": "If You're Happy and You Know It",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/oq-jXkOisPc",
+      "title": "Counting Chickens with Farmer Emma",
+      "format": "long",
+      "publishedAt": "2026-11-25T22:56:04.471Z",
+      "sourcePoolItem": "Counting Farm Animals",
       "viewCount": 0,
       "likeCount": 0,
       "commentCount": 0
