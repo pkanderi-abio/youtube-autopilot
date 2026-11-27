@@ -203,12 +203,6 @@
   ],
   "videos": [
     {
-      "title": "The World's Most Famous Bridges Hold Surprising Secrets",
-      "url": "https://youtu.be/nhW3DyJPwG0",
-      "format": "short",
-      "publishedAt": "2026-07-29T15:54:34.516Z"
-    },
-    {
       "title": "The 5 Most Mysterious Unclaimed Bodies in the World",
       "url": "https://youtu.be/u_AAECUoR0M",
       "format": "short",
@@ -1502,6 +1496,13 @@
       "format": "short",
       "publishedAt": "2026-11-26T22:49:30.046Z",
       "sourcePoolItem": "Sharks Existed Before Trees"
+    },
+    {
+      "title": "Hotel de Sal Bolivia",
+      "url": "https://youtu.be/hb7lue9UOkM",
+      "format": "short",
+      "publishedAt": "2026-11-27T22:30:56.353Z",
+      "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert"
     }
   ]
 }
