@@ -1,16 +1,6 @@
 {
-  "fetchedAt": "2026-11-26T16:05:20.176Z",
+  "fetchedAt": "2026-11-27T15:53:01.010Z",
   "videos": [
-    {
-      "url": "https://youtu.be/KXPZKHNEJe8",
-      "title": "Fungal Giants: Uncovering the World's Largest Living Organisms",
-      "format": "short",
-      "publishedAt": "2026-07-28T23:03:30.935Z",
-      "sourcePoolItem": null,
-      "viewCount": 166,
-      "likeCount": 2,
-      "commentCount": 0
-    },
     {
       "url": "https://youtu.be/nhW3DyJPwG0",
       "title": "The World's Most Famous Bridges Hold Surprising Secrets",
@@ -257,7 +247,7 @@
       "format": "short",
       "publishedAt": "2026-08-10T22:42:27.551Z",
       "sourcePoolItem": null,
-      "viewCount": 67,
+      "viewCount": 69,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -867,7 +857,7 @@
       "format": "short",
       "publishedAt": "2026-09-12T16:49:40.336Z",
       "sourcePoolItem": null,
-      "viewCount": 67,
+      "viewCount": 68,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1287,7 +1277,7 @@
       "format": "short",
       "publishedAt": "2026-10-05T00:32:58.678Z",
       "sourcePoolItem": null,
-      "viewCount": 159,
+      "viewCount": 160,
       "likeCount": 2,
       "commentCount": 0
     },
@@ -1567,7 +1557,7 @@
       "format": "short",
       "publishedAt": "2026-10-26T19:46:19.477Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 43,
+      "viewCount": 45,
       "likeCount": 1,
       "commentCount": 0
     },
@@ -1667,7 +1657,7 @@
       "format": "short",
       "publishedAt": "2026-11-01T00:42:23.872Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't",
-      "viewCount": 223,
+      "viewCount": 225,
       "likeCount": 9,
       "commentCount": 0
     },
@@ -1967,7 +1957,7 @@
       "format": "short",
       "publishedAt": "2026-11-22T20:38:16.363Z",
       "sourcePoolItem": "The Smallest Country You Could Walk Across in 20 Minutes",
-      "viewCount": 4,
+      "viewCount": 3,
       "likeCount": 0,
       "commentCount": 0
     },
@@ -1997,8 +1987,18 @@
       "format": "short",
       "publishedAt": "2026-11-25T22:57:57.139Z",
       "sourcePoolItem": "There's a Tree That Produces 40 Different Fruits",
-      "viewCount": 22,
-      "likeCount": 1,
+      "viewCount": 30,
+      "likeCount": 2,
+      "commentCount": 0
+    },
+    {
+      "url": "https://youtu.be/RrH3gLRXJmI",
+      "title": "Sharks Beat Trees to the Evolutionary Scene",
+      "format": "short",
+      "publishedAt": "2026-11-26T22:49:30.046Z",
+      "sourcePoolItem": "Sharks Existed Before Trees",
+      "viewCount": 9,
+      "likeCount": 2,
       "commentCount": 0
     }
   ]
