@@ -203,12 +203,6 @@
   ],
   "videos": [
     {
-      "title": "The World's Most Abandoned Theme Parks",
-      "url": "https://youtu.be/qj5gvgRZ4eA",
-      "format": "short",
-      "publishedAt": "2026-07-30T23:11:53.274Z"
-    },
-    {
       "title": "Ancient Egyptians' Glassmaking Secrets",
       "url": "https://youtu.be/U5GCFmbXPwk",
       "format": "short",
@@ -1505,6 +1499,13 @@
       "format": "short",
       "publishedAt": "2026-11-28T20:36:39.242Z",
       "sourcePoolItem": "The Train Route With No Roads for 1,700 Miles"
+    },
+    {
+      "title": "Antarctica Is a Desert: Dry Air, Not Cold",
+      "url": "https://youtu.be/JbGUzQP7MOI",
+      "format": "short",
+      "publishedAt": "2026-11-28T21:33:40.442Z",
+      "sourcePoolItem": "Antarctica Is Technically Classified as a Desert"
     }
   ]
 }
