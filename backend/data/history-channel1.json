@@ -1,6 +1,5 @@
 {
   "usedTopics": [
-    "a surprising everyday life hack",
     "a strange but true fact",
     "something oddly satisfying",
     "a common misconception, debunked",
@@ -199,15 +198,10 @@
     "Octopuses",
     "The Great Wall of China",
     "Why Some Beaches Have Black or Pink Sand Instead of White",
-    "Why Bananas Are Technically Berries But Strawberries Aren't"
+    "Why Bananas Are Technically Berries But Strawberries Aren't",
+    "The Train Route With No Roads for 1,700 Miles"
   ],
   "videos": [
-    {
-      "title": "Fiji's Best Hidden Beaches for 2026 Travelers",
-      "url": "https://youtu.be/pOsWf0o5sdk",
-      "format": "short",
-      "publishedAt": "2026-07-30T15:59:16.227Z"
-    },
     {
       "title": "The World's Most Abandoned Theme Parks",
       "url": "https://youtu.be/qj5gvgRZ4eA",
@@ -1504,6 +1498,13 @@
       "format": "long",
       "publishedAt": "2026-11-28T00:28:02.197Z",
       "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
+    },
+    {
+      "title": "1,700-Mile Rail Line With No Roads: Lifeline Stations Explained",
+      "url": "https://youtu.be/c6qhp5vHuhc",
+      "format": "short",
+      "publishedAt": "2026-11-28T20:36:39.242Z",
+      "sourcePoolItem": "The Train Route With No Roads for 1,700 Miles"
     }
   ]
 }
