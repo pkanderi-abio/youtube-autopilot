@@ -1,6 +1,5 @@
 {
   "usedTopics": [
-    "a viral moment people are talking about today",
     "a surprising everyday life hack",
     "a strange but true fact",
     "something oddly satisfying",
@@ -199,15 +198,10 @@
     "The Tree That Produces 40 Different Fruits",
     "Octopuses",
     "The Great Wall of China",
-    "Why Some Beaches Have Black or Pink Sand Instead of White"
+    "Why Some Beaches Have Black or Pink Sand Instead of White",
+    "Why Bananas Are Technically Berries But Strawberries Aren't"
   ],
   "videos": [
-    {
-      "title": "The 5 Most Mysterious Unclaimed Bodies in the World",
-      "url": "https://youtu.be/u_AAECUoR0M",
-      "format": "short",
-      "publishedAt": "2026-07-29T23:05:30.336Z"
-    },
     {
       "title": "Fiji's Best Hidden Beaches for 2026 Travelers",
       "url": "https://youtu.be/pOsWf0o5sdk",
@@ -1503,6 +1497,13 @@
       "format": "short",
       "publishedAt": "2026-11-27T22:30:56.353Z",
       "sourcePoolItem": "The Hotel Built Entirely From Salt in the Middle of a Desert"
+    },
+    {
+      "title": "The Berry Paradox: Bananas vs Strawberries",
+      "url": "https://youtu.be/boP6cQW_ifY",
+      "format": "long",
+      "publishedAt": "2026-11-28T00:28:02.197Z",
+      "sourcePoolItem": "Why Bananas Are Technically Berries But Strawberries Aren't"
     }
   ]
 }
