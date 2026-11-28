@@ -45,7 +45,7 @@ async function request(url, init, label) {
       const body = await res.text().catch(() => '');
       // 4006 = "you have used up your daily free allocation of 10,000 neurons"
       if (res.status === 429 && /4006|daily free allocation|neurons/i.test(body)) {
-        throw new QuotaExceededError(`[cloudflare] ${label}: daily free neuron allocation used up`);
+        throw new QuotaExceededError(`[cloudflare] ${label}: daily free neuron allocation used up (${body.slice(0, 200)})`);
       }
       const err = new Error(`[cloudflare] ${label} failed: ${res.status} ${body.slice(0, 300)}`);
       err.retryable = res.status === 429 || res.status >= 500;

@@ -118,7 +118,7 @@ units plus thumbnail/comment/playlist calls).
 | `imageModel` | override `CF_IMAGE_MODEL` for this channel (e.g. `@cf/black-forest-labs/flux-2-klein-4b` for native 9:16, ~2× the neurons) |
 | `madeForKids`, `contentStyle: "babyLearning"` | toddler content rules + kids flag |
 | `closingStyle: "moral"` | story-lesson endings |
-| `topicPool`, `useLiveTrends` | curated topics (6-video cooldown) and/or daily trends |
+| `topicPool`, `useLiveTrends` | curated topics (least-recently-used first; an item waits until ~60% of the pool has been used) and/or daily trends |
 | `brandColorA/B` | thumbnail accent colours |
 | `refreshTokenEnv`, `categoryId`, `tags`, `playlistId` | YouTube upload settings |
 
