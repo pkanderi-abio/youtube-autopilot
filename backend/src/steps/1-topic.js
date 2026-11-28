@@ -85,7 +85,9 @@ Rules:
   about the same specific subject - sharpen the hook, do not swap subjects.
 - [T] candidates are raw search terms. Only pick one if there is a genuine,
   factual angle that fits the niche (no gossip, politics, or score recaps).
-- The topic must be visual: something an illustrator could depict scene by scene.
+- The topic must be visual: something an illustrator could depict scene by scene.${channel.contentStyle === 'babyLearning'
+    ? '\n- Toddler channel: keep the topic and angle on the rhyme/lesson itself. Do not bolt on\n  counting, farm animals or a named host character unless the candidate is about them.'
+    : ''}
 
 Return JSON: {"sourceIndex": <integer from the list>, "topic": "...", "angle": "one sentence on the hook"}
 `.trim(), {

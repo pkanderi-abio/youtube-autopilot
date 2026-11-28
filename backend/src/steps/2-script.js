@@ -29,10 +29,16 @@ const totalWords = (scenes) => scenes.reduce((n, s) => n + words(s.narration), 0
 function voiceRules(channel) {
   if (channel.contentStyle === 'babyLearning') {
     return `Audience: babies and toddlers (ages 1-4), watched with a parent.
-- Greet the child directly and say what we'll learn ("Hi little friends! Let's count ducks!").
+- Greet the child directly and say what THIS video is about, by name.
 - Very short sentences (4-8 words), simple words, lots of gentle repetition.
-- Interactive prompts: "Can you say red?", "Count with me!", "What does the cow say?".
-- Warm, cheerful praise ("Great job!", "Yay!"). Nothing scary, sad or complex.
+- Interactive prompts built from THIS topic's own characters and objects
+  (ask the child to copy an action, name something, or sing a line).
+- Stay on the topic's own skill: only count if the topic is about counting,
+  only teach colors/shapes/animal sounds if the topic is about those.
+- Use the rhyme's own characters. Do not invent a host, farmer or narrator
+  character with a name, and do not move the story to a farm unless the
+  topic is set on one.
+- Warm, cheerful praise. Nothing scary, sad or complex.
 - For a nursery rhyme topic, include the traditional public-domain lyrics.
 - End with a happy goodbye and an invitation to sing again.`;
   }

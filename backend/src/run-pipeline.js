@@ -13,7 +13,7 @@ import path from 'path';
 
 import { loadHistory, saveHistory } from './lib/state.js';
 import { resolveNurseryAudio, NURSERY_TARGET_DURATION } from './lib/nurseryAudio.js';
-import { usage } from './lib/cloudflare.js';
+import { usage, todayNeuronUsage, markQuotaExhausted, DAILY_FREE_NEURONS } from './lib/cloudflare.js';
 import { MOCK } from './lib/llm.js';
 import { discoverTopic } from './steps/1-topic.js';
 import { generateScript } from './steps/2-script.js';
@@ -38,6 +38,23 @@ async function loadChannel(channelId, formatOverride) {
   return { ...base, ...(base.formats?.[format] || {}), format };
 }
 
+// Rough per-run need (see BUDGET in README); a long that starts with less
+// than this left would run dry halfway through anyway.
+const RUN_NEURONS = { short: 900, long: 3200 };
+
+async function checkCloudflareBudget(channel) {
+  const today = await todayNeuronUsage();
+  if (!today) return;
+  const left = DAILY_FREE_NEURONS - today.total;
+  const top = Object.entries(today.byModel).sort((a, b) => b[1] - a[1]).slice(0, 6)
+    .map(([m, n]) => `${m.replace(/^@cf\//, '')}=${n}`).join(', ');
+  console.log(`[pipeline] Cloudflare neurons used today (whole account): ${today.total}/${DAILY_FREE_NEURONS}${top ? ` [${top}]` : ''}`);
+  if (left < RUN_NEURONS[channel.format] && process.env.POLLINATIONS_API_KEY) {
+    console.warn(`[pipeline] only ~${Math.max(0, left)} neurons left today - using Pollinations for text and images this run`);
+    markQuotaExhausted();
+  }
+}
+
 async function run(channelId, formatOverride, dryRun, topicArg) {
   const channel = await loadChannel(channelId, formatOverride);
   console.log(`[pipeline] ${channel.name} (${channel.id}, ${channel.format})${dryRun ? ' DRY RUN' : ''}${MOCK ? ' MOCK AI' : ''}`);
@@ -46,6 +63,7 @@ async function run(channelId, formatOverride, dryRun, topicArg) {
   const started = Date.now();
 
   try {
+    if (!MOCK) await checkCloudflareBudget(channel);
     console.log('[1/8] discovering topic...');
     // TOPIC="..." (or --topic=...) forces a specific topic, e.g. for a manual run.
     const forced = topicArg || process.env.TOPIC;
