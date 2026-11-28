@@ -130,7 +130,8 @@
     "Learning the ABCs",
     "One Two Buckle My Shoe",
     "Counting Farm Animals",
-    "Days of the Week Song"
+    "Days of the Week Song",
+    "Head, Shoulders, Knees and Toes (Sing-Along Body Parts)"
   ],
   "videos": [
     {
@@ -1135,6 +1136,13 @@
       "format": "short",
       "publishedAt": "2026-11-27T21:48:21.713Z",
       "sourcePoolItem": "Baa Baa Black Sheep"
+    },
+    {
+      "title": "Head Shoulders Knees and Toes Touch and Sing (Slow to Fast!)",
+      "url": "https://youtu.be/yqt0VCxPjKI",
+      "format": "short",
+      "publishedAt": "2026-11-28T20:43:23.005Z",
+      "sourcePoolItem": "Head, Shoulders, Knees and Toes"
     }
   ]
 }
