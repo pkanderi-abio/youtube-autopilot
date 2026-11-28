@@ -18,6 +18,56 @@ export const usage = { neurons: 0, calls: 0 };
 
 export class QuotaExceededError extends Error {}
 
+// Set once we know (from the usage check below) that today's allocation
+// can't cover this run: every later call fails fast with QuotaExceededError
+// so text and images go straight to their Pollinations fallbacks.
+let quotaKnownExhausted = false;
+export function markQuotaExhausted() {
+  quotaKnownExhausted = true;
+}
+
+export const DAILY_FREE_NEURONS = 10_000;
+
+// Best-effort: today's (UTC) Workers AI neuron spend for the WHOLE account,
+// per model, from Cloudflare's GraphQL analytics. Our own per-run tally
+// can't see other jobs or anything else on the account, which is why runs
+// kept failing with the quota "used up" while our logs summed to ~4,500.
+// Needs "Account Analytics: Read" on CF_API_TOKEN; returns null otherwise.
+export async function todayNeuronUsage() {
+  if (!cloudflareConfigured()) return null;
+  const now = new Date();
+  const start = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const query = `query ($account: string!, $start: Time!, $end: Time!) {
+    viewer { accounts(filter: { accountTag: $account }) {
+      aiInferenceAdaptiveGroups(limit: 100, filter: { datetime_geq: $start, datetime_leq: $end }) {
+        sum { totalNeurons }
+        dimensions { modelId }
+      }
+    } }
+  }`;
+  try {
+    const res = await fetch('https://api.cloudflare.com/client/v4/graphql', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${API_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, variables: { account: ACCOUNT_ID, start: start.toISOString(), end: now.toISOString() } }),
+      signal: AbortSignal.timeout(20_000)
+    });
+    const data = await res.json().catch(() => ({}));
+    const groups = data?.data?.viewer?.accounts?.[0]?.aiInferenceAdaptiveGroups;
+    if (!res.ok || !Array.isArray(groups)) {
+      const why = data?.errors?.[0]?.message || `HTTP ${res.status}`;
+      console.warn(`[cloudflare] usage check unavailable (${why.slice(0, 160)}) - add "Account Analytics: Read" to CF_API_TOKEN to enable it`);
+      return null;
+    }
+    const byModel = Object.fromEntries(groups.map((g) => [g.dimensions?.modelId || '?', Math.round(g.sum?.totalNeurons || 0)]));
+    const total = Object.values(byModel).reduce((a, b) => a + b, 0);
+    return { total, byModel };
+  } catch (error) {
+    console.warn(`[cloudflare] usage check failed: ${error.message}`);
+    return null;
+  }
+}
+
 export function cloudflareConfigured() {
   return Boolean(ACCOUNT_ID && API_TOKEN);
 }
@@ -32,6 +82,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function request(url, init, label) {
   assertConfigured();
+  if (quotaKnownExhausted) throw new QuotaExceededError(`[cloudflare] ${label}: skipped, today's free allocation can't cover this run`);
   let lastError;
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
@@ -45,7 +96,7 @@ async function request(url, init, label) {
       const body = await res.text().catch(() => '');
       // 4006 = "you have used up your daily free allocation of 10,000 neurons"
       if (res.status === 429 && /4006|daily free allocation|neurons/i.test(body)) {
-        throw new QuotaExceededError(`[cloudflare] ${label}: daily free neuron allocation used up`);
+        throw new QuotaExceededError(`[cloudflare] ${label}: daily free neuron allocation used up (${body.slice(0, 200)})`);
       }
       const err = new Error(`[cloudflare] ${label} failed: ${res.status} ${body.slice(0, 300)}`);
       err.retryable = res.status === 429 || res.status >= 500;

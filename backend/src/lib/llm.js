@@ -6,7 +6,7 @@
 //
 // MOCK_AI=1 short-circuits to the caller-supplied `mock()` so the whole
 // pipeline can be exercised offline (see `npm run mock`).
-import { chat } from './cloudflare.js';
+import { chat, QuotaExceededError } from './cloudflare.js';
 
 export const MOCK = process.env.MOCK_AI === '1';
 
@@ -14,6 +14,33 @@ export const MOCK = process.env.MOCK_AI === '1';
 // 70B, which keeps a full day of publishing inside the free allocation.
 const PRIMARY = process.env.CF_TEXT_MODEL || '@cf/meta/llama-4-scout-17b-16e-instruct';
 const FALLBACK = process.env.CF_TEXT_FALLBACK_MODEL || '@cf/meta/llama-3.3-70b-instruct-fp8-fast';
+
+// Second provider, used only once Cloudflare's daily free allocation is gone
+// (GitHub's cron drift often stacks several jobs into one UTC day, and the
+// last ones used to die at step 1). OpenAI-compatible endpoint on the same
+// Pollinations account the image fallback already uses.
+const POLLINATIONS_KEY = process.env.POLLINATIONS_API_KEY;
+const POLLINATIONS_TEXT_MODEL = process.env.POLLINATIONS_TEXT_MODEL || 'openai';
+let cloudflareExhausted = false;
+
+async function pollinationsChat(messages, { maxTokens, temperature }) {
+  const res = await fetch('https://gen.pollinations.ai/v1/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${POLLINATIONS_KEY}` },
+    body: JSON.stringify({
+      model: POLLINATIONS_TEXT_MODEL,
+      messages,
+      max_tokens: maxTokens,
+      temperature,
+      response_format: { type: 'json_object' }
+    }),
+    signal: AbortSignal.timeout(180_000)
+  });
+  if (!res.ok) throw new Error(`[pollinations] chat ${res.status} ${(await res.text().catch(() => '')).slice(0, 300)}`);
+  const content = (await res.json()).choices?.[0]?.message?.content;
+  if (!content) throw new Error('[pollinations] chat returned no content');
+  return content;
+}
 
 const DEFAULT_SYSTEM = 'You are a careful YouTube writer. Always reply with a single valid JSON object and nothing else.';
 
@@ -56,13 +83,30 @@ export async function completeJSON(prompt, { system = DEFAULT_SYSTEM, maxTokens 
   }
   const messages = [{ role: 'system', content: system }, { role: 'user', content: prompt }];
   const errors = [];
-  for (const model of [PRIMARY, PRIMARY, FALLBACK]) {
-    try {
-      return parseJsonLoose(await chat(model, messages, { maxTokens, temperature }));
-    } catch (error) {
-      if (error.constructor?.name === 'QuotaExceededError') throw error;
-      errors.push(`${model}: ${error.message}`);
-      console.warn(`[llm] ${model} failed: ${error.message.slice(0, 200)}`);
+  if (!cloudflareExhausted) {
+    for (const model of [PRIMARY, PRIMARY, FALLBACK]) {
+      try {
+        return parseJsonLoose(await chat(model, messages, { maxTokens, temperature }));
+      } catch (error) {
+        if (error instanceof QuotaExceededError) {
+          if (!POLLINATIONS_KEY) throw error;
+          cloudflareExhausted = true;
+          console.warn('[llm] Cloudflare free daily allocation used up - switching text to Pollinations for the rest of this run');
+          break;
+        }
+        errors.push(`${model}: ${error.message}`);
+        console.warn(`[llm] ${model} failed: ${error.message.slice(0, 200)}`);
+      }
+    }
+  }
+  if (cloudflareExhausted) {
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        return parseJsonLoose(await pollinationsChat(messages, { maxTokens, temperature }));
+      } catch (error) {
+        errors.push(`pollinations/${POLLINATIONS_TEXT_MODEL}: ${error.message}`);
+        console.warn(`[llm] pollinations failed: ${error.message.slice(0, 200)}`);
+      }
     }
   }
   throw new Error(`[llm] all attempts failed:\n${errors.join('\n')}`);

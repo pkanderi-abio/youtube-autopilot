@@ -109,7 +109,11 @@ jobs:
         # Best-effort: without it (or without the secrets) videos still
         # publish using AI stills + camera motion. pipx is preinstalled on
         # GitHub's Ubuntu runners - no apt-get involved.
-        run: pipx install kaggle || echo "::warning::kaggle CLI install failed - AI clips disabled for this run"
+        # kaggle 2.x imports `six` without declaring it; on the runner's
+        # Python 3.14 that crashed every `kaggle datasets create` (0 clips).
+        run: |
+          { pipx install kaggle && pipx inject kaggle six; } \
+            || echo "::warning::kaggle CLI install failed - AI clips disabled for this run"
       - name: Generate and publish ${{ matrix.channel }} (${{ matrix.format }})
         working-directory: backend
         env:

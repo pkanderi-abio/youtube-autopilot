@@ -32,6 +32,13 @@ while its own words are spoken — no alignment heuristics.
 | Voice backup | Cloudflare MeloTTS (~20 neurons/min) | shared budget |
 | Render | ffmpeg on GitHub Actions | free on a public repo |
 
+**Real usage check.** At the start of every run the pipeline asks Cloudflare's
+GraphQL analytics for the whole account's neurons used today (per model) and
+logs it. If what's left can't cover the run and `POLLINATIONS_API_KEY` is set,
+text and images go straight to Pollinations. This needs **Account Analytics:
+Read** on `CF_API_TOKEN` (in addition to Workers AI Read/Edit); without it the
+check logs a warning and is skipped.
+
 **Daily budget.** A short (~9 scenes) costs ≈ 750 neurons, a ~7-minute long
 video (~36 scenes + thumbnail) ≈ 3,000. The current schedule's busiest day
 (3 shorts + 2 longs) is ≈ 8,300 — inside the 10,000/day free allocation, but
@@ -118,7 +125,7 @@ units plus thumbnail/comment/playlist calls).
 | `imageModel` | override `CF_IMAGE_MODEL` for this channel (e.g. `@cf/black-forest-labs/flux-2-klein-4b` for native 9:16, ~2× the neurons) |
 | `madeForKids`, `contentStyle: "babyLearning"` | toddler content rules + kids flag |
 | `closingStyle: "moral"` | story-lesson endings |
-| `topicPool`, `useLiveTrends` | curated topics (6-video cooldown) and/or daily trends |
+| `topicPool`, `useLiveTrends` | curated topics (least-recently-used first; an item waits until ~60% of the pool has been used) and/or daily trends |
 | `brandColorA/B` | thumbnail accent colours |
 | `refreshTokenEnv`, `categoryId`, `tags`, `playlistId` | YouTube upload settings |
 

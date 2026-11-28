@@ -23,7 +23,13 @@ async function main() {
   const authUrl = oauth2.generateAuthUrl({
     access_type: 'offline',
     prompt: 'consent', // forces a refresh_token every time
-    scope: ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube']
+    // youtube.force-ssl is required by commentThreads.insert (first comment);
+    // without it every first comment failed with "Insufficient Permission".
+    scope: [
+      'https://www.googleapis.com/auth/youtube.upload',
+      'https://www.googleapis.com/auth/youtube',
+      'https://www.googleapis.com/auth/youtube.force-ssl'
+    ]
   });
 
   console.log('\nOpen this URL and sign in with the Google account that owns the channel');

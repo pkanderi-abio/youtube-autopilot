@@ -12,16 +12,42 @@ import { fetchDailyTrends } from '../lib/trends.js';
 import { completeJSON } from '../lib/llm.js';
 import { poolPerformanceHint } from '../lib/analytics.js';
 
-const POOL_COOLDOWN = 6;
+// An item can't recur until at least this share of the pool has been used
+// since (6 was the old fixed cooldown: with ~35 items the model kept
+// cycling the same handful every ~7 videos).
+const POOL_COOLDOWN_SHARE = 0.6;
+const MIN_POOL_COOLDOWN = 6;
+const MAX_CANDIDATES = 12;
 
-function candidatePool(channel, history) {
-  const recent = new Set(history.videos.slice(-POOL_COOLDOWN).map((v) => v.sourcePoolItem).filter(Boolean));
-  let pool = (channel.topicPool || []).filter((t) => !recent.has(t));
-  if (!pool.length && channel.topicPool?.length) {
-    const last = history.videos.at(-1)?.sourcePoolItem;
-    pool = channel.topicPool.filter((t) => t !== last);
-  }
-  return pool;
+const STOP = new Set('the a an of to in on and or is are was its it that this with for from by at as be you your why how what if than but'.split(' '));
+export function topicWords(text) {
+  return new Set(String(text).toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/)
+    .filter((w) => w.length > 2 && !STOP.has(w))
+    .map((w) => (w.length > 4 ? w.replace(/(es|s)$/, '') : w)));
+}
+function overlap(a, b) {
+  const wa = topicWords(a);
+  let n = 0;
+  for (const w of topicWords(b)) if (wa.has(w)) n++;
+  return n;
+}
+
+// Pool items ordered least-recently-used first (never-used items first of
+// all), with everything used inside the cooldown window removed.
+export function candidatePool(channel, history) {
+  const items = channel.topicPool || [];
+  if (!items.length) return [];
+  const videos = history.videos || [];
+  const cooldown = Math.min(items.length - 1, Math.max(MIN_POOL_COOLDOWN, Math.floor(items.length * POOL_COOLDOWN_SHARE)));
+  const lastUsed = new Map();
+  videos.forEach((v, i) => { if (v.sourcePoolItem) lastUsed.set(v.sourcePoolItem, i); });
+  const recent = new Set(videos.slice(-cooldown).map((v) => v.sourcePoolItem).filter(Boolean));
+  const lru = (list) => list
+    .map((t) => ({ t, at: lastUsed.get(t) ?? -1, r: Math.random() }))
+    .sort((a, b) => a.at - b.at || a.r - b.r)
+    .map((x) => x.t);
+  const fresh = items.filter((t) => !recent.has(t));
+  return lru(fresh.length ? fresh : items.filter((t) => t !== videos.at(-1)?.sourcePoolItem));
 }
 
 export async function discoverTopic(channel, history) {
@@ -30,8 +56,9 @@ export async function discoverTopic(channel, history) {
   if (channel.useLiveTrends || !pool.length) {
     trends = (await fetchDailyTrends()).filter((t) => !history.usedTopics.includes(t)).slice(0, 12);
   }
-  // Shuffle the pool so the model doesn't always favour the top of the list.
-  const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, 15);
+  // Offer only the least-recently-used items, shuffled so the model doesn't
+  // always favour the top of the list.
+  const shuffled = pool.slice(0, MAX_CANDIDATES).sort(() => Math.random() - 0.5);
   const candidates = [
     ...shuffled.map((text) => ({ text, kind: 'pool' })),
     ...trends.map((text) => ({ text, kind: 'trend' }))
@@ -58,7 +85,9 @@ Rules:
   about the same specific subject - sharpen the hook, do not swap subjects.
 - [T] candidates are raw search terms. Only pick one if there is a genuine,
   factual angle that fits the niche (no gossip, politics, or score recaps).
-- The topic must be visual: something an illustrator could depict scene by scene.
+- The topic must be visual: something an illustrator could depict scene by scene.${channel.contentStyle === 'babyLearning'
+    ? '\n- Toddler channel: keep the topic and angle on the rhyme/lesson itself. Do not bolt on\n  counting, farm animals or a named host character unless the candidate is about them.'
+    : ''}
 
 Return JSON: {"sourceIndex": <integer from the list>, "topic": "...", "angle": "one sentence on the hook"}
 `.trim(), {
@@ -68,8 +97,22 @@ Return JSON: {"sourceIndex": <integer from the list>, "topic": "...", "angle": "
   });
 
   const idx = Number(picked.sourceIndex);
-  const chosen = Number.isInteger(idx) && idx >= 1 && idx <= candidates.length ? candidates[idx - 1] : null;
+  let chosen = Number.isInteger(idx) && idx >= 1 && idx <= candidates.length ? candidates[idx - 1] : null;
   const topic = String(picked.topic || chosen?.text || '').trim();
+  // Cross-check the index against the topic the model actually wrote: it
+  // sometimes gives the index of one candidate and writes about another
+  // (e.g. index of "Why Venice..." with topic "Sweden's 24,000 Islands"),
+  // which put the wrong item on cooldown and let the real one repeat.
+  if (topic) {
+    const best = candidates
+      .map((c) => ({ c, score: overlap(c.text, topic) }))
+      .sort((a, b) => b.score - a.score)[0];
+    const chosenScore = chosen ? overlap(chosen.text, topic) : 0;
+    if (best && best.score > chosenScore) {
+      console.warn(`[topic] sourceIndex ${idx} ("${chosen?.text}") doesn't match topic "${topic}" - using "${best.c.text}"`);
+      chosen = best.c;
+    }
+  }
   if (!topic) throw new Error('[topic] model returned no topic');
   return {
     topic,

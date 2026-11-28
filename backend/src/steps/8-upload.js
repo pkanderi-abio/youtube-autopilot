@@ -144,7 +144,10 @@ export async function uploadToYoutube(channel, { videoPath, thumbnailPath, title
       await postFirstComment(youtube, videoId, text);
       console.log(`[upload] posted first comment on ${videoId}`);
     } catch (error) {
-      console.warn(`[upload] first comment failed on ${videoId}:`, error.message);
+      const hint = /insufficient permission/i.test(error.message)
+        ? ' - the refresh token lacks the youtube.force-ssl scope; re-run `npm run get-token` and update the channel\'s YT_REFRESH_TOKEN secret'
+        : '';
+      console.warn(`[upload] first comment failed on ${videoId}: ${error.message}${hint}`);
     }
   }
 

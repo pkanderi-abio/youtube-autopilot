@@ -37,7 +37,7 @@ channels and both formats (4 runs) and look at frames from `out/`.
 
 | | Primary | Fallback |
 |---|---|---|
-| LLM | Cloudflare Workers AI `llama-4-scout` | `llama-3.3-70b` |
+| LLM | Cloudflare Workers AI `llama-4-scout` | `llama-3.3-70b`, then Pollinations text once the daily quota is gone |
 | Images | Cloudflare `flux-1-schnell` | Pollinations FLUX |
 | Motion clips | LTX-Video 0.9.8 2B distilled on free Kaggle GPU (`kaggleClips.js` + `kaggle/ltx_clips.py`) | Pollinations (paid) → still + camera move |
 | Voice | Edge TTS (msedge-tts) | Cloudflare MeloTTS |
@@ -51,7 +51,7 @@ pricier models without redoing the budget in `backend/README.md`.
 ## Architecture
 
 ```
-1-topic      topicPool (6-video cooldown via sourcePoolItem) + optional trends
+1-topic      topicPool (LRU, ~60%-of-pool cooldown via sourcePoolItem) + optional trends
 2-script     { visualBible, scenes:[{narration, visual}] }  short: 1 call;
              long: outline + 6 section calls with previous tail
 3-seo        title/description/tags/hashtags/thumbnailText/commentCta + guards
